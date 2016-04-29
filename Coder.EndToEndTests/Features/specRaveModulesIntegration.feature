@@ -673,7 +673,7 @@ Scenario: Rave ETE Example Verifying Coding Decision within the Clincial Views
     And a Rave Coder setup with the following options
 	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms            |
 	 | ETE2 | Coding Field | <Dictionary> | <Locale> | LLT         | 2        | true               | false          | LogSuppField2, LogSuppField4 |
-	When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<SourceSystemStudyName>" to environment "Prod"
+	When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
     And setting the clinical view settings for dictionary "<Dictionary>" with the following data
     | Column | Term Suffix | Term SAS Suffix | Term Length | Code Suffix | Code SAS Suffix | Code Length |
     | ATC    | _ATC_       | _SAS_ATC_       | 50          | _ATC_CD_    | _SAS_ATC_CD_    | 50          |
@@ -681,8 +681,8 @@ Scenario: Rave ETE Example Verifying Coding Decision within the Clincial Views
 	And adding a new verbatim term to form "ETE2"
 	| Field        | Value      | ControlType |
 	| Coding Field | Headachery | LongText    |
-	And configure Clinical Views for Project "<SourceSystemStudyName>" with mode "Full Then Incremental"
-	And generate report "Data Listing" for Project "<SourceSystemStudyName>", Data Source "Clinical Views" and Form "ETE2"
+	And configure Clinical Views for Project "<StudyName>" with mode "Full Then Incremental"
+	And generate report "Data Listing" for Project "<StudyName>", Data Source "Clinical Views" and Form "ETE2"
 	Then In report generated, I should see the data below
 	| project                 | subject | CODERFIELD2_PS    | CODERFIELD2_PS_C |
 	| <SourceSystemStudyName> | AA1     | SLOW RELEASE IRON | 000235 01 027 9  |

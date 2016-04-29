@@ -115,11 +115,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 14
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
 #line 17
- testRunner.When("a Rave study environment \"UAT_ENV\" is created for project \"<SourceSystemStudyName" +
-                    ">\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("a Rave study environment \"UAT_ENV\" is created for project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
  testRunner.And("a Rave Draft is published and has pushed disabled using draft \"<DraftName>\" for P" +
-                    "roject \"<SourceSystemStudyName>\" to environment \"UAT_ENV\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "roject \"<StudyName>\" to environment \"UAT_ENV\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
  testRunner.Then("pushing a CRF should be disabled with the following failed message \"Push disabled" +
                     ". CRF Version contains coding dictionary linked to Coder, but study/environment " +
@@ -171,8 +170,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 30
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table2, "And ");
 #line 33
-    testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Sour" +
-                    "ceSystemStudyName>\" to environment \"UAT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"UAT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 34
     testRunner.Then("CRF was published and pushed with the following message \"successfully pushed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

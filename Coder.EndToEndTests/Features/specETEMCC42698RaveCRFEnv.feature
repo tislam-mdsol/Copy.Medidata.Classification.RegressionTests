@@ -14,8 +14,8 @@ Scenario: When pushing a CRF version that contains Coder settings and environmen
 	And a Rave Coder setup with the following options
 		| Form | Field         | Dictionary   | Locale   | Coding Level    | Priority | IsApprovalRequired | IsAutoApproval |
 		| ETE2 | Coding Field  | <Dictionary> | <Locale> | LLT             | 1        | true               | true           |	
-	When a Rave study environment "UAT_ENV" is created for project "<SourceSystemStudyName>"
-	And a Rave Draft is published and has pushed disabled using draft "<DraftName>" for Project "<SourceSystemStudyName>" to environment "UAT_ENV"	
+	When a Rave study environment "UAT_ENV" is created for project "<StudyName>"
+	And a Rave Draft is published and has pushed disabled using draft "<DraftName>" for Project "<StudyName>" to environment "UAT_ENV"	
 	Then pushing a CRF should be disabled with the following failed message "Push disabled. CRF Version contains coding dictionary linked to Coder, but study/environment not linked to iMedidata. Please link study/environment with iMedidata." 	
 	
 		
@@ -30,7 +30,7 @@ Scenario: When pushing a CRF version that contains Coder settings and environmen
 	And a Rave Coder setup with the following options
 		| Form | Field        | Dictionary   | Locale   | Coding Level    | Priority | IsApprovalRequired | IsAutoApproval |
 		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT             | 1        | true               | true           |
-    When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<SourceSystemStudyName>" to environment "UAT"
+    When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "UAT"
     Then CRF was published and pushed with the following message "successfully pushed"
 
 

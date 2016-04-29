@@ -20,6 +20,7 @@ namespace Coder.EndToEndTests.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Verify Rave Coder Migrations")]
+    [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
     public partial class VerifyRaveCoderMigrationsFeature
     {
         
@@ -32,7 +33,8 @@ namespace Coder.EndToEndTests.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Verify Rave Coder Migrations", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Verify Rave Coder Migrations", "", ProgrammingLanguage.CSharp, new string[] {
+                        "EndToEndDynamicSegment"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,11 +81,11 @@ namespace Coder.EndToEndTests.Features
                         "DFT",
                         "Release2016.2.0",
                         "PBMCC_207807_1.1.2_001"});
-#line 6
+#line 11
 this.ScenarioSetup(scenarioInfo);
-#line 7
+#line 12
  testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
+#line 13
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -106,12 +108,12 @@ this.ScenarioSetup(scenarioInfo);
                         "true",
                         "true",
                         ""});
-#line 9
+#line 14
   testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
-#line 12
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<SourceSy" +
-                    "stemStudyName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 13
+#line 17
+ testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
+                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -122,15 +124,15 @@ this.ScenarioSetup(scenarioInfo);
                         "AdverseEvent1",
                         "TERRIBLE HEAD PAIN",
                         ""});
-#line 14
+#line 19
  testRunner.And("adding a new verbatim term to form \"ETE5\"", ((string)(null)), table2, "And ");
-#line 17
+#line 22
  testRunner.Then("an Amendment Manager migration is started with \"SETE5<CoderRaveStudy>\" in \"AM Sub" +
                     "ject Search\" and \"SETE5<CoderRaveStudy>\" in \"Rave Migration Subject Seletion Dro" +
                     "pdown\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 18
+#line 23
  testRunner.And("Rave Adverse Events form \"ETE5\" should display \"CHILDRENS ADVIL COLD\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
+#line 24
  testRunner.And("Coder tasks should display \"terrible head pain\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -151,11 +153,11 @@ this.ScenarioSetup(scenarioInfo);
                         "DFT",
                         "Release2016.2.0",
                         "PBMCC_207807_1.1.2_002"});
-#line 24
+#line 29
 this.ScenarioSetup(scenarioInfo);
-#line 25
+#line 30
  testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 26
+#line 31
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -178,12 +180,12 @@ this.ScenarioSetup(scenarioInfo);
                         "true",
                         "true",
                         ""});
-#line 27
+#line 32
   testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table3, "And ");
-#line 30
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<SourceSy" +
-                    "stemStudyName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 31
+#line 35
+ testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
+                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 36
  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -194,17 +196,17 @@ this.ScenarioSetup(scenarioInfo);
                         "AdverseEvent1",
                         "TERRIBLE HEAD PAIN",
                         ""});
-#line 32
+#line 37
  testRunner.And("adding a new verbatim term to form \"ETE5\"", ((string)(null)), table4, "And ");
-#line 35
+#line 40
  testRunner.When("task \"terrible head pain\" is coded to term \"Biopsy skin\" at search level \"Low Lev" +
                     "el Term\" with code \"10004873\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 36
+#line 41
  testRunner.And("a new synonym list is created for \"MedDRA ENG 11.1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 37
+#line 42
  testRunner.And("a study impact analsis migration is performed between \"MedDRA ENG 11.0\" to \"MedDR" +
                     "A ENG 11.1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
+#line 43
  testRunner.And("a Rave submitted coding task \"terrible head pain\" for subject \"CoderSubject\" on f" +
                     "ield \"Coding Field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -232,7 +234,7 @@ this.ScenarioSetup(scenarioInfo);
                         "LLT",
                         "10004873",
                         "Biopsy skin"});
-#line 39
+#line 44
  testRunner.Then("Rave should contain the following coding decision information for subject \"CoderS" +
                     "ubject\" on field \"Coding Field\"", ((string)(null)), table5, "Then ");
 #line hidden
@@ -250,11 +252,11 @@ this.ScenarioSetup(scenarioInfo);
                         "DFT",
                         "Release2016.2.0",
                         "PBMCC_207807_1.1.2_003"});
-#line 50
+#line 55
 this.ScenarioSetup(scenarioInfo);
-#line 51
+#line 56
  testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 52
+#line 57
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -277,12 +279,12 @@ this.ScenarioSetup(scenarioInfo);
                         "true",
                         "true",
                         ""});
-#line 53
+#line 58
   testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table6, "And ");
-#line 56
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<SourceSy" +
-                    "stemStudyName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 57
+#line 61
+ testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
+                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 62
  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -293,19 +295,19 @@ this.ScenarioSetup(scenarioInfo);
                         "AdverseEvent1",
                         "TERRIBLE HEAD PAIN",
                         ""});
-#line 58
+#line 63
  testRunner.And("adding a new verbatim term to form \"ETE5\"", ((string)(null)), table7, "And ");
-#line 61
+#line 66
  testRunner.When("task \"tail bone bleeding\" is coded to term \"headache\" at search level \"Low Level " +
                     "Term\" with code \"10019211\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 62
+#line 67
  testRunner.And("a new synonym list is created for \"MedDRA ENG 11.1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
+#line 68
  testRunner.And("a study impact analsis migration is performed between \"MedDRA ENG 11.0\" to \"MedDR" +
                     "A ENG 11.1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
+#line 69
  testRunner.And("number of migrations should display \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
+#line 70
  testRunner.And("a Rave submitted coding task \"terrible head pain\" for subject \"CoderSubject\" on f" +
                     "ield \"Coding Field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -333,7 +335,7 @@ this.ScenarioSetup(scenarioInfo);
                         "LLT",
                         "10019211",
                         "Headache"});
-#line 66
+#line 71
  testRunner.Then("Rave should contain the following coding decision information for subject \"CoderS" +
                     "ubject\" on field \"Coding Field\"", ((string)(null)), table8, "Then ");
 #line hidden
@@ -355,11 +357,11 @@ this.ScenarioSetup(scenarioInfo);
                         "DFT",
                         "Release2016.2.0",
                         "PBMCC_207807_1.1.2_004"});
-#line 77
+#line 82
 this.ScenarioSetup(scenarioInfo);
-#line 78
+#line 83
  testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 79
+#line 84
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -382,12 +384,12 @@ this.ScenarioSetup(scenarioInfo);
                         "true",
                         "true",
                         ""});
-#line 80
+#line 85
   testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table9, "And ");
-#line 83
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<SourceSy" +
-                    "stemStudyName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
+#line 88
+ testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
+                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 89
  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -398,15 +400,15 @@ this.ScenarioSetup(scenarioInfo);
                         "AdverseEvent1",
                         "TERRIBLE HEAD PAIN",
                         ""});
-#line 85
+#line 90
  testRunner.And("adding a new verbatim term to form \"ETE6\"", ((string)(null)), table10, "And ");
-#line 88
+#line 93
  testRunner.And("an Amendment Manager migration is started with \"SETE6<CoderRaveStudy>\" in \"AM Sub" +
                     "ject Search\" and \"SETE6<CoderRaveStudy>\" in \"Rave Migration Subject Seletion Dro" +
                     "pdown\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
+#line 94
  testRunner.Then("Rave Adverse Events form should display \"terrible head pain\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 90
+#line 95
  testRunner.And("Coder tasks should display \"terrible head pain\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

@@ -114,23 +114,17 @@ namespace Coder.TestSteps.StepDefinitions
             if (ReferenceEquals(csvFilename, null)) throw new ArgumentNullException("csvFilename");
 
             string csvFilePath                     = BrowserUtility.GetDynamicCsvFilePath(csvFilename, Config.ApplicationCsvFolder);
-
-            int currentTaskCount                   = _Browser.GetStudyReportTaskCount();
-
+            
             Tuple<string, int> odmPathAndTaskCount = BrowserUtility.BuildOdmFile(csvFilePath, _StepContext);
             string odmFilePath                     = odmPathAndTaskCount.Item1;
             int expectedTaskCount                  = odmPathAndTaskCount.Item2;
 
             expectedTaskCount.Should().BeLessOrEqualTo(MaximumODMTasks, "There are too many tasks in the ODM to load. Split your CSV file into multiple files.");
-
-            expectedTaskCount += currentTaskCount;
-
+            
             _Browser.GoToAdminPage("CodingCleanup");
 
             _Browser.UploadOdm(odmFilePath);
-
-            _Browser.WaitForTaskLoadComplete(expectedTaskCount);
-
+            
             if (waitForAutoCodingComplete)
             {
                 _Browser.WaitForAutoCodingToComplete();
@@ -349,9 +343,11 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 //JPTODO:: The syncs are taking too long in parallel
                 // The project registration may not be immidiately available to the user on the first login due to the time it takes for Coder to sync with iMedidata.
+                // WaitUntilAdminLinkExists() and WaitForIMedidataSync() do not appear to improve the situation. Jose suggested refreshing the page, but I believe 
+                // WaitForIMedidataSync() is doing this already.
                 // Explicitly wait here, so as not to affect the CoderCore tests.
                 _Browser.WaitUntilAdminLinkExists("Project Registration");
-                //browser.WaitForIMedidataSync();
+                //_Browser.WaitForIMedidataSync();
                 _Browser.RegisterProjects(study.StudyName, new List<SynonymList> { _StepContext.SourceSynonymList });
             }
         }

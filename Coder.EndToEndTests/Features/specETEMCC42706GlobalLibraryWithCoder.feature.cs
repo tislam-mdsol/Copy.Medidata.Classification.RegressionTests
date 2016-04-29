@@ -124,8 +124,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 16
  testRunner.And("the following supplementals fields for following forms", ((string)(null)), table2, "And ");
 #line 19
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<SourceSy" +
-                    "stemStudyName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
+                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 20
  testRunner.And("a new Draft \"NewCopiedDraft\" is created through copy wizard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -228,11 +228,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 91
  testRunner.And("the following supplementals fields for following forms", ((string)(null)), table6, "And ");
 #line 94
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<SourceSy" +
-                    "stemStudyName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
+                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 95
  testRunner.And("a Rave CRF copy source is added for copy target project \"SecondRaveCoderStudy\" us" +
-                    "ing copy source project \"<SourceSystemStudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "ing copy source project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 96
  testRunner.And("a new Draft \"NewCopiedDraft\" is created through copy wizard for project \"SecondRa" +
                     "veCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -334,11 +334,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 121
  testRunner.And("the following supplementals fields for following forms", ((string)(null)), table10, "And ");
 #line 124
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<SourceSy" +
-                    "stemStudyName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
+                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 125
  testRunner.And("a Rave CRF copy source is added for copy target project \"SecondRaveCoderStudy\" us" +
-                    "ing copy source project \"<SourceSystemStudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "ing copy source project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 126
  testRunner.And("a new Draft \"NewCopiedDraft\" is created through copy wizard for project \"SecondRa" +
                     "veCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

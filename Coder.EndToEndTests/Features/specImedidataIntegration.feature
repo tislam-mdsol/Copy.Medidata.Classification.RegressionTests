@@ -1,5 +1,6 @@
 ﻿@specImedidataIntegration.feature
-@EndToEndDynamicStudy
+@EndToEndDynamicSegment
+
 Feature: The following scenarios will validate the behavior of the integration between the coding system and iMedidata
 
 @DFT

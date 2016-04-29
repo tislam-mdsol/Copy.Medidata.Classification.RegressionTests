@@ -16,7 +16,7 @@ Scenario: Verify coping a form that contains Coder settings within a Project tha
 	And the following supplementals fields for following forms
 		| Form | Field         | Supplemental  |
 		| ETE2 | CodingField10 | SUPPDD        |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"	
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"	
 	And a new Draft "NewCopiedDraft" is created through copy wizard 
 	Then verify the CRF has the following options for draft "NewCopiedDraft"
 		| Form | Field         | Dictionary   | Locale   | Coding Level    | Priority | IsApprovalRequired | IsAutoApproval |
@@ -91,8 +91,8 @@ Scenario: Verify Coder settings get copied from a form that contains Coder setti
 	And the following supplementals fields for following forms
 		| Form | Field        | Supplemental  |
 		| ETE2 | CodingField10 | SUPPDD        |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"	
-	And a Rave CRF copy source is added for copy target project "SecondRaveCoderStudy" using copy source project "<SourceSystemStudyName>"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"	
+	And a Rave CRF copy source is added for copy target project "SecondRaveCoderStudy" using copy source project "<StudyName>"
 	And a new Draft "NewCopiedDraft" is created through copy wizard for project "SecondRaveCoderStudy"
 	Then verify the CRF has the following options for draft "NewCopiedDraft" for Project "SecondRaveCoderStudy"
 		| Form  | Field         | Dictionary   | Locale   | Coding Level    | Priority | IsApprovalRequired | IsAutoApproval |
@@ -121,8 +121,8 @@ Scenario: Verify Coder settings are not copied from a form that contains Coder s
 	And the following supplementals fields for following forms
 		| Form | Field        | Supplemental  |
 		| ETE2 | CodingField10 | SUPPDD        |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"	
-	And a Rave CRF copy source is added for copy target project "SecondRaveCoderStudy" using copy source project "<SourceSystemStudyName>"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"	
+	And a Rave CRF copy source is added for copy target project "SecondRaveCoderStudy" using copy source project "<StudyName>"
 	And a new Draft "NewCopiedDraft" is created through copy wizard for project "SecondRaveCoderStudy"
 	Then verify the Rave Coder setup does not have the following options for draft "NewCopiedDraft" for Project "SecondRaveCoderStudy"
 		| Form  | Field         | Dictionary   | Locale   | Coding Level    | Priority | IsApprovalRequired | IsAutoApproval |

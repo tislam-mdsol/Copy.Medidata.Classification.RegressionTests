@@ -21,6 +21,7 @@ namespace Coder.EndToEndTests.Features
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Test the full round trip integration from Rave to Coder back to Rave for Japanese" +
         "")]
+    [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
     public partial class TestTheFullRoundTripIntegrationFromRaveToCoderBackToRaveForJapaneseFeature
     {
         
@@ -34,7 +35,8 @@ namespace Coder.EndToEndTests.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Test the full round trip integration from Rave to Coder back to Rave for Japanese" +
-                    "", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "", "", ProgrammingLanguage.CSharp, new string[] {
+                        "EndToEndDynamicSegment"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,11 +83,11 @@ namespace Coder.EndToEndTests.Features
                         "ETE_JPN_Rave_coder_basic_sub",
                         "PB1.1.2-001J",
                         "Release2016.1.0"});
-#line 7
+#line 13
   this.ScenarioSetup(scenarioInfo);
-#line 8
+#line 14
     testRunner.Given("a Rave project registration with dictionary \"MedDRA JPN 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 9
+#line 15
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -108,12 +110,12 @@ namespace Coder.EndToEndTests.Features
                         "true",
                         "True",
                         ""});
-#line 10
+#line 16
     testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
-#line 13
+#line 19
     testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 14
+#line 20
     testRunner.And("adding a new subject \"TEST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -124,7 +126,7 @@ namespace Coder.EndToEndTests.Features
                         "AdverseEvent1",
                         "ひどい頭痛",
                         ""});
-#line 15
+#line 21
     testRunner.When("adding a new verbatim term to form \"ETE1\"", ((string)(null)), table2, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -151,7 +153,7 @@ namespace Coder.EndToEndTests.Features
                         "LLT",
                         "10019198",
                         "ひどい頭痛"});
-#line 18
+#line 24
     testRunner.Then("the field \"CoderField1\" on form \"ETE1\" for study \"<Study>\" site \"<Site>\" subject " +
                     "\"TEST\" contains the following coding decision data", ((string)(null)), table3, "Then ");
 #line hidden
@@ -175,11 +177,11 @@ namespace Coder.EndToEndTests.Features
                         "ETE_JPN_Rave_coder_basic_sub_with_supp",
                         "PB1.1.2-002J",
                         "Release2016.1.0"});
-#line 31
+#line 37
   this.ScenarioSetup(scenarioInfo);
-#line 33
+#line 39
     testRunner.Given("a Rave project registration with dictionary \"J-Drug JPN 2011H2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 34
+#line 40
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -202,12 +204,12 @@ namespace Coder.EndToEndTests.Features
                         "true",
                         "True",
                         "LOGSUPPFIELD2, LOGSUPPFIELD4"});
-#line 35
+#line 41
     testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table4, "And ");
-#line 38
+#line 44
     testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 39
+#line 45
     testRunner.And("adding a new subject \"TEST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -226,7 +228,7 @@ namespace Coder.EndToEndTests.Features
                         "Supplemental2",
                         "ニュージャージー州",
                         "radio"});
-#line 40
+#line 46
     testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table5, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -245,11 +247,11 @@ namespace Coder.EndToEndTests.Features
                         "Supplemental2",
                         "ニューヨーク",
                         "radio"});
-#line 45
-    testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table6, "And ");
-#line 50
-    testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 51
+    testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table6, "And ");
+#line 56
+    testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
     testRunner.When("I view task \"足の下に鋭い痛み\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -261,11 +263,11 @@ namespace Coder.EndToEndTests.Features
             table7.AddRow(new string[] {
                         "ETE2.LOGSUPPFIELD4",
                         "翻訳で失わ"});
-#line 52
+#line 58
     testRunner.Then("I verify the following Component information is displayed", ((string)(null)), table7, "Then ");
-#line 56
+#line 62
     testRunner.When("I view task \"足の下に鋭い痛み\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 57
+#line 63
     testRunner.Then("I verify the following Component information is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -277,14 +279,14 @@ namespace Coder.EndToEndTests.Features
             table8.AddRow(new string[] {
                         "ETE2.LOGSUPPFIELD4",
                         "翻訳で失わ"});
-#line 58
+#line 64
     testRunner.And("in Coder I verify the Supplemental data for \"足の下に鋭い痛み\"", ((string)(null)), table8, "And ");
-#line 62
+#line 68
     testRunner.And("I open a query for new task \"神経の鋭い痛み\" with comment \"悪い言葉による拒絶決定\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
+#line 69
     testRunner.And("I browse and code task \"足の下に鋭い痛み\" entering value \"抗Ｄグロブリン\" and selecting \"抗Ｄグロブリン" +
                     "\" located in Dictionary Tree Table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
+#line 70
     testRunner.And("I download the synonym list for \"J-Drug 2011H2 JPN\" and name it \"SynonymListj2.tx" +
                     "t\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -305,11 +307,11 @@ namespace Coder.EndToEndTests.Features
                         "False",
                         "Classification:33;Reserve:コンポーネント",
                         "LOGSUPPFIELD2:ニュージャージー州;LOGSUPPFIELD4:翻訳で失わ"});
-#line 65
+#line 71
     testRunner.Then("in \"SynonymListj2.txt\" I should the following", ((string)(null)), table9, "Then ");
-#line 68
+#line 74
     testRunner.And("I navigate to Rave App form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
+#line 75
     testRunner.Then("the field on form \"ETE2\" for study \"<Study>\" site \"<Site>\" subject \"TEST\" I shoul" +
                     "d see the rave query icon for term \"神経の鋭い痛み\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -349,7 +351,7 @@ namespace Coder.EndToEndTests.Features
                         "Drug Name",
                         "634340701",
                         "抗Ｄグロブリン"});
-#line 70
+#line 76
     testRunner.Then("the field \"ETE2\" on form \"ETE2\" for study \"<Study>\" site \"<Site>\" subject \"TEST\" " +
                     "contains the following coding decision data", ((string)(null)), table10, "Then ");
 #line hidden
@@ -371,11 +373,11 @@ namespace Coder.EndToEndTests.Features
                         "ETE_JPN_Rave_coder_basic_sub_change_verbatim",
                         "PB1.1.2-003J",
                         "Release2016.1.0"});
-#line 88
+#line 94
   this.ScenarioSetup(scenarioInfo);
-#line 89
+#line 95
     testRunner.Given("a Rave project registration with dictionary \"MedDRA JPN 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 90
+#line 96
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -398,12 +400,12 @@ namespace Coder.EndToEndTests.Features
                         "true",
                         "True",
                         ""});
-#line 91
+#line 97
     testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table11, "And ");
-#line 94
+#line 100
     testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 95
+#line 101
     testRunner.And("adding a new subject \"TEST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -414,7 +416,7 @@ namespace Coder.EndToEndTests.Features
                         "AdverseEvent1",
                         "ひどい頭痛",
                         ""});
-#line 96
+#line 102
     testRunner.And("adding a new verbatim term to form \"ETE3\"", ((string)(null)), table12, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -425,7 +427,7 @@ namespace Coder.EndToEndTests.Features
                         "ETE3",
                         "左脚の足の痛み",
                         ""});
-#line 99
+#line 105
     testRunner.And("I edit verbatim \"ひどい頭痛\" on form \"ETE2\" for study \"<Study>\" site \"<Site>\" subject " +
                     "\"TEST\"", ((string)(null)), table13, "And ");
 #line hidden
@@ -449,7 +451,7 @@ namespace Coder.EndToEndTests.Features
                         "PT",
                         "10067040",
                         "片側頭痛"});
-#line 102
+#line 108
     testRunner.Then("the field \"CoderField1\" on form \"ETE1\" for study \"<Study>\" site \"<Site>\" subject " +
                     "\"TEST\" contains the following coding decision data", ((string)(null)), table14, "Then ");
 #line hidden
@@ -471,11 +473,11 @@ namespace Coder.EndToEndTests.Features
                         "ETE_JPN_Rave_coder_basic_sub_syn_rule",
                         "PB1.1.2-004J",
                         "Release2016.1.0"});
-#line 115
+#line 121
   this.ScenarioSetup(scenarioInfo);
-#line 116
+#line 122
     testRunner.Given("a Rave project registration with dictionary \"MedDRA JPN 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 117
+#line 123
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -498,12 +500,12 @@ namespace Coder.EndToEndTests.Features
                         "true",
                         "True",
                         ""});
-#line 118
+#line 124
     testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table15, "And ");
-#line 121
+#line 127
     testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 122
+#line 128
     testRunner.And("adding a new subject \"TEST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -514,14 +516,14 @@ namespace Coder.EndToEndTests.Features
                         "ETE4",
                         "左脚の足の痛み",
                         ""});
-#line 123
+#line 129
     testRunner.And("adding a new verbatim term to form \"ETE4\"", ((string)(null)), table16, "And ");
-#line 126
+#line 132
     testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 127
+#line 133
     testRunner.And("I browse and code task \"左脚の足の痛み\" entering value \"片側頭痛\" and selecting \"片側頭痛\" locat" +
                     "ed in Dictionary Tree Table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 128
+#line 134
     testRunner.And("I navigate to Rave App form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -532,7 +534,7 @@ namespace Coder.EndToEndTests.Features
                         "ETE4",
                         "左脚の足の痛み",
                         ""});
-#line 129
+#line 135
     testRunner.And("adding a new verbatim term to form \"ETE4\"", ((string)(null)), table17, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -555,7 +557,7 @@ namespace Coder.EndToEndTests.Features
                         "PT",
                         "10067040",
                         "片側頭痛"});
-#line 132
+#line 138
     testRunner.Then("the field \"CoderField1\" on form \"ETE4\" for study \"<Study>\" site \"<Site>\" subject " +
                     "\"TEST\" contains the following coding decision data", ((string)(null)), table18, "Then ");
 #line hidden
@@ -579,11 +581,11 @@ namespace Coder.EndToEndTests.Features
                         "ETE_JPN_Rave_coder_basic_up_version",
                         "PB1.1.2-007J",
                         "Release2016.1.0"});
-#line 144
+#line 150
   this.ScenarioSetup(scenarioInfo);
-#line 145
+#line 151
     testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 146
+#line 152
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -606,12 +608,12 @@ namespace Coder.EndToEndTests.Features
                         "true",
                         "false",
                         ""});
-#line 147
+#line 153
     testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table19, "And ");
-#line 150
+#line 156
     testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 151
+#line 157
     testRunner.And("adding a new subject \"TEST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -622,14 +624,14 @@ namespace Coder.EndToEndTests.Features
                         "ETE7",
                         "左脚の足の痛み",
                         ""});
-#line 152
+#line 158
     testRunner.And("adding a new verbatim term to form \"ETE1\"", ((string)(null)), table20, "And ");
-#line 155
+#line 161
     testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 156
+#line 162
     testRunner.And("I browse and code task \"左脚の足の痛み\" entering value \"片側頭痛\" and selecting \"片側頭痛\" locat" +
                     "ed in Dictionary Tree Table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 157
+#line 163
     testRunner.And("I perform synonym migration to (Upgrade) list to \"Primary\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -644,9 +646,9 @@ namespace Coder.EndToEndTests.Features
             table21.AddRow(new string[] {
                         "11.1",
                         "To Ordinal Dropdown"});
-#line 158
+#line 164
     testRunner.And("I generate a study impact Analysis for the following data", ((string)(null)), table21, "And ");
-#line 163
+#line 169
     testRunner.And("I navigate to Rave App form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
@@ -669,7 +671,7 @@ namespace Coder.EndToEndTests.Features
                         "PT",
                         "10067040",
                         "片側頭痛"});
-#line 164
+#line 170
     testRunner.Then("the field \"CoderField1\" on form \"ETE7\" for study \"<Study>\" site \"<Site>\" subject " +
                     "\"TEST\" contains the following coding decision data", ((string)(null)), table22, "Then ");
 #line hidden
@@ -693,11 +695,11 @@ namespace Coder.EndToEndTests.Features
                         "ETE_JPN_Rave_coder_reconsider_verbatim",
                         "PB1.1.2-008J",
                         "Release2016.1.0"});
-#line 176
+#line 182
   this.ScenarioSetup(scenarioInfo);
-#line 177
+#line 183
     testRunner.Given("a Rave project registration with dictionary \"MedDRA JPN 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 178
+#line 184
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
@@ -720,12 +722,12 @@ namespace Coder.EndToEndTests.Features
                         "true",
                         "false",
                         ""});
-#line 179
+#line 185
     testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table23, "And ");
-#line 182
+#line 188
     testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 183
+#line 189
     testRunner.And("adding a new subject \"TEST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
@@ -736,14 +738,14 @@ namespace Coder.EndToEndTests.Features
                         "Adverse Event 1",
                         "ひどい頭痛",
                         ""});
-#line 184
+#line 190
     testRunner.And("adding a new verbatim term to form \"ETE1\"", ((string)(null)), table24, "And ");
-#line 187
+#line 193
     testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 188
+#line 194
     testRunner.And("I browse and code Term \"左脚の足の痛み\" located in \"Coder Main Table\" entering value \"片側" +
                     "頭痛\" and selecting \"片側頭痛\" located in \"Dictionary Tree Table\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 189
+#line 195
     testRunner.And("I navigate to Rave App form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
@@ -766,16 +768,16 @@ namespace Coder.EndToEndTests.Features
                         "PT",
                         "10019211",
                         "頭痛"});
-#line 190
+#line 196
     testRunner.Then("the field \"ETE1\" on form \"ETE1\" for study \"<Study>\" site \"<Site>\" subject \"TEST\" " +
                     "contains the following coding decision data", ((string)(null)), table25, "Then ");
-#line 196
+#line 202
     testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 197
+#line 203
     testRunner.And("reclassify and Retire \"左脚の足の痛み\" entering value \"Reclassifying to test message.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 198
+#line 204
     testRunner.And("in Coder I reject the coding decision for \"左脚の足の痛み\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 199
+#line 205
     testRunner.And("I browse and code Term \"左脚の足の痛み\" located in \"Coder Main Table\" on row \"1\", enteri" +
                     "ng value \"頚原性頭痛\" and selecting \"頚原性頭痛\" located in \"Dictionary Tree Table\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -799,7 +801,7 @@ namespace Coder.EndToEndTests.Features
                         "PT",
                         "10064888",
                         "頚原性頭痛"});
-#line 200
+#line 206
     testRunner.Then("the field \"ETE1\" on form \"ETE1\" for study \"<Study>\" site \"<Site>\" subject \"TEST\" " +
                     "contains the following coding decision data", ((string)(null)), table26, "Then ");
 #line hidden
