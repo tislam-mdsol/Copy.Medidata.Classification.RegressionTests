@@ -114,23 +114,17 @@ namespace Coder.TestSteps.StepDefinitions
             if (ReferenceEquals(csvFilename, null)) throw new ArgumentNullException("csvFilename");
 
             string csvFilePath                     = BrowserUtility.GetDynamicCsvFilePath(csvFilename, Config.ApplicationCsvFolder);
-
-            int currentTaskCount                   = _Browser.GetStudyReportTaskCount();
-
+            
             Tuple<string, int> odmPathAndTaskCount = BrowserUtility.BuildOdmFile(csvFilePath, _StepContext);
             string odmFilePath                     = odmPathAndTaskCount.Item1;
             int expectedTaskCount                  = odmPathAndTaskCount.Item2;
 
             expectedTaskCount.Should().BeLessOrEqualTo(MaximumODMTasks, "There are too many tasks in the ODM to load. Split your CSV file into multiple files.");
-
-            expectedTaskCount += currentTaskCount;
-
+            
             _Browser.GoToAdminPage("CodingCleanup");
 
             _Browser.UploadOdm(odmFilePath);
-
-            _Browser.WaitForTaskLoadComplete(expectedTaskCount);
-
+            
             if (waitForAutoCodingComplete)
             {
                 _Browser.WaitForAutoCodingToComplete();
