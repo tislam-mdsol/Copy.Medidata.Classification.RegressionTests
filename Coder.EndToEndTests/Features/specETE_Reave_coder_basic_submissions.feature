@@ -1,4 +1,5 @@
 @specETE_Reave_coder_basic_submissions.feature
+
 #@EndToEndDynamicSegment
 #@EndToEndDynamicStudy
 @EndToEndStaticSegment
@@ -125,7 +126,7 @@ Feature: Test full round trip integration from Rave to Coder.  New features conv
       | LLT   | 10019198 | Head pain                |
     When Coder App Segment is loaded
 	And reclassifying and retiring synonym task "terrible head pain" with Include Autocoded Items set to "True"
-	When rejecting coding decision for the task "terrible head pain"
+	And rejecting coding decision for the task "terrible head pain"
 	And task "terrible head pain" is coded to term "Biopsy skin" at search level "Low Level Term" with code "10004873" at level "LLT" and a synonym is created
     And Rave Modules App Segment is loaded
 	Then the coding decision for verbatim "terrible head pain" on form "ETE1" for field "Coding Field" contains the following data

@@ -9,7 +9,7 @@ Scenario: A coding decision will be accepted by EDC for a verbatim that has supp
  	And a Rave Coder setup with the following options
   	 | Form  | Field        | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE17 | CoderField17 | <Dictionary> | <Locale> | PRODUCTSYNONYM | 1        | true               | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE17"
 		| Field               | Value                    | ControlType |
@@ -35,7 +35,7 @@ Scenario: A coding decision will be accepted by EDC for a verbatim that is not p
  	And a Rave Coder setup with the following options
   	 | Form  | Field        | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE17 | CoderField17 | <Dictionary> | <Locale> | PRODUCTSYNONYM | 1        | true               | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE17"
 		| Field               | Value                    | ControlType |

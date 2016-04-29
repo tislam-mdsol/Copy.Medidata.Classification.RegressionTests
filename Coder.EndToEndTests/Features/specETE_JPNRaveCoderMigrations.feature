@@ -9,7 +9,7 @@ Scenario: Setup Rave study with all non coding fields, enter data in EDC, migrat
  	And a Rave Coder setup with the following options
   	 | Form | Field          | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE5 | CoderFieldETE5 | <Dictionary> | <Locale> | PRODUCTSYNONYM | 1        | false              | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE5"
 	| Field              | Value   | ControlType |

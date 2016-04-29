@@ -10,10 +10,10 @@ Scenario: Test that Rave is able to send coding terms to Coder even when more th
  	And a Rave Coder setup with the following options
   	 | Form  | Field           | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms   |
   	 | ETE19 | LL Coding Field | <Dictionary> | <Locale> | PRODUCTSYNONYM | 1        | true               | true           | DSearchlist Std Sup |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And a Rave Draft is published using draft "<Draft1>" for Project "<SourceSystemStudyName1>" to environment "UAT"
-	And adding a new subject "TST" for Project "<SourceSystemStudyName>" to environment "Prod"
-	And adding a new verbatim term to form "ETE19" for Project "<SourceSystemStudyName>" to environment "Prod"
+	And adding a new subject "TST" for Project "<StudyName>" to environment "Prod"
+	And adding a new verbatim term to form "ETE19" for Project "<StudyName>" to environment "Prod"
  	| Field                                    | Value                    | ControlType       |
  	| Log Coding Field                         | child advil cold extreme | LongText          |
  	| Dynamic Search List Supplemental Field A | Sup1                     | DynamicSearchList |

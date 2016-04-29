@@ -2546,8 +2546,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 673
     testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table85, "And ");
 #line 676
- testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Sour" +
-                    "ceSystemStudyName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
                         "Column",
@@ -2582,11 +2582,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 681
  testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table87, "And ");
 #line 684
- testRunner.And("configure Clinical Views for Project \"<SourceSystemStudyName>\" with mode \"Full Th" +
-                    "en Incremental\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("configure Clinical Views for Project \"<StudyName>\" with mode \"Full Then Increment" +
+                    "al\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 685
- testRunner.And("generate report \"Data Listing\" for Project \"<SourceSystemStudyName>\", Data Source" +
-                    " \"Clinical Views\" and Form \"ETE2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("generate report \"Data Listing\" for Project \"<StudyName>\", Data Source \"Clinical V" +
+                    "iews\" and Form \"ETE2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table88 = new TechTalk.SpecFlow.Table(new string[] {
                         "project",

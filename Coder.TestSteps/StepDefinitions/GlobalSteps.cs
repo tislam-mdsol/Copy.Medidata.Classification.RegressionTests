@@ -349,9 +349,11 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 //JPTODO:: The syncs are taking too long in parallel
                 // The project registration may not be immidiately available to the user on the first login due to the time it takes for Coder to sync with iMedidata.
+                // WaitUntilAdminLinkExists() and WaitForIMedidataSync() do not appear to improve the situation. Jose suggested refreshing the page, but I believe 
+                // WaitForIMedidataSync() is doing this already.
                 // Explicitly wait here, so as not to affect the CoderCore tests.
                 _Browser.WaitUntilAdminLinkExists("Project Registration");
-                //browser.WaitForIMedidataSync();
+                //_Browser.WaitForIMedidataSync();
                 _Browser.RegisterProjects(study.StudyName, new List<SynonymList> { _StepContext.SourceSynonymList });
             }
         }

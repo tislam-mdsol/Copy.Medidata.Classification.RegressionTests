@@ -1,3 +1,9 @@
+
+
+@EndToEndDynamicSegment
+#@EndToEndDynamicStudy
+#@EndToEndStaticSegment
+
 Feature: Test the full round trip integration from Rave to Coder back to Rave for Japanese
 
   @DFT
