@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<RuleSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RuleCategories>
+    <RuleCategory Name="Metrics">
+      <RuleCategories />
+      <Rules>
+        <Rule Name="Methods" Active="true">
+          <Code>var results = 
+from method in Methods
+where  method.Type.IsInCoreAssembly
+select new { 
+    method.Name,
+    method.FullName,
+    AssemblyId = method.Type.Assembly.AssemblyId,
+    AssemblyName = method.Type.Assembly.Name,
+    Namespace = method.Type.Assembly.Namespaces,
+    AssemblyVersion = method.Type.Assembly.Version,
+    method.ILCount,
+    method.ILCyclomatic,
+    method.IsConstructor,
+    method.IsEventAdder,
+    method.IsEventRemover,
+    method.IsGeneric,
+    method.IsInCoreAssembly,
+    method.IsIndexGetter,
+    method.IsIndexSetter,
+    method.IsInternal,
+    method.IsOperator,
+    method.IsPrivate,
+    method.IsPropertyGetter,
+    method.IsPropertySetter,
+    method.IsProtected,
+    method.IsProtectedAndInternal,
+    method.IsProtectedOrInternal,
+    method.IsPublic,
+    method.IsStatic,
+    method.IsStaticConstructor,
+    method.IsVirtual,
+    method.LogicalLineCount,
+    method.OverloadCount,
+    method.ParameterCount,
+    method.PercentComment,
+    method.PhysicalLineCount,
+    ReturnType = method.ReturnType.FullName,
+    ParentType = method.Type.FullName,
+    TypesUsedCount = method.TypesUsed.Count(),
+    method.UsesBoxing,
+    method.UsesUnboxing,
+    method.CommentLineCount,
+    method.Cyclomatic,
+    CalledByCount = method.CalledBy.Count,
+    CallsCount = method.Calls.Count,
+    FieldSetsCount = method.FieldSets.Count,
+    FieldGetsCount = method.FieldGets.Count,
+    OutTypes = method.TypesUsed.Count };</Code>
+        </Rule>
+        <Rule Name="Types" Active="true">
+          <Code>var results = 
+from t in Types
+let methodCount = Convert.ToDouble(t.Methods.Count())
+let instanceFields = t.Fields.Where(f =&gt; !f.IsStatic) 
+let instanceFieldCount = Convert.ToDouble(instanceFields.Count())
+let fieldAccesses = instanceFields.Select(f =&gt; f.GotByMethods.Union(f.SetByMethods).Distinct().Where(m =&gt; m.Type == t).Count())
+let accessAverage = fieldAccesses.Count() == 0 ? 0.0 : fieldAccesses.Average()
+let lcomHS = instanceFields.Count() == 0.0 ? 0.0: (accessAverage - methodCount) / (1.0 - methodCount)
+let lcom = 1.0 - (methodCount + instanceFieldCount)/(methodCount * instanceFieldCount + 1.0)
+let coupling = 1.0 - (1.0 / (t.TypesUsed.Count() + t.TypesUsing.Count() + 1.0)).Round(2)
+let externalAfferentCoupling = t.TypesUsing.Where(_ =&gt; _.Assembly.AssemblyId != t.Assembly.AssemblyId).Count() // inbound coupling
+let externalEfferentCoupling = t.TypesUsed.Where(_ =&gt; _.Assembly != t.Assembly).Count() // outbound coupling
+let internalAfferentCoupling = t.TypesUsing.Where(_ =&gt; _.Assembly == t.Assembly).Count() // inbound coupling
+let internalEfferentCoupling = t.TypesUsed.Where(_ =&gt; _.Assembly == t.Assembly).Count() // outbound coupling
+let afferentCoupling = Convert.ToDouble(t.TypesUsing.Count()) // inbound coupling
+let efferentCoupling = Convert.ToDouble(t.TypesUsed.Count()) // outbound coupling
+let instability = (efferentCoupling + 1.0) / (afferentCoupling + efferentCoupling + 1.0)
+let internalInstability = (internalEfferentCoupling + 1.0) / (internalAfferentCoupling + internalEfferentCoupling + 1.0)
+let assemblyTypesUsed = t.TypesUsed.Where(_ =&gt; _.Assembly == t.Assembly).Count()
+let assemblyTypesUsing = t.TypesUsing.Where(_ =&gt; _.Assembly == t.Assembly).Count()
+let rationalCohesion = Convert.ToDouble(assemblyTypesUsed + assemblyTypesUsing + 1) / (t.Assembly.Namespaces.SelectMany(_ =&gt; _.Types).Count() + 1)
+where t.IsInCoreAssembly 
+select new 
+{
+   t.FullName,
+   AssemblyId = t.Assembly.AssemblyId,
+   AssemblyName = t.Assembly.Name,
+   Namespace = t.Namespace,
+   AssemblyVersion = t.Assembly.Version,
+   BaseType  = (t.BaseType == null)? String.Empty: t.BaseType.FullName,
+   t.CommentLineCount,
+   t.Cyclomatic,
+   DerivedTypeCount = t.DerivedTypes.Count(),
+   EventCount = t.Events.Count(),
+   FieldCount = t.Fields.Count(),
+   ConstantFieldCount = t.Fields.Where(_ =&gt; _.IsConstant).Count(),
+   InternalFieldCount = t.Fields.Where(_ =&gt; _.IsInternal).Count(),
+   PrivateFieldCount = t.Fields.Where(_ =&gt; _.IsPrivate).Count(),
+   ProtectedFieldCount = t.Fields.Where(_ =&gt; _.IsProtected).Count(),
+   PublicFieldCount = t.Fields.Where(_ =&gt; _.IsPublic).Count(),
+   t.GenericParameterCount,
+   t.ILCount,
+   t.InheritanceDepth,
+   InterfaceCount = t.Interfaces.Count(),
+   t.IsAbstract,
+   t.IsClass,
+   t.IsDelegate,
+   t.IsEnum,
+   t.IsInterface,
+   t.IsInternal,
+   t.IsNested,
+   t.IsPrivate,
+   t.IsProtected,
+   t.IsProtectedAndInternal,
+   t.IsProtectedOrInternal,
+   t.IsPublic,
+   t.IsSealed,
+   t.IsStatic,
+   t.IsValueType,
+   t.LogicalLineCount,
+   MethodCount = t.Methods.Count(),
+   PublicMethodCount = t.Methods.Where(_ =&gt; _.IsPublic).Count(),
+   ProtectedMethodCount = t.Methods.Where(_ =&gt; _.IsProtected).Count(),
+   InternalMethodCount = t.Methods.Where(_ =&gt; _.IsInternal).Count(),
+   PercentComment = t.PercentComment.Round(2),
+   t.PhysicalLineCount,
+   TypesUsedCount = t.TypesUsed.Count(),
+   CoreTypesUsed = t.TypesUsed.Where(_ =&gt; _.IsInCoreAssembly).Count(),
+   TypesUsingCount = t.TypesUsing.Count(),
+   AccessAverage = accessAverage.Round(2),
+   LcomHS = lcomHS.Round(2),
+   Lcom = lcom.Round(2),
+   Coupling = coupling.Round(2),
+   Instability = instability.Round(2),
+   InternalInstability = internalInstability.Round(2),
+   ExternalAfferentCoupling = externalAfferentCoupling,
+   ExternalEfferentCoupling = externalEfferentCoupling,
+   InternalAfferentCoupling = internalAfferentCoupling,
+   InternalEfferentCoupling = internalEfferentCoupling,
+   AfferentCoupling = afferentCoupling,
+   EfferentCoupling = efferentCoupling,
+   RationalCohesion = rationalCohesion.Round(2)
+};</Code>
+        </Rule>
+        <Rule Name="Assembly" Active="true">
+          <Code>var results =  from a in Assemblies
+let types = a.Namespaces.SelectMany(_ =&gt; _.Types)
+let abstractTypes = types.Where(_ =&gt; _.IsAbstract)
+let abstractTypeCount = Convert.ToDouble(abstractTypes.Count())
+let concreteTypes = types.Where(_ =&gt; ! _.IsAbstract)
+let concreteTypeCount = Convert.ToDouble(concreteTypes.Count())
+let abstractness = abstractTypeCount / concreteTypeCount
+let typesUsing = types.SelectMany(_ =&gt; _.TypesUsing)
+let typesUsed = types.SelectMany(_ =&gt; _.TypesUsed)
+let externalAfferentCoupling = typesUsing.Where(_ =&gt; _.Assembly.AssemblyId != a.AssemblyId).Count() // inbound coupling
+let externalEfferentCoupling = typesUsed.Where(_ =&gt; _.Assembly != a).Count() // outbound coupling
+let internalAfferentCoupling = typesUsing.Where(_ =&gt; _.Assembly == a).Count() // inbound coupling
+let internalEfferentCoupling = typesUsed.Where(_ =&gt; _.Assembly == a).Count() // outbound coupling
+let afferentCoupling = Convert.ToDouble(typesUsing.Count()) // inbound coupling
+let efferentCoupling = Convert.ToDouble(typesUsed.Count()) // outboud coupling
+let instability = (efferentCoupling + 1.0) / (afferentCoupling + efferentCoupling + 1.0)
+let internalInstability = (internalEfferentCoupling + 1.0) / (internalAfferentCoupling + internalEfferentCoupling + 1.0)
+let distanceFromMainSequence = Math.Abs(instability + abstractness - 1.0)
+let x = types.Select(_ =&gt; _.TypesUsed.Where(t =&gt; ! t.IsInCoreAssembly))
+let y = types.Select(_ =&gt; _.TypesUsing.Where(t =&gt; ! t.IsInCoreAssembly))
+let externalRelationshipCount = Convert.ToDouble(x.Union(y).Distinct().Count())
+let relationalCohesion = (externalRelationshipCount + 1.0) / types.Count()
+let logicalLineCount = types.Select(_ =&gt; _.LogicalLineCount).Sum()
+let fields = types.Select(_ =&gt; _.Fields)
+let fieldCount = fields.Count()
+let ilCount = Convert.ToDouble(types.Select(t =&gt; t.ILCount).Sum())
+let cyclomatic = Convert.ToDouble(types.Select(t =&gt; t.Cyclomatic).Sum())
+let efferentCouplingWeight = (efferentCoupling/ilCount).Round(2)
+let cyclomaticComplexityWeight = (cyclomatic/ilCount).Round(2)
+where a.IsCoreAssembly
+select new 
+{
+    AssemblyId = a.AssemblyId,
+    a.Name, 
+    //a.Version,
+    //Abstractness = abstractness.Round(2),
+	EfferentCouplingWeight = efferentCouplingWeight,
+	CyclomaticComplexityWeight = cyclomaticComplexityWeight,
+	//Instability = instability.Round(2),	
+    //DistanceFromMainSequence = distanceFromMainSequence.Round(2),
+    //RelationalCohesion = relationalCohesion.Round(2),
+    //ExternalAfferentCoupling = externalAfferentCoupling,
+    //ExternalEfferentCoupling = externalEfferentCoupling,
+    //InternalAfferentCoupling = internalAfferentCoupling,
+    //InternalEfferentCoupling = internalEfferentCoupling,
+    //AfferentCoupling = afferentCoupling,
+    //EfferentCoupling = efferentCoupling,
+    //InternalInstability = internalInstability.Round(2),
+    //LogicalLineCount = logicalLineCount,
+    //FieldCount = fieldCount
+};</Code>
+</Rule>
+<Rule Name="AssemblyThreshold" Active="true">
+          <Code>var results =  from a in Assemblies
+let types = a.Namespaces.SelectMany(_ =&gt; _.Types)
+let abstractTypes = types.Where(_ =&gt; _.IsAbstract)
+let abstractTypeCount = Convert.ToDouble(abstractTypes.Count())
+let concreteTypes = types.Where(_ =&gt; ! _.IsAbstract)
+let concreteTypeCount = Convert.ToDouble(concreteTypes.Count())
+let abstractness = abstractTypeCount / concreteTypeCount
+let typesUsing = types.SelectMany(_ =&gt; _.TypesUsing)
+let typesUsed = types.SelectMany(_ =&gt; _.TypesUsed)
+let externalAfferentCoupling = typesUsing.Where(_ =&gt; _.Assembly.AssemblyId != a.AssemblyId).Count() // inbound coupling
+let externalEfferentCoupling = typesUsed.Where(_ =&gt; _.Assembly != a).Count() // outbound coupling
+let internalAfferentCoupling = typesUsing.Where(_ =&gt; _.Assembly == a).Count() // inbound coupling
+let internalEfferentCoupling = typesUsed.Where(_ =&gt; _.Assembly == a).Count() // outbound coupling
+let afferentCoupling = Convert.ToDouble(typesUsing.Count()) // inbound coupling
+let efferentCoupling = Convert.ToDouble(typesUsed.Count()) // outboud coupling
+let instability = (efferentCoupling + 1.0) / (afferentCoupling + efferentCoupling + 1.0)
+let internalInstability = (internalEfferentCoupling + 1.0) / (internalAfferentCoupling + internalEfferentCoupling + 1.0)
+let distanceFromMainSequence = Math.Abs(instability + abstractness - 1.0)
+let x = types.Select(_ =&gt; _.TypesUsed.Where(t =&gt; ! t.IsInCoreAssembly))
+let y = types.Select(_ =&gt; _.TypesUsing.Where(t =&gt; ! t.IsInCoreAssembly))
+let externalRelationshipCount = Convert.ToDouble(x.Union(y).Distinct().Count())
+let relationalCohesion = (externalRelationshipCount + 1.0) / types.Count()
+let logicalLineCount = types.Select(_ =&gt; _.LogicalLineCount).Sum()
+let fields = types.Select(_ =&gt; _.Fields)
+let fieldCount = fields.Count()
+let ilCount = Convert.ToDouble(types.Select(t =&gt; t.ILCount).Sum())
+let cyclomatic = Convert.ToDouble(types.Select(t =&gt; t.Cyclomatic).Sum())
+let efferentCouplingWeight = (efferentCoupling/ilCount).Round(2)
+let cyclomaticComplexityWeight = (cyclomatic/ilCount).Round(2)
+where  (efferentCouplingWeight &gt; 0.50 || cyclomaticComplexityWeight  &gt; 0.2) &amp;&amp;  a.IsCoreAssembly
+select new 
+{
+	AssemblyId = a.AssemblyId,
+    a.Name, 
+    //a.Version,
+    //Abstractness = abstractness.Round(2),
+	EfferentCouplingWeight = efferentCouplingWeight,
+	CyclomaticComplexityWeight = cyclomaticComplexityWeight,
+	//Instability = instability.Round(2), 	
+    //DistanceFromMainSequence = distanceFromMainSequence.Round(2),
+    //RelationalCohesion = relationalCohesion.Round(2),
+    //ExternalAfferentCoupling = externalAfferentCoupling,
+    //ExternalEfferentCoupling = externalEfferentCoupling,
+    //InternalAfferentCoupling = internalAfferentCoupling,
+    //InternalEfferentCoupling = internalEfferentCoupling,
+    //AfferentCoupling = afferentCoupling,
+    //EfferentCoupling = efferentCoupling,
+    //InternalInstability = internalInstability.Round(2),
+    //LogicalLineCount = logicalLineCount,
+    //FieldCount = fieldCount
+};
+Error(results, 0);
+</Code>
+        </Rule>		
+      </Rules>
+    </RuleCategory>
+  </RuleCategories>
+</RuleSet>
