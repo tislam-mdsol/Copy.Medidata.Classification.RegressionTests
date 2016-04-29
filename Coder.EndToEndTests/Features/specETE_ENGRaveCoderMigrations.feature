@@ -9,7 +9,7 @@ Scenario: For a coding field in Rave when submitting a verbatim, the term should
  	And a Rave Coder setup with the following options
   	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE5 | CoderField5 | <Dictionary> | <Locale> | LLT         | 1        | true               | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE5"
 	| Field         | Value              | ControlType |
@@ -27,7 +27,7 @@ Scenario: For a coding field in Rave when submitting a verbatim, the term should
  	And a Rave Coder setup with the following options
   	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE5 | CoderField5 | <Dictionary> | <Locale> | LLT         | 1        | true               | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE5"
 	| Field         | Value              | ControlType |
@@ -53,7 +53,7 @@ Scenario: Enter project registration in Coder, setup Rave study, enter verbatim 
  	And a Rave Coder setup with the following options
   	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE5 | CoderField5 | <Dictionary> | <Locale> | LLT         | 1        | true               | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE5"
 	| Field         | Value              | ControlType |
@@ -80,7 +80,7 @@ Scenario: Enter project registration in Coder, setup Rave study with Classic Cod
  	And a Rave Coder setup with the following options
   	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE6 | CoderField6 | <Dictionary> | <Locale> | LLT         | 1        | true               | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE6"
 	| Field         | Value              | ControlType |

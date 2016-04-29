@@ -10,7 +10,7 @@ Scenario: Verify in Rave that Verbatim terms with a synonym that have been accep
  	And a Rave Coder setup with the following options
   	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE5 | CoderField5 | <Dictionary> | <Locale> | LLT         | 1        | true               | false          |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE5"
 	| Field         | Value           | ControlType |
@@ -49,7 +49,7 @@ Scenario: Verify in Rave that Verbatim terms with a synonym that have been accep
  	And a Rave Coder setup with the following options
   	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE5 | CoderField5 | <Dictionary> | <Locale> | LLT         | 1        | false              | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE5"
 	| Field         | Value           | ControlType |
@@ -88,7 +88,7 @@ Scenario: Verify in Rave that a new exact match should re-code automatically upo
  	And a Rave Coder setup with the following options
   	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE1 | CoderField1 | <Dictionary> | <Locale> | LLT         | 1        | false              | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE1"
 	| Field         | Value           | ControlType |
@@ -127,7 +127,7 @@ Scenario: Verify in Rave that a new exact match should re-code automatically upo
  	And a Rave Coder setup with the following options
   	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE1 | CoderField1 | <Dictionary> | <Locale> | TN          | 1        | false              | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE1"
 	| Field         | Value     | ControlType |
@@ -165,7 +165,7 @@ Scenario: Verify in Rave a new exact match should re-code automatically upon stu
  	And a Rave Coder setup with the following options
   	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE1 | CoderField1 | <Dictionary> | <Locale> | TN          | 1        | false              | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE1"
 	| Field         | Value  | ControlType |
@@ -200,7 +200,7 @@ Scenario: An exact match should remain coded upon study upversioning completing 
  	And a Rave Coder setup with the following options
   	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE1 | CoderField1 | <Dictionary> | <Locale> | LLT         | 1        | false              | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE1"
 	| Field         | Value         | ControlType |

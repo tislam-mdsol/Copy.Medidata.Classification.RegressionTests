@@ -9,7 +9,7 @@ Scenario: A coding decision remains on the verbatim when a query is opened again
  	And a Rave Coder setup with the following options
 	| Form			| Field        	| Dictionary   | Locale   | Coding Level 		| Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms 	|
 	| ETEMCC62552	 	| AETerm		 	| <Dictionary> | <Locale> | PRODUCTSYNONYM		| 1        | true               | true           | SUP1AGE				|
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETEMCC62552"
  	| Field         		| Value      		| ControlType | Control Value |
@@ -38,7 +38,7 @@ Scenario: A coding decision remains on the verbatim when a sticky is opened agai
  	And a Rave Coder setup with the following options
 	| Form			| Field        	| Dictionary   | Locale   | Coding Level 		| Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms 	|
 	| ETEMCC62552	 	| AETerm		 	| <Dictionary> | <Locale> | PRODUCTSYNONYM		| 1        | true               | true           | SUP1AGE				|
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETEMCC62552"
  	| Field         		| Value      			| ControlType | Control Value |
@@ -68,7 +68,7 @@ Scenario: A coding decision remains on the verbatim when a comment is opened aga
  	And a Rave Coder setup with the following options
 	| Form			| Field        	| Dictionary   | Locale   | Coding Level 		| Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms 	|
 	| ETEMCC62552	 	| AETerm		 	| <Dictionary> | <Locale> | PRODUCTSYNONYM		| 1        | true               | true           | SUP1AGE				|
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETEMCC62552"
  	| Field         		| Value      			| ControlType | Control Value |

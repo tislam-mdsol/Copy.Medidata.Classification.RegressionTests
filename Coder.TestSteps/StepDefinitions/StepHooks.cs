@@ -103,7 +103,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             _StepContext.SegmentUnderTest = newStudyGroup;
 
-            var userName = String.Concat(Config.StudyNamePrefix, Config.ETESetupSuffix);
+            var userName  = String.Concat(Config.StudyNamePrefix, Config.ETESetupSuffix);
             var userEmail = userName.CreateUserEmail();
 
             _StepContext.CoderTestUser = new MedidataUser
@@ -134,7 +134,6 @@ namespace Coder.TestSteps.StepDefinitions
 
         private void LoginAsAdministrator()
         {
-
             var adminUser = new MedidataUser
             {
                 Username = Config.AdminLogin,
@@ -157,7 +156,7 @@ namespace Coder.TestSteps.StepDefinitions
         private void CreateTestUserContext(string nameSuffix, SegmentSetupData newStudyGroup, bool createNewSegment)
         {
             if (String.IsNullOrWhiteSpace(nameSuffix)) throw new ArgumentNullException("nameSuffix");
-            if (ReferenceEquals(newStudyGroup, null)) throw new ArgumentNullException("newStudyGroup");
+            if (ReferenceEquals(newStudyGroup, null))  throw new ArgumentNullException("newStudyGroup");
 
             var userName = String.Concat(Config.StudyNamePrefix, nameSuffix);
 
@@ -209,147 +208,6 @@ namespace Coder.TestSteps.StepDefinitions
             Console.WriteLine(String.Format("Site: {0}", studyGroup.ProdStudy.Sites[0].SiteName));
             Console.WriteLine(String.Format("User: {0}", user.Email));
             Console.WriteLine(String.Format("User Password: {0}", user.Password));
-        }
-        
-        public void BeforeEndToEndScenario()
-        {
-            //JPTODO:: Remove this once the new methods and sequences are verified
-            
-            
-            /*
-            var generatedSuffix = CommonBeforeEndToEndScenario(_StepContext);
-
-
-
-
-
-            bool createNewSegment = FeatureContext.Current.FeatureInfo.Tags.Contains("EndToEndDynamicSegment");
-
-
-            var browser = _StepContext.Browser;
-
-
-
-            */
-
-
-            /*
-            var adminUser = new MedidataUser
-            {
-                Username = Config.AdminLogin,
-                Password = Config.AdminPassword
-            };
-            _StepContext.CoderAdminUser = adminUser;
-
-            browser.LoginToiMedidata(adminUser.Username, adminUser.Password);
-
-
-    */
-
-
-            /*
-
-            var newStudyGroup = CreateSegmentSetupData(generatedSuffix);
-
-
-
-
-
-
-
-
-            if (!createNewSegment)
-            {
-                newStudyGroup.SegmentName = String.Concat(Config.StudyNamePrefix, Config.ETESetupSuffix);
-                newStudyGroup.SegmentUuid = browser.GetStudyGroupUUID(newStudyGroup.SegmentName);
-            }
-
-
-    */
-
-
-
-
-
-
-            /*
-
-
-            _StepContext.SegmentUnderTest = newStudyGroup;
-
-            _StepContext.SetStudyGroupSetupData(newStudyGroup);
-
-    */
-
-
-            /*
-
-            var userName = String.Concat(Config.StudyNamePrefix, generatedSuffix);
-
-            var newUser = browser.CreateTestUserContext(newStudyGroup, userName, createNewSegment);
-
-            _StepContext.CoderTestUser = newUser;
-
-
-    */
-
-
-
-
-            /*
-            if (createNewSegment)
-            {
-                browser.EnrollSegment(Config.SetupSegment, _StepContext.GetSegment());
-
-                browser.LogoutOfCoderAndImedidata();
-            }
-            else
-            {
-                browser.Logout();
-            }
-
-
-    */
-
-
-
-            /*
-
-            browser.LoginToiMedidata(newUser.Username, newUser.Password);
-
-            browser.AcceptStudyInvitation();
-
-            browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
-
-            var productionStudies = newStudyGroup.Studies.Select(x => x).Where(x => x.IsProduction);
-
-            foreach (var study in productionStudies)
-            {
-                browser.AssignUserToStudyAndStudyGroup("coderimport", "Coder Import Role", study: study.StudyName, studyGroup: _StepContext.GetSegment());
-            }
-
-            browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
-
-            browser.LogoutOfCoderAndImedidata();
-            */
-
-
-            /*
-            Console.WriteLine("Created the following test setup:");
-            Console.WriteLine(String.Format("Name Suffix: {0}", newStudyGroup.NameSuffix));
-            Console.WriteLine(String.Format("Segment: {0}", newStudyGroup.SegmentName));
-
-            foreach (var study in newStudyGroup.Studies)
-            {
-                var index = 0;
-                Console.WriteLine(String.Format("Study {0}: {1}", index++, study.StudyName));
-            }
-
-            Console.WriteLine(String.Format("Site: {0}", newStudyGroup.ProdStudy.Sites[0].SiteName));
-            Console.WriteLine(String.Format("User: {0}", newUser.Email));
-            Console.WriteLine(String.Format("User Password: {0}", newUser.Password));
-
-    */
         }
         
         [BeforeScenario("ApplicationMonitoring")]

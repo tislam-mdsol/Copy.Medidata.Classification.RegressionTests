@@ -274,7 +274,6 @@ namespace Coder.TestSteps.StepDefinitions
             CreateEmptyRaveArchitectDrafts();
 
             UploadTemplateRaveArchitectDraft();
-
         }
         
         [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndStaticSegment")]
@@ -289,7 +288,6 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
 
             UploadTemplateRaveArchitectDraft();
-
         }
         
         private void SetProjectContext(string dictionaryLocaleVersion)
@@ -332,7 +330,6 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 browser.CleanUpCodingTasksOnly();
             }
-
         }
 
         private void RegisterProjects()
@@ -385,183 +382,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             _StepContext.DraftName = defaultDraftName;
         }
-
-        private void GivenARaveProjectRegistrationWithDictionary(string dictionaryLocaleVersion)
-        {
-            //JPTODO:: Remove this once the new methods and sequences are verified
-
-
-            /*
-
-            const string defaultDraftTemplateFileName = "RaveDraft_Template.xml";
-            const string defaultDraftName             = "RaveCoderDraft";
-            
-            if (String.IsNullOrWhiteSpace(dictionaryLocaleVersion))                  throw new ArgumentNullException("dictionaryLocaleVersion");
-            if(ReferenceEquals(_StepContext.SegmentUnderTest, null))                 throw new ArgumentNullException("_StepContext.SegmentUnderTest");
-            if (String.IsNullOrWhiteSpace(_StepContext.SegmentUnderTest.NameSuffix)) throw new ArgumentNullException("_StepContext.SegmentUnderTest.NameSuffix");
-
-            _StepContext.SetProjectRegistrationContext(dictionaryLocaleVersion);
-
-            var synonymListName = Config.DefaultSynonymListName + _StepContext.SegmentUnderTest.NameSuffix;
-
-            _StepContext.SetSynonymContext(synonymListName);
-            
-            var browser = _StepContext.Browser;
-*/
-
-
-
-
-            /*
-            
-            if (FeatureContext .Current.FeatureInfo .Tags.Contains("EndToEndDynamicSegment") ||
-                FeatureContext .Current.FeatureInfo .Tags.Contains("EndToEndDynamicStudy"  ) ||
-                ScenarioContext.Current.ScenarioInfo.Tags.Contains("EndToEndDynamicSegment") ||
-                ScenarioContext.Current.ScenarioInfo.Tags.Contains("EndToEndDynamicStudy"  ) )
-            {
-                browser.LoginToiMedidata(_StepContext.CoderAdminUser.Username, _StepContext.CoderAdminUser.Password);
-
-                browser.LoadiMedidataCoderAppSegment(Config.SetupSegment);
-
-                var dictionaryLocale = String.Format("{0} ({1})", _StepContext.Dictionary, _StepContext.Locale);
-
-                browser.RolloutDictionary(_StepContext.GetSegment(), dictionaryLocale);
-
-                browser.LogoutOfCoderAndImedidata();
-            }
-
-
-
-
-    */
-
-
-
-            /*
-            
-            browser.LoginToiMedidata(_StepContext.CoderTestUser.Username, _StepContext.CoderTestUser.Password);
-
-            browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
-
-            
-            
-            if (FeatureContext .Current.FeatureInfo .Tags.Contains("EndToEndStaticSegment") ||
-                ScenarioContext.Current.ScenarioInfo.Tags.Contains("EndToEndStaticSegment") )
-            {
-                browser.CleanUpCodingTasksOnly();
-            }
-
-    */
-
-
-
-
-            /*
-
-            var productionStudies = _StepContext.SegmentUnderTest.Studies.Select(x => x).Where(x => x.IsProduction);
-
-
-
-
-
-
-
-
-
-
-            if (FeatureContext .Current.FeatureInfo.Tags .Contains("EndToEndDynamicSegment") || 
-                FeatureContext .Current.FeatureInfo.Tags .Contains("EndToEndDynamicStudy"  ) ||
-                ScenarioContext.Current.ScenarioInfo.Tags.Contains("EndToEndDynamicSegment") ||
-                ScenarioContext.Current.ScenarioInfo.Tags.Contains("EndToEndDynamicStudy"  ) )
-            {
-                CoderUserGenerator.AssignCoderRolesByIMedidataId(_StepContext.SegmentUnderTest.SegmentUuid, _StepContext.CoderTestUser.MedidataId);
-
-                CoderDatabaseAccess.CreateAndActivateSynonymList(
-                    segment          : _StepContext.GetSegment(),
-                    dictionary       : _StepContext.SourceSynonymList.Dictionary,
-                    dictionaryVersion: _StepContext.SourceSynonymList.Version,
-                    locale           : _StepContext.SourceSynonymList.Locale,
-                    synonymListName  : _StepContext.SourceSynonymList.SynonymListName);
-
-                foreach (var study in productionStudies)
-                {
-                    //JPTODO:: The syncs are taking too long in parallel
-                    // The project registration may not be immidiately available to the user on the first login due to the time it takes for Coder to sync with iMedidata.
-                    // Explicitly wait here, so as not to affect the CoderCore tests.
-                    browser.WaitUntilAdminLinkExists("Project Registration");
-                    //browser.WaitForIMedidataSync();
-                    browser.RegisterProjects(study.StudyName, new List<SynonymList> { _StepContext.SourceSynonymList });
-                }
-            }
-
-    */
-
-
-
-
-
-
-            /*
-
-            
-            browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
-
-
-
-    */
-
-
-
-
-            /*
-
-            if (FeatureContext .Current.FeatureInfo.Tags .Contains("EndToEndDynamicSegment") ||
-                FeatureContext .Current.FeatureInfo.Tags .Contains("EndToEndDynamicStudy"  ) ||
-                ScenarioContext.Current.ScenarioInfo.Tags.Contains("EndToEndDynamicSegment") ||
-                ScenarioContext.Current.ScenarioInfo.Tags.Contains("EndToEndDynamicStudy"  ) )
-            {
-                foreach (var study in productionStudies)
-                {
-                    _Browser.AddRaveArchitectDraft(study.StudyName, "Empty Test Draft");
-                }
-            }
-
-    */
-
-
-
-            /*
-
-            var draftTemplateFilePath = Path.Combine(Config.StaticContentFolder, defaultDraftTemplateFileName);
-            
-            foreach (var study in productionStudies)
-            {
-                _Browser.UploadRaveArchitectDraftTemplate(study.StudyName, defaultDraftName, draftTemplateFilePath, _StepContext.DumpDirectory);
-            }
-
-            _StepContext.DraftName = defaultDraftName;
-
-    */
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
         private void CreateNewProjectCoderRoles()
         {
             _StepContext.Browser.CreateAndActivateWorkFlowRole("WorkflowAdmin");

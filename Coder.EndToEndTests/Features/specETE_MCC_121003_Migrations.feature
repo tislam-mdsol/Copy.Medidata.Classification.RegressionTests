@@ -9,7 +9,7 @@ Scenario: Enter project registration in Coder, setup Rave study with Coder Codin
 	And a Rave Coder setup with the following options
 	| Form			| Field        		| Dictionary   | Locale   | Coding Level 		| Priority | IsApprovalRequired | IsAutoApproval |
 	| ETE2		 	| AETerm		 	| <Dictionary> | <Locale> | PRODUCT				| 1        | true               | true           |
-	When a Rave Draft is published using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE2"
  	| Field         		| Value      			| ControlType | Control Value |
@@ -43,7 +43,7 @@ Scenario: Enter project registration in Coder, setup Rave study with Coder Codin
 	And a Rave Coder setup with the following options
 		| Form | Field       	| Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms      |
 		| ETE2 | AETerm 		| <Dictionary> | <Locale> | LLT         | 2        | true               | true          | LogSuppField2			|
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE2"
  	| Field         		| Value      			| ControlType | Control Value |
@@ -59,7 +59,7 @@ Scenario: Enter project registration in Coder, setup Rave study with Coder Codin
   	| Field            | Value    			| ControlType 	| 
   	| Coder Field      | Drug Verbatim 1 	| LongText    	| 
   	| Log Supp Field 2 | Top   				|			 	|
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And an Amendment Manager migration is started with "SETE5<CoderRaveStudy>" in "AM Subject Search" and "SETE5<CoderRaveStudy>" in "Rave Migration Subject Seletion Dropdown"
 	Then Rave Adverse Events form "ETE2" should not display "BAYER CHILDREN'S COLD" 
 	And Coder App Segment is loaded

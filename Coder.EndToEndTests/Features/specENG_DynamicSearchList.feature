@@ -9,7 +9,7 @@ Scenario: Standard verbatim and supplemental fields using a control type of Dyna
  	And a Rave Coder setup with the following options
   	 | Form  | Field        	| Dictionary   | Locale   | CodingLevel 			| Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms             |
   	 | ETE19 | LL Coding Field | <Dictionary> | <Locale> | PRODUCTSYNONYM          | 1        | true               | true           |  DSearchlist Std Sup			|
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE19"
  	| Field              						| Value 					  	| ControlType       |
@@ -33,7 +33,7 @@ Scenario: Log line verbatim and supplemental fields using a control type of Dyna
  	And a Rave Coder setup with the following options
   	 | Form  | Field        	| Dictionary   | Locale   | CodingLevel 			| Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms             |
   	 | ETE19 | LL Coding Field | <Dictionary> | <Locale> | PRODUCTSYNONYM          | 1        | true               | true           |  DSearchlist LL Sup			|
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Production"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE19"
  	| Field              	| Value 					  	| ControlType       |
