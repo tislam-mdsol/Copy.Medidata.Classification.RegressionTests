@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>2014.2.0.2</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="20140509-01-CleanDB.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- user defined functions here -->
+
+  <!-- charlie change stored procs here -->
+  <Script ScriptName="spWorkflowRoleFetchByUserObject.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity" />
+  <Script ScriptName="spTrackableObjectLoadAccessibleByUserID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity" />
+  <Script ScriptName="spCreateMedidataAppAdminRole.sql" FileType="SQL" RelativePath="SQL/SegmentCreation" />
+
+  <Script ScriptName="spSegmentCreateSupportData.sql" FileType="SQL" RelativePath="SQL/SegmentCreation" />
+  <Script ScriptName="spSetupSuperUser.sql" FileType="SQL" RelativePath="SQL/SegmentCreation" />
+  <Script ScriptName="spSetupExternalVerbatimSecurity.sql" FileType="SQL" RelativePath="SQL/SegmentCreation" />
+
+  <Script ScriptName="spCodingElementsCleanup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+  <Script ScriptName="spSetupDefaultConfiguration.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+  <Script ScriptName="spCreateDefaultDictVerSegmentAssocs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts" />
+
+  <Script ScriptName="spWorkflowsGetDefaultWorkflow.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow" />
+  <Script ScriptName="spUserObjectWorkflowRoleInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity" />
+  <Script ScriptName="spUserObjectWorkflowRoleUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity" />
+  <Script ScriptName="spUserObjectWorkflowRoleUpsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity" />
+
+  <Script ScriptName="spPsOutQueueHealthBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Support Procedures" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  
+</Patch>

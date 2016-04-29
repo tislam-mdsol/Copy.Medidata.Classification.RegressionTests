@@ -1,0 +1,13 @@
+<%
+default_args = "-r features/support/env.rb -r lib -r features/step_definitions"
+columbo_args = "--expand -r lib -r features/support/shamus_support.rb -r features/support/default_selenium.rb"
+default_tags = "-t ~@Draft -t ~@WIP -t ~@Performance -t ~@EndToEnd -t ~@Manual"
+%>
+
+default: <%= default_args %> <%= default_tags %> --exclude features/end_to_end
+performance:  <%= default_args %> -t @Performance
+
+columbo: <%= columbo_args %> <%= default_args %> -t @Validation <%= default_tags %>
+
+standalone: -r features/support/base.rb -r features/step_definitions -t @Validation -t ~@Performance -t ~@EndToEnd  --exclude features/end_to_end
+columbo_standalone: -r features/support/base.rb <%= columbo_args %> -r features/step_definitions -t @Validation -t ~@Performance -t ~@EndToEnd

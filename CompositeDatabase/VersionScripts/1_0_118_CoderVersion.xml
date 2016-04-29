@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.118</PatchNumber>
+
+  <!-- daily change scripts here -->
+
+  <!-- user defined functions here -->
+  <Script ScriptName="fnGetSynonymNodePathChangeType.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+
+  <!-- stored procs here -->
+  
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+
+</Patch>
+ 

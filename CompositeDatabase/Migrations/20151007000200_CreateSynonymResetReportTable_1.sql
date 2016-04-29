@@ -1,0 +1,8 @@
+﻿IF (NOT EXISTS (SELECT NULL FROM INFORMATION_SCHEMA.TABLES
+	WHERE TABLE_NAME = 'SynonymListResetReport'))
+BEGIN
+		CREATE TABLE [dbo].[SynonymListResetReport](
+			SynonymListId INT NOT NULL,
+			Created DATETIME NOT NULL CONSTRAINT DF_SynonymListResetReport_Created DEFAULT (GETUTCDATE())
+		)
+END

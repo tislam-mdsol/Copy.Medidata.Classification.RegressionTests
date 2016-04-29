@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>2014.1.0.1</PatchNumber>
+  
+  <!-- daily change scripts here -->
+
+  <!-- user defined functions here -->
+  <Script ScriptName="fnIsValidForAutoCode.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+
+  <!-- stored procs here -->
+  <Script ScriptName="spCodingDataForReclassify.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternDownloadMap.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternExist.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternLoadByCodingPatternAndList.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="20131220-01-SynonymPerformance.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  
+</Patch>

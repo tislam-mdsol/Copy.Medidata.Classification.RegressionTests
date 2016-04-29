@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB6BB2C2-36AF-474A-9558-571F3134F088}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Coder.RegressionTests</RootNamespace>
+    <AssemblyName>Coder.RegressionTests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Coypu">
+      <HintPath>..\packages\Coypu.2.9.1\lib\net40\Coypu.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gherkin, Version=2.6.5.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\Gherkin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=0.44.0.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\IKVM.OpenJDK.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=0.44.0.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\IKVM.OpenJDK.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=0.44.0.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\IKVM.OpenJDK.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=0.44.0.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\IKVM.OpenJDK.Util.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=0.44.0.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\IKVM.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Medidata.Specrun.Reporting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.Specrun.Reporting.0.0.5\lib\net45\Medidata.Specrun.Reporting.exe</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\ReferenceAssemblies\v2.0\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.core">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SpecFlow.Assist.Dynamic, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.Assist.Dynamic.1.0.3\lib\40\SpecFlow.Assist.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TechTalk.SpecFlow, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow.Generator, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\TechTalk.SpecFlow.Generator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow.Parser, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\TechTalk.SpecFlow.Parser.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow.Utils, Version=1.9.0.77, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\TechTalk.SpecFlow.Utils.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TechTalk.SpecRun, Version=1.2.0.15, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecRun.NUnit.1.2.0\lib\net40\TechTalk.SpecRun.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.2.48.0\lib\net40\WebDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.2.48.0\lib\net40\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\specAdminConfigurationFunctionality.feature.cs">
+      <DependentUpon>specAdminConfigurationFunctionality.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specAdminConfigurationManagement.feature.cs">
+      <DependentUpon>specAdminConfigurationManagement.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specAutoApproveSynonymApproval.feature.cs">
+      <DependentUpon>specAutoApproveSynonymApproval.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\SpecAutoApproveSynonymDetails.feature.cs">
+      <DependentUpon>SpecAutoApproveSynonymDetails.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specAutoApproveSynonymMigration.feature.cs">
+      <DependentUpon>specAutoApproveSynonymMigration.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\SpecAutoApproveSynonymUpload.feature.cs">
+      <DependentUpon>SpecAutoApproveSynonymUpload.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specBrowseAndCode.feature.cs">
+      <DependentUpon>specBrowseAndCode.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specCodingDecisionsReport.feature.cs">
+      <DependentUpon>specCodingDecisionsReport.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specCodingHistoryReport.feature.cs">
+      <DependentUpon>specCodingHistoryReport.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specContextHelpLinks.feature.cs">
+      <DependentUpon>specContextHelpLinks.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specDictionaryResultSelection.feature.cs">
+      <DependentUpon>specDictionaryResultSelection.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specDictionarySearchResults.feature.cs">
+      <DependentUpon>specDictionarySearchResults.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specDictionarySearchTemplate.feature.cs">
+      <DependentUpon>specDictionarySearchTemplate.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specDoNotAutoCode.feature.cs">
+      <DependentUpon>specDoNotAutoCode.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specHelpCenterLinks.feature.cs">
+      <DependentUpon>specHelpCenterLinks.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specIngredientReport.feature.cs">
+      <DependentUpon>specIngredientReport.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specKnowledgeSpaceLinks.feature.cs">
+      <DependentUpon>specKnowledgeSpaceLinks.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specMevDownload.feature.cs">
+      <DependentUpon>specMevDownload.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specMevUpload.feature.cs">
+      <DependentUpon>specMevUpload.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specProjectRegistration.feature.cs">
+      <DependentUpon>specProjectRegistration.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specReclassificationSearch.feature.cs">
+      <DependentUpon>specReclassificationSearch.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specReclassifyWorkflow.feature.cs">
+      <DependentUpon>specReclassifyWorkflow.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specRolesManagement.feature.cs">
+      <DependentUpon>specRolesManagement.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specScreenHelpLinks.feature.cs">
+      <DependentUpon>specScreenHelpLinks.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specStudyMigration.feature.cs">
+      <DependentUpon>specStudyMigration.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specStudyReport.feature.cs">
+      <DependentUpon>specStudyReport.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specSynonymApproval.feature.cs">
+      <DependentUpon>specSynonymApproval.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\SpecSynonymDownload.feature.cs">
+      <DependentUpon>SpecSynonymDownload.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specSynonymMigrationReconciliation.feature.cs">
+      <DependentUpon>specSynonymMigrationReconciliation.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\SpecSynonymUpload.feature.cs">
+      <DependentUpon>SpecSynonymUpload.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specTaskPageAssignments.feature.cs">
+      <DependentUpon>specTaskPageAssignments.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specTaskPageCodingHistoryTab.feature.cs">
+      <DependentUpon>specTaskPageCodingHistoryTab.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specTaskPageTasksTable.feature.cs">
+      <DependentUpon>specTaskPageTasksTable.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specTaskProperties.feature.cs">
+      <DependentUpon>specTaskProperties.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specTaskQueries.feature.cs">
+      <DependentUpon>specTaskQueries.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specTaskQueriesAfterStudyMigration.feature.cs">
+      <DependentUpon>specTaskQueriesAfterStudyMigration.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specTaskSourceTerm.feature.cs">
+      <DependentUpon>specTaskSourceTerm.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Features\specUMCSearchCases.feature.cs">
+      <DependentUpon>specUMCSearchCases.feature</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ConfigData\connections.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ConfigData\Default.srprofile">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ConfigData\Default.srprofile.dice" />
+    <None Include="ConfigData\settings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ConfigData\connections.config.dice">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ConfigData\SmokeTests.srprofile">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DynamicCSVReports\AutoApproveSynonymApprovalMedDRA.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DynamicCSVReports\AutoApproveSynonymApprovalWhoDrugDDEB2.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DynamicCSVReports\Tasks_21_GroupedVerbatimsOfVaryingPriority.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DynamicCSVReports\Tasks_6_CodeAndNext.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DynamicCSVReports\Tasks_1000_MedDRA_Match_Upload.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DynamicCSVReports\Tasks_1500_SingleStudy_NoSup_SingleDict.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DynamicCSVReports\Tasks_30_MultiStudy_MultiSup_MultiDict.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DynamicCSVReports\Tasks_520_MultiStudy_MultiSup_MultiDict.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DynamicCSVReports\Tasks_5_CodeAndNext.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ConfigData\settings.config.dice">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Features\specAdminConfigurationFunctionality.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specAdminConfigurationFunctionality.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specAdminConfigurationManagement.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specAdminConfigurationManagement.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specAutoApproveSynonymApproval.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specAutoApproveSynonymApproval.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SpecAutoApproveSynonymDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SpecAutoApproveSynonymDetails.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specAutoApproveSynonymMigration.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specAutoApproveSynonymMigration.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SpecAutoApproveSynonymUpload.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SpecAutoApproveSynonymUpload.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specBrowseAndCode.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specBrowseAndCode.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specCodingDecisionsReport.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specCodingDecisionsReport.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specCodingHistoryReport.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specCodingHistoryReport.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specContextHelpLinks.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specContextHelpLinks.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specDictionaryResultSelection.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specDictionaryResultSelection.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specDictionarySearchResults.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specDictionarySearchResults.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specDictionarySearchTemplate.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specDictionarySearchTemplate.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specDoNotAutoCode.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specDoNotAutoCode.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specHelpCenterLinks.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specHelpCenterLinks.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specIngredientReport.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specIngredientReport.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specKnowledgeSpaceLinks.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specKnowledgeSpaceLinks.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specMevDownload.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specMevDownload.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specMevUpload.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specMevUpload.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specProjectRegistration.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specProjectRegistration.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specReclassificationSearch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specReclassificationSearch.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specReclassifyWorkflow.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specReclassifyWorkflow.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specRolesManagement.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specRolesManagement.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specScreenHelpLinks.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specScreenHelpLinks.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specStudyMigration.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specStudyMigration.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specStudyReport.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specStudyReport.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specSynonymApproval.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specSynonymApproval.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SpecSynonymDownload.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SpecSynonymDownload.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specSynonymMigrationReconciliation.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specSynonymMigrationReconciliation.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SpecSynonymUpload.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SpecSynonymUpload.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specTaskPageAssignments.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specTaskPageAssignments.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specTaskPageCodingHistoryTab.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specTaskPageCodingHistoryTab.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specTaskPageTasksTable.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specTaskPageTasksTable.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specTaskProperties.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specTaskProperties.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specTaskQueries.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specTaskQueries.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specTaskQueriesAfterStudyMigration.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specTaskQueriesAfterStudyMigration.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specTaskSourceTerm.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specTaskSourceTerm.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\specUMCSearchCases.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specUMCSearchCases.feature.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ConfigData\SmokeTests.srprofile.dice" />
+    <None Include="App.config.dice">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SpecRunTestProfile.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StaticContent\CrammedFile_41mb.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StaticContent\CodingDecisionsReport_Verbatim.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StaticContent\IngredientReport.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StaticContent\MedDRA_15_0_ENG_DDM_Terms.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StaticContent\Mev_Download_Failures.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StaticContent\WhoDrug_Terms.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StaticContent\Ingredient_Report.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StaticContent\JDrug_2015H1_ENG_2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticContent\MedDRA_150_ENG_20.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticContent\SynonymUpload_MultiPath_DDM_MedDRA-Eng-160.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticContent\SynonymUpload_MultiPath_DDM_WhoDrugDDEB2-ENG-201306.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticContent\SynonymUpload_PrimaryList.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticContent\WHODrug_201206_ENG_2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticContent\AZDD_151_ENG_2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticContent\SynonymUpload_PrimaryList_50K_MedDRA-Eng-160.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticContent\SynonymUpload_SinglePath_DDM_MedDRA-Eng-160.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticContent\SynonymUpload_SinlgePath_DDM_JDrug-Jpn-2013H1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticContent\SynonymUpload_SinlgePath_DDM_WhoDrugDDEB2-ENG-201306.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StaticContent\WHODrug_DDEB2_201306_5kSynonym.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Coder.TestSteps\Coder.TestSteps.csproj">
+      <Project>{f78bda11-98eb-45bc-ad23-120e600a6a19}</Project>
+      <Name>Coder.TestSteps</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

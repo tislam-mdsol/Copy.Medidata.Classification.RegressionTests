@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.93</PatchNumber>
+
+  <Script ScriptName="spCodingElementGetNextTaskToCodeWithFilterSort.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spWorkflowTaskFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow" />
+  <Script ScriptName="spGetChildTermsInLevel.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch" />
+  <Script ScriptName="20110923-01-AddTermRelationshipIndex.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="spCodingElementSearchForVCRWithFilterGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCreationDateAging.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+  <Script ScriptName="20110507-01-UpdateMedicalDictionaryLevelTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="spWhoDrugBFirstVersionSetup.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/WhoDrugB/Create SPs" />
+</Patch>
+

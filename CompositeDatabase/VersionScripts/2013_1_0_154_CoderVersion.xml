@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>2013.1.0.154</PatchNumber>
+
+  <!-- daily change scripts here -->
+
+  <!-- user defined functions here -->
+  <Script ScriptName="fnNumberOfOccurrences.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+  <Script ScriptName="fnTermIdsFromPath.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+
+  <!-- stored procs here -->
+  <Script ScriptName="spDictionarySwapStatus.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionarySwap/SendMail" />
+  <Script ScriptName="spCodingElementsCleanup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+  <Script ScriptName="spImpactAnalysisGetStudyVersionCodedTasks.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  
+  </Patch>

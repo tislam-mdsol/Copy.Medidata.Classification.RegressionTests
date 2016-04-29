@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>2013.2.0.5</PatchNumber>
+  
+  <!-- daily change scripts here -->
+  <Script ScriptName="20130906-01-AddVerbatimUpdateWorkflowSystemAction.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20130910-01-AddIndicesForCodingElementUUID.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20130910-02-AddCodingQueriesTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20130910-03-CodingElementsTableChanges.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20130912-01-AlterCodingQueriesTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spFakeWorkflowBotFailure.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+  <Script ScriptName="spMarkGroupInService.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+
+  <Script ScriptName="spCodingElementFindByUUID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spPSCodingTaskReport.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Support Procedures" />
+  <Script ScriptName="spCodingQueryFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingQueryUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingQueryInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingQueryLoadByTask.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermInsertGroupMany.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqObjectTypeR.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqHelpContexts.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  
+</Patch>

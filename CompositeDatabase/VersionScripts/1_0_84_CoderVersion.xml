@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.84</PatchNumber>
+
+  <!-- start of build 84 -->
+
+  <!-- Report fix -->
+  <Script ScriptName="spStudyTaskHistoryAudit.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/>
+
+  <!-- Statistics update -->
+  <Script ScriptName="dbiqHealthChecks.sql" FileType="SQL" RelativePath="SQL/HealthChecks" />
+  <Script ScriptName="spDetectInconsistentTaskStates.sql" FileType="SQL" RelativePath="SQL/HealthChecks" />
+  <Script ScriptName="spDetectStuckTasksForMoreThan10Minutes.sql" FileType="SQL" RelativePath="SQL/HealthChecks" />
+
+  <!-- AutoCode fix -->
+  <Script ScriptName="spMedicalDictionaryTermFetchPrimaryOrDefaultPath.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  
+  <!-- Fix duplicate Terms Display in Dictionary Browser (defect #13525) -->
+  <Script ScriptName="spMedicalDictionaryTermLoadChildren.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- Fix component value normalization for grouping purposes -->
+  <Script ScriptName="spCodingSourceTermInsertGroupMany.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- end of build 84 -->
+
+</Patch>

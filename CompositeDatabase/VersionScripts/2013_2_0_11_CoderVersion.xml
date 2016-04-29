@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>2013.2.0.11</PatchNumber>
+  
+  <!-- daily change scripts here -->
+  <Script ScriptName="20130924-01-AddQueryStatusColumnToCodingElements.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="spSetupCancelQueryWorkflowAction.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts" />
+  <Script ScriptName="20130924-02-WorkflowChanges.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20130926-01-CodingQueryVerbatim.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spCodingElementUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementGetFilterValuesGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementSearchByFilterSecuredAndPagedWithFilterAndGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementSearchForVCRWithFilterGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementSearchForUnload.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyVersionObjectLoadByDictionaryStudyBatch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spCodingQueryLoadByTask.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCreateDefaultWorkflowWithReconsiderState.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts" />
+
+  <Script ScriptName="spCodingQueryInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingQueryUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+</Patch>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>2013.1.1.7</PatchNumber>
+
+  <!-- daily change scripts here -->
+
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spLongAsyncTaskLoadZombies.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spLongAsyncTaskHistoryLoadByTask.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spLongAsyncTasksDequeueMax.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spStudyMigrationBackupAllData.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationClearAllAssignments.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationClearOldBackup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationClearOldSuggestions.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationQueueNewTransmissions.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrEntrsMassMigrate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spGroupVerbatimJpnGetByVerbatimLocale.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spGroupVerbatimEngGetByVerbatimLocale.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+
+</Patch>

@@ -1,0 +1,3 @@
+﻿Verbatim|Code|Level|Path|Primary Flag|Supplemental Info|Status
+JTERM1|399100102|DrugName|DrugName:399100102;Category:1;PreferredName:3991001;DetailedClass:3991;LowLevelClass:399;MidLevelClass:39;HighLevelClass:3|False||Approved|CHONDRON
+JTERM2|131970902|DrugName|DrugName:131970902;Category:6;PreferredName:1319709;DetailedClass:1319;LowLevelClass:131;MidLevelClass:13;HighLevelClass:1|False||Approved|CHONDRON

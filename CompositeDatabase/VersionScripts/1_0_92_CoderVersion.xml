@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.92</PatchNumber>
+
+  <Script ScriptName="spGetSynonymByText.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="20110920-01-ChangeTaskInsertUDT.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <Script ScriptName="dbiqObjectTypeR.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+  <Script ScriptName="spCodingElementsCleanup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+
+  <Script ScriptName="spCodingElementSearchByFilterSecuredAndPagedWithFilterAndGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementSearchForVCR.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementSearchForVCRWithFilter.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermComponentLoadByCodingElement.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermInsertGroupMany.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spCodingSourceTermLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermLoadByCodingElementId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermReferenceLoadByCodingElement.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermSupplementalLoadByCodingElementId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spSearchTransmissionQueueItems.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="fnGetSourceComponents.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+
+  <Script ScriptName="20110921-01-DropCodingSourceTerms.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <Script ScriptName="20110922-01-RemoveWorkflowTaskFromCodingElements.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <Script ScriptName="spWorkflowTaskHistoryLoadByWorkflowTask.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow" />
+  <Script ScriptName="spCodingDataForReclassify.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementLoadAllForBOTByRule.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementLoadByWorkflowTask.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementRetryAutoCodeElements.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyTaskHistoryAudit.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+
+
+</Patch>
+

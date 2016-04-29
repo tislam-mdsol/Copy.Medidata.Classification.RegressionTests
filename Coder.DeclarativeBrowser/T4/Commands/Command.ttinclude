@@ -1,0 +1,287 @@
+﻿<#@ include file="..\Utilities\AutogenHeader.ttinclude" #>
+using System;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using Medidata;
+using Medidata.Dapper;
+using Dapper;
+using System.CodeDom.Compiler;
+
+namespace <#=Namespace #> {
+
+<#
+    foreach(SP proc in procedures)
+    {
+
+#>
+
+    #region  <#=proc.Name#>
+
+    #region  <#=proc.Name#> Command
+    
+    /// <summary>
+    /// A class which represents the <#=proc.Name #> procedure request in the Database.
+    /// </summary>
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=proc.Name#>Command:ICommand<<#=proc.Name#>CommandRequest, <#=proc.Name#>CommandResponse>
+    {
+        private readonly IDbConnection _Connection;
+        private readonly Int32?        _CommandTimeout;
+
+        public <#=proc.Name#>Command(IDbConnection connection, Int32? commandTimeout)
+        {
+            Debug.Assert(!ReferenceEquals(connection, null), "connection can't be null");
+
+            _Connection = connection;
+            _CommandTimeout = commandTimeout;
+        }
+        
+        public <#=proc.Name#>CommandResponse Execute(<#=proc.Name#>CommandRequest request)
+        {
+            Debug.Assert(!ReferenceEquals(request, null), "request can't be null");
+
+            <#=proc.Name#>CommandResponse response = new <#=proc.Name#>CommandResponse();
+
+            var p = new DynamicParameters();
+
+<#
+    foreach(SPParam param in proc.Parameters)
+    {
+        if(param.Mode == "OUT")
+        {
+#>
+            p.Add("@<#=param.Name#>", dbType: DbType.<#=param.DbType#>, direction: ParameterDirection.Output);
+<#	
+            continue;
+        }
+        
+        if(param.Mode == "INOUT")
+        {
+#>
+            p.Add("@<#=param.Name#>", value: request.<#=param.CleanName#>, dbType: DbType.<#=param.DbType#>, direction: ParameterDirection.InputOutput);					
+<#	
+            continue;
+        }
+
+        if(param.UDT != null)
+        {
+#>
+            p.Add("@<#=param.Name#>", new DapperTableParameter(request.<#=param.UDT.ClassName#>s.ToDataTable()));				
+<#	
+
+            continue;
+        }
+
+#>
+            p.Add("@<#=param.Name#>", request.<#=param.CleanName#>);
+
+<#
+    }
+    
+    if (ArithAbortProcedures.Contains(proc.Name))
+    {
+#>
+            _Connection.ExecuteScalar("SET ARITHABORT ON;");
+<#
+    }
+
+            if(proc.ResultSets.Count == 0)
+        {
+#>
+
+            var data = 
+                _Connection
+                .Execute(
+                    "<#=proc.Name#>", 
+                    p,
+                    commandTimeout: _CommandTimeout,
+                    commandType: CommandType.StoredProcedure);
+
+<#
+        }
+        else
+        {
+
+#>
+
+            var data = 
+                _Connection
+                .Query<<#=proc.Name#>CommandResponseData>(
+                    "<#=proc.Name#>", 
+                    p,
+                    commandTimeout: _CommandTimeout,
+                    commandType: CommandType.StoredProcedure)
+                .ToList();
+
+<#
+        }
+        
+    foreach(SPParam param in proc.Parameters)
+    {
+        if(param.Mode == "INOUT" || param.Mode == "OUT")
+        {
+#>
+             response.<#=param.Name#> = p.Get<<#=param.SysType#>>("@<#=param.Name#>");					
+<#	
+        }
+    }
+#>
+
+<#
+    if(proc.ResultSets.Count > 0)
+    {
+#>
+            // TODO: Hanlde multiple result sets
+
+            response.Data = data;
+<#
+    }
+#>
+            return response;
+        }
+
+    }
+
+    #endregion
+
+    #region  <#=proc.Name#> Command Request
+        /// <summary>
+    /// A class which represents the <#=proc.Name #> procedure request in the <#=DatabaseName#> Database.
+    /// </summary>
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=proc.Name#>CommandRequest
+    {
+<#
+            foreach(SPParam param in proc.Parameters)
+            {
+                if(param.Mode == "OUT") continue;
+
+                if(param.UDT != null){ // UTD param
+
+#>
+        public IEnumerable<<#=param.UDT.ClassName #>> <#=param.UDT.ClassName#>s { get; set; }
+<#
+
+                }
+                else { // regluar param
+
+#>
+        public <#=param.SysType #> <#=param.CleanName #> { get ; set; }
+<#            				
+                }
+            }
+#>
+
+    }
+
+    #endregion
+
+    #region  <#=proc.Name#> Command Response
+        /// <summary>
+    /// A class which represents the result data returned from executing <#=proc.Name #> procedure request in the <#=DatabaseName#> Database.
+    /// </summary>
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=proc.Name#>CommandResponse
+    {
+<#
+        foreach(SPParam param in proc.Parameters)
+        {
+            if(param.Mode == "INOUT" || param.Mode == "OUT")
+            {
+
+#>
+            public <#=param.SysType#> <#=param.Name#>{ get; set; }					
+
+<#
+            }
+        }
+
+
+        
+int i = 0;
+        foreach(List<Column> set in proc.ResultSets)
+        {
+
+            
+            var postfix = i==0?string.Empty: (i).ToString();
+            
+#>
+        public IList<<#=proc.Name#>CommandResponseData<#=postfix#>> Data<#=postfix#> { get ; set; }
+<#
+            i++;
+        }
+#>
+
+    }
+
+    #endregion
+
+    #region <#=proc.Name#> Response Data
+
+    
+<#
+        
+
+        if(proc.ResultSets.Count == 0)
+        {
+#>
+    /// <summary>
+    /// A class which represents the result data returned from executing <#=proc.Name #> procedure request in the <#=DatabaseName#> Database.
+    /// </summary>
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=proc.Name#>CommandResponseData{}
+
+<#
+            
+        }
+        else{
+                i = 0;
+                
+        foreach(List<Column> set in proc.ResultSets)
+        {
+           var postfix = i==0?string.Empty: (i).ToString();
+
+#>
+
+    /// <summary>
+    /// A class which represents the result data returned from executing <#=proc.Name #> procedure request in the <#=DatabaseName#> Database.
+    /// </summary>
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=proc.Name#>CommandResponseData<#=postfix#>
+    {
+
+<#
+
+            foreach(Column col in set)
+            {
+#>
+        public <#=col.IsNullable ? col.NullableSysType : col.SysType #> <#=col.CleanName #> { get ; set; }
+<#
+            }
+#>
+
+    }
+
+<#
+        
+            i++;
+        }
+    }   
+
+#>
+
+    #endregion
+
+    #endregion
+
+<#
+}
+    #>
+}
+    <#
+
+ SaveOutput("Commands.cs");
+    
+#>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.141</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="20121024-01-AlterStudyMigrationTables.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spModifyAgeForSynonymApproval.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+  <Script ScriptName="spSegmentedGroupCodingPatternCrossSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternExist.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spDictionaryVersionSubscriptionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrEntrsFrRecncByCtgryPaged.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+ 
+  <Script ScriptName="spStudyMigrationTraceInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationTraceUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationClearOldBackup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationClearAllAssignments.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationBackupAllData.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationBackupGetMigrationTypeCounts.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationGetTasksWithActivePatterns.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationGetSegmentedGroupPatterns.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationGetTaskGroupVerbatimsForBetterMatch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationGetTaskGroupMatchingSynonym.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationGetUncodedTasks.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationBackupNewIdsUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationTaskCount.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationClearOldSuggestions.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyVersionMigrationRestoreBackup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyDictionaryVersionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyDictionaryVersionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+</Patch>

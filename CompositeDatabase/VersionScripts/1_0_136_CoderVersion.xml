@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.136</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="20120927-01-UpdateConfigForSynonymPolicy.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- user defined functions here -->
+  
+  <!-- stored procs here -->
+  <Script ScriptName="spLoadProvisionalSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationMgmntBySegmentDictLocaleVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingDataForReclassify.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spIngredientReportData.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+</Patch>

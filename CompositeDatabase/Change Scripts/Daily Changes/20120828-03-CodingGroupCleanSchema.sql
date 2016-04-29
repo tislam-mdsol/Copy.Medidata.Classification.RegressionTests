@@ -1,0 +1,32 @@
+﻿IF EXISTS (SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'CodingElementGroupComponents'
+	 AND COLUMN_NAME = 'NameText')
+BEGIN
+	
+	ALTER TABLE CodingElementGroupComponents
+	DROP COLUMN NameText
+
+END
+
+IF EXISTS (SELECT NULL FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'CodingElementGroupSupplementals')
+BEGIN
+	
+	DROP TABLE CodingElementGroupSupplementals
+
+END
+
+
+-- Temp Structures Cleanup
+IF EXISTS (SELECT NULL FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'TmpProcessingGroup')
+BEGIN
+	
+	DROP TABLE TmpProcessingGroup
+
+END
+
+IF EXISTS (SELECT NULL FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'TmpProcessingSynonym')
+BEGIN
+	
+	DROP TABLE TmpProcessingSynonym
+
+END
+

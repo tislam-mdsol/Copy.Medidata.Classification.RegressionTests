@@ -1,0 +1,36 @@
+﻿<#@ include file=".\Utilities\Types.ttinclude" #>
+<#@ include file=".\_Settings.ttinclude" #>
+<#
+    var path = this.Host.ResolvePath(".");
+
+    XmlSerializer udtSerializer = new XmlSerializer(typeof(UDT[]));
+    FileStream fs =new FileStream(Path.Combine(path, UdtSchemaFileName), FileMode.Open);
+    var udts = udtSerializer.Deserialize(fs) as UDT[];
+
+    XmlSerializer tableSerializer = new XmlSerializer(typeof(Table[]));
+    fs =new FileStream(Path.Combine(path, TableSchemaFileName), FileMode.Open);
+    var tables = tableSerializer.Deserialize(fs) as Table[];
+
+    XmlSerializer spSerializer = new XmlSerializer(typeof(SP[]));
+    fs =new FileStream(Path.Combine(path, ProcSchemaFileName), FileMode.Open);
+    var procedures = spSerializer.Deserialize(fs) as SP[];
+#>
+<#@ include file=".\Commands\Command.ttinclude" #>
+<#@ include file=".\Commands\CommandExtensions.ttinclude" #>
+
+<#@ include file=".\Fluent\Commands.ttinclude" #>
+<#@ include file=".\Fluent\DbConfig.ttinclude" #>
+<#@ include file=".\Fluent\DbConnection.ttinclude" #>
+<#@ include file=".\Fluent\FilteredReaders.ttinclude" #>
+<#@ include file=".\Fluent\KeyedReaders.ttinclude" #>
+<#@ include file=".\Fluent\AllRecordReaders.ttinclude" #>
+
+<#@ include file=".\Repositories\DTO.ttinclude" #>
+<#@ include file=".\Repositories\KeyReadableRepositoryFactory.ttinclude" #>
+<#@ include file=".\Repositories\FilteredRepositoryFactory.ttinclude" #>
+<#@ include file=".\Repositories\AllRecordsRepositoryFactory.ttinclude" #>
+<#@ include file=".\Commands\UDT.ttinclude" #>
+
+<#@ include file=".\Repositories\SchemaReference.ttinclude" #>
+
+

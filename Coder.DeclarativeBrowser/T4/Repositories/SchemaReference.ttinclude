@@ -1,0 +1,46 @@
+﻿<#@ include file="..\Utilities\AutogenHeader.ttinclude" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.CodeDom.Compiler;
+using Medidata.Dapper;
+
+namespace <#=Namespace #> 
+{
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal static class <#=DatabaseFriendlyName #>DatabaseSchemaReference
+    {
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        public class <#=tbl.Name #>TableSchemaReference
+        {
+<#
+            foreach(Column col in tbl.Columns)
+            {
+
+                if (tbl.ClassName == col.CleanName)
+                {
+                    col.CleanName += "X";
+                }
+#>
+            public readonly string <#=col.Name #> = "<#=col.Name #>";
+<#
+            }
+#>
+        }
+
+        public static readonly <#=tbl.Name #>TableSchemaReference <#=tbl.Name #>Table = new <#=tbl.Name #>TableSchemaReference();
+
+
+
+<#
+}    
+#>
+    }
+}
+
+<#
+    SaveOutput("SchemaReference.cs");
+#>

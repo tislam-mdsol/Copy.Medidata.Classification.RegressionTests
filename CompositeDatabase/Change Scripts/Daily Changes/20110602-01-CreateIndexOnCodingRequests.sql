@@ -1,0 +1,29 @@
+﻿IF NOT EXISTS (SELECT NULL FROM sys.indexes
+	WHERE name = 'IX_CodingRequests_FileOID')
+	CREATE NONCLUSTERED INDEX [IX_CodingRequests_FileOID] ON [dbo].[CodingRequests] 
+	(
+		SourceSystemId ASC,
+		FileOID ASC
+	)
+	WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+IF NOT EXISTS (SELECT NULL FROM sys.indexes
+	WHERE name = 'IX_TrackableObjects_ExternalObjectId')
+	CREATE NONCLUSTERED INDEX [IX_TrackableObjects_ExternalObjectId] ON [dbo].[TrackableObjects] 
+	(
+		ExternalObjectId ASC
+	)
+	WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO 
+
+IF NOT EXISTS (SELECT NULL FROM sys.indexes
+	WHERE name = 'IX_DoNotAutoCodeTerms_Multi')
+	CREATE NONCLUSTERED INDEX [IX_DoNotAutoCodeTerms_Multi] ON [dbo].[DoNotAutoCodeTerms] 
+	(
+		SegmentId, MedicalDictionaryId, DictionaryVersionId, DictionaryLevelId, Locale, Active
+	)
+	INCLUDE
+	( Term )
+	WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO 

@@ -1,0 +1,202 @@
+﻿<#@ include file="..\Utilities\AutogenHeader.ttinclude" #>
+using System;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using Medidata;
+using Dapper;
+using System.CodeDom.Compiler;
+using Medidata.Dapper;
+
+namespace <#=Namespace #> 
+{
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal interface I<#=DataModelBaseName#>DbCommands
+    {
+    <#
+
+    foreach(SP proc in procedures)
+    {
+#>
+        /// <summary>
+        /// Executes the specified <#=proc.Name#>CommandRequest.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>The <#=proc.Name#>CommandResponse</returns>
+        <#=proc.Name#>CommandResponse Request(<#=proc.Name#>CommandRequest request);
+
+        <#=proc.Name#>CommandResponse <#=proc.Name#>
+        (
+<#
+        int i = 0;
+        foreach(SPParam param in proc.Parameters)
+        {
+            if(param.Mode == "OUT") continue;
+
+            if(!ReferenceEquals(param.UDT, null)){
+#>
+            IEnumerable<<#=param.UDT.ClassName #>> p<#=param.UDT.ClassName #>s <#=(i++<proc.Parameters.Count() -1)? ",":""#>
+<#
+               continue;
+
+            }
+
+#>
+            <#=param.SysType #> p<#=param.CleanName #> <#=(i++<proc.Parameters.Count() -1)? ",":""#>
+<#
+        }
+#>        );
+
+<#
+    }
+#>
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal abstract class <#=DataModelBaseName#>DbCommandsBase:I<#=DataModelBaseName#>DbCommands
+    {
+<#
+    foreach(SP proc in procedures)
+    {
+#>
+        /// <summary>
+        /// Executes the specified <#=proc.Name#>CommandRequest.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>The <#=proc.Name#>CommandResponse</returns>
+        public abstract <#=proc.Name#>CommandResponse Request(<#=proc.Name#>CommandRequest request);
+
+        public <#=proc.Name#>CommandResponse <#=proc.Name#>
+        (
+<#
+        int i = 0;
+        foreach(SPParam param in proc.Parameters)
+        {
+            if(param.Mode == "OUT") { i++; continue;  }
+
+            if(param.UDT != null){
+#>
+            IEnumerable<<#=param.UDT.ClassName #>> p<#=param.UDT.ClassName #>s <#=(i++ < proc.Parameters.Count() -1)? ",":""#>
+<#				continue;
+            }
+#>
+            <#=param.SysType #> p<#=param.CleanName #> <#=(i++ < proc.Parameters.Count() -1)? ",":""#>
+<#
+        }
+#>        )
+        {
+            var request = new <#=proc.Name#>CommandRequest
+            {
+<#
+            foreach(SPParam param in proc.Parameters)
+            {
+                if(param.UDT != null)
+                {
+#>
+                    <#=param.UDT.ClassName #>s = p<#=param.UDT.ClassName #>s,
+<#
+
+                    continue;
+                }
+#>
+                    <#=param.CleanName #> = p<#=param.CleanName #>,
+<#
+            }
+#>
+            };
+
+            var response = Request(request);
+            return response;
+        }
+
+<#
+    }
+#>
+
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=DataModelBaseName#>DbCommands:<#=DataModelBaseName#>DbCommandsBase
+    {
+        private readonly IDbConnection _Connection;
+        private readonly Int32?        _CommandTimeout;
+
+        /// <summary>
+        /// Initializes a new instance of the spApplicationAdminFetchCommand class.
+        /// </summary>
+        /// <param name="connection"></param>
+        public <#=DataModelBaseName#>DbCommands(IDbConnection connection, Int32? commandTimeout)
+        {
+            Debug.Assert(!ReferenceEquals(connection, null), "connection can't be null");
+
+            _Connection = connection;
+            _CommandTimeout = commandTimeout;
+        }
+<#
+
+    foreach(SP proc in procedures)
+    {
+#>
+        /// <summary>
+        /// Executes the specified <#=proc.Name#>CommandRequest.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>The <#=proc.Name#>CommandResponse</returns>
+        public override <#=proc.Name#>CommandResponse Request(<#=proc.Name#>CommandRequest request)
+        {
+            Debug.Assert(!ReferenceEquals(request, null), "request can't be null");
+
+            var response = _Connection.Execute(request, _CommandTimeout);
+            return response;
+        }
+
+<#
+    }
+#>
+
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=DataModelBaseName#>DbCommandsTester:<#=DataModelBaseName#>DbCommandsBase
+    {
+<#
+
+    foreach(SP proc in procedures)
+    {
+#>
+
+        public Func<<#=proc.Name#>CommandRequest, <#=proc.Name#>CommandResponse> <#=proc.Name#>Behavior { get; set; }
+
+        /// <summary>
+        /// Executes the specified <#=proc.Name#>CommandRequest.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>The <#=proc.Name#>CommandResponse</returns>
+        public override <#=proc.Name#>CommandResponse Request(<#=proc.Name#>CommandRequest request)
+        {
+            Debug.Assert(!ReferenceEquals(request, null), "request can't be null");
+
+
+            if(ReferenceEquals(<#=proc.Name#>Behavior, null))
+                return null;
+
+            var response = <#=proc.Name#>Behavior(request);
+            return response;
+        }
+
+<#
+    }
+#>
+
+    }
+}
+<#
+SaveOutput("Fluent_Commands.cs");
+#>

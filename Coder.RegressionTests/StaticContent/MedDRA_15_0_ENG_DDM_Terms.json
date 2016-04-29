@@ -1,0 +1,8002 @@
+[
+    {
+        "Term" : "Cross infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Injection site abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lactose intolerance",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pseudo lymphoma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Renal glycosuria",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nail candida",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pelvic abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tuberculoid leprosy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Venous stasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy retina",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF protein normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual evoked potentials abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rinne tuning fork test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rinne tuning fork test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hepatic trauma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Post myelography headache",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diverticulum duodenal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF pH decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vulvitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infected bunion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Boutonneuse fever",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual acuity tests",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Choroidal rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tinea blanca",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Polyneuropathy mumps",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ecthyma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF lactate dehydrogenase",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF lactate dehydrogenase increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lumbar puncture normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy sclera normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adenocarcinoma with transitional cell carcinoma of bladder st IV",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oral infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Epiduroscopy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Superinfection lung",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Spinal cord haemorrhage",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Subacute endocarditis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Genotype drug resistance test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Clitoris abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Angiotensin converting enzyme inhibitor foetopathy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infected epidermal cyst",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Perineal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Angiogram cerebral",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bovine pustular stomatitis virus infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mixed incontinence",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "VATER syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "N-telopeptide urine",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Computerised tomogram head",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Emphysematous cystitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual tracking test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual tracking test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Psychiatric investigation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Meningitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oculopneumoplethysmogram",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tonsillitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF granulocyte count",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF granulocyte count abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gingival infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Encephalitic infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bacterial pyelonephritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF lactate increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF myelin basic protein decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fungal rash",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hepatitis infectious",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Otitis media chronic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Parapharyngeal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infestation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Uterine injury",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Retinal function test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Peripheral nervous system function test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vestibular function test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Chronic sinusitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Genital infection male",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cerebral parenchymal calcification",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pilonidal cyst",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Herpes dermatitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sternitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Neuropsychological test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infusion site pustule",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Incision site infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Atrioventricular block third degree",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Colon perforation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Coryza-like",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cross infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Enterocolitis pseudomembranous",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hemochromatosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypertrophy thymus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lactose intolerance",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lymphomoid",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pseudo lymphoma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Swelling lips",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Genital warts",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diverticulum duodenal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniocentesis exc.chromosome, neural tube screening",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Venous stasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Alactasia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Post myelography headache",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pre-syncope",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Keratosis pillaris",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "SBP increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Campylobacter gastritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Throat infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intestinal disaccharidase deficiencies and disaccharide malabsorption",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Stress incontinence, female",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Choroidal rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other specified congenital anomalies of face and neck",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Difficulty in walking involving joint of other specified sites",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cataplexy and narcolepsy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Serous labyrinthitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anemia of mother, with delivery, with mention of postpartum complication",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Major puerperal infection, delivered, with mention of postpartum complication",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rupture of uterus during labor, unspecified as to episode of care or not applicable",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Concussion with prolonged loss of consciousness, without return to pre-existing conscious level",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Late effect of superficial injury",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Superficial injury of hip, thigh, leg, and ankle",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of other, multiple, and unspecified sites, without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Folliculitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pleocytosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cardiac pacemaker insertion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nail tinea",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Flea infestation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Smallpox",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gallbladder drainage",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tendon repair",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Difficulty in walking",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bicuspid aortic valve",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Borderline leprosy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF glucose",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Red blood cells CSF positive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Single vessel bypass graft",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ultrasound skull normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pathogen resistance",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electrocochleogram abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fundoscopy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Opticokinetic nystagmus tests abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diabetic retinal oedema",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fungaemia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electrooculogram abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypercalcaemia of malignancy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Kerion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypnagogic hallucination",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nuclear magnetic resonance imaging brain abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF specific gravity decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Squamous cell with transitional cell carcinoma of bladder recurrent",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Myocardial rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acute endocarditis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Application site infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pharyngotonsillitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Histoplasmosis cutaneous",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Injection site cellulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sputum purulent",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess soft tissue",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Burn infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dermatitis infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Catheter sepsis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Skin squamous cell carcinoma surgery",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Trichophytic granuloma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vascular rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "General nutrition disorder",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Retinoic acid syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Erythema induratum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Renal papillitis necrotising",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Miliary pneumonia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Satyrism",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Blood incompatibility haemolytic anaemia of newborn",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ophthalmoplegic migraine",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Phlebitis infective",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gastric infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pneumonia aspergillus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infected insect bite",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oculopneumoplethysmogram normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infective aneurysm",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Urethritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyothorax",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pacemaker generated rhythm",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cystitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF cell count decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lobar pneumonia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Otitis media acute",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Urethral abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Labyrinthitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lung infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mastoid abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Skeletal injury",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adenocarcinoma with transitional cell carcinoma of bladder",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Zoonosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Respiratory tract infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Uterine abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bowel movement irregularity",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Unresponsive to verbal stimuli",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Posterior capsule rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cardiac valve abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Graft versus host disease in skin",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Testicular abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Drug exposure before pregnancy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyelonephritis viral",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mini mental status examination abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infusion site anaesthesia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Angio-edema",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Enteritis pseudomembranous",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Heart block AV complete",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hemosiderosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Labyrinthitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Myasthenia gravis-like paralysis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Myasthenia gravis-like syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Myocardial rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pleocytosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Syndrome Guillain-Barre",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniocentesis for chromosomal abnormalities",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Condylomata acuminatum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gallbladder drainage",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tendon repair",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Difficulty in walking",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dental caries aggravated",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Venostasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adult dermatomyositis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Premature birth",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Chronic ambulatory peritoneal dialysis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Increased shortness of breath",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Renal concentrating power decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Excitement",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Stress incontinence, male",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other vomiting complicating pregnancy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of hand(s) except finger(s) alone, infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of hip, thigh, leg, and ankle, without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Isoimmunization from other and unspec blood-group incompat, affecting manag of mother, delivered",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intcran inj of oth and unspec nature, with open intcran wound, with concussion, unspec",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Excitation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fulminant hepatic failure",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Squamous cell with transitional cell carcinoma of bladder recurrent",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dental cavity",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pneumonia aspergillus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Coronary restenosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Skin squamous cell carcinoma surgery",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cataplexy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cholangitis suppurative",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Endometritis decidual",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Genitalia external painful",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Herpes zoster",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Superinfection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Concussion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sycosis barbae",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Candida nappy rash",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cardiac pacemaker battery replacement",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Corneal reflex decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Eaton-Lambert syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy cornea",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF protein decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Renal tuberculosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual evoked potentials normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Condom",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF protein",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Meningitis aseptic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy peripheral nerve abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Urge incontinence",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Queensland tick typhus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Recurring skin boils",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electronystagmogram abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tympanometry normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Slit-lamp examination",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF pressure increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Portal pyaemia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ovarian abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypnopompic hallucination",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vascular resistance pulmonary normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Echoencephalogram",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Echoencephalogram normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF specific gravity abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF specific gravity increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lumbar puncture abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Muscle abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lipogranuloma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Osteocalcin",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ascites infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Meningoencephalitis bacterial",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Meningeal leukaemia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electron radiation therapy to blood",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Angiogram cerebral normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Campylobacter intestinal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy ear",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sleep study normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF monocyte count",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF monocyte count decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Carotid artery atheroma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Neonatal infective mastitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pilonidal cyst congenital",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Postoperative respiratory distress",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Paraoesophageal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Catheter site infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyopneumothorax",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hordeolum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infective tenosynovitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cerebral ventriculogram abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Shunt infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Glasgow coma scale normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cutaneous larva migrans",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Albumin CSF",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Streptococcal serology positive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Colour vision tests normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dry socket",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gastrointestinal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nerve stimulation test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyelonephritis acute",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tinea infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Central nervous system infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Disaccharide metabolism disorder",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Peripheral nervous system function test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acute tonsillitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Osteoprotegerin decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cholecystitis infective",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Herpes zoster oticus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Young's syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Stent-graft endoleak",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Funisitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Postoperative wound infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Extrinsic iliac vein compression",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lasegue's test positive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Skin infection helminthic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Post procedural headache",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess breast",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "AV block third degree",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cataplexy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Myocardial rupture (post infarct)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Reaction lymphoma-like",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vaccinia aggravated",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Concussion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pharyngitis (excl tonsillitis)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tendon reconstruction",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pseudomembranous colitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acute GVH disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Late period",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Swollen lips",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Laugh incontinence",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cervical dyskaryosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Reflex response audiometry abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lip swelling",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acute posthaemorrhagic anaemia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pneumonia aspergilla",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Difficulty in walking involving lower leg joint",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Malignant neoplasm of thyroid gland",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Spasm of sphincter of Oddi",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rupture of uterus during and after labor",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pain abdo",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Concussion with moderate loss of consciousness",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury of trunk, infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of shoulder and upper arm, infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury of shoulder and upper arm, infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of foot and toe(s), without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intcran inj of oth and unspec nature, w/o ment of open intcran wound, with no loc",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Concussion, with open intracranial wound",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tenorrhaphy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cavity NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypopyon",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Respiratory distress",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Penile abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Atrioventricular block complete",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hair plucking",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Body tinea",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Genital pain male",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Detached retina repair",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Uterine rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Epithelioma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF electrophoresis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy retina normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Stitch abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF electrophoresis normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rhesus haemolytic disease of newborn",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cellulitis streptococcal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acoustic stimulation tests normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tympanometry",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual field tests",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual field tests abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Echoencephalogram abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cognitive deterioration",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tinea nigra",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Paravaccinia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Yaws of skin",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Colostomy infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Colonic perforation postoperative",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF lactate dehydrogenase decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ultrasound eye",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Squamous cell with transitional cell carcinoma of bladder st II",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tooth infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pancreatic abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Superinfection oral",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Posturography",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lymph node abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF glucose increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Osteocalcin decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Somatosensory evoked potentials",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyloric abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nitritoid crisis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Herpetic stomatitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Skin bacterial infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Campylobacter gastroenteritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adherent leukoma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Injection site pustule",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tinea versicolour",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Psoas abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Septic phlebitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hepatobiliary infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cutaneous anthrax",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Seminal vesicular infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Corneal light reflex test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Chest wall abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cerebral ventriculogram",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Wound abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Application site excoriation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Thyroid gland cancer",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Excoriation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Retinogram normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Retinogram abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF myelin basic protein increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intervertebral discitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF cell count",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diabetic eye disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF cell count increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Osteomyelitis chronic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Perinephric abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Salpingitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abdominal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intraocular pressure test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Subcutaneous abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Corneal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Perianal fungal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Septic rash",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Encephaloduroarteriosynangiosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Implant site pustules",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Incision site cellulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Arteriovenous graft aneurysm",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Chronic allograft nephropathy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Disease Addison's",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Myasthenia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acute pharyngitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diarrhoea campylobacter",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Thyroid gland cancer",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hair plucking",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Campylobacter gastroenteritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Complete heart block",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lymphoma like reaction",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lip oedema",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Idiopathic narcolepsy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hodgkins-like",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nausea & vomiting in mother",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CAPD",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Uterine rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Atrioventricular block complete",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Increased SOB",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mycobacterium tuberculosis cervical adenitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pseudo-blepharoptosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oral mucosa swollen",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Comedo",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Disaccharide metabolism disorder NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Immunodeficiency with increased IgM",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Heart block complete",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Difficulty in walking involving joint, site unspecified",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Difficulty in walking involving joint of pelvic region and thigh",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Late vomiting of pregnancy, unspecified as to episode of care",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other vomiting complicating pregnancy, delivered",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anemia complicating pregnancy, childbirth, or the puerperium",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pneumonia in aspergillosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rupture of uterus before onset of labor",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Uterine injury NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of trunk, without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intcran inj of oth and unspec nature, w/o ment of open intcran wound, prol loc, w/o rtrn to pecl",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Iatrogenic colon perforation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Colonic perforation postoperative",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bone swelling painful",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cognitive deterioration",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Transitional cell carcinoma of the bladder stage 0 with cancer in situ",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Polymyositis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diarrhoea infectious",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anorectal cellulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Orf",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Prostatic abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Galactose intolerance",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy peripheral nerve",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electromyogram abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Haemosiderosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy cornea abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nerve conduction studies abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy peripheral nerve normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF protein abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cellulitis pasteurella",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Periodontal destruction",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniocentesis abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electronystagmogram",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gonioscopy normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Laryngeal papilloma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Urethral stricture post infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Epiglottitis obstructive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Viral labyrinthitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess intestinal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Renal syphilis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Parasitic infection intestinal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cellulitis gangrenous",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sleep attacks",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nuclear magnetic resonance imaging brain normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF lymphocyte count increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Keratometry",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Topography corneal normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vital dye staining cornea absent",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Paracentesis eye abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sinobronchitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intestinal spasm",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Scrotal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pseudocroup",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Schirmer's test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Myometritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intranasal numbness",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Polysubstance abuse",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pudendal nerve terminal motor latency test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Neonatal pneumonia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Obstetric infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cardiovascular autonomic function test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cardiac infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tubo-ovarian abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Condyloma acuminatum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Subdiaphragmatic abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual tracking test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Optic nerve cup/disc ratio decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Optic nerve cup/disc ratio increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tinea barbae",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oculopneumoplethysmogram abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Atrial bigeminy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abdominal sepsis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tandem gait test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oesophageal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visceral larva migrans",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Appendicitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Streptococcal serology",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchitis chronic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ear infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF cell count normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection masked",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Osteomyelitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Otitis media",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tracheitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Urinary tract infection neonatal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dermatophytosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF white blood cell count positive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sensory level abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cyclosporidium infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oculomotor study",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Chronic tonsillitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Scrotal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cervicitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infective spondylitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Guillain-Barre syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Uterine perforation post procedural",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Graft versus host disease in intestine",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Device lead issue",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intraocular lens dislocation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Decay dental",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Heart block AV third degree",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Polymyositis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tolerance increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Perianal warts",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tooth caries NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Galactose intolerance",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ruptured uterus (labour complication)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Haemosiderosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "TB Gland neck",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Uterus rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pseudomembranous enterocolitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Angina on recumbency",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Chronic GVH disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "DBP decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cramp in legs thighs",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasions",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Guillain-Barre syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniocentesis abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Viral labyrinthitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ganglion of joint",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Suppurative labyrinthitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anemia, antepartum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury of face, neck, and scalp, without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury of fingers without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury of fingers, infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypertrophy of breast",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniotic fluid abnormal NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intcran inj of oth and unspec nature, with open intcran wound, with loc of unspec duration",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anaemia complicating pregnancy, childbirth, or the puerperium",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rupture of uterus during and after labour",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Condyloma acuminatum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "BOOP",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cervical smear positive class (3-5)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cyclosporidium infection NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Broken lead cardiac pacemaker",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intraocular lens dislocation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "IOL dislocation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Erysipelas",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mastitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rash pustular",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Coronary artery surgery",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ganglion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Molluscum contagiosum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Catheterisation cardiac",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lumbar puncture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Erythroblastosis foetalis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gas gangrene",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyoderma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Arteriopathic disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF protein increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF oligoclonal band",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Quadruple vessel bypass graft",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fundoscopy abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nipple infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection in an immunocompromised host",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Uterine cervix hypertrophy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Skin graft infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electronystagmogram normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual acuity tests normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tuberculin test positive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Foot and mouth disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Herpes simplex otitis externa",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pharyngeal gonococcal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ano-rectal ulcer",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Foetal hydantoin syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Latissimus dorsi flap",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF specific gravity normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual acuity tests near",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Genital infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ophthalmodynamometry normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rectal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyelocystitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cardiac pacemaker replacement",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Brain stem auditory evoked response abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Spinal cord infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Appendiceal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Puncture site abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Maternal drugs affecting foetus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intestinal fistula infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bacteraemia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Deoxypyridinoline/creatinine ratio",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Periumbilical abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Enterocutaneous fistula",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Purulent synovitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cerebral aspergillosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Haemodynamic instability",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vaginal papilloma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Urethral carbuncle",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Epidermodysplasia verruciformis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nerve injury",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pharynx discomfort",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Psychiatric evaluation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess jaw",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF monocyte count positive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lochia malodourous",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ventriculogram",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Familiar hemiplegic migraine",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Spinal myelogram abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tensilon test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fungal sepsis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Streptococcal serology negative",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pelvic inflammatory disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Central nervous system abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dialysis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Herpes zoster infection neurological",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bacterial toxaemia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Genital abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Peridiverticulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Otoacoustic emissions test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Eczema herpeticum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Craniotabes",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infusion site lymphadenopathy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abuse with addiction",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Addison's disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bad taste",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Breast enlargement female",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Depression agitated",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Feeling lack of",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Guillain Barre syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Myasthenia gravis-like reaction",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pseudolymphoma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Psychomotor development impaired",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Reaction myasthenia gravis-like",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Renal concentrating power decr",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Shoulder blade pain",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tooth caries",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dorsopathies",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniocentesis for neural tube defects",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Coronary artery surgery",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ganglion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Perianal irritation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tooth caries aggravated NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Angina decubitus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronzed diabetes",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lip edema",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Quadruple vessel bypass graft",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Morning sickness",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gait inability",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fetal phenytoin syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fetal valproate syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bladder transitional cell carcinoma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Penile wart",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pharynx discomfort",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Persistent hyperplasia of thymus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Atrioventricular block, complete",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tuberculin test positive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nonspecific reaction to tuberculin test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Labyrinthitis, unspecified",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Circumscribed labyrinthitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Unspecified vomiting of pregnancy, unspecified as to episode of care",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Major puerperal infection, postpartum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of trunk, infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Superficial injury of finger(s)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pharyngeal gonococcal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intcran inj of oth and unspec nature, with open intcran wound, with no loc",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intcran inj of oth and unspec nature, with open intcran wound, with prol loc and rtrn to pecl",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Eczema herpeticum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Reaction to spinal or lumbar puncture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchiolitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypoparathyroidism",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Xanthochromia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intra-nasal antrostomy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Neurosyphilis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vulval abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lassa fever",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electroencephalogram",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cavernous sinus thrombosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Myasthenic syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Audiogram abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rinne tuning fork test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF lymphocyte count",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Genital pruritus female",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF oligoclonal band absent",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF oligoclonal band present",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF pH abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Low tension glaucoma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nickel sensitivity",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Foetal valproate syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Coccidioidomycosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cow pox",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual field tests normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Immunodeficiency with increased immunoglobulin M",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Petrositis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Polyneuropathy in malignant disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Paracentesis ear abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ultrasound eye normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Angiogram retina abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ophthalmodynamometry abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Atrial rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Buttock pain",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tinea imbricata",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Groin infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ross river virus infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gallbladder empyema",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Haematoma infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniorrhexis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Measles post vaccine",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anticonvulsant toxicity",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Septic necrosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mutism",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infected sebaceous cyst",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF neutrophil count decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mucocutaneous leishmaniasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Necrotising ulcerative periodontitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intrauterine infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Difficult to wean from ventilator",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Eyelid folliculitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Peritoneal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rickettsialpox",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Spinal myelogram",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Wound infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dacryocystitis infective",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Schirmer's test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cerebral ventriculogram normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infected neoplasm",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Skin infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Wound sepsis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF granulocyte count normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dialysis device insertion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pelvic sepsis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infected lymphocele",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyridinoline urine",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF lactate decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF myelin basic protein",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Albumin CSF normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infectious crystalline keratopathy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Neuro-ophthalmological test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Neuro-ophthalmological test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Upper respiratory tract infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Laryngotracheo bronchitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intraocular pressure test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Arthritis infective",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Genitourinary tract infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vestibular function test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Scan brain",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection parasitic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fungal skin infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchitis acute viral",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Extradural abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Penile infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Congenital infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Enteritis infectious",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Catheter bacteraemia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rhinitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Implant site cellulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Spermatic cord funiculitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF mononuclear cell count increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nail bed infection viral",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Afibrinogenemia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bacterial resistance",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchiolitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Disorder EEG (NOS)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypertrophy uterine cervix",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypoparathyroidism",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection parasitic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection respiratory",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pelvic inflammation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Uremic syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Chronic pharyngitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vasomotor rhinitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tendon decompression",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nickel sensitivity",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Narcolepsy with cataplexy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Myasthenic syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cough incontinence",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Foetal valproate syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Polymyalgia aggravated",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pharynx strange sensation of",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acromegaly and gigantism",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Immunodeficiency with increased immunoglobulin M",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other vomiting complicating pregnancy, unspecified as to episode of care",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Unilateral partial paralysis of vocal cords",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rupture of uterus during labor, delivered, with mention of postpartum complication",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Superficial injury of elbow, forearm, and wrist",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of other, multiple, and unspecified sites, infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Isoimmunization from other and unspec blood-group incompatibility, unspec as to eoc in pregnancy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Isoimmunization from other and unspec blood-group incompat, affecting manag of mother, antepart",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lymphangitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Narcolepsy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nasopharyngitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sepsis neonatal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Angioneurotic oedema",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hand-foot-and-mouth disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Measles",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tinea pedis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Death of sibling",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Purulent discharge",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bed bug infestation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual evoked potentials",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Isoimmune haemolytic disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess of external auditory meatus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF neutrophil count",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adrenocortical insufficiency chronic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Stress incontinence",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Foetal alcohol syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tympanometry abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Omphalitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hirudiniasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Blister infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Epidemic pleurodynia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Thrombophlebitis septic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pseudofolliculitis barbae",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Corneal epithelium disorder",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy sclera",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adenocarcinoma with transitional cell carcinoma of bladder st 0",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Squamous cell with transitional cell carcinoma of bladder st III",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mitral valve hypoplasia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Implantable defibrillator insertion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Stent occlusion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Encephalitis lethargica",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Thyroglossal cyst infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anaesthetic complication foetal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy ear abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pneumatic retinopexy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cardiovascular autonomic function test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "N-telopeptide urine normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Skin candida",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Arteriovenous fistula site infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "ABO isoimmunisation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Emphysematous cholecystitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dandruff",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Retinal naevus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mediastinal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Herpes zoster multi-dermatomal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Glasgow coma scale abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Viraemia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tuberculous tenosynovitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Methylmalonic aciduria",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Prostatic intraepithelial neoplasia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Endometritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Impetigo",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nasal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nasal vestibulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nerve stimulation test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diverticulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniotic cavity infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Arthropod infestation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Laryngopharyngitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pleural infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acute sinusitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oculomotor study normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Brain scan normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Squamous cell with transitional cell carcinoma of bladder",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Osteoprotegerin",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Osteoprotegerin ligand decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pericarditis infective",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Unspecified agent exposure during pregnancy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF polymorphonuclear cell count increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF polymorphonuclear cell count decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF mononuclear cell count decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pancreatitis viral",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Macular rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Polyomavirus-associated nephropathy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess kidney",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Carcinoma thyroid",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Comedome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diverticulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Endometritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fever sore",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Headache vascular",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection susceptibility incr",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Liver function tests multiple abnorm",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lymphangitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Narcolepsy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nasopharyngitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Onychia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pain peptic ulcer",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sepsis neonatal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sepsis secondary",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tooth caries aggravated",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Achilles tendon repair",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Stress incontinence",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Thyroid carcinoma NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Delayed period",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "SBP decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CABG",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adrenocortical insufficiency chronic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Swelling of lips",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Condylomata acuminata",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Thymic hypertrophy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Concussion with no loss of consciousness",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Concussion with brief loss of consciousness",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of face, neck, and scalp except eye, without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Superficial injury of trunk",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury of trunk, without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of shoulder and upper arm, without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury of elbow, forearm, and wrist, without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Superficial injury of hand(s) except finger(s) alone",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury of hip, thigh, leg, and ankle, without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury of hip, thigh, leg, and ankle, infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electroencephalogram abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Injection site infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vomiting in pregnancy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Conjunctivitis infective",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Erythrasma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Post polio syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Weber tuning fork test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy cornea normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abortion infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniocentesis normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ultrasound skull",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF pH",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy spinal cord",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy brain abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy retina abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Whole blood transfusion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF glucose abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rocky mountain spotted fever",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyelonephritis mycoplasmal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Streptococcal impetigo",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Regurgitation of food",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Slit-lamp tests abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Axillary candidiasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Thymus abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rubinstein-Taybi syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hydrocele male infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Black piedra",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Otitis externa candida",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Peridiverticular abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF specific gravity",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF pressure normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Colour vision tests abnormal red-green",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vital dye staining cornea present",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Angiogram retina",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Closed head injury",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Drug exposure during pregnancy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Brain stem auditory evoked response",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pharyngolaryngeal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Trendelenburg's symptom",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Postoperative abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abdominal wall infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anal fistula infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Herpetic gingivostomatitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hyposthenuria",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Psychiatric evaluation abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pudendal nerve terminal motor latency test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF monocyte count negative",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF white blood cell count increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF white blood cell count decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Opportunistic infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infusion site infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchial hyperactivity",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Furuncle",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hepatic infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Facial wasting",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Implantable defibrillator replacement",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pelvic infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Milker's nodules",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Application site folliculitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF pressure",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchiectasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Empyema",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mastoiditis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Osteomyelitis acute",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sepsis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Toxic shock syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vaginal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vulvovaginitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Eyelid infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF white blood cell count",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF white blood cell count negative",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nail bed infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rubella infection neurological",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess of salivary gland",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Laryngotracheitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sensory level",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sensory level normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess of eyelid",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Brain scan abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Erythema migrans",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Unresponsive to pain stimuli",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cementoblastoma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Olfactory test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Shoulder pain",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lymphadenitis bacterial",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dental fistula",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mini mental status examination normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abuse",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Boil",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchiectasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electroencephalogram abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Glycosuria renal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hyposthenuria",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Injection site infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lymphosarcomoid",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mastitis male",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Papillitis renal necrotizing",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sepsis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Shoulder pain",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vomiting in pregnancy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lymphoma benign",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Poliomyelitis late effects of",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nephro-uterectomy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Brain damage (traumatic)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Penile warts",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "TB of neck gland",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Childhood dermatomyositis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ruptured uterus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "DBP increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acute oedema of mucous membranes of inside of lips",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Whole blood transfusion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Polymyalgia worsened",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniocentesis normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Awaking excitability",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Skeletal injury NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Isoimmunization NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Congenital anomalies of ear, face, and neck",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Late vomiting of pregnancy, delivered",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rupture of uterus before onset of labor, unspecified as to episode of care",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Concussion with loss of consciousness of unspecified duration",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Concussion, unspecified",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Superficial injury of shoulder and upper arm",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of elbow, forearm, and wrist, infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pseudomembranous patch",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dyspnea exacerbated",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diarrhea campylobacter",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Post polio syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dermatomyositis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Paronychia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Scarlet fever",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abdominal rigidity",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Perianal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tinea capitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sucrose intolerance",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Audiogram",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Myringitis bullous",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Weber tuning fork test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Triple vessel bypass graft",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF lymphocyte count normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Trench fever",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Comedone",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pupillary light reflex tests normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual acuity tests abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Opticokinetic nystagmus tests normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy spinal cord normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mediastinal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Encephalitis australia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Macular reflex abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pigmentation lip",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Retroperitoneal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess sweat gland",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sleep paralysis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Neutropenic sepsis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Douglas' abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Peritonsillitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Williams syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cerebral fungal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pacing threshold increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Varicella",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Transplant abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Febrile infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Periorbital abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Venous repair",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lumbar puncture headache",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cardiovascular autonomic function test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF neutrophil count increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "N-telopeptide urine increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cutaneous leishmaniasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Central line infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Eye infection intraocular",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sweat gland infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pneumonia necrotising",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tracheomalacia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abdominal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bacillary angiomatosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biliary sepsis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Head lag abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Application site abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Schirmer's test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Myocardiac abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bacterial labyrinthitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Radiation exposure during pregnancy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tensilon test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Neutropenic infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Albumin CSF decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pacing threshold",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Breast infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Colour vision tests abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ear lobe infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Erysipeloid",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pneumonia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Urinary tract infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nail infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Central nervous system function test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vestibular function test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intraspinal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adrenalitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Laryngitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Olfactory test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gustometry",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gustometry abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gustometry normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Monofilament pressure perception test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Catheter site bruise",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Orbital infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fungal labyrinthitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Application site cellulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mini mental status examination",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infusion site cellulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Male contraception",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Embolic pneumonia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Altered neurotransmitter level (NOS)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Breast infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Common cold",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dermatomyositis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fibrinopenia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rupture uterus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Syndrome uremic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Thyroid neoplasm malignant",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Unresponsive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Uterus ruptured",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Agitated depression",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pharyngitis NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Excision biopsy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sucrose intolerance",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Crushed nerve",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acute hepatic failure",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Collar stud abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abdo pain",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Triple vessel bypass graft",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Comedone",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pharynx ill sensation of",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acute infective polyneuritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Unspecified congenital anomalies of face and neck",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ganglion of tendon sheath",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Myasthenic syndromes in diseases classified elsewhere",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other injuries to skeleton due to birth trauma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gallstone ileus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rupture of uterus during labor, postpartum condition or complication",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Major puerperal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of face, neck, and scalp except eye, infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intcran inj of oth and unspec nature, with open intcran wound, with brief loc",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury of hand without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other specified congenital anomaly of face and neck",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cardiac rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Penetrating lateral abdominal wounds",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lumbar puncture headache",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF leakage",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vulvovaginal warts",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Transitional cell carcinoma of the bladder stage I with cancer in situ",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fundoscopy normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intertrigo",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anal tinea",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infected skin ulcer",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Liver abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mediastinitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ventricle rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Genital pain female",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Audiogram normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF neutrophil count positive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF pH normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acoustic stimulation tests abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cortical evoked response measurements",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Selective mutism",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Obstructive chronic bronchitis with acute exacerbation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Phaehyphomycosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oddi's sphincter constriction",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyoderma streptococcal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diarrhoea infectious neonatal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Septic embolus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Paracentesis ear normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy sclera abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Squamous cell with transitional cell carcinoma of bladder st 0",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Septic shock",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Brain stem auditory evoked response normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dural tap",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infected naevus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Prostate infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Osteocalcin increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Purulent pericarditis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Catheter related infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniotic infection syndrome of Blane",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Kaposi's varicelliform eruption",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gallbladder abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Post procedural cellulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diabetic uveitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sleep study",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Psychiatric evaluation normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Evan's syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "N-telopeptide urine abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Injection site joint movement impairment",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Wound evisceration",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infective myositis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Graft infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pityriasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Post viral fatigue syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rhinolaryngitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Head lag normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Epiglottitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vibration test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Corneal diameter increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF myelin basic protein normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Antiacetylcholine receptor antibody",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Albumin CSF increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchitis acute",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchopneumonia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Kidney infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Soft tissue injury",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Corneal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Congenital pneumonia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Onychomycosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Viral skin infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dermo-hypodermitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cranial nerve infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Birth premature",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Blackheads",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchitis acute",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hodgkin's-like",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Incomplete urination",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection breast",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mastitis acute female",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Moniliasis cutaneous",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nerve damage",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sepsis postpartum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vaginitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess dental",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anorectal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Campylobacter diarrhoea",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Coronary bypass",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Chronic laryngitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Endometritis NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fundoscopy normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intertrigo",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lower urinary tract infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Onychomycosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Venereal warts",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anal tinea",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vestibulitis, nasal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Shingles",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Thrush of skin NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dermatophytosis of nail",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acute dacryocystitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infected skin ulcer",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Liver abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mediastinitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Viral rash NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Boil on buttock",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bullous myringitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ventricle rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Laryngitis (acute)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess of prostate",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cystitis acute NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Non-suppurative otitis media",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ringworm of foot",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ringworm of scalp",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Application site rash",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "DBP",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Thyroid adenocarcinoma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Heart block third degree",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Reflex response audiometry normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Menstruation delayed",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Late vomiting of pregnancy, antepartum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Unspecified vomiting of pregnancy, delivered",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Unspecified vomiting of pregnancy, antepartum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Superficial injury of face, neck, and scalp except eye",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of hip, thigh, leg, and ankle, infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intestinal infection due to campylobacter",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oddi's sphincter constriction",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anemia of mother, comp pregnancy, childbirth, or the puerperium, unspec as to eoc",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intcran inj of oth and unspec nature, w/o ment of open intcran wound, prol loc and rtrn to pecl",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Inflammation of the inner ear(s)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchiolitis obliterans with organizing pneumonia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fetal hydantoin syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Left ventriculography",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cellulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Excitability",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Parotitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniocentesis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bartholin's abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Naso-lacrimal duct probe",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Haemochromatosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyometra",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cervical gland tuberculosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypothalamo-pituitary disorders",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pseudohypoparathyroidism",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cutaneous sporotrichosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Parotid abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vitreous abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Prolactinoma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acrodermatitis chronica atrophicans",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nuclear magnetic resonance imaging brain",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF lactate dehydrogenase normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Topography corneal abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adenocarcinoma with transitional cell carcinoma of bladder st III",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Squamous cell with transitional cell carcinoma of bladder st I",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Somatosensory evoked potentials abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Congenital tricuspid valve atresia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Groin abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Foetal warfarin syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Periorbital infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rhinotracheitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Haemorrhoid infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pulmonary sepsis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gingival abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fitz-Hugh-Curtis syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Perirectal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tuberculoma of central nervous system",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pudendal nerve terminal motor latency test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gianotti-Crosti syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cryptococcal cutaneous infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Facet joint syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nymphomania",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Panencephalitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Polytraumatism",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Epididymal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pharyngitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Districhiasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Corneal light reflex test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Corneal light reflex test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Peritonsillar abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Post procedural vomiting",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cardiac perforation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Glasgow coma scale",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Transmission of drug via semen",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Enterocolitis infectious",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bacteroides bacteraemia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tensilon test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vibration test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vibration test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyridinoline urine increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF lactate normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Eye infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lung abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyelonephritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyonephrosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Central nervous system enteroviral infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intracranial injury",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Central nervous system function test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Post abortion infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anorectal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biliary tract infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Epidemic nephropathy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biliary abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gradenigo's syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF immunoglobulin increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Graft versus host disease in liver",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Conductive keratoplasty",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pancreatitis bacterial",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Deoxypyridinoline urine increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Paraneoplastic retinopathy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Breast enlargement",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Breast inflammation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Caries dental",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cellulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dermatitis fungal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Endometrium cystic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Enlargement breast female",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Excitability",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Face malformation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hair thinning",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hemicephalgia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intestinal perforation large",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lymphoma-like reaction",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Menses onset delayed",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Moniliasis axillary",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Parotitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pharyngitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyelonephritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Reflex corneal diminished absent",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Supression adrenal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anal warts",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniocentesis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Blood transfusion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Naso-lacrimal duct probe",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Haemochromatosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cervical gland tuberculosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Face malformation NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infected lip",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Torn Achilles tendon (traumatic)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pseudohypoparathyroidism",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tetany-like seizure",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acute posthemorrhagic anemia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Difficulty in walking involving joint of multiple sites",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Late vomiting of pregnancy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Unspecified vomiting of pregnancy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anemia of mother, comp preg, childbirth, or the puerp, unspec as to episode of care",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anemia, postpartum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury of face, neck, and scalp, infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury of shoulder and upper arm, without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of elbow, forearm, and wrist, without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury of hand(s) except finger(s) alone, infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypertrophy breast",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Parametritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acromegaly",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Death of spouse",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Haemodialysis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Peritoneal dialysis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Postpartum sepsis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cardiac pacemaker removal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Patellectomy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Death of parent",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Death of child",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Death of friend",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy conjunctiva normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Eczema infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bacterial abscess central nervous system",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Localised infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Positive Rombergism",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nerve conduction studies normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "ABO haemolytic disease of newborn",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intraocular pressure decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Corneal staining",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tracheitis obstructive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Laryngotracheitis obstructive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Salivary gland hypertrophy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Yaws",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Actinomycotic skin infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Keratosis gonococcal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pulmonary coccidioides",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Subdural empyema",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adenocarcinoma with transitional cell carcinoma of bladder recurrent",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adenocarcinoma with transitional cell carcinoma of bladder st I",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infantile septic granulomatosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Application site pustules",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Injection site arthritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Treatment noncompliance",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electroneurography",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fallopian tube abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Therapy non-responder",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Angiogram cerebral abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sleep study abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ovarian infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sacral pain",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rectovaginal septum abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Coronary artery restenosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oral pustule",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Parasitic oesophagitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abdominal wall abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tandem gait test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tandem gait test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Renal cyst infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hand dermatitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Corneal diameter decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Joint abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pacing threshold decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Colour vision tests",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Renal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Retropharyngeal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intraocular pressure test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Arthropod-borne disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Post procedural nausea",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ureter abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Retinal function test normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Large intestine perforation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Uterine infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Osteoprotegerin increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intubation complication",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Varicella post vaccine",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Puncture site infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF immunoglobulin decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infective exacerbation of chronic obstructive airways disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyelonephritis fungal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "NIH stroke scale score increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess injection site",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adenocarcinoma thyroid",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cervical smear pos class III to V",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypertrophy breast",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Interstitial pneumonitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lymphoma-like disorder",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Parametritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Presyncope",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Renal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Thyroid carcinoma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acromegaly",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Athlete's foot",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Death of daughter",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Death of spouse",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Haemodialysis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dermatophytosis NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Head lice",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Peritoneal dialysis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Herpes zoster (excl ophthalmic)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Postpartum sepsis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tracheitis NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tinea NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Repair detached retina",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cardiac pacemaker removal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acute pyelitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Periapical dental abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Perianal thrush",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "PID Pelvic inflammatory disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acute cystitis (excl in pregnancy)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Patellectomy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Skin & subcutaneous tissue abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lower respiratory tract infection NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abdominal wall abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "SBP",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ventriculogram left",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hemodialysis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Reactive airways disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Decreased tolerance",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Salivary gland hypertrophy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Difficulty in walking involving ankle and foot joint",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rupture of uterus during labor, delivered, with or without mention of antepartum condition",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other and unspecified superficial injury of elbow, forearm, and wrist, infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abrasion or friction burn of fingers, without mention of infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Polymyositis hemorrhagica",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Leydig cell agenesis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Obstruction of intestine by gallstone",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Left ventriculogram",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oophoritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tooth abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lepromatous leprosy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anal candidiasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess oral",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy brain",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF glucose normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pneumonia primary atypical",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lactase deficiency",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diethylstilboestrol syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Staphylococcal impetigo",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electrocochleogram",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electrocochleogram normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pupillary light reflex tests",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gonioscopy abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Opticokinetic nystagmus tests",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Breast discharge infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gnathostomiasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Schistosomiasis cutaneous",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Onchocerciasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dural abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vascular resistance pulmonary decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electrooculogram normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Paracentesis eye",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Manifest refraction",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adenocarcinoma with transitional cell carcinoma of bladder st II",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Squamous cell with transitional cell carcinoma of bladder st IV",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ludwig angina",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Encephalitis brain stem",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vaginal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Asthma exacerbation prophylaxis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intracranial hypotension",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electroneuromyography",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Retroperitoneal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mastoid empyema",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adenoiditis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adrenal gland abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Urinary bladder abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Congenital pulmonary valve atresia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Induced abortion infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Extracorporeal membrane oxygenation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Biopsy ear normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess neck",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF monocyte count increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Carbuncle",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infectious iridocyclitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fascial infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sexually transmitted disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Neurocysticercosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Periodontal infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infusion site abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Paraneoplastic syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyridinoline urine decreased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF lactate",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Albumin CSF abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Traumatic brain injury",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diabetic foot infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lower respiratory tract infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sinusitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dental caries",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ligament injury",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tuberculosis of central nervous system",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Neonatal complications of substance abuse",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Splenic infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Osteoprotegerin ligand",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Endocarditis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bicuspid pulmonary valve",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Parachute mitral valve",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Monofilament pressure perception test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Therapy cessation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pancreatitis helminthic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "NIH stroke scale",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dermatillomania",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Peripheral nerve infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Carbuncle",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dental caries",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Endocarditis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Excitement excessive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hemicrania",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection systemic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection upper respiratory",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Moniliasis skin",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oophoritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Peptic ulcer pain",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pneumonia lobar",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Resistance bacterial",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sinusitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tooth abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nasal vestibulitis NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ischiorectal abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Septicaemia NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sinusitis NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Late effects of acute poliomyelitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rubber sensitivity",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Decubitus angina",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lactase deficiency",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Porokeratosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Benign lymphoma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Coronary artery bypass",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Unresponsive to stimuli",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lips swelling non-specific",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anomalies of urachus, congenital",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypertrophy of salivary gland",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anemia of mother, with delivery",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bilateral partial paralysis of vocal cords",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intracranial injury NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Concussion with prolonged loss of consciousness and return to pre-existing conscious level",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intcran inj of oth and unspec nature, with open intcran wound, with prol loc, w/o rtrn to pecl",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Concussion, without mention of open intracranial wound",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intracranial injury of other and unspecified nature without mention of open intracranial wound",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Camphylobacter diarrhea",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Penetrating posterior abdominal wounds",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lactose intolerant",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adenocarcinoma with transitional cell carcinoma of bladder st II",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Squamous cell with transitional cell carcinoma of bladder st IV",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Paraneoplastic cerebellar degeneration",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intcran inj of oth and unspec nature, w/o ment of open intcran wound, with brief loc",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intcran inj of oth and unspec nature, w/o ment of open intcran wound, with concus, unspec",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intcran inj of oth and unspec nature, with open intcran wound, with moderate loc",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cerebrospinal fluid leakage",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Transitional cell carcinoma of the bladder stage I without cancer in situ",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Graft loss",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Atrial rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Liver graft loss",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniorrhexis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Haemofiltration",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pacemaker generated arrhythmia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Meningeal leukemia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anaemia, postpartum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Granulomatous ileocolitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Secondary hemochromatosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dialysis device insertion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tubal abortion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Low cerebrospinal fluid pressure syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sleep walking",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tongue oedema",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diabetes mellitus insulin-dependent",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pseudo-Bartter syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Feeling hot and cold",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Shock hypoglycaemic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Retinal scar",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anaplastic choroid plexus papilloma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electrocardiogram QT corrected interval",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "No adverse drug effect",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Neuroglycopenia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pharyngeal hypoaesthesia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fasciitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Analgesic asthma syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyemia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rhinitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Xanthochromia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchopneumonia NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Chickenpox",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Chronic suppurative otitis media",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gastroenteritis NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Intra-nasal antrostomy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Retina normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lobar pneumonia NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vulval abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anus candida",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Scarletina",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "URTI (upper respiratory tract infection)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Herpes genitalis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Non-toxic uninodular goitre",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Empyema NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lassa fever",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Unspecified respiratory tract infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Skin infection NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Onchocerca volvulus infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cellulitis of leg",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cavernous sinus thrombosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infected sebaceous cyst",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Neurosyphilis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rinne tuning fork test",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Seborrhoeic dermatitis capitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tuberculosis indurativa",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infective exacerbation of COAD",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Primary atypical pneumonia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "NSU",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Epididymo-orchitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Wound infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Laryngotracheo bronchitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Chronic vulvitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vulvovaginitis infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rombergism positive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Groin intertrigo",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cerebral arteriograph",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Post viral fatigue",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Upper respiratory tract infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Audiogram abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Amniotic fluid embolus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electroencephalogram",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ruptured diverticulum of colon",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF lymphocyte count",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Scan NOS brain",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Genital pruritus female",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Suicide of relative",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF oligoclonal band absent",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF oligoclonal band present",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF pH abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Skin infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Post gonococcal urethritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cerebrospinal fluid cell count NOS abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cerebrospinal fluid electrophoresis abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cerebrospinal fluid glucose abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Necrotising fasciitis NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Coccidioidomycosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cow pox",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rickettsia australis infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rickettsia rickettsii infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Candidal intertrigo",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Herpes lesion intra-oral",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fungal skin infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sinusitis chronic NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rinne tuning fork test abnormal NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Urinary tract infection NOS neonatal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bekesy automatic audiometry",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Holmgren's Skeins tests",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "ENG abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Function tests NOS vestibulum normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sensory nerve stimulation tests abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual field tests normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Visual field checking procedures normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Breast discharge infected male",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Headache postoperative",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Neck muscle torsion of",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection induced",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cystitis aggravated",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Viraemia NOS present",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pneumonia NOS congenital",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Petrositis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acute petrositis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Low tension glaucoma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Other infections involving bone diseases classified elsewhere, unspecified infection of bone",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Condyloma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Condyloma anal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Vascular rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "General nutrition disorder",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Right ventriculography",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Satyrism",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hemodynamic instability",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Anogenital warts",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Otitis interna",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Skeletal injury",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Adenocarcinoma with transitional cell carcinoma of bladder",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bowel movement irregularity",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Unresponsive to verbal stimuli",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Posterior capsule rupture",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Battery failure",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Graft versus host disease in skin",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Treatment withdrawal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Urachal cyst",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infusion site anaesthesia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Asphyxia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hepatitis G",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Toxic induced encephalopathy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Periorbital oedema",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Sexual assault victim",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Laryngotracheal oedema",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypoaesthesia teeth",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bence Jones proteinuria",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mazzotti reaction",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diathermy of urethral caruncle",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Parkinsonian gait",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypoaesthesia oral",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fat atrophy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ectopic hormone secretion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hyperinsulinism",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Median nerve lesion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Toe deformity",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Angioneurotic edema",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Asphyxia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cystitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cystitis (NOS)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dermatitis fungoid",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diabetes mellitus reactivated",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Disease pelvic inflammatory",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Edema Quincke's",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "EEG abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Erythema induratum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Folliculitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oculomotor dyskinesia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pain pelvic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Plaque mouth",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Upper resp tract infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Urethritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cardiac pacemaker insertion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bilateral otitis media (acute, non-supp)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Death of father",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cellulitis of finger",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Nail tinea",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Left otitis media (acute, non-supp)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Smallpox",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Kidney infection acute NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Laryngitis NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Arteriogram cerebral",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Right otitis media (acute, non-supp)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Root abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Urethritis nonspecific",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Brain abscess NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Carbuncle (excl genital) NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Perianal candida",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Body lice",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dry socket NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Borderline leprosy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Gingivitis infection NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infected nail bed",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infected corn",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infected ingrowing toe nail",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Paraphimosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Penile infection NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Periumbilical sepsis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Submammary intertrigo",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tinea corporis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dysyntery",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bicuspid aortic valve",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "LVH",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cellulitis of legs",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Post-op vomiting",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tonsillitis recurrent",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Induration erythema",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rinne tuning fork test positive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Spinal myelograph abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cerebrospinal fluid cell count normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Flea infestation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Withdrawal hypertension",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ear infection NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CT brain scan",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF glucose",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Red blood cells CSF positive",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Single vessel bypass graft",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Arteriogram cerebral abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ultrasound skull normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "CSF cell count NOS abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Otitis media acute",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Otitis media serous chronic NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Otitis media suppurative",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dermatitis infected",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cerebrospinal fluid protein",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bed bugs",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pathogen resistance",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection in solid organ transplant recipients",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection in the elderly",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Coccidioides immitis infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Staphylococcal cellulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Staphylococcus epidermidis cellulitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection in patient with leukemia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Mycoplasma hominis pyelonephritis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Chlamydial mucopurulent cervicitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Salivary gland infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Axillary moniliasis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lymphadenopathy suppurative",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Phlegmon",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rhinitis exacerbated",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Chronic osteomyelitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lobar pneumonia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tonsillitis chronic NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Urinary tract infection NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electronic audiometry normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Electrocochleogram abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hallpike caloric tests normal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Fundoscopy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Childhood tympanometry",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Opticokinetic nystagmus tests abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dacryocystitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Otitis media suppurative chronic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Impetigo contagious",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Parasitic infection NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Polysubstance abuse",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Lochia malodorous",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Ruptured uterus (labor complication)",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Polymyositis haemorrhagica",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Oedema lip",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Rib injury",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Atrial bigeminy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Flat philtrum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cyclosporidium infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Stent-graft endoleak type IA",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Uterine perforation post procedural",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Graft versus host disease in intestine",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Device lead issue",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tenolysis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Papanicolaou smear abnormal, class III",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Reversal of opiate activity",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Red man syndrome",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypoglycaemia unawareness",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypoglycaemic coma",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Depression postmenopausal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Acne pustular",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Dacryocanaliculitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hepatitis E",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hepatitis D",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Segmented hyalinizing vasculitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "5a-reductase inhibition therapy",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Upper extremity mass",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Prescribed overdose",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Verbally abused",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Neonatal diabetes mellitus",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Femoral nerve lesion",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Positive cardiac inotropic effect",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Otoacoustic emissions test abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Implant site abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Device related infection",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Arteriovenous graft site abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "NIH stroke scale abnormal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Male sterilisation",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess gum",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Abscess periodontal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bronchitis chronic",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Cervicitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diabetes mellitus aggravated",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Edema glottis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Edema laryngotracheal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Embolus amniotic fluid",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Forunculosis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypalgesia",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Hypoglycemia neonatal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection masked",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Infection precipitated",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Osteomyelitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Otitis media",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pressure intraocular increased",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Pyelonephritis acute necrotizing",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Syndrome toxic shock",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Tracheitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Urinary tract infection neonatal",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Appendicitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Kidney infection NOS",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Bornholm disease",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diarrhoea infectious",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Chronic tonsillitis",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Diabetes mellitus maturity onset",
+        "Level": "LLT"
+    },
+    {
+        "Term" : "Drug-induced hyperglycaemia",
+        "Level": "LLT"
+    }
+]

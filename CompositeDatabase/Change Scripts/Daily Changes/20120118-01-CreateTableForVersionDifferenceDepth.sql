@@ -1,0 +1,16 @@
+﻿IF (NOT EXISTS (SELECT NULL FROM INFORMATION_SCHEMA.TABLES
+	WHERE TABLE_NAME = 'DictionaryVersionDiffDepth'))
+BEGIN
+
+	CREATE TABLE [dbo].[DictionaryVersionDiffDepth](
+		DictionaryVersionDiffDepthID INT IDENTITY(1,1) NOT NULL,
+		DictionaryType VARCHAR(50) NOT NULL,
+		DictionaryOID VARCHAR(50),
+		MaxPastOrdinalRange INT NOT NULL,
+	 CONSTRAINT [PK_DictionaryVersionDiffDepth] PRIMARY KEY CLUSTERED 
+	(
+		[DictionaryVersionDiffDepthID] ASC
+	)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+	) ON [PRIMARY]
+
+END

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SP Name="spActivateSynonymListForDictionaryVersionLocaleSegment" CleanName="spActivateSynonymListForDictionaryVersionLocaleSegment">
+    <Parameters>
+      <SPParam Name="MedicalDictionaryVersionLocaleKey" CleanName="MedicalDictionaryVersionLocaleKey" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Segment" CleanName="Segment" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SynonymListName" CleanName="SynonymListName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spAgeSynonymCreationDate" CleanName="spAgeSynonymCreationDate">
+    <Parameters>
+      <SPParam Name="SegmentName" CleanName="SegmentName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="VerbatimText" CleanName="VerbatimText" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="HoursToAge" CleanName="HoursToAge" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="AgeCreatedOnly" CleanName="AgeCreatedOnly" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spConfigurationClone" CleanName="spConfigurationClone">
+    <Parameters>
+      <SPParam Name="NewSegmentID" CleanName="NewSegmentID" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="TemplateSegmentID" CleanName="TemplateSegmentID" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spCreateSynonymList" CleanName="spCreateSynonymList">
+    <Parameters>
+      <SPParam Name="Segment" CleanName="Segment" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="MedicalDictionaryVersionLocaleKey" CleanName="MedicalDictionaryVersionLocaleKey" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SynonymListName" CleanName="SynonymListName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spCreateWorkFlowRole" CleanName="spCreateWorkFlowRole">
+    <Parameters>
+      <SPParam Name="RoleName" CleanName="RoleName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SegmentName" CleanName="SegmentName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spCreationDateAgingByCodingElementUUID" CleanName="spCreationDateAgingByCodingElementUUID">
+    <Parameters>
+      <SPParam Name="codingElementUUID" CleanName="codingElementUUID" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="hoursToAge" CleanName="hoursToAge" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spDeleteDoNotAutoCodeTerms" CleanName="spDeleteDoNotAutoCodeTerms">
+    <Parameters>
+      <SPParam Name="SegmentName" CleanName="SegmentName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="DictionaryList" CleanName="DictionaryList" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spDeleteGeneralRole" CleanName="spDeleteGeneralRole">
+    <Parameters>
+      <SPParam Name="RoleName" CleanName="RoleName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SegmentName" CleanName="SegmentName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spDeleteGeneratedUser" CleanName="spDeleteGeneratedUser">
+    <Parameters>
+      <SPParam Name="SegmentId" CleanName="SegmentId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Username" CleanName="Username" DataType="varchar" SysType="String" DbType="AnsiString" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spDeleteWorkFlowRole" CleanName="spDeleteWorkFlowRole">
+    <Parameters>
+      <SPParam Name="RoleName" CleanName="RoleName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SegmentName" CleanName="SegmentName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spDictionaryLicenceInformationInsert" CleanName="spDictionaryLicenceInformationInsert">
+    <Parameters>
+      <SPParam Name="Deleted" CleanName="Deleted" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="UserID" CleanName="UserID" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="StartLicenceDate" CleanName="StartLicenceDate" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="EndLicenceDate" CleanName="EndLicenceDate" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="LicenceCode" CleanName="LicenceCode" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="DictionaryLocale" CleanName="DictionaryLocale" DataType="char" SysType="String" DbType="AnsiStringFixedLength" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SegmentID" CleanName="SegmentID" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="MedicalDictionaryKey" CleanName="MedicalDictionaryKey" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Created" CleanName="Created" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="Updated" CleanName="Updated" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="DictionaryLicenceInformationID" CleanName="DictionaryLicenceInformationID" DataType="int" SysType="Int32?" DbType="Int32" Mode="INOUT" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spDictionarySegmentConfigurationInsert" CleanName="spDictionarySegmentConfigurationInsert">
+    <Parameters>
+      <SPParam Name="SegmentId" CleanName="SegmentId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="MedicalDictionaryKey" CleanName="MedicalDictionaryKey" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="UserId" CleanName="UserId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="MaxNumberofSearchResults" CleanName="MaxNumberofSearchResults" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="IsAutoAddSynonym" CleanName="IsAutoAddSynonym" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="IsAutoApproval" CleanName="IsAutoApproval" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Created" CleanName="Created" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="Updated" CleanName="Updated" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="DictionarySegmentConfigurationId" CleanName="DictionarySegmentConfigurationId" DataType="int" SysType="Int32?" DbType="Int32" Mode="INOUT" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spDoProjectRegistration" CleanName="spDoProjectRegistration">
+    <Parameters>
+      <SPParam Name="Project" CleanName="Project" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Segment" CleanName="Segment" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="MedicalDictionaryVersionLocaleKey" CleanName="MedicalDictionaryVersionLocaleKey" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SynonymListName" CleanName="SynonymListName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="DictionaryRegistration" CleanName="DictionaryRegistration" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spFakeStudyMigrationFailure" CleanName="spFakeStudyMigrationFailure">
+    <Parameters>
+      <SPParam Name="UserLogin" CleanName="UserLogin" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SegmentName" CleanName="SegmentName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="StudyName" CleanName="StudyName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="FromSynonymListName" CleanName="FromSynonymListName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="ToSynonymListName" CleanName="ToSynonymListName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="FromMedicalDictionaryVersionLocaleKey" CleanName="FromMedicalDictionaryVersionLocaleKey" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="ToMedicalDictionaryVersionLocaleKey" CleanName="ToMedicalDictionaryVersionLocaleKey" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spGetCurrentCodingElement" CleanName="spGetCurrentCodingElement">
+    <Parameters>
+      <SPParam Name="Segment" CleanName="Segment" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets>
+      <ArrayOfColumn>
+        <Column Name="Created" CleanName="Created" SysType="DateTime" NullableSysType="DateTime?" DataType="System.DateTime" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="8" IsNullable="true" IsForeignKey="false" />
+        <Column Name="AutoCodeDate" CleanName="AutoCodeDate" SysType="DateTime" NullableSysType="DateTime?" DataType="System.DateTime" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="8" IsNullable="true" IsForeignKey="false" />
+      </ArrayOfColumn>
+    </ResultSets>
+  </SP>
+  <SP Name="spGetDictionaryAndVersions" CleanName="spGetDictionaryAndVersions">
+    <Parameters />
+    <ResultSets>
+      <ArrayOfColumn>
+        <Column Name="versionId" CleanName="versionId" SysType="Int32" NullableSysType="Int32?" DataType="System.Int32" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="4" IsNullable="true" IsForeignKey="false" />
+        <Column Name="dictionaryid" CleanName="dictionaryid" SysType="Int32" NullableSysType="Int32?" DataType="System.Int32" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="4" IsNullable="true" IsForeignKey="false" />
+        <Column Name="dictionaryOid" CleanName="dictionaryOid" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="50" IsNullable="true" IsForeignKey="false" />
+        <Column Name="versionOid" CleanName="versionOid" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="50" IsNullable="true" IsForeignKey="false" />
+        <Column Name="dictionaryKey" CleanName="dictionaryKey" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="100" IsNullable="true" IsForeignKey="false" />
+        <Column Name="dictionaryVersionKey" CleanName="dictionaryVersionKey" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="100" IsNullable="true" IsForeignKey="false" />
+      </ArrayOfColumn>
+    </ResultSets>
+  </SP>
+  <SP Name="spGetQueryUUIDByCodingElementUUID" CleanName="spGetQueryUUIDByCodingElementUUID">
+    <Parameters>
+      <SPParam Name="codingElementUUID" CleanName="codingElementUUID" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets>
+      <ArrayOfColumn>
+        <Column Name="QueryUUID" CleanName="QueryUUID" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="50" IsNullable="true" IsForeignKey="false" />
+      </ArrayOfColumn>
+    </ResultSets>
+  </SP>
+  <SP Name="spGetRolesManagementSetupData" CleanName="spGetRolesManagementSetupData">
+    <Parameters>
+      <SPParam Name="UserName" CleanName="UserName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets>
+      <ArrayOfColumn>
+        <Column Name="SegmentName" CleanName="SegmentName" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="ProjectName" CleanName="ProjectName" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="StudyOid" CleanName="StudyOid" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="SegmentId" CleanName="SegmentId" SysType="Int32" NullableSysType="Int32?" DataType="System.Int32" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="4" IsNullable="true" IsForeignKey="false" />
+      </ArrayOfColumn>
+    </ResultSets>
+  </SP>
+  <SP Name="spGetSegmentSetupDataByUserName" CleanName="spGetSegmentSetupDataByUserName">
+    <Parameters>
+      <SPParam Name="UserName" CleanName="UserName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="IsProductionStudy" CleanName="IsProductionStudy" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets>
+      <ArrayOfColumn>
+        <Column Name="SegmentName" CleanName="SegmentName" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="ProjectName" CleanName="ProjectName" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="SourceSystemStudyName" CleanName="SourceSystemStudyName" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="SourceSystemStudyDisplayName" CleanName="SourceSystemStudyDisplayName" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="StudyOid" CleanName="StudyOid" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="SegmentId" CleanName="SegmentId" SysType="Int32" NullableSysType="Int32?" DataType="System.Int32" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="4" IsNullable="true" IsForeignKey="false" />
+        <Column Name="ProtocolNumber" CleanName="ProtocolNumber" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+      </ArrayOfColumn>
+    </ResultSets>
+  </SP>
+  <SP Name="spGetSourceSystemApplicationData" CleanName="spGetSourceSystemApplicationData">
+    <Parameters>
+      <SPParam Name="ApplicationName" CleanName="ApplicationName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets>
+      <ArrayOfColumn>
+        <Column Name="SourceSystem" CleanName="SourceSystem" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="256" IsNullable="true" IsForeignKey="false" />
+        <Column Name="SourceSystemLocale" CleanName="SourceSystemLocale" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="3" IsNullable="true" IsForeignKey="false" />
+        <Column Name="ConnectionURI" CleanName="ConnectionURI" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="2000" IsNullable="true" IsForeignKey="false" />
+      </ArrayOfColumn>
+    </ResultSets>
+  </SP>
+  <SP Name="spGetStudyDataByProject" CleanName="spGetStudyDataByProject">
+    <Parameters>
+      <SPParam Name="SegmentName" CleanName="SegmentName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="ProjectName" CleanName="ProjectName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets>
+      <ArrayOfColumn>
+        <Column Name="SourceSystemStudyName" CleanName="SourceSystemStudyName" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="SourceSystemStudyDisplayName" CleanName="SourceSystemStudyDisplayName" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="StudyOid" CleanName="StudyOid" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="SegmentId" CleanName="SegmentId" SysType="Int32" NullableSysType="Int32?" DataType="System.Int32" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="4" IsNullable="true" IsForeignKey="false" />
+        <Column Name="ProtocolNumber" CleanName="ProtocolNumber" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+      </ArrayOfColumn>
+    </ResultSets>
+  </SP>
+  <SP Name="spGetUserNameByLogin" CleanName="spGetUserNameByLogin">
+    <Parameters>
+      <SPParam Name="Login" CleanName="Login" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets>
+      <ArrayOfColumn>
+        <Column Name="UserName" CleanName="UserName" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="308" IsNullable="true" IsForeignKey="false" />
+      </ArrayOfColumn>
+    </ResultSets>
+  </SP>
+  <SP Name="spInsertDoNotAutoCodeTerms" CleanName="spInsertDoNotAutoCodeTerms">
+    <Parameters>
+      <SPParam Name="SegmentName" CleanName="SegmentName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="DictionaryList" CleanName="DictionaryList" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Term" CleanName="Term" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Dictionary" CleanName="Dictionary" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Level" CleanName="Level" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Login" CleanName="Login" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spObjectSegmentInsert" CleanName="spObjectSegmentInsert">
+    <Parameters>
+      <SPParam Name="ObjectID" CleanName="ObjectID" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="ObjectTypeId" CleanName="ObjectTypeId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SegmentId" CleanName="SegmentId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Readonly" CleanName="Readonly" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="DefaultSegment" CleanName="DefaultSegment" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Deleted" CleanName="Deleted" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="ObjectSegmentID" CleanName="ObjectSegmentID" DataType="bigint" SysType="Int64?" DbType="Int64" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="Created" CleanName="Created" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="Updated" CleanName="Updated" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spRoleActionInsert" CleanName="spRoleActionInsert">
+    <Parameters>
+      <SPParam Name="RoleID" CleanName="RoleID" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="ModuleActionId" CleanName="ModuleActionId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SegmentID" CleanName="SegmentID" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="RoleActionID" CleanName="RoleActionID" DataType="int" SysType="Int32?" DbType="Int32" Mode="INOUT" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spRoleInsert" CleanName="spRoleInsert">
+    <Parameters>
+      <SPParam Name="Active" CleanName="Active" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="RoleName" CleanName="RoleName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="ModuleId" CleanName="ModuleId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SegmentID" CleanName="SegmentID" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="RoleID" CleanName="RoleID" DataType="int" SysType="Int32?" DbType="Int32" Mode="INOUT" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spRuntimeLockDelete" CleanName="spRuntimeLockDelete">
+    <Parameters>
+      <SPParam Name="lockKey" CleanName="lockKey" DataType="varchar" SysType="String" DbType="AnsiString" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spRuntimeLockInsert" CleanName="spRuntimeLockInsert">
+    <Parameters>
+      <SPParam Name="lockKey" CleanName="lockKey" DataType="varchar" SysType="String" DbType="AnsiString" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="expireInSeconds" CleanName="expireInSeconds" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="LockSuccess" CleanName="LockSuccess" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="INOUT" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spSegmentInsert" CleanName="spSegmentInsert">
+    <Parameters>
+      <SPParam Name="OID" CleanName="OID" DataType="varchar" SysType="String" DbType="AnsiString" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Deleted" CleanName="Deleted" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Active" CleanName="Active" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SegmentName" CleanName="SegmentName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="UserDeactivated" CleanName="UserDeactivated" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="IMedidataId" CleanName="IMedidataId" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Created" CleanName="Created" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="Updated" CleanName="Updated" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="SegmentID" CleanName="SegmentID" DataType="int" SysType="Int32?" DbType="Int32" Mode="INOUT" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spSetupDefaultConfiguration" CleanName="spSetupDefaultConfiguration">
+    <Parameters>
+      <SPParam Name="SegmentOID" CleanName="SegmentOID" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="JDrugOID" CleanName="JDrugOID" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spSetupGranularDefaultConfiguration" CleanName="spSetupGranularDefaultConfiguration">
+    <Parameters>
+      <SPParam Name="SegmentOID" CleanName="SegmentOID" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="DefaultLocale" CleanName="DefaultLocale" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="CodingTaskPageSize" CleanName="CodingTaskPageSize" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="ForcePrimaryPathSelection" CleanName="ForcePrimaryPathSelection" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SearchLimitReclassificationResult" CleanName="SearchLimitReclassificationResult" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SynonymCreationPolicyFlag" CleanName="SynonymCreationPolicyFlag" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="BypassReconsiderUponReclassifyFlag" CleanName="BypassReconsiderUponReclassifyFlag" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="DictOID" CleanName="DictOID" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="IsAutoAddSynonym" CleanName="IsAutoAddSynonym" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="IsAutoApproval" CleanName="IsAutoApproval" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="MaxNumberofSearchResults" CleanName="MaxNumberofSearchResults" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spStudyProjectInsert" CleanName="spStudyProjectInsert">
+    <Parameters>
+      <SPParam Name="StudyProjectId" CleanName="StudyProjectId" DataType="bigint" SysType="Int64?" DbType="Int64" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="ProjectName" CleanName="ProjectName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="iMedidataId" CleanName="iMedidataId" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SegmentID" CleanName="SegmentID" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Created" CleanName="Created" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="Updated" CleanName="Updated" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spTrackableObjectInsert" CleanName="spTrackableObjectInsert">
+    <Parameters>
+      <SPParam Name="TrackableObjectID" CleanName="TrackableObjectID" DataType="bigint" SysType="Int64?" DbType="Int64" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="ExternalObjectTypeId" CleanName="ExternalObjectTypeId" DataType="bigint" SysType="Int64?" DbType="Int64" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="ExternalObjectId" CleanName="ExternalObjectId" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="ExternalObjectOID" CleanName="ExternalObjectOID" DataType="varchar" SysType="String" DbType="AnsiString" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="ExternalObjectName" CleanName="ExternalObjectName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="ProtocolName" CleanName="ProtocolName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Created" CleanName="Created" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="Updated" CleanName="Updated" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="ExternalObjectNameId" CleanName="ExternalObjectNameId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="TaskCounter" CleanName="TaskCounter" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="IsTestStudy" CleanName="IsTestStudy" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="StudyProjectID" CleanName="StudyProjectID" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="AuditStudyGroupUUID" CleanName="AuditStudyGroupUUID" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SourceUpdatedAt" CleanName="SourceUpdatedAt" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SegmentId" CleanName="SegmentId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spUserInsert" CleanName="spUserInsert">
+    <Parameters>
+      <SPParam Name="FirstName" CleanName="FirstName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="LastName" CleanName="LastName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Email" CleanName="Email" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Login" CleanName="Login" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="TimeZoneInfo" CleanName="TimeZoneInfo" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="IMedidataId" CleanName="IMedidataId" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Locale" CleanName="Locale" DataType="char" SysType="String" DbType="AnsiStringFixedLength" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Active" CleanName="Active" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="UserID" CleanName="UserID" DataType="int" SysType="Int32?" DbType="Int32" Mode="INOUT" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spUserObjectRoleInsert" CleanName="spUserObjectRoleInsert">
+    <Parameters>
+      <SPParam Name="GrantToObjectId" CleanName="GrantToObjectId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="GrantOnObjectKey" CleanName="GrantOnObjectKey" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="RoleID" CleanName="RoleID" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Active" CleanName="Active" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="DenyObjectRole" CleanName="DenyObjectRole" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SegmentID" CleanName="SegmentID" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="UserObjectRoleId" CleanName="UserObjectRoleId" DataType="int" SysType="Int32?" DbType="Int32" Mode="INOUT" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spUserObjectWorkflowRoleInsert" CleanName="spUserObjectWorkflowRoleInsert">
+    <Parameters>
+      <SPParam Name="GrantToObjectID" CleanName="GrantToObjectID" DataType="bigint" SysType="Int64?" DbType="Int64" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="GrantOnObjectID" CleanName="GrantOnObjectID" DataType="bigint" SysType="Int64?" DbType="Int64" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="WorkflowRoleID" CleanName="WorkflowRoleID" DataType="bigint" SysType="Int64?" DbType="Int64" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Active" CleanName="Active" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="DenyObjectRole" CleanName="DenyObjectRole" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="UserObjectWorkflowRoleID" CleanName="UserObjectWorkflowRoleID" DataType="bigint" SysType="Int64?" DbType="Int64" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="SegmentId" CleanName="SegmentId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spWorkflowRoleActionInsert" CleanName="spWorkflowRoleActionInsert">
+    <Parameters>
+      <SPParam Name="WorkflowRoleId" CleanName="WorkflowRoleId" DataType="bigint" SysType="Int64?" DbType="Int64" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="WorkflowActionId" CleanName="WorkflowActionId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="SegmentId" CleanName="SegmentId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="WorkflowRoleActionID" CleanName="WorkflowRoleActionID" DataType="bigint" SysType="Int64?" DbType="Int64" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="Created" CleanName="Created" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="Updated" CleanName="Updated" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+  <SP Name="spWorkflowRoleInsert" CleanName="spWorkflowRoleInsert">
+    <Parameters>
+      <SPParam Name="RoleName" CleanName="RoleName" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="ModuleId" CleanName="ModuleId" DataType="tinyint" SysType="Byte?" DbType="Byte" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="Active" CleanName="Active" DataType="bit" SysType="Boolean?" DbType="Boolean" Mode="IN" IsUdtParam="false" />
+      <SPParam Name="WorkflowRoleID" CleanName="WorkflowRoleID" DataType="int" SysType="Int32?" DbType="Int32" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="Created" CleanName="Created" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="Updated" CleanName="Updated" DataType="datetime" SysType="DateTime?" DbType="DateTime" Mode="INOUT" IsUdtParam="false" />
+      <SPParam Name="SegmentId" CleanName="SegmentId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets />
+  </SP>
+</ArrayOfSP>

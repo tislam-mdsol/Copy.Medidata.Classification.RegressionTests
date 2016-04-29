@@ -1,0 +1,17 @@
+﻿IF NOT EXISTS ( SELECT NULL FROM sys.fulltext_stoplists
+	WHERE name = 'CoderStopList') 
+BEGIN
+	CREATE fulltext stoplist CoderStopList FROM system stoplist AUTHORIZATION dbo;
+END
+
+ALTER FULLTEXT STOPLIST CoderStopList
+DROP ALL LANGUAGE 1033 ;
+
+ALTER FULLTEXT STOPLIST CoderStopList
+DROP ALL LANGUAGE 1041 ;
+
+ALTER FULLTEXT INDEX ON ComponentEngStrings
+SET STOPLIST CoderStopList;
+
+ALTER FULLTEXT INDEX ON ComponentJpnStrings
+SET STOPLIST CoderStopList;

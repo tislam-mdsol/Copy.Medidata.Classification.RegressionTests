@@ -1,0 +1,14 @@
+﻿IF (EXISTS (SELECT NULL FROM INFORMATION_SCHEMA.TABLES
+	WHERE TABLE_NAME = 'ObjectSegmentAttributes'))
+BEGIN
+		DROP TABLE [dbo].[ObjectSegmentAttributes]
+END
+
+IF (EXISTS (SELECT NULL FROM INFORMATION_SCHEMA.TABLES
+	WHERE TABLE_NAME = 'SubscriptionLogs'))
+BEGIN
+		DROP TABLE [dbo].[SubscriptionLogs]
+END
+
+DELETE ObjectSegments
+WHERE ObjectTypeId IN (2001, 2002)

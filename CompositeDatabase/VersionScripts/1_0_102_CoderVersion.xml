@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.102</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="20111102-01-AddVersionNumberLocalizationStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20111104-01-FixNodepathChangedCategory.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spMedDictVerPrepareVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spVersionDifferencePostProcessingV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+ 
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="ExistingSegmentsWorkflowLocalization.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+
+</Patch>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.113</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="dbiqNamedQueries.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="CMP_06_SegmentCleanup.sql" FileType="SQL" RelativePath="SQL/CMP" />
+  <Script ScriptName="spPSRaveToCoderIssue.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Support Procedures" />
+  <Script ScriptName="spPSCoderToRaveIssue.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Support Procedures" />
+  <Script ScriptName="spPSProjectRegistrations.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Support Procedures" />
+  
+  
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+
+</Patch>
+
+ 

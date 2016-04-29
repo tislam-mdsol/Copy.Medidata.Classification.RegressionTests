@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>2013.2.0.4</PatchNumber>
+  
+  <!-- daily change scripts here -->
+  <Script ScriptName="20130808-01-DataMigration.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20130829-01-CodingElementsTableAddUUID.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spCreateDefaultDictVerSegmentAssocs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts" />
+  
+  <Script ScriptName="spDataMigrationDetailFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spDataMigrationDetailLoadNext.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spDataMigrationDetailUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spDataMigrationFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spDataMigrationLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spDataMigrationRunInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spDataMigrationRunLoadByMigration.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spDataMigrationRunUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingPatternUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermInsertGroupMany.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqObjectTypeR.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+</Patch>

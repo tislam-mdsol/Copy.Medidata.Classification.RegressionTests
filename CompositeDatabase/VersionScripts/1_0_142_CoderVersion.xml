@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.142</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="20121108-01-AlterSynonymMigrationEntriesTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20121114-01-AlterSynonymMigrationTables.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spCodingElementSearchForUnload.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyVersionObjectLoadByDictionaryStudyBatch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spLongAsyncTaskLoadByTaskCommandSegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementAnyTaskInServiceForStudyVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementSearchForUnloadToQueue.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />  
+  <Script ScriptName="spCodingElementSearchByFilterSecuredAndPagedWithFilterAndGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCreateSynonymList.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+  <Script ScriptName="spDoProjectRegistration.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+  <Script ScriptName="spCodingDataForReclassify.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrEntrsFrRecncByCtgryPaged.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationEntryInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationEntryUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCreateSynonymList.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+  <Script ScriptName="spCodingElementLoadAllForBOTByRule.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spSynonymMigrationEntryInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationEntryUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationSuggestionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationSuggestionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqHelpContexts.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+</Patch>

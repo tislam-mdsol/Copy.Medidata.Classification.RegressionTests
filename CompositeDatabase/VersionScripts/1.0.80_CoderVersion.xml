@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.80</PatchNumber>
+ 
+  <!-- Below is a suggested grouping for scripts. Actual location may when order dependencies exist -->
+
+<Script ScriptName="spActivateSynonymListForDictionaryVersionLocaleSegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation"/> 
+<Script ScriptName="spCoderMainTableAging.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation"/> 
+<Script ScriptName="spCodingElementsCleanup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation"/> 
+<Script ScriptName="spCreationDateAging.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation"/> 
+<Script ScriptName="spEnableLOCLocalization.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation"/> 
+<Script ScriptName="spModifyAgeForSynonymApproval.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation"/> 
+<Script ScriptName="spReclassifcationTime.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation"/> 
+<Script ScriptName="spSetupDefaultConfiguration.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation"/> 
+
+
+<Script ScriptName="spAllInOneAddNewVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spExtendIORValidityStringsForNewVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spFndInsLcl.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spFullUpdateIORValidityStrings.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictCreateDictionary.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerActivation.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerCheckNodepath.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerDeactivation.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerDiffEngChecks.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerDiffEngCmpnt.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerDiffEngLvlCmpnt.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerDiffEngMainSP.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerDiffEngTerm.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerDiffEngTermRel.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerGetVerOrdinals.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerLoadingChecks.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerPrepareVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerRemoveVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerUndoDiff.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerUnloadVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictVerWireFnlObjIDs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedDictWireFnlObjIdDs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedicalDictVerTermUpdatePathAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedicalDictVerTermUpdatePathFast.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spMedicalDictVerTermUpdatePathForTerm.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spReduceIORValidityStringsForVersionDeact.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<!-- <Script ScriptName="spSemiVersioningTablesCleanup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> -->
+<Script ScriptName="spShrinkDB.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spUpdateIORValidityStrings.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spUpdateStatistics.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spVersionDifferencePostProcessing.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+<Script ScriptName="spVersioningTablesCleanup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning"/> 
+
+
+<Script ScriptName="fnGetMultiParentage.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="fnGetParentage.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="fnGetParentSupportingTermIds.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="fnGetReducedPathForMultiLevelSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="fnGetStopListIDByName.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="fnSanitizeVerbatimForFullText.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spAddFullSupportingParentage.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spAddPartialSupportingParentage.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spCreateCoderStopList.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spCreateSearchParamTable.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spGenerateSynonymTermRank.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spGenerateTermRanks.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spGetChildTermsInLevel.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spGetFullTextNoiseWords.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spGetFullTextStopWords.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spGetFullTextWordsExcludeNoiseWords.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spGetSearchResultsCombined.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spGetSearchResultsCombinedPrtTp.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spGetTermResults.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spGetTermResultsPrtTp.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spMedicalDictionarySearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spMedicalDictionarySearchFT.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spMedicalDictionarySearchWildCard.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spMedSearchPrType.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spUpdateRanksPeriodical.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spUpdateSupportingParentage.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch"/> 
+<Script ScriptName="spAckNackTransmissionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spAckNackTransmissionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spAckNackTransmissionLoadUnQueued.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spAckNackTransmissionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApiCronScheduleDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApiCronScheduleFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApiCronScheduleInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApiCronScheduleLoadByApplicationAdmin.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApiCronScheduleUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationAdminFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationAdminInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationAdminLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationAdminLoadByApplicationID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationAdminUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationGetBySourceSystemID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationLoadByApiID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationLoadByAppType.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationLoadByAppTypeAppName.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationLoadBySegmentID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationRFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationRInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationRLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationTrackableObjectFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationTrackableObjectInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationTrackableObjectLoadByAppIDTrackableObjID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationTrackableObjectLoadByTrackableObjID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationTrackableObjectUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationTypeFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationTypeInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationTypeLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationTypeLoadByIMedidataID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationTypeUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spApplicationUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spAuthenticationServerTokenConsume.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spAuthenticationServerTokenStore.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spAutoCodeStatusRLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCheckSynonymsForApproval.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCoderAppConfigurationFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCoderLocaleAddlInfoFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCoderLocaleAddlInfoGetByLocale.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCoderLocaleAddlInfoLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCoderSegmentsFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCoderSegmentsGetByIMedidataIdSegmentTypeId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCoderSegmentsInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCoderSegmentsLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCoderSegmentsUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCoderSegmentTypeRLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingActionRLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingAssignmentDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingAssignmentFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingAssignmentGetByCreatedSynonym.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingAssignmentInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingAssignmentLoadByAlgorithmId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingAssignmentLoadByCodingElementId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingAssignmentLoadByDictionaryTermId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingAssignmentLoadByUserId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingAssignmentsGetDecisionsByCodingElementIDs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingAssignmentUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingDataForReclassify.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementAutocode.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementAutoCodeFullDictionaryMatch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementAutoCodeFullDictionaryMatchGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementAutocodeGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementForStudy.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<!--<Script ScriptName="spCodingElementGetFilterValues.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> -->
+<Script ScriptName="spCodingElementGetFilterValuesGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementGetNextTaskToCode.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementGetNextTaskToCodeWithFilter.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementGetNextTaskToCodeWithFilterSort.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementGroupComponentDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementGroupComponentFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementGroupComponentInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementGroupComponentUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementGroupDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementGroupFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementGroupInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementGroupUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementLoadAgingInfo.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementLoadAllForBOTByRule.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementLoadByCodingRequest.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementLoadBySourceSystem.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementLoadByWorkflow.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementLoadByWorkflowState.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementLoadByWorkflowTask.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementLoadPending.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementLoadPendingStatuses.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementLoadPendingStatusInfo.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementLoadTaskFilters.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementRetryAutoCodeElements.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementSearchByFilter.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementSearchByFilterSecuredAndPaged.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementSearchByFilterSecuredAndPagedWithFilter.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementSearchByFilterSecuredAndPagedWithFilterAndGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementSearchByFilterSecuredAndPagedWithFilterAndGroup1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementSearchForUnload.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementSearchForVCR.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementSearchForVCRWithFilter.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementSearchForVCRWithFilterGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementsGetSelectedWithGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingElementUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingHistoryReport.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingInclusionTypeRLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingPatternDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingPatternFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingPatternGetByTermPathAndLocale.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingPatternInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingPatternUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingReasonRLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingRejectionDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingRejectionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingRejectionGetByCodingElementId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingRejectionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingRejectionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingRequestExistsForSourceSystem.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingRequestFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingRequestInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingRequestLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingRequestLoadBySourceSystem.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingRequestLoadBySourceSystemFileOID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingResourceFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingResourceTransmissionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingResourceTransmissionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceAlgorithmBySegmentDictionary.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceAlgorithmDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceAlgorithmFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceAlgorithmGetByDictionaryAlgorithm.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceAlgorithmInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceAlgorithmLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceAlgorithmUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermComponentFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermComponentInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermComponentLoadByCodingElement.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermComponentLoadByCodingSourceTermId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermComponentUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermInsertGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermInsertGroupMany.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermLoadByCodingElementId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermReferenceFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermReferenceInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermReferenceLoadByCodingElement.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermReferenceLoadBySourceTerm.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermReferenceUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermSupplementalFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermSupplementalInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermSupplementalLoadByCodingElementId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermSupplementalLoadByCodingSourceTermId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermSupplementalUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSourceTermUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingStateTransitionLoadById.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingStatusLoadById.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingStatusRLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSuggestionDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSuggestionDeleteByCodingElement.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSuggestionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSuggestionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSuggestionLoadByCodingAlgorithmId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSuggestionLoadByCodingElementId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSuggestionsIsValidForDictionary.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingSuggestionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingTransmissionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingTransmissionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingTransmissionSuccessByCodingSourceTerm.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCodingTransmissionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCommunicationLogFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCommunicationLogInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCreateCoderAdminLogin.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCreateCoderSegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCreateMedidataAppAdminRole.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCreateTrackableObject.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCronActionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spCronActionLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryLicenceInformationDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryLicenceInformationFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryLicenceInformationInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryLicenceInformationLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryLicenceInformationLoadByDctLclRlsDt.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryLicenceInformationLoadBySgmtDctLcl.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryLicenceInformationLoadHistory.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryLicenceInformationUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryVersionSubscriptionDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryVersionSubscriptionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryVersionSubscriptionGetByObjectSegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryVersionSubscriptionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryVersionSubscriptionLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryVersionSubscriptionLoadBySgmtDctLcl.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryVersionSubscriptionLoadMissingLicence.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryVersionSubscriptionLoadSubscriptionHistory.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDictionaryVersionSubscriptionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDoNotAutoCodeCanInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDoNotAutoCodeTermsDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDoNotAutoCodeTermsFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDoNotAutoCodeTermsInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDoNotAutoCodeTermsIsATermExisting.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDoNotAutoCodeTermsLoad.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spDoNotAutoCodeTermsUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spExternalObjectTypeRFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spExternalObjectTypeRLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spExternalObjectTypeRLoadByModule.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spFetchMedicalDictionaryTermAncestors.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spFetchMedicalDictionaryTermAncestorsCore.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spFetchMedicalDictionaryTermHierarchy.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spGenericFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spGetSynonymByText.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spGetSynonymMasterTermForNonEnglish.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spGetSynonymsForDownload.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spHealthCheckFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spHealthCheckInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spHealthCheckLoadExtended.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spHealthCheckRunsFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spHealthCheckRunsInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spHealthCheckStatisticsFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spHealthCheckStatisticsInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spHealthCheckStatisticsLoadExtendedByHealthCheckRun.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spHelpContextLoadByContext.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spHelpContextsLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spImpactAnalysisChangeTypeRFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spImpactAnalysisChangeTypeRLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spImpactAnalysisDetailView.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spImpactAnalysisGlobalView.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spLoadAllBatchesForSegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spLoadFullMedicalDictVerLocales.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spLoadMedicalDictComponentTypes.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spLoadProvisionalSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spLoadStartAndTransmitStuckTasks.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spLocalizationFindOrInsertDataString.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spLocalizedDataStringsFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spLogMessageInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedDictTermFTSearchSynonymsMaxNumber.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedDictTermGetNumberOfSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedDictTermPagedSynonymDetailsByDelimitedIDs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedDictTermSearchSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedDictTermSearchSynonymsPaged.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedDictTermStatusRFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedDictTermStatusRLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedDictVerDiffLocLoadByDictId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedDictVerLocLoadByDictId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedDictVerLocLoadByDictIdAndLoc.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictComponentTypeLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictComponentTypeLoadById.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictComponentTypeLoadByLevel.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictComponentTypeLoadByName.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryAlgorithmFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryAlgorithmGetId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryAlgorithmInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryAlgorithmLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryAlgorithmLoadDefault.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryAlgorithmUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryComponentTermLoadByFilter.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLevelComponentLoadByLevelId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLevelFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLevelLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLevelLoadByDictId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLevelLoadByDictIdAndCodingLevel.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLevelLoadByDictionary.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLevelLoadById.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLevelLoadByName.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLevelLoadByTemplate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLevelMappingFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLevelMappingLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLevelMappingLoadByFromLevelToLevelId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLevelMappingLoadById.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLoadById.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryLoadByNameVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryNamespaceBuildHierarchy.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryNamespaceDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryNamespaceFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryNamespaceInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryNamespaceLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryNamespaceLoadAllChildren.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryNamespaceLoadByNameAndSegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryNamespaceLoadBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryNamespaceLoadChildren.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryNamespaceSetHierarchySeq.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryNamespaceUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionarySearchDynSQL.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionarySearchFindNextRank.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTemplateDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTemplateFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTemplateInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTemplateIsReverse.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTemplateLevelDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTemplateLevelFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTemplateLevelInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTemplateLevelLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTemplateLevelLoadByLevel.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTemplateLevelLoadByTemplate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTemplateLevelUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTemplateLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTemplateLoadByDictionary.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTemplateUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermCodeSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermComponentLoadByComponentTypeId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermComponentSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermFetchPrimaryOrDefaultPath.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermGetCodingRuleData.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermGetDelimitedCollection.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermGetWhoPreferredName.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadByCode.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadByDictIdLevelIdLocaleTermName.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadByDictIdLevelName.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadByDictionary.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadByDictNameVersionLevelName.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadByFilter.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadByIDsTemplate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadByLevel.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadByLevelId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadByTerm.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadChildren.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadHierarchy.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadNextLevelByCode.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadNextLevelByTermId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadNextLevelCountByCode.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadNextLevelCountByTermId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadPreviousLevelByTermId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadRootTerms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermLoadSynonymsByMasterTermId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermRelFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermRelLoadByFromTermToTermId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermRelLoadByLevelMappingId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermSearchExact.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermSynonymSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermTermSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermUpdatePathAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTermUpdatePathForTerm.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryTestSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryUseAlgorithmFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryUseAlgorithmInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryUseAlgorithmLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryUseAlgorithmLoadByCodingAlgorithm.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryUseAlgorithmLoadByDictionary.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryUseAlgorithmUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryUseFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryUseInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryUseLoadByDictionaryVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryUseLoadByNamespace.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryUseLoadBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryUseUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryVersionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryVersionForStudy.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryVersionGetByOrdinal.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryVersionLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryVersionLoadByDictionary.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryVersionLoadByFilter.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictionaryVersionLoadBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictLevelCompLoadByCompTypeIdVerLocale.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictLevelComponentFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictLevelComponentLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictLevelComponentLoadByComponentType.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictLevelComponentLoadBycomponentTypeId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictLevelComponentLoadByLevel.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictTermComponentFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictTermComponentLoadByComponentType.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictTermComponentLoadByTerm.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerLocaleStatusFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerLocaleStatusLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerLocaleStatusLoadByDictionaryId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentLoadByWorkflow.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentsDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentsFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentsInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentsLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentsLoadBySegmentId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentsLoadByVersionId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentsLoadByVersionIdSegmentId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentsUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentWorkflowDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentWorkflowFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentWorkflowInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentWorkflowLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentWorkflowsLoadByVersionSegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentWorkflowsLoadByWorkflow.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spMedicalDictVerSegmentWorkflowUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spObjectSegmentAttributeDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spObjectSegmentAttributeFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spObjectSegmentAttributeInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spObjectSegmentAttributeUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spObjectSegmentLoadMissingSubscription.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spObjectSegmentWorkflowFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spObjectSegmentWorkflowInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spObjectSegmentWorkflowLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spObjectSegmentWorkflowUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spObjSegAttributeLoadByObjSegId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spOutServiceHeartBeatFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spOutServiceHeartBeatInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spOutServiceHeartBeatUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spOutTransmissionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spOutTransmissionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spOutTransmissionLogCreateAndLoadByOutTransmission.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spOutTransmissionLogFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spOutTransmissionLogInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spOutTransmissionLogUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spOutTransmissionRequeueUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spOutTransmissionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spProjectDictionaryRegistrationDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spProjectDictionaryRegistrationFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spProjectDictionaryRegistrationInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spProjectDictionaryRegistrationLoadByInteractionAndProject.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spProjectDictionaryRegistrationLoadByTransmissionId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spProjectDictionaryRegistrationLoadCurrent.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spProjectDictionaryRegistrationUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spProjectRegistrationTransmissionCreateByRegIds.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spProjectRegistrationTransmissionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spProjectRegistrationTransmissionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spProjectRegistrationTransmissionLoadByProjectID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spProjectRegistrationTransmissionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spRedFlagFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spRedFlagInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spRedFlagLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spRedFlagUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spScriptExecutionLogInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSearchTransmissionQueueItems.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentedGroupCodingPatternDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentedGroupCodingPatternFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentedGroupCodingPatternInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentedGroupCodingPatternLoadByCodingElementIDs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentedGroupCodingPatternLoadByCodingPatternAndVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentedGroupCodingPatternLoadByGroupAndVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentedGroupCodingPatternLoadByVersionAndSynonym.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentedGroupCodingPatternUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentGetByIMedidataIdTherapAreaName.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentLoadIdByOID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentsDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentsFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentsLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSegmentVersionLoadWaitingSubscription.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spServiceCommandFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spServiceCommandLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spServiceCommandLogFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spServiceCommandLogGetLatestCommands.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spServiceCommandLogInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spServiceCommandLogUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spServiceHeartBeatGetLasts.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSetupLocalizationConfiguration.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSgmntsLdAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSourceSystemFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSourceSystemFetchByStudyID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSourceSystemInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSourceSystemLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSourceSystemLoadByOID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSourceSystemUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryRegistrationDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryRegistrationFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryRegistrationInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryRegistrationLoadByInteractionAndStudy.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryRegistrationLoadByTransmissionId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryRegistrationUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryVersionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryVersionHistoryFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryVersionHistoryInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryVersionHistoryLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryVersionHistoryLoadByDictAndStudy.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryVersionHistoryUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryVersionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryVersionLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyDictionaryVersionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyProjectFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyProjectGetByProjectNameAndSegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyProjectInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyProjectLoadAllBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyProjectUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyRegistrationTransmissionCreateByRegIds.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyRegistrationTransmissionDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyRegistrationTransmissionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyRegistrationTransmissionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyRegistrationTransmissionLoadByStudyID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyRegistrationTransmissionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyTaskHistoryAudit.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyVersionGetByOID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyVersionMigration.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyVersionObjectGetByStudyID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyVersionObjectLoadByDictionary.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyVersionObjectLoadByDictionaryStudyBatch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyVersionObjectLoadByStudyID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyVersionObjectLoadByStudyOID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spStudyVersionRegisterStudyDictionary.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSubscriptionLogFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSubscriptionLogInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSubscriptionLogLoadByVerLocaleID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymHistoryFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymHistoryInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymHistoryLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymHistoryLoadBySynonym.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymHistoryUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymListActivate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymListDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymListUpload.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymLoadFinalValidateBeforeActivation.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationActivation.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationEntryFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationEntryInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationEntryLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationEntryUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationGetReconciledCategories.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationManagementFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationManagementInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationManagementLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationManagementUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationMgmntBySegmentDictLocale.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationMngmntClearLoadedSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationMngmntGetPrimaryByVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationMngmntLoadSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationMngmntProcessSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationStatusRFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationStatusRLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationSuggestionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationSuggestionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationSuggestionLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrationSuggestionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrEntrsFrRecncByCtgryPaged.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymMigrEntrsMassMigrate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymSuggestionGetBySynEntryAndTermID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymSuggestionReasonRFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymSuggestionReasonRLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSynonymSuggestionsGetBySynEntry.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSystemVariableLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSystemVariableLoadBySourceSystem.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spSystemVariableLoadByWorkflowVariable.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTherapeuticAreaRLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTimeElapsedResolve.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTimeElapsedResolveDateTime.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTimeZoneLoadIdAndKeyNames.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTrackableObjectByProjectId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTrackableObjectFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTrackableObjectInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTrackableObjectLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTrackableObjectLoadByExternalObjectId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTrackableObjectLoadByExtObjectType.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTrackableObjectLoadByOID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTrackableObjectLoadBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTrackableObjectLoadBySourceSystem.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTrackableObjectsLoad.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTrackableObjectUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTransitStuckTasksFromServerToService.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTransitTasksFromServiceToServer.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTransmissionQueueItemFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTransmissionQueueItemInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTransmissionQueueItemLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTransmissionQueueItemLoadBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTransmissionQueueItemLoadForCodingDecisionUnload.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTransmissionQueueItemLoadMaxBySourceTransmission.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTransmissionQueueItemLoadSourceTransmissions.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spTransmissionQueueItemUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spUserAddressFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spUserAddressInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spUserPreferencesFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spUserPreferencesInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spUserPreferencesLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spUserPreferencesLoadBySegmentUser.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spUserPreferencesUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spVerLocaleIsUsedInProduction.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spWebRequestETagFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spWebRequestETagGetByUrl.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spWebRequestETagInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spWebRequestETagUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spWorkflowRunnerServiceHeartBeatFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+<Script ScriptName="spWorkflowRunnerServiceHeartBeatInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other"/> 
+
+
+<Script ScriptName="spCreateAlgorithmsForDictionary.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spCreateDefaultDictVerSegmentAssocs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spCreateDefaultTemplate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spCreateDefaultTemplateForMedDRA.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spCreateDefaultWorkflow.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spCreateDefaultWorkflowWithReconsiderState.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spCreateDictionaryAlgorithmsForSegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spCreateSimpleUserInSegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spCreateSynonymTestDataForMedDRA.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spCreateUserObjectSegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spCreateWorkflowRoleAssignWorkflowActionsForUser.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spMedicalDictionaryAlgorithmGetId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spMedicalDictionaryAlgorithmInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spSetupAlgorithmsForDictionary.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spWorkflowCopy.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spWorkflowRemove.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+<Script ScriptName="spWorkflowsCleanup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts"/> 
+
+
+<Script ScriptName="spWorkflowActionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionIsManualAction.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionIsNameUnique.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionItemDataFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionItemDataInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionItemDataLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionItemDataLoadByActionItem.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionItemDataUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionItemFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionItemInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionItemLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionItemLoadByActionList.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionItemLoadBySystemAction.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionItemUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionListFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionListInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionListLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionListLoadByWorkflowAction.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionListUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionLoadByWorkflow.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionLoadByWorkflowState.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionLoadByWorkflowTask.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionLoadByWorklfowTaskSysAction.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionReasonDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionReasonFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionReasonInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowActionReasonLoadByWorkflowAction.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowReasonFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowReasonLoadByWorkflow.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowReasonLoadByWorkflowAction.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowReasonUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowsGetDefaultWorkflow.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateActionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateActionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateActionIsValid.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateActionLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateActionLoadByWorkflow.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateActionLoadByWorkflowAction.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateActionLoadByWorkflowState.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateActionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateIconFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateIconInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateIconLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateIconLoadBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateIconUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateLoadByWorkflow.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateLoadByWorkflowAction.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateLoadByWorkflowActionAllowed.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowStateUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowSystemActionRCountByActionItem.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowSystemActionRFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowSystemActionRInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowSystemActionRLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowSystemActionRLoadByApplication.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskDataFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskDataInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskDataLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskDataLoadByWorkflowTask.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskDataUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskGetDecisionsByCodingElementIDs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskGetDecisionsByPatternIDs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskGetDecisionsBySynonymIDs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskHistoryFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskHistoryInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskHistoryLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskHistoryLoadByWorkflowTask.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskHistoryUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskLoadByWorkflow.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskLoadByWorkflowState.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTasksInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTasksLoadPending.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowTaskUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowVariableFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowVariableInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowVariableLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowVariableLoadByVariableName.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowVariableLoadByWorkflow.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowVariableLookupValueFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowVariableLookupValueInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowVariableLookupValueLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowVariableLookupValueLoadByVariable.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowVariableLookupValueUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spWorkflowVariableUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow"/> 
+<Script ScriptName="spCodingElementLoadPendingAccessible.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spCodingElementSearchByFilterSecured.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spCodingElementSearchFailedTransmission.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spTrackableObjectLoadAccessibleByUserID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spTrackableObjectLoadBySegmentOID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spUserObjectWorkflowRoleByUserID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spUserObjectWorkflowRoleDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spUserObjectWorkflowRoleFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spUserObjectWorkflowRoleInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spUserObjectWorkflowRoleLoad.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spUserObjectWorkflowRoleLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spUserObjectWorkflowRoleLoadBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spUserObjectWorkflowRoleLoadForUserObject.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spUserObjectWorkflowRoleUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spUserObjectWorkflowRoleUpsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleActionDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleActionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleActionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleActionLoad.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleActionLoadByRole.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleActionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleFetchByUserObject.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleIsNameUnique.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleLoad.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleLoadByModuleId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleLoadBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleLoadBySegmentWorkflow.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+<Script ScriptName="spWorkflowRoleUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity"/> 
+
+
+<Script ScriptName="spActnTypLdByMdlAndNm.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spActnTypLdByMdlId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spActvtnFndByCd.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spActvtnFtchByUsrID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spFndUdtUsg.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spImpldActnTpsLd.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spIndxdClmnsLd.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLclDtStrngCntxtsInsrt.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLclDtStrngCntxtsLd.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLclStdStrngInsrt.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLclztnDtStrngBlkSv.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLclztnFndOrInsrtDtStrng.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLclztnInsrtDtStrng.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLclztnInsrtDtStrngRfrnc.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLclztnLdDtStrByIdFrActvSgmts.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLclztnLdDtStrByLocaleFrActvSgmts.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLclztnLdDtStrngsFrActvSgmnts.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLclztnLdStrngsByLcl.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLclztnLdStrngsByLclFrPrdct.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLclztnRfrncsBlkSv.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLgnAttmptCntFlrs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLgnAttmptCntPrvsFlrs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLgnAttmptInsrt.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spLoadAllObjectSegmentsByObjectTypeAndSegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spMdlFtchById.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spObjctSgmntsLdByObjct.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spObjctTypRLd.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spObjRfChkCnstrnts.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spObjRfInsrt.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spObjRfLd.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spOldPsswrdFtch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spRlActnUpdtImplByRl.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spRlDlt.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spRlIsNmUnq.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spRlLdByMdlId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spScrtyGrpAddUsr.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spScrtyGrpIsNmUnq.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spScrtyGrpRmvUsr.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spScrtyMdlLdAllActv.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spSpgLdPrms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spSpgPthInsrt.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spSpgPthsLd.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spStdStrngTypFtch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spStdStrngTypFtchByTyp.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spStdStrngTypInsrt.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spStdStrngTypLd.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spStdStrngTypUpsrt.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spUdtsLdOutptPrms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spUdtsLdPrms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spUsrFndByLgn.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spUsrFtchByNmAndPIN.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spUsrLdByFltrAndPg.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spUsrLdByLstNmLgn.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spUsrObjctRlByUsrID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spUsrObjctRlLd.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spUsrObjctRlLdByGrntTo.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spUsrObjctRlLdFrUsrObjct.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spUsrObjctRlLdFrUsrObjctMdl.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spUsrObjctRlLdFrUsrObjctMdlOpt.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spUsrObjtRlUpsrt.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="spWlcmMssgGt.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="_spSearchwithPaginationAndSorting.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+<Script ScriptName="_spTemplate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework"/> 
+
+
+<Script ScriptName="SprocTemplate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/SPUG Generated"/> 
+
+
+<Script ScriptName="fnAreMultiAxialitySOCsUnique.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnCheckTableRelations.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnCodingSourceAlgorithmFindBySegmentAndDictionary.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnExtendIORVersionLocaleWithNewVersion.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnFixCodingPatternNodePath.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnFormatDate.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnFormatXMLFromDL.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnGenerateInitialIORVersionLocale.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnGetAllPaths.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnGetAllRootNodesFromNodePath.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnGetPrimaryNodepathFromNodepath.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnGetPrimaryRootNodeFromNodePath.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnGetSinglePathIfSingle.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnGetSourceComponents.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnGetStateByOIDAndProcess.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnGetSynonymNodePathChangeType.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnGetSynonymPathForDownload.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnGetTermIDsAndText.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnGetTermIDsAndTextFromFullPath.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnHasSynonyms.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnIsValidForVersionLocale.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnLDS.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnLocalDataString.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnLocalDefault.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnMedDictVerCreateDictNodepathFull.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnMedDictVerCreateDictNodepathWithOffset.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnMedDictVerIsNodePathChanged.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnMedDictVerMaxNodePathDepth.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnMedicalDictionaryTermExtractPath.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnMedicalDictionaryTermGetAncestorPath.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnMedicalDictionaryTermGetAncestorTable.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnMedicalDictVerTermGetAncestorTable.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnMinimum.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnParseDelimitedString.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnParseDelimitedStringWithID.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnParseDelimitedString_XML.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnReduceIORVersionLocaleWithLastVersion.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnSimplifyVerbatim.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnSplit.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnStringCompare.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnTrackableObjectsLoad.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnTranslateIORVersionLocaleValidity.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnUpdateValiditySequence.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder"/> 
+<Script ScriptName="fnAuditTranslation.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Framework"/> 
+<Script ScriptName="fnFormat.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Framework"/> 
+<Script ScriptName="fnFormAuditUserName.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Framework"/> 
+<Script ScriptName="fnGenerateOID.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Framework"/> 
+<Script ScriptName="fnIsValidNumericCorrect.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Framework"/> 
+<Script ScriptName="fnLDS.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Framework"/> 
+<Script ScriptName="fnLocalDefault.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Framework"/> 
+<Script ScriptName="fnLocalString.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Framework"/> 
+<Script ScriptName="fnRoleHasActionType.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Framework"/> 
+<Script ScriptName="fnStatusForRole.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Framework"/> 
+
+
+<Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts"/> 
+<Script ScriptName="dbiqHelpContexts.sql" FileType="SQL" RelativePath="SQL/Change Scripts"/> 
+<Script ScriptName="dbiqObjectTypeR.sql" FileType="SQL" RelativePath="SQL/Change Scripts"/> 
+
+
+<Script ScriptName="dbiqHealthChecks.sql" FileType="SQL" RelativePath="SQL/HealthChecks"/> 
+<Script ScriptName="spAddTestToHealthcheckRunsTable.sql" FileType="SQL" RelativePath="SQL/HealthChecks"/> 
+<Script ScriptName="spCheckWorkflow.sql" FileType="SQL" RelativePath="SQL/HealthChecks"/> 
+<Script ScriptName="spDetectHealthCheckTest.sql" FileType="SQL" RelativePath="SQL/HealthChecks"/> 
+<Script ScriptName="spDetectServiceBeatingEvery10Minutes.sql" FileType="SQL" RelativePath="SQL/HealthChecks"/> 
+<Script ScriptName="spDetectTaskStatesActive.sql" FileType="SQL" RelativePath="SQL/HealthChecks"/> 
+<Script ScriptName="spDetectTaskStatesMoreThanOneSingleActive.sql" FileType="SQL" RelativePath="SQL/HealthChecks"/> 
+<Script ScriptName="spDetectTaskStatesNoActive.sql" FileType="SQL" RelativePath="SQL/HealthChecks"/> 
+<Script ScriptName="spDetectWorkflowServiceBeatingEvery10Minutes.sql" FileType="SQL" RelativePath="SQL/HealthChecks"/> 
+
+<Script ScriptName="MasterReferenceToLoadingDictionary.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries"/> 
+<Script ScriptName="UpdateStatistics.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries"/> 
+
+<Script ScriptName="scAddSegmentUser.sql" FileType="SQL" RelativePath="SQL/SegmentCreation"/> 
+<Script ScriptName="spCreateMedidataAppAdminRole.sql" FileType="SQL" RelativePath="SQL/SegmentCreation"/> 
+<Script ScriptName="spSegmentCreateSupportData.sql" FileType="SQL" RelativePath="SQL/SegmentCreation"/> 
+<Script ScriptName="spSetupSuperUser.sql" FileType="SQL" RelativePath="SQL/SegmentCreation"/> 
+<Script ScriptName="spSetupTemplateSegment.sql" FileType="SQL" RelativePath="SQL/SegmentCreation"/> 
+<!--
+<Script ScriptName="db_AddNewVersion.sql" FileType="SQL" RelativePath="SQL/ShellCommands"/> 
+<Script ScriptName="db_UpdateTermRanks.sql" FileType="SQL" RelativePath="SQL/ShellCommands"/> 
+<Script ScriptName="SQL_LockID.sql" FileType="SQL" RelativePath="SQL/ShellCommands"/> 
+-->
+
+
+<!--<Script ScriptName="spDropAndCreateMedDRAEngStagingTables.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/MedDRA/Create SPs"/> 
+<Script ScriptName="spMedDRAFirstVersionSetup.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/MedDRA/Create SPs"/> 
+<Script ScriptName="spMedicalDictionaryLoadMedDRA.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/MedDRA/Create SPs"/> 
+<Script ScriptName="spMedicalDictionaryLoadMedDRAVersion.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/MedDRA/Create SPs"/> 
+<Script ScriptName="spPopulateMedDRAEngStagingTables.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/MedDRA/Create SPs"/> 
+<Script ScriptName="spDropAndCreateMedDRAJpnStagingTables.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/MedDRAJ(Must Run after MedDRA)/Create SPs"/> 
+<Script ScriptName="spMedicalDictionaryLoadMedDRAJapan.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/MedDRAJ(Must Run after MedDRA)/Create SPs"/> 
+<Script ScriptName="spPopulateMedDRAJpnStagingTables.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/MedDRAJ(Must Run after MedDRA)/Create SPs"/> 
+<Script ScriptName="spDropAndCreateWhoDRUGB2EngStagingTables.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/WhoDrugB/Create SPs"/> 
+<Script ScriptName="spMedicalDictionaryLoadWhoDrugBVersion.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/WhoDrugB/Create SPs"/> 
+<Script ScriptName="spPopulateWhoDRUGB2EngStagingTables.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/WhoDrugB/Create SPs"/> 
+<Script ScriptName="spWhoDrugBFirstVersionSetup.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/WhoDrugB/Create SPs"/> 
+<Script ScriptName="spWhoDrugBReconstructMissingRelationships.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/WhoDrugB/Create SPs"/> 
+<Script ScriptName="spWhoDrugBReconstructMissingRelationships2.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/WhoDrugB/Create SPs"/> 
+<Script ScriptName="spDropAndCreateWhoDRUGCEngStagingTables.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/WhoDrugC/Create SPs"/> 
+<Script ScriptName="spMedicalDictionaryLoadWhoDrugVersion.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/WhoDrugC/Create SPs"/> 
+<Script ScriptName="spPopulateWhoDRUGCEngStagingTables.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/WhoDrugC/Create SPs"/> 
+<Script ScriptName="spWhoDrugFirstVersionSetup.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/WhoDrugC/Create SPs"/> 
+-->
+
+</Patch>

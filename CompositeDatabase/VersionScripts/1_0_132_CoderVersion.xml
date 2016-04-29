@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.132</PatchNumber>
+  <!-- Post-Transition Build -->
+  <!-- daily change scripts here -->
+  <Script ScriptName="20120809-01-PostTransitionCleanUp.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <!-- Client db tables clean up -->
+  <Script ScriptName="20120501-01-DictSvcClientDBSetup.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20120808-01-DropStoredProcedures.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- GROUP Migration Changes -->
+  <Script ScriptName="20120828-03-CodingGroupCleanSchema.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+
+</Patch>

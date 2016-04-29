@@ -1,0 +1,78 @@
+﻿<#@ template language="C#v4.0" debug="True" hostspecific="True" #>
+<#@ assembly name="EnvDTE" #>
+<#@ assembly name="System.Core.dll" #>
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Configuration" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Data" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.Data.Common" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Globalization" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Configuration" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="Microsoft.VisualStudio.TextTemplating" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Xml.Serialization" #>
+<#@ import namespace="EnvDTE" #>
+<#+
+
+    const string ProcSchemaFileName   = "ProcSchema.xml";
+    const string TableSchemaFileName  = "TableSchema.xml";
+    const string UdtSchemaFileName    = "UdtSchema.xml";
+    const string Namespace            = "Medidata.CodingWorkbench.Objects";
+    const string ConnectionString     = "Server=*****;Database=coder_v1;uid=*****;pwd=****";
+
+
+    const string DatabaseFriendlyName = "Coder";
+    
+    //This is the name of your database and is used in naming
+    //the repository. It shold be set to the same vale as in the connection string name
+    const string DatabaseName = "coder_v1";
+
+    const string DataModelBaseName = "Coder";
+
+    string[] ReadableTables = new string[]{ // Tables to generate reads from
+    };
+
+    Dictionary<string, string[]> ReadableTablesExcludeColumns = new Dictionary<string, string[]>
+    {
+        /*
+        { "CodingRequests", new string[] { "XmlContent" } }
+        */
+    };
+
+    Dictionary<string, string> ReadableTablesPrimaryKeyOverrides = new Dictionary<string, string>
+    {
+        /*
+        { "CompletedCodingJobs"     , "CodingElementId"  },
+        { "CodingRequestStatus"     , "CodingRequestId"  },
+        { "CsvCodingJobErrorDetails", "CodingJobErrorId" },
+        { "VolatileCodingRequestLineQueue", "LineNumber" }
+        */
+
+    };
+
+    string[] IncludedProcedures = new string[]
+    {
+        "spCodingElementSearch",
+        "spCodingElementSearchForUnload",
+        "spCodingElementGetFilterValuesGroup",
+    };
+
+    Dictionary<string, string[]> ProcedureExcludeColumns = new Dictionary<string, string[]>
+    {
+        //{ "CodingRequests", new string[] { "XmlContent" } }
+    };
+
+	string[] ArithAbortProcedures = new string[] 
+    {
+		//"spStoredProcedureRequiringArithAbortSetting",
+    };
+#>

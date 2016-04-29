@@ -1,0 +1,321 @@
+IF NOT EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'DisplayPrimaryPathOnly')
+	ALTER TABLE Users
+	ADD DisplayPrimaryPathOnly BIT NOT NULL CONSTRAINT DF_Users_DisplayPrimaryPathOnly DEFAULT (0)
+
+GO
+
+UPDATE Users
+SET USers.DisplayPrimaryPathOnly = UP.DisplayPrimaryPathOnly
+FROM Users 
+	CROSS APPLY
+	(
+		SELECT ISNULL(DisplayPrimaryPathOnly, 0) AS DisplayPrimaryPathOnly
+		FROM UserPreferences UP
+		WHERE Users.UserID = UP.UserId
+	) AS UP
+
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'MiddleName')
+	ALTER TABLE Users
+	DROP COLUMN MiddleName 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'MiddleName')
+	ALTER TABLE Users
+	DROP COLUMN MiddleName 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'Title')
+	ALTER TABLE Users
+	DROP COLUMN Title 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'PIN')
+	ALTER TABLE Users
+	DROP COLUMN PIN 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'Password')
+	ALTER TABLE Users
+	DROP COLUMN [Password] 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'PasswordExpires')
+	ALTER TABLE Users
+	DROP COLUMN PasswordExpires 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'IsEnabled')
+	ALTER TABLE Users
+	DROP COLUMN IsEnabled 
+
+GO
+
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'IsTrainingSigned')
+	ALTER TABLE Users
+	DROP COLUMN IsTrainingSigned 
+
+GO
+IF EXISTS 
+	(SELECT NULL FROM sys.objects WHERE name = 'DF_Users_UserGroup'
+		 AND type = 'D')
+	ALTER TABLE Users
+	DROP CONSTRAINT DF_Users_UserGroup 
+GO
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'GlobalRoleID')
+	ALTER TABLE Users
+	DROP COLUMN GlobalRoleID 
+
+GO
+
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'ExternalID')
+	ALTER TABLE Users
+	DROP COLUMN ExternalID 
+
+GO
+IF EXISTS 
+	(SELECT NULL FROM sys.objects WHERE name = 'DF_Users_SponsorApproval'
+		 AND type = 'D')
+	ALTER TABLE Users
+	DROP CONSTRAINT DF_Users_SponsorApproval
+GO
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'IsSponsorApprovalRequired')
+	ALTER TABLE Users
+	DROP COLUMN IsSponsorApprovalRequired 
+
+GO
+IF EXISTS 
+	(SELECT NULL FROM sys.objects WHERE name = 'DF_Users_AccountActivation'
+		 AND type = 'D')
+	ALTER TABLE Users
+	DROP CONSTRAINT DF_Users_AccountActivation
+GO
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'AccountActivation')
+	ALTER TABLE Users
+	DROP COLUMN AccountActivation 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'IsLockedOut')
+	ALTER TABLE Users
+	DROP COLUMN IsLockedOut 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'Credentials')
+	ALTER TABLE Users
+	DROP COLUMN Credentials 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'Salutation')
+	ALTER TABLE Users
+	DROP COLUMN Salutation 
+
+GO
+IF EXISTS 
+	(SELECT NULL FROM sys.objects WHERE name = 'DF_Users_GUID'
+		 AND type = 'D')
+	ALTER TABLE Users
+	DROP CONSTRAINT DF_Users_GUID
+GO
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'Guid')
+	ALTER TABLE Users
+	DROP COLUMN [Guid] 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'DEANumber')
+	ALTER TABLE Users
+	DROP COLUMN DEANumber 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'IsTrainingOnly')
+BEGIN
+	DECLARE @table_name nvarchar(256)
+	DECLARE @col_name nvarchar(256)
+	DECLARE @Command  nvarchar(1000)
+
+	SET @table_name = N'Users'
+	SET @col_name = N'IsTrainingOnly'
+	SELECT @Command = 'ALTER TABLE ' + @table_name + ' DROP CONSTRAINT ' + d.name
+	FROM sys.tables t
+	JOIN sys.default_constraints d       
+	   on d.parent_object_id = t.object_id
+	JOIN sys.columns c      
+	   on c.object_id = t.object_id      
+		and c.column_id = d.parent_column_id
+	WHERE t.name = @table_name
+	  and c.name = @col_name
+
+	EXEC (@Command)
+	ALTER TABLE Users
+	DROP COLUMN IsTrainingOnly 
+
+END
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'EULADate')
+	ALTER TABLE Users
+	DROP COLUMN EULADate 
+
+GO
+IF EXISTS 
+	(SELECT NULL FROM sys.objects WHERE name = 'DF_Users_GUID'
+		 AND type = 'D')
+	ALTER TABLE Users
+	DROP CONSTRAINT DF_Users_GUID
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'IsClinicalUser')
+BEGIN
+	DECLARE @table_name nvarchar(256)
+	DECLARE @col_name nvarchar(256)
+	DECLARE @Command  nvarchar(1000)
+
+	SET @table_name = N'Users'
+	SET @col_name = N'IsClinicalUser'
+	SELECT @Command = 'ALTER TABLE ' + @table_name + ' DROP CONSTRAINT ' + d.name
+	FROM sys.tables t
+	JOIN sys.default_constraints d       
+	   on d.parent_object_id = t.object_id
+	JOIN sys.columns c      
+	   on c.object_id = t.object_id      
+		and c.column_id = d.parent_column_id
+	WHERE t.name = @table_name
+	  and c.name = @col_name
+
+	EXEC (@Command)
+	ALTER TABLE Users
+	DROP COLUMN IsClinicalUser 
+
+END
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM sys.objects WHERE name = 'DF_Users_IsReadOnly'
+		 AND type = 'D')
+	ALTER TABLE Users
+	DROP CONSTRAINT DF_Users_IsReadOnly
+GO
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'IsReadOnly')
+	ALTER TABLE Users
+	DROP COLUMN IsReadOnly 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM sys.objects WHERE name = 'FK_Users_Authenticators'
+		 AND type = 'F')
+	ALTER TABLE Users
+	DROP CONSTRAINT FK_Users_Authenticators 
+GO
+IF EXISTS (SELECT NULL FROM sysindexes WHERE NAME = 'IX_Users_AuthenticatorID')  
+  DROP INDEX Users.IX_Users_AuthenticatorID
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'AuthenticatorID')
+	ALTER TABLE Users
+	DROP COLUMN AuthenticatorID 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'CreatedBy')
+	ALTER TABLE Users
+	DROP COLUMN CreatedBy 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'AuthenticationSourceID')
+	ALTER TABLE Users
+	DROP COLUMN AuthenticationSourceID 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'Salt')
+	ALTER TABLE Users
+	DROP COLUMN Salt 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM sys.objects WHERE name = 'DF_Users_UserDeactivated'
+		 AND type = 'D')
+	ALTER TABLE Users
+	DROP CONSTRAINT DF_Users_UserDeactivated
+GO
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'UserDeactivated')
+	ALTER TABLE Users
+	DROP COLUMN UserDeactivated 
+
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Users'
+		 AND COLUMN_NAME = 'DefaultSegmentID')
+	ALTER TABLE Users
+	DROP COLUMN DefaultSegmentID 
+
+GO

@@ -1,0 +1,15 @@
+﻿IF EXISTS (SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'SynonymMigrationEntries'
+		 AND COLUMN_NAME = 'PriorTermIdsAndText' AND DATA_TYPE = 'varchar')
+BEGIN
+	ALTER TABLE SynonymMigrationEntries 
+	ALTER COLUMN PriorTermIdsAndText NVARCHAR(MAX)
+END
+GO  
+
+IF EXISTS (SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'SynonymMigrationSuggestions'
+		 AND COLUMN_NAME = 'NextTermIdsAndText' AND DATA_TYPE = 'varchar')
+BEGIN
+	ALTER TABLE SynonymMigrationSuggestions 
+	ALTER COLUMN NextTermIdsAndText NVARCHAR(MAX)
+END
+GO    

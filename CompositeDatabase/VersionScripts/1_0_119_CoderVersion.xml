@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.119</PatchNumber>
+
+    <!-- daily change scripts here -->
+    <Script ScriptName="20120320-01-CreateStudyMigrationBackupTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- user defined functions here -->
+
+    <!-- stored procs here -->
+    <Script ScriptName="spImpactAnalysisDetailView.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+    <Script ScriptName="spSynonymMigrationMngmntProcessSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+    <Script ScriptName="spReportUCodedTerms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+    <Script ScriptName="spSynonymSuggestionsGetBySynEntry.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+    <Script ScriptName="spStudyDictionaryVersionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+    <Script ScriptName="spStudyDictionaryVersionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+    <Script ScriptName="spStudyVersionMigrationRestoreBackup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+    <Script ScriptName="spStudyVersionMigration.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+    <Script ScriptName="spDoProjectRegistration.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+    <Script RelativePath="SQL/Change Scripts" FileType="SQL" ScriptName="dbiqAllStrings.sql"/>
+    <Script RelativePath="SQL/Change Scripts" FileType="SQL" ScriptName="dbiqAllJPNStrings.sql"/>
+
+</Patch>
+  

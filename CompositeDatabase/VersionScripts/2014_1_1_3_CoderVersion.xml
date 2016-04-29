@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>2014.1.1.3</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="20140430-01-FixExternalVerbatimSecurity.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spSetupSuperUser.sql" FileType="SQL" RelativePath="SQL/SegmentCreation" />
+  <Script ScriptName="spSetupExternalVerbatimSecurity.sql" FileType="SQL" RelativePath="SQL/SegmentCreation" />
+  <Script ScriptName="spSegmentCreateSupportData.sql" FileType="SQL" RelativePath="SQL/SegmentCreation" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+
+</Patch>

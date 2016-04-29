@@ -1,0 +1,110 @@
+﻿<#@ include file="..\Utilities\AutogenHeader.ttinclude" #>
+
+using Medidata.Dapper;
+using System;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Linq;
+using System.CodeDom.Compiler;
+
+namespace <#=Namespace #>
+{
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal interface IPrimaryKeyReadableRepositoryFactory
+    {
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        /// <summary>
+        /// Builds the <#=tbl.ClassName#> primary key readable repository.
+        /// </summary>
+        IDapperKeyReadableRepository<<#=tbl.PK.SysType#>, <#=tbl.ClassName#>DTO> Build<#=tbl.ClassName#>PrimaryKeyReadableRepository();
+
+<#
+}    
+#>
+
+<#
+    foreach(Table tbl in tables)
+    {
+        foreach(Column col in tbl.Columns)
+        {
+            var columnIsForeignKey = tbl.FKTables.Where(fk=> fk.ThisColumn == col.Name).FirstOrDefault() != null;
+
+            if(! columnIsForeignKey)
+                continue;
+#>
+
+        /// <summary>
+        /// Builds the <#=tbl.ClassName#> by <#= col.Name #> foreign key repository.
+        /// </summary>
+        IDapperKeyReadableRepository<<#=col.SysType#>, IEnumerable<<#=tbl.ClassName#>DTO>> Build<#=tbl.ClassName#>By<#= col.Name #>ForeignKeyReadableRepository();
+
+<#
+        }
+    }    
+#>
+    }
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class PrimaryKeyReadableRepositoryFactory:IPrimaryKeyReadableRepositoryFactory
+    {
+        private readonly IDapperRepositoryFactory _RepoFactory;
+
+        public PrimaryKeyReadableRepositoryFactory(IDapperRepositoryFactory repoFactory)
+        {
+            Debug.Assert(!ReferenceEquals(repoFactory , null), "repoFactory can't be null");
+
+            _RepoFactory = repoFactory;
+        }
+
+        public PrimaryKeyReadableRepositoryFactory(Func<String, String> urlDecoder) : this(new DapperRepositoryFactory(urlDecoder)) { }
+
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        /// <summary>
+        /// Builds the <#=tbl.ClassName#> filtered repository.
+        /// </summary>
+        /// <param name="validFilters">The valid filters.</param>
+        /// <returns></returns>
+        public IDapperKeyReadableRepository<<#=tbl.PK.SysType#>, <#=tbl.ClassName#>DTO> Build<#=tbl.ClassName#>PrimaryKeyReadableRepository()
+        {
+            var result = _RepoFactory.BuildPrimaryKeyReadableRepository<<#=tbl.PK.SysType#>, <#=tbl.ClassName#>DTO>("<#=tbl.Name#>", "<#=tbl.PrimaryKey#>");
+            return result;
+        }
+
+<#
+}    
+#>
+
+<#
+    foreach(Table tbl in tables)
+    {
+        foreach(Column col in tbl.Columns)
+        {
+            var columnIsForeignKey = tbl.FKTables.Where(fk=> fk.ThisColumn == col.Name).FirstOrDefault() != null;
+
+            if(! columnIsForeignKey)
+                continue;
+#>
+        /// <summary>
+        /// Builds the <#=tbl.ClassName#> by <#= col.Name #> foreign key repository.
+        /// </summary>
+        public IDapperKeyReadableRepository<<#=col.SysType#>, IEnumerable<<#=tbl.ClassName#>DTO>> Build<#=tbl.ClassName#>By<#= col.Name #>ForeignKeyReadableRepository()
+        {
+            var result = _RepoFactory.BuildForeignKeyReadableRepository<<#=col.SysType#>, <#=tbl.ClassName#>DTO>("<#=tbl.Name#>", "<#=col.Name#>");
+            return result;
+        }
+
+<#
+        }
+    }    
+#>
+    }
+}
+<#
+SaveOutput("KeyReadableRepositoryFactory.cs");
+#>

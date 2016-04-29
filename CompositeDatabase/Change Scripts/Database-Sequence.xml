@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScriptsSequence>
+
+	<!-- NOTE: requires fresh database setup, sets up the tables, pk, fks, idx and fulltext catalogues -->
+	<Task Type="Script" ScriptName="Create_Gold_Database" Path="Change Scripts"/>
+  
+  <!-- Add Change Scripts here as needed -->
+
+  <Task Type="Script" ScriptName="dbiqIndexes" Path="Change Scripts"/>
+
+	<Task Type="ScriptDir" Path="User-Defined Functions\Framework"/>
+
+	<Task Type="ScriptDir" Path="User-Defined Functions\Coder"/>
+
+	<Task Type="Script" ScriptName="dbiqObjectTypeR" Path="Change Scripts"/>
+
+	<Task Type="Script" ScriptName="CreateLocalizationTypes" Path="Change Scripts"/>
+	<Task Type="Script" ScriptName="CreateTableTypes" Path="Change Scripts"/>
+
+	<Task Type="ScriptDir" Path="Stored Procedures\Framework"/>
+
+	<Task Type="Script" ScriptName="dbiqAllStrings" Path="Change Scripts"/>
+
+	<Task Type="Script" ScriptName="dbiqObjectiveReferences" Path="Change Scripts"/>
+
+	<Task Type="Script" ScriptName="SecurityInitialSetup" Path="Change Scripts"/>
+
+	<Task Type="Script" ScriptName="dbiqRTablePopulation" Path="Change Scripts"/>
+
+	<Task Type="Script" ScriptName="InitialTablePopulation" Path="Change Scripts"/>
+
+	<Task Type="Script" ScriptName="dbiqConfiguration" Path="Change Scripts"/>
+
+	<Task Type="ScriptDir" Path="Stored Procedures\Coder FullTextSearch"/>
+	<Task Type="ScriptDir" Path="Stored Procedures\Coder Workflow"/>
+	<Task Type="ScriptDir" Path="Stored Procedures\Coder WorkflowSecurity"/>
+	<Task Type="ScriptDir" Path="Stored Procedures\Coder Test Data Population Scripts"/>
+	<Task Type="ScriptDir" Path="Stored Procedures\Coder Dictionary Versioning"/>
+	<Task Type="ScriptDir" Path="Stored Procedures\Coder Other"/>
+
+	<Task Type="ScriptDir" Path="SegmentCreation"/>
+
+	<!-- Create Help Contexts -->
+	<Task Type="Script" ScriptName="dbiqHelpContexts" Path="Change Scripts"/>
+
+	<!-- Dictionary Loading Scripts -->
+	<!-- 1. ICD 10 -->
+
+	<!-- 2. MedDRA 9-12 -->
+	<Task Type="ScriptDir" Path="Loading Dictionaries\MedDRA\Create SPs"/>
+	<Task Type="ScriptDir" Path="Loading Dictionaries\MedDRAJ\Create SPs"/>
+
+	<!-- 3. WhoDrugB -->
+	<Task Type="ScriptDir" Path="Loading Dictionaries\WhoDrugB\Create SPs"/>
+
+	<!-- 4. WhoDrugC -->
+	<Task Type="ScriptDir" Path="Loading Dictionaries\WhoDrugC\Create SPs"/>
+
+  <!--<Task Type="Script" ScriptName="UpdateStatistics" Path="Loading Dictionaries"/>-->
+
+	<!-- SPUG Generated GPs & Types -->
+	<!-- TODO: There are issues with the following file -->
+	<!-- TODO: Resolution in the backlog of CHARLIE -->
+	<Task Type="Script" ScriptName="SprocTemplate" Path="Stored Procedures\SPUG Generated"/>
+
+	<!-- Set up some default values in the database -->
+  <Task Type="Run" Sp="spSetupTemplateSegment" />
+	<Task Type="Run" Sp="spCreateMedidataAppAdminRole 'AppAdmin', 'AppAdmin', 1, 'eng', 'CoderAdmin'" />
+	<Task Type="Run" Sp="spSetupSuperUser 'SegmentAdmin', 'SegmentAdmin', 2, 'eng', 'CoderAdmin'" />
+
+</ScriptsSequence> 

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.112</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spMedicalDictionarySearchMultiIngredient.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch" />
+  <Script ScriptName="spMedDictTermFTSearchSynonymsMaxNumber.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spEnableLOCLocalization.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />  
+  <Script ScriptName="spMedicalDictionaryTermLoadChildren.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spDoProjectRegistration.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+
+</Patch>
+

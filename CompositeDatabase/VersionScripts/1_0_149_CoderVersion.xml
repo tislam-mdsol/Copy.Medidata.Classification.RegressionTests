@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.149</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="20130201-01-AlterBotElementTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spBOTElementInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spBOTElementUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="ExistingSegmentsWorkflowLocalization.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  </Patch>

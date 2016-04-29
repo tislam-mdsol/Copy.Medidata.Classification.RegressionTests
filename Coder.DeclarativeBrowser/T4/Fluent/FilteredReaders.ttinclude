@@ -1,0 +1,153 @@
+﻿<#@ include file="..\Utilities\AutogenHeader.ttinclude" #>
+using System;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Linq;
+using Medidata;
+using Medidata.Dapper;
+using System.Data;
+using System.CodeDom.Compiler;
+
+namespace <#=Namespace #> {
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal interface I<#=DataModelBaseName#>DbFilteredReadersRepository
+    {
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        IDapperFilteredRepository<<#=tbl.ClassName#>DTO> <#=tbl.ClassName#>Repository { get; }
+
+<#
+}    
+#>
+    }
+	    
+	<#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=DataModelBaseName#>DbFilteredReadersRepository : I<#=DataModelBaseName#>DbFilteredReadersRepository
+    {
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        private readonly IDapperFilteredRepository<<#=tbl.ClassName#>DTO> _<#=tbl.ClassName#>Repository;
+
+<#
+}    
+#>
+
+        public <#=DataModelBaseName#>DbFilteredReadersRepository(
+            <#=DataModelBaseName#>DbConfig config,
+            IFilteredRepositoryFactory repoFactory)
+        {
+            Debug.Assert(!ReferenceEquals(config, null), "config can't be null");
+            Debug.Assert(!ReferenceEquals(repoFactory, null), "repoFactory can't be null");
+
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+            _<#=tbl.ClassName#>Repository =
+                repoFactory.Build<#=tbl.ClassName#>FilteredRepository(
+                    config.<#=tbl.ClassName#>ValidFilters,
+                    config.<#=tbl.ClassName#>FilterAliases);
+<#
+}    
+#>
+        }
+
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        public IDapperFilteredRepository<<#=tbl.ClassName#>DTO> <#=tbl.ClassName#>Repository
+        {
+            get { return _<#=tbl.ClassName#>Repository; }
+        }
+<#
+}    
+#>
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal interface I<#=DataModelBaseName#>DbFilteredReaders
+    {
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        IEnumerable<<#=tbl.ClassName#>DTO> <#=tbl.ClassName#>s(IEnumerable<QueryFilter> filterParameters);
+
+<#
+}    
+#>
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=DataModelBaseName#>DbFilteredReaders:I<#=DataModelBaseName#>DbFilteredReaders
+    {
+        private readonly IDbConnection                                      _Connection;
+        private readonly I<#=DataModelBaseName#>DbFilteredReadersRepository _Repo;
+
+        public <#=DataModelBaseName#>DbFilteredReaders(
+            IDbConnection connection,
+            I<#=DataModelBaseName#>DbFilteredReadersRepository repo)
+        {
+            Debug.Assert(!ReferenceEquals(connection , null), "connection can't be null");
+            Debug.Assert(!ReferenceEquals(repo       , null), "repo can't be null");
+
+            _Connection  = connection;
+            _Repo        = repo;
+        }
+
+
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        public IEnumerable<<#=tbl.ClassName#>DTO> <#=tbl.ClassName#>s(IEnumerable<QueryFilter> filterParameters)
+        {
+            var result     = _Repo.<#=tbl.ClassName#>Repository.Read(_Connection, filterParameters);
+            return result;
+        }
+
+<#
+}    
+#>
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=DataModelBaseName#>DbFilteredReadersTester:I<#=DataModelBaseName#>DbFilteredReaders
+    {
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        public Func<IEnumerable<QueryFilter>, IEnumerable<<#=tbl.ClassName#>DTO>> <#=tbl.ClassName#>sBehavior { get; set; }
+
+        public IEnumerable<<#=tbl.ClassName#>DTO> <#=tbl.ClassName#>s(IEnumerable<QueryFilter> filterParameters)
+        {
+            if(ReferenceEquals(<#=tbl.ClassName#>sBehavior, null))
+                return null;
+
+            var result = <#=tbl.ClassName#>sBehavior(filterParameters);
+            return result;
+        }
+
+<#
+}    
+#>
+    }
+
+
+}
+<#
+SaveOutput("Fluent_FilteredReaders.cs");
+#>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>2013.2.0.16</PatchNumber>
+  
+  <!-- daily change scripts here -->
+  <Script ScriptName="20131014-01-AddCancelQueryToStudyMigrationBackup.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20131016-01-AddUUIDToApplication.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spStudyMigrationBackupNewIdsUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationBackupAllData.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationQueueNewTransmissions.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyVersionMigrationRestoreBackup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spApplicationInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spApplicationUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spApplicationLoadByUUID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  
+</Patch>

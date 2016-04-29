@@ -1,0 +1,38 @@
+﻿<#@ include file="..\Utilities\AutogenHeader.ttinclude" #>
+
+using System;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Linq;
+using System.Data;
+using System.CodeDom.Compiler;
+using Medidata.Dapper;
+
+namespace <#=Namespace #> {
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal static class CommandExtensions
+    {
+<#
+    
+    foreach(SP proc in procedures)
+    {
+#>
+        public static <#=proc.Name#>CommandResponse  Execute(this IDbConnection connection, <#=proc.Name#>CommandRequest request, Int32? commandTimeout = null)
+        {
+            Debug.Assert(!ReferenceEquals(connection, null), "connection can't be null");
+            Debug.Assert(!ReferenceEquals(request, null), "request can't be null");
+
+            var command = new <#=proc.Name#>Command(connection, commandTimeout);
+            var result = command.Execute(request);
+            return result;
+        }
+
+<#
+}    
+#>
+    }
+}
+<#
+SaveOutput("CommandExtensions.cs");
+#>

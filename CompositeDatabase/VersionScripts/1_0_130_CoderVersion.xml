@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.130</PatchNumber>
+  <!-- Pre-Transition Build -->
+  <!-- daily change scripts here -->
+  <Script ScriptName="20120402-01-AutomationModelChanges.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20120425-01-AutomationChangesTwo.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- Stage 4 -->
+  <Script ScriptName="20120717-01-CacheVersionState.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20120509-01-CreateDictRefTables.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20120823-01-CreateDictCompRefTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spDictionarySubscriptionCleanup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+  <Script ScriptName="spCodingElementGroupToGroupVerbatim.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Transition" />
+  <Script ScriptName="spProjectStudyRegistrationTransition.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Transition" />
+  <Script ScriptName="spSynonymManagementsToLists.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Transition" />
+  <Script ScriptName="spVersionOrdinalToId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Transition" />
+
+  <!-- Cache-version changes -->
+  <Script ScriptName="spRuntimeLockInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spRuntimeLockDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spConfigurationUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework" />
+  <Script ScriptName="spStudyDictionaryVersionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- GROUP Migration Changes -->
+  <!-- Slated to run after all prior scripts complete -->
+  <Script ScriptName="20120828-01-CodingGroupAlterSchema.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <Script ScriptName="spCodingElementGroupComponentInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementGroupComponentUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementGroupFindExisting.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementGroupInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementGroupUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermInsertGroupMany.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSubscriptionLogFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSupplementFieldKeyByKey.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSupplementFieldKeyFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSupplementFieldKeyInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementsCleanup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+
+</Patch>

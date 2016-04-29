@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Coder.ApplicationMonitoringTests</id>
+    <version>1.0.0.0</version>
+    <title>Medidata Coder Application Monitoring Tests</title>
+    <authors>Medidata Coder Team 11</authors>
+    <owners>Medidata Coder Team 11</owners>
+    <licenseUrl>https://github.com/mdsol/coder</licenseUrl>
+    <projectUrl>https://github.com/mdsol/coder</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Tests to verify that Coder services are functioning</description>
+	<releaseNotes>https://learn.mdsol.com/pages/viewpage.action?pageId=81651843</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags></tags>
+  </metadata>
+</package>

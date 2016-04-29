@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>2014.2.0.0</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="20140408-01-AddTransmissionQueueItemsPriorityStudiesTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spOutTransmissionsPrioritizeStudy.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spTransmissionQueueItemGetBySourceTransmission.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spPsSegmentStudyReport.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Support Procedures" />-->
+  <Script ScriptName="spPsOutQueueThroughputForTwoWeeksByHour.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Support Procedures" />-->
+  <Script ScriptName="spPsOutQueueHealthBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Support Procedures" />-->
+  <Script ScriptName="spPsOutQueueLongestTransactions.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Support Procedures" />
+
+ 
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqNamedQueries.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+</Patch>

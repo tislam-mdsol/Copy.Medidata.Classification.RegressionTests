@@ -1,0 +1,119 @@
+﻿<#@ include file="..\Utilities\AutogenHeader.ttinclude" #>
+using System;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Linq;
+using Medidata;
+using System.Data;
+using System.CodeDom.Compiler;
+using Medidata.Dapper;
+
+namespace <#=Namespace #> 
+{
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal interface I<#=DataModelBaseName#>AllRecordRepository
+    {
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+		IDapperAllRecordsRepository<<#=tbl.ClassName#>DTO> <#=tbl.ClassName#>AllRecordsRepository { get; }
+<#
+}    
+#>
+    }
+	    
+	<#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=DataModelBaseName#>AllRecordRepository : I<#=DataModelBaseName#>AllRecordRepository
+    {
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        private readonly IDapperAllRecordsRepository<<#=tbl.ClassName#>DTO> _<#=tbl.ClassName#>AllRecordsRepository;
+<#
+}    
+#>
+        public <#=DataModelBaseName#>AllRecordRepository(
+            IAllRecordsRepositoryFactory repoFactory)
+        {
+            Debug.Assert(!ReferenceEquals(repoFactory, null), "repoFactory can't be null");
+
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+            _<#=tbl.ClassName#>AllRecordsRepository = 
+				repoFactory.Build<#=tbl.ClassName#>AllRecordsRepository();
+<#
+}    
+#>
+        }
+
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        public IDapperAllRecordsRepository<<#=tbl.ClassName#>DTO> <#=tbl.ClassName#>AllRecordsRepository
+        {
+            get { return _<#=tbl.ClassName#>AllRecordsRepository; }
+        }
+<#
+}    
+#>
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal interface I<#=DataModelBaseName#>AllRecordReaders
+    {
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        IEnumerable<<#=tbl.ClassName#>DTO> <#=tbl.ClassName#>s();
+<#
+}    
+#>
+    }
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=DataModelBaseName#>AllRecordReaders : I<#=DataModelBaseName#>AllRecordReaders
+    {
+       
+        private readonly IDbConnection                _Connection;
+        private readonly I<#=DataModelBaseName#>AllRecordRepository _RepoFactory;
+
+        public <#=DataModelBaseName#>AllRecordReaders(
+            IDbConnection connection,
+            I<#=DataModelBaseName#>AllRecordRepository repoFactory)
+        {
+            Debug.Assert(!ReferenceEquals(connection , null), "connection can't be null");
+            Debug.Assert(!ReferenceEquals(repoFactory, null), "repoFactory can't be null");
+
+            _Connection     = connection;
+            _RepoFactory    = repoFactory;
+        }
+
+
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        public IEnumerable<<#=tbl.ClassName#>DTO> <#=tbl.ClassName#>s()
+        {
+            var result = _RepoFactory.<#=tbl.ClassName#>AllRecordsRepository.Read(_Connection);
+            return result;
+        }
+
+<#
+}    
+#>
+    }
+}
+<#
+SaveOutput("Fluent_AllRecordReaders.cs");
+#>
+
+

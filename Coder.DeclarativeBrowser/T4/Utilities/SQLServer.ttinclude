@@ -1,0 +1,572 @@
+﻿<#@ include file="Types.ttinclude" #>
+<#+
+
+IDataReader GetReader(string sql)
+{
+    SqlConnection conn=new SqlConnection(ConnectionString);
+    SqlCommand cmd=new SqlCommand(sql,conn);
+    conn.Open();
+    return cmd.ExecuteReader(CommandBehavior.CloseConnection);
+}
+
+SqlCommand GetCommand(string sql)
+{
+    SqlConnection conn=new SqlConnection(ConnectionString);
+    SqlCommand cmd=new SqlCommand(sql,conn);
+    conn.Open();
+    return cmd;
+}
+
+const string FKSql=@"SELECT
+        ThisTable = FK.TABLE_NAME,
+        ThisColumn = CU.COLUMN_NAME,
+        OtherTable = PK.TABLE_NAME,
+        OtherColumn = PT.COLUMN_NAME,
+        Constraint_Name = C.CONSTRAINT_NAME,
+        Owner = FK.TABLE_SCHEMA
+    FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS C
+    INNER JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS FK ON C.CONSTRAINT_NAME = FK.CONSTRAINT_NAME
+    INNER JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS PK ON C.UNIQUE_CONSTRAINT_NAME = PK.CONSTRAINT_NAME
+    INNER JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE CU ON C.CONSTRAINT_NAME = CU.CONSTRAINT_NAME
+    INNER JOIN
+        (
+            SELECT i1.TABLE_NAME, i2.COLUMN_NAME
+            FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS i1
+            INNER JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE i2 ON i1.CONSTRAINT_NAME = i2.CONSTRAINT_NAME
+            WHERE i1.CONSTRAINT_TYPE = 'PRIMARY KEY'
+        )
+    PT ON PT.TABLE_NAME = PK.TABLE_NAME
+    WHERE FK.Table_NAME=@tableName OR PK.Table_NAME=@tableName";
+
+
+const string TABLE_SQL = @"SELECT *
+    FROM INFORMATION_SCHEMA.TABLES
+    WHERE TABLE_TYPE='BASE TABLE' OR TABLE_TYPE = 'VIEW'
+    ORDER BY TABLE_NAME";
+
+const string UDT_SQL = @"
+SELECT  DISTINCT
+        tt.name AS 'UDT_Name'
+       ,c.name AS 'Column'
+       ,st.name AS 'DataType'
+FROM    sys.table_types tt
+        INNER JOIN sys.columns c ON c.object_id = tt.type_table_object_id
+        INNER JOIN sys.systypes AS ST ON ST.xtype = c.system_type_id
+WHERE st.name <> 'sysname'
+ORDER BY tt.name
+       ,c.name
+       ,st.name
+    ";
+
+const string COLUMN_SQL=@"SELECT
+        TABLE_CATALOG AS [Database],
+        TABLE_SCHEMA AS Owner,
+        TABLE_NAME AS TableName,
+        COLUMN_NAME AS ColumnName,
+        ORDINAL_POSITION AS OrdinalPosition,
+        COLUMN_DEFAULT AS DefaultSetting,
+        IS_NULLABLE AS IsNullable, DATA_TYPE AS DataType,
+        CHARACTER_MAXIMUM_LENGTH AS MaxLength,
+        DATETIME_PRECISION AS DatePrecision,
+        COLUMNPROPERTY(object_id('[' + TABLE_SCHEMA + '].[' + TABLE_NAME + ']'), COLUMN_NAME, 'IsIdentity') AS IsIdentity,
+        COLUMNPROPERTY(object_id('[' + TABLE_SCHEMA + '].[' + TABLE_NAME + ']'), COLUMN_NAME, 'IsComputed') as IsComputed
+    FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE TABLE_NAME=@tableName
+    ORDER BY OrdinalPosition ASC";
+ 
+// NOTE: MC - THE ONLY WAY TO GET PROC SCHEMA IS TO EXECUTE IT
+List<List<Column>> GetSPOutput(SP proc, Dictionary<string, string[]> excludeColumns)
+{
+    List<List<Column>> result = new List<List<Column>>();
+
+        try
+        {
+            using(SqlConnection conn =new SqlConnection(ConnectionString))
+            using(SqlCommand command = new SqlCommand(proc.Name, conn))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                foreach(SPParam param in proc.Parameters)
+                {
+                    SqlParameter p = param.DbType == DbType.Binary.ToString() ? new SqlParameter(param.Name, SqlDbType.VarBinary) : new SqlParameter(param.Name, null);
+
+                    if(param.UDT != null)
+                    {
+                        p.SqlDbType   = SqlDbType.Structured;
+                    }
+
+                    command.Parameters.Add(p);
+                }
+
+                conn.Open();
+
+                
+                using (SqlDataReader reader = command.ExecuteReader(CommandBehavior.SchemaOnly))
+                {
+                    do
+                    {
+                        List<Column> cols = LoadColumns(reader, excludeColumns);
+
+                        if(cols.Count > 0)
+                            result.Add(cols);
+                    }
+                    while(reader.NextResult());
+                }
+
+                var sprocs=conn;
+                conn.Close();
+            }
+        }
+        catch(Exception ex)
+        {
+            throw;
+        }
+
+        return result;
+}
+
+List<Column> LoadColumns(SqlDataReader reader, Dictionary<string, string[]> excludeColumns){
+
+    DataTable schema = reader.GetSchemaTable();
+
+    var result=new List<Column>();
+
+    if(ReferenceEquals(schema, null))
+        return result;
+
+    if(ReferenceEquals(schema.Rows, null) )
+        return result;
+
+    for (int i = 0; i < schema.Rows.Count ; i++)
+    {
+        DataRow r = schema.Rows[i];
+
+        Column col=new Column();
+
+        col.Name            = r["ColumnName"].ToString();
+        col.CleanName       = CleanUp(col.Name);
+        col.DataType        = r["DataType"].ToString();
+        col.SysType         = GetSysType(col.DataType);
+        col.NullableSysType = GetNullableSysType(col.DataType); 
+        col.DbType          = GetDbType(col.DataType);
+        col.AutoIncrement   = r["IsAutoIncrement"].ToString()=="1";
+        col.IsNullable      = r["AllowDBNull"] != "NO"; // double negative needed for case when empty (should default to true - IsNullable by default)
+
+        int.TryParse(r["ColumnSize"].ToString(),out col.MaxLength);
+
+        result.Add(col);  
+    }
+
+    return result;
+}
+  
+SPParam[] GetSPParams(string spName, IList<UDT> customTypes){
+    var result=new List<SPParam>();
+
+    string[] restrictions = new string[4] { DatabaseName, null, spName, null };
+
+    using(SqlConnection conn=new SqlConnection(ConnectionString)){
+        conn.Open();
+
+        var sprocs=conn.GetSchema("ProcedureParameters", restrictions);
+        conn.Close();
+
+        foreach(DataRow row in sprocs.Select("", "ORDINAL_POSITION")){
+            SPParam p = new SPParam();
+
+            p.DataType  = row["DATA_TYPE"].ToString();
+            p.UDT       = customTypes.FirstOrDefault(i => i.Name.Equals(p.DataType));
+            p.SysType   = GetNullableSysType(row["DATA_TYPE"].ToString());
+            p.DbType    = GetDbType(row["DATA_TYPE"].ToString()).ToString();
+            p.Mode      = row["PARAMETER_MODE"].ToString();
+            p.Name      = row["PARAMETER_NAME"].ToString().Replace("@","");
+            p.CleanName = CleanUp(p.Name);
+
+            result.Add(p);
+        }
+    }
+    return result.ToArray();
+}
+
+List<SP> GetSPs(string[] procedures, Dictionary<string, string[]> excludeColumns, IList<UDT> userTypes){
+    var result=new List<SP>();
+    //pull the SPs
+    
+    DataTable sprocs=null;
+    DataTable parameters=null;
+    
+    using(SqlConnection conn=new SqlConnection(ConnectionString)){
+        conn.Open();
+        sprocs=conn.GetSchema("Procedures");
+        conn.Close();
+    }
+
+    foreach(DataRow row in sprocs.Rows){
+
+        string spType=row["ROUTINE_TYPE"].ToString();
+        var sp=new SP();
+        sp.Name=row["ROUTINE_NAME"].ToString();
+
+        if(! procedures.Contains(sp.Name))
+            continue;
+
+        if(spType=="PROCEDURE" &! sp.Name.StartsWith("sp_")){
+            sp.CleanName=CleanUp(sp.Name); 
+            sp.Parameters=GetSPParams(sp.Name, userTypes);
+            result.Add(sp);
+
+            sp.ResultSets = GetSPOutput(sp, excludeColumns);
+        }
+    }
+
+    return result;
+}
+
+class UDT_Data{ public string UDT_Name, Column, DataType; }
+
+List<UDT> GetUDTs()
+{
+    List<UDT_Data> data = new List<UDT_Data>();
+
+    using(IDataReader rdr=GetReader(UDT_SQL))
+        while(rdr.Read()){
+            var item = new UDT_Data{
+                UDT_Name = rdr["UDT_Name"].ToString(),
+                Column   = rdr["Column"].ToString(),
+                DataType = rdr["DataType"].ToString()
+            };
+
+            data.Add(item);
+        }
+
+    var result = data.GroupBy(i => i.UDT_Name).Select(i => {
+
+        var u = new UDT{
+            Name = i.Key,
+            CleanName = CleanUp(i.Key),
+            ClassName = CleanUp(i.Key),
+            Columns = i.Select(c => new UDTColumn
+                                    {
+                                         Name       = c.Column,
+                                         CleanName  = c.Column,
+                                         SysType    = GetSysType(c.DataType),
+                                         DbType     = GetDbType(c.DataType),
+                                         DataType   = c.DataType,
+                                         MaxLength  = 0,
+                                         IsNullable = false
+                                    }).ToList()
+        }; // end new UDT
+
+        return u;
+
+    }).ToList();
+
+    return result;
+
+}
+ 
+List<Table> LoadTables(string[] includeTables, Dictionary<string, string[]> excludeColumns, Dictionary<string, string> primaryKeyOverrides){
+    var result=new List<Table>();
+       
+    //pull the tables in a reader
+    using(IDataReader rdr=GetReader(TABLE_SQL)){
+        while(rdr.Read()){
+
+            Table tbl=new Table();
+
+            tbl.Name=rdr["TABLE_NAME"].ToString();
+            
+            if(! includeTables.Contains(tbl.Name))
+            {
+                continue;
+            }
+
+            tbl.Schema        = rdr["TABLE_SCHEMA"].ToString();
+            tbl.Columns       = LoadColumns(tbl, excludeColumns);
+            tbl.PrimaryKey    =  primaryKeyOverrides.ContainsKey(tbl.Name)? primaryKeyOverrides[tbl.Name] : GetPK(tbl.Name);
+            tbl.CleanName     = CleanUp(tbl.Name);
+            tbl.ClassName     = Inflector.MakeSingular(tbl.CleanName);
+            tbl.QueryableName = Inflector.MakePlural(tbl.ClassName);
+            
+            //set the PK for the columns
+            var pkColumn=tbl.Columns.SingleOrDefault(x=>x.Name.ToLower().Trim()==tbl.PrimaryKey.ToLower().Trim());
+            if(pkColumn!=null)
+                pkColumn.IsPK=true;
+            
+            tbl.FKTables=LoadFKTables(tbl.Name);
+            
+            result.Add(tbl);
+        }
+    }
+    
+    return result;
+}
+
+List<Column> LoadColumns(Table tbl, Dictionary<string, string[]> excludeColumns){
+    var result=new List<Column>();
+    var cmd=GetCommand(COLUMN_SQL);
+    cmd.Parameters.AddWithValue("@tableName",tbl.Name);
+
+    using(IDataReader rdr=cmd.ExecuteReader(CommandBehavior.CloseConnection)){
+        while(rdr.Read()){
+            Column col=new Column();
+            col.Name=rdr["ColumnName"].ToString();
+
+            if(excludeColumns.ContainsKey(tbl.Name) && excludeColumns[tbl.Name].Contains(col.Name))
+            {
+                continue;
+            }
+
+            col.CleanName     = CleanUp(col.Name);
+            col.DataType      = rdr["DataType"].ToString();
+            col.SysType       = GetSysType(col.DataType);
+            col.DbType        = GetDbType(col.DataType);
+            col.AutoIncrement = rdr["IsIdentity"].ToString()=="1";
+            col.IsNullable    = rdr["IsNullable"].ToString()=="YES";
+
+            int.TryParse(rdr["MaxLength"].ToString(),out col.MaxLength);
+            
+            result.Add(col);
+        }
+
+    }
+    
+    return result;
+}
+
+List<FKTable> LoadFKTables(string tableName){
+    
+    //this is a "bi-directional" scheme
+    //which pulls both 1-many and many-1
+
+    var result=new List<FKTable>();
+    var cmd=GetCommand(FKSql);
+    cmd.Parameters.AddWithValue("@tableName",tableName);
+    using(IDataReader rdr=cmd.ExecuteReader(CommandBehavior.CloseConnection)){
+        while(rdr.Read()){
+            FKTable fk=new FKTable();
+            string thisTable=rdr["ThisTable"].ToString();
+            
+            if(tableName.ToLower()==thisTable.ToLower()){
+                fk.ThisTable=rdr["ThisTable"].ToString();
+                fk.ThisColumn=rdr["ThisColumn"].ToString();
+                fk.OtherTable=rdr["OtherTable"].ToString();
+                fk.OtherColumn=rdr["OtherColumn"].ToString();
+            
+            }else{
+                fk.ThisTable=rdr["OtherTable"].ToString();
+                fk.ThisColumn=rdr["OtherColumn"].ToString();
+                fk.OtherTable=rdr["ThisTable"].ToString();
+                fk.OtherColumn=rdr["ThisColumn"].ToString();
+          
+            }
+            
+            fk.OtherClass=Inflector.MakeSingular(CleanUp(fk.OtherTable));
+            fk.OtherQueryable=Inflector.MakePlural(fk.OtherClass);
+            
+            result.Add(fk);
+        }
+    }
+    return result;
+
+}
+
+string GetPK(string table){
+
+string pk="";
+DataTable pkTable=new DataTable();
+    string sql=@"SELECT KCU.COLUMN_NAME
+        FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE KCU
+        JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS TC
+        ON KCU.CONSTRAINT_NAME=TC.CONSTRAINT_NAME
+        WHERE TC.CONSTRAINT_TYPE='PRIMARY KEY'
+AND KCU.TABLE_NAME=@tableName";
+        
+    var cmd=GetCommand(sql);
+    cmd.Parameters.AddWithValue("@tableName",table);
+    var result=cmd.ExecuteScalar();
+    cmd.Dispose();
+    if(result!=null)
+        pk=result.ToString();
+         
+return pk;
+}
+
+string GetSysType(string sqlType)
+{
+    string sysType = "String";
+    switch (sqlType)
+    {
+        case "bigint":
+        case "System.Int64":
+            sysType = "Int64";
+            break;
+        case "smallint":
+        case "System.Int16":
+            sysType = "Int16";
+            break;
+        case "int":
+        case "System.Int32":
+            sysType = "Int32";
+            break;
+        case "uniqueidentifier":
+        case "System.Guid":
+            sysType = "Guid";
+            break;
+        case "smalldatetime":
+        case "datetime":
+        case "System.DateTime":
+            sysType = "DateTime";
+            break;
+        case "float":
+        case "System.Double":
+            sysType = "Double";
+            break;
+        case "real":
+        case "numeric":
+        case "smallmoney":
+        case "decimal":
+        case "money":
+        case "System.Decimal":
+            sysType = "Decimal";
+            break;
+        case "tinyint":
+        case "System.Byte":
+            sysType = "Byte";
+            break;
+        case "bit":
+        case "System.Boolean":
+            sysType = "Boolean";
+            break;
+        case "image":
+        case "binary":
+        case "varbinary":
+        case "System.Byte[]":
+            sysType = "Byte[]";
+            break;
+    }
+    return sysType;
+}
+
+
+string GetNullableSysType(string sqlType)
+{
+    string sysType = "String";
+    switch (sqlType)
+    {
+        case "bigint":
+        case "System.Int64":
+            sysType = "Int64?";
+            break;
+        case "smallint":
+        case "System.Int16":
+            sysType = "Int16?";
+            break;
+        case "int":
+        case "System.Int32":
+            sysType = "Int32?";
+            break;
+        case "uniqueidentifier":
+        case "System.Guid":
+            sysType = "Guid?";
+            break;
+        case "smalldatetime":
+        case "datetime":
+        case "System.DateTime":
+            sysType = "DateTime?";
+            break;
+        case "float":
+        case "System.Double":
+            sysType = "Double?";
+            break;
+        case "real":
+        case "numeric":
+        case "smallmoney":
+        case "decimal":
+        case "money":
+        case "System.Decimal":
+            sysType = "Decimal?";
+            break;
+        case "tinyint":
+        case "System.Byte":
+            sysType = "Byte?";
+            break;
+        case "bit":
+        case "System.Boolean":
+            sysType = "Boolean?";
+            break;
+        case "image":
+        case "binary":
+        case "varbinary":
+        case "System.Byte[]":
+            sysType = "Byte[]";
+            break;
+    }
+    
+    return sysType;
+}
+
+DbType GetDbType(string sqlType){
+switch(sqlType)
+    {
+        case "varchar":
+            return DbType.AnsiString;
+        case "nvarchar":
+            return DbType.String;
+        case "int":
+            return DbType.Int32;
+        case "uniqueidentifier":
+            return DbType.Guid;
+        case "datetime":
+            return DbType.DateTime;
+        case "bigint":
+            return DbType.Int64;
+        case "binary":
+            return DbType.Binary;
+        case "bit":
+            return DbType.Boolean;
+        case "char":
+            return DbType.AnsiStringFixedLength;
+        case "decimal":
+            return DbType.Decimal;
+        case "float":
+            return DbType.Double;
+        case "image":
+            return DbType.Binary;
+        case "money":
+            return DbType.Currency;
+        case "nchar":
+            return DbType.String;
+        case "ntext":
+            return DbType.String;
+        case "numeric":
+            return DbType.Decimal;
+        case "real":
+            return DbType.Single;
+        case "smalldatetime":
+            return DbType.DateTime;
+        case "smallint":
+            return DbType.Int16;
+        case "smallmoney":
+            return DbType.Currency;
+        case "sql_variant":
+            return DbType.String;
+        case "sysname":
+            return DbType.String;
+        case "text":
+            return DbType.AnsiString;
+        case "timestamp":
+            return DbType.Binary;
+        case "tinyint":
+            return DbType.Byte;
+        case "varbinary":
+            return DbType.Binary;
+         case "xml":
+            return DbType.Xml;
+       default:
+            return DbType.AnsiString;
+    }
+
+}
+
+#>

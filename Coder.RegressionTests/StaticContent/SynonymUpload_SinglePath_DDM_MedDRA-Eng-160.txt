@@ -1,0 +1,2 @@
+Verbatim|Code|Level|Path|Primary Flag|Supplemental Info|Status|
+HEADACHE|10019211|LLT|LLT:10019211;PT:10019211;HLT:10019233;HLGT:10019231;SOC:10029205|True|||

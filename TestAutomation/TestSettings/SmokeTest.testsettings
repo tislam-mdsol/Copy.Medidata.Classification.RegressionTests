@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSettings
+  id="8c1df409-1680-4138-84ba-4647162524e0"
+  name="SmokeTestSettings"
+  enableDefaultDataCollectors="false"
+  xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Deployment enabled="false" />
+</TestSettings>

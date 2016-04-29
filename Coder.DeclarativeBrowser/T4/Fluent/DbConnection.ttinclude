@@ -1,0 +1,502 @@
+﻿<#@ include file="..\Utilities\AutogenHeader.ttinclude" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Data;
+using System.Data.SqlClient;
+using System.CodeDom.Compiler;
+using System.Diagnostics;
+using Dapper;
+using Medidata.Dapper;
+
+namespace <#=Namespace #> 
+{
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal interface I<#=DataModelBaseName#>DbConnectionFactory
+    {
+        I<#=DataModelBaseName#>DbConnection Build();
+    }
+	    
+	<#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=DataModelBaseName#>DbConnectionFactory : I<#=DataModelBaseName#>DbConnectionFactory
+    {
+        private readonly I<#=DataModelBaseName#>DbFilteredReadersRepository _FilteredRepository;
+        private readonly I<#=DataModelBaseName#>KeyedReadersRepository                       _PrimaryKeyRepository;
+        private readonly I<#=DataModelBaseName#>AllRecordRepository                      _AllRecordsRepository;
+        private readonly String                                             _ConnectionString;
+        private readonly Int32?                                             _SqlTimeout;
+        private readonly <#=DataModelBaseName#>DbConfig                     _Config;
+
+        /// <summary>
+        /// Initializes a new instance of the <#=DataModelBaseName#>DbConnectionFactory class.
+        /// </summary>
+        /// <param name="connectionString"></param>
+        /// <param name="sqlTimeout"></param>
+        /// <param name="map"></param>
+        /// <param name="config"></param>
+        /// <param name="throwIfInvalid"></param>
+        public <#=DataModelBaseName#>DbConnectionFactory(
+            String connectionString,
+            Int32? sqlTimeout,
+            Func<String, String> map,
+            <#=DataModelBaseName#>DbConfig config,
+            Boolean throwIfInvalid)
+        {
+            if (ReferenceEquals(connectionString, null)) throw new ArgumentNullException("connectionString");
+            if (ReferenceEquals(map             , null)) throw new ArgumentNullException("map");
+            if (ReferenceEquals(config          , null)) throw new ArgumentNullException("config");
+
+            _SqlTimeout                  = sqlTimeout ?? 30;
+            _ConnectionString            = connectionString;
+            _Config                      = config;
+            _FilteredRepository          = new <#=DataModelBaseName#>DbFilteredReadersRepository(
+                    _Config,
+                    new FilteredRepositoryFactory(map, throwIfInvalid));
+            _PrimaryKeyRepository        = new <#=DataModelBaseName#>KeyedReadersRepository(
+					_Config, 
+					new PrimaryKeyReadableRepositoryFactory(map));
+            _AllRecordsRepository = new <#=DataModelBaseName#>AllRecordRepository(new AllRecordsRepositoryFactory(map));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <#=DataModelBaseName#>DbConnectionFactory class.
+        /// </summary>
+        /// <param name="connectionString"></param>
+        /// <param name="sqlTimeout"></param>
+        public <#=DataModelBaseName#>DbConnectionFactory(
+            String connectionString,
+            Int32? sqlTimeout = null)
+            :this(
+                connectionString, 
+                sqlTimeout, 
+                (s => s),
+                new <#=DataModelBaseName#>DbConfig(),
+                true)
+        {
+        }
+
+        public I<#=DataModelBaseName#>DbConnection Build()
+        {
+            var sqlConnection = new SqlConnection(_ConnectionString);
+
+            var result = new <#=DataModelBaseName#>DbConnection(
+                sqlConnection,
+                _SqlTimeout,
+                _Config,
+                _FilteredRepository,
+                _PrimaryKeyRepository,
+                _AllRecordsRepository);
+
+            return result;
+        }
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /// <summary>
+    /// Connection for the <#=DataModelBaseName#>Database.
+    /// </summary>
+    /// <remarks>MULTIPLE CALLS ON SINGLE INSTANCE IS NOT THREAD SAFE!  
+    ///  For multi-threading create multiple instances.</remarks>
+    /// <example>
+    /// 
+    ///  <#=DataModelBaseName#>DbConfig config = new <#=DataModelBaseName#>DbConfig { };
+    ///
+    ///  using (var db = new <#=DataModelBaseName#>DbConnection("ConnectionString", config))
+    ///  {
+    ///      var result = db.Execute.Request(new spApplicationAdminFetchCommandRequest());
+    ///  }
+    ///     
+    /// /////// Multi-threaded example: //////////////////////////////////
+    /// 
+    ///  var results = from request in requestCollection.AsParallel().Select(r => 
+    ///  {
+    ///      using (var db = new <#=DataModelBaseName#>DbConnection("ConnectionString", config)) // new connection on each thread
+    ///      {
+    ///          var result = db.Execute.Request(new spApplicationAdminFetchCommandRequest());
+    ///          return result;
+    ///      }
+    ///  });
+    ///  
+    /// </example>
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal interface I<#=DataModelBaseName#>DbConnection: IDisposable
+    {
+        void BeginTransaction();
+        void BeginTransaction(IsolationLevel il);
+        void CommitTransaction();
+        void RollbackTransaction();
+
+        /// <summary>
+        /// Execute a procedure.
+        /// </summary>
+        /// <value>
+        /// The available procedures.
+        /// </value>
+        I<#=DataModelBaseName#>DbCommands Execute { get; }
+        /// <summary>
+        /// Get a filtered list of database entities.
+        /// </summary>
+        /// <value>
+        /// The available filtered entities.
+        /// </value>
+        I<#=DataModelBaseName#>DbFilteredReaders GetFiltered { get; }
+        /// <summary>
+        /// Get a database entity by it's primary key.
+        /// </summary>
+        /// <value>
+        /// The available entities.
+        /// </value>
+        I<#=DataModelBaseName#>KeyedReaders Get { get; }
+        /// <summary>
+        /// Get a database entity by it's primary key.
+        /// </summary>
+        /// <value>
+        /// The available entities.
+        /// </value>
+        I<#=DataModelBaseName#>AllRecordReaders GetAll { get; }
+
+        I<#=DataModelBaseName#>DbConnection WithCommandTimeout(Int32? value);
+
+        IEnumerable<T> Query<T>(string sql, dynamic param = null, bool buffered = true, CommandType? commandType = null);
+
+        Int32 ExecuteSql(string sql, dynamic param = null, CommandType? commandType = null);
+    }
+
+
+    /// <summary>
+    /// Connection for the <#=DataModelBaseName#>Database.
+    /// </summary>
+    /// <remarks>MULTIPLE CALLS ON SINGLE INSTANCE IS NOT THREAD SAFE!  
+    ///  For multi-threading create multiple instances.</remarks>
+    /// <example>
+    /// 
+    ///  <#=DataModelBaseName#>DbConfig config = new <#=DataModelBaseName#>DbConfig { };
+    ///
+    ///  using (var db = new <#=DataModelBaseName#>DbConnection("ConnectionString", config))
+    ///  {
+    ///      var result = db.Execute.Request(new spApplicationAdminFetchCommandRequest());
+    ///  }
+    ///     
+    /// /////// Multi-threaded example: //////////////////////////////////
+    /// 
+    ///  var results = from request in requestCollection.AsParallel().Select(r => 
+    ///  {
+    ///      using (var db = new <#=DataModelBaseName#>DbConnection("ConnectionString", config)) // new connection on each thread
+    ///      {
+    ///          var result = db.Execute.Request(new spApplicationAdminFetchCommandRequest());
+    ///          return result;
+    ///      }
+    ///  });
+    ///  
+    /// </example>
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=DataModelBaseName#>DbConnection: I<#=DataModelBaseName#>DbConnection, IDisposable
+    {
+        private readonly IDbConnection                                      _Connection;
+        private readonly Int32?                                             _CommandTimeout;
+        private readonly <#=DataModelBaseName#>DbConfig                     _Config;
+        private readonly I<#=DataModelBaseName#>DbFilteredReadersRepository _FilteredRepository;
+
+        private readonly I<#=DataModelBaseName#>KeyedReadersRepository                       _PrimaryKeyRepository;
+        private readonly I<#=DataModelBaseName#>AllRecordRepository                       _AllRecordsRepository;
+
+        private IDbTransaction                                _Transaction;
+
+        public <#=DataModelBaseName#>DbConnection(
+            IDbConnection connection, 
+            Int32? commandTimeout,
+            <#=DataModelBaseName#>DbConfig config,  
+            I<#=DataModelBaseName#>DbFilteredReadersRepository filteredRepository,
+            I<#=DataModelBaseName#>KeyedReadersRepository primaryKeyRepository,
+            I<#=DataModelBaseName#>AllRecordRepository allRecordsRepository)
+        {
+            Debug.Assert(!ReferenceEquals(connection                 , null), "connection can't be null");
+            Debug.Assert(!ReferenceEquals(config                     , null), "config can't be null");
+            Debug.Assert(!ReferenceEquals(filteredRepository         , null), "filteredRepository can't be null");
+            Debug.Assert(!ReferenceEquals(primaryKeyRepository       , null), "primaryKeyRepository can't be null");
+            Debug.Assert(!ReferenceEquals(allRecordsRepository       , null), "allRecordsRepository can't be null");
+
+            _Connection                  = connection;
+            _CommandTimeout              = commandTimeout;
+            _Config                      = config;
+            _FilteredRepository          = filteredRepository;
+            _PrimaryKeyRepository        = primaryKeyRepository;
+            _AllRecordsRepository        = allRecordsRepository;
+        }
+
+        public I<#=DataModelBaseName#>DbConnection WithCommandTimeout(Int32? value)
+        {
+            var result = new <#=DataModelBaseName#>DbConnection(
+                _Connection ,                
+                value,          
+                _Config, 
+                _FilteredRepository,
+                _PrimaryKeyRepository,
+                _AllRecordsRepository);
+
+            return result;
+        }
+
+
+        public void BeginTransaction()
+        {
+            AssertConnectionIsOpen();
+            AssertTransactionDoesNotExist();
+            _Transaction = _Connection.BeginTransaction();
+        }
+
+        public void BeginTransaction(IsolationLevel il)
+        {
+            AssertConnectionIsOpen();            
+            AssertTransactionDoesNotExist();
+            _Transaction = _Connection.BeginTransaction(il);
+        }
+
+        private void AssertTransactionDoesNotExist()
+        {
+            if(ReferenceEquals(_Transaction, null))
+                return;
+
+            throw new InvalidOperationException("There is an existing transaction open on this connection.  Commit or Rollback before creating another transaction.");
+        }
+
+        public void CommitTransaction()
+        {
+            AssertTransactionExists();
+
+            try
+            {
+                _Transaction.Commit();
+            }
+            finally
+            {
+                _Transaction.Dispose();
+                _Transaction = null;
+            }
+        }
+
+        private void AssertTransactionExists()
+        {
+            if(! ReferenceEquals(_Transaction, null))
+                return;
+
+            throw new InvalidOperationException("There is no open trasaction on this connection.  A transaction must be opened before this action is valid.");
+        }
+
+        public void RollbackTransaction()
+        {
+            AssertTransactionExists();
+
+            try
+            {
+                _Transaction.Rollback();
+            }
+            finally
+            {
+                _Transaction.Dispose();
+                _Transaction = null;
+            }
+        }
+
+        public void Dispose()
+        {
+            var safeRef = _Connection;
+
+            if (! ReferenceEquals(safeRef, null))
+                safeRef.Dispose();
+
+            var safeTransRef = _Transaction;
+
+            if (!ReferenceEquals(safeTransRef, null))
+                safeTransRef.Dispose();
+        }
+
+        internal void AssertConnectionIsOpen()
+        {
+            if (_Connection.State == ConnectionState.Closed)
+                _Connection.Open();
+        }
+
+
+        /// <summary>
+        /// Execute a procedure.
+        /// </summary>
+        /// <value>
+        /// The available procedures.
+        /// </value>
+        public I<#=DataModelBaseName#>DbCommands Execute
+        { 
+            get
+            {
+                AssertConnectionIsOpen();
+
+                var result = new <#=DataModelBaseName#>DbCommands(_Connection, _CommandTimeout);
+                return result;
+            }
+        }
+
+        /// <summary>
+        /// Get a filtered list of database entities.
+        /// </summary>
+        /// <value>
+        /// The available filtered entities.
+        /// </value>
+        public I<#=DataModelBaseName#>DbFilteredReaders GetFiltered
+        {
+            get
+            {
+                AssertConnectionIsOpen();
+
+                var result = new <#=DataModelBaseName#>DbFilteredReaders(
+                                _Connection,  
+                                _FilteredRepository);
+                return result;
+            }
+        }
+
+
+        /// <summary>
+        /// Get a database entity by it's primary key.
+        /// </summary>
+        /// <value>
+        /// The available entities.
+        /// </value>
+        public I<#=DataModelBaseName#>KeyedReaders Get
+        {
+            get
+            {
+                AssertConnectionIsOpen();
+
+                var result = new <#=DataModelBaseName#>KeyedReaders(_Connection, _PrimaryKeyRepository);
+                return result;
+            }
+        }
+
+                /// <summary>
+        /// Get a database entity by it's primary key.
+        /// </summary>
+        /// <value>
+        /// The available entities.
+        /// </value>
+        public I<#=DataModelBaseName#>AllRecordReaders GetAll
+        {
+            get
+            {
+                AssertConnectionIsOpen();
+
+                var result = new <#=DataModelBaseName#>AllRecordReaders(_Connection, _AllRecordsRepository);
+                return result;
+            }
+        }
+        
+        public IEnumerable<T> Query<T>(
+            string sql, 
+            dynamic param = null, 
+            bool buffered = true, 
+            CommandType? commandType = null)
+        {
+            AssertConnectionIsOpen();
+
+            var result = SqlMapper.Query<T>(_Connection, sql, param, _Transaction, buffered, _CommandTimeout, commandType) as IEnumerable<T>;
+            return result;
+        }
+
+        public Int32 ExecuteSql(string sql, dynamic param = null, CommandType? commandType = null)
+        {
+            AssertConnectionIsOpen();
+
+            var result = SqlMapper.Execute(_Connection, sql, param, _Transaction, _CommandTimeout, commandType);
+            return result;
+        }
+
+
+    }	
+
+    /////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal class <#=DataModelBaseName#>DbConnectionTester:I<#=DataModelBaseName#>DbConnection
+    {
+        public void BeginTransaction()
+        {
+        }
+
+        public void BeginTransaction(IsolationLevel il)
+        {
+        }
+
+        public void CommitTransaction()
+        {
+        }
+
+        public void RollbackTransaction()
+        {
+        }
+
+        public I<#=DataModelBaseName#>DbConnection WithCommandTimeout(Int32? commandTimeout)
+        {
+            return this;
+        }
+
+        private readonly <#=DataModelBaseName#>DbCommandsTester _CommandsTester = new <#=DataModelBaseName#>DbCommandsTester();
+
+        public <#=DataModelBaseName#>DbCommandsTester ConfigureExecute
+        {
+            get { return _CommandsTester; }
+        }
+
+        public I<#=DataModelBaseName#>DbCommands Execute
+        {
+            get { return _CommandsTester; }
+        }
+
+        private readonly <#=DataModelBaseName#>DbFilteredReadersTester _FilterTester = new <#=DataModelBaseName#>DbFilteredReadersTester();
+
+        public <#=DataModelBaseName#>DbFilteredReadersTester ConfigureGetFiltered
+        {
+            get { return _FilterTester; }
+        }
+
+        public I<#=DataModelBaseName#>DbFilteredReaders GetFiltered
+        {
+            get { return _FilterTester; }
+        }
+
+        private readonly <#=DataModelBaseName#>KeyedReadersTester _KeyedReaderTester = new <#=DataModelBaseName#>KeyedReadersTester();
+
+        public <#=DataModelBaseName#>KeyedReadersTester ConfigureGet
+        {
+            get { return _KeyedReaderTester; }
+        }
+
+        public I<#=DataModelBaseName#>KeyedReaders Get
+        {
+            get { return _KeyedReaderTester; }
+        }
+
+        public I<#=DataModelBaseName#>AllRecordReaders GetAll
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public void Dispose()
+        {
+            
+        }
+        
+        public IEnumerable<T> Query<T>(string sql, dynamic param = null,bool buffered = true, CommandType? commandType = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Int32 ExecuteSql(string sql, dynamic param = null, CommandType? commandType = null)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
+<#
+SaveOutput("Fluent_DbConnection.cs");
+#>

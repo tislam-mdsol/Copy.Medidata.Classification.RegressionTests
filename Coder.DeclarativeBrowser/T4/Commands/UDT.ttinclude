@@ -1,0 +1,88 @@
+﻿<#@ include file="..\Utilities\AutogenHeader.ttinclude" #>
+
+using System;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Linq;
+using System.Data;
+using System.CodeDom.Compiler;
+using Medidata.Dapper;
+
+namespace <#=Namespace #> {
+
+<#
+    foreach(UDT u in udts){
+#>
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal class <#=u.ClassName#>
+    {
+<#
+        foreach(UDTColumn col in u.Columns){
+#>        public <#=col.SysType#> <#=col.Name#> { get; set; }
+<#
+}
+#>	
+     }
+
+     <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal static class <#=u.ClassName#>EnumerableExtension
+    {
+        private static readonly DataTable _DataTable;
+        private static readonly Int32     _UDTRowLimit = 5000;
+
+        static <#=u.ClassName#>EnumerableExtension()
+        {
+            _DataTable = new DataTable("<#=u.ClassName#>");
+
+<#
+            foreach(UDTColumn col in u.Columns){
+#>
+            _DataTable.Columns.Add(new DataColumn("<#=col.Name#>", typeof(<#=col.SysType#>)));
+<#
+            }
+#>
+        }
+
+        public static DataTable ToDataTable(this IEnumerable<<#=u.ClassName#>> items)
+        {
+            Debug.Assert(!ReferenceEquals(items, null), "items can't be null");
+
+            if(ReferenceEquals(items, null))
+                throw new ArgumentNullException("items");
+
+            var table = _DataTable.Clone();
+
+            if (items.Count() > _UDTRowLimit)
+                throw new ArgumentOutOfRangeException(string.Format("<#=u.ClassName#>.ToDataTable() Error: More than {0} data rows populated to data table which is beyond the upper limit.", _UDTRowLimit));
+
+            foreach (var item in items)
+            {
+                var row = table.NewRow();
+                PopulateToDataRow(item, row);
+                table.Rows.Add(row);
+            }
+            return table;
+        }
+
+        private static void PopulateToDataRow(<#=u.ClassName#> item, DataRow row)
+        {
+            Debug.Assert(!ReferenceEquals(item, null), "item can't be null");
+            Debug.Assert(!ReferenceEquals(row , null), "row can't be null");
+
+<#
+            foreach(UDTColumn col in u.Columns){
+#>
+            row["<#=col.Name#>"] = item.<#=col.Name#>;
+<#
+            }
+#>
+        }
+    }
+
+<#
+}    
+#>
+}
+<#
+SaveOutput("UDT.cs");
+#>

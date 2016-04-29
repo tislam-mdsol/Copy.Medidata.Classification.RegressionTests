@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.81</PatchNumber>
+ 
+ <!-- Below is a suggested grouping for scripts. Actual location may when order dependencies exist -->
+
+ <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+ <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts"/> 
+ <Script ScriptName="dbiqObjectTypeR.sql" FileType="SQL" RelativePath="SQL/Change Scripts"/>
+
+ <!-- example data modification script -->
+ <Script ScriptName="20110630-01-UpdateSystemUserLogin.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes"
+        />
+
+</Patch>

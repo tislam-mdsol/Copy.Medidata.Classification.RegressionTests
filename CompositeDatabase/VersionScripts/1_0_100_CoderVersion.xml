@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.100</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="20111026-01-ChangeColumnTypeOnComponentsTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20111031-01-DropVersionDiff1_1AsDeveloper.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- user defined functions here -->
+  <Script ScriptName="fnGetCodeFromCategoryCode.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+  <Script ScriptName="fnGetJPNStringIDFromCategoryCode.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+
+  <!-- stored procs here -->
+  <Script ScriptName="spJDrugFirstVersionSetup.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/JDrug/CreateSPs" />
+  <Script ScriptName="spMedicalDictionaryLoadJDrugVersion.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/JDrug/CreateSPs" />
+  <Script ScriptName="spPopulateJDrugStagingTables.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/JDrug/CreateSPs" />
+  <Script ScriptName="spExtendIORValidityStringsForNewVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spSynonymMigrationMngmntProcessSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spVersionDifferencePostProcessingV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spVersionDifferenceDoMorePostProcessing_ForTerms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spLoadProvisionalSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+</Patch>
+

@@ -1,0 +1,102 @@
+﻿<#@ include file="..\Utilities\AutogenHeader.ttinclude" #>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.CodeDom.Compiler;
+using Medidata.Dapper;
+
+namespace <#=Namespace #> 
+{
+ <#
+    foreach(Table tbl in tables)
+    {
+
+#>
+    /// <summary>
+    /// A class which represents the <#=tbl.Name #> table in the <#=DatabaseName#> Database.
+    /// </summary>
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=tbl.ClassName#>DTO:IEquatable<<#=tbl.ClassName#>DTO>
+    {
+        public string KeyName()
+        {
+            return "<#=tbl.PK.CleanName #>";
+        }
+
+        public object KeyValue()
+        {
+            return this.<#=tbl.PK.CleanName#>;
+        }
+   
+        
+        public override string ToString()
+        {
+            return this.<#=tbl.Descriptor.CleanName #>.ToString();
+        }
+
+        public bool Equals(<#=tbl.ClassName#>DTO other)
+        {
+            if(Object.ReferenceEquals(other, null))
+                return false;
+
+            var result = other.KeyValue() == this.KeyValue();
+            return result;
+        }
+
+        public override bool Equals(object obj)
+        {
+            var result = Equals(obj as <#=tbl.ClassName#>DTO);
+            return result;
+        }
+
+<# if(tbl.PK.SysType=="int"){#>
+        
+        public override int GetHashCode() {
+            return this.<#=tbl.PK.CleanName #>;
+        }
+        
+<# }#>
+        public string DescriptorValue()
+        {
+            return this.<#=tbl.Descriptor.CleanName #>.ToString();
+        }
+
+        public string DescriptorColumn() {
+            return "<#=tbl.Descriptor.CleanName #>";
+        }
+        public static string GetKeyColumn()
+        {
+            return "<#=tbl.PK.CleanName #>";
+        }
+        public static string GetDescriptorColumn()
+        {
+            return "<#=tbl.Descriptor.CleanName #>";
+        }
+
+        public Int64 Row { get; set; }
+        public Int64 TotalRowCount { get; set; }
+
+<#
+            foreach(Column col in tbl.Columns)
+            {
+
+                if (tbl.ClassName == col.CleanName)
+                {
+                    col.CleanName += "X";
+                }
+#>
+        public <#=col.SysType #><#=CheckNullable(col)#> <#=col.CleanName #> { get ; set; }
+<#
+            }
+#>
+
+    }
+<#
+   
+}    
+    #>
+}
+<#
+SaveOutput("DTO.cs");
+#>

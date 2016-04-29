@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>2014.2.0.1</PatchNumber>
+
+  <!-- daily change scripts here -->
+
+  <!-- user defined functions here -->
+
+  <!-- charlie change stored procs here -->
+  <Script ScriptName="spLocaleLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spWorkflowFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow" />
+  <Script ScriptName="spWorkflowTaskDataLoadByWorkflowTask.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow" />
+  <Script ScriptName="spWorkflowTaskDataFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow" />
+
+  <Script ScriptName="spCodingElementFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementAnyTaskInServiceForStudyVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementGetDecisionCountsBySynonymIDs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementLoadDependantBySynonym.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementLoadAllForBOTByRule.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementLoadByCodingRequest.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementFindByUUID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementLoadBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spCodingRejectionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingRejectionDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingRejectionGetByCodingElementId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spCodingRequestFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingRequestLoadBySourceSystemFileOID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spCodingSourceTermComponentFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermComponentDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermComponentLoadByCodingSourceTermId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spCodingSourceTermReferenceFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermReferenceLoadBySourceTerm.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spCodingSuggestionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSuggestionLoadByCodingElementId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSuggestionLoadByTermIdsAndCodingElement.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSuggestionDeleteByCodingElement.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spMedicalDictionaryTemplateFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spStudyDictionaryVersionHistoryFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyDictionaryVersionHistoryLoadByDictAndStudy.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spStudyDictionaryVersionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyDictionaryVersionGetByKey.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyVersionObjectLoadByStudyID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyVersionGetByOID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyVersionLoadBySynonymList.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyDictionaryVersionLoadWithCodingActivity.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyDictionaryVersionLoadWithoutCodingActivity.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spSynonymMigrationManagementFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationManagementDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationMngmntDeleteSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spTrackableObjectFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spTrackableObjectLoadByExternalObjectId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spTrackableObjectByProjectId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spUserPreferencesFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spUserFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+  <Script ScriptName="spUserLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+  <Script ScriptName="spRoleInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+  <Script ScriptName="spRoleFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+  <Script ScriptName="spRoleUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+  <Script ScriptName="spRoleDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+
+  <Script ScriptName="spModuleActionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spModuleActionLoadByModuleName.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spRoleActionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+  <Script ScriptName="spRoleActionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+  <Script ScriptName="spRoleActionDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+  <Script ScriptName="spRoleActionLoadBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+
+  <Script ScriptName="spWorkflowRoleFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity" />
+  <Script ScriptName="spWorkflowRoleDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity" />
+  <Script ScriptName="spUserObjectWorkflowRoleFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity" />
+  <Script ScriptName="spUserObjectWorkflowRoleDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder WorkflowSecurity" />
+
+  <Script ScriptName="spUserObjectRoleLoadBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+  <Script ScriptName="spUserObjectRoleInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+  <Script ScriptName="spUserObjectRoleFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+  <Script ScriptName="spUserObjectRoleUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+  <Script ScriptName="spUserObjectRoleDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+
+  <Script ScriptName="spUserGetByIMedidataId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentGetByIMedidataId.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spInteractionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spInteractionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spInteractionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSecurityModuleGetByName.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spObjctSgmntsLdByObjctType.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spUserInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+
+</Patch>

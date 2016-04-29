@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUDT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <UDT Name="ActionGroups_T" CleanName="ActionGroups_T" ClassName="ActionGroups_T">
+    <Columns>
+      <UDTColumn Name="ActionGroupId" CleanName="ActionGroupId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OID" CleanName="OID" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="ActionGroupsOut_T" CleanName="ActionGroupsOut_T" ClassName="ActionGroupsOut_T">
+    <Columns>
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="ActionTypes_T" CleanName="ActionTypes_T" ClassName="ActionTypes_T">
+    <Columns>
+      <UDTColumn Name="ActionType" CleanName="ActionType" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Name" CleanName="Name" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="ActionTypesOut_T" CleanName="ActionTypesOut_T" ClassName="ActionTypesOut_T">
+    <Columns>
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="Activations_T" CleanName="Activations_T" ClassName="Activations_T">
+    <Columns>
+      <UDTColumn Name="Activated" CleanName="Activated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ActivationCode" CleanName="ActivationCode" SysType="String" DataType="char" DbType="AnsiStringFixedLength" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ActivationID" CleanName="ActivationID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ActivationStatus" CleanName="ActivationStatus" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AlertSent" CleanName="AlertSent" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Attempts" CleanName="Attempts" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Completed" CleanName="Completed" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CreatedByUserID" CleanName="CreatedByUserID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="LastAttempt" CleanName="LastAttempt" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="UserID" CleanName="UserID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="ActivationsOut_T" CleanName="ActivationsOut_T" ClassName="ActivationsOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="AuditDetailTypes_T" CleanName="AuditDetailTypes_T" ClassName="AuditDetailTypes_T">
+    <Columns>
+      <UDTColumn Name="AdditionalTrackingProperties" CleanName="AdditionalTrackingProperties" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditDetailTypeId" CleanName="AuditDetailTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditTypeId" CleanName="AuditTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ObjectTypeId" CleanName="ObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="PropertyName" CleanName="PropertyName" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="TranslationStringName" CleanName="TranslationStringName" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="AuditDetailTypesOut_T" CleanName="AuditDetailTypesOut_T" ClassName="AuditDetailTypesOut_T">
+    <Columns>
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="AuditProcesss_T" CleanName="AuditProcesss_T" ClassName="AuditProcesss_T">
+    <Columns>
+      <UDTColumn Name="AuditProcess" CleanName="AuditProcess" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditProcessId" CleanName="AuditProcessId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="IsDefault" CleanName="IsDefault" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="AuditProcesssOut_T" CleanName="AuditProcesssOut_T" ClassName="AuditProcesssOut_T">
+    <Columns>
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="Audits_T" CleanName="Audits_T" ClassName="Audits_T">
+    <Columns>
+      <UDTColumn Name="AuditDetailTypeId" CleanName="AuditDetailTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditedObjectId" CleanName="AuditedObjectId" SysType="Int64" DataType="bigint" DbType="Int64" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditedObjectTypeId" CleanName="AuditedObjectTypeId" SysType="Int64" DataType="bigint" DbType="Int64" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditId" CleanName="AuditId" SysType="Int64" DataType="bigint" DbType="Int64" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditRefernaceObjectId" CleanName="AuditRefernaceObjectId" SysType="Int64" DataType="bigint" DbType="Int64" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditRefernaceObjectTypeId" CleanName="AuditRefernaceObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditSourceId" CleanName="AuditSourceId" SysType="Int64" DataType="bigint" DbType="Int64" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditTime" CleanName="AuditTime" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditUserId" CleanName="AuditUserId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="BeforeData" CleanName="BeforeData" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Detail1" CleanName="Detail1" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Detail2" CleanName="Detail2" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Detail3" CleanName="Detail3" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Detail4" CleanName="Detail4" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Detail5" CleanName="Detail5" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ManualText" CleanName="ManualText" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="NewData" CleanName="NewData" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="PropertyName" CleanName="PropertyName" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="AuditSources_T" CleanName="AuditSources_T" ClassName="AuditSources_T">
+    <Columns>
+      <UDTColumn Name="AuditedObjectId" CleanName="AuditedObjectId" SysType="Int64" DataType="bigint" DbType="Int64" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditedObjectTypeId" CleanName="AuditedObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditProcessId" CleanName="AuditProcessId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditReasonNote" CleanName="AuditReasonNote" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditSourceId" CleanName="AuditSourceId" SysType="Int64" DataType="bigint" DbType="Int64" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuditSourceTime" CleanName="AuditSourceTime" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Host" CleanName="Host" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="InteractionId" CleanName="InteractionId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Process" CleanName="Process" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Product" CleanName="Product" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ThreadName" CleanName="ThreadName" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="AuditSourcesOut_T" CleanName="AuditSourcesOut_T" ClassName="AuditSourcesOut_T">
+    <Columns>
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="AuditsOut_T" CleanName="AuditsOut_T" ClassName="AuditsOut_T">
+    <Columns>
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="BasicTermComponent_UDT" CleanName="BasicTermComponent_UDT" ClassName="BasicTermComponent_UDT">
+    <Columns>
+      <UDTColumn Name="KeyId" CleanName="KeyId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="StringId" CleanName="StringId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="Configurations_T" CleanName="Configurations_T" ClassName="Configurations_T">
+    <Columns>
+      <UDTColumn Name="ConfigValue" CleanName="ConfigValue" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ID" CleanName="ID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="StudyID" CleanName="StudyID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Tag" CleanName="Tag" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="ConfigurationsOut_T" CleanName="ConfigurationsOut_T" ClassName="ConfigurationsOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="ID_UDT" CleanName="ID_UDT" ClassName="ID_UDT">
+    <Columns>
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="ImpliedActionTypes_T" CleanName="ImpliedActionTypes_T" ClassName="ImpliedActionTypes_T">
+    <Columns>
+      <UDTColumn Name="ActionType" CleanName="ActionType" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ImpliedActionType" CleanName="ImpliedActionType" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="ImpliedActionTypesOut_T" CleanName="ImpliedActionTypesOut_T" ClassName="ImpliedActionTypesOut_T">
+    <Columns>
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="Interactions_T" CleanName="Interactions_T" ClassName="Interactions_T">
+    <Columns>
+      <UDTColumn Name="ClickCount" CleanName="ClickCount" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="EncryptionKey" CleanName="EncryptionKey" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Finish" CleanName="Finish" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="InteractionID" CleanName="InteractionID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="InteractionStatus" CleanName="InteractionStatus" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="LastAccess" CleanName="LastAccess" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="LastAttemptedURL" CleanName="LastAttemptedURL" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="NetWorkAddress" CleanName="NetWorkAddress" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SessionID" CleanName="SessionID" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Start" CleanName="Start" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="UserID" CleanName="UserID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="InteractionsOut_T" CleanName="InteractionsOut_T" ClassName="InteractionsOut_T">
+    <Columns>
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="LevelIds_UDT" CleanName="LevelIds_UDT" ClassName="LevelIds_UDT">
+    <Columns>
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="Locales_T" CleanName="Locales_T" ClassName="Locales_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Culture" CleanName="Culture" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentLocale" CleanName="CurrentLocale" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="DateFormat" CleanName="DateFormat" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="DateTimeFormat" CleanName="DateTimeFormat" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Description" CleanName="Description" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="DescriptionID" CleanName="DescriptionID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="HelpFolder" CleanName="HelpFolder" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Locale" CleanName="Locale" SysType="String" DataType="char" DbType="AnsiStringFixedLength" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="LocaleID" CleanName="LocaleID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="NameFormat" CleanName="NameFormat" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="NumberFormat" CleanName="NumberFormat" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SubmitOnEnter" CleanName="SubmitOnEnter" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="LocalesOut_T" CleanName="LocalesOut_T" ClassName="LocalesOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="DescriptionID" CleanName="DescriptionID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="LocalizationDataStringT" CleanName="LocalizationDataStringT" ClassName="LocalizationDataStringT">
+    <Columns>
+      <UDTColumn Name="Locale" CleanName="Locale" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ObjectID" CleanName="ObjectID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ObjectTypeID" CleanName="ObjectTypeID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentId" CleanName="SegmentId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="String" CleanName="String" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="StringId" CleanName="StringId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="LocalizationRefT" CleanName="LocalizationRefT" ClassName="LocalizationRefT">
+    <Columns>
+      <UDTColumn Name="ObjectID" CleanName="ObjectID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ObjectTypeID" CleanName="ObjectTypeID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="PropertyName" CleanName="PropertyName" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="StringId" CleanName="StringId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="MessageRecipients_T" CleanName="MessageRecipients_T" ClassName="MessageRecipients_T">
+    <Columns>
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="DeleteTime" CleanName="DeleteTime" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="MessageID" CleanName="MessageID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="MessageRecipientID" CleanName="MessageRecipientID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ReceiptTime" CleanName="ReceiptTime" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="UserID" CleanName="UserID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="MessageRecipientsOut_T" CleanName="MessageRecipientsOut_T" ClassName="MessageRecipientsOut_T">
+    <Columns>
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="Messages_T" CleanName="Messages_T" ClassName="Messages_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="MessageID" CleanName="MessageID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="MessageString" CleanName="MessageString" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="MessageStringID" CleanName="MessageStringID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="MessageStringKey" CleanName="MessageStringKey" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Send" CleanName="Send" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="StringParameters" CleanName="StringParameters" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Subject" CleanName="Subject" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SubjectStringKey" CleanName="SubjectStringKey" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Urgency" CleanName="Urgency" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="WhoFrom" CleanName="WhoFrom" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="MessagesOut_T" CleanName="MessagesOut_T" ClassName="MessagesOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="ModuleActions_T" CleanName="ModuleActions_T" ClassName="ModuleActions_T">
+    <Columns>
+      <UDTColumn Name="ActionGroupId" CleanName="ActionGroupId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ActionType" CleanName="ActionType" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ModuleActionID" CleanName="ModuleActionID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ModuleID" CleanName="ModuleID" SysType="Byte" DataType="tinyint" DbType="Byte" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="ModuleActionsOut_T" CleanName="ModuleActionsOut_T" ClassName="ModuleActionsOut_T">
+    <Columns>
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="ObjectSegments_T" CleanName="ObjectSegments_T" ClassName="ObjectSegments_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="DefaultSegment" CleanName="DefaultSegment" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ObjectId" CleanName="ObjectId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ObjectSegmentId" CleanName="ObjectSegmentId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ObjectTypeId" CleanName="ObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ReadOnly" CleanName="ReadOnly" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentId" CleanName="SegmentId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="ObjectSegmentsOut_T" CleanName="ObjectSegmentsOut_T" ClassName="ObjectSegmentsOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="RoleActions_T" CleanName="RoleActions_T" ClassName="RoleActions_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ModuleActionId" CleanName="ModuleActionId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="RestrictionMask" CleanName="RestrictionMask" SysType="Int64" DataType="bigint" DbType="Int64" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="RestrictionStatus" CleanName="RestrictionStatus" SysType="Int64" DataType="bigint" DbType="Int64" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="RoleActionID" CleanName="RoleActionID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="RoleID" CleanName="RoleID" SysType="Int16" DataType="smallint" DbType="Int16" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="RoleActionsOut_T" CleanName="RoleActionsOut_T" ClassName="RoleActionsOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="Roles_T" CleanName="Roles_T" ClassName="Roles_T">
+    <Columns>
+      <UDTColumn Name="Active" CleanName="Active" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentLocale" CleanName="CurrentLocale" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ModuleId" CleanName="ModuleId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OID" CleanName="OID" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="RoleID" CleanName="RoleID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="RoleName" CleanName="RoleName" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="RoleNameID" CleanName="RoleNameID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="RolesOut_T" CleanName="RolesOut_T" ClassName="RolesOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="RoleNameID" CleanName="RoleNameID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="SearchResultType" CleanName="SearchResultType" ClassName="SearchResultType">
+    <Columns>
+      <UDTColumn Name="LevelOrdinal" CleanName="LevelOrdinal" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Rank" CleanName="Rank" SysType="Decimal" DataType="decimal" DbType="Decimal" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="RecursionDepth" CleanName="RecursionDepth" SysType="Byte" DataType="tinyint" DbType="Byte" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="TermId" CleanName="TermId" SysType="Int64" DataType="bigint" DbType="Int64" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="SecurityGroups_T" CleanName="SecurityGroups_T" ClassName="SecurityGroups_T">
+    <Columns>
+      <UDTColumn Name="Active" CleanName="Active" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentLocale" CleanName="CurrentLocale" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Name" CleanName="Name" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SecurityGroupID" CleanName="SecurityGroupID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SecurityGroupnameID" CleanName="SecurityGroupnameID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="SecurityGroupsOut_T" CleanName="SecurityGroupsOut_T" ClassName="SecurityGroupsOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SecurityGroupnameID" CleanName="SecurityGroupnameID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="SecurityGroupUsers_T" CleanName="SecurityGroupUsers_T" ClassName="SecurityGroupUsers_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SecurityGroupID" CleanName="SecurityGroupID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SecurityGroupUserID" CleanName="SecurityGroupUserID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="UserID" CleanName="UserID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="SecurityGroupUsersOut_T" CleanName="SecurityGroupUsersOut_T" ClassName="SecurityGroupUsersOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="SecurityModules_T" CleanName="SecurityModules_T" ClassName="SecurityModules_T">
+    <Columns>
+      <UDTColumn Name="Active" CleanName="Active" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ModuleId" CleanName="ModuleId" SysType="Byte" DataType="tinyint" DbType="Byte" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ModuleName" CleanName="ModuleName" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ObjectTypeID" CleanName="ObjectTypeID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="SecurityModulesOut_T" CleanName="SecurityModulesOut_T" ClassName="SecurityModulesOut_T">
+    <Columns>
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="Segments_T" CleanName="Segments_T" ClassName="Segments_T">
+    <Columns>
+      <UDTColumn Name="Active" CleanName="Active" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="IMedidataId" CleanName="IMedidataId" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OID" CleanName="OID" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentId" CleanName="SegmentId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentName" CleanName="SegmentName" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="SegmentsOut_T" CleanName="SegmentsOut_T" ClassName="SegmentsOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="SynonymResultType" CleanName="SynonymResultType" ClassName="SynonymResultType">
+    <Columns>
+      <UDTColumn Name="MatchPercent" CleanName="MatchPercent" SysType="Decimal" DataType="decimal" DbType="Decimal" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SynonymTermId" CleanName="SynonymTermId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="TermId" CleanName="TermId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="TaskInsert_UDT" CleanName="TaskInsert_UDT" ClassName="TaskInsert_UDT">
+    <Columns>
+      <UDTColumn Name="BatchOID" CleanName="BatchOID" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CodingContextURI" CleanName="CodingContextURI" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CodingRequestItemDataOrdinal" CleanName="CodingRequestItemDataOrdinal" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="DictionaryLocale" CleanName="DictionaryLocale" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="EventRef" CleanName="EventRef" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="FieldRef" CleanName="FieldRef" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="FormRef" CleanName="FormRef" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="GroupId" CleanName="GroupId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="IsSynchronousAckNack" CleanName="IsSynchronousAckNack" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="LineRef" CleanName="LineRef" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="MarkingGroup" CleanName="MarkingGroup" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="MedicalDictionaryLevelKey" CleanName="MedicalDictionaryLevelKey" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Priority" CleanName="Priority" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="RawInputString" CleanName="RawInputString" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ReducedInputStringId" CleanName="ReducedInputStringId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SiteRef" CleanName="SiteRef" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SourceIdentifier" CleanName="SourceIdentifier" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="StartingWorkflowStateId" CleanName="StartingWorkflowStateId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="StudyDictionaryVersionId" CleanName="StudyDictionaryVersionId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SubjectRef" CleanName="SubjectRef" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="TermSearchType" CleanName="TermSearchType" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="UpdatedTimeStamp" CleanName="UpdatedTimeStamp" SysType="Int64" DataType="bigint" DbType="Int64" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="UUID" CleanName="UUID" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="TermArrayType" CleanName="TermArrayType" ClassName="TermArrayType">
+    <Columns>
+      <UDTColumn Name="TermId" CleanName="TermId" SysType="Int64" DataType="bigint" DbType="Int64" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="TermBase_UDT" CleanName="TermBase_UDT" ClassName="TermBase_UDT">
+    <Columns>
+      <UDTColumn Name="LevelKey" CleanName="LevelKey" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Ordinal" CleanName="Ordinal" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="TermPath" CleanName="TermPath" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="TermComponent_UDT" CleanName="TermComponent_UDT" ClassName="TermComponent_UDT">
+    <Columns>
+      <UDTColumn Name="CodingRequestItemDataOrdinal" CleanName="CodingRequestItemDataOrdinal" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="IsSupplement" CleanName="IsSupplement" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OID" CleanName="OID" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Ordinal" CleanName="Ordinal" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="RawInputString" CleanName="RawInputString" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ReducedInputStringId" CleanName="ReducedInputStringId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="TextKey" CleanName="TextKey" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="TermPercent_UDT" CleanName="TermPercent_UDT" ClassName="TermPercent_UDT">
+    <Columns>
+      <UDTColumn Name="MatchPercent" CleanName="MatchPercent" SysType="Decimal" DataType="decimal" DbType="Decimal" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="TermId" CleanName="TermId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="TermReference_UDT" CleanName="TermReference_UDT" ClassName="TermReference_UDT">
+    <Columns>
+      <UDTColumn Name="CodingRequestItemDataOrdinal" CleanName="CodingRequestItemDataOrdinal" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ReferenceKey" CleanName="ReferenceKey" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Value" CleanName="Value" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="TermSearchResultType" CleanName="TermSearchResultType" ClassName="TermSearchResultType">
+    <Columns>
+      <UDTColumn Name="LevelId" CleanName="LevelId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="NodePath" CleanName="NodePath" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Rank" CleanName="Rank" SysType="Decimal" DataType="decimal" DbType="Decimal" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="RecursionDepth" CleanName="RecursionDepth" SysType="Byte" DataType="tinyint" DbType="Byte" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="TermId" CleanName="TermId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="UserObjectRoles_T" CleanName="UserObjectRoles_T" ClassName="UserObjectRoles_T">
+    <Columns>
+      <UDTColumn Name="Active" CleanName="Active" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="DenyObjectRole" CleanName="DenyObjectRole" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="GrantOnObjectId" CleanName="GrantOnObjectId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="GrantOnObjectTypeId" CleanName="GrantOnObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="GrantToObjectId" CleanName="GrantToObjectId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="GrantToObjectTypeId" CleanName="GrantToObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="RoleID" CleanName="RoleID" SysType="Int16" DataType="smallint" DbType="Int16" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="UserObjectRoleId" CleanName="UserObjectRoleId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="UserObjectRolesOut_T" CleanName="UserObjectRolesOut_T" ClassName="UserObjectRolesOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="Users_T" CleanName="Users_T" ClassName="Users_T">
+    <Columns>
+      <UDTColumn Name="AccountActivation" CleanName="AccountActivation" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Active" CleanName="Active" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuthenticationSourceID" CleanName="AuthenticationSourceID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AuthenticatorID" CleanName="AuthenticatorID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CreatedBy" CleanName="CreatedBy" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Credentials" CleanName="Credentials" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="DEANumber" CleanName="DEANumber" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="DefaultSegmentID" CleanName="DefaultSegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Email" CleanName="Email" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="EULADate" CleanName="EULADate" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ExternalID" CleanName="ExternalID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="FirstName" CleanName="FirstName" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="GlobalRoleID" CleanName="GlobalRoleID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="IMedidataId" CleanName="IMedidataId" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="IsClinicalUser" CleanName="IsClinicalUser" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="IsEnabled" CleanName="IsEnabled" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="IsLockedOut" CleanName="IsLockedOut" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="IsReadOnly" CleanName="IsReadOnly" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="IsSponsorApprovalRequired" CleanName="IsSponsorApprovalRequired" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="IsTrainingOnly" CleanName="IsTrainingOnly" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="IsTrainingSigned" CleanName="IsTrainingSigned" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="LastName" CleanName="LastName" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Locale" CleanName="Locale" SysType="String" DataType="char" DbType="AnsiStringFixedLength" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Login" CleanName="Login" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="MiddleName" CleanName="MiddleName" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Password" CleanName="Password" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="PasswordExpires" CleanName="PasswordExpires" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="PIN" CleanName="PIN" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Salt" CleanName="Salt" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Salutation" CleanName="Salutation" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Title" CleanName="Title" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="UserID" CleanName="UserID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="UserSettings_T" CleanName="UserSettings_T" ClassName="UserSettings_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="IsUserConfigurable" CleanName="IsUserConfigurable" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Tag" CleanName="Tag" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="UserID" CleanName="UserID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="UserSettingID" CleanName="UserSettingID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Value" CleanName="Value" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="UserSettingsOut_T" CleanName="UserSettingsOut_T" ClassName="UserSettingsOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="UsersOut_T" CleanName="UsersOut_T" ClassName="UsersOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="WelcomeMessages_T" CleanName="WelcomeMessages_T" ClassName="WelcomeMessages_T">
+    <Columns>
+      <UDTColumn Name="Active" CleanName="Active" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AllRoles" CleanName="AllRoles" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="AllStudies" CleanName="AllStudies" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentLocale" CleanName="CurrentLocale" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ShowAtSiteLevel" CleanName="ShowAtSiteLevel" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ShowAtStudyLevel" CleanName="ShowAtStudyLevel" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="ShowAtTopLevel" CleanName="ShowAtTopLevel" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="StaticText" CleanName="StaticText" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="WelcomeMessage" CleanName="WelcomeMessage" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="WelcomeMessageID" CleanName="WelcomeMessageID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="WelcomeMessagesOut_T" CleanName="WelcomeMessagesOut_T" ClassName="WelcomeMessagesOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="WelcomeMessage" CleanName="WelcomeMessage" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="WelcomeMessageTags_T" CleanName="WelcomeMessageTags_T" ClassName="WelcomeMessageTags_T">
+    <Columns>
+      <UDTColumn Name="Active" CleanName="Active" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Deleted" CleanName="Deleted" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="IsPriority" CleanName="IsPriority" SysType="Boolean" DataType="bit" DbType="Boolean" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="MessageTag" CleanName="MessageTag" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SegmentID" CleanName="SegmentID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="SQLFunction" CleanName="SQLFunction" SysType="String" DataType="varchar" DbType="AnsiString" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="WelcomeMessageTagID" CleanName="WelcomeMessageTagID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="WelcomeMessageTagsOut_T" CleanName="WelcomeMessageTagsOut_T" ClassName="WelcomeMessageTagsOut_T">
+    <Columns>
+      <UDTColumn Name="Created" CleanName="Created" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentAction" CleanName="CurrentAction" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="CurrentObjectTypeId" CleanName="CurrentObjectTypeId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="OldId" CleanName="OldId" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Updated" CleanName="Updated" SysType="DateTime" DataType="datetime" DbType="DateTime" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="WorkflowStateIds_UDT" CleanName="WorkflowStateIds_UDT" ClassName="WorkflowStateIds_UDT">
+    <Columns>
+      <UDTColumn Name="WorkflowStateID" CleanName="WorkflowStateID" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+  <UDT Name="WorkflowVariable_UDT" CleanName="WorkflowVariable_UDT" ClassName="WorkflowVariable_UDT">
+    <Columns>
+      <UDTColumn Name="CodingRequestItemDataOrdinal" CleanName="CodingRequestItemDataOrdinal" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Id" CleanName="Id" SysType="Int32" DataType="int" DbType="Int32" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Name" CleanName="Name" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+      <UDTColumn Name="Value" CleanName="Value" SysType="String" DataType="nvarchar" DbType="String" MaxLength="0" IsNullable="false" />
+    </Columns>
+  </UDT>
+</ArrayOfUDT>

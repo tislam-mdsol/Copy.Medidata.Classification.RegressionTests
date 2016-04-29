@@ -1,0 +1,7 @@
+﻿IF NOT EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'CodingRequests'
+		 AND COLUMN_NAME = 'IsXmlCompressed')
+	ALTER TABLE CodingRequests
+	ADD IsXmlCompressed BIT NOT NULL CONSTRAINT DF_CodingRequests_IsXmlCompressed DEFAULT (0)
+
+GO

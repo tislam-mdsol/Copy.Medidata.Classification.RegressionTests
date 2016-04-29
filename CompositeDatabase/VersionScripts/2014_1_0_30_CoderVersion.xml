@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>2014.1.0.30</PatchNumber>
+
+  <!-- daily change scripts here -->
+  
+  <!-- user defined functions here -->
+
+  <!-- views here -->
+  <Script ScriptName="CompletedCodingJobs.sql" FileType="SQL" RelativePath="SQL/Views" />
+  <Script ScriptName="CodingRequestStatus.sql" FileType="SQL" RelativePath="SQL/Views" />
+  <Script ScriptName="CsvCodingJobErrorDetails.sql" FileType="SQL" RelativePath="SQL/Views" />
+
+  <!-- stored procs here -->
+  <Script ScriptName="spTransmissionQueueItemFindExistingActiveForCodingDecision.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  
+</Patch>

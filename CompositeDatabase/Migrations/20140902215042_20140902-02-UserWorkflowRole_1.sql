@@ -1,0 +1,13 @@
+﻿IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'UserObjectWorkflowRole'
+		 AND COLUMN_NAME = 'GrantToObjectTypeId')
+	ALTER TABLE UserObjectWorkflowRole
+	DROP COLUMN GrantToObjectTypeId
+GO
+
+IF EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'UserObjectWorkflowRole'
+		 AND COLUMN_NAME = 'GrantOnObjectTypeId')
+	ALTER TABLE UserObjectWorkflowRole
+	DROP COLUMN GrantOnObjectTypeId
+GO

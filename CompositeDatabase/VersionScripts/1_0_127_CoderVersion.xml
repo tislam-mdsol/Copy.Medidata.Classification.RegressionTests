@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.127</PatchNumber>
+
+  <!-- daily change scripts here -->
+
+  <!-- user defined functions here -->
+  <Script ScriptName="fnGetTermIDsAndText.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+  <Script ScriptName="fnGetTermIDsAndTextFromFullPath.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+
+  <!-- stored procs here -->
+  <Script ScriptName="spMedicalDictionarySearchMultiIngredient.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch" />
+  <Script ScriptName="spGetSynonymMasterTermForNonEnglish.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spImpactAnalysisDetailView.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedDictTermFTSearchSynonymsMaxNumber.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryTermLoadByIDsTemplate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationMngmntProcessSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+
+</Patch>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ 
+  <!-- Below is a suggested grouping for scripts. Actual location may when order dependencies exist -->
+  
+  <!-- change scripts here -->
+  <Script ScriptName="20110602-01-CreateIndexOnCodingRequests.sql" FileType="SQL" RelativePath="Change Scripts/Daily Changes" />
+  <Script ScriptName="20110603-01-AlterCodingElemIsInvalid.sql" FileType="SQL" RelativePath="Change Scripts/Daily Changes" />
+
+  <!-- user defined functions here -->
+  
+  <!-- stored procs here -->
+  <Script ScriptName="spTransmissionQueueItemLoadSourceTransmissions.sql" FileType="SQL" RelativePath="Stored Procedures/Coder Other" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="Change Scripts" />
+
+
+  <!-- example data modification script -->
+  <Script ScriptName="20110608-01-CleanupInvalidTasks.sql" FileType="SQL" RelativePath="Change Scripts/Daily Changes"
+        SegmentID="1111-2222-333-444" StudyID="9999-8888-7777-6666" />
+
+  <!-- example data modification script -->
+  <!-- <Script ScriptName="dbiqEnableProduction.sql" FileType="SQL" RelativePath="Change Scripts"
+        /> -->
+
+  <!-- example data modification script -->
+  <Script ScriptName="20110630-01-UpdateSystemUserLogin" FileType="SQL" RelativePath="Change Scripts/Daily Changes"
+        />
+
+
+
+</Patch>

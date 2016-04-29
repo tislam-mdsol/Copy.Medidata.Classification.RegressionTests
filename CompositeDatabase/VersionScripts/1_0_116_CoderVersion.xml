@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.116</PatchNumber>
+
+    <!-- daily change scripts here -->
+
+    <!-- user defined functions here -->
+    <Script ScriptName="fnGetJPNStringIDFromCombinedCategoryCode.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+    <Script ScriptName="fnGetSynonymPathForDownload.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+
+  <!-- stored procs here -->
+    <Script ScriptName="spMedicalDictVerTermUpdatePathFast.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+    <Script ScriptName="spVersionDifferencePostProcessingV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+    <Script ScriptName="CMP_10_FixImpactAnalysisForNotFoundInNewVersion.sql" FileType="SQL" RelativePath="SQL/CMP" />
+    <Script ScriptName="CMP_08_FixBadTermUpdatesAndImpactAnalysis.sql" FileType="SQL" RelativePath="SQL/CMP" />
+    <Script ScriptName="spVersionActivationVerification.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+    <Script ScriptName="CMP_09_FixJDrugCategoryCode.sql" FileType="SQL" RelativePath="SQL/CMP" />
+    <Script ScriptName="spMedicalDictionaryLoadJDrugVersion.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/JDrug/CreateSPs" />
+    <Script ScriptName="spSynonymMigrationMngmntLoadSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+    <Script ScriptName="spGetSynonymsForDownload.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+    <Script ScriptName="spMedDictVerDiffEngTermV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  
+
+  </Patch>
+ 

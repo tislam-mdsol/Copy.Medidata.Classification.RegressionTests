@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.96</PatchNumber>
+
+  <Script ScriptName="spHealthCheckLoadExtended.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  
+  <Script ScriptName="spMedDictVerDiffEngTermV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spMedDictWireFnlObjIDsV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spVersionActivationVerification.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spVersionDifferencePostProcessingV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+
+  <Script ScriptName="spMedicalDictionaryTermLoadChildren.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementSearchByFilterSecuredAndPagedWithFilterAndGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="20111011-01-ExistingSegmentsWorkflowLocalization.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="spCreateDefaultTemplate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts" />
+  <Script ScriptName="spCreateDefaultTemplateForMedDRA.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts" />
+  <Script ScriptName="spLclztnFndOrInsrtDtStrng.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework" />
+  <Script ScriptName="spWorkflowCopy.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts" />
+
+
+</Patch>
+

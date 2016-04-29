@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.99</PatchNumber>
+
+  <!-- change scripts here -->
+  <Script ScriptName="20111025-01-AddSourceOrdinalToLevelTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spJDrugFirstVersionSetup.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/JDrug/CreateSPs" />
+  <Script ScriptName="spMedDRAFirstVersionSetup.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/MedDRA/Create SPs" />
+  <Script ScriptName="spWhoDrugBFirstVersionSetup.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/WhoDrugB/Create SPs" />
+  <Script ScriptName="spWhoDrugFirstVersionSetup.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/WhoDrugC/Create SPs" />
+  <Script ScriptName="spSynonymMigrationMngmntProcessSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spJDrugFirstVersionSetup.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/JDrug/CreateSPs" />
+  <Script ScriptName="spCreateDefaultTemplateForMedDRA.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+
+</Patch>

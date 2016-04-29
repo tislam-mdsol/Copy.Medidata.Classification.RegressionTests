@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>2014.2.0.3</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="20140720-01-MigrateToRoleTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- user defined functions here -->
+
+  <!-- charlie change stored procs here -->
+  <Script ScriptName="spSegmentLoadAll.sql"                                    FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spReportUCodeTermIdsAndText.sql"                         FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spObjectSegmentFetch.sql"                                FileType="SQL" RelativePath="SQL/User-Defined Functions" />
+  <Script ScriptName="spRoleLoadBySegment.sql"                                 FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+  <Script ScriptName="spUserUpdate.sql"                                        FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Security" />
+  <Script ScriptName="spCodingElementsCleanup.sql"                             FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+  <Script ScriptName="spObjectSegmentInsert.sql"                               FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spObjectSegmentUpdate.sql"                               FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spObjectSegmentGetByObject.sql"                          FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternLoadChunkBySynonymList.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spGenericFetch.sql"                                      FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationClearOldSuggestions.sql"                 FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymListBackup.sql"                                 FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationClearAllAssignments.sql"                 FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationClearOldBackup.sql"                      FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationBackupAllData.sql"                       FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationQueueNewQueryTransmissions.sql"          FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationQueueNewTransmissions.sql"               FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  
+</Patch>

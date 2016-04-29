@@ -1,0 +1,9 @@
+Test ID,Study ID,Field Type,Field,Field Value,Dictionary Level,Dictionary,Priority,Locale,IsApprovalRequired,IsAutoApproval
+1001,PROD,Main,AutoApprovalRequired,TYLENOL COUGH,PRODUCTSYNONYM,WhoDrugDDEB2,1,eng,TRUE,TRUE
+1002,PROD,Main,AutoApprovalRequired,PAIN,PRODUCTSYNONYM,WhoDrugDDEB2,1,eng,TRUE,TRUE
+1003,PROD,Main,ApprovalRequired,TYLENOL INFANT,PRODUCTSYNONYM,WhoDrugDDEB2,1,eng,TRUE,FALSE
+1004,PROD,Main,ApprovalRequired,Junior asprin,PRODUCTSYNONYM,WhoDrugDDEB2,1,eng,TRUE,FALSE
+1005,PROD,Main,AutoApprovalNotRequired,PENICILLIN V BASIC,PRODUCTSYNONYM,WhoDrugDDEB2,1,eng,FALSE,TRUE
+1006,PROD,Main,AutoApprovalNotRequired,VITAMIN-A,PRODUCTSYNONYM,WhoDrugDDEB2,1,eng,FALSE,TRUE
+1007,PROD,Main,ApprovalNotRequired,ADVIL COLD,PRODUCTSYNONYM,WhoDrugDDEB2,1,eng,FALSE,FALSE
+1008,PROD,Main,ApprovalNotRequired,VITAMIN-C,PRODUCTSYNONYM,WhoDrugDDEB2,1,eng,FALSE,FALSE

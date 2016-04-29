@@ -1,0 +1,8 @@
+﻿IF NOT EXISTS
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'StudyDictionaryVersion'
+		 AND COLUMN_NAME = 'StudyLock')
+	BEGIN
+		ALTER TABLE StudyDictionaryVersion ADD StudyLock TINYINT NOT NULL CONSTRAINT DF_StudyDictionaryVersion_StudyLock DEFAULT((1))
+	END
+GO
+  

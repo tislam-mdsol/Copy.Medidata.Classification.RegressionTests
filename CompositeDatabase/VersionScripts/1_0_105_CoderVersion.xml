@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.105</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="20111202-01-AddIORIndex.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- user defined functions here -->
+  <Script ScriptName="fnGetTermIDsAndText.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+  <Script ScriptName="fnGetTermIDsAndTextFromFullPath.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+  <Script ScriptName="fnIsValidForVersionLocale.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+
+  <!-- stored procs here -->
+
+  <Script ScriptName="spTermSearchSection.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch" />
+  <Script ScriptName="spTermSearchSectionIngredient.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch" />
+
+  <!-- IOR related fixes -->
+  <Script ScriptName="spCodingDataForReclassify.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementSearchForUnload.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spImpactAnalysisDetailView.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyTaskHistoryAudit.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spWorkflowTaskHistoryLoadByWorkflowTask.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow" />
+  <Script ScriptName="spMedicalDictionarySearchMultiIngredient.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch" />
+  <Script ScriptName="spMedicalDictionaryTermLoadByIDsTemplate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryTermGetWhoPreferredName.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryTermLoadRootTerms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spGetSynonymMasterTermForNonEnglish.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedDictTermPagedSynonymDetailsByDelimitedIDs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedDictTermFTSearchSynonymsMaxNumber.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+
+
+</Patch>
+

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.117</PatchNumber>
+
+  <!-- daily change scripts here -->
+
+  <!-- user defined functions here -->
+  <Script ScriptName="fnGetAllPaths.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+  <!-- stored procs here -->
+  <Script ScriptName="spSynonymMigrationMngmntLoadSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="CMP_10_FixImpactAnalysisForNotFoundInNewVersion.sql" FileType="SQL" RelativePath="SQL/CMP" />
+  <Script ScriptName="CMP_12_FixCategory5ForJpn.sql" FileType="SQL" RelativePath="SQL/CMP" />
+
+  <Script ScriptName="spVersionDifferencePostProcessingV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spImpactAnalysisDetailView.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+</Patch>

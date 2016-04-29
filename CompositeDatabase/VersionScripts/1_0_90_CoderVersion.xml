@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.90</PatchNumber>
+
+  <Script ScriptName="spAllInOneAddNewVersionV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="20110916-01-TruncateMoreVersioningTables.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+</Patch>

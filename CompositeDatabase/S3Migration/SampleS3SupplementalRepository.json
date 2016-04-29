@@ -1,0 +1,1264 @@
+﻿{
+	"dictionary_mapping": [
+	{
+		"provider"              : "AZDD",
+		"type"                  : "",
+		"format"                : "",
+		"dictionary"            : "AZDD",
+		"supports_primary_path" : "False",
+		"levels"                : [
+		{
+			"name"           : "AZDD-ATC",
+			"search_name"    : "ATC",  
+			"source_ordinal" : "1",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "AZDD-PRODUCT",
+			"search_name"    : "PRODUCT",  
+			"source_ordinal" : "2",
+			"is_codable"     : "True", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "AZDD-PRODUCTSYNONYM",
+			"search_name"    : "PRODUCTSYNONYM",  
+			"source_ordinal" : "3",
+			"is_codable"     : "True", 
+			"is_default"     : "True"
+		},
+		{
+			"name"           : "AZDD-INGREDIENT",
+			"search_name"    : "INGREDIENT",  
+			"source_ordinal" : "3",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		}],
+		"components"            : [
+		{
+			"name"            : "CASNUMBER",
+			"search_name"     : "cas_number",
+			"valid_on_levels" : ["AZDD-INGREDIENT"]
+		},
+		{
+			"name"            : "CHECKDIGIT",
+			"search_name"     : "check_digit",
+			"valid_on_levels" : ["AZDD-PRODUCT","AZDD-PRODUCTSYNONYM","AZDD-INGREDIENT"]
+		},
+		{
+			"name"            : "COMPANY",
+			"search_name"     : "company",
+			"valid_on_levels" : ["AZDD-PRODUCT","AZDD-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "COMPANYCOUNTRY",
+			"search_name"     : "company_country",
+			"valid_on_levels" : ["AZDD-PRODUCT","AZDD-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "DESIGNATION",
+			"search_name"     : "designation",
+			"valid_on_levels" : ["AZDD-PRODUCT","AZDD-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "DRUGRECORDNUMBER",
+			"search_name"     : "drug_record_number",
+			"valid_on_levels" : ["AZDD-PRODUCT","AZDD-PRODUCTSYNONYM","AZDD-INGREDIENT"]
+		},
+		{
+			"name"            : "LANGUAGECODE",
+			"search_name"     : "language_code",
+			"valid_on_levels" : ["AZDD-INGREDIENT"]
+		},
+		{
+			"name"            : "NUMBEROFINGREDIENTS",
+			"search_name"     : "number_of_ingredients",
+			"valid_on_levels" : ["AZDD-PRODUCT","AZDD-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "SALTESTERCODE",
+			"search_name"     : "sal_tester_code",
+			"valid_on_levels" : ["AZDD-PRODUCT","AZDD-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER1",
+			"search_name"     : "sequence_number_1",
+			"valid_on_levels" : ["AZDD-PRODUCT","AZDD-PRODUCTSYNONYM","AZDD-INGREDIENT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER2",
+			"search_name"     : "sequence_number_2",
+			"valid_on_levels" : ["AZDD-PRODUCT","AZDD-PRODUCTSYNONYM","AZDD-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCE",
+			"search_name"     : "source",
+			"valid_on_levels" : ["AZDD-PRODUCT","AZDD-PRODUCTSYNONYM","AZDD-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCECOUNTRY",
+			"search_name"     : "source_country",
+			"valid_on_levels" : ["AZDD-PRODUCT","AZDD-PRODUCTSYNONYM","AZDD-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCEYEAR",
+			"search_name"     : "source_year",
+			"valid_on_levels" : ["AZDD-PRODUCT","AZDD-PRODUCTSYNONYM","AZDD-INGREDIENT"]
+		},
+		{
+			"name"            : "SUBSTANCENAME",
+			"search_name"     : "substance_name",
+			"valid_on_levels" : ["AZDD-INGREDIENT"]
+		},
+		{
+			"name"            : "YEARQUARTER",
+			"search_name"     : "year_quarter",
+			"valid_on_levels" : ["AZDD-PRODUCT","AZDD-PRODUCTSYNONYM"]
+		}]
+	},
+	{
+		"provider"              : "WHODrug",
+		"type"                  : "DDE",
+		"format"                : "B2",
+		"dictionary"            : "WHODrug-DDE-B2",
+		"supports_primary_path" : "False",
+		"levels"                : [
+		{
+			"name"           : "WHODrug-DDE-B2-ATC",
+			"search_name"    : "ATC",  
+			"source_ordinal" : "1",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "WHODrug-DDE-B2-PRODUCT",
+			"search_name"    : "PRODUCT",  
+			"source_ordinal" : "2",
+			"is_codable"     : "True", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "WHODrug-DDE-B2-PRODUCTSYNONYM",
+			"search_name"    : "PRODUCTSYNONYM",  
+			"source_ordinal" : "3",
+			"is_codable"     : "True", 
+			"is_default"     : "True"
+		},
+		{
+			"name"           : "WHODrug-DDE-B2-INGREDIENT",
+			"search_name"    : "INGREDIENT",  
+			"source_ordinal" : "3",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		}],
+		"components"            : [
+		{
+			"name"            : "CASNUMBER",
+			"search_name"     : "cas_number",
+			"valid_on_levels" : ["WHODrug-DDE-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "CHECKDIGIT",
+			"search_name"     : "check_digit",
+			"valid_on_levels" : ["WHODrug-DDE-B2-PRODUCT","WHODrug-DDE-B2-PRODUCTSYNONYM","WHODrug-DDE-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "COMPANY",
+			"search_name"     : "company",
+			"valid_on_levels" : ["WHODrug-DDE-B2-PRODUCT","WHODrug-DDE-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "COMPANYCOUNTRY",
+			"search_name"     : "company_country",
+			"valid_on_levels" : ["WHODrug-DDE-B2-PRODUCT","WHODrug-DDE-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "DESIGNATION",
+			"search_name"     : "designation",
+			"valid_on_levels" : ["WHODrug-DDE-B2-PRODUCT","WHODrug-DDE-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "DRUGRECORDNUMBER",
+			"search_name"     : "drug_record_number",
+			"valid_on_levels" : ["WHODrug-DDE-B2-PRODUCT","WHODrug-DDE-B2-PRODUCTSYNONYM","WHODrug-DDE-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "LANGUAGECODE",
+			"search_name"     : "language_code",
+			"valid_on_levels" : ["WHODrug-DDE-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "NUMBEROFINGREDIENTS",
+			"search_name"     : "number_of_ingredients",
+			"valid_on_levels" : ["WHODrug-DDE-B2-PRODUCT","WHODrug-DDE-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "SALTESTERCODE",
+			"search_name"     : "sal_tester_code",
+			"valid_on_levels" : ["WHODrug-DDE-B2-PRODUCT","WHODrug-DDE-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER1",
+			"search_name"     : "sequence_number_1",
+			"valid_on_levels" : ["WHODrug-DDE-B2-PRODUCT","WHODrug-DDE-B2-PRODUCTSYNONYM","WHODrug-DDE-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER2",
+			"search_name"     : "sequence_number_2",
+			"valid_on_levels" : ["WHODrug-DDE-B2-PRODUCT","WHODrug-DDE-B2-PRODUCTSYNONYM","WHODrug-DDE-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCE",
+			"search_name"     : "source",
+			"valid_on_levels" : ["WHODrug-DDE-B2-PRODUCT","WHODrug-DDE-B2-PRODUCTSYNONYM","WHODrug-DDE-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCECOUNTRY",
+			"search_name"     : "source_country",
+			"valid_on_levels" : ["WHODrug-DDE-B2-PRODUCT","WHODrug-DDE-B2-PRODUCTSYNONYM","WHODrug-DDE-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCEYEAR",
+			"search_name"     : "source_year",
+			"valid_on_levels" : ["WHODrug-DDE-B2-PRODUCT","WHODrug-DDE-B2-PRODUCTSYNONYM","WHODrug-DDE-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SUBSTANCENAME",
+			"search_name"     : "substance_name",
+			"valid_on_levels" : ["WHODrug-DDE-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "YEARQUARTER",
+			"search_name"     : "year_quarter",
+			"valid_on_levels" : ["WHODrug-DDE-B2-PRODUCT","WHODrug-DDE-B2-PRODUCTSYNONYM"]
+		}]
+	},
+	{
+		"provider"              : "WHODrug",
+		"type"                  : "DD",
+		"format"                : "B2",
+		"dictionary"            : "WHODrug-DD-B2",
+		"supports_primary_path" : "False",
+		"levels"                : [
+		{
+			"name"           : "WHODrug-DD-B2-ATC",
+			"search_name"    : "ATC",  
+			"source_ordinal" : "1",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "WHODrug-DD-B2-PRODUCT",
+			"search_name"    : "PRODUCT",  
+			"source_ordinal" : "2",
+			"is_codable"     : "True", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "WHODrug-DD-B2-PRODUCTSYNONYM",
+			"search_name"    : "PRODUCTSYNONYM",  
+			"source_ordinal" : "3",
+			"is_codable"     : "True", 
+			"is_default"     : "True"
+		},
+		{
+			"name"           : "WHODrug-DD-B2-INGREDIENT",
+			"search_name"    : "INGREDIENT",  
+			"source_ordinal" : "3",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		}],
+		"components"            : [
+		{
+			"name"            : "CASNUMBER",
+			"search_name"     : "cas_number",
+			"valid_on_levels" : ["WHODrug-DD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "CHECKDIGIT",
+			"search_name"     : "check_digit",
+			"valid_on_levels" : ["WHODrug-DD-B2-PRODUCT","WHODrug-DD-B2-PRODUCTSYNONYM","WHODrug-DD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "COMPANY",
+			"search_name"     : "company",
+			"valid_on_levels" : ["WHODrug-DD-B2-PRODUCT","WHODrug-DD-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "COMPANYCOUNTRY",
+			"search_name"     : "company_country",
+			"valid_on_levels" : ["WHODrug-DD-B2-PRODUCT","WHODrug-DD-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "DESIGNATION",
+			"search_name"     : "designation",
+			"valid_on_levels" : ["WHODrug-DD-B2-PRODUCT","WHODrug-DD-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "DRUGRECORDNUMBER",
+			"search_name"     : "drug_record_number",
+			"valid_on_levels" : ["WHODrug-DD-B2-PRODUCT","WHODrug-DD-B2-PRODUCTSYNONYM","WHODrug-DD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "LANGUAGECODE",
+			"search_name"     : "language_code",
+			"valid_on_levels" : ["WHODrug-DD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "NUMBEROFINGREDIENTS",
+			"search_name"     : "number_of_ingredients",
+			"valid_on_levels" : ["WHODrug-DD-B2-PRODUCT","WHODrug-DD-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "SALTESTERCODE",
+			"search_name"     : "sal_tester_code",
+			"valid_on_levels" : ["WHODrug-DD-B2-PRODUCT","WHODrug-DD-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER1",
+			"search_name"     : "sequence_number_1",
+			"valid_on_levels" : ["WHODrug-DD-B2-PRODUCT","WHODrug-DD-B2-PRODUCTSYNONYM","WHODrug-DD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER2",
+			"search_name"     : "sequence_number_2",
+			"valid_on_levels" : ["WHODrug-DD-B2-PRODUCT","WHODrug-DD-B2-PRODUCTSYNONYM","WHODrug-DD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCE",
+			"search_name"     : "source",
+			"valid_on_levels" : ["WHODrug-DD-B2-PRODUCT","WHODrug-DD-B2-PRODUCTSYNONYM","WHODrug-DD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCECOUNTRY",
+			"search_name"     : "source_country",
+			"valid_on_levels" : ["WHODrug-DD-B2-PRODUCT","WHODrug-DD-B2-PRODUCTSYNONYM","WHODrug-DD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCEYEAR",
+			"search_name"     : "source_year",
+			"valid_on_levels" : ["WHODrug-DD-B2-PRODUCT","WHODrug-DD-B2-PRODUCTSYNONYM","WHODrug-DD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SUBSTANCENAME",
+			"search_name"     : "substance_name",
+			"valid_on_levels" : ["WHODrug-DD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "YEARQUARTER",
+			"search_name"     : "year_quarter",
+			"valid_on_levels" : ["WHODrug-DD-B2-PRODUCT","WHODrug-DD-B2-PRODUCTSYNONYM"]
+		}]
+	},
+	{
+		"provider"              : "WHODrug",
+		"type"                  : "DDE_HD",
+		"format"                : "B2",
+		"dictionary"            : "WHODrug-DDE_HD-B2",
+		"supports_primary_path" : "False",
+		"levels"                : [
+		{
+			"name"           : "WHODrug-DDE_HD-B2-ATC",
+			"search_name"    : "ATC",  
+			"source_ordinal" : "1",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "WHODrug-DDE_HD-B2-PRODUCT",
+			"search_name"    : "PRODUCT",  
+			"source_ordinal" : "2",
+			"is_codable"     : "True", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "WHODrug-DDE_HD-B2-PRODUCTSYNONYM",
+			"search_name"    : "PRODUCTSYNONYM",  
+			"source_ordinal" : "3",
+			"is_codable"     : "True", 
+			"is_default"     : "True"
+		},
+		{
+			"name"           : "WHODrug-DDE_HD-B2-INGREDIENT",
+			"search_name"    : "INGREDIENT",  
+			"source_ordinal" : "3",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		}],
+		"components"            : [
+		{
+			"name"            : "CASNUMBER",
+			"search_name"     : "cas_number",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "CHECKDIGIT",
+			"search_name"     : "check_digit",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-PRODUCT","WHODrug-DDE_HD-B2-PRODUCTSYNONYM","WHODrug-DDE_HD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "COMPANY",
+			"search_name"     : "company",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-PRODUCT","WHODrug-DDE_HD-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "COMPANYCOUNTRY",
+			"search_name"     : "company_country",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-PRODUCT","WHODrug-DDE_HD-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "DESIGNATION",
+			"search_name"     : "designation",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-PRODUCT","WHODrug-DDE_HD-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "DRUGRECORDNUMBER",
+			"search_name"     : "drug_record_number",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-PRODUCT","WHODrug-DDE_HD-B2-PRODUCTSYNONYM","WHODrug-DDE_HD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "LANGUAGECODE",
+			"search_name"     : "language_code",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "NUMBEROFINGREDIENTS",
+			"search_name"     : "number_of_ingredients",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-PRODUCT","WHODrug-DDE_HD-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "SALTESTERCODE",
+			"search_name"     : "sal_tester_code",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-PRODUCT","WHODrug-DDE_HD-B2-PRODUCTSYNONYM"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER1",
+			"search_name"     : "sequence_number_1",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-PRODUCT","WHODrug-DDE_HD-B2-PRODUCTSYNONYM","WHODrug-DDE_HD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER2",
+			"search_name"     : "sequence_number_2",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-PRODUCT","WHODrug-DDE_HD-B2-PRODUCTSYNONYM","WHODrug-DDE_HD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCE",
+			"search_name"     : "source",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-PRODUCT","WHODrug-DDE_HD-B2-PRODUCTSYNONYM","WHODrug-DDE_HD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCECOUNTRY",
+			"search_name"     : "source_country",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-PRODUCT","WHODrug-DDE_HD-B2-PRODUCTSYNONYM","WHODrug-DDE_HD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCEYEAR",
+			"search_name"     : "source_year",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-PRODUCT","WHODrug-DDE_HD-B2-PRODUCTSYNONYM","WHODrug-DDE_HD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "SUBSTANCENAME",
+			"search_name"     : "substance_name",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-INGREDIENT"]
+		},
+		{
+			"name"            : "YEARQUARTER",
+			"search_name"     : "year_quarter",
+			"valid_on_levels" : ["WHODrug-DDE_HD-B2-PRODUCT","WHODrug-DDE_HD-B2-PRODUCTSYNONYM"]
+		}]
+	},
+	{
+		"provider"              : "WHODrug",
+		"type"                  : "DD",
+		"format"                : "C",
+		"dictionary"            : "WHODrug-DD-C",
+		"supports_primary_path" : "False",
+		"levels"                : [
+		{
+			"name"           : "WHODrug-DD-C-ATC",
+			"search_name"    : "ATC",  
+			"source_ordinal" : "1",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "WHODrug-DD-C-MEDICINALPRODUCT",
+			"search_name"    : "MEDICINALPRODUCT",  
+			"source_ordinal" : "2",
+			"is_codable"     : "True", 
+			"is_default"     : "True"
+		},
+		{
+			"name"           : "WHODrug-DD-C-INGREDIENT",
+			"search_name"    : "INGREDIENT",  
+			"source_ordinal" : "3",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		}],
+		"components"            : [
+		{
+			"name"            : "CASNUMBER",
+			"search_name"     : "cas_number",
+			"valid_on_levels" : ["WHODrug-DD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "COMPANY",
+			"search_name"     : "company",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "COMPANYCOUNTRY",
+			"search_name"     : "company_country",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "COUNTRY",
+			"search_name"     : "country",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "CREATEDATE",
+			"search_name"     : "create_date",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "DATECHANGED",
+			"search_name"     : "date_changed",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "DRUGRECORDNUMBER",
+			"search_name"     : "drug_record_number",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "GENERIC",
+			"search_name"     : "generic",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "INGREDIENTCREATEDATE",
+			"search_name"     : "ingredient_create_date",
+			"valid_on_levels" : ["WHODrug-DD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "LANGUAGECODE",
+			"search_name"     : "language_code",
+			"valid_on_levels" : ["WHODrug-DD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONDATE",
+			"search_name"     : "marketing_authorization_date",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONHOLDER",
+			"search_name"     : "marketing_authorization_holder",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONHOLDERCOUNTRY",
+			"search_name"     : "marketing_authorization_holder_country",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONNUMBER",
+			"search_name"     : "marketing_authorization_number",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONWITHDRAWALDATE",
+			"search_name"     : "marketing_authorization_withdrawal_date",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "NAMESPECIFIER",
+			"search_name"     : "name_specifier",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "NUMBEROFINGREDIENTS",
+			"search_name"     : "number_of_ingredients",
+			"valid_on_levels" : ["WHODrug-DD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "PHARMACEUTICALFORM",
+			"search_name"     : "pharmaceutical_form",
+			"valid_on_levels" : ["WHODrug-DD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "PHARMACEUTICALFORMCREATEDATE",
+			"search_name"     : "pharmaceutical_form_create_date",
+			"valid_on_levels" : ["WHODrug-DD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "PRODUCTGROUP",
+			"search_name"     : "product_group",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "PRODUCTGROUPDATERECORDED",
+			"search_name"     : "product_group_date_recorded",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "PRODUCTTYPE",
+			"search_name"     : "product_type",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "QUANTITY",
+			"search_name"     : "quantity",
+			"valid_on_levels" : ["WHODrug-DD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "QUANTITY2",
+			"search_name"     : "quantity_2",
+			"valid_on_levels" : ["WHODrug-DD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "ROUTEOFADMINISTRATION",
+			"search_name"     : "route_of_administration",
+			"valid_on_levels" : ["WHODrug-DD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER1",
+			"search_name"     : "sequence_number_1",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER2",
+			"search_name"     : "sequence_number_2",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER3",
+			"search_name"     : "sequence_number_3",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER4",
+			"search_name"     : "sequence_number_4",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "SOURCE",
+			"search_name"     : "source",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT","WHODrug-DD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCECOUNTRY",
+			"search_name"     : "source_country",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT","WHODrug-DD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCEYEAR",
+			"search_name"     : "source_year",
+			"valid_on_levels" : ["WHODrug-DD-C-MEDICINALPRODUCT","WHODrug-DD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "SUBSTANCE",
+			"search_name"     : "substance",
+			"valid_on_levels" : ["WHODrug-DD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "UNIT",
+			"search_name"     : "unit",
+			"valid_on_levels" : ["WHODrug-DD-C-INGREDIENT"]
+		}]
+	},
+	{
+		"provider"              : "WHODrug",
+		"type"                  : "DDE",
+		"format"                : "C",
+		"dictionary"            : "WHODrug-DDE-C",
+		"supports_primary_path" : "False",
+		"levels"                : [
+		{
+			"name"           : "WHODrug-DDE-C-ATC",
+			"search_name"    : "ATC",  
+			"source_ordinal" : "1",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "WHODrug-DDE-C-MEDICINALPRODUCT",
+			"search_name"    : "MEDICINALPRODUCT",  
+			"source_ordinal" : "2",
+			"is_codable"     : "True", 
+			"is_default"     : "True"
+		},
+		{
+			"name"           : "WHODrug-DDE-C-INGREDIENT",
+			"search_name"    : "INGREDIENT",  
+			"source_ordinal" : "3",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		}],
+		"components"            : [
+		{
+			"name"            : "CASNUMBER",
+			"search_name"     : "cas_number",
+			"valid_on_levels" : ["WHODrug-DDE-C-INGREDIENT"]
+		},
+		{
+			"name"            : "COMPANY",
+			"search_name"     : "company",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "COMPANYCOUNTRY",
+			"search_name"     : "company_country",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "COUNTRY",
+			"search_name"     : "country",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "CREATEDATE",
+			"search_name"     : "create_date",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "DATECHANGED",
+			"search_name"     : "date_changed",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "DRUGRECORDNUMBER",
+			"search_name"     : "drug_record_number",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "GENERIC",
+			"search_name"     : "generic",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "INGREDIENTCREATEDATE",
+			"search_name"     : "ingredient_create_date",
+			"valid_on_levels" : ["WHODrug-DDE-C-INGREDIENT"]
+		},
+		{
+			"name"            : "LANGUAGECODE",
+			"search_name"     : "language_code",
+			"valid_on_levels" : ["WHODrug-DDE-C-INGREDIENT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONDATE",
+			"search_name"     : "marketing_authorization_date",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONHOLDER",
+			"search_name"     : "marketing_authorization_holder",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONHOLDERCOUNTRY",
+			"search_name"     : "marketing_authorization_holder_country",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONNUMBER",
+			"search_name"     : "marketing_authorization_number",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONWITHDRAWALDATE",
+			"search_name"     : "marketing_authorization_withdrawal_date",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "NAMESPECIFIER",
+			"search_name"     : "name_specifier",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "NUMBEROFINGREDIENTS",
+			"search_name"     : "number_of_ingredients",
+			"valid_on_levels" : ["WHODrug-DDE-C-INGREDIENT"]
+		},
+		{
+			"name"            : "PHARMACEUTICALFORM",
+			"search_name"     : "pharmaceutical_form",
+			"valid_on_levels" : ["WHODrug-DDE-C-INGREDIENT"]
+		},
+		{
+			"name"            : "PHARMACEUTICALFORMCREATEDATE",
+			"search_name"     : "pharmaceutical_form_create_date",
+			"valid_on_levels" : ["WHODrug-DDE-C-INGREDIENT"]
+		},
+		{
+			"name"            : "PRODUCTGROUP",
+			"search_name"     : "product_group",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "PRODUCTGROUPDATERECORDED",
+			"search_name"     : "product_group_date_recorded",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "PRODUCTTYPE",
+			"search_name"     : "product_type",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "QUANTITY",
+			"search_name"     : "quantity",
+			"valid_on_levels" : ["WHODrug-DDE-C-INGREDIENT"]
+		},
+		{
+			"name"            : "QUANTITY2",
+			"search_name"     : "quantity_2",
+			"valid_on_levels" : ["WHODrug-DDE-C-INGREDIENT"]
+		},
+		{
+			"name"            : "ROUTEOFADMINISTRATION",
+			"search_name"     : "route_of_administration",
+			"valid_on_levels" : ["WHODrug-DDE-C-INGREDIENT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER1",
+			"search_name"     : "sequence_number_1",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER2",
+			"search_name"     : "sequence_number_2",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER3",
+			"search_name"     : "sequence_number_3",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER4",
+			"search_name"     : "sequence_number_4",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "SOURCE",
+			"search_name"     : "source",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT","WHODrug-DDE-C-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCECOUNTRY",
+			"search_name"     : "source_country",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT","WHODrug-DDE-C-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCEYEAR",
+			"search_name"     : "source_year",
+			"valid_on_levels" : ["WHODrug-DDE-C-MEDICINALPRODUCT","WHODrug-DDE-C-INGREDIENT"]
+		},
+		{
+			"name"            : "SUBSTANCE",
+			"search_name"     : "substance",
+			"valid_on_levels" : ["WHODrug-DDE-C-INGREDIENT"]
+		},
+		{
+			"name"            : "UNIT",
+			"search_name"     : "unit",
+			"valid_on_levels" : ["WHODrug-DDE-C-INGREDIENT"]
+		}]
+	},
+	{
+		"provider"              : "MedDRA",
+		"type"                  : "",
+		"format"                : "",
+		"dictionary"            : "MedDRA",
+		"supports_primary_path" : "True",
+		"levels"                : [
+		{
+			"name"           : "MedDRA-SOC",
+			"search_name"    : "SOC",  
+			"source_ordinal" : "1",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "MedDRA-HLGT",
+			"search_name"    : "HLGT",  
+			"source_ordinal" : "2",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "MedDRA-HLT",
+			"search_name"    : "HLT",  
+			"source_ordinal" : "3",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "MedDRA-PT",
+			"search_name"    : "PT",  
+			"source_ordinal" : "4",
+			"is_codable"     : "True", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "MedDRA-LLT",
+			"search_name"    : "LLT",  
+			"source_ordinal" : "5",
+			"is_codable"     : "True", 
+			"is_default"     : "True"
+		}],
+	},
+	{
+		"provider"              : "JDrug",
+		"type"                  : "",
+		"format"                : "",
+		"dictionary"            : "JDrug",
+		"supports_primary_path" : "False",
+		"levels"                : [
+		{
+			"name"           : "JDrug-HighLevelClass",
+			"search_name"    : "HighLevelClass",  
+			"source_ordinal" : "3",
+			"is_codable"     : "True", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "JDrug-MidLevelClass",
+			"search_name"    : "MidLevelClass",  
+			"source_ordinal" : "4",
+			"is_codable"     : "True", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "JDrug-LowLevelClass",
+			"search_name"    : "LowLevelClass",  
+			"source_ordinal" : "5",
+			"is_codable"     : "True", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "JDrug-DetailedClass",
+			"search_name"    : "DetailedClass",  
+			"source_ordinal" : "6",
+			"is_codable"     : "True", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "JDrug-PreferredName",
+			"search_name"    : "PreferredName",  
+			"source_ordinal" : "7",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "JDrug-Category",
+			"search_name"    : "Category",  
+			"source_ordinal" : "1",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "JDrug-DrugName",
+			"search_name"    : "DrugName",  
+			"source_ordinal" : "8",
+			"is_codable"     : "True", 
+			"is_default"     : "True"
+		},
+		{
+			"name"           : "JDrug-EnglishName",
+			"search_name"    : "EnglishName",  
+			"source_ordinal" : "2",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		}],
+		"components"            : [
+		{
+			"name"            : "Classification",
+			"search_name"     : "classification",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "DosageForm",
+			"search_name"     : "dosage_form",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "DrugCodeClass1",
+			"search_name"     : "drug_code_class_1",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "DrugCodeClass2",
+			"search_name"     : "drug_code_class_2",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "DrugNameKana",
+			"search_name"     : "drug_name_kana",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "EnglishName",
+			"search_name"     : "english_name",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "INNFlag",
+			"search_name"     : "inn_flag",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "JANFlag",
+			"search_name"     : "jan_flag",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "MaintainDateEng",
+			"search_name"     : "maintain_date_eng",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "MaintainDateJpn",
+			"search_name"     : "maintain_date_jpn",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "MaintainFlagEng",
+			"search_name"     : "maintain_flag_eng",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "MaintainFlagJpn",
+			"search_name"     : "maintain_flag_jpn",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "Manufacturer",
+			"search_name"     : "manufacturer",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "PreferredNameKana",
+			"search_name"     : "preferred_name_kana",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "Reserve",
+			"search_name"     : "reserve",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "StandardNameCode",
+			"search_name"     : "standard_name_code",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		},
+		{
+			"name"            : "UsageClassification",
+			"search_name"     : "usage_classification",
+			"valid_on_levels" : ["JDrug-HighLevelClass","JDrug-MidLevelClass","JDrug-LowLevelClass","JDrug-DetailedClass","JDrug-PreferredName","JDrug-DrugName"]
+		}]
+	},
+	{
+		"provider"              : "WHODrug",
+		"type"                  : "DDE_HD",
+		"format"                : "C",
+		"dictionary"            : "WHODrug-DDE_HD-C",
+		"supports_primary_path" : "False",
+		"levels"                : [
+		{
+			"name"           : "WHODrug-DDE_HD-C-ATC",
+			"search_name"    : "ATC",  
+			"source_ordinal" : "1",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		},
+		{
+			"name"           : "WHODrug-DDE_HD-C-MEDICINALPRODUCT",
+			"search_name"    : "MEDICINALPRODUCT",  
+			"source_ordinal" : "2",
+			"is_codable"     : "True", 
+			"is_default"     : "True"
+		},
+		{
+			"name"           : "WHODrug-DDE_HD-C-INGREDIENT",
+			"search_name"    : "INGREDIENT",  
+			"source_ordinal" : "3",
+			"is_codable"     : "False", 
+			"is_default"     : "False"
+		}],
+		"components"            : [
+		{
+			"name"            : "CASNUMBER",
+			"search_name"     : "cas_number",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "COMPANY",
+			"search_name"     : "company",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "COMPANYCOUNTRY",
+			"search_name"     : "company_country",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "COUNTRY",
+			"search_name"     : "country",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "CREATEDATE",
+			"search_name"     : "create_date",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "DATECHANGED",
+			"search_name"     : "date_changed",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "DRUGRECORDNUMBER",
+			"search_name"     : "drug_record_number",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "GENERIC",
+			"search_name"     : "generic",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "INGREDIENTCREATEDATE",
+			"search_name"     : "ingredient_create_date",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "LANGUAGECODE",
+			"search_name"     : "language_code",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONDATE",
+			"search_name"     : "marketing_authorization_date",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONHOLDER",
+			"search_name"     : "marketing_authorization_holder",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONHOLDERCOUNTRY",
+			"search_name"     : "marketing_authorization_holder_country",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONNUMBER",
+			"search_name"     : "marketing_authorization_number",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "MARKETINGAUTHORIZATIONWITHDRAWALDATE",
+			"search_name"     : "marketing_authorization_withdrawal_date",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "NAMESPECIFIER",
+			"search_name"     : "name_specifier",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "NUMBEROFINGREDIENTS",
+			"search_name"     : "number_of_ingredients",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "PHARMACEUTICALFORM",
+			"search_name"     : "pharmaceutical_form",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "PHARMACEUTICALFORMCREATEDATE",
+			"search_name"     : "pharmaceutical_form_create_date",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "PRODUCTGROUP",
+			"search_name"     : "product_group",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "PRODUCTGROUPDATERECORDED",
+			"search_name"     : "product_group_date_recorded",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "PRODUCTTYPE",
+			"search_name"     : "product_type",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "QUANTITY",
+			"search_name"     : "quantity",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "QUANTITY2",
+			"search_name"     : "quantity_2",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "ROUTEOFADMINISTRATION",
+			"search_name"     : "route_of_administration",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER1",
+			"search_name"     : "sequence_number_1",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER2",
+			"search_name"     : "sequence_number_2",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER3",
+			"search_name"     : "sequence_number_3",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "SEQUENCENUMBER4",
+			"search_name"     : "sequence_number_4",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT"]
+		},
+		{
+			"name"            : "SOURCE",
+			"search_name"     : "source",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT","WHODrug-DDE_HD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCECOUNTRY",
+			"search_name"     : "source_country",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT","WHODrug-DDE_HD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "SOURCEYEAR",
+			"search_name"     : "source_year",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-MEDICINALPRODUCT","WHODrug-DDE_HD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "SUBSTANCE",
+			"search_name"     : "substance",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-INGREDIENT"]
+		},
+		{
+			"name"            : "UNIT",
+			"search_name"     : "unit",
+			"valid_on_levels" : ["WHODrug-DDE_HD-C-INGREDIENT"]
+		}]
+	}]
+}

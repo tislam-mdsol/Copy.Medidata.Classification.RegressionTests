@@ -1,0 +1,263 @@
+﻿using System;
+using System.Configuration;
+using System.IO;
+
+namespace Coder.TestSteps
+{
+    internal static class Config
+    {
+        internal static string CoderDbConnectionString
+        {
+            get
+            {
+                var coderConnectionStringSettings = ConfigurationManager.ConnectionStrings["coder"];
+
+                if (ReferenceEquals(coderConnectionStringSettings, null))                  throw new ConfigurationErrorsException("coder");
+                if (String.IsNullOrEmpty(coderConnectionStringSettings.ConnectionString))  throw new ConfigurationErrorsException("ConnectionString"); 
+
+                return coderConnectionStringSettings.ConnectionString;
+            }
+        }
+
+        internal static string ParentDumpDirectory 
+        {
+            get
+            {
+                var dumpDirectory = ConfigurationManager.AppSettings["DumpDirectory"];
+
+                if (String.IsNullOrEmpty(dumpDirectory)) throw new ConfigurationErrorsException("DumpDirectory");
+
+                return dumpDirectory;
+            }
+        }
+
+        internal static string ParentDownloadDirectory
+        {
+            get
+            {
+                var downloadDirectory = ConfigurationManager.AppSettings["DownloadDirectory"];
+
+                if (String.IsNullOrEmpty(downloadDirectory)) throw new ConfigurationErrorsException("DownloadDirectory");
+
+                return downloadDirectory;
+            }
+        }
+
+        internal static string Login
+        {
+            get
+            {
+                var configuredLogin = ConfigurationManager.AppSettings["Login"];
+
+                if (String.IsNullOrWhiteSpace(configuredLogin))
+                {
+                    throw new ConfigurationErrorsException("Login");
+                }
+
+                return configuredLogin;
+            }
+        }
+
+        internal static string AdminLogin
+        {
+            get
+            {
+                var adminLogin = ConfigurationManager.AppSettings["AdminLogin"];
+
+                if (String.IsNullOrWhiteSpace(adminLogin))
+                {
+                    throw new ConfigurationErrorsException("AdminLogin");
+                }
+
+                return adminLogin;
+            }
+        }
+
+        internal static string NewGeneratedSegment
+        {
+            get
+            {
+                var newSegment = ConfigurationManager.AppSettings["NewGeneratedSegment"];
+
+                if (String.IsNullOrWhiteSpace(newSegment))
+                {
+                    throw new ConfigurationErrorsException("NewGeneratedSegment");
+                }
+
+                return newSegment;
+            }
+        }
+
+        internal static string Password
+        {
+            get
+            {
+                var configuredPassword = ConfigurationManager.AppSettings["Password"];
+
+                if (String.IsNullOrWhiteSpace(configuredPassword))
+                {
+                    throw new ConfigurationErrorsException("Password");
+                }
+
+                return configuredPassword;
+            }
+        }
+
+        internal static string AdminPassword
+        {
+            get
+            {
+                var configuredPassword = ConfigurationManager.AppSettings["AdminLoginPassword"];
+
+                if (String.IsNullOrWhiteSpace(configuredPassword))
+                {
+                    throw new ConfigurationErrorsException("AdminLoginPassword");
+                }
+
+                return configuredPassword;
+            }
+        }
+
+        internal static string ApplicationName
+        {
+            get
+            {
+                var applicationName = ConfigurationManager.AppSettings["ApplicationName"];
+
+                if (String.IsNullOrEmpty(applicationName)) throw new ConfigurationErrorsException("ApplicationName");
+
+                return applicationName;
+            }
+        }
+
+        internal static string ApplicationCsvFolder
+        {
+            get
+            {
+                var applicationFolder = ApplicationName.Replace(" ", string.Empty) + "\\";
+
+                return applicationFolder;
+            }
+        }
+
+        internal static string DefaultSynonymListName
+        {
+            get
+            {
+                var synonymListName = ConfigurationManager.AppSettings["DefaultSynonymListName"];
+
+                if (String.IsNullOrWhiteSpace(synonymListName)) throw new ConfigurationErrorsException("DefaultSynonymListName");
+
+                return synonymListName;
+            }
+        }
+
+        internal static string StudyNamePrefix 
+        {
+            get
+            {
+                var studyNamePrefix = ConfigurationManager.AppSettings["StudyNamePrefix"];
+                
+                if (String.IsNullOrWhiteSpace(studyNamePrefix)) throw new ConfigurationErrorsException("StudyNamePrefix");
+
+                return studyNamePrefix;
+            }
+        }
+
+        internal static string StudyName
+        {
+            get
+            {
+                var studyName = ConfigurationManager.AppSettings["StudyName"];
+
+                if (String.IsNullOrWhiteSpace(studyName)) throw new ConfigurationErrorsException("StudyName");
+
+                return studyName;
+            }
+        }
+
+        internal static int TimeStampHoursDiff
+        {
+            get
+            {
+                var timeStampHoursDiffConfig = ConfigurationManager.AppSettings["TimeStampHoursDiff"];
+
+                var timeStampHoursDiff = 0;
+
+                if (String.IsNullOrWhiteSpace(timeStampHoursDiffConfig))
+                    timeStampHoursDiff = 24;
+
+                var canParse = Int32.TryParse(timeStampHoursDiffConfig, out timeStampHoursDiff);
+
+                if (!canParse)
+                {
+                    throw new ConfigurationErrorsException(String.Format("Cannot parse {0} into integer", timeStampHoursDiffConfig));
+                }
+                
+                return timeStampHoursDiff;
+            }
+        }
+
+        internal static string MedDra15DdmFileName
+        {
+            get
+            {
+                return "MedDRA_15_0_ENG_DDM_Terms.json";
+            }
+        }
+
+        internal static string WhoDrugTermsFileName
+        {
+            get
+            {
+                return "WhoDrug_Terms.json";
+            }
+        }
+
+        internal static string MevDownloadFailuresFileName
+        {
+            get
+            {
+                return "Mev_Download_Failures.json";
+            }
+        }
+
+        internal static string StaticContentFolder
+        {
+            get
+            {
+                var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+                if (string.IsNullOrWhiteSpace(baseDirectory)) throw new NullReferenceException("baseDirectory");
+
+                var staticContentFolder = Path.Combine(baseDirectory, "StaticContent");
+
+                return staticContentFolder;
+            }
+        }
+
+        internal static string DefaultReclassficationComment
+        {
+            get
+            {
+                return "Reclassify Task Test Comment";
+            }
+        }
+
+        internal static string Segment
+        {
+            get
+            {
+                var configuredSegment = ConfigurationManager.AppSettings["Segment"];
+
+                if (String.IsNullOrWhiteSpace(configuredSegment))
+                {
+                    throw new ConfigurationErrorsException("Segment");
+                }
+
+                return configuredSegment;
+            }
+        }
+
+    }
+}

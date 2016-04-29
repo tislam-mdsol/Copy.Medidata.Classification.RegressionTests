@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.106</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="fnGetTermIDsAndTextFromFullPath.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spImpactAnalysisDetailView.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spImpactAnalysisGlobalView.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spVersionDifferencePostProcessingV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spWorkflowTaskHistoryLoadByWorkflowTask.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow" />
+  <Script ScriptName="spSynonymMigrationMngmntProcessSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSetupDefaultConfiguration.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+  <Script ScriptName="spMedicalDictionaryTermLoadChildren.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />  
+  <Script ScriptName="spMedicalDictionarySearchMultiIngredient.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch" />    
+
+  <Script ScriptName="spLoadProvisionalSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrEntrsFrRecncByCtgryPaged.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymSuggestionsGetBySynEntry.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spDoNotAutoCodeCanInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="ExistingSegmentsWorkflowLocalization.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />  
+
+
+</Patch>
+

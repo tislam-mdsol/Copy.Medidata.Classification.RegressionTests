@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>2013.1.1.14</PatchNumber>
+
+  <!-- prepping for CMP to run (EXEC spFixConflicts) -->
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="CreateTables.sql" FileType="SQL" RelativePath="SQL/CMP/GroupChangesCMP" />
+
+  <!-- user defined functions here -->
+  <Script ScriptName="fnRemoveLineBreaks.sql" FileType="SQL" RelativePath="SQL/CMP/GroupChangesCMP" />
+
+  <!-- stored procs here -->
+  <Script ScriptName="FakeStudyMigrationFailure.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+  <Script ScriptName="spCodingElementSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationClearAllAssignments.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spGroupVerbatimAnalysis.sql" FileType="SQL" RelativePath="SQL/CMP/GroupChangesCMP" />
+  <Script ScriptName="spGroupAnalysis.sql" FileType="SQL" RelativePath="SQL/CMP/GroupChangesCMP" />
+  <Script ScriptName="spAutomationAnalysis.sql" FileType="SQL" RelativePath="SQL/CMP/GroupChangesCMP" />
+  <Script ScriptName="spGroupConflicts.sql" FileType="SQL" RelativePath="SQL/CMP/GroupChangesCMP" />
+  
+  <Script ScriptName="spFixAutomation.sql" FileType="SQL" RelativePath="SQL/CMP/GroupChangesCMP" />
+  <Script ScriptName="spFixGroups.sql" FileType="SQL" RelativePath="SQL/CMP/GroupChangesCMP" />
+  <Script ScriptName="spFixGroupVerbatims.sql" FileType="SQL" RelativePath="SQL/CMP/GroupChangesCMP" />
+  <Script ScriptName="spFixConflicts.sql" FileType="SQL" RelativePath="SQL/CMP/GroupChangesCMP" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+
+</Patch>

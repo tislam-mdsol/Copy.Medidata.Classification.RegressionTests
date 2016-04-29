@@ -1,0 +1,6 @@
+﻿IF NOT EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'CodingSuggestions'
+		 AND COLUMN_NAME = 'MigrationTraceId')
+	ALTER TABLE CodingSuggestions
+	ADD MigrationTraceId INT NOT NULL CONSTRAINT DF_CodingSuggestions_MigrationTraceId DEFAULT (0)
+GO

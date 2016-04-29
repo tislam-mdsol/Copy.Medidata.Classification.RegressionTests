@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.98</PatchNumber>
+
+  <!-- daily change scripts here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="fnExtendIORVersionLocaleWithNewVersion.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+  <Script ScriptName="spExtendIORValidityStringsForNewVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spMedDictVerActivationV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spMedDictVerDiffEngCmpntV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spVersionActivationVerification.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqObjectTypeR.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+  <!--Workflow  related strings-->
+  <Script ScriptName="ExistingSegmentsWorkflowLocalization.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+</Patch>
+

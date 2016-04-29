@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.104</PatchNumber>
+
+  <!-- daily change scripts here -->
+  <Script ScriptName="20111130-01-CreateProductionSupportNamedQueriesTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20111219-01-UpdateDefaultLevelMeddraAndWhoDrugB2.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />  
+  <Script ScriptName="20111216-01-RenameTemplateLevelTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  
+  <!-- user defined functions here -->
+
+  <!-- stored procs here -->
+  <Script ScriptName="spObjectSegmentLoadDictionariesMissingSubscription.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryTermGetByIOR.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spWhoDrugBReconstructMissingRelationships2.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/WhoDrugB/Create SPs" />
+  <Script ScriptName="spSynonymMigrationMngmntProcessSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrEntrsMassMigrate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spReclassifcationTime.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+  <Script ScriptName="spMedicalDictionaryTermLoadChildren.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spProductionSupportNamedQueriesFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spProductionSupportNamedQueriesLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spPSCoderToRaveIssue.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Support Procedures" />
+  <Script ScriptName="spPSGetCodingRequestODM.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Support Procedures" />
+  <Script ScriptName="spPSRaveToCoderIssue.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Support Procedures" />
+
+  <Script ScriptName="spMedSearchPrType.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch" />
+  <Script ScriptName="spMedicalDictionarySearchMultiIngredient.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch" />
+  <Script ScriptName="spMedicalDictionarySearchWildCard.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder FullTextSearch" />
+  <Script ScriptName="spFetchMedicalDictionaryTermHierarchy.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryLevelLoadByTemplate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionarySearchDynSQL.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryTemplateIsReverse.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryTemplateLevelDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryTemplateLevelFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryTemplateLevelInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryTemplateLevelLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryTemplateLevelLoadByLevel.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryTemplateLevelLoadByTemplate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryTemplateLevelUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryTermLoadByIDsTemplate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spMedicalDictionaryTestSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCreateDefaultTemplate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts" />
+  <Script ScriptName="spCreateDefaultTemplateForMedDRA.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+  <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqHelpContexts.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  <Script ScriptName="dbiqObjectTypeR.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+ 
+  <Script ScriptName="dbiqNamedQueries.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+  
+
+</Patch>
+

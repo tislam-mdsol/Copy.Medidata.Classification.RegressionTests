@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02EAE425-8FF4-4726-951F-7155EE9BC11D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Coder.DeclarativeBrowser</RootNamespace>
+    <AssemblyName>Coder.DeclarativeBrowser</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Coypu">
+      <HintPath>..\packages\Coypu.2.9.1\lib\net40\Coypu.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.2.13.2.0\lib\net40-client\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FileHelpers">
+      <HintPath>..\packages\FileHelpers.3.1.5\lib\net45\FileHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.0.1\lib\net45\FluentAssertions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentAssertions.Core, Version=4.0.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.4.0.1\lib\net45\FluentAssertions.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Medidata.Dapper">
+      <HintPath>..\packages\Medidata.Dapper.0.0.7\lib\net45\Medidata.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Medidata.Dapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.Dapper.0.0.8\lib\net45\Medidata.Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Polly, Version=2.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Polly.2.2.3\lib\net45\Polly.dll</HintPath>
+      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Polly.2.2.3\lib\net45\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.2.48.0\lib\net40\WebDriver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.2.48.0\lib\net40\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CoderUserGenerator.cs" />
+    <Compile Include="FileHelpers\CsvColumnNameAttribute.cs" />
+    <Compile Include="CoderConfiguration\CoderConfiguration.cs" />
+    <Compile Include="CoderConfiguration\CoderConfigurationFactory.cs" />
+    <Compile Include="CoderConfiguration\CoderTestContext.cs" />
+    <Compile Include="FileHelpers\GenericCsvHelper.cs" />
+    <Compile Include="FileHelpers\GenericFileHelper.cs" />
+    <Compile Include="FileHelpers\IDelimitedRow.cs" />
+    <Compile Include="ExtensionMethods\Assertions\CoderConfigurationAssertionExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\Assertions\HelpContentAssertionExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\Assertions\MevAssertionExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\Assertions\ProjectRegistrationAssertionExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\Assertions\ReclassificationAssertionExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\Assertions\RolesManagementAssertionExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\Assertions\StudyMigrationAssertionExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\Assertions\SynonymAssertionExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\Assertions\TaskPageAssertionExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\BrowserSessionExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\ClickExtensionMethods.cs" />
+    <Compile Include="CoderDeclarativeBrowser.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="CoderDatabaseAccess.cs" />
+    <Compile Include="Drivers\CustomFirefoxDriver.cs" />
+    <Compile Include="Drivers\CustomPhantomJsDriver.cs" />
+    <Compile Include="Drivers\CustomDriverFactory.cs" />
+    <Compile Include="ExtensionMethods\BrowserWindowExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\ListExtensionMethods.cs" />
+    <Compile Include="Helpers\TaskAttempt.cs" />
+    <Compile Include="Models\AssignedGeneralRole.cs" />
+    <Compile Include="Models\AssignedWorkflowRole.cs" />
+    <Compile Include="Models\CodingDecisionsReportRow.cs" />
+    <Compile Include="Models\CodingDecisionsReportCriteria.cs" />
+    <Compile Include="Models\CodingHistoryReportRow.cs" />
+    <Compile Include="Models\CodingHistoryReportCriteria.cs" />
+    <Compile Include="Models\DirectDictionaryMatch.cs" />
+    <Compile Include="Models\ETEModels\GeneratedUser.cs" />
+    <Compile Include="Models\ETEModels\MedidataUser.cs" />
+    <Compile Include="Models\ExternalVerbatim.cs" />
+    <Compile Include="ExtensionMethods\DictionarySearchExtensionMethods.cs" />
+    <Compile Include="Models\GridModels\LicensedDictionaryDetail.cs" />
+    <Compile Include="Models\GridModels\QueryHistoryDetail.cs" />
+    <Compile Include="Models\GridModels\RaveAuditRecordDetail.cs" />
+    <Compile Include="Models\OdmQueryParameters.cs" />
+    <Compile Include="Models\GeneralRole.cs" />
+    <Compile Include="Models\IngredientReportRow.cs" />
+    <Compile Include="Models\MevDownloadCriteria.cs" />
+    <Compile Include="Models\ReclassificationType.cs" />
+    <Compile Include="Models\ReclassificationSearchCriteria.cs" />
+    <Compile Include="Models\StudyImpactAnalysisActions.cs" />
+    <Compile Include="Models\StudyImpactAnalysisDetail.cs" />
+    <Compile Include="Models\StudyReport.cs" />
+    <Compile Include="Models\IMedidataStudy.cs" />
+    <Compile Include="Models\SynonymUploadRow.cs" />
+    <Compile Include="OdmBuilder\OdmManager.cs" />
+    <Compile Include="Models\UIDataModels\StudySetupData.cs" />
+    <Compile Include="Models\WorkflowRole.cs" />
+    <Compile Include="PageObjects\AdminMedidataAdminConsolePage.cs" />
+    <Compile Include="PageObjects\AdminSegmentManagementPage.cs" />
+    <Compile Include="PageObjects\RaveConfigurationLoaderPage.cs" />
+    <Compile Include="PageObjects\RaveUserAdministrationPage.cs" />
+    <Compile Include="PageObjects\RaveLoginPage.cs" />
+    <Compile Include="PageObjects\RaveModulesPage.cs" />
+    <Compile Include="PageObjects\CoderLoginPage.cs" />
+    <Compile Include="PageObjects\CodingDecisionsReportPage.cs" />
+    <Compile Include="PageObjects\DoNotAutoCodePage.cs" />
+    <Compile Include="PageObjects\ImedidataStudyGroupPage.cs" />
+    <Compile Include="PageObjects\ImedidataStudyPage.cs" />
+    <Compile Include="Models\GridModels\ProjectRegistrationHistory.cs" />
+    <Compile Include="Models\StudyReportCodingElements.cs" />
+    <Compile Include="PageObjects\MevPage.cs" />
+    <Compile Include="ExtensionMethods\SetupExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\ElementScopeExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\SessionElementScopeExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\StepContextExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\StringExtensions.cs" />
+    <Compile Include="ExtensionMethods\XmlExtensions.cs" />
+    <Compile Include="Helpers\BrowserUtility.cs" />
+    <Compile Include="Models\AdminConfigurationManagement.cs" />
+    <Compile Include="Models\AdminSynonymList.cs" />
+    <Compile Include="Models\AdminSynonymMigrationCategory.cs" />
+    <Compile Include="Models\AdminSynonymSuggestion.cs" />
+    <Compile Include="Models\AdminSynonymSuggestionDetails.cs" />
+    <Compile Include="Models\GridModels\DictionarySearchResult.cs" />
+    <Compile Include="Models\GridModels\CodingHistoryDetail.cs" />
+    <Compile Include="Models\CodingTask.cs" />
+    <Compile Include="Models\GridModels\SynonymRow.cs" />
+    <Compile Include="Models\TermPathRow.cs" />
+    <Compile Include="Models\GridModels\ReclassificationSearch.cs" />
+    <Compile Include="Models\GridModels\DictionarySelectedSearchResult.cs" />
+    <Compile Include="Models\GridModels\SourceTermEdcReference.cs" />
+    <Compile Include="Models\GridModels\SupplementalTerm.cs" />
+    <Compile Include="Models\GridModels\UploadedCodingTask.cs" />
+    <Compile Include="Models\TermPath.cs" />
+    <Compile Include="Models\StepContext.cs" />
+    <Compile Include="Models\UIDataModels\DictionarySearchCriteria.cs" />
+    <Compile Include="Models\UIDataModels\CurrentCodingElementData.cs" />
+    <Compile Include="Models\UIDataModels\SegmentSetupData.cs" />
+    <Compile Include="Models\UIDataModels\SourceSystemApplicationData.cs" />
+    <Compile Include="Models\GridModels\AssignmentDetail.cs" />
+    <Compile Include="Models\GridModels\AssignmentDetailPath.cs" />
+    <Compile Include="Models\GridModels\PropertyCodingStatus.cs" />
+    <Compile Include="Models\GridModels\PropertyMedicalDictionary.cs" />
+    <Compile Include="Models\GridModels\PropertySourceSystem.cs" />
+    <Compile Include="Models\GridModels\SourceTerm.cs" />
+    <Compile Include="Models\UIDataModels\SpecDictionary.cs" />
+    <Compile Include="Models\UIDataModels\SynonymSearch.cs" />
+    <Compile Include="Models\SynonymList.cs" />
+    <Compile Include="OdmBuilder\OdmElementCreator.cs" />
+    <Compile Include="OdmBuilder\OdmFileBuilder.cs" />
+    <Compile Include="Models\OdmParameters.cs" />
+    <Compile Include="PageObjects\AdminConfigurationManagementPage.cs" />
+    <Compile Include="PageObjects\AssignGeneralRolesPage.cs" />
+    <Compile Include="PageObjects\AdminSynonymDetailsPage.cs" />
+    <Compile Include="PageObjects\AdminSynonymListPage.cs" />
+    <Compile Include="PageObjects\AdminSynonymMigrationPage.cs" />
+    <Compile Include="PageObjects\AdminSynonymPage.cs" />
+    <Compile Include="PageObjects\AssignWorkFlowRolesPage.cs" />
+    <Compile Include="PageObjects\BrowserPage.cs" />
+    <Compile Include="PageObjects\BrowserPageDictionarySearchTermTab.cs" />
+    <Compile Include="PageObjects\DictionarySearchPanel.cs" />
+    <Compile Include="PageObjects\DictionarySelectionPanel.cs" />
+    <Compile Include="PageObjects\CodingCleanupPage.cs" />
+    <Compile Include="PageObjects\CodingReclassificationPage.cs" />
+    <Compile Include="PageObjects\CodingTaskPage.cs" />
+    <Compile Include="PageObjects\CodingHistoryReportPage.cs" />
+    <Compile Include="PageObjects\ContextHelpPage.cs" />
+    <Compile Include="PageObjects\CreateGeneralRolesDictionarySecurityPage.cs" />
+    <Compile Include="PageObjects\CreateGeneralRolesPage.cs" />
+    <Compile Include="PageObjects\CreateWorkflowRolesPage.cs" />
+    <Compile Include="PageObjects\HelpCenterPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveAdverseEventsPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveArchitectAddNewDraftPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveArchitectPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveArchitectProjectPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveArchitectUploadDraftPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveAuditsPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveHeader.cs" />
+    <Compile Include="PageObjects\Rave\RaveHomePage.cs" />
+    <Compile Include="PageObjects\Rave\RaveNavigation.cs" />
+    <Compile Include="PageObjects\Rave\RaveStudyPage.cs" />
+    <Compile Include="PageObjects\Reports\StudyReportPage.cs" />
+    <Compile Include="PageObjects\ProjectRegistrationPage.cs" />
+    <Compile Include="PageObjects\IngredientReportPage.cs" />
+    <Compile Include="PageObjects\ScreenHelpPage.cs" />
+    <Compile Include="PageObjects\ELearningLoginPage.cs" />
+    <Compile Include="PageObjects\Header.cs" />
+    <Compile Include="PageObjects\ImedidataPage.cs" />
+    <Compile Include="PageObjects\IMedidataLoginPage.cs" />
+    <Compile Include="PageObjects\SynonymApprovalPage.cs" />
+    <Compile Include="PageObjects\KnowledgeSpacePage.cs" />
+    <Compile Include="PageObjects\Administration\StudyImpactAnalysisPage.cs" />
+    <Compile Include="PageObjects\SynonymDisplay.cs" />
+    <Compile Include="PageObjects\SynonymListPage.cs" />
+    <Compile Include="PageObjects\TaskPageAssignmentsTab.cs" />
+    <Compile Include="PageObjects\TaskPageCodingHistoryTab.cs" />
+    <Compile Include="PageObjects\TaskPageQueryHistoryTab.cs" />
+    <Compile Include="PageObjects\TaskPageSourceTermTab.cs" />
+    <Compile Include="PageObjects\TaskPagePropertiesTab.cs" />
+    <Compile Include="PageObjects\TermPathRowDisplay.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PageObjects\Rave\RaveAddSubjectPage.cs" />
+    <Compile Include="RetryPolicy.cs" />
+    <Compile Include="SessionElementScope.cs" />
+    <Compile Include="ExtensionMethods\TableExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\ScreenshotExtensionMethods.cs" />
+    <Compile Include="T4\AllRecordsRepositoryFactory.cs">
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\CommandExtensions.cs">
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Commands.cs">
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\DTO.cs">
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\FilteredRepositoryFactory.cs">
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Fluent_AllRecordReaders.cs">
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Fluent_Commands.cs">
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Fluent_DbConfig.cs">
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Fluent_DbConnection.cs">
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Fluent_FilteredReaders.cs">
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Fluent_KeyedReaders.cs">
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\KeyReadableRepositoryFactory.cs">
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\SchemaReference.cs">
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\UDT.cs">
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\_Entities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\_Schema.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Schema.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="T4\Commands\Command.ttinclude" />
+    <None Include="T4\Commands\CommandExtensions.ttinclude" />
+    <None Include="T4\Commands\UDT.ttinclude" />
+    <None Include="T4\Fluent\AllRecordReaders.ttinclude" />
+    <None Include="T4\Fluent\Commands.ttinclude" />
+    <None Include="T4\Fluent\DbConfig.ttinclude" />
+    <None Include="T4\Fluent\DbConnection.ttinclude" />
+    <None Include="T4\Fluent\FilteredReaders.ttinclude" />
+    <None Include="T4\Fluent\KeyedReaders.ttinclude" />
+    <None Include="T4\Repositories\AllRecordsRepositoryFactory.ttinclude" />
+    <None Include="T4\Repositories\DTO.ttinclude" />
+    <None Include="T4\Repositories\FilteredRepositoryFactory.ttinclude" />
+    <None Include="T4\Repositories\KeyReadableRepositoryFactory.ttinclude" />
+    <None Include="T4\Repositories\SchemaReference.ttinclude" />
+    <None Include="T4\Utilities\AutogenAttribute.ttinclude" />
+    <None Include="T4\Utilities\AutogenHeader.ttinclude" />
+    <None Include="T4\Utilities\MultiOutput.ttinclude" />
+    <None Include="T4\Utilities\SQLServer.ttinclude" />
+    <None Include="T4\Utilities\Types.ttinclude" />
+    <None Include="T4\_Settings.SAMPLE.ttinclude" />
+    <None Include="T4\_Settings.ttinclude" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="T4\ProcSchema.xml" />
+    <Content Include="T4\TableSchema.xml" />
+    <Content Include="T4\UdtSchema.xml" />
+    <Content Include="T4\_Entities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>_Entities.cs</LastGenOutput>
+    </Content>
+    <Content Include="T4\_Schema.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>_Schema.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

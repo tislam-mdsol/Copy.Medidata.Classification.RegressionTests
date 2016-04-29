@@ -1,0 +1,10 @@
+﻿ IF NOT EXISTS
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'TrackableObjects'
+		 AND COLUMN_NAME = 'IsTestStudy')
+	BEGIN
+		ALTER TABLE TrackableObjects ADD IsTestStudy BIT
+	END
+GO
+
+--UPDATE TrackableObjects SET IsTestStudy = 0
+--ALTER TABLE TrackableObjects ALTER COLUMN IsTestStudy BIT NOT NULL

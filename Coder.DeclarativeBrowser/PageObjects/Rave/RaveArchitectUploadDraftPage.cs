@@ -1,0 +1,97 @@
+﻿using System;
+using Coder.DeclarativeBrowser.ExtensionMethods;
+using Coypu;
+using FluentAssertions;
+
+namespace Coder.DeclarativeBrowser.PageObjects.Rave
+{
+    internal sealed class RaveArchitectUploadDraftPage
+    {
+        private readonly BrowserSession _Session;
+
+        internal RaveArchitectUploadDraftPage(BrowserSession session)
+        {
+            if (ReferenceEquals(session, null))
+            {
+                throw new ArgumentNullException("session");
+            }
+            _Session = session;
+        }
+
+        private SessionElementScope GetChooseFileButton()
+        {
+            var chooseFileButton = _Session.FindSessionElementById("CtrlDraftFile");
+
+            return chooseFileButton;
+        }
+
+        private SessionElementScope GetUploadButton()
+        {
+            var uploadButton = _Session.FindSessionElementById("Upload");
+
+            return uploadButton;
+        }
+
+        private SessionElementScope GetCurrentStatusIndicator()
+        {
+            var currentStatusIndicator = _Session.FindSessionElementById("CurrentStatus");
+
+            return currentStatusIndicator;
+        }
+
+        private SessionElementScope GetAbortButton()
+        {
+            var abortButton = _Session.FindSessionElementById("AbortBtn");
+
+            return abortButton;
+        }
+
+        private SessionElementScope GetBackButton()
+        {
+            var backButton = _Session.FindSessionElementById("BackBtn");
+
+            return backButton;
+        }
+
+        internal void UploadDraftFile(String draftFilePath)
+        {
+            if (ReferenceEquals(draftFilePath, null)) throw new ArgumentNullException("draftFilePath");
+            
+            AttachDraftFile(draftFilePath);
+            GetUploadButton().Click();
+
+            WaitForUploadToCompelte();
+
+            var currentStatus = GetCurrentStatusIndicator();
+
+            currentStatus.Text.Should().BeEquivalentTo("Save successful");
+        }
+
+        private void AttachDraftFile(string draftFilePath)
+        {
+            if (ReferenceEquals(draftFilePath, null)) throw new ArgumentNullException("draftFilePath");
+
+            var chooseFileButton = GetChooseFileButton();
+            chooseFileButton.SendKeys(draftFilePath);
+        }
+
+        private void WaitForUploadToCompelte()
+        {
+            _Session.WaitUntilElementIsActive  (GetAbortButton);
+            _Session.WaitUntilElementIsDisabled(GetBackButton);
+            
+            var options = Config.GetDefaultCoypuOptions();
+
+            options.RetryInterval = TimeSpan.FromSeconds(30);
+            options.Timeout       = TimeSpan.FromMinutes(5);
+
+            _Session.TryUntil(
+            () => GetAbortButton(),
+            () => GetAbortButton().Disabled,
+            options.RetryInterval,
+            options);
+            
+            _Session.WaitUntilElementIsActive  (GetBackButton);
+        }
+    }
+}

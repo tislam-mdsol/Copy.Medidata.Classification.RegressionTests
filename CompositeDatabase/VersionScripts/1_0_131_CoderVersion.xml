@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.131</PatchNumber>
+  <!-- Transition Build -->
+  <!-- daily change scripts here -->
+  <Script ScriptName="20120820-01-SegmentsCleanupForNonProd.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- Workflow -->
+  <Script ScriptName="20120210-02-CreateWFActivityResultTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20120329-01-AddReclassifyToWorkflow.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <!-- Automation -->
+  <Script ScriptName="20120425-02-AutomationChangesTwo.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20130228-01-UpdateRejectedTasksAfterStudyMigration.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  
+  <!-- PopulateRefTablesInProd must follow AutomationChangesTwo -->
+  <Script ScriptName="20120918-01-PopulateRefTablesInProd.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- STAGE4 -->
+  <Script ScriptName="20120524-01-ModifySynonymStaging.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <!-- Study Migration -->
+  <Script ScriptName="20120725-01-AlterStudyMigrationBackupTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20120726-01-AlterStudyVersionHistoryTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  
+  <!-- Term Reference -->
+  <Script ScriptName="20120601-01-AlterCodingPatternTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+   
+  <!-- user defined functions here -->
+  <!-- Automation -->
+  <!-- STAGE4 -->
+  <Script ScriptName="fnGetSynonymPathForDownload.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+  <Script ScriptName="fnGetSourceComponents.sql" FileType="SQL" RelativePath="SQL/User-Defined Functions/Coder" />
+
+  <!-- stored procs here -->
+ 
+ <!-- Workflow -->
+  <Script ScriptName="spWorkflowActivityResultFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spWorkflowActivityResultInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spWorkflowActivityResultUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <!-- Automation -->
+  <!-- STAGE1 -->
+  <Script ScriptName="spBOTElementFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spBOTElementInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spBOTElementLoadTopPending.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spBOTElementUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCheckSynonymsForApproval.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingDataForReclassify.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementGetDecisionCountsBySynonymIDs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermInsertGroupMany.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternLoadByCodingPatternAndVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationMgmntBySegment.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementsCleanup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Automation" />
+
+  <!-- STAGE2 -->
+  <Script ScriptName="spCodingElementGroupInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementGroupUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementSearchByFilterSecuredAndPagedWithFilterAndGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spGroupVerbatimEngFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spGroupVerbatimEngGetByVerbatimLocale.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spGroupVerbatimEngInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spGroupVerbatimJpnFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spGroupVerbatimJpnGetByVerbatimLocale.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spGroupVerbatimJpnInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spProjectDictionaryRegistrationInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spProjectDictionaryRegistrationLoadBySynonymList.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spProjectDictionaryRegistrationUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyDictionaryVersionGetByKey.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyDictionaryVersionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <Script ScriptName="spStudyDictionaryVersionLoadWithCodingActivity.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyDictionaryVersionLoadWithoutCodingActivity.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyDictionaryVersionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyVersionLoadBySynonymList.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyVersionObjectLoadByStudyID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spWorkflowTaskHistoryLoadByWorkflowTask.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow" />
+  <Script ScriptName="spSynonymListActivate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationManagementDelete.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationManagementFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spWorkflowTaskGetDecisionsBySynonymIDs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Workflow" />
+
+  <!-- STAGE3 -->
+  <Script ScriptName="spCodingElementGroupFindExisting.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementLoadAllForBOTByRule.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementLoadDependantBySynonym.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternGetByGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spProjectDictionaryRegistrationLoadCurrent.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStagedSynonymLoadBySynonymList.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationMngmntClearLoadedSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationMngmntLoadSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spLoadProvisionalSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spConfigurationFetchByTag.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework" />
+  <Script ScriptName="spConfigurationInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework" />
+  <Script ScriptName="spConfigurationUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Framework" />
+  <Script ScriptName="spSegmentedGroupCodingPatternLoadByGroupAndVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternLoadByVersionAndSynonym.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- STAGE4 -->
+  <Script ScriptName="spGetSynonymsForDownload.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spGetTermIDsAndText.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternLoadBySynonymList.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrEntrsFrRecncByCtgryPaged.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrEntrsMassMigrate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationActivation.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationEntryClearForList.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationEntryInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationEntryLoadBySynonymList.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationEntryUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationManagementInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationManagementLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationManagementUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationMgmntBySegmentDictLocaleVersion.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationMngmntGetByVersionAndName.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationMngmntProcessSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationSuggestionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationSuggestionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymSuggestionGetBySynEntryAndTermID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymSuggestionsGetBySynEntry.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- Reports -->
+  <Script ScriptName="spCodingElementSearch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spReportUCodeCandidateTermPaths.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <!-- Report Streaming -->
+  <Script ScriptName="spCodingElementSearchForUnload.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <!-- Need to be migrated -->
+  <!--<Script ScriptName="spStudyTaskHistoryAudit.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />-->
+
+  <!-- Study Migration -->
+  <Script ScriptName="spStudyMigrationGetTaskGroupMatchingSynonym.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationGetTaskGroupVerbatimsForBetterMatch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyVersionMigrationRestoreBackup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationBackupNewIdsUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationGetSegmentedGroupPatterns.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationGetTasksWithActivePatterns.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationGetUncodedTasks.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationTaskCount.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyMigrationQueueNewTransmissions.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyDictionaryVersionHistoryUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spStudyDictionaryVersionHistoryInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- Term Reference -->
+  <Script ScriptName="spDictionaryRefFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryRefInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryRefLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryRefGetByExternalUUID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryLevelRefFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryLevelRefInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryLevelRefLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryLevelRefGetByExternalUUID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryVersionRefFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryVersionRefInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryVersionRefLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryVersionRefGetByExternalUUID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryVersionLocaleRefFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryVersionLocaleRefInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryVersionLocaleRefLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryVersionLocaleRefGetByExternalUUID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryComponentTypeRefFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryComponentTypeRefInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryComponentTypeRefLoadAll.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+  <Script ScriptName="spDictionaryComponentTypeRefGetByExternalUUID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/DictionaryRef" />
+
+  <Script ScriptName="spCreateDefaultDictVerSegmentAssocs.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Test Data Population Scripts" />
+
+
+  <!--CodingPattern stored procs -->
+  <Script ScriptName="spCodingPatternGetByTermPath.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingPatternGetByLevelAndPath.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingPatternInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingPatternUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSegmentedGroupCodingPatternLoadByCodingPatternAndList.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- impact analysis changes -->
+  <Script ScriptName="spImpactAnalysisGlobalView.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spImpactAnalysisDetailView.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spImpactAnalysisGetStudyDictTerms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spImpactAnalysisGetStudyVersionCodedTasks.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spImpactAnalysisGetTaskDetails.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+  <!-- GROUP Migration Changes -->
+  <Script ScriptName="20120828-02-CodingGroupMigrateSchema.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <!-- commonly run scripts here (dbiqAllStrings, dbiqObjectTypeR, etc.) -->
+
+</Patch>

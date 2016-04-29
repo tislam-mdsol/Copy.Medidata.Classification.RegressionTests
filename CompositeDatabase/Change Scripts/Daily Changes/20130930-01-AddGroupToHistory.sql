@@ -1,0 +1,11 @@
+﻿IF NOT EXISTS (SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS
+		WHERE TABLE_NAME = 'WorkflowTaskHistory'
+			AND COLUMN_NAME = 'CodingElementGroupId')
+	ALTER TABLE WorkflowTaskHistory
+	ADD CodingElementGroupId BIGINT NOT NULL CONSTRAINT DF_WorkflowTaskHistory_CodingElementGroupId DEFAULT (-1)
+
+IF NOT EXISTS (SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS
+		WHERE TABLE_NAME = 'WorkflowTaskHistory'
+			AND COLUMN_NAME = 'QueryId')
+	ALTER TABLE WorkflowTaskHistory
+	ADD QueryId INT NOT NULL CONSTRAINT DF_WorkflowTaskHistory_QueryId DEFAULT (-1)

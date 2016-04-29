@@ -1,0 +1,28 @@
+#
+# unit test are listed 
+#   one per line 
+#   prefixed with '- ' (dash space)
+#   path relative to Coder root
+#
+# comment out unwanted test with a '#' (hash) at the beginning of the line, as shown on this line
+#
+# labelled integration tests--do not auto-run
+#
+#- CoderApi.Client.IntegrationTests/bin/Release/CoderApi.Client.IntegrationTests.dll
+#- CoderWeb.Core.IntegrationTests/bin/Release/CoderWeb.Core.IntegrationTests.dll
+#- CoderAPI.Server.IntegrationTests/bin/Release/CoderAPI.Server.IntegrationTests.dll
+- CoderAPI.Models.Tests/bin/Release/CoderAPI.Models.Tests.dll
+- Medidata.CodingWorkbench.Activities.Test/bin/Release/Medidata.CodingWorkbench.Activities.Test.dll
+- Medidata.CodingWorkbench.Objects.WorkingTest/bin/Release/Medidata.CodingWorkbench.Objects.WorkingTest.dll
+- Medidata.Coder.WSUtilities.Test/bin/Release/Medidata.Coder.WSUtilities.Test.dll
+- Medidata.iMedidata.Test/bin/Release/Medidata.iMedidata.Test.dll
+#- CoderApi.Client.Tests/bin/Release/CoderApi.Client.Tests.dll
+#- CoderAPI.Server.Tests/bin/Release/CoderAPI.Server.Tests.dll
+#- CoderWorkflowSvc.Test/bin/Release/CoderWorkflowSvc.Test.dll
+#- CoderWS.Test/bin/Release/CoderWS.Test.dll
+- Medidata.Coder.SearchAlgorithms.Test/bin/Release/Medidata.Coder.SearchAlgorithms.Test.dll
+#- Medidata.CodingWorkbench.Utilities.Test/bin/Release/Medidata.CodingWorkbench.Utilities.Test.dll
+- CoderWeb.Core.ApiContract.v1.0.Tests/bin/Release/CoderWeb.Core.ApiContract.v1.0.Tests.dll
+#- CoderWeb.Test/bin/Release/CoderWeb.Test.dll ## TODO: make sure we can run NUnit as well as MSTest
+#
+# lines commented out immediately above are unit tests containing failures

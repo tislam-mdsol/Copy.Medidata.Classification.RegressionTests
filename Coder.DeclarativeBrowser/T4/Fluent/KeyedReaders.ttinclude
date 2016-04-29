@@ -1,0 +1,281 @@
+﻿<#@ include file="..\Utilities\AutogenHeader.ttinclude" #>
+using System;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Linq;
+using Medidata;
+using System.Data;
+using System.CodeDom.Compiler;
+using Medidata.Dapper;
+
+namespace <#=Namespace #> 
+{
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal interface I<#=DataModelBaseName#>KeyedReadersRepository
+    {
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        IDapperKeyReadableRepository<<#=tbl.PK.SysType#>, <#=tbl.ClassName#>DTO> <#=tbl.ClassName#>PrimaryKeyReadableRepository { get; }
+<#
+}    
+#>
+
+<#
+    foreach(Table tbl in tables)
+    {
+        foreach(Column col in tbl.Columns)
+        {
+            var columnIsForeignKey = tbl.FKTables.Where(fk=> fk.ThisColumn == col.Name).FirstOrDefault() != null;
+
+            if(! columnIsForeignKey)
+                continue;
+#>
+		IDapperKeyReadableRepository<<#=col.SysType #>, IEnumerable<<#=tbl.ClassName#>DTO>> <#=tbl.ClassName#>By<#= col.Name #>ForeignKeyReadableRepository { get; }
+<#
+        }
+    }    
+#>
+    }
+	    
+	<#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=DataModelBaseName#>KeyedReadersRepository : I<#=DataModelBaseName#>KeyedReadersRepository
+    {
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        private readonly IDapperKeyReadableRepository<<#=tbl.PK.SysType#>, <#=tbl.ClassName#>DTO> _<#=tbl.ClassName#>PrimaryKeyReadableRepository;
+<#
+}    
+#>
+
+<#
+    foreach(Table tbl in tables)
+    {
+        foreach(Column col in tbl.Columns)
+        {
+            var columnIsForeignKey = tbl.FKTables.Where(fk=> fk.ThisColumn == col.Name).FirstOrDefault() != null;
+
+            if(! columnIsForeignKey)
+                continue;
+#>
+		private readonly IDapperKeyReadableRepository<<#=col.SysType #>, IEnumerable<<#=tbl.ClassName#>DTO>> _<#=tbl.ClassName#>By<#= col.Name #>ForeignKeyReadableRepository;
+<#
+        }
+    }    
+#>
+
+        public <#=DataModelBaseName#>KeyedReadersRepository(
+            <#=DataModelBaseName#>DbConfig config,
+            IPrimaryKeyReadableRepositoryFactory repoFactory)
+        {
+            Debug.Assert(!ReferenceEquals(config, null), "config can't be null");
+            Debug.Assert(!ReferenceEquals(repoFactory, null), "repoFactory can't be null");
+
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+            _<#=tbl.ClassName#>PrimaryKeyReadableRepository = 
+				repoFactory.Build<#=tbl.ClassName#>PrimaryKeyReadableRepository();
+<#
+}    
+#>
+
+<#
+    foreach(Table tbl in tables)
+    {
+        foreach(Column col in tbl.Columns)
+        {
+            var columnIsForeignKey = tbl.FKTables.Where(fk=> fk.ThisColumn == col.Name).FirstOrDefault() != null;
+
+            if(! columnIsForeignKey)
+                continue;
+#>
+			_<#=tbl.ClassName#>By<#= col.Name #>ForeignKeyReadableRepository =
+				repoFactory.Build<#=tbl.ClassName#>By<#= col.Name #>ForeignKeyReadableRepository();
+<#
+        }
+    }    
+#>
+
+        }
+
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        public IDapperKeyReadableRepository<<#=tbl.PK.SysType#>, <#=tbl.ClassName#>DTO> <#=tbl.ClassName#>PrimaryKeyReadableRepository
+        {
+            get { return _<#=tbl.ClassName#>PrimaryKeyReadableRepository; }
+        }
+<#
+}    
+#>
+
+<#
+    foreach(Table tbl in tables)
+    {
+        foreach(Column col in tbl.Columns)
+        {
+            var columnIsForeignKey = tbl.FKTables.Where(fk=> fk.ThisColumn == col.Name).FirstOrDefault() != null;
+
+            if(! columnIsForeignKey)
+                continue;
+#>
+		public IDapperKeyReadableRepository<<#=col.SysType #>, IEnumerable<<#=tbl.ClassName#>DTO>> <#=tbl.ClassName#>By<#= col.Name #>ForeignKeyReadableRepository
+		{
+            get { return _<#=tbl.ClassName#>By<#= col.Name #>ForeignKeyReadableRepository; }
+        }
+<#
+        }
+    }    
+#>
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal interface I<#=DataModelBaseName#>KeyedReaders
+    {
+    <#
+    foreach(Table tbl in tables)
+    {
+#>
+        <#=tbl.ClassName#>DTO <#=tbl.ClassName#>(<#=tbl.PK.SysType #> key);
+
+<#
+}    
+#>
+
+<#
+    foreach(Table tbl in tables)
+    {
+        foreach(Column col in tbl.Columns)
+        {
+            var columnIsForeignKey = tbl.FKTables.Where(fk=> fk.ThisColumn == col.Name).FirstOrDefault() != null;
+
+            if(! columnIsForeignKey)
+                continue;
+#>
+        IEnumerable<<#=tbl.ClassName#>DTO> <#=tbl.ClassName#>By<#=col.Name#>(<#=col.SysType #> key);
+
+<#
+        }
+    }    
+#>
+    }
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=DataModelBaseName#>KeyedReaders:I<#=DataModelBaseName#>KeyedReaders
+    {
+        private readonly IDbConnection                                 _Connection;
+        private readonly I<#=DataModelBaseName#>KeyedReadersRepository _Repo;
+
+        public <#=DataModelBaseName#>KeyedReaders(
+            IDbConnection connection,
+            I<#=DataModelBaseName#>KeyedReadersRepository repo)
+        {
+            Debug.Assert(!ReferenceEquals(connection , null), "connection can't be null");
+            Debug.Assert(!ReferenceEquals(repo       , null), "repo can't be null");
+
+            _Connection     = connection;
+            _Repo           = repo;
+        }
+
+
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        public <#=tbl.ClassName#>DTO <#=tbl.ClassName#>(<#=tbl.PK.SysType #> key)
+        {
+            var result     = _Repo.<#=tbl.ClassName#>PrimaryKeyReadableRepository.Read(_Connection, key);
+            return result;
+        }
+
+<#
+}    
+#>
+
+
+<#
+    foreach(Table tbl in tables)
+    {
+        foreach(Column col in tbl.Columns)
+        {
+            var columnIsForeignKey = tbl.FKTables.Where(fk=> fk.ThisColumn == col.Name).FirstOrDefault() != null;
+
+            if(! columnIsForeignKey)
+                continue;
+#>
+        public IEnumerable<<#=tbl.ClassName#>DTO> <#=tbl.ClassName#>By<#=col.Name#>(<#=col.SysType #> key)
+        {
+            var result     = _Repo.<#=tbl.ClassName#>By<#= col.Name #>ForeignKeyReadableRepository.Read(_Connection, key);
+            return result;
+        }
+
+<#
+        }
+    }    
+#>
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=DataModelBaseName#>KeyedReadersTester:I<#=DataModelBaseName#>KeyedReaders
+    {
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        public Func<<#=tbl.PK.SysType #>, <#=tbl.ClassName#>DTO>  <#=tbl.ClassName#>Behavior { get; set; }
+
+        public <#=tbl.ClassName#>DTO <#=tbl.ClassName#>(<#=tbl.PK.SysType #> key)
+        {
+            if(ReferenceEquals(<#=tbl.ClassName#>Behavior, null))
+                return null;
+
+            var result = <#=tbl.ClassName#>Behavior(key);
+            return result;
+        }
+
+<#
+}    
+#>
+
+
+<#
+    foreach(Table tbl in tables)
+    {
+        foreach(Column col in tbl.Columns)
+        {
+            var columnIsForeignKey = tbl.FKTables.Where(fk=> fk.ThisColumn == col.Name).FirstOrDefault() != null;
+
+            if(! columnIsForeignKey)
+                continue;
+#>
+
+        public Func<<#=col.SysType #>, IEnumerable<<#=tbl.ClassName#>DTO>> <#=tbl.ClassName#>By<#=col.Name#>Behavior { get; set; }
+        public IEnumerable<<#=tbl.ClassName#>DTO> <#=tbl.ClassName#>By<#=col.Name#>(<#=col.SysType #> key)
+        {
+            if(ReferenceEquals(<#=tbl.ClassName#>By<#=col.Name#>Behavior, null))
+                return null;
+
+            var result = <#=tbl.ClassName#>By<#=col.Name#>Behavior(key);
+            return result;
+        }
+
+<#
+        }
+    }    
+#>
+    }
+}
+<#
+SaveOutput("Fluent_KeyedReaders.cs");
+#>

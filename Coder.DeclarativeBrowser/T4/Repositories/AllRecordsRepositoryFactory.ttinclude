@@ -1,0 +1,70 @@
+﻿<#@ include file="..\Utilities\AutogenHeader.ttinclude" #>
+
+using Medidata.Dapper;
+using System;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Linq;
+using System.CodeDom.Compiler;
+
+namespace <#=Namespace #> 
+{
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal interface IAllRecordsRepositoryFactory
+    {
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        /// <summary>
+        /// Builds the <#=tbl.ClassName#> all records repository.
+        /// </summary>
+        /// <returns></returns>
+        IDapperAllRecordsRepository<<#=tbl.ClassName#>DTO> Build<#=tbl.ClassName#>AllRecordsRepository();
+
+<#
+}    
+#>
+    }
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class AllRecordsRepositoryFactory:IAllRecordsRepositoryFactory
+    {
+        Medidata.Dapper.IDapperRepositoryFactory _DapperFactory;
+
+        /// <summary>
+        /// Initializes a new instance of the AllRecordsRepositoryFactory class.
+        /// </summary>
+        /// <param name="dapperFactory"></param>
+        public AllRecordsRepositoryFactory(Medidata.Dapper.IDapperRepositoryFactory dapperFactory)
+        {
+            Debug.Assert(!ReferenceEquals(dapperFactory , null), "dapperFactory can't be null");
+
+            _DapperFactory = dapperFactory;
+        }
+
+        public AllRecordsRepositoryFactory(Func<String, String> urlDecoder) : this(new Medidata.Dapper.DapperRepositoryFactory(urlDecoder)) { }
+
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        /// <summary>
+        /// Builds the <#=tbl.ClassName#> filtered repository.
+        /// </summary>
+        /// <param name="validFilters">The valid filters.</param>
+        /// <returns></returns>
+        public IDapperAllRecordsRepository<<#=tbl.ClassName#>DTO> Build<#=tbl.ClassName#>AllRecordsRepository()
+        {
+            var result = _DapperFactory.BuildAllRecordsRepository<<#=tbl.ClassName#>DTO>("<#=tbl.Name#>");
+            return result;
+        }
+
+<#
+}    
+#>
+    }
+}
+<#
+SaveOutput("AllRecordsRepositoryFactory.cs");
+#>

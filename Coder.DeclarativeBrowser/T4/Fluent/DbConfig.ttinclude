@@ -1,0 +1,33 @@
+﻿<#@ include file="..\Utilities\AutogenHeader.ttinclude" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Data;
+using Medidata.Dapper;
+using System.CodeDom.Compiler;
+
+namespace <#=Namespace #> {
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class <#=DataModelBaseName#>DbConfig
+    {
+        private static readonly FilterAlias[] _NoFilterAliases = new FilterAlias[0];
+        private static readonly String[] _NoValidFilters = new String[0];
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        private IEnumerable<string> _<#=tbl.ClassName#>ValidFilters;
+        public IEnumerable<string> <#=tbl.ClassName#>ValidFilters { get{ return  _<#=tbl.ClassName#>ValidFilters ?? _NoValidFilters; } set {  _<#=tbl.ClassName#>ValidFilters = value; } }
+
+        private IEnumerable<FilterAlias> _<#=tbl.ClassName#>FilterAliases;
+        public IEnumerable<FilterAlias> <#=tbl.ClassName#>FilterAliases { get { return _<#=tbl.ClassName#>FilterAliases ?? _NoFilterAliases; } set{ _<#=tbl.ClassName#>FilterAliases = value; } }
+
+<#
+    }
+#>
+    }
+}
+<#
+SaveOutput("Fluent_DbConfig.cs");
+#>

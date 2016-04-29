@@ -1,0 +1,23 @@
+﻿<#@ include file=".\Utilities\SQLServer.ttinclude" #>
+<#@ include file=".\_Settings.ttinclude" #>
+<#
+    var udts       = GetUDTs().OrderBy(x => x.Name).ToArray();
+    var tables     = LoadTables(ReadableTables, ReadableTablesExcludeColumns, ReadableTablesPrimaryKeyOverrides).OrderBy(x => x.Name).ToArray();
+    var procedures = GetSPs(IncludedProcedures, ProcedureExcludeColumns, udts).OrderBy(x => x.Name).ToArray();
+
+    var path = this.Host.ResolvePath(".");
+
+    XmlSerializer udtSerializer = new XmlSerializer(typeof(UDT[]));
+    TextWriter writer = new StreamWriter(Path.Combine(path, UdtSchemaFileName));
+    udtSerializer.Serialize(writer, udts);
+
+    XmlSerializer tableSerializer = new XmlSerializer(typeof(Table[]));
+    writer = new StreamWriter(Path.Combine(path, TableSchemaFileName));
+    tableSerializer.Serialize(writer, tables);
+
+    XmlSerializer spSerializer = new XmlSerializer(typeof(SP[]));
+    writer = new StreamWriter(Path.Combine(path, ProcSchemaFileName));
+    spSerializer.Serialize(writer, procedures);
+
+#>
+

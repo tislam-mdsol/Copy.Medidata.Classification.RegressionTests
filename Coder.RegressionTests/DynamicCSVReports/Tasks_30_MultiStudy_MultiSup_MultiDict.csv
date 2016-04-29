@@ -1,0 +1,43 @@
+Test ID,Study ID,Form,Field Type,Field,Field Value,Dictionary Level,Dictionary,Priority,Locale,IsApprovalRequired,IsAutoApproval,Subject,Site ,Event,Batch Identifier
+1001,PROD,TPS,Main,Verbatim Term,ALPHA,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+1001,PROD,TPS,Supplement,Empty Test,Everything Else is Empty,,,,,,,,,,
+1002,PROD,TPS,Main,Verbatim Term,BRAVO,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: NY Visit,NY,Visit,MedDRA Batch 1
+1002,PROD,TPS,Supplement,Additional Info,Empty Elsewhere,,,,,,,,,,
+1003,PROD,TPS,Main,Verbatim Term,CHARLIE,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: MD Reaction,MD,Reaction,MedDRA Batch 1
+1004,PROD,TPS,Main,Verbatim Term,DELTA,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+1005,PROD,TPS,Main,Verbatim Term,ECHO,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: CT Post,CT,Post,MedDRA Batch 1
+1006,PROD,TPS,Main,Verbatim Term,FOXTROT,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: NY Pre,NY,Pre,MedDRA Batch 1
+1007,PROD,TPS,Main,Verbatim Term,GULF,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: MD Visit,MD,Visit,MedDRA Batch 1
+1008,PROD,TPS,Main,Verbatim Term,HOTEL,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: OK Reaction,OK,Reaction,MedDRA Batch 1
+1009,PROD,TPS,Main,Verbatim Term,INDIA,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: CT Checkup,CT,Checkup,MedDRA Batch 1
+1010,PROD,TPS,Main,Verbatim Term,JULIET,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: NY Post,NY,Post,MedDRA Batch 1
+1011,PROD,TPS,Main,Verbatim Term,KILO,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: MD Pre,MD,Pre,MedDRA Batch 1
+1012,PROD,TPS,Main,Verbatim Term,LIMA,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: OK Visit,OK,Visit,MedDRA Batch 1
+1013,PROD,TPS,Main,Verbatim Term,MIKE,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: CT Reaction,CT,Reaction,MedDRA Batch 1
+1014,PROD,TPS,Main,Verbatim Term,NOVEMBER,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: NY Checkup,NY,Checkup,MedDRA Batch 1
+1015,PROD,TPS,Main,Verbatim Term,OSCAR,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: MD Post,MD,Post,MedDRA Batch 1
+1016,PROD,TPS,Main,Verbatim Term,PAPA,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: OK Pre,OK,Pre,MedDRA Batch 1
+1017,PROD,TPS,Main,Verbatim Term,QUEBEC,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: CT Visit,CT,Visit,MedDRA Batch 1
+1018,PROD,TPS,Main,Verbatim Term,ROMEO,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: NY Reaction,NY,Reaction,MedDRA Batch 1
+1019,PROD,TPS,Main,Verbatim Term,SIERRA,LLT,MedDRA,1,eng,FALSE,TRUE,Subject: MD Checkup,MD,Checkup,MedDRA Batch 1
+1020,dev,Work Order,Main,Verbatim Term,TANGO,PRODUCTSYNONYM,WhoDrugDDEB2,2,eng,FALSE,TRUE,Subject: OK Post,OK,Post,WHODrugDDEB2 Batch 1
+1021,dev,Work Order,Main,Verbatim Term,UNIFORM,PRODUCTSYNONYM,WhoDrugDDEB2,2,eng,FALSE,TRUE,Subject: CT Pre,CT,Pre,WHODrugDDEB2 Batch 1
+1022,dev,Work Order,Main,Verbatim Term,VICTOR,PRODUCTSYNONYM,WhoDrugDDEB2,2,eng,FALSE,TRUE,Subject: NY Visit,NY,Visit,WHODrugDDEB2 Batch 1
+1023,dev,Work Order,Main,Verbatim Term,WHISKEY,PRODUCTSYNONYM,WhoDrugDDEB2,2,eng,FALSE,TRUE,Subject: MD Reaction,MD,Reaction,WHODrugDDEB2 Batch 1
+1024,dev,Work Order,Main,Verbatim Term,XRAY,PRODUCTSYNONYM,WhoDrugDDEB2,2,eng,FALSE,TRUE,Subject: OK Checkup,OK,Checkup,WHODrugDDEB2 Batch 1
+1025,dev,Work Order,Main,Verbatim Term,YANKEE,PRODUCTSYNONYM,WhoDrugDDEB2,2,eng,FALSE,TRUE,Subject: CT Post,CT,Post,WHODrugDDEB2 Batch 1
+1026,dev,Work Order,Main,Verbatim Term,ZULU,PRODUCTSYNONYM,WhoDrugDDEB2,2,eng,FALSE,TRUE,Subject: NY Pre,NY,Pre,WHODrugDDEB2 Batch 1
+1027,dev,Work Order,Main,Verbatim Term,ALPHA AMBER,PRODUCTSYNONYM,WhoDrugDDEB2,2,eng,FALSE,TRUE,AA Test,NY,Pre,WHODrugDDEB2 Batch 1
+1028,dev,Work Order,Main,Verbatim Term,BRAVO AMBER,PRODUCTSYNONYM,WhoDrugDDEB2,2,eng,FALSE,TRUE,BA Test,NY,Pre,WHODrugDDEB2 Batch 1
+1029,dev,Work Order,Main,Verbatim Term,AMBER CHARLIE,PRODUCTSYNONYM,WhoDrugDDEB2,2,eng,FALSE,TRUE,CA Test,NY,Pre,WHODrugDDEB2 Batch 1
+1030,dev,Work Order,Main,Verbatim Term,AMBER DELTA,PRODUCTSYNONYM,WhoDrugDDEB2,2,eng,FALSE,TRUE,DA Test,NY,Pre,WHODrugDDEB2 Batch 1
+1020,dev,Work Order,Supplement,Initial Status,TANGO Passed,,,,,,,,,,
+1021,dev,Work Order,Supplement,Initial Status,UNIFORM Passed,,,,,,,,,,
+1022,dev,Work Order,Supplement,Initial Status,VICTOR Passed,,,,,,,,,,
+1023,dev,Work Order,Supplement,Initial Status,WHISKEY Passed,,,,,,,,,,
+1024,dev,Work Order,Supplement,Initial Status,XRAY Passed,,,,,,,,,,
+1025,dev,Work Order,Supplement,Initial Status,YANKEE Passed,,,,,,,,,,
+1026,dev,Work Order,Supplement,Initial Status,ZULU Passed,,,,,,,,,,
+1020,dev,Work Order,Supplement,Optional Notes,Unused,,,,,,,,,,
+1021,dev,Work Order,Supplement,Optional Notes,The rest will be blank,,,,,,,,,,
+1028,dev,Work Order,Supplement,Optional Notes,Sample,,,,,,,,,,

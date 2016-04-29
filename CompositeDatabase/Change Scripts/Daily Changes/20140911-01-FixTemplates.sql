@@ -1,0 +1,16 @@
+﻿IF (NOT EXISTS (SELECT NULL FROM INFORMATION_SCHEMA.TABLES
+	WHERE TABLE_NAME = 'SegmentMedicalDictionaryTemplates'))
+BEGIN
+		CREATE TABLE [dbo].[SegmentMedicalDictionaryTemplates](
+		TemplateID INT IDENTITY(1,1) NOT NULL,
+		TokenString NVARCHAR(100) NOT NULL,
+		SegmentID INT NOT NULL,
+		MedicalDictionaryId INT NOT NULL,
+		IsDefault BIT NOT NULL,
+		IsReverse BIT NOT NULL,
+	CONSTRAINT [PK_SegmentMedicalDictionaryTemplates] PRIMARY KEY CLUSTERED 
+	(
+		TemplateID ASC
+	)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+	) ON [PRIMARY]
+END

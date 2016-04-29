@@ -1,0 +1,4 @@
+﻿This package provides Medidata.Specrun.Reporting.exe, which should be called with the name of the test project executed
+as the single argument. It should be called while in the same directory as the Specrun default HTML report. It will attempt
+to find the most recent Specrun HTML file, based on the project name argument and the SpecrunReportFileSuffix config entry.
+The package will produce two output files: an NUnit-compliant XML file, and an NUnit console output text file.

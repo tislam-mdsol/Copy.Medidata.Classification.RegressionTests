@@ -1,0 +1,8 @@
+﻿IF NOT EXISTS
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'CodingSuggestions'
+		 AND COLUMN_NAME = 'SuggestionReason')
+	BEGIN
+		ALTER TABLE CodingSuggestions ADD SuggestionReason VARCHAR(50)
+	END
+GO
+ 

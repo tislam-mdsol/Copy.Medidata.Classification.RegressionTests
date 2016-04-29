@@ -1,0 +1,1850 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+    <ValidateCasingOnIdentifiers>False</ValidateCasingOnIdentifiers>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>CompositeDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{2ca7121d-5da5-481e-91ed-a0dd45b53c88}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>CompositeDatabase</RootNamespace>
+    <AssemblyName>CompositeDatabase</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Change Scripts" />
+    <Folder Include="Change Scripts\Daily Changes" />
+    <Folder Include="Change Scripts\OldDailyChangesSaved" />
+    <Folder Include="CMP" />
+    <Folder Include="SegmentCreation" />
+    <Folder Include="ShellCommands" />
+    <Folder Include="Stored Procedures" />
+    <Folder Include="Stored Procedures\Automation" />
+    <Folder Include="Stored Procedures\Coder Dictionary Versioning" />
+    <Folder Include="Stored Procedures\Coder FullTextSearch" />
+    <Folder Include="Stored Procedures\Coder Other" />
+    <Folder Include="Stored Procedures\Coder Test Data Population Scripts" />
+    <Folder Include="Stored Procedures\Coder Workflow" />
+    <Folder Include="Stored Procedures\Coder WorkflowSecurity" />
+    <Folder Include="Stored Procedures\Framework" />
+    <Folder Include="Stored Procedures\Support Procedures" />
+    <Folder Include="User-Defined Functions" />
+    <Folder Include="User-Defined Functions\Coder" />
+    <Folder Include="User-Defined Functions\Framework" />
+    <Folder Include="VersionScripts" />
+    <Folder Include="Stored Procedures\Support Procedures\Metrics\" />
+    <Folder Include="CMP\GroupChangesCMP" />
+    <Folder Include="Views" />
+    <Folder Include="Stored Procedures\Coder Security" />
+    <Folder Include="Jobs" />
+    <Folder Include="Stored Procedures\Synonym" />
+    <Folder Include="S3Migration" />
+    <Folder Include="CMP\Release.2015.3.0" />
+    <Folder Include="CMP\2015.3.0+" />
+    <Folder Include="Diagnostics" />
+    <Folder Include="CleanWipe" />
+    <Folder Include="CRI" />
+    <Folder Include="CRI\MEV" />
+    <Folder Include="CRI\CodingConfigurationAccess" />
+    <Folder Include="PreQMMigration" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20091123-01-CreateLocalizationTypes.sql" />
+    <None Include="Change Scripts\Daily Changes\20091125-01-CreateTableTypes.sql" />
+    <None Include="Change Scripts\Daily Changes\20101213-01-UpdateUserNames.sql" />
+    <None Include="Change Scripts\Daily Changes\20110112-01-AddAuthTokensTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20110131-01-CreateTaskPersistenceUDTs.sql" />
+    <None Include="Change Scripts\Daily Changes\20110310-01-AlterMedicalDictionaryTableWithType.sql" />
+    <None Include="Change Scripts\Daily Changes\20110323-01-AlterApplicationTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20110413-01-AlterCodingElementsTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20110420-01-CreateWorkflowServiceHeartBeatTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20110422-01-AlterUserPreferencesTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20110507-01-UpdateMedicalDictionaryLevelTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20110509-01-AlterCodingElements.sql" />
+    <None Include="Change Scripts\Daily Changes\20110510-01-CreateWebRequestETagTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20110519-01-CreateStudyProjectTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20110523-01-CreateRedFlagTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20110526-01-NewIndexOnObjectSegments.sql" />
+    <None Include="Change Scripts\Daily Changes\20110602-01-CreateIndexOnCodingRequests.sql" />
+    <None Include="Change Scripts\Daily Changes\20110603-01-AlterCodingElemIsInvalid.sql" />
+    <None Include="Change Scripts\Daily Changes\20110607-01-AlterWorkflowRunnerServiceTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20110608-01-DropIndices.sql" />
+    <None Include="Change Scripts\Daily Changes\20110609-01-ScriptExecutionLog.sql" />
+    <None Include="Change Scripts\Daily Changes\20110616-01-RebuildIndicesScript.sql" />
+    <None Include="Change Scripts\Daily Changes\20110619-01-UpdateCoderAdminImedidataID.sql" />
+    <None Include="Change Scripts\Daily Changes\20110622-01-CreateCoderAppConfigurationTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20110624-01-UpdateIndices2.sql" />
+    <None Include="Change Scripts\Daily Changes\20110628-01-FineTuneCodingElementsIndices.sql" />
+    <None Include="Change Scripts\Daily Changes\20110630-01-UpdateSystemUserLogin.sql" />
+    <None Include="Change Scripts\Daily Changes\20110706-01-UpdateStringForLOC.sql" />
+    <None Include="Change Scripts\Daily Changes\20110707-01-UpdateConfiguration.sql" />
+    <None Include="Change Scripts\Daily Changes\20110707-02-AddConstraintToHealthChecks.sql" />
+    <None Include="Change Scripts\Daily Changes\20110825-01-UpdateVersioningSchema.sql" />
+    <None Include="Change Scripts\Daily Changes\20110907-01-AlterOutTransmissionsColumns.sql" />
+    <None Include="Change Scripts\Daily Changes\20110907-02-NewIndices.sql" />
+    <None Include="Change Scripts\Daily Changes\20110908-01-DropWorkflowTasksTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20110908-02-DropStoredProcedures.sql" />
+    <None Include="Change Scripts\Daily Changes\20110915-01-FixVersions.sql" />
+    <None Include="Change Scripts\Daily Changes\20110916-01-TruncateMoreVersioningTables.sql" />
+    <None Include="Change Scripts\Daily Changes\20110920-01-ChangeTaskInsertUDT.sql" />
+    <None Include="Change Scripts\Daily Changes\20110921-01-DropCodingSourceTerms.sql" />
+    <None Include="Change Scripts\Daily Changes\20110922-01-RemoveWorkflowTaskFromCodingElements.sql" />
+    <None Include="Change Scripts\Daily Changes\20110923-01-AddTermRelationshipIndex.sql" />
+    <None Include="Change Scripts\Daily Changes\20110929-01-MoreIndices.sql" />
+    <None Include="Change Scripts\Daily Changes\20111011-01-ExistingSegmentsWorkflowLocalization.sql" />
+    <None Include="Change Scripts\Daily Changes\20111012-01-AddAsianLanguagePronounciationKeys.sql" />
+    <None Include="Change Scripts\Daily Changes\20111013-01-AddTermIdIndexOnComponents.sql" />
+    <None Include="Change Scripts\Daily Changes\20111013-02-CreateSourceSystemTestTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20111014-01-FixBadVersioningFinalTermIds.sql" />
+    <None Include="Change Scripts\Daily Changes\20111017-01-CreateIndexOnApplicationTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20111025-01-AddSourceOrdinalToLevelTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20111026-01-ChangeColumnTypeOnComponentsTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20111031-01-DropVersionDiff1_1AsDeveloper.sql" />
+    <None Include="Change Scripts\Daily Changes\20111102-01-AddVersionNumberLocalizationStrings.sql" />
+    <None Include="Change Scripts\Daily Changes\20111104-01-FixNodepathChangedCategory.sql" />
+    <None Include="Change Scripts\Daily Changes\20111109-01-EnableSingleCharacterFullTextOnComponents.sql" />
+    <None Include="Change Scripts\Daily Changes\20111109-02-AddUserSettingToUserPreferencesTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20111111-01-IdTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20111130-01-CreateProductionSupportNamedQueriesTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20111202-01-AddIORIndex.sql" />
+    <None Include="Change Scripts\Daily Changes\20111216-01-RenameTemplateLevelTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20111219-01-UpdateDefaultLevelMeddraAndWhoDrugB2.sql" />
+    <None Include="Change Scripts\Daily Changes\20120117-01-AddTrimmedValuesToTask.sql" />
+    <None Include="Change Scripts\Daily Changes\20120118-01-CreateTableForVersionDifferenceDepth.sql" />
+    <None Include="Change Scripts\Daily Changes\20120124-01-RemoveLocaleFromCodingPatterns.sql" />
+    <None Include="Change Scripts\Daily Changes\20120210-01-AddTermPercentUDT.sql" />
+    <None Include="Change Scripts\Daily Changes\20120210-02-CreateWFActivityResultTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20120320-01-CreateStudyMigrationBackupTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20120329-01-AddReclassifyToWorkflow.sql" />
+    <None Include="Change Scripts\Daily Changes\20120402-01-AutomationModelChanges.sql" />
+    <None Include="Change Scripts\Daily Changes\20120403-01-FixTaskInsertUDTColSize.sql" />
+    <None Include="Change Scripts\Daily Changes\20120425-01-AutomationChangesTwo.sql" />
+    <None Include="Change Scripts\Daily Changes\20120425-02-AutomationChangesTwo.sql" />
+    <None Include="Change Scripts\Daily Changes\20120430-01-AlterStudyMigrationBackup.sql" />
+    <None Include="Change Scripts\Daily Changes\20120501-01-DictSvcClientDBSetup.sql" />
+    <None Include="Change Scripts\Daily Changes\20120509-01-CreateDictRefTables.sql" />
+    <None Include="Change Scripts\Daily Changes\20120524-01-ModifySynonymStaging.sql" />
+    <None Include="Change Scripts\Daily Changes\20120530-01-SynDetailsIndex.sql" />
+    <None Include="Change Scripts\Daily Changes\20120601-01-AlterCodingPatternTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20120717-01-CacheVersionState.sql" />
+    <None Include="Change Scripts\Daily Changes\20120725-01-AlterStudyMigrationBackupTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20120726-01-AlterStudyVersionHistoryTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20120808-01-DropStoredProcedures.sql" />
+    <None Include="Change Scripts\Daily Changes\20120809-01-MarkRejectedTermsAsInvalid.sql" />
+    <None Include="Change Scripts\Daily Changes\20120809-01-PostTransitionCleanUp.sql" />
+    <None Include="Change Scripts\Daily Changes\20120814-01-LongRunningTaskTables.sql" />
+    <None Include="Change Scripts\Daily Changes\20120820-01-SegmentsCleanupForNonProd.sql" />
+    <None Include="Change Scripts\Daily Changes\20120823-01-CreateDictCompRefTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20120828-01-CodingGroupAlterSchema.sql" />
+    <None Include="Change Scripts\Daily Changes\20120828-02-CodingGroupMigrateSchema.sql" />
+    <None Include="Change Scripts\Daily Changes\20120828-03-CodingGroupCleanSchema.sql" />
+    <None Include="Change Scripts\Daily Changes\20120906-01-DropTermIdFromDoNotAutoCodeTermTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20120906-02-SynonymChanges.sql" />
+    <None Include="Change Scripts\Daily Changes\20120911-01-UpdateCodingSuggestionTermIdToString.sql" />
+    <None Include="Change Scripts\Daily Changes\20120917-01-NewSynonymSecurity.sql" />
+    <None Include="Change Scripts\Daily Changes\20120918-01-PopulateRefTablesInProd.sql" />
+    <None Include="Change Scripts\Daily Changes\20120927-01-UpdateConfigForSynonymPolicy.sql" />
+    <None Include="Change Scripts\Daily Changes\20121005-01-PerformanceTweaksOne.sql" />
+    <None Include="Change Scripts\Daily Changes\20121015-01-DropIsCompleteFromBOTElementsTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20121015-02-ResilientLongTasks.sql" />
+    <None Include="Change Scripts\Daily Changes\20121018-01-AutomationChanges.sql" />
+    <None Include="Change Scripts\Daily Changes\20121019-01-SegmentedCodingPatternChanges.sql" />
+    <None Include="Change Scripts\Daily Changes\20121023-01-ResilienceChanges.sql" />
+    <None Include="Change Scripts\Daily Changes\20121024-01-AlterStudyMigrationTables.sql" />
+    <None Include="Change Scripts\Daily Changes\20121108-01-AlterSynonymMigrationEntriesTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20121112-01-AddReclassifyActionForRetireSynonym.sql" />
+    <None Include="Change Scripts\Daily Changes\20121114-01-AlterSynonymMigrationTables.sql" />
+    <None Include="Change Scripts\Daily Changes\20121120-01-AlterRuntimeLocksTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20121204-01-AlterCodingElementsTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20121219-01-CreateWorkflowStateIdsUDT.sql" />
+    <None Include="Change Scripts\Daily Changes\20130109-01-UpdateGroupVerbatimUppercase.sql" />
+    <None Include="Change Scripts\Daily Changes\20130201-01-AlterBotElementTable.sql" />
+    <None Include="Change Scripts\Daily Changes\20130221-01-DropCodingPatternIndex.sql" />
+    <None Include="Change Scripts\Daily Changes\20130228-01-UpdateRejectedTasksAfterStudyMigration.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20091202-01-AlterCodingSourceTermReferences.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20091204-01-AlterWorkflowTaskHistory.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20091210-01-AddDeletedToObjectSegments.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20091210-02-CreateDictionaryVersionSubscriptionTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20091214-01-AddReleaseDateToVersion.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20091214-02-CreateDictionaryLicenceInformationTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20091216-01-CreateSubscriptionLogsTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20091218-01-AlterTrackableObjectsTableRemoveSourceSystemID.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100107-02-AlterMedicalDictionaryTermTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100121-01-FixDBConstraints.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100122-01-CreateMedicalDictionaryTermRanksTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100126-01-AlterTrackableObjects.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100128-01-CreateDictionarySpecificLogicTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100204-01-CreateCoderSegmentsTables.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100208-01-AlterSuggestionsTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100209-01-AlterStudyDictionaryVersion.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100223-01-AlterSynonymLoadingTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100323-01-AlterCodingAssignmentTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100402-01-AlterTransmissionQueueTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100430-01-AutoCodeTables.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100610-01-PostAutoCodeFix.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100615-01-SynonymUploadChanges.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100715-01-AddHealthChecksTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100823-01-AddCommunicationTables.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100824-01-AddIMedidataIntegrationTables.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100825-01-CronTables.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100914-01-AddAckNackTransmissionTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100914-02-UpdateTransmissionQueueTables.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100914-03-AddCodingResourceTables.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20100929-01-AddDoNotAutoCodeTermsTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20101029-01-UpdateCodingRequestsTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20101104-01-AlgorithmChanges.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20101118-01-UpdateApplicationTable.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20101118-02-CodingSourceTermSupplementals.sql" />
+    <None Include="Change Scripts\OldDailyChangesSaved\20101129-01-StudyDictionaryVersionRegistration.sql" />
+    <None Include="Change Scripts\Create_Gold_Database.sql" />
+    <None Include="Change Scripts\CreateLocalizationTypes.sql" />
+    <None Include="Change Scripts\CreateTableTypes.sql" />
+    <None Include="Change Scripts\CreateWebHelpContexts.sql" />
+    <None Include="Change Scripts\dbiqConfiguration.sql" />
+    <None Include="Change Scripts\dbiqDictionaryVersionDepths.sql" />
+    <None Include="Change Scripts\dbiqEnableProduction.sql" />
+    <None Include="Change Scripts\dbiqHelpContexts.sql" />
+    <None Include="Change Scripts\dbiqIndexes.sql" />
+    <None Include="Change Scripts\dbiqNamedQueries.sql" />
+    <None Include="Change Scripts\dbiqRTablePopulation.sql" />
+    <None Include="Change Scripts\ExistingSegmentsWorkflowLocalization.sql" />
+    <None Include="Change Scripts\InitialTablePopulation.sql" />
+    <None Include="Change Scripts\SecurityInitialSetup.sql" />
+    <None Include="CMP\CMP_01_ProjectRegistrationFix.sql" />
+    <None Include="CMP\CMP_02_ReComputeImpactAnalysis.sql" />
+    <None Include="CMP\CMP_03_FixProdAZDDDictionaryVersionName.sql" />
+    <None Include="CMP\CMP_04_RecomputeImpactAnalysisForNonEnglish.sql" />
+    <None Include="CMP\CMP_05_AddImpactAnalysisForCodeNotFound.sql" />
+    <None Include="CMP\CMP_06_SegmentCleanup.sql" />
+    <None Include="CMP\CMP_07_FixDictionaryName.sql" />
+    <None Include="CMP\CMP_08_FixBadTermUpdatesAndImpactAnalysis.sql" />
+    <None Include="CMP\CMP_09_FixJDrugCategoryCode.sql" />
+    <None Include="CMP\CMP_10_FixImpactAnalysisForNotFoundInNewVersion.sql" />
+    <None Include="CMP\CMP_11.1_CMP11For1stInsert.sql" />
+    <None Include="CMP\CMP_11.2_CMP11For2ndUpdate.sql" />
+    <None Include="CMP\CMP_11.3_CMP11For3rdUpdate.sql" />
+    <None Include="CMP\CMP_11_FixMissingTermUpdatesAndImpactAnalysis.sql" />
+    <None Include="CMP\CMP_12_FixCategory5ForJpn.sql" />
+    <None Include="CMP\CMP_13_FixStudyMoveInIMedidata.sql" />
+    <None Include="CMP\LoadAZDDWhoB2DDEFixDE1498.sql" />
+    <None Include="CMP\PostJapanGACompositeCMP.sql" />
+    <None Include="SegmentCreation\spCreateMedidataAppAdminRole.sql" />
+    <None Include="SegmentCreation\spConfigurationClone.sql" />
+    <None Include="ShellCommands\db_AddNewVersion.sql" />
+    <None Include="ShellCommands\db_UpdateTermRanks.sql" />
+    <None Include="ShellCommands\SQL_LockID.sql" />
+    <None Include="Stored Procedures\Automation\spActivateSynonymListForDictionaryVersionLocaleSegment.sql" />
+    <None Include="Stored Procedures\Automation\spCoderMainTableAging.sql" />
+    <None Include="Stored Procedures\Automation\spCodingElementsCleanup.sql" />
+    <None Include="Stored Procedures\Automation\spCreateSynonymList.sql" />
+    <None Include="Stored Procedures\Automation\spCreationDateAging.sql" />
+    <None Include="Stored Procedures\Automation\spDictionarySubscriptionCleanup.sql" />
+    <None Include="Stored Procedures\Automation\spDoProjectRegistration.sql" />
+    <None Include="Stored Procedures\Automation\spEnableLOCLocalization.sql" />
+    <None Include="Stored Procedures\Automation\spModifyAgeForSynonymApproval.sql" />
+    <None Include="Stored Procedures\Automation\spPurgeDictionaryReference.sql" />
+    <None Include="Stored Procedures\Automation\spReclassifcationTime.sql" />
+    <None Include="Stored Procedures\Automation\spSetupDefaultConfiguration.sql" />
+    <None Include="Stored Procedures\Coder Dictionary Versioning\spFndInsLcl.sql" />
+    <None Include="Stored Procedures\Coder Dictionary Versioning\spShrinkDB.sql" />
+    <None Include="Stored Procedures\Coder FullTextSearch\fnGetStopListIDByName.sql" />
+    <None Include="Stored Procedures\Coder FullTextSearch\spCreateCoderStopList.sql" />
+    <None Include="Stored Procedures\Coder FullTextSearch\spGetFullTextNoiseWords.sql" />
+    <None Include="Stored Procedures\Coder FullTextSearch\spGetFullTextWordsExcludeNoiseWords.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationAdminFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationAdminInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationAdminLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationAdminLoadByApplicationID.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationAdminUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationGetBySourceSystemID.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationLoadByApiID.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationLoadByAppType.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationLoadByAppTypeAppName.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationLoadBySegmentID.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationTrackableObjectFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationTrackableObjectInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationTrackableObjectLoadByAppIDTrackableObjID.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationTrackableObjectLoadByTrackableObjID.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationTrackableObjectUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationTypeFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationTypeInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationTypeLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationTypeLoadByIMedidataID.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationTypeUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spApplicationUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spAuthenticationServerTokenConsume.sql" />
+    <None Include="Stored Procedures\Coder Other\spAuthenticationServerTokenStore.sql" />
+    <None Include="Stored Procedures\Coder Other\spBOTElementFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spBOTElementInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spBOTElementLoadPending.sql" />
+    <None Include="Stored Procedures\Coder Other\spBOTElementUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spCoderAppConfigurationFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCoderLocaleAddlInfoFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCoderLocaleAddlInfoGetByLocale.sql" />
+    <None Include="Stored Procedures\Coder Other\spCoderLocaleAddlInfoLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingAssignmentDelete.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingAssignmentFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingAssignmentGetByCreatedSynonym.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingAssignmentInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingAssignmentLoadByAlgorithmId.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingAssignmentLoadByCodingElementId.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingAssignmentLoadByUserId.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingAssignmentUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingDataForReclassify.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementAnyTaskInServiceForStudyVersion.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementAutocodeGroup.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementGetDecisionCountsBySynonymIDs.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementGetFilterValuesGroup.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementGetNextTaskToCodeWithFilterSort.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementGroupComponentInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementGroupComponentLoadByGroup.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementGroupDelete.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementGroupFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementGroupFindExisting.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementGroupInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementGroupUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementLoadAllForBOTByRule.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementLoadDependantBySynonym.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementLoadTaskFilters.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementLoadTaskIDs.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementLoadWaitingTasks.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementSearch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementSearchByFilterSecuredAndPagedWithFilterAndGroup.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementSearchForUnload.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementSearchForUnloadToQueue.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementsGetSelectedWithGroup.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingPatternDelete.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingPatternFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingPatternGetByPath.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingPatternInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingReasonRLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingRejectionDelete.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingRejectionFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingRejectionGetByCodingElementId.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingRejectionInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingRejectionUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingRequestExistsForSourceSystem.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingRequestFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingRequestInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingRequestLoadBySourceSystemFileOID.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingResourceFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingResourceTransmissionInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingResourceTransmissionUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingSourceTermFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingSourceTermInsertGroupMany.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingSourceTermLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingSourceTermLoadByCodingElementId.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingSourceTermSupplementalFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingSourceTermSupplementalInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingSourceTermSupplementalLoadByCodingElementId.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingSourceTermSupplementalLoadByCodingSourceTermId.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingSourceTermSupplementalUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingSourceTermUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingStateTransitionLoadById.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingStatusLoadById.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingStatusRLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingSuggestionLoadByTermIdsAndCodingElement.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingSuggestionsIsValidForDictionary.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingTransmissionFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingTransmissionInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingTransmissionSuccessByCodingSourceTerm.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingTransmissionUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spCommunicationLogFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCommunicationLogInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spCreateCoderAdminLogin.sql" />
+    <None Include="Stored Procedures\Coder Other\spCreateTrackableObject.sql" />
+    <None Include="Stored Procedures\Coder Other\spCronActionFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCronActionLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spDictionaryLicenceInformationFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spDictionaryLicenceInformationInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spDictionaryLicenceInformationLoadByDctLclRlsDt.sql" />
+    <None Include="Stored Procedures\Coder Other\spDictionaryLicenceInformationLoadBySgmtDctLcl.sql" />
+    <None Include="Stored Procedures\Coder Other\spDictionaryLicenceInformationUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spDoNotAutoCodeTermsDelete.sql" />
+    <None Include="Stored Procedures\Coder Other\spDoNotAutoCodeTermsFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spDoNotAutoCodeTermsInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spDoNotAutoCodeTermsIsATermExisting.sql" />
+    <None Include="Stored Procedures\Coder Other\spDoNotAutoCodeTermsLoad.sql" />
+    <None Include="Stored Procedures\Coder Other\spDoNotAutoCodeTermsUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spGenericFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spGroupVerbatimEngFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spGroupVerbatimEngGetByVerbatimLocale.sql" />
+    <None Include="Stored Procedures\Coder Other\spGroupVerbatimEngInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spGroupVerbatimJpnFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spGroupVerbatimJpnGetByVerbatimLocale.sql" />
+    <None Include="Stored Procedures\Coder Other\spGroupVerbatimJpnInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spHealthCheckFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spHealthCheckInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spHealthCheckLoadExtended.sql" />
+    <None Include="Stored Procedures\Coder Other\spHealthCheckRunsFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spHealthCheckRunsInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spHealthCheckStatisticsFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spHealthCheckStatisticsInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spHealthCheckStatisticsLoadExtendedByHealthCheckRun.sql" />
+    <None Include="Stored Procedures\Coder Other\spHelpContextLoadByContext.sql" />
+    <None Include="Stored Procedures\Coder Other\spHelpContextsLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spImpactAnalysisChangeTypeRFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spImpactAnalysisChangeTypeRLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spImpactAnalysisGetStudyDictTerms.sql" />
+    <None Include="Stored Procedures\Coder Other\spImpactAnalysisGetStudyVersionCodedTasks.sql" />
+    <None Include="Stored Procedures\Coder Other\spImpactAnalysisGetTaskDetails.sql" />
+    <None Include="Stored Procedures\Coder Other\spIngredientReportData.sql" />
+    <None Include="Stored Procedures\Coder Other\spLoadAllBatchesForSegment.sql" />
+    <None Include="Stored Procedures\Coder Other\spLoadMedicalDictComponentTypes.sql" />
+    <None Include="Stored Procedures\Coder Other\spLocalizedDataStringsFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spLogMessageInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spLongAsyncTaskFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spLongAsyncTaskGetByReferenceIdAndType.sql" />
+    <None Include="Stored Procedures\Coder Other\spLongAsyncTaskHistoryFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spLongAsyncTaskHistoryInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spLongAsyncTaskHistoryLoadByTask.sql" />
+    <None Include="Stored Procedures\Coder Other\spLongAsyncTaskHistoryUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spLongAsyncTaskInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spLongAsyncTaskLoadByTaskCommandSegment.sql" />
+    <None Include="Stored Procedures\Coder Other\spLongAsyncTasksDequeueMax.sql" />
+    <None Include="Stored Procedures\Coder Other\spLongAsyncTaskUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spMedDictTermSearchSynonymsPaged.sql" />
+    <None Include="Stored Procedures\Coder Other\spMedDictTermStatusRFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spMedDictTermStatusRLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spMedDictVerDiffLocRefLoadByDictId.sql" />
+    <None Include="Stored Procedures\Coder Other\spMedDictVerLocLoadByDictId.sql" />
+    <None Include="Stored Procedures\Coder Other\spMedDictVerLocLoadByDictIdAndLoc.sql" />
+    <None Include="Stored Procedures\Coder Other\spObjectSegmentAttributeDelete.sql" />
+    <None Include="Stored Procedures\Coder Other\spObjectSegmentAttributeFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spObjectSegmentAttributeInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spObjectSegmentAttributeUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spOutServiceHeartBeatFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spOutServiceHeartBeatInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spOutServiceHeartBeatUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spOutTransmissionFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spOutTransmissionInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spOutTransmissionLogFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spOutTransmissionLogInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spOutTransmissionLogUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spOutTransmissionRequeueUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spOutTransmissionUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spProductionSupportNamedQueriesFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spProductionSupportNamedQueriesLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spProjectDictionaryRegistrationDelete.sql" />
+    <None Include="Stored Procedures\Coder Other\spProjectDictionaryRegistrationFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spProjectDictionaryRegistrationInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spProjectDictionaryRegistrationLoadPendingRegistrationsByProject.sql" />
+    <None Include="Stored Procedures\Coder Other\spProjectDictionaryRegistrationLoadBySynonymList.sql" />
+    <None Include="Stored Procedures\Coder Other\spProjectDictionaryRegistrationLoadByTransmissionId.sql" />
+    <None Include="Stored Procedures\Coder Other\spProjectDictionaryRegistrationLoadCurrent.sql" />
+    <None Include="Stored Procedures\Coder Other\spProjectDictionaryRegistrationUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spProjectRegistrationTransmissionCreateByRegIds.sql" />
+    <None Include="Stored Procedures\Coder Other\spProjectRegistrationTransmissionFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spProjectRegistrationTransmissionInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spProjectRegistrationTransmissionLoadByProjectID.sql" />
+    <None Include="Stored Procedures\Coder Other\spProjectRegistrationTransmissionUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spRuntimeLockDelete.sql" />
+    <None Include="Stored Procedures\Coder Other\spRuntimeLockInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spRuntimeLockIsLocked.sql" />
+    <None Include="Stored Procedures\Coder Other\spScriptExecutionLogInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spSearchTransmissionQueueItems.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternCrossSearch.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternDelete.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternExist.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternGetByGroup.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternLoadByCodingElementIDs.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternLoadByCodingPatternAndList.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternLoadByGroupAndVersion.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternLoadProvisionalSynonyms.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentLoadIdByOID.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentsDelete.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentsFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentsLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spServiceHeartBeatGetLasts.sql" />
+    <None Include="Stored Procedures\Coder Other\spSgmntsLdAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spSourceSystemFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spSourceSystemFetchByStudyID.sql" />
+    <None Include="Stored Procedures\Coder Other\spSourceSystemInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spSourceSystemLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spSourceSystemLoadByOID.sql" />
+    <None Include="Stored Procedures\Coder Other\spSourceSystemTestTransmissionFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spSourceSystemTestTransmissionInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spSourceSystemTestTransmissionLoadByApplicationID.sql" />
+    <None Include="Stored Procedures\Coder Other\spSourceSystemTestTransmissionUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spSourceSystemUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryRegistrationDelete.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryRegistrationFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryRegistrationInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryRegistrationLoadByInteractionAndStudy.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryRegistrationLoadByTransmissionId.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryRegistrationUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryVersionFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryVersionHistoryFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryVersionHistoryInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryVersionHistoryUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryVersionInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryVersionLoadWithoutCodingActivity.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryVersionUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationBackupAllData.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationBackupGetMigrationTypeCounts.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationBackupNewIdsUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationClearAllAssignments.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationClearOldBackup.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationGetSegmentedGroupPatterns.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationGetTaskGroupMatchingSynonym.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationGetTaskGroupVerbatimsForBetterMatch.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationGetTasksWithActivePatterns.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationGetUncodedTasks.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationQueueNewTransmissions.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationTaskCount.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationTraceFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationTraceInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationTraceUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyProjectFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyProjectGetByProjectNameAndSegment.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyProjectInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyProjectLoadAllBySegment.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyProjectUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyRegistrationTransmissionCreateByRegIds.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyRegistrationTransmissionDelete.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyRegistrationTransmissionFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyRegistrationTransmissionInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyRegistrationTransmissionLoadByStudyID.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyRegistrationTransmissionUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyTaskHistoryAudit.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyVersionLoadBySynonymList.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyVersionMigrationRestoreBackup.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyVersionObjectLoadByDictionaryStudy.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyVersionObjectLoadByStudyID.sql" />
+    <None Include="Stored Procedures\Coder Other\spSubscriptionLogFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spSubscriptionLogInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spSubscriptionLogLoadByVersion.sql" />
+    <None Include="Stored Procedures\Coder Other\spSupplementFieldKeyByKey.sql" />
+    <None Include="Stored Procedures\Coder Other\spSupplementFieldKeyFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spSupplementFieldKeyInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymHistoryFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymHistoryInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymHistoryLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymHistoryLoadBySynonym.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymHistoryUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationEntryClearForList.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationEntryFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationEntryInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationEntryLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationEntryLoadByActivationStatus.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationEntryLoadByMigrationStatus.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationEntryUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationGetReconciledCategories.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationManagementDelete.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationManagementFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationManagementInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationManagementLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationManagementUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationMgmntBySegment.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationMgmntBySegmentDictLocaleVersion.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationMngmntDeleteSynonyms.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationMngmntGetByVersionAndName.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationStatusRFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationStatusRLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationSuggestionFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationSuggestionInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationSuggestionLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrationSuggestionUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrEntrsFrRecncByCtgryPaged.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymMigrEntrsMassMigrate.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymSuggestionGetBySynEntryAndTermID.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymSuggestionReasonRFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymSuggestionReasonRLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymSuggestionsGetBySynEntry.sql" />
+    <None Include="Stored Procedures\Coder Other\spSystemVariableLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spSystemVariableLoadBySourceSystem.sql" />
+    <None Include="Stored Procedures\Coder Other\spSystemVariableLoadByWorkflowVariable.sql" />
+    <None Include="Stored Procedures\Coder Other\spTimeElapsedResolve.sql" />
+    <None Include="Stored Procedures\Coder Other\spTimeElapsedResolveDateTime.sql" />
+    <None Include="Stored Procedures\Coder Other\spTrackableObjectByProjectId.sql" />
+    <None Include="Stored Procedures\Coder Other\spTrackableObjectFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spTrackableObjectInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spTrackableObjectLoadByExternalObjectId.sql" />
+    <None Include="Stored Procedures\Coder Other\spTrackableObjectLoadByOID.sql" />
+    <None Include="Stored Procedures\Coder Other\spTrackableObjectLoadBySegment.sql" />
+    <None Include="Stored Procedures\Coder Other\spTrackableObjectLoadBySourceSystem.sql" />
+    <None Include="Stored Procedures\Coder Other\spTrackableObjectsLoad.sql" />
+    <None Include="Stored Procedures\Coder Other\spTrackableObjectUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spTransitTasksFromServiceToServer.sql" />
+    <None Include="Stored Procedures\Coder Other\spTransmissionQueueGetFilterValues.sql" />
+    <None Include="Stored Procedures\Coder Other\spTransmissionQueueItemFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spTransmissionQueueItemInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spTransmissionQueueItemLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Other\spTransmissionQueueItemLoadBySegment.sql" />
+    <None Include="Stored Procedures\Coder Other\spTransmissionQueueItemLoadForCodingDecisionUnload.sql" />
+    <None Include="Stored Procedures\Coder Other\spTransmissionQueueItemGetBySourceTransmission.sql" />
+    <None Include="Stored Procedures\Coder Other\spTransmissionQueueItemLoadSourceTransmissions.sql" />
+    <None Include="Stored Procedures\Coder Other\spTransmissionQueueItemUpdate.sql" />
+    <None Include="Stored Procedures\Coder Other\spTransmissionQueueResendSelected.sql" />
+    <None Include="Stored Procedures\Coder Other\spTransmissionQueueSearchByFilter.sql" />
+    <None Include="Stored Procedures\Coder Other\spUserAddressFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spUserAddressInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spVerLocaleIsUsedInProduction.sql" />
+    <None Include="Stored Procedures\Coder Other\spWebRequestETagFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spWebRequestETagGetByUrl.sql" />
+    <None Include="Stored Procedures\Coder Other\spWebRequestETagInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spWebRequestETagUpdate.sql" />
+    <None Include="Stored Procedures\Coder Test Data Population Scripts\spCreateDefaultWorkflowWithReconsiderState.sql" />
+    <None Include="Stored Procedures\Coder Workflow\spWorkflowTaskDataFetch.sql" />
+    <None Include="Stored Procedures\Coder Workflow\spWorkflowTaskDataInsert.sql" />
+    <None Include="Stored Procedures\Coder Workflow\spWorkflowTaskDataLoadByWorkflowTask.sql" />
+    <None Include="Stored Procedures\Coder Workflow\spWorkflowTaskDataUpdate.sql" />
+    <None Include="Stored Procedures\Coder Workflow\spWorkflowTaskFetch.sql" />
+    <None Include="Stored Procedures\Coder Workflow\spWorkflowTaskGetDecisionsByCodingElementIDs.sql" />
+    <None Include="Stored Procedures\Coder Workflow\spWorkflowTaskHistoryFetch.sql" />
+    <None Include="Stored Procedures\Coder Workflow\spWorkflowTaskHistoryInsert.sql" />
+    <None Include="Stored Procedures\Coder Workflow\spWorkflowTaskHistoryLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Workflow\spWorkflowTaskHistoryLoadByWorkflowTask.sql" />
+    <None Include="Stored Procedures\Coder Workflow\spWorkflowTaskHistoryUpdate.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spTrackableObjectLoadAccessibleByUserID.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spTrackableObjectLoadBySegmentOID.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spUserObjectWorkflowRoleDelete.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spUserObjectWorkflowRoleFetch.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spUserObjectWorkflowRoleInsert.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spUserObjectWorkflowRoleLoad.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spUserObjectWorkflowRoleLoadAll.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spUserObjectWorkflowRoleLoadBySegment.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spUserObjectWorkflowRoleLoadForUserObject.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spUserObjectWorkflowRoleUpdate.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spUserObjectWorkflowRoleUpsert.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleActionDelete.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleActionFetch.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleActionInsert.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleActionLoad.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleActionLoadByRole.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleActionUpdate.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleDelete.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleFetch.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleFetchByUserObject.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleInsert.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleIsNameUnique.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleLoad.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleLoadByModuleId.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleLoadBySegment.sql" />
+    <None Include="Stored Procedures\Coder WorkflowSecurity\spWorkflowRoleUpdate.sql" />
+    <None Include="Stored Procedures\Framework\_spSearchwithPaginationAndSorting.sql" />
+    <None Include="Stored Procedures\Framework\_spTemplate.sql" />
+    <None Include="Stored Procedures\Framework\spActnTypLdByMdlAndNm.sql" />
+    <None Include="Stored Procedures\Framework\spActnTypLdByMdlId.sql" />
+    <None Include="Stored Procedures\Framework\spActvtnFndByCd.sql" />
+    <None Include="Stored Procedures\Framework\spActvtnFtchByUsrID.sql" />
+    <None Include="Stored Procedures\Framework\spFndUdtUsg.sql" />
+    <None Include="Stored Procedures\Framework\spImpldActnTpsLd.sql" />
+    <None Include="Stored Procedures\Framework\spIndxdClmnsLd.sql" />
+    <None Include="Stored Procedures\Framework\spLclDtStrngCntxtsInsrt.sql" />
+    <None Include="Stored Procedures\Framework\spLclDtStrngCntxtsLd.sql" />
+    <None Include="Stored Procedures\Framework\spLclStdStrngInsrt.sql" />
+    <None Include="Stored Procedures\Framework\spLclztnFndOrInsrtDtStrng.sql" />
+    <None Include="Stored Procedures\Framework\spLclztnInsrtDtStrng.sql" />
+    <None Include="Stored Procedures\Framework\spLclztnInsrtDtStrngRfrnc.sql" />
+    <None Include="Stored Procedures\Framework\spLclztnLdDtStrByIdFrActvSgmts.sql" />
+    <None Include="Stored Procedures\Framework\spLclztnLdDtStrByLocaleFrActvSgmts.sql" />
+    <None Include="Stored Procedures\Framework\spLclztnLdDtStrngsFrActvSgmnts.sql" />
+    <None Include="Stored Procedures\Framework\spLclztnLdStrngsByLcl.sql" />
+    <None Include="Stored Procedures\Framework\spLclztnLdStrngsByLclFrPrdct.sql" />
+    <None Include="Stored Procedures\Framework\spLclztnRfrncsBlkSv.sql" />
+    <None Include="Stored Procedures\Framework\spLgnAttmptCntFlrs.sql" />
+    <None Include="Stored Procedures\Framework\spLgnAttmptCntPrvsFlrs.sql" />
+    <None Include="Stored Procedures\Framework\spLgnAttmptInsrt.sql" />
+    <None Include="Stored Procedures\Framework\spLoadAllObjectSegmentsByObjectTypeAndSegment.sql" />
+    <None Include="Stored Procedures\Framework\spMdlFtchById.sql" />
+    <None Include="Stored Procedures\Framework\spObjctSgmntsLdByObjct.sql" />
+    <None Include="Stored Procedures\Framework\spObjRfLd.sql" />
+    <None Include="Stored Procedures\Framework\spOldPsswrdFtch.sql" />
+    <None Include="Stored Procedures\Framework\spScrtyGrpAddUsr.sql" />
+    <None Include="Stored Procedures\Framework\spScrtyGrpIsNmUnq.sql" />
+    <None Include="Stored Procedures\Framework\spScrtyGrpRmvUsr.sql" />
+    <None Include="Stored Procedures\Framework\spScrtyMdlLdAllActv.sql" />
+    <None Include="Stored Procedures\Framework\spSpgLdPrms.sql" />
+    <None Include="Stored Procedures\Framework\spSpgPthsLd.sql" />
+    <None Include="Stored Procedures\Framework\spStdStrngTypInsrt.sql" />
+    <None Include="Stored Procedures\Framework\spStdStrngTypUpsrt.sql" />
+    <None Include="Stored Procedures\Framework\spUdtsLdOutptPrms.sql" />
+    <None Include="Stored Procedures\Framework\spUdtsLdPrms.sql" />
+    <None Include="Stored Procedures\Framework\spUsrFndByLgn.sql" />
+    <None Include="Stored Procedures\Framework\spUsrFtchByNmAndPIN.sql" />
+    <None Include="Stored Procedures\Framework\spUsrLdByFltrAndPg.sql" />
+    <None Include="Stored Procedures\Framework\spUsrLdByLstNmLgn.sql" />
+    <None Include="Stored Procedures\Framework\spUsrObjtRlUpsrt.sql" />
+    <None Include="Stored Procedures\Framework\spWlcmMssgGt.sql" />
+    <None Include="Stored Procedures\Support Procedures\spPSCoderToRaveIssue.sql" />
+    <None Include="Stored Procedures\Support Procedures\spPSCodingTaskReport.sql" />
+    <None Include="Stored Procedures\Support Procedures\spPSGetCodingRequestODM.sql" />
+    <None Include="Stored Procedures\Support Procedures\spPSProjectRegistrations.sql" />
+    <None Include="Stored Procedures\Support Procedures\spPSRaveToCoderIssue.sql" />
+    <None Include="Stored Procedures\Support Procedures\spPSRaveTransmissionQueueInformationById.sql" />
+    <None Include="Stored Procedures\Support Procedures\spPSRecentTransmissions.sql" />
+    <None Include="Stored Procedures\Support Procedures\Metrics\spMetrics.sql" />
+    <None Include="Stored Procedures\Support Procedures\Metrics\spMetricsRunner.sql" />
+    <None Include="User-Defined Functions\Coder\fnCheckTableRelations.sql" />
+    <None Include="User-Defined Functions\Coder\fnFormatDate.sql" />
+    <None Include="User-Defined Functions\Coder\fnFormatXMLFromDL.sql" />
+    <None Include="User-Defined Functions\Coder\fnGenerateInitialIORVersionLocale.sql" />
+    <None Include="User-Defined Functions\Coder\fnGetCodeFromCategoryCode.sql" />
+    <None Include="User-Defined Functions\Coder\fnGetJPNStringIDFromCategoryCode.sql" />
+    <None Include="User-Defined Functions\Coder\fnGetJPNStringIDFromCombinedCategoryCode.sql" />
+    <None Include="User-Defined Functions\Coder\fnHasSynonyms.sql" />
+    <None Include="User-Defined Functions\Coder\fnLDS.sql" />
+    <None Include="User-Defined Functions\Coder\fnLocalDataString.sql" />
+    <None Include="User-Defined Functions\Coder\fnLocalDefault.sql" />
+    <None Include="User-Defined Functions\Coder\fnMinimum.sql" />
+    <None Include="User-Defined Functions\Coder\fnNumberOfOccurrences.sql" />
+    <None Include="User-Defined Functions\Coder\fnParseDelimitedString.sql" />
+    <None Include="User-Defined Functions\Coder\fnParseDelimitedString_XML.sql" />
+    <None Include="User-Defined Functions\Coder\fnParseDelimitedStringWithID.sql" />
+    <None Include="User-Defined Functions\Coder\fnReduceIORVersionLocaleWithLastVersion.sql" />
+    <None Include="User-Defined Functions\Coder\fnSimplifyVerbatim.sql" />
+    <None Include="User-Defined Functions\Coder\fnSplit.sql" />
+    <None Include="User-Defined Functions\Coder\fnStringCompare.sql" />
+    <None Include="User-Defined Functions\Coder\fnTermIdsFromPath.sql" />
+    <None Include="User-Defined Functions\Coder\fnTrackableObjectsLoad.sql" />
+    <None Include="User-Defined Functions\Coder\fnUpdateValiditySequence.sql" />
+    <None Include="User-Defined Functions\Framework\fnAuditTranslation.sql" />
+    <None Include="User-Defined Functions\Framework\fnFormat.sql" />
+    <None Include="User-Defined Functions\Framework\fnGenerateOID.sql" />
+    <None Include="User-Defined Functions\Framework\fnIsValidNumericCorrect.sql" />
+    <None Include="User-Defined Functions\Framework\fnLDS.sql" />
+    <None Include="User-Defined Functions\Framework\fnLocalDefault.sql" />
+    <None Include="User-Defined Functions\Framework\fnLocalString.sql" />
+    <None Include="User-Defined Functions\Framework\fnStatusForRole.sql" />
+    <None Include="VersionScripts\2013_1_1_1_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_1_1_2_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_1_1_5_CoderVersion.xml" />
+    <None Include="Change Scripts\Daily Changes\20130516-01-DropNotUsedIndices.sql" />
+    <None Include="Change Scripts\Daily Changes\20130514-01-DropTextToTransmitColumn.sql" />
+    <None Include="Stored Procedures\Support Procedures\Metrics\metrics.bat" />
+    <None Include="VersionScripts\2013_1_1_6_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_1_1_9_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_1_1_10_CoderVersion.xml" />
+    <None Include="Stored Procedures\Automation\spFakeStudyMigrationFailure.sql" />
+    <None Include="VersionScripts\2013_1_1_12_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_1_1_13_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_1_1_14_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_1_1_15_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_1_1_16_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_1_CoderVersion.xml" />
+    <None Include="Change Scripts\Daily Changes\20130730-01-AddAutoApprovalToObjectSegmentAttribute.sql" />
+    <None Include="VersionScripts\2013_2_0_2_CoderVersion.xml" />
+    <None Include="Change Scripts\Daily Changes\20130829-01-CodingElementsTableAddUUID.sql" />
+    <None Include="VersionScripts\2013_2_0_4_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_5_CoderVersion.xml" />
+    <None Include="Change Scripts\Daily Changes\20130910-01-AddIndicesForCodingElementUUID.sql" />
+    <None Include="Change Scripts\Daily Changes\20130910-02-AddCodingQueriesTable.sql" />
+    <None Include="Stored Procedures\Coder Other\spCoderQueryHistoryFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCoderQueryHistoryInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spCoderQueryHistoryUpdate.sql" />
+    <None Include="VersionScripts\2013_2_0_6_CoderVersion.xml" />
+    <None Include="Change Scripts\Daily Changes\20130913-02-UpdateRejectReference.sql" />
+    <None Include="VersionScripts\2013_2_0_8_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_10_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_11_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_12_CoderVersion.xml" />
+    <None Include="Change Scripts\Daily Changes\20131001-01-ModifyCodingQueryModels.sql" />
+    <None Include="Stored Procedures\Coder Other\spCoderQueryFetch.sql" />
+    <None Include="Stored Procedures\Coder Other\spCoderQueryInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spCoderQueryUpdate.sql" />
+    <None Include="VersionScripts\2013_2_0_13_CoderVersion.xml" />
+    <None Include="Stored Procedures\Coder Other\spCoderQueryLoadByTaskId.sql" />
+    <None Include="Stored Procedures\Coder Other\spCoderQueryGetByTaskIdAndUUID.sql" />
+    <None Include="Change Scripts\Daily Changes\20131004-01-TransmissionQueueItemsMigration.sql" />
+    <None Include="Change Scripts\Daily Changes\20131010-01-RenameTermBaseUDT.sql" />
+    <None Include="VersionScripts\2013_2_0_14_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_16_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_19_CoderVersion.xml" />
+    <None Include="Change Scripts\Daily Changes\20131021-01-AddMarkingGroupToCodingElements.sql" />
+    <None Include="VersionScripts\2013_2_0_20_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_21_CoderVersion.xml" />
+    <None Include="CMP\spCheckStudyMigrationDetails.sql" />
+    <None Include="Change Scripts\Daily Changes\20131031-01-CorrectSegmentId.sql" />
+    <None Include="VersionScripts\2013_2_0_22_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_24_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_26_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_29_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_30_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_32_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_33_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_35_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_36_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_38_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_2_0_41_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_1_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_2_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_3_CoderVersion.xml" />
+    <None Include="Change Scripts\Daily Changes\20140226-01-CreateCompletedCodingJobsView.sql" />
+    <None Include="Change Scripts\Daily Changes\20140228-01-CreateExternalVerbatimAdmin.sql" />
+    <None Include="VersionScripts\2014_1_0_4_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_8_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_9_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_10_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_11_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_12_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_13_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_14_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_16_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_19_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_20_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_22_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_23_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_24_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_25_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_28_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_29_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_30_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_31_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_33_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_34_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_0_35_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_2_0_0_CoderVersion.xml" />
+    <None Include="Stored Procedures\Coder Other\spScheduleKeyForPendingMessages.sql" />
+    <None Include="VersionScripts\2014_1_1_2_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_1_3_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_1_1_4_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_2_0_0_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_2_0_2_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_2_0_3_CoderVersion.xml" />
+    <None Include="VersionScripts\2014_2_0_1_CoderVersion.xml" />
+    <None Include="CMP\CMP_RequeueTermsFailedSendingAfterStudyMigrationAssignment.sql" />
+    <None Include="Stored Procedures\Support Procedures\spPSTermsRequiringRequeueDueToStudyMigrationSendFailure.sql" />
+    <None Include="Stored Procedures\Support Procedures\spPSTransmissionRWSFailureReasonBySegment.sql" />
+    <None Include="Stored Procedures\Synonym\spSynonymListGetBySegmentId.sql" />
+    <None Include="Stored Procedures\Synonym\spSynonymUploadRequestInsert.sql" />
+    <None Include="Stored Procedures\Synonym\spVolatileSynonymUploadRequestLineQueueInsert.sql" />
+    <None Include="Stored Procedures\Synonym\spVolatileSynonymUploadRequestLineQueueGetByRequestId.sql" />
+    <None Include="Stored Procedures\Synonym\spGetForcePrimaryPathConfiguration.sql" />
+    <None Include="Stored Procedures\Synonym\spSynonymNumbersGetByListId.sql" />
+    <None Include="Stored Procedures\Support Procedures\spPSFailStuckStudyMigration.sql" />
+    <None Include="CMP\CMP_ReValidateTasks.sql" />
+    <None Include="Stored Procedures\Synonym\spSegmentedGroupCodingPatternGetByVerbatim.sql" />
+    <None Include="CMP\CMP_ResendTransmissionQueueItemsByUUID.sql" />
+    <None Include="CMP\CMP_ReportTransmissionQueueItemsByUUID.sql" />
+    <None Include="CMP\CMP_AddAdditionalQueryHistory.sql" />
+    <None Include="CMP\CMP_InValidateTasksByUUID.sql" />
+    <None Include="S3Migration\SampleS3SupplementalRepository.json" />
+    <None Include="Stored Procedures\Automation\spDeleteGeneratedUser.sql" />
+    <None Include="CleanWipe\coder_zero_ofV1_20160223.bak" />
+    <None Include="CMP\CMP_FixTimeoutExceptionForSynonymApproval.sql" />
+    <None Include="PreQMMigration\RaveUnload.cmd" />
+    <None Include="PreQMMigration\CoderUpload.cmd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\DailyChangeScript.xml" />
+    <None Include="Change Scripts\Database-Sequence.xml" />
+    <None Include="ShellCommands\db_UpdateTermRanks.cmd" />
+    <None Include="VersionScripts\1.0.80_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_0_example.xml" />
+    <None Include="VersionScripts\1_0_100_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_101_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_102_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_103_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_104_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_105_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_106_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_107_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_108_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_109_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_110_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_111_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_112_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_113_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_114_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_115_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_116_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_117_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_118_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_119_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_120_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_121_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_122_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_123_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_124_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_125_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_126_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_127_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_128_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_129_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_130_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_131_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_132_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_133_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_134_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_135_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_136_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_137_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_138_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_139_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_140_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_141_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_142_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_143_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_144_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_145_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_146_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_147_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_148_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_149_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_150_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_152_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_153_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_81_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_82_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_83_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_84_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_86_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_88_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_89_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_90_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_91_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_92_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_93_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_94_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_95_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_96_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_97_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_98_CoderVersion.xml" />
+    <None Include="VersionScripts\1_0_99_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_1_0_154_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_1_0_155_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_1_0_156_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_1_0_157_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_1_0_159_CoderVersion.xml" />
+    <None Include="VersionScripts\2013_1_0_161_CoderVersion.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_FixTaskRelatedDuplicateEntities.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CheckForDuplicateGroups.sql" />
+    <None Include="Change Scripts\Daily Changes\20130415-01-FixEmptyGroups.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20130423-01-ClearDuplicates.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spCodingElementLoadStuckTasks.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spCodingElementLoadStuckTaskIDs.sql" />
+    <None Include="CMP\CMP_LongRunningTaskEnqueueProbe.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternDownloadMap.sql" />
+    <None Include="Stored Procedures\Support Procedures\spFullTextSearchIndexCheck.sql" />
+    <None Include="Stored Procedures\Support Procedures\spOutDistribution.sql" />
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternLoadChunkBySynonymList.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spLongAsyncTaskLoadZombies.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="VersionScripts\2013_1_1_7_CoderVersion.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="VersionScripts\2013_1_1_8_CoderVersion.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20130611-01-AlterSynonymLoadStagingTable.sql" />
+    <None Include="Stored Procedures\Support Procedures\spPSExtendedDictionaryTaskReport.sql" />
+    <None Include="Stored Procedures\Coder Other\spSynonymListBackup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="VersionScripts\2013_1_1_10_CoderVersion.xml" />
+    <None Include="CMP\GroupChangesCMP\spGroupConflicts.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\GroupChangesCMP\spGroupVerbatimAnalysis.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\GroupChangesCMP\spGroupAnalysis.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\GroupChangesCMP\spAutomationAnalysis.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\GroupChangesCMP\fnRemoveWhiteSpace.sql" />
+    <None Include="Stored Procedures\Support Procedures\spImpactAnalysisForSynonymMigration.sql" />
+    <None Include="CMP\RemoveUnreferencedGroup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\GroupChangesCMP\spFixConflicts.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\GroupChangesCMP\spFixAutomation.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\GroupChangesCMP\spFixGroups.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\GroupChangesCMP\spFixGroupVerbatims.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\GroupChangesCMP\CreateTables.sql" />
+    <None Include="Change Scripts\Daily Changes\20130614-01-SQLTrimming.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Support Procedures\SQLTrimming.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\spCoder_CMP_ClearUnsentTasks.sql" />
+    <None Include="CMP\GroupChangesCMP\spResetAnalysis.sql" />
+    <None Include="Stored Procedures\Support Procedures\spSourceCorrelationReport.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20130730-02-AddPathCount.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\spCheckStudyMigration.sql" />
+    <None Include="CMP\CMP_14_ReQueueRaveTransmissionQueueByIdsForSegment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20130808-01-DataMigration.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDataMigrationFetch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDataMigrationDetailFetch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDataMigrationDetailUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDataMigrationDetailLoadNext.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDataMigrationLoadAll.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDataMigrationRunUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDataMigrationRunInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDataMigrationRunLoadByMigration.sql" />
+    <None Include="Stored Procedures\Support Procedures\spRequeueFailedWorkflowBots.sql" />
+    <None Include="Stored Procedures\Support Procedures\spPerformSourceCorrelation.sql" />
+    <None Include="Stored Procedures\Support Procedures\spInvalidateDuplicateTasks.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Support Procedures\spInvalidatedDuplicateTasksReport.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spFakeWorkflowBotFailure.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spMarkGroupInService.sql" />
+    <None Include="Stored Procedures\Support Procedures\fnCleanVerbatimForCorrelation.sql" />
+    <None Include="Stored Procedures\Coder Other\spCodingElementFindByUUID.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20130906-01-AddVerbatimUpdateWorkflowSystemAction.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Support Procedures\fnCleanVerbatimForCorrelation.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20130910-03-CodingElementsTableChanges.sql" />
+    <None Include="Stored Procedures\Coder Other\spCoderQueryHistoryLoadByQuery.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20130912-01-AlterCodingQueriesTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spCoderQueryHistoryGetByQueryIdAndRepeatKey.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20130913-01-CodingQueriesIndex.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spOutTransmissionLogCreateAndGetByOutTransmission.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationTaskOverallSystemTaskCount.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spCodingElementTotalInServiceTasksForSystem.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="VersionScripts\2013_2_0_9_CoderVersion.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20130926-01-CodingQueryVerbatim.sql" />
+    <None Include="Change Scripts\Daily Changes\20130924-02-WorkflowChanges.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Test Data Population Scripts\spSetupCancelQueryWorkflowAction.sql" />
+    <None Include="Change Scripts\Daily Changes\20130924-01-AddQueryStatusColumnToCodingElements.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20130930-01-AddGroupToHistory.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20130930-02-UpdateHistoryGroup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\fnGetLastQueryUUID.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20131014-01-AddCancelQueryToStudyMigrationBackup.sql" />
+    <None Include="Change Scripts\Daily Changes\20131017-01-AddQueryConfirmationTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spQueryConfirmationInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spQueryConfirmationUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spQueryConfirmationFetch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spQueryConfirmationPendingIds.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spQueryConfirmationPending.sql" />
+    <None Include="Change Scripts\Daily Changes\20131016-01-AddUUIDToApplication.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spApplicationLoadByUUID.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20131022-01-AddMOTDAuditsTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spMOTDAuditFetch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spMOTDAuditInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spMOTDAuditGetLastByLocale.sql" />
+    <None Include="Change Scripts\Daily Changes\20131014-01-AddCancelQueryToStudyMigrationBackup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spCodingSourceTermSupplementalDelete.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20131119-01-DeleteOldCodingPatterns.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20131220-01-SynonymPerformance.sql" />
+    <None Include="Change Scripts\Daily Changes\20131209-01-TaskInvalidationQueue.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spInvalidTaskQueueInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="User-Defined Functions\Coder\fnIsValidForAutoCode.sql" />
+    <None Include="Stored Procedures\Coder Other\spStudyMigrationQueueNewQueryTransmissions.sql" />
+    <None Include="Change Scripts\Daily Changes\20131219-01-CancelQueryJpnTranslation.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_RemoveBadVersionReferences.sql" />
+    <None Include="CMP\fnGetAllBadTermsForBadVersion.sql" />
+    <None Include="Stored Procedures\Support Procedures\spPSTasksPerVersion.sql" />
+    <None Include="CMP\spCheckStudySync.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_ReValidateTask.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140213-01-CodingRequestModel.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spCodingRequestUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140220-01-CodingJobErrorModel.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spCodingJobErrorInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140226-02-CreateCodingRequestStatusView.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140226-03-AddCodingRequestCsvDataTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="User-Defined Functions\Coder\fnIsValidForAutoCodeIncludingProvisional.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spCodingRequestCsvInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spCodingRequestCsvDataInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140306-01-AuditStudySync.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140306-01-CreateCompletedCodingJobsView.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140306-02-CreateCsvCodingJobErrorDetailsView.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140310-02-CreateCompletedCodingJobsView.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140310-03-CreateCodingRequestStatusView.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140310-01-AddBatchOIDToCodingElementsTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140310-04-ModifyCodingJobErrorsTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140310-05-StudyTaskCounts.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140313-02-AddVolatileCodingRequestLineQueueTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spVolatileCodingRequestLineQueueInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spVolatileCodingRequestLineQueueDelete.sql" />
+    <None Include="Change Scripts\Daily Changes\20140313-01-CreateCompletedCodingJobsView.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140318-01-AddCsvErrorDetailsTokenTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spCsvCodingJobErrorTokenInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Support Procedures\spPsOutQueueHealthBySegment.sql" />
+    <None Include="Stored Procedures\Support Procedures\spPsOutQueueThroughputForTwoWeeksByHour.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\CompletedCodingJobs.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\CodingRequestStatus.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\CsvCodingJobErrorDetails.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spTransmissionQueueItemFindExistingActiveForCodingDecision.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140404-01-AddTransmissionQueueItemLoadSourceTransmissionsTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140408-01-AddTransmissionQueueItemsPriorityStudiesTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spOutTransmissionsPrioritizeStudy.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Support Procedures\spPsSegmentStudyReport.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spTransmissionQueueItemGetBySourceTransmissionType.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Support Procedures\spPSSingleTaskAudit.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Support Procedures\spTaskByProperty.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Support Procedures\spPSReQueueTransmission.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140430-01-FixExternalVerbatimSecurity.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140408-01-AddTransmissionQueueItemsPriorityStudiesTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spOutTransmissionsPrioritizeStudy.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Support Procedures\spPsSegmentStudyReport.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spConfigurationFetchByTag.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spStdStrngTypFtch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spStdStrngTypFtchByTyp.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spStdStrngTypLd.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryVersionLoadAll.sql" />
+    <None Include="Stored Procedures\Coder Security\spUserFetch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spUserLoadAll.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spRoleFetch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spRoleInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spRoleUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spRoleDelete.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spModuleActionFetch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spModuleActionLoadByModuleName.sql" />
+    <None Include="Stored Procedures\Coder Security\spRoleActionLoadByRole.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spRoleActionInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spRoleActionDelete.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spUserObjectRoleLoadBySegment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spUserObjectRoleFetch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spUserObjectRoleInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spUserObjectRoleUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spUserObjectRoleDelete.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spUserGetByIMedidataId.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spSegmentGetByIMedidataId.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spSecurityModuleGetByName.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spUserInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spRoleActionUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140509-01-CleanDB.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spSegmentLoadAll.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spObjectSegmentFetch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spUserUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spObjectSegmentInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spObjectSegmentUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spObjectSegmentGetByObject.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Jobs\step1_install_stored_procs.sql" />
+    <None Include="Jobs\step2_job_IndexOptimize_and_Stats.sql" />
+    <None Include="Jobs\step3_job_command_log_cleanup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140616-01-UpdateWorkflowActions.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140617-01-UpdateWorkflowStates.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140618-01-UpdateWorkflowVariables.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140618-02-DropWorfklowTables.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_InValidateTasks.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Synonym\spGetAutoApprovalConfiguration.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Synonym\spSynonymListGetById.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_RequeueTermsFailedDueToWrongMessageType.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_InvestigateProvisionalSynonyms.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_ApproveProvisionalSynonyms.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_ResetTasksToStart.sql" />
+    <None Include="Stored Procedures\Synonym\spVolatileSynonymUploadRequestLineQueueDelete.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Synonym\spSynonymUploadErrorInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Synonym\spSynonymUploadErrorGetById.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Support Procedures\spPSReportOnCoding.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140720-01-MigrateToRoleTable.sql" />
+    <None Include="CMP\spCheckAutoCoding.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\spCheckAutoCodingCrossLevelMiss.sql" />
+    <None Include="Stored Procedures\Coder Security\spRoleLoadBySegment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140807-01-MigrateToWorkflowRoleTable_NewColumn.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140807-02-MigrateToWorkflowRoleTable_MigrateData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140807-03-MigrateToWorkflowRoleTable_OldColumnDrop.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Synonym\spSynonymUploadGetByListId.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Synonym\spSynonymUploadStatisticsUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spLoadUserRolesForModule.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140826-01-UserObjectRole_OldColumnDrop.sql" />
+    <None Include="CMP\spCheckFailedTransmissionSourceProperties.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Support Procedures\spReportSynonymMetrics.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_PurgeUnsentQuery.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140902-01-RoleAndActionsChanges.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140902-02-UserWorkflowRole.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spConfigurationInsert.sql" />
+    <None Include="Stored Procedures\Coder Other\spConfigurationUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140905-01-DropLocalizations.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140911-01-FixTemplates.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140911-02-PopulateTemplates.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140911-03-DropOldTemplates.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spSynonymUploadDataCleanup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_PurgeZombieRequests.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Change Scripts\Daily Changes\20140930-01-CompressXmlContent.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Synonym\spSynonymListStatusUpdate.sql" />
+    <None Include="CMP\CMP_SecurityAudit.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spObjectSegmentLoadDictionariesMissingSubscription.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Support Procedures\spCommunicationTally.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_ResetCodingElementsToStart.sql" />
+    <None Include="CMP\CMP_ResetCodingElementsToStartByCodingElementID.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="User-Defined Functions\Coder\fnPassesReclassifyAssignmentFilter.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="User-Defined Functions\Coder\fnPassesReclassifyHistoryFilter.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spUserPreferencesUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spUserPreferencesInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Security\spUserPreferencesLoadBySegmentUser.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Synonym\spSynonymListGetRegistrationsById.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\spCheckDefaultRoles.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="User-Defined Functions\Coder\fnGetHistoricalVersionIdForTaskHistory.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_FixDuplicateEmptyVerbatims.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_FixDuplicateEmptyVerbatimsDebug.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_spMassExtractionOdm.sql" />
+    <None Include="CMP\_CodingOdmValues.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_AssignUserToApplicationSecurity.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spStudyDictionaryVersionHistoryLoad.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDictionarySegmentConfigurationInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDictionarySegmentConfigurationUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDictionarySegmentConfigurationGetBySegmentAndDictionary.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\spCoder_CMP_MoveStudyRename.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spSetupGranularDefaultConfiguration.sql" />
+    <None Include="CMP\spCoder_CMP_CreateMissingProjectRegistration.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spGetUserNameByLogin.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spGetDictionaryAndVersions.sql" />
+    <None Include="CMP\CMP_ChangeProjectName.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\spCoder_CMP_DeactivateSynonymsOnDeletedLists.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\spCoder_CMP_CreateMissingApplicationAdmin.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spGetDictionaryAndLevels.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\spCoder_CMP_ForceCompleteFailedLongRunningTasks.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spGetSourceSystemApplicationData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spGetCurrentCodingElement.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spGetSegmentSetupDataByUserName.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="S3Migration\spGenerateSupplementalDictionaryData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\Release.2015.3.0\CMP_PurgeMidwaySynonymMigrations.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\Release.2015.3.0\CMP_MoratoriumOnMigrations.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\Release.2015.3.0\CMP_UpdateCodingElementsCodingPath.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spCreateWorkFlowRole.sql" />
+    <None Include="Stored Procedures\Automation\spDeleteWorkFlowRole.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spProjectDictionaryRegistrationGetByProjectAndRegistration.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="S3Migration\spMergeMedraMedHistoryCodingPatterns.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spDeleteGeneralRole.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="User-Defined Functions\Coder\fnGetLocaleFromDictionaryVersionLocaleKey.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\Release.2015.3.0\CMP_MidwaySynonymMigrationsReport.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDoNotAutoCodeListReadByDictionaryAndSegment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDoNotAutoCodeListInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDoNotAutoCodeListReadByNameAndSegment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spDoNotAutoCodeListReadById.sql" />
+    <None Include="Stored Procedures\Automation\spGetRolesManagementSetupData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Support Procedures\RebuildAllIndexesInDb.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spGetStudyDataByProject.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\Release.2015.3.0\CMP_spMergePatterns.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spDeleteDoNotAutoCodeTerms.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Automation\spInsertDoNotAutoCodeTerms.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\Release.2015.3.0\CMP_FixWrongAssignedSynonyms.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\Release.2015.3.0\CMP_spFixStuckStudyMigration.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\2015.3.0+\CMP_FixDuplicateCodingPatterns.sql" />
+    <None Include="CMP\Release.2015.3.0\CMP_FixOldSynonymLists.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="User-Defined Functions\Coder\fnRemoveNonAlphaCharacters.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Diagnostics\dgxSynonymsAcrossCEGs.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\2015.3.0+\CMP_FixNonConflictingCEGs.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Diagnostics\dgxTasksAcrossCEGs.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\2015.3.0+\CMP_FixReMappableCEGs.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\2015.3.0+\CMP_FixFromUseSynonyms.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\spCoder_CMP_MoveStudyRenameUsingStudyId.sql" />
+    <None Include="CMP\spCoder_CMP_MoveStudyRenameUsingUUID.sql" />
+    <None Include="CMP\CMP_UpdateStudyProjectName.sql" />
+    <None Include="CMP\spCoder_CMP_MoveStudyRenameUsingStudyId.sql" />
+    <None Include="CMP\spCoder_CMP_MoveStudyRenameUsingUUID.sql" />
+    <None Include="CMP\CMP_UpdateStudyProjectName.sql" />
+    <None Include="CMP\CMP_FixMissingTQItem.sql" />
+    <None Include="CMP\spTaskProcessingThroughputCheck.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\spCoder_CMP_DeletePriorFailedStudyRegistrations.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Diagnostics\dgxRegistrationIntegrity.sql" />
+    <None Include="CMP\2015.3.0+\CMP_FixMissingCEGs.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_FixCEGCompSuppCount.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\2015.3.0+\CMP_FixDuplicateCEGs.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="User-Defined Functions\Coder\fnSynonymGroupVerbatims.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternSearchEnglish.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternSearchJapanese.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spGroupVerbatimKorFetch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spGroupVerbatimChnFetch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spGroupVerbatimKorInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spGroupVerbatimChnInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spGroupVerbatimKorGetByVerbatimLocale.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spGroupVerbatimChnGetByVerbatimLocale.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternSearchKorean.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spSegmentedGroupCodingPatternSearchChinese.sql" />
+    <None Include="Stored Procedures\Automation\spCreationDateAgingByCodingElementUUID.sql" />
+    <None Include="Stored Procedures\Automation\spGetQueryUUIDByCodingElementUUID.sql" />
+    <None Include="User-Defined Functions\Coder\fnIsInDelimitedString.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\spCoder_CMP_MoveProjectRegistrationsForSyncError.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CleanWipe\spDBWipe.sql" />
+    <None Include="Stored Procedures\Automation\spAgeSynonymCreationDate.sql" />
+    <None Include="CMP\spCoder_CMP_DeleteUnusedStudyRegistrations.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Stored Procedures\Coder Other\spProjectDictionaryRegistrationHasCodingData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\2015.3.0+\CMP_CleanupBlankRegistrationNames.sql" />
+    <None Include="CMP\spCoder_CMP_RemoveUUIDForInvalidatedCEs.sql" />
+    <None Include="CMP\CMP_RenameSegment.sql" />
+    <None Include="CMP\spCoder_CMP_ChangeSegmentNameAndOID.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\spCoder_CMP_DeleteUnusedProjectRegistration.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMP\CMP_DeleteStudyProject.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CRI\MEV\CRICompletedCodingJobs.sql" />
+    <None Include="CRI\MEV\EDCTables.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CRI\MEV\spCriEdcDataFetch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CRI\MEV\spCriEdcDataUpdate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CRI\MEV\spCriEdcDataInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CRI\MEV\spCriEdcDataGetRegisteredSynonymList.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CRI\CodingConfigurationAccess\spConfigurationFetchByTag_CRI.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CRI\CodingConfigurationAccess\spDictionarySegmentConfigurationGetBySegmentAndDictionary_CRI.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CRI\CodingConfigurationAccess\spDoNotAutoCodeListInsert_CRI.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CRI\CodingConfigurationAccess\spDoNotAutoCodeListReadByDictionaryAndSegment_CRI.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CRI\CodingConfigurationAccess\spDoNotAutoCodeTermsLoad_CRI.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CRI\CodingConfigurationAccess\spSynonymLoadBySynonymList_CRI.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PreQMMigration\spRaveCoderExtract.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PreQMMigration\RaveExtractCreateTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PreQMMigration\spCorrelateCoderTasks.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CRI\CodingConfigurationAccess\spCodingPatternInsert_CRI.sql" />
+    <None Include="CRI\CodingConfigurationAccess\spCodingPatternGetByPath_CRI.sql" />
+    <None Include="CRI\CodingConfigurationAccess\spSegmentedGroupCodingPatternGetByGroup_CRI.sql" />
+    <None Include="CRI\CodingConfigurationAccess\spSegmentedGroupCodingPatternUpdate_CRI.sql" />
+    <None Include="CRI\CodingConfigurationAccess\spSegmentedGroupCodingPatternInsert_CRI.sql" />
+    <None Include="CRI\MEV\spCriEdcDataGetByStudy.sql" />
+  </ItemGroup>
+</Project>

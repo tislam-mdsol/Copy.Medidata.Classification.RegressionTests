@@ -1,0 +1,10 @@
+﻿
+IF EXISTS (SELECT 1 FROM SYS.TYPES WHERE NAME = 'TermPercent_UDT')
+	DROP TYPE TermPercent_UDT
+GO
+
+CREATE TYPE [dbo].TermPercent_UDT AS TABLE(
+    TermId INT PRIMARY KEY NOT NULL,
+    MatchPercent DECIMAL NOT NULL
+)
+GO 

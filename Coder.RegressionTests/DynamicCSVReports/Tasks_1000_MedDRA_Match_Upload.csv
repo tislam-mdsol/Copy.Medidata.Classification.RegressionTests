@@ -1,0 +1,1001 @@
+Test ID,Study ID,Form,Field Type,Field,Field Value,Dictionary Level,Dictionary,Priority,Locale,IsApprovalRequired,IsAutoApproval,Subject,Site ,Event,Batch Identifier
+100001,PROD,TPS,Main,Verbatim Term,Cross infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100002,PROD,TPS,Main,Verbatim Term,Injection site abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100003,PROD,TPS,Main,Verbatim Term,Lactose intolerance,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100004,PROD,TPS,Main,Verbatim Term,Pseudo lymphoma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100005,PROD,TPS,Main,Verbatim Term,Renal glycosuria,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100006,PROD,TPS,Main,Verbatim Term,Nail candida,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100007,PROD,TPS,Main,Verbatim Term,Pelvic abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100008,PROD,TPS,Main,Verbatim Term,Tuberculoid leprosy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100009,PROD,TPS,Main,Verbatim Term,Venous stasis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100010,PROD,TPS,Main,Verbatim Term,Biopsy retina,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100011,PROD,TPS,Main,Verbatim Term,CSF protein normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100012,PROD,TPS,Main,Verbatim Term,Visual evoked potentials abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100013,PROD,TPS,Main,Verbatim Term,Rinne tuning fork test normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100014,PROD,TPS,Main,Verbatim Term,Rinne tuning fork test abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100015,PROD,TPS,Main,Verbatim Term,Hepatic trauma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100016,PROD,TPS,Main,Verbatim Term,Post myelography headache,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100017,PROD,TPS,Main,Verbatim Term,Diverticulum duodenal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100018,PROD,TPS,Main,Verbatim Term,CSF pH decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100019,PROD,TPS,Main,Verbatim Term,Vulvitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100020,PROD,TPS,Main,Verbatim Term,Infected bunion,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100021,PROD,TPS,Main,Verbatim Term,Boutonneuse fever,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100022,PROD,TPS,Main,Verbatim Term,Visual acuity tests,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100023,PROD,TPS,Main,Verbatim Term,Choroidal rupture,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100024,PROD,TPS,Main,Verbatim Term,Tinea blanca,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100025,PROD,TPS,Main,Verbatim Term,Polyneuropathy mumps,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100026,PROD,TPS,Main,Verbatim Term,Ecthyma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100027,PROD,TPS,Main,Verbatim Term,CSF lactate dehydrogenase,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100028,PROD,TPS,Main,Verbatim Term,CSF lactate dehydrogenase increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100029,PROD,TPS,Main,Verbatim Term,Lumbar puncture normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100030,PROD,TPS,Main,Verbatim Term,Biopsy sclera normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100031,PROD,TPS,Main,Verbatim Term,Adenocarcinoma with transitional cell carcinoma of bladder st IV,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100032,PROD,TPS,Main,Verbatim Term,Oral infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100033,PROD,TPS,Main,Verbatim Term,Epiduroscopy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100034,PROD,TPS,Main,Verbatim Term,Superinfection lung,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100035,PROD,TPS,Main,Verbatim Term,Spinal cord haemorrhage,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100036,PROD,TPS,Main,Verbatim Term,Subacute endocarditis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100037,PROD,TPS,Main,Verbatim Term,Genotype drug resistance test,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100038,PROD,TPS,Main,Verbatim Term,Clitoris abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100039,PROD,TPS,Main,Verbatim Term,Angiotensin converting enzyme inhibitor foetopathy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100040,PROD,TPS,Main,Verbatim Term,Infected epidermal cyst,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100041,PROD,TPS,Main,Verbatim Term,Perineal abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100042,PROD,TPS,Main,Verbatim Term,Angiogram cerebral,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100043,PROD,TPS,Main,Verbatim Term,Bovine pustular stomatitis virus infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100044,PROD,TPS,Main,Verbatim Term,Mixed incontinence,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100045,PROD,TPS,Main,Verbatim Term,VATER syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100046,PROD,TPS,Main,Verbatim Term,N-telopeptide urine,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100047,PROD,TPS,Main,Verbatim Term,Computerised tomogram head,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100048,PROD,TPS,Main,Verbatim Term,Emphysematous cystitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100049,PROD,TPS,Main,Verbatim Term,Visual tracking test normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100050,PROD,TPS,Main,Verbatim Term,Visual tracking test abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100051,PROD,TPS,Main,Verbatim Term,Psychiatric investigation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100052,PROD,TPS,Main,Verbatim Term,Meningitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100053,PROD,TPS,Main,Verbatim Term,Oculopneumoplethysmogram,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100054,PROD,TPS,Main,Verbatim Term,Tonsillitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100055,PROD,TPS,Main,Verbatim Term,CSF granulocyte count,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100056,PROD,TPS,Main,Verbatim Term,CSF granulocyte count abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100057,PROD,TPS,Main,Verbatim Term,Gingival infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100058,PROD,TPS,Main,Verbatim Term,Encephalitic infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100059,PROD,TPS,Main,Verbatim Term,Bacterial pyelonephritis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100060,PROD,TPS,Main,Verbatim Term,CSF lactate increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100061,PROD,TPS,Main,Verbatim Term,CSF myelin basic protein decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100062,PROD,TPS,Main,Verbatim Term,Fungal rash,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100063,PROD,TPS,Main,Verbatim Term,Hepatitis infectious,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100064,PROD,TPS,Main,Verbatim Term,Otitis media chronic,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100065,PROD,TPS,Main,Verbatim Term,Parapharyngeal abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100066,PROD,TPS,Main,Verbatim Term,Infestation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100067,PROD,TPS,Main,Verbatim Term,Uterine injury,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100068,PROD,TPS,Main,Verbatim Term,Retinal function test abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100069,PROD,TPS,Main,Verbatim Term,Peripheral nervous system function test abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100070,PROD,TPS,Main,Verbatim Term,Vestibular function test abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100071,PROD,TPS,Main,Verbatim Term,Chronic sinusitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100072,PROD,TPS,Main,Verbatim Term,Genital infection male,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100073,PROD,TPS,Main,Verbatim Term,Cerebral parenchymal calcification,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100074,PROD,TPS,Main,Verbatim Term,Pilonidal cyst,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100075,PROD,TPS,Main,Verbatim Term,Herpes dermatitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100076,PROD,TPS,Main,Verbatim Term,Sternitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100077,PROD,TPS,Main,Verbatim Term,Neuropsychological test abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100078,PROD,TPS,Main,Verbatim Term,Infusion site pustule,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100079,PROD,TPS,Main,Verbatim Term,Incision site infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100080,PROD,TPS,Main,Verbatim Term,Atrioventricular block third degree,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100081,PROD,TPS,Main,Verbatim Term,Colon perforation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100082,PROD,TPS,Main,Verbatim Term,Coryza-like,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100083,PROD,TPS,Main,Verbatim Term,Cross infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100084,PROD,TPS,Main,Verbatim Term,Enterocolitis pseudomembranous,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100085,PROD,TPS,Main,Verbatim Term,Hemochromatosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100086,PROD,TPS,Main,Verbatim Term,Hypertrophy thymus,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100087,PROD,TPS,Main,Verbatim Term,Lactose intolerance,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100088,PROD,TPS,Main,Verbatim Term,Lymphomoid,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100089,PROD,TPS,Main,Verbatim Term,Pseudo lymphoma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100090,PROD,TPS,Main,Verbatim Term,Swelling lips,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100091,PROD,TPS,Main,Verbatim Term,Genital warts,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100092,PROD,TPS,Main,Verbatim Term,Diverticulum duodenal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100093,PROD,TPS,Main,Verbatim Term,"Amniocentesis exc.chromosome, neural tube screening",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100094,PROD,TPS,Main,Verbatim Term,Venous stasis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100095,PROD,TPS,Main,Verbatim Term,Alactasia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100096,PROD,TPS,Main,Verbatim Term,Post myelography headache,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100097,PROD,TPS,Main,Verbatim Term,Pre-syncope,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100098,PROD,TPS,Main,Verbatim Term,Keratosis pillaris,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100099,PROD,TPS,Main,Verbatim Term,SBP increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100100,PROD,TPS,Main,Verbatim Term,Campylobacter gastritis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100101,PROD,TPS,Main,Verbatim Term,Throat infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100102,PROD,TPS,Main,Verbatim Term,Intestinal disaccharidase deficiencies and disaccharide malabsorption,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100103,PROD,TPS,Main,Verbatim Term,"Stress incontinence, female",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100104,PROD,TPS,Main,Verbatim Term,Choroidal rupture,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100105,PROD,TPS,Main,Verbatim Term,Other specified congenital anomalies of face and neck,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100106,PROD,TPS,Main,Verbatim Term,Difficulty in walking involving joint of other specified sites,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100107,PROD,TPS,Main,Verbatim Term,Cataplexy and narcolepsy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100108,PROD,TPS,Main,Verbatim Term,Serous labyrinthitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100109,PROD,TPS,Main,Verbatim Term,"Anemia of mother, with delivery, with mention of postpartum complication",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100110,PROD,TPS,Main,Verbatim Term,"Major puerperal infection, delivered, with mention of postpartum complication",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100111,PROD,TPS,Main,Verbatim Term,"Rupture of uterus during labor, unspecified as to episode of care or not applicable",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100112,PROD,TPS,Main,Verbatim Term,"Concussion with prolonged loss of consciousness, without return to pre-existing conscious level",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100113,PROD,TPS,Main,Verbatim Term,Late effect of superficial injury,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100114,PROD,TPS,Main,Verbatim Term,"Superficial injury of hip, thigh, leg, and ankle",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100115,PROD,TPS,Main,Verbatim Term,"Abrasion or friction burn of other, multiple, and unspecified sites, without mention of infection",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100116,PROD,TPS,Main,Verbatim Term,Folliculitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100117,PROD,TPS,Main,Verbatim Term,Pleocytosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100118,PROD,TPS,Main,Verbatim Term,Cardiac pacemaker insertion,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100119,PROD,TPS,Main,Verbatim Term,Nail tinea,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100120,PROD,TPS,Main,Verbatim Term,Flea infestation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100121,PROD,TPS,Main,Verbatim Term,Smallpox,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100122,PROD,TPS,Main,Verbatim Term,Gallbladder drainage,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100123,PROD,TPS,Main,Verbatim Term,Tendon repair,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100124,PROD,TPS,Main,Verbatim Term,Difficulty in walking,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100125,PROD,TPS,Main,Verbatim Term,Bicuspid aortic valve,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100126,PROD,TPS,Main,Verbatim Term,Borderline leprosy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100127,PROD,TPS,Main,Verbatim Term,CSF glucose,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100128,PROD,TPS,Main,Verbatim Term,Red blood cells CSF positive,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100129,PROD,TPS,Main,Verbatim Term,Single vessel bypass graft,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100130,PROD,TPS,Main,Verbatim Term,Ultrasound skull normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100131,PROD,TPS,Main,Verbatim Term,Pathogen resistance,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100132,PROD,TPS,Main,Verbatim Term,Electrocochleogram abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100133,PROD,TPS,Main,Verbatim Term,Fundoscopy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100134,PROD,TPS,Main,Verbatim Term,Opticokinetic nystagmus tests abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100135,PROD,TPS,Main,Verbatim Term,Diabetic retinal oedema,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100136,PROD,TPS,Main,Verbatim Term,Fungaemia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100137,PROD,TPS,Main,Verbatim Term,Electrooculogram abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100138,PROD,TPS,Main,Verbatim Term,Hypercalcaemia of malignancy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100139,PROD,TPS,Main,Verbatim Term,Kerion,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100140,PROD,TPS,Main,Verbatim Term,Hypnagogic hallucination,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100141,PROD,TPS,Main,Verbatim Term,Nuclear magnetic resonance imaging brain abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100142,PROD,TPS,Main,Verbatim Term,CSF specific gravity decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100143,PROD,TPS,Main,Verbatim Term,Squamous cell with transitional cell carcinoma of bladder recurrent,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100144,PROD,TPS,Main,Verbatim Term,Myocardial rupture,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100145,PROD,TPS,Main,Verbatim Term,Acute endocarditis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100146,PROD,TPS,Main,Verbatim Term,Application site infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100147,PROD,TPS,Main,Verbatim Term,Pharyngotonsillitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100148,PROD,TPS,Main,Verbatim Term,Histoplasmosis cutaneous,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100149,PROD,TPS,Main,Verbatim Term,Injection site cellulitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100150,PROD,TPS,Main,Verbatim Term,Sputum purulent,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100151,PROD,TPS,Main,Verbatim Term,Abscess soft tissue,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100152,PROD,TPS,Main,Verbatim Term,Burn infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100153,PROD,TPS,Main,Verbatim Term,Dermatitis infected,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100154,PROD,TPS,Main,Verbatim Term,Catheter sepsis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100155,PROD,TPS,Main,Verbatim Term,Skin squamous cell carcinoma surgery,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100156,PROD,TPS,Main,Verbatim Term,Trichophytic granuloma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100157,PROD,TPS,Main,Verbatim Term,Vascular rupture,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100158,PROD,TPS,Main,Verbatim Term,General nutrition disorder,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100159,PROD,TPS,Main,Verbatim Term,Retinoic acid syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100160,PROD,TPS,Main,Verbatim Term,Erythema induratum,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100161,PROD,TPS,Main,Verbatim Term,Renal papillitis necrotising,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100162,PROD,TPS,Main,Verbatim Term,Miliary pneumonia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100163,PROD,TPS,Main,Verbatim Term,Satyrism,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100164,PROD,TPS,Main,Verbatim Term,Blood incompatibility haemolytic anaemia of newborn,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100165,PROD,TPS,Main,Verbatim Term,Ophthalmoplegic migraine,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100166,PROD,TPS,Main,Verbatim Term,Phlebitis infective,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100167,PROD,TPS,Main,Verbatim Term,Gastric infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100168,PROD,TPS,Main,Verbatim Term,Pneumonia aspergillus,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100169,PROD,TPS,Main,Verbatim Term,Infected insect bite,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100170,PROD,TPS,Main,Verbatim Term,Oculopneumoplethysmogram normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100171,PROD,TPS,Main,Verbatim Term,Infective aneurysm,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100172,PROD,TPS,Main,Verbatim Term,Urethritis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100173,PROD,TPS,Main,Verbatim Term,Pyothorax,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100174,PROD,TPS,Main,Verbatim Term,Pacemaker generated rhythm,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100175,PROD,TPS,Main,Verbatim Term,Cystitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100176,PROD,TPS,Main,Verbatim Term,CSF cell count decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100177,PROD,TPS,Main,Verbatim Term,Lobar pneumonia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100178,PROD,TPS,Main,Verbatim Term,Otitis media acute,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100179,PROD,TPS,Main,Verbatim Term,Urethral abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100180,PROD,TPS,Main,Verbatim Term,Labyrinthitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100181,PROD,TPS,Main,Verbatim Term,Lung infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100182,PROD,TPS,Main,Verbatim Term,Mastoid abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100183,PROD,TPS,Main,Verbatim Term,Skeletal injury,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100184,PROD,TPS,Main,Verbatim Term,Adenocarcinoma with transitional cell carcinoma of bladder,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100185,PROD,TPS,Main,Verbatim Term,Zoonosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100186,PROD,TPS,Main,Verbatim Term,Respiratory tract infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100187,PROD,TPS,Main,Verbatim Term,Uterine abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100188,PROD,TPS,Main,Verbatim Term,Bowel movement irregularity,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100189,PROD,TPS,Main,Verbatim Term,Unresponsive to verbal stimuli,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100190,PROD,TPS,Main,Verbatim Term,Posterior capsule rupture,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100191,PROD,TPS,Main,Verbatim Term,Cardiac valve abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100192,PROD,TPS,Main,Verbatim Term,Graft versus host disease in skin,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100193,PROD,TPS,Main,Verbatim Term,Testicular abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100194,PROD,TPS,Main,Verbatim Term,Drug exposure before pregnancy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100195,PROD,TPS,Main,Verbatim Term,Pyelonephritis viral,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100196,PROD,TPS,Main,Verbatim Term,Mini mental status examination abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100197,PROD,TPS,Main,Verbatim Term,Infusion site anaesthesia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100198,PROD,TPS,Main,Verbatim Term,Angio-edema,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100199,PROD,TPS,Main,Verbatim Term,Enteritis pseudomembranous,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100200,PROD,TPS,Main,Verbatim Term,Heart block AV complete,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100201,PROD,TPS,Main,Verbatim Term,Hemosiderosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100202,PROD,TPS,Main,Verbatim Term,Labyrinthitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100203,PROD,TPS,Main,Verbatim Term,Myasthenia gravis-like paralysis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100204,PROD,TPS,Main,Verbatim Term,Myasthenia gravis-like syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100205,PROD,TPS,Main,Verbatim Term,Myocardial rupture,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100206,PROD,TPS,Main,Verbatim Term,Pleocytosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100207,PROD,TPS,Main,Verbatim Term,Syndrome Guillain-Barre,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100208,PROD,TPS,Main,Verbatim Term,Amniocentesis for chromosomal abnormalities,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100209,PROD,TPS,Main,Verbatim Term,Condylomata acuminatum,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100210,PROD,TPS,Main,Verbatim Term,Gallbladder drainage,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100211,PROD,TPS,Main,Verbatim Term,Tendon repair,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100212,PROD,TPS,Main,Verbatim Term,Difficulty in walking,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100213,PROD,TPS,Main,Verbatim Term,Dental caries aggravated,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100214,PROD,TPS,Main,Verbatim Term,Venostasis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100215,PROD,TPS,Main,Verbatim Term,Adult dermatomyositis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100216,PROD,TPS,Main,Verbatim Term,Premature birth,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100217,PROD,TPS,Main,Verbatim Term,Chronic ambulatory peritoneal dialysis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100218,PROD,TPS,Main,Verbatim Term,Increased shortness of breath,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100219,PROD,TPS,Main,Verbatim Term,Renal concentrating power decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100220,PROD,TPS,Main,Verbatim Term,Excitement,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100221,PROD,TPS,Main,Verbatim Term,"Stress incontinence, male",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100222,PROD,TPS,Main,Verbatim Term,Other vomiting complicating pregnancy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100223,PROD,TPS,Main,Verbatim Term,"Abrasion or friction burn of hand(s) except finger(s) alone, infected",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100224,PROD,TPS,Main,Verbatim Term,"Abrasion or friction burn of hip, thigh, leg, and ankle, without mention of infection",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100225,PROD,TPS,Main,Verbatim Term,"Isoimmunization from other and unspec blood-group incompat, affecting manag of mother, delivered",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100226,PROD,TPS,Main,Verbatim Term,"Intcran inj of oth and unspec nature, with open intcran wound, with concussion, unspec",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100227,PROD,TPS,Main,Verbatim Term,Excitation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100228,PROD,TPS,Main,Verbatim Term,Fulminant hepatic failure,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100229,PROD,TPS,Main,Verbatim Term,Squamous cell with transitional cell carcinoma of bladder recurrent,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100230,PROD,TPS,Main,Verbatim Term,Dental cavity,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100231,PROD,TPS,Main,Verbatim Term,Pneumonia aspergillus,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100232,PROD,TPS,Main,Verbatim Term,Coronary restenosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100233,PROD,TPS,Main,Verbatim Term,Skin squamous cell carcinoma surgery,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100234,PROD,TPS,Main,Verbatim Term,Cataplexy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100235,PROD,TPS,Main,Verbatim Term,Cholangitis suppurative,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100236,PROD,TPS,Main,Verbatim Term,Endometritis decidual,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100237,PROD,TPS,Main,Verbatim Term,Genitalia external painful,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100238,PROD,TPS,Main,Verbatim Term,Herpes zoster,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100239,PROD,TPS,Main,Verbatim Term,Superinfection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100240,PROD,TPS,Main,Verbatim Term,Concussion,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100241,PROD,TPS,Main,Verbatim Term,Sycosis barbae,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100242,PROD,TPS,Main,Verbatim Term,Candida nappy rash,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100243,PROD,TPS,Main,Verbatim Term,Cardiac pacemaker battery replacement,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100244,PROD,TPS,Main,Verbatim Term,Corneal reflex decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100245,PROD,TPS,Main,Verbatim Term,Eaton-Lambert syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100246,PROD,TPS,Main,Verbatim Term,Biopsy cornea,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100247,PROD,TPS,Main,Verbatim Term,CSF protein decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100248,PROD,TPS,Main,Verbatim Term,Renal tuberculosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100249,PROD,TPS,Main,Verbatim Term,Visual evoked potentials normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100250,PROD,TPS,Main,Verbatim Term,Condom,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100251,PROD,TPS,Main,Verbatim Term,CSF protein,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100252,PROD,TPS,Main,Verbatim Term,Meningitis aseptic,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100253,PROD,TPS,Main,Verbatim Term,Biopsy peripheral nerve abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100254,PROD,TPS,Main,Verbatim Term,Urge incontinence,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100255,PROD,TPS,Main,Verbatim Term,Queensland tick typhus,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100256,PROD,TPS,Main,Verbatim Term,Recurring skin boils,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100257,PROD,TPS,Main,Verbatim Term,Electronystagmogram abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100258,PROD,TPS,Main,Verbatim Term,Tympanometry normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100259,PROD,TPS,Main,Verbatim Term,Slit-lamp examination,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100260,PROD,TPS,Main,Verbatim Term,CSF pressure increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100261,PROD,TPS,Main,Verbatim Term,Portal pyaemia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100262,PROD,TPS,Main,Verbatim Term,Ovarian abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100263,PROD,TPS,Main,Verbatim Term,Hypnopompic hallucination,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100264,PROD,TPS,Main,Verbatim Term,Vascular resistance pulmonary normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100265,PROD,TPS,Main,Verbatim Term,Echoencephalogram,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100266,PROD,TPS,Main,Verbatim Term,Echoencephalogram normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100267,PROD,TPS,Main,Verbatim Term,CSF specific gravity abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100268,PROD,TPS,Main,Verbatim Term,CSF specific gravity increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100269,PROD,TPS,Main,Verbatim Term,Lumbar puncture abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100270,PROD,TPS,Main,Verbatim Term,Muscle abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100271,PROD,TPS,Main,Verbatim Term,Lipogranuloma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100272,PROD,TPS,Main,Verbatim Term,Osteocalcin,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100273,PROD,TPS,Main,Verbatim Term,Ascites infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100274,PROD,TPS,Main,Verbatim Term,Meningoencephalitis bacterial,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100275,PROD,TPS,Main,Verbatim Term,Meningeal leukaemia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100276,PROD,TPS,Main,Verbatim Term,Electron radiation therapy to blood,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100277,PROD,TPS,Main,Verbatim Term,Angiogram cerebral normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100278,PROD,TPS,Main,Verbatim Term,Campylobacter intestinal infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100279,PROD,TPS,Main,Verbatim Term,Biopsy ear,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100280,PROD,TPS,Main,Verbatim Term,Sleep study normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100281,PROD,TPS,Main,Verbatim Term,CSF monocyte count,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100282,PROD,TPS,Main,Verbatim Term,CSF monocyte count decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100283,PROD,TPS,Main,Verbatim Term,Carotid artery atheroma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100284,PROD,TPS,Main,Verbatim Term,Neonatal infective mastitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100285,PROD,TPS,Main,Verbatim Term,Pilonidal cyst congenital,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100286,PROD,TPS,Main,Verbatim Term,Postoperative respiratory distress,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100287,PROD,TPS,Main,Verbatim Term,Paraoesophageal abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100288,PROD,TPS,Main,Verbatim Term,Catheter site infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100289,PROD,TPS,Main,Verbatim Term,Pyopneumothorax,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100290,PROD,TPS,Main,Verbatim Term,Hordeolum,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100291,PROD,TPS,Main,Verbatim Term,Infective tenosynovitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100292,PROD,TPS,Main,Verbatim Term,Cerebral ventriculogram abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100293,PROD,TPS,Main,Verbatim Term,Shunt infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100294,PROD,TPS,Main,Verbatim Term,Glasgow coma scale normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100295,PROD,TPS,Main,Verbatim Term,Cutaneous larva migrans,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100296,PROD,TPS,Main,Verbatim Term,Albumin CSF,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100297,PROD,TPS,Main,Verbatim Term,Streptococcal serology positive,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100298,PROD,TPS,Main,Verbatim Term,Colour vision tests normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100299,PROD,TPS,Main,Verbatim Term,Dry socket,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100300,PROD,TPS,Main,Verbatim Term,Gastrointestinal infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100301,PROD,TPS,Main,Verbatim Term,Nerve stimulation test abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100302,PROD,TPS,Main,Verbatim Term,Pyelonephritis acute,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100303,PROD,TPS,Main,Verbatim Term,Tinea infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100304,PROD,TPS,Main,Verbatim Term,Central nervous system infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100305,PROD,TPS,Main,Verbatim Term,Disaccharide metabolism disorder,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100306,PROD,TPS,Main,Verbatim Term,Peripheral nervous system function test normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100307,PROD,TPS,Main,Verbatim Term,Acute tonsillitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100308,PROD,TPS,Main,Verbatim Term,Anal infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100309,PROD,TPS,Main,Verbatim Term,Osteoprotegerin decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100310,PROD,TPS,Main,Verbatim Term,Cholecystitis infective,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100311,PROD,TPS,Main,Verbatim Term,Herpes zoster oticus,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100312,PROD,TPS,Main,Verbatim Term,Young's syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100313,PROD,TPS,Main,Verbatim Term,Stent-graft endoleak,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100314,PROD,TPS,Main,Verbatim Term,Funisitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100315,PROD,TPS,Main,Verbatim Term,Postoperative wound infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100316,PROD,TPS,Main,Verbatim Term,Extrinsic iliac vein compression,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100317,PROD,TPS,Main,Verbatim Term,Lasegue's test positive,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100318,PROD,TPS,Main,Verbatim Term,Skin infection helminthic,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100319,PROD,TPS,Main,Verbatim Term,Post procedural headache,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100320,PROD,TPS,Main,Verbatim Term,Abscess breast,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100321,PROD,TPS,Main,Verbatim Term,AV block third degree,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100322,PROD,TPS,Main,Verbatim Term,Cataplexy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100323,PROD,TPS,Main,Verbatim Term,Myocardial rupture (post infarct),LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100324,PROD,TPS,Main,Verbatim Term,Reaction lymphoma-like,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100325,PROD,TPS,Main,Verbatim Term,Vaccinia aggravated,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100326,PROD,TPS,Main,Verbatim Term,Concussion,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100327,PROD,TPS,Main,Verbatim Term,Pharyngitis (excl tonsillitis),LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100328,PROD,TPS,Main,Verbatim Term,Tendon reconstruction,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100329,PROD,TPS,Main,Verbatim Term,Pseudomembranous colitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100330,PROD,TPS,Main,Verbatim Term,Acute GVH disease,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100331,PROD,TPS,Main,Verbatim Term,Late period,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100332,PROD,TPS,Main,Verbatim Term,Swollen lips,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100333,PROD,TPS,Main,Verbatim Term,Laugh incontinence,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100334,PROD,TPS,Main,Verbatim Term,Cervical dyskaryosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100335,PROD,TPS,Main,Verbatim Term,Reflex response audiometry abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100336,PROD,TPS,Main,Verbatim Term,Lip swelling,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100337,PROD,TPS,Main,Verbatim Term,Acute posthaemorrhagic anaemia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100338,PROD,TPS,Main,Verbatim Term,Pneumonia aspergilla,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100339,PROD,TPS,Main,Verbatim Term,Difficulty in walking involving lower leg joint,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100340,PROD,TPS,Main,Verbatim Term,Malignant neoplasm of thyroid gland,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100341,PROD,TPS,Main,Verbatim Term,Spasm of sphincter of Oddi,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100342,PROD,TPS,Main,Verbatim Term,Rupture of uterus during and after labor,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100343,PROD,TPS,Main,Verbatim Term,Pain abdo,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100344,PROD,TPS,Main,Verbatim Term,Concussion with moderate loss of consciousness,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100345,PROD,TPS,Main,Verbatim Term,"Other and unspecified superficial injury of trunk, infected",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100346,PROD,TPS,Main,Verbatim Term,"Abrasion or friction burn of shoulder and upper arm, infected",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100347,PROD,TPS,Main,Verbatim Term,"Other and unspecified superficial injury of shoulder and upper arm, infected",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100348,PROD,TPS,Main,Verbatim Term,"Abrasion or friction burn of foot and toe(s), without mention of infection",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100349,PROD,TPS,Main,Verbatim Term,"Intcran inj of oth and unspec nature, w/o ment of open intcran wound, with no loc",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100350,PROD,TPS,Main,Verbatim Term,"Concussion, with open intracranial wound",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100351,PROD,TPS,Main,Verbatim Term,Tenorrhaphy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100352,PROD,TPS,Main,Verbatim Term,Cavity NOS,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100353,PROD,TPS,Main,Verbatim Term,Hypopyon,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100354,PROD,TPS,Main,Verbatim Term,Respiratory distress,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100355,PROD,TPS,Main,Verbatim Term,Penile abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100356,PROD,TPS,Main,Verbatim Term,Atrioventricular block complete,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100357,PROD,TPS,Main,Verbatim Term,Hair plucking,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100358,PROD,TPS,Main,Verbatim Term,Body tinea,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100359,PROD,TPS,Main,Verbatim Term,Genital pain male,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100360,PROD,TPS,Main,Verbatim Term,Detached retina repair,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100361,PROD,TPS,Main,Verbatim Term,Uterine rupture,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100362,PROD,TPS,Main,Verbatim Term,Epithelioma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100363,PROD,TPS,Main,Verbatim Term,CSF electrophoresis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100364,PROD,TPS,Main,Verbatim Term,Biopsy retina normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100365,PROD,TPS,Main,Verbatim Term,Stitch abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100366,PROD,TPS,Main,Verbatim Term,CSF electrophoresis normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100367,PROD,TPS,Main,Verbatim Term,Rhesus haemolytic disease of newborn,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100368,PROD,TPS,Main,Verbatim Term,Cellulitis streptococcal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100369,PROD,TPS,Main,Verbatim Term,Acoustic stimulation tests normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100370,PROD,TPS,Main,Verbatim Term,Tympanometry,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100371,PROD,TPS,Main,Verbatim Term,Visual field tests,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100372,PROD,TPS,Main,Verbatim Term,Visual field tests abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100373,PROD,TPS,Main,Verbatim Term,Echoencephalogram abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100374,PROD,TPS,Main,Verbatim Term,Cognitive deterioration,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100375,PROD,TPS,Main,Verbatim Term,Tinea nigra,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100376,PROD,TPS,Main,Verbatim Term,Paravaccinia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100377,PROD,TPS,Main,Verbatim Term,Yaws of skin,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100378,PROD,TPS,Main,Verbatim Term,Colostomy infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100379,PROD,TPS,Main,Verbatim Term,Colonic perforation postoperative,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100380,PROD,TPS,Main,Verbatim Term,CSF lactate dehydrogenase decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100381,PROD,TPS,Main,Verbatim Term,Ultrasound eye,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100382,PROD,TPS,Main,Verbatim Term,Squamous cell with transitional cell carcinoma of bladder st II,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100383,PROD,TPS,Main,Verbatim Term,Tooth infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100384,PROD,TPS,Main,Verbatim Term,Pancreatic abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100385,PROD,TPS,Main,Verbatim Term,Superinfection oral,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100386,PROD,TPS,Main,Verbatim Term,Posturography,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100387,PROD,TPS,Main,Verbatim Term,Lymph node abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100388,PROD,TPS,Main,Verbatim Term,CSF glucose increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100389,PROD,TPS,Main,Verbatim Term,Osteocalcin decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100390,PROD,TPS,Main,Verbatim Term,Somatosensory evoked potentials,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100391,PROD,TPS,Main,Verbatim Term,Pyloric abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100392,PROD,TPS,Main,Verbatim Term,Nitritoid crisis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100393,PROD,TPS,Main,Verbatim Term,Herpetic stomatitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100394,PROD,TPS,Main,Verbatim Term,Skin bacterial infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100395,PROD,TPS,Main,Verbatim Term,Campylobacter gastroenteritis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100396,PROD,TPS,Main,Verbatim Term,Adherent leukoma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100397,PROD,TPS,Main,Verbatim Term,Injection site pustule,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100398,PROD,TPS,Main,Verbatim Term,Tinea versicolour,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100399,PROD,TPS,Main,Verbatim Term,Psoas abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100400,PROD,TPS,Main,Verbatim Term,Septic phlebitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100401,PROD,TPS,Main,Verbatim Term,Hepatobiliary infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100402,PROD,TPS,Main,Verbatim Term,Cutaneous anthrax,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100403,PROD,TPS,Main,Verbatim Term,Seminal vesicular infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100404,PROD,TPS,Main,Verbatim Term,Corneal light reflex test,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100405,PROD,TPS,Main,Verbatim Term,Chest wall abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100406,PROD,TPS,Main,Verbatim Term,Cerebral ventriculogram,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100407,PROD,TPS,Main,Verbatim Term,Wound abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100408,PROD,TPS,Main,Verbatim Term,Application site excoriation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100409,PROD,TPS,Main,Verbatim Term,Thyroid gland cancer,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100410,PROD,TPS,Main,Verbatim Term,Excoriation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100411,PROD,TPS,Main,Verbatim Term,Retinogram normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100412,PROD,TPS,Main,Verbatim Term,Retinogram abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100413,PROD,TPS,Main,Verbatim Term,CSF myelin basic protein increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100414,PROD,TPS,Main,Verbatim Term,Intervertebral discitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100415,PROD,TPS,Main,Verbatim Term,CSF cell count,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100416,PROD,TPS,Main,Verbatim Term,Diabetic eye disease,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100417,PROD,TPS,Main,Verbatim Term,CSF cell count increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100418,PROD,TPS,Main,Verbatim Term,Osteomyelitis chronic,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100419,PROD,TPS,Main,Verbatim Term,Perinephric abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100420,PROD,TPS,Main,Verbatim Term,Salpingitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100421,PROD,TPS,Main,Verbatim Term,Abdominal abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100422,PROD,TPS,Main,Verbatim Term,Intraocular pressure test normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100423,PROD,TPS,Main,Verbatim Term,Subcutaneous abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100424,PROD,TPS,Main,Verbatim Term,Corneal infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100425,PROD,TPS,Main,Verbatim Term,Perianal fungal infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100426,PROD,TPS,Main,Verbatim Term,Septic rash,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100427,PROD,TPS,Main,Verbatim Term,Encephaloduroarteriosynangiosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100428,PROD,TPS,Main,Verbatim Term,Implant site pustules,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100429,PROD,TPS,Main,Verbatim Term,Incision site cellulitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100430,PROD,TPS,Main,Verbatim Term,Arteriovenous graft aneurysm,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100431,PROD,TPS,Main,Verbatim Term,Chronic allograft nephropathy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100432,PROD,TPS,Main,Verbatim Term,Disease Addison's,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100433,PROD,TPS,Main,Verbatim Term,Myasthenia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100434,PROD,TPS,Main,Verbatim Term,Acute pharyngitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100435,PROD,TPS,Main,Verbatim Term,Diarrhoea campylobacter,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100436,PROD,TPS,Main,Verbatim Term,Thyroid gland cancer,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100437,PROD,TPS,Main,Verbatim Term,Hair plucking,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100438,PROD,TPS,Main,Verbatim Term,Campylobacter gastroenteritis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100439,PROD,TPS,Main,Verbatim Term,Complete heart block,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100440,PROD,TPS,Main,Verbatim Term,Lymphoma like reaction,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100441,PROD,TPS,Main,Verbatim Term,Lip oedema,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100442,PROD,TPS,Main,Verbatim Term,Idiopathic narcolepsy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100443,PROD,TPS,Main,Verbatim Term,Hodgkins-like,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100444,PROD,TPS,Main,Verbatim Term,Nausea & vomiting in mother,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100445,PROD,TPS,Main,Verbatim Term,CAPD,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100446,PROD,TPS,Main,Verbatim Term,Uterine rupture,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100447,PROD,TPS,Main,Verbatim Term,Atrioventricular block complete,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100448,PROD,TPS,Main,Verbatim Term,Increased SOB,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100449,PROD,TPS,Main,Verbatim Term,Mycobacterium tuberculosis cervical adenitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100450,PROD,TPS,Main,Verbatim Term,Pseudo-blepharoptosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100451,PROD,TPS,Main,Verbatim Term,Oral mucosa swollen,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100452,PROD,TPS,Main,Verbatim Term,Comedo,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100453,PROD,TPS,Main,Verbatim Term,Disaccharide metabolism disorder NOS,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100454,PROD,TPS,Main,Verbatim Term,Immunodeficiency with increased IgM,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100455,PROD,TPS,Main,Verbatim Term,Heart block complete,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100456,PROD,TPS,Main,Verbatim Term,"Difficulty in walking involving joint, site unspecified",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100457,PROD,TPS,Main,Verbatim Term,Difficulty in walking involving joint of pelvic region and thigh,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100458,PROD,TPS,Main,Verbatim Term,"Late vomiting of pregnancy, unspecified as to episode of care",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100459,PROD,TPS,Main,Verbatim Term,"Other vomiting complicating pregnancy, delivered",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100460,PROD,TPS,Main,Verbatim Term,"Anemia complicating pregnancy, childbirth, or the puerperium",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100461,PROD,TPS,Main,Verbatim Term,Pneumonia in aspergillosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100462,PROD,TPS,Main,Verbatim Term,Rupture of uterus before onset of labor,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100463,PROD,TPS,Main,Verbatim Term,Uterine injury NOS,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100464,PROD,TPS,Main,Verbatim Term,"Abrasion or friction burn of trunk, without mention of infection",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100465,PROD,TPS,Main,Verbatim Term,"Intcran inj of oth and unspec nature, w/o ment of open intcran wound, prol loc, w/o rtrn to pecl",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100466,PROD,TPS,Main,Verbatim Term,Other and unspecified superficial injury without mention of infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100467,PROD,TPS,Main,Verbatim Term,Iatrogenic colon perforation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100468,PROD,TPS,Main,Verbatim Term,Colonic perforation postoperative,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100469,PROD,TPS,Main,Verbatim Term,Bone swelling painful,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100470,PROD,TPS,Main,Verbatim Term,Cognitive deterioration,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100471,PROD,TPS,Main,Verbatim Term,Transitional cell carcinoma of the bladder stage 0 with cancer in situ,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100472,PROD,TPS,Main,Verbatim Term,Polymyositis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100473,PROD,TPS,Main,Verbatim Term,Diarrhoea infectious,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100474,PROD,TPS,Main,Verbatim Term,Anorectal cellulitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100475,PROD,TPS,Main,Verbatim Term,Orf,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100476,PROD,TPS,Main,Verbatim Term,Prostatic abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100477,PROD,TPS,Main,Verbatim Term,Galactose intolerance,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100478,PROD,TPS,Main,Verbatim Term,Biopsy peripheral nerve,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100479,PROD,TPS,Main,Verbatim Term,Electromyogram abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100480,PROD,TPS,Main,Verbatim Term,Haemosiderosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100481,PROD,TPS,Main,Verbatim Term,Biopsy cornea abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100482,PROD,TPS,Main,Verbatim Term,Nerve conduction studies abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100483,PROD,TPS,Main,Verbatim Term,Biopsy peripheral nerve normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100484,PROD,TPS,Main,Verbatim Term,CSF protein abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100485,PROD,TPS,Main,Verbatim Term,Cellulitis pasteurella,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100486,PROD,TPS,Main,Verbatim Term,Periodontal destruction,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100487,PROD,TPS,Main,Verbatim Term,Amniocentesis abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100488,PROD,TPS,Main,Verbatim Term,Electronystagmogram,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100489,PROD,TPS,Main,Verbatim Term,Gonioscopy normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100490,PROD,TPS,Main,Verbatim Term,Laryngeal papilloma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100491,PROD,TPS,Main,Verbatim Term,Urethral stricture post infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100492,PROD,TPS,Main,Verbatim Term,Epiglottitis obstructive,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100493,PROD,TPS,Main,Verbatim Term,Viral labyrinthitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100494,PROD,TPS,Main,Verbatim Term,Abscess intestinal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100495,PROD,TPS,Main,Verbatim Term,Renal syphilis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100496,PROD,TPS,Main,Verbatim Term,Parasitic infection intestinal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100497,PROD,TPS,Main,Verbatim Term,Cellulitis gangrenous,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100498,PROD,TPS,Main,Verbatim Term,Sleep attacks,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100499,PROD,TPS,Main,Verbatim Term,Nuclear magnetic resonance imaging brain normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100500,PROD,TPS,Main,Verbatim Term,CSF lymphocyte count increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100501,PROD,TPS,Main,Verbatim Term,Keratometry,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100502,PROD,TPS,Main,Verbatim Term,Topography corneal normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100503,PROD,TPS,Main,Verbatim Term,Vital dye staining cornea absent,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100504,PROD,TPS,Main,Verbatim Term,Paracentesis eye abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100505,PROD,TPS,Main,Verbatim Term,Sinobronchitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100506,PROD,TPS,Main,Verbatim Term,Intestinal spasm,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100507,PROD,TPS,Main,Verbatim Term,Scrotal abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100508,PROD,TPS,Main,Verbatim Term,Pseudocroup,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100509,PROD,TPS,Main,Verbatim Term,Schirmer's test,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100510,PROD,TPS,Main,Verbatim Term,Myometritis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100511,PROD,TPS,Main,Verbatim Term,Intranasal numbness,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100512,PROD,TPS,Main,Verbatim Term,Polysubstance abuse,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100513,PROD,TPS,Main,Verbatim Term,Pudendal nerve terminal motor latency test abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100514,PROD,TPS,Main,Verbatim Term,Neonatal pneumonia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100515,PROD,TPS,Main,Verbatim Term,Obstetric infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100516,PROD,TPS,Main,Verbatim Term,Cardiovascular autonomic function test,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100517,PROD,TPS,Main,Verbatim Term,Cardiac infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100518,PROD,TPS,Main,Verbatim Term,Tubo-ovarian abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100519,PROD,TPS,Main,Verbatim Term,Condyloma acuminatum,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100520,PROD,TPS,Main,Verbatim Term,Subdiaphragmatic abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100521,PROD,TPS,Main,Verbatim Term,Visual tracking test,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100522,PROD,TPS,Main,Verbatim Term,Optic nerve cup/disc ratio decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100523,PROD,TPS,Main,Verbatim Term,Optic nerve cup/disc ratio increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100524,PROD,TPS,Main,Verbatim Term,Tinea barbae,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100525,PROD,TPS,Main,Verbatim Term,Oculopneumoplethysmogram abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100526,PROD,TPS,Main,Verbatim Term,Atrial bigeminy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100527,PROD,TPS,Main,Verbatim Term,Abdominal sepsis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100528,PROD,TPS,Main,Verbatim Term,Tandem gait test abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100529,PROD,TPS,Main,Verbatim Term,Oesophageal infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100530,PROD,TPS,Main,Verbatim Term,Visceral larva migrans,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100531,PROD,TPS,Main,Verbatim Term,Appendicitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100532,PROD,TPS,Main,Verbatim Term,Streptococcal serology,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100533,PROD,TPS,Main,Verbatim Term,Abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100534,PROD,TPS,Main,Verbatim Term,Bronchitis chronic,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100535,PROD,TPS,Main,Verbatim Term,Ear infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100536,PROD,TPS,Main,Verbatim Term,CSF cell count normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100537,PROD,TPS,Main,Verbatim Term,Infection masked,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100538,PROD,TPS,Main,Verbatim Term,Osteomyelitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100539,PROD,TPS,Main,Verbatim Term,Otitis media,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100540,PROD,TPS,Main,Verbatim Term,Tracheitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100541,PROD,TPS,Main,Verbatim Term,Urinary tract infection neonatal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100542,PROD,TPS,Main,Verbatim Term,Dermatophytosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100543,PROD,TPS,Main,Verbatim Term,CSF white blood cell count positive,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100544,PROD,TPS,Main,Verbatim Term,Sensory level abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100545,PROD,TPS,Main,Verbatim Term,Cyclosporidium infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100546,PROD,TPS,Main,Verbatim Term,Oculomotor study,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100547,PROD,TPS,Main,Verbatim Term,Chronic tonsillitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100548,PROD,TPS,Main,Verbatim Term,Scrotal infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100549,PROD,TPS,Main,Verbatim Term,Cervicitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100550,PROD,TPS,Main,Verbatim Term,Infective spondylitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100551,PROD,TPS,Main,Verbatim Term,Guillain-Barre syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100552,PROD,TPS,Main,Verbatim Term,Uterine perforation post procedural,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100553,PROD,TPS,Main,Verbatim Term,Graft versus host disease in intestine,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100554,PROD,TPS,Main,Verbatim Term,Device lead issue,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100555,PROD,TPS,Main,Verbatim Term,Intraocular lens dislocation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100556,PROD,TPS,Main,Verbatim Term,Decay dental,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100557,PROD,TPS,Main,Verbatim Term,Heart block AV third degree,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100558,PROD,TPS,Main,Verbatim Term,Polymyositis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100559,PROD,TPS,Main,Verbatim Term,Tolerance increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100560,PROD,TPS,Main,Verbatim Term,Perianal warts,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100561,PROD,TPS,Main,Verbatim Term,Tooth caries NOS,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100562,PROD,TPS,Main,Verbatim Term,Galactose intolerance,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100563,PROD,TPS,Main,Verbatim Term,Ruptured uterus (labour complication),LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100564,PROD,TPS,Main,Verbatim Term,Haemosiderosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100565,PROD,TPS,Main,Verbatim Term,TB Gland neck,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100566,PROD,TPS,Main,Verbatim Term,Uterus rupture,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100567,PROD,TPS,Main,Verbatim Term,Pseudomembranous enterocolitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100568,PROD,TPS,Main,Verbatim Term,Angina on recumbency,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100569,PROD,TPS,Main,Verbatim Term,Chronic GVH disease,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100570,PROD,TPS,Main,Verbatim Term,DBP decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100571,PROD,TPS,Main,Verbatim Term,Cramp in legs thighs,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100572,PROD,TPS,Main,Verbatim Term,Abrasions,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100573,PROD,TPS,Main,Verbatim Term,Guillain-Barre syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100574,PROD,TPS,Main,Verbatim Term,Amniocentesis abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100575,PROD,TPS,Main,Verbatim Term,Viral labyrinthitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100576,PROD,TPS,Main,Verbatim Term,Ganglion of joint,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100577,PROD,TPS,Main,Verbatim Term,Suppurative labyrinthitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100578,PROD,TPS,Main,Verbatim Term,"Anemia, antepartum",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100579,PROD,TPS,Main,Verbatim Term,"Other and unspecified superficial injury of face, neck, and scalp, without mention of infection",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100580,PROD,TPS,Main,Verbatim Term,Other and unspecified superficial injury of fingers without mention of infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100581,PROD,TPS,Main,Verbatim Term,"Other and unspecified superficial injury of fingers, infected",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100582,PROD,TPS,Main,Verbatim Term,Hypertrophy of breast,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100583,PROD,TPS,Main,Verbatim Term,Amniotic fluid abnormal NOS,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100584,PROD,TPS,Main,Verbatim Term,"Intcran inj of oth and unspec nature, with open intcran wound, with loc of unspec duration",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100585,PROD,TPS,Main,Verbatim Term,"Anaemia complicating pregnancy, childbirth, or the puerperium",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100586,PROD,TPS,Main,Verbatim Term,Rupture of uterus during and after labour,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100587,PROD,TPS,Main,Verbatim Term,Condyloma acuminatum,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100588,PROD,TPS,Main,Verbatim Term,BOOP,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100589,PROD,TPS,Main,Verbatim Term,Cervical smear positive class (3-5),LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100590,PROD,TPS,Main,Verbatim Term,Cyclosporidium infection NOS,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100591,PROD,TPS,Main,Verbatim Term,Broken lead cardiac pacemaker,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100592,PROD,TPS,Main,Verbatim Term,Intraocular lens dislocation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100593,PROD,TPS,Main,Verbatim Term,IOL dislocation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100594,PROD,TPS,Main,Verbatim Term,Erysipelas,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100595,PROD,TPS,Main,Verbatim Term,Mastitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100596,PROD,TPS,Main,Verbatim Term,Rash pustular,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100597,PROD,TPS,Main,Verbatim Term,Coronary artery surgery,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100598,PROD,TPS,Main,Verbatim Term,Ganglion,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100599,PROD,TPS,Main,Verbatim Term,Molluscum contagiosum,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100600,PROD,TPS,Main,Verbatim Term,Catheterisation cardiac,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100601,PROD,TPS,Main,Verbatim Term,Lumbar puncture,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100602,PROD,TPS,Main,Verbatim Term,Erythroblastosis foetalis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100603,PROD,TPS,Main,Verbatim Term,Gas gangrene,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100604,PROD,TPS,Main,Verbatim Term,Pyoderma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100605,PROD,TPS,Main,Verbatim Term,Arteriopathic disease,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100606,PROD,TPS,Main,Verbatim Term,CSF protein increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100607,PROD,TPS,Main,Verbatim Term,CSF oligoclonal band,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100608,PROD,TPS,Main,Verbatim Term,Quadruple vessel bypass graft,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100609,PROD,TPS,Main,Verbatim Term,Fundoscopy abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100610,PROD,TPS,Main,Verbatim Term,Nipple infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100611,PROD,TPS,Main,Verbatim Term,Infection in an immunocompromised host,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100612,PROD,TPS,Main,Verbatim Term,Uterine cervix hypertrophy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100613,PROD,TPS,Main,Verbatim Term,Skin graft infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100614,PROD,TPS,Main,Verbatim Term,Electronystagmogram normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100615,PROD,TPS,Main,Verbatim Term,Visual acuity tests normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100616,PROD,TPS,Main,Verbatim Term,Tuberculin test positive,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100617,PROD,TPS,Main,Verbatim Term,Foot and mouth disease,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100618,PROD,TPS,Main,Verbatim Term,Herpes simplex otitis externa,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100619,PROD,TPS,Main,Verbatim Term,Pharyngeal gonococcal infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100620,PROD,TPS,Main,Verbatim Term,Ano-rectal ulcer,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100621,PROD,TPS,Main,Verbatim Term,Foetal hydantoin syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100622,PROD,TPS,Main,Verbatim Term,Latissimus dorsi flap,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100623,PROD,TPS,Main,Verbatim Term,CSF specific gravity normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100624,PROD,TPS,Main,Verbatim Term,Visual acuity tests near,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100625,PROD,TPS,Main,Verbatim Term,Genital infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100626,PROD,TPS,Main,Verbatim Term,Ophthalmodynamometry normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100627,PROD,TPS,Main,Verbatim Term,Rectal abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100628,PROD,TPS,Main,Verbatim Term,Pyelocystitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100629,PROD,TPS,Main,Verbatim Term,Cardiac pacemaker replacement,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100630,PROD,TPS,Main,Verbatim Term,Brain stem auditory evoked response abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100631,PROD,TPS,Main,Verbatim Term,Spinal cord infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100632,PROD,TPS,Main,Verbatim Term,Appendiceal abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100633,PROD,TPS,Main,Verbatim Term,Puncture site abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100634,PROD,TPS,Main,Verbatim Term,Maternal drugs affecting foetus,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100635,PROD,TPS,Main,Verbatim Term,Intestinal fistula infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100636,PROD,TPS,Main,Verbatim Term,Bacteraemia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100637,PROD,TPS,Main,Verbatim Term,Deoxypyridinoline/creatinine ratio,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100638,PROD,TPS,Main,Verbatim Term,Periumbilical abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100639,PROD,TPS,Main,Verbatim Term,Enterocutaneous fistula,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100640,PROD,TPS,Main,Verbatim Term,Purulent synovitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100641,PROD,TPS,Main,Verbatim Term,Cerebral aspergillosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100642,PROD,TPS,Main,Verbatim Term,Haemodynamic instability,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100643,PROD,TPS,Main,Verbatim Term,Vaginal papilloma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100644,PROD,TPS,Main,Verbatim Term,Urethral carbuncle,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100645,PROD,TPS,Main,Verbatim Term,Epidermodysplasia verruciformis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100646,PROD,TPS,Main,Verbatim Term,Nerve injury,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100647,PROD,TPS,Main,Verbatim Term,Pharynx discomfort,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100648,PROD,TPS,Main,Verbatim Term,Psychiatric evaluation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100649,PROD,TPS,Main,Verbatim Term,Abscess jaw,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100650,PROD,TPS,Main,Verbatim Term,CSF monocyte count positive,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100651,PROD,TPS,Main,Verbatim Term,Lochia malodourous,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100652,PROD,TPS,Main,Verbatim Term,Ventriculogram,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100653,PROD,TPS,Main,Verbatim Term,Familiar hemiplegic migraine,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100654,PROD,TPS,Main,Verbatim Term,Spinal myelogram abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100655,PROD,TPS,Main,Verbatim Term,Tensilon test abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100656,PROD,TPS,Main,Verbatim Term,Fungal sepsis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100657,PROD,TPS,Main,Verbatim Term,Streptococcal serology negative,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100658,PROD,TPS,Main,Verbatim Term,Pelvic inflammatory disease,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100659,PROD,TPS,Main,Verbatim Term,Central nervous system abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100660,PROD,TPS,Main,Verbatim Term,Dialysis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100661,PROD,TPS,Main,Verbatim Term,Herpes zoster infection neurological,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100662,PROD,TPS,Main,Verbatim Term,Bacterial toxaemia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100663,PROD,TPS,Main,Verbatim Term,Genital abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100664,PROD,TPS,Main,Verbatim Term,Peridiverticulitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100665,PROD,TPS,Main,Verbatim Term,Otoacoustic emissions test,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100666,PROD,TPS,Main,Verbatim Term,Eczema herpeticum,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100667,PROD,TPS,Main,Verbatim Term,Craniotabes,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100668,PROD,TPS,Main,Verbatim Term,Infusion site lymphadenopathy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100669,PROD,TPS,Main,Verbatim Term,Abuse with addiction,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100670,PROD,TPS,Main,Verbatim Term,Addison's disease,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100671,PROD,TPS,Main,Verbatim Term,Bad taste,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100672,PROD,TPS,Main,Verbatim Term,Breast enlargement female,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100673,PROD,TPS,Main,Verbatim Term,Depression agitated,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100674,PROD,TPS,Main,Verbatim Term,Feeling lack of,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100675,PROD,TPS,Main,Verbatim Term,Guillain Barre syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100676,PROD,TPS,Main,Verbatim Term,Myasthenia gravis-like reaction,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100677,PROD,TPS,Main,Verbatim Term,Pseudolymphoma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100678,PROD,TPS,Main,Verbatim Term,Psychomotor development impaired,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100679,PROD,TPS,Main,Verbatim Term,Reaction myasthenia gravis-like,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100680,PROD,TPS,Main,Verbatim Term,Renal concentrating power decr,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100681,PROD,TPS,Main,Verbatim Term,Shoulder blade pain,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100682,PROD,TPS,Main,Verbatim Term,Tooth caries,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100683,PROD,TPS,Main,Verbatim Term,Dorsopathies,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100684,PROD,TPS,Main,Verbatim Term,Amniocentesis for neural tube defects,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100685,PROD,TPS,Main,Verbatim Term,Coronary artery surgery,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100686,PROD,TPS,Main,Verbatim Term,Ganglion,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100687,PROD,TPS,Main,Verbatim Term,Perianal irritation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100688,PROD,TPS,Main,Verbatim Term,Tooth caries aggravated NOS,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100689,PROD,TPS,Main,Verbatim Term,Angina decubitus,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100690,PROD,TPS,Main,Verbatim Term,Bronzed diabetes,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100691,PROD,TPS,Main,Verbatim Term,Lip edema,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100692,PROD,TPS,Main,Verbatim Term,Quadruple vessel bypass graft,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100693,PROD,TPS,Main,Verbatim Term,Morning sickness,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100694,PROD,TPS,Main,Verbatim Term,Gait inability,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100695,PROD,TPS,Main,Verbatim Term,Fetal phenytoin syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100696,PROD,TPS,Main,Verbatim Term,Fetal valproate syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100697,PROD,TPS,Main,Verbatim Term,Bladder transitional cell carcinoma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100698,PROD,TPS,Main,Verbatim Term,Penile wart,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100699,PROD,TPS,Main,Verbatim Term,Pharynx discomfort,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100700,PROD,TPS,Main,Verbatim Term,Persistent hyperplasia of thymus,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100701,PROD,TPS,Main,Verbatim Term,"Atrioventricular block, complete",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100702,PROD,TPS,Main,Verbatim Term,Tuberculin test positive,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100703,PROD,TPS,Main,Verbatim Term,Nonspecific reaction to tuberculin test,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100704,PROD,TPS,Main,Verbatim Term,"Labyrinthitis, unspecified",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100705,PROD,TPS,Main,Verbatim Term,Circumscribed labyrinthitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100706,PROD,TPS,Main,Verbatim Term,"Unspecified vomiting of pregnancy, unspecified as to episode of care",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100707,PROD,TPS,Main,Verbatim Term,"Major puerperal infection, postpartum",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100708,PROD,TPS,Main,Verbatim Term,"Abrasion or friction burn of trunk, infected",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100709,PROD,TPS,Main,Verbatim Term,Superficial injury of finger(s),LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100710,PROD,TPS,Main,Verbatim Term,Pharyngeal gonococcal infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100711,PROD,TPS,Main,Verbatim Term,"Intcran inj of oth and unspec nature, with open intcran wound, with no loc",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100712,PROD,TPS,Main,Verbatim Term,"Intcran inj of oth and unspec nature, with open intcran wound, with prol loc and rtrn to pecl",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100713,PROD,TPS,Main,Verbatim Term,Eczema herpeticum,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100714,PROD,TPS,Main,Verbatim Term,Reaction to spinal or lumbar puncture,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100715,PROD,TPS,Main,Verbatim Term,Bronchiolitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100716,PROD,TPS,Main,Verbatim Term,Hypoparathyroidism,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100717,PROD,TPS,Main,Verbatim Term,Xanthochromia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100718,PROD,TPS,Main,Verbatim Term,Intra-nasal antrostomy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100719,PROD,TPS,Main,Verbatim Term,Neurosyphilis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100720,PROD,TPS,Main,Verbatim Term,Vulval abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100721,PROD,TPS,Main,Verbatim Term,Lassa fever,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100722,PROD,TPS,Main,Verbatim Term,Electroencephalogram,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100723,PROD,TPS,Main,Verbatim Term,Cavernous sinus thrombosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100724,PROD,TPS,Main,Verbatim Term,Myasthenic syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100725,PROD,TPS,Main,Verbatim Term,Audiogram abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100726,PROD,TPS,Main,Verbatim Term,Rinne tuning fork test,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100727,PROD,TPS,Main,Verbatim Term,CSF lymphocyte count,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100728,PROD,TPS,Main,Verbatim Term,Genital pruritus female,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100729,PROD,TPS,Main,Verbatim Term,CSF oligoclonal band absent,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100730,PROD,TPS,Main,Verbatim Term,CSF oligoclonal band present,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100731,PROD,TPS,Main,Verbatim Term,CSF pH abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100732,PROD,TPS,Main,Verbatim Term,Low tension glaucoma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100733,PROD,TPS,Main,Verbatim Term,Nickel sensitivity,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100734,PROD,TPS,Main,Verbatim Term,Foetal valproate syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100735,PROD,TPS,Main,Verbatim Term,Coccidioidomycosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100736,PROD,TPS,Main,Verbatim Term,Cow pox,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100737,PROD,TPS,Main,Verbatim Term,Visual field tests normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100738,PROD,TPS,Main,Verbatim Term,Immunodeficiency with increased immunoglobulin M,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100739,PROD,TPS,Main,Verbatim Term,Petrositis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100740,PROD,TPS,Main,Verbatim Term,Polyneuropathy in malignant disease,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100741,PROD,TPS,Main,Verbatim Term,Paracentesis ear abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100742,PROD,TPS,Main,Verbatim Term,Ultrasound eye normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100743,PROD,TPS,Main,Verbatim Term,Angiogram retina abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100744,PROD,TPS,Main,Verbatim Term,Ophthalmodynamometry abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100745,PROD,TPS,Main,Verbatim Term,Atrial rupture,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100746,PROD,TPS,Main,Verbatim Term,Buttock pain,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100747,PROD,TPS,Main,Verbatim Term,Tinea imbricata,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100748,PROD,TPS,Main,Verbatim Term,Groin infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100749,PROD,TPS,Main,Verbatim Term,Ross river virus infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100750,PROD,TPS,Main,Verbatim Term,Gallbladder empyema,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100751,PROD,TPS,Main,Verbatim Term,Haematoma infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100752,PROD,TPS,Main,Verbatim Term,Amniorrhexis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100753,PROD,TPS,Main,Verbatim Term,Measles post vaccine,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100754,PROD,TPS,Main,Verbatim Term,Anticonvulsant toxicity,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100755,PROD,TPS,Main,Verbatim Term,Septic necrosis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100756,PROD,TPS,Main,Verbatim Term,Mutism,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100757,PROD,TPS,Main,Verbatim Term,Infected sebaceous cyst,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100758,PROD,TPS,Main,Verbatim Term,CSF neutrophil count decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100759,PROD,TPS,Main,Verbatim Term,Mucocutaneous leishmaniasis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100760,PROD,TPS,Main,Verbatim Term,Necrotising ulcerative periodontitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100761,PROD,TPS,Main,Verbatim Term,Intrauterine infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100762,PROD,TPS,Main,Verbatim Term,Difficult to wean from ventilator,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100763,PROD,TPS,Main,Verbatim Term,Eyelid folliculitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100764,PROD,TPS,Main,Verbatim Term,Peritoneal infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100765,PROD,TPS,Main,Verbatim Term,Rickettsialpox,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100766,PROD,TPS,Main,Verbatim Term,Spinal myelogram,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100767,PROD,TPS,Main,Verbatim Term,Wound infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100768,PROD,TPS,Main,Verbatim Term,Dacryocystitis infective,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100769,PROD,TPS,Main,Verbatim Term,Schirmer's test abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100770,PROD,TPS,Main,Verbatim Term,Cerebral ventriculogram normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100771,PROD,TPS,Main,Verbatim Term,Infected neoplasm,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100772,PROD,TPS,Main,Verbatim Term,Skin infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100773,PROD,TPS,Main,Verbatim Term,Wound sepsis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100774,PROD,TPS,Main,Verbatim Term,CSF granulocyte count normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100775,PROD,TPS,Main,Verbatim Term,Dialysis device insertion,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100776,PROD,TPS,Main,Verbatim Term,Pelvic sepsis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100777,PROD,TPS,Main,Verbatim Term,Infected lymphocele,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100778,PROD,TPS,Main,Verbatim Term,Pyridinoline urine,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100779,PROD,TPS,Main,Verbatim Term,CSF lactate decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100780,PROD,TPS,Main,Verbatim Term,CSF myelin basic protein,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100781,PROD,TPS,Main,Verbatim Term,Albumin CSF normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100782,PROD,TPS,Main,Verbatim Term,Infectious crystalline keratopathy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100783,PROD,TPS,Main,Verbatim Term,Neuro-ophthalmological test abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100784,PROD,TPS,Main,Verbatim Term,Neuro-ophthalmological test normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100785,PROD,TPS,Main,Verbatim Term,Upper respiratory tract infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100786,PROD,TPS,Main,Verbatim Term,Laryngotracheo bronchitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100787,PROD,TPS,Main,Verbatim Term,Intraocular pressure test abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100788,PROD,TPS,Main,Verbatim Term,Arthritis infective,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100789,PROD,TPS,Main,Verbatim Term,Genitourinary tract infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100790,PROD,TPS,Main,Verbatim Term,Vestibular function test normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100791,PROD,TPS,Main,Verbatim Term,Scan brain,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100792,PROD,TPS,Main,Verbatim Term,Infection parasitic,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100793,PROD,TPS,Main,Verbatim Term,Fungal skin infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100794,PROD,TPS,Main,Verbatim Term,Bronchitis acute viral,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100795,PROD,TPS,Main,Verbatim Term,Extradural abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100796,PROD,TPS,Main,Verbatim Term,Penile infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100797,PROD,TPS,Main,Verbatim Term,Congenital infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100798,PROD,TPS,Main,Verbatim Term,Enteritis infectious,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100799,PROD,TPS,Main,Verbatim Term,Catheter bacteraemia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100800,PROD,TPS,Main,Verbatim Term,Rhinitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100801,PROD,TPS,Main,Verbatim Term,Implant site cellulitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100802,PROD,TPS,Main,Verbatim Term,Spermatic cord funiculitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100803,PROD,TPS,Main,Verbatim Term,CSF mononuclear cell count increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100804,PROD,TPS,Main,Verbatim Term,Nail bed infection viral,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100805,PROD,TPS,Main,Verbatim Term,Afibrinogenemia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100806,PROD,TPS,Main,Verbatim Term,Bacterial resistance,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100807,PROD,TPS,Main,Verbatim Term,Bronchiolitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100808,PROD,TPS,Main,Verbatim Term,Disorder EEG (NOS),LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100809,PROD,TPS,Main,Verbatim Term,Hypertrophy uterine cervix,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100810,PROD,TPS,Main,Verbatim Term,Hypoparathyroidism,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100811,PROD,TPS,Main,Verbatim Term,Infection parasitic,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100812,PROD,TPS,Main,Verbatim Term,Infection respiratory,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100813,PROD,TPS,Main,Verbatim Term,Pelvic inflammation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100814,PROD,TPS,Main,Verbatim Term,Uremic syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100815,PROD,TPS,Main,Verbatim Term,Chronic pharyngitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100816,PROD,TPS,Main,Verbatim Term,Vasomotor rhinitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100817,PROD,TPS,Main,Verbatim Term,Tendon decompression,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100818,PROD,TPS,Main,Verbatim Term,Nickel sensitivity,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100819,PROD,TPS,Main,Verbatim Term,Narcolepsy with cataplexy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100820,PROD,TPS,Main,Verbatim Term,Myasthenic syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100821,PROD,TPS,Main,Verbatim Term,Cough incontinence,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100822,PROD,TPS,Main,Verbatim Term,Foetal valproate syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100823,PROD,TPS,Main,Verbatim Term,Polymyalgia aggravated,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100824,PROD,TPS,Main,Verbatim Term,Pharynx strange sensation of,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100825,PROD,TPS,Main,Verbatim Term,Acromegaly and gigantism,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100826,PROD,TPS,Main,Verbatim Term,Immunodeficiency with increased immunoglobulin M,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100827,PROD,TPS,Main,Verbatim Term,"Other vomiting complicating pregnancy, unspecified as to episode of care",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100828,PROD,TPS,Main,Verbatim Term,Unilateral partial paralysis of vocal cords,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100829,PROD,TPS,Main,Verbatim Term,"Rupture of uterus during labor, delivered, with mention of postpartum complication",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100830,PROD,TPS,Main,Verbatim Term,"Superficial injury of elbow, forearm, and wrist",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100831,PROD,TPS,Main,Verbatim Term,"Abrasion or friction burn of other, multiple, and unspecified sites, infected",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100832,PROD,TPS,Main,Verbatim Term,"Isoimmunization from other and unspec blood-group incompatibility, unspec as to eoc in pregnancy",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100833,PROD,TPS,Main,Verbatim Term,"Isoimmunization from other and unspec blood-group incompat, affecting manag of mother, antepart",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100834,PROD,TPS,Main,Verbatim Term,Lymphangitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100835,PROD,TPS,Main,Verbatim Term,Narcolepsy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100836,PROD,TPS,Main,Verbatim Term,Nasopharyngitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100837,PROD,TPS,Main,Verbatim Term,Sepsis neonatal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100838,PROD,TPS,Main,Verbatim Term,Angioneurotic oedema,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100839,PROD,TPS,Main,Verbatim Term,Hand-foot-and-mouth disease,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100840,PROD,TPS,Main,Verbatim Term,Measles,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100841,PROD,TPS,Main,Verbatim Term,Tinea pedis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100842,PROD,TPS,Main,Verbatim Term,Death of sibling,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100843,PROD,TPS,Main,Verbatim Term,Purulent discharge,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100844,PROD,TPS,Main,Verbatim Term,Bed bug infestation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100845,PROD,TPS,Main,Verbatim Term,Visual evoked potentials,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100846,PROD,TPS,Main,Verbatim Term,Isoimmune haemolytic disease,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100847,PROD,TPS,Main,Verbatim Term,Abscess of external auditory meatus,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100848,PROD,TPS,Main,Verbatim Term,CSF neutrophil count,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100849,PROD,TPS,Main,Verbatim Term,Adrenocortical insufficiency chronic,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100850,PROD,TPS,Main,Verbatim Term,Stress incontinence,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100851,PROD,TPS,Main,Verbatim Term,Foetal alcohol syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100852,PROD,TPS,Main,Verbatim Term,Tympanometry abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100853,PROD,TPS,Main,Verbatim Term,Omphalitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100854,PROD,TPS,Main,Verbatim Term,Hirudiniasis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100855,PROD,TPS,Main,Verbatim Term,Blister infected,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100856,PROD,TPS,Main,Verbatim Term,Epidemic pleurodynia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100857,PROD,TPS,Main,Verbatim Term,Thrombophlebitis septic,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100858,PROD,TPS,Main,Verbatim Term,Pseudofolliculitis barbae,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100859,PROD,TPS,Main,Verbatim Term,Corneal epithelium disorder,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100860,PROD,TPS,Main,Verbatim Term,Biopsy sclera,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100861,PROD,TPS,Main,Verbatim Term,Adenocarcinoma with transitional cell carcinoma of bladder st 0,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100862,PROD,TPS,Main,Verbatim Term,Squamous cell with transitional cell carcinoma of bladder st III,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100863,PROD,TPS,Main,Verbatim Term,Mitral valve hypoplasia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100864,PROD,TPS,Main,Verbatim Term,Implantable defibrillator insertion,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100865,PROD,TPS,Main,Verbatim Term,Stent occlusion,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100866,PROD,TPS,Main,Verbatim Term,Encephalitis lethargica,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100867,PROD,TPS,Main,Verbatim Term,Thyroglossal cyst infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100868,PROD,TPS,Main,Verbatim Term,Anaesthetic complication foetal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100869,PROD,TPS,Main,Verbatim Term,Biopsy ear abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100870,PROD,TPS,Main,Verbatim Term,Pneumatic retinopexy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100871,PROD,TPS,Main,Verbatim Term,Cardiovascular autonomic function test normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100872,PROD,TPS,Main,Verbatim Term,N-telopeptide urine normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100873,PROD,TPS,Main,Verbatim Term,Skin candida,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100874,PROD,TPS,Main,Verbatim Term,Arteriovenous fistula site infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100875,PROD,TPS,Main,Verbatim Term,ABO isoimmunisation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100876,PROD,TPS,Main,Verbatim Term,Emphysematous cholecystitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100877,PROD,TPS,Main,Verbatim Term,Dandruff,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100878,PROD,TPS,Main,Verbatim Term,Retinal naevus,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100879,PROD,TPS,Main,Verbatim Term,Mediastinal infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100880,PROD,TPS,Main,Verbatim Term,Herpes zoster multi-dermatomal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100881,PROD,TPS,Main,Verbatim Term,Glasgow coma scale abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100882,PROD,TPS,Main,Verbatim Term,Viraemia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100883,PROD,TPS,Main,Verbatim Term,Tuberculous tenosynovitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100884,PROD,TPS,Main,Verbatim Term,Methylmalonic aciduria,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100885,PROD,TPS,Main,Verbatim Term,CSF test normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100886,PROD,TPS,Main,Verbatim Term,Prostatic intraepithelial neoplasia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100887,PROD,TPS,Main,Verbatim Term,Endometritis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100888,PROD,TPS,Main,Verbatim Term,Impetigo,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100889,PROD,TPS,Main,Verbatim Term,Nasal abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100890,PROD,TPS,Main,Verbatim Term,Nasal vestibulitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100891,PROD,TPS,Main,Verbatim Term,Nerve stimulation test,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100892,PROD,TPS,Main,Verbatim Term,Diverticulitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100893,PROD,TPS,Main,Verbatim Term,Amniotic cavity infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100894,PROD,TPS,Main,Verbatim Term,Arthropod infestation,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100895,PROD,TPS,Main,Verbatim Term,Laryngopharyngitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100896,PROD,TPS,Main,Verbatim Term,Pleural infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100897,PROD,TPS,Main,Verbatim Term,Acute sinusitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100898,PROD,TPS,Main,Verbatim Term,Oculomotor study normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100899,PROD,TPS,Main,Verbatim Term,Brain scan normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100900,PROD,TPS,Main,Verbatim Term,Squamous cell with transitional cell carcinoma of bladder,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100901,PROD,TPS,Main,Verbatim Term,Osteoprotegerin,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100902,PROD,TPS,Main,Verbatim Term,Osteoprotegerin ligand decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100903,PROD,TPS,Main,Verbatim Term,Pericarditis infective,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100904,PROD,TPS,Main,Verbatim Term,Unspecified agent exposure during pregnancy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100905,PROD,TPS,Main,Verbatim Term,CSF polymorphonuclear cell count increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100906,PROD,TPS,Main,Verbatim Term,CSF polymorphonuclear cell count decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100907,PROD,TPS,Main,Verbatim Term,CSF mononuclear cell count decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100908,PROD,TPS,Main,Verbatim Term,Pancreatitis viral,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100909,PROD,TPS,Main,Verbatim Term,Macular rupture,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100910,PROD,TPS,Main,Verbatim Term,Polyomavirus-associated nephropathy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100911,PROD,TPS,Main,Verbatim Term,Abscess kidney,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100912,PROD,TPS,Main,Verbatim Term,Carcinoma thyroid,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100913,PROD,TPS,Main,Verbatim Term,Comedome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100914,PROD,TPS,Main,Verbatim Term,Diverticulitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100915,PROD,TPS,Main,Verbatim Term,Endometritis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100916,PROD,TPS,Main,Verbatim Term,Fever sore,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100917,PROD,TPS,Main,Verbatim Term,Headache vascular,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100918,PROD,TPS,Main,Verbatim Term,Infection susceptibility incr,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100919,PROD,TPS,Main,Verbatim Term,Liver function tests multiple abnorm,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100920,PROD,TPS,Main,Verbatim Term,Lymphangitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100921,PROD,TPS,Main,Verbatim Term,Narcolepsy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100922,PROD,TPS,Main,Verbatim Term,Nasopharyngitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100923,PROD,TPS,Main,Verbatim Term,Onychia,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100924,PROD,TPS,Main,Verbatim Term,Pain peptic ulcer,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100925,PROD,TPS,Main,Verbatim Term,Sepsis neonatal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100926,PROD,TPS,Main,Verbatim Term,Sepsis secondary,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100927,PROD,TPS,Main,Verbatim Term,Tooth caries aggravated,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100928,PROD,TPS,Main,Verbatim Term,Achilles tendon repair,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100929,PROD,TPS,Main,Verbatim Term,Stress incontinence,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100930,PROD,TPS,Main,Verbatim Term,Thyroid carcinoma NOS,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100931,PROD,TPS,Main,Verbatim Term,Delayed period,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100932,PROD,TPS,Main,Verbatim Term,SBP decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100933,PROD,TPS,Main,Verbatim Term,CABG,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100934,PROD,TPS,Main,Verbatim Term,Adrenocortical insufficiency chronic,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100935,PROD,TPS,Main,Verbatim Term,Swelling of lips,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100936,PROD,TPS,Main,Verbatim Term,Condylomata acuminata,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100937,PROD,TPS,Main,Verbatim Term,Thymic hypertrophy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100938,PROD,TPS,Main,Verbatim Term,Concussion with no loss of consciousness,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100939,PROD,TPS,Main,Verbatim Term,Concussion with brief loss of consciousness,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100940,PROD,TPS,Main,Verbatim Term,"Abrasion or friction burn of face, neck, and scalp except eye, without mention of infection",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100941,PROD,TPS,Main,Verbatim Term,Superficial injury of trunk,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100942,PROD,TPS,Main,Verbatim Term,"Other and unspecified superficial injury of trunk, without mention of infection",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100943,PROD,TPS,Main,Verbatim Term,"Abrasion or friction burn of shoulder and upper arm, without mention of infection",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100944,PROD,TPS,Main,Verbatim Term,"Other and unspecified superficial injury of elbow, forearm, and wrist, without mention of infection",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100945,PROD,TPS,Main,Verbatim Term,Superficial injury of hand(s) except finger(s) alone,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100946,PROD,TPS,Main,Verbatim Term,"Other and unspecified superficial injury of hip, thigh, leg, and ankle, without mention of infection",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100947,PROD,TPS,Main,Verbatim Term,"Other and unspecified superficial injury of hip, thigh, leg, and ankle, infected",LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100948,PROD,TPS,Main,Verbatim Term,Electroencephalogram abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100949,PROD,TPS,Main,Verbatim Term,Injection site infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100950,PROD,TPS,Main,Verbatim Term,Vomiting in pregnancy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100951,PROD,TPS,Main,Verbatim Term,Conjunctivitis infective,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100952,PROD,TPS,Main,Verbatim Term,Erythrasma,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100953,PROD,TPS,Main,Verbatim Term,Post polio syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100954,PROD,TPS,Main,Verbatim Term,Weber tuning fork test,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100955,PROD,TPS,Main,Verbatim Term,Biopsy cornea normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100956,PROD,TPS,Main,Verbatim Term,Abortion infected,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100957,PROD,TPS,Main,Verbatim Term,Amniocentesis normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100958,PROD,TPS,Main,Verbatim Term,Ultrasound skull,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100959,PROD,TPS,Main,Verbatim Term,CSF pH,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100960,PROD,TPS,Main,Verbatim Term,Biopsy spinal cord,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100961,PROD,TPS,Main,Verbatim Term,Biopsy brain abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100962,PROD,TPS,Main,Verbatim Term,Biopsy retina abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100963,PROD,TPS,Main,Verbatim Term,Whole blood transfusion,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100964,PROD,TPS,Main,Verbatim Term,CSF glucose abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100965,PROD,TPS,Main,Verbatim Term,Rocky mountain spotted fever,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100966,PROD,TPS,Main,Verbatim Term,Pyelonephritis mycoplasmal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100967,PROD,TPS,Main,Verbatim Term,Streptococcal impetigo,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100968,PROD,TPS,Main,Verbatim Term,Regurgitation of food,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100969,PROD,TPS,Main,Verbatim Term,Slit-lamp tests abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100970,PROD,TPS,Main,Verbatim Term,Axillary candidiasis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100971,PROD,TPS,Main,Verbatim Term,Thymus abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100972,PROD,TPS,Main,Verbatim Term,Rubinstein-Taybi syndrome,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100973,PROD,TPS,Main,Verbatim Term,Hydrocele male infected,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100974,PROD,TPS,Main,Verbatim Term,Black piedra,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100975,PROD,TPS,Main,Verbatim Term,Otitis externa candida,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100976,PROD,TPS,Main,Verbatim Term,Peridiverticular abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100977,PROD,TPS,Main,Verbatim Term,CSF specific gravity,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100978,PROD,TPS,Main,Verbatim Term,CSF pressure normal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100979,PROD,TPS,Main,Verbatim Term,Colour vision tests abnormal red-green,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100980,PROD,TPS,Main,Verbatim Term,Vital dye staining cornea present,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100981,PROD,TPS,Main,Verbatim Term,Angiogram retina,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100982,PROD,TPS,Main,Verbatim Term,Closed head injury,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100983,PROD,TPS,Main,Verbatim Term,Drug exposure during pregnancy,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100984,PROD,TPS,Main,Verbatim Term,Brain stem auditory evoked response,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100985,PROD,TPS,Main,Verbatim Term,Pharyngolaryngeal abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100986,PROD,TPS,Main,Verbatim Term,Trendelenburg's symptom,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100987,PROD,TPS,Main,Verbatim Term,Postoperative abscess,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100988,PROD,TPS,Main,Verbatim Term,Abdominal wall infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100989,PROD,TPS,Main,Verbatim Term,Anal fistula infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100990,PROD,TPS,Main,Verbatim Term,Herpetic gingivostomatitis,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100991,PROD,TPS,Main,Verbatim Term,Hyposthenuria,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100992,PROD,TPS,Main,Verbatim Term,Psychiatric evaluation abnormal,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100993,PROD,TPS,Main,Verbatim Term,Pudendal nerve terminal motor latency test,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100994,PROD,TPS,Main,Verbatim Term,CSF monocyte count negative,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100995,PROD,TPS,Main,Verbatim Term,CSF white blood cell count increased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100996,PROD,TPS,Main,Verbatim Term,CSF white blood cell count decreased,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100997,PROD,TPS,Main,Verbatim Term,Opportunistic infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100998,PROD,TPS,Main,Verbatim Term,Infusion site infection,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+100999,PROD,TPS,Main,Verbatim Term,Bronchial hyperactivity,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
+101000,PROD,TPS,Main,Verbatim Term,Furuncle,LLT,MedDRA,1,eng,FALSE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1

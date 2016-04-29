@@ -1,0 +1,8 @@
+﻿IF NOT EXISTS
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'CodingAssignment'
+		 AND COLUMN_NAME = 'IsValidForAutoCode')
+	BEGIN
+		ALTER TABLE CodingAssignment ADD IsValidForAutoCode BIT NOT NULL CONSTRAINT DF_CodingAssignment_IsValidForAutoCode DEFAULT((1))
+	END
+GO
+   

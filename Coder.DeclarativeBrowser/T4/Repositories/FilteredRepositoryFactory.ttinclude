@@ -1,0 +1,125 @@
+﻿<#@ include file="..\Utilities\AutogenHeader.ttinclude" #>
+
+using System;
+using System.Diagnostics;
+using System.Collections.Generic;
+using System.Linq;
+using Medidata;
+using Medidata.Dapper;
+using System.CodeDom.Compiler;
+
+namespace <#=Namespace #> 
+{
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal interface IFilteredRepositoryFactory
+    {
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        /// <summary>
+        /// Builds the <#=tbl.ClassName#> filtered repository.
+        /// </summary>
+        /// <param name="validFilters">The valid filters.</param>
+        /// <returns></returns>
+        IDapperFilteredRepository<<#=tbl.ClassName#>DTO> Build<#=tbl.ClassName#>FilteredRepository(IEnumerable<String> validFilters, IEnumerable<FilterAlias> filterAliases = null);
+
+<#
+}    
+#>
+    }
+
+    <#@ include file="..\Utilities\AutogenAttribute.ttinclude" #>
+    internal sealed class FilteredRepositoryFactory:IFilteredRepositoryFactory
+    {
+        private readonly IDapperRepositoryFactory _RepoFactory;
+        private readonly bool                     _ThrowIfFilterInvalid;
+
+        public FilteredRepositoryFactory(
+            IDapperRepositoryFactory repoFactory,
+            Boolean throwIfFilterInvalid)
+        {
+            Debug.Assert(!ReferenceEquals(repoFactory , null), "repoFactory can't be null");
+
+            _RepoFactory          = repoFactory;
+            _ThrowIfFilterInvalid = throwIfFilterInvalid;
+        }
+
+        public FilteredRepositoryFactory(
+            Func<String, String> urlDecoder,
+            Boolean throwIfFilterInvalid)
+            : this(
+                new DapperRepositoryFactory(urlDecoder),
+                throwIfFilterInvalid) { }
+
+<#
+    foreach(Table tbl in tables)
+    {
+#>
+        /// <summary>
+        /// Builds the <#=tbl.ClassName#> filtered repository.
+        /// </summary>
+        /// <param name="validFilters">The valid filters.</param>
+        /// <returns></returns>
+        public IDapperFilteredRepository<<#=tbl.ClassName#>DTO> Build<#=tbl.ClassName#>FilteredRepository(IEnumerable<String> validFilters, IEnumerable<FilterAlias> filterAliases = null)
+        {
+            var columnMappings = 
+                new Dictionary<String, ColumnSpecification>
+                {
+<#
+        foreach(Column col in tbl.Columns)
+        {
+            if (tbl.ClassName == col.CleanName)
+            {
+                col.CleanName += "X";
+            }
+#>
+                  {"<#=col.CleanName#>", new ColumnSpecification("<#=col.CleanName #>", Type.GetTypeCode(typeof(<#=col.SysType#>))) },
+<#
+        }
+#> 
+                };
+
+            var result = _RepoFactory.BuildFilteredRepository<<#=tbl.ClassName#>DTO>(
+                    "<#=tbl.Name#>", 
+                    "<#=tbl.PrimaryKey#>",
+                    validFilters,
+                    columnMappings,
+                    filterAliases);
+
+            return result;
+
+            /*
+            var allValidFilters           = validFilters ?? Enumerable.Empty<String>();
+            var finalFilterBuilderService = _FilterBuilderService;
+            var hasMaps                   = !ReferenceEquals(maps, null) && maps.Count() > 0;
+
+            if (hasMaps)
+            {
+                var extraKeys             = maps.Select(_ => _.Source);
+                allValidFilters           = allValidFilters.Union(extraKeys);
+
+                finalFilterBuilderService = finalFilterBuilderService.WithMappings(maps);
+            }
+
+            var result = new <#=tbl.ClassName#>DTORepository
+            (
+                _Validator,
+                finalFilterBuilderService,
+                _PaginationInfoBuilder,
+                _SortOrderBuilder,
+                allValidFilters
+            );
+
+            return result;
+            */
+        }
+
+<#
+}    
+#>
+    }
+}
+<#
+SaveOutput("FilteredRepositoryFactory.cs");
+#>

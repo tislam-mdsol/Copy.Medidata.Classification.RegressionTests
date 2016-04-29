@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PatchNumber>1.0.97</PatchNumber>
+
+ <Script ScriptName="dbiqAllJPNStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+ <Script ScriptName="dbiqAllStrings.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+ <Script ScriptName="dbiqObjectTypeR.sql" FileType="SQL" RelativePath="SQL/Change Scripts" />
+
+ <Script ScriptName="spMedicalDictTermComponentLoadByTerm.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+ <Script ScriptName="spDropAndCreateJDrugStagingTables.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/JDrug/CreateSPs" />
+ <Script ScriptName="spJDrugFirstVersionSetup.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/JDrug/CreateSPs" />
+ <Script ScriptName="spMedicalDictionaryLoadJDrugVersion.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/JDrug/CreateSPs" />
+ <Script ScriptName="spPopulateJDrugStagingTables.sql" FileType="SQL" RelativePath="SQL/Loading Dictionaries/JDrug/CreateSPs" />
+
+
+  <Script ScriptName="20111012-01-AddAsianLanguagePronounciationKeys.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+  <Script ScriptName="20111013-01-AddTermIdIndexOnComponents.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <Script ScriptName="spMedDictWireFnlObjIDsV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spMedicalDictionaryTermLoadChildren.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementSearchByFilterSecuredAndPagedWithFilterAndGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementGetNextTaskToCodeWithFilterSort.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementGroupInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementGroupUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementSearchForVCRWithFilterGroup.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingElementUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spCodingSourceTermInsertGroupMany.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationMngmntLoadSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="spSynonymMigrationMngmntProcessSynonyms.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+  <Script ScriptName="20111014-01-FixBadVersioningFinalTermIds.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+  <Script ScriptName="spMedDictVerActivationV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spVersionActivationVerification.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="spIORValidityCheck.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+  <Script ScriptName="fnCheckAllIOR.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+
+ <Script ScriptName="20111013-02-CreateSourceSystemTestTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+ <Script ScriptName="spSourceSystemTestTransmissionFetch.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+ <Script ScriptName="spSourceSystemTestTransmissionInsert.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+ <Script ScriptName="spSourceSystemTestTransmissionUpdate.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+ <Script ScriptName="spSourceSystemTestTransmissionLoadByApplicationID.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+
+ <Script ScriptName="spStudyTaskHistoryAudit.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Other" />
+ <Script ScriptName="20111017-01-CreateIndexOnApplicationTable.sql" FileType="SQL" RelativePath="SQL/Change Scripts/Daily Changes" />
+
+ <Script ScriptName="spMedDictVerDiffEngCmpntV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+ <Script ScriptName="spAllInOneAddNewVersionV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+ <Script ScriptName="spMedDictVerDiffEngTermV1_1.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+ <Script ScriptName="spMedDictVerCheckNodepath.sql" FileType="SQL" RelativePath="SQL/Stored Procedures/Coder Dictionary Versioning" />
+
+</Patch>
+

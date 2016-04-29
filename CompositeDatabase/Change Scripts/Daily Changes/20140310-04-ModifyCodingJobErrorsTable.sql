@@ -1,0 +1,7 @@
+﻿IF NOT EXISTS 
+	(SELECT NULL FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'CodingJobErrors'
+		 AND COLUMN_NAME = 'UserFriendlyError')
+	ALTER TABLE CodingJobErrors
+	ADD UserFriendlyError NVARCHAR(MAX) NOT NULL CONSTRAINT DF_CodingJobErrors_UserFriendlyError DEFAULT (N'')
+GO
+
