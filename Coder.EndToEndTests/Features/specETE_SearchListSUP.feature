@@ -9,7 +9,7 @@ Feature: Verify using Search List combinations of standard fields, log line fiel
 @DFT
 @PB92926SL-001
 @Release2016.1.0
-Scenario: Log line verbatim fields using a control type of Search List will be successfully coded.
+Scenario: Log line verbatim fields using a control type of Search List will be successfully coded 1
 	Given a Rave project registration with dictionary "WhoDrugDDEB2 ENG 200703"
 	And Rave Modules App Segment is loaded
  	And a Rave Coder setup with the following options
@@ -34,7 +34,7 @@ Scenario: Log line verbatim fields using a control type of Search List will be s
 @DFT
 @PB92926SL-002
 @Release2016.1.0
-Scenario: Standard verbatim fields using a control type of Search List will be successfully coded.
+Scenario: Standard verbatim fields using a control type of Search List will be successfully coded 2
 	Given a Rave project registration with dictionary "WhoDrugDDEB2 ENG 200703"
 	And Rave Modules App Segment is loaded
  	And a Rave Coder setup with the following options
@@ -60,7 +60,7 @@ Scenario: Standard verbatim fields using a control type of Search List will be s
 @DFT
 @PB92926SL-004
 @Release2016.1.0
-Scenario: Standard verbatim and supplemental fields using a control type of Search List will be successfully coded.
+Scenario: Standard verbatim and supplemental fields using a control type of Search List will be successfully coded 3
 	Given a Rave project registration with dictionary "WhoDrugDDEB2 ENG 200703"
 	And Rave Modules App Segment is loaded
  	And a Rave Coder setup with the following options

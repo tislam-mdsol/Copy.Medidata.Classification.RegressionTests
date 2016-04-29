@@ -72,14 +72,14 @@ namespace Coder.EndToEndTests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Log line verbatim fields using a control type of Search List will be successfully" +
-            " coded.")]
+            " coded 1")]
         [NUnit.Framework.CategoryAttribute("DFT")]
         [NUnit.Framework.CategoryAttribute("PB92926SL-001")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
-        public virtual void LogLineVerbatimFieldsUsingAControlTypeOfSearchListWillBeSuccessfullyCoded_()
+        public virtual void LogLineVerbatimFieldsUsingAControlTypeOfSearchListWillBeSuccessfullyCoded1()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Log line verbatim fields using a control type of Search List will be successfully" +
-                    " coded.", new string[] {
+                    " coded 1", new string[] {
                         "DFT",
                         "PB92926SL-001",
                         "Release2016.1.0"});
@@ -161,14 +161,14 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Standard verbatim fields using a control type of Search List will be successfully" +
-            " coded.")]
+            " coded 2")]
         [NUnit.Framework.CategoryAttribute("DFT")]
         [NUnit.Framework.CategoryAttribute("PB92926SL-002")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
-        public virtual void StandardVerbatimFieldsUsingAControlTypeOfSearchListWillBeSuccessfullyCoded_()
+        public virtual void StandardVerbatimFieldsUsingAControlTypeOfSearchListWillBeSuccessfullyCoded2()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Standard verbatim fields using a control type of Search List will be successfully" +
-                    " coded.", new string[] {
+                    " coded 2", new string[] {
                         "DFT",
                         "PB92926SL-002",
                         "Release2016.1.0"});
@@ -257,14 +257,14 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Standard verbatim and supplemental fields using a control type of Search List wil" +
-            "l be successfully coded.")]
+            "l be successfully coded 3")]
         [NUnit.Framework.CategoryAttribute("DFT")]
         [NUnit.Framework.CategoryAttribute("PB92926SL-004")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
-        public virtual void StandardVerbatimAndSupplementalFieldsUsingAControlTypeOfSearchListWillBeSuccessfullyCoded_()
+        public virtual void StandardVerbatimAndSupplementalFieldsUsingAControlTypeOfSearchListWillBeSuccessfullyCoded3()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Standard verbatim and supplemental fields using a control type of Search List wil" +
-                    "l be successfully coded.", new string[] {
+                    "l be successfully coded 3", new string[] {
                         "DFT",
                         "PB92926SL-004",
                         "Release2016.1.0"});
