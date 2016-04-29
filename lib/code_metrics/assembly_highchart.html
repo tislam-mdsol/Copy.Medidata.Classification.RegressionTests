@@ -1,0 +1,172 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Metrics Data on Chart</title>
+		
+		<!-- 1. Add these JavaScript inclusions in the head of your page -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+		<script type="text/javascript" src="http://code.highcharts.com/modules/data.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		
+		<!-- 2. Add the JavaScript to initialize the chart on document ready -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.get('MedidataCoder.Regression.sln_assembly_metrics.csv', function(csv) { 
+				$('#container').highcharts({
+					chart: {
+						type: 'line',
+						zoomType: 'x'
+					},
+					data: {
+					csv: csv,
+					startRow: 1,
+					startColumn: 1
+					},
+					title: {
+						text: 'Assembly Metrics'
+					},
+					yAxis: {
+						title: {
+							text: 'Weight'
+						}
+					},
+					legend: {
+						enabled: true
+					},
+					plotOptions: {
+						area: {
+								fillColor: {
+									linearGradient: {
+										x1: 0,
+										y1: 0,
+										x2: 0,
+										y2: 1
+									},
+									stops: [
+										[0, Highcharts.getOptions().colors[0]],
+										[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+									]
+								},
+								marker: {
+									radius: 2
+								},
+								lineWidth: 1,
+								states: {
+									hover: {
+										lineWidth: 1
+									}
+								},
+								threshold: null
+							}
+					}
+				});
+			});
+			
+			$.get('assembly_ecw.csv', function(csv) { 
+				$('#container_ecw').highcharts({
+					chart: {
+						type: 'line',
+						zoomType: 'x'
+					},
+					data: {
+					csv: csv
+					},
+					title: {
+						text: 'Efferent Coupling Weight by Build Number'
+					},
+					yAxis: {
+						title: {
+							text: 'Efferent Coupling Weight'
+						}
+					},
+					legend: {
+						enabled: true
+					},
+					plotOptions: {
+						area: {
+								fillColor: {
+									linearGradient: {
+										x1: 0,
+										y1: 0,
+										x2: 0,
+										y2: 1
+									},
+									stops: [
+										[0, Highcharts.getOptions().colors[0]],
+										[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+									]
+								},
+								marker: {
+									radius: 2
+								},
+								lineWidth: 1,
+								states: {
+									hover: {
+										lineWidth: 1
+									}
+								},
+								threshold: null
+							}
+					}
+				});
+			});
+			
+			$.get('assembly_ccw.csv', function(csv) { 
+				$('#container_ccw').highcharts({
+					chart: {
+						type: 'line',
+						zoomType: 'x'
+					},
+					data: {
+					csv: csv
+					},
+					title: {
+						text: 'Cyclomatic Complexity Weight by Build Number'
+					},
+					yAxis: {
+						title: {
+							text: 'Cyclomatic Complexity Weight'
+						}
+					},
+					legend: {
+						enabled: true
+					},
+					plotOptions: {
+						area: {
+								fillColor: {
+									linearGradient: {
+										x1: 0,
+										y1: 0,
+										x2: 0,
+										y2: 1
+									},
+									stops: [
+										[0, Highcharts.getOptions().colors[0]],
+										[1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+									]
+								},
+								marker: {
+									radius: 2
+								},
+								lineWidth: 1,
+								states: {
+									hover: {
+										lineWidth: 1
+									}
+								},
+								threshold: null
+							}
+					}
+				});
+			});
+	});
+	</script>
+</head>
+<body>
+		<!-- 3. Add the container -->
+		<div id="container" style="width:100%; height:400px;"></div>
+		<div id="container_ecw" style="width:100%; height:400px;"></div>
+		<div id="container_ccw" style="width:100%; height:400px;"></div>
+</body>
+</html>

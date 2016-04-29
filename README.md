@@ -28,4 +28,4 @@ There you will find how to setup the environment and structuring your code to me
 
 All issues for Coder are tracked in [JIRA](https://jira.mdsol.com).
 The Coder development team is 11.  Our task board is [Team 11 (Coder)](https://jira.mdsol.com/secure/RapidBoard.jspa?rapidView=170).
-The Coder Rave Integration team is 70.  Our task board is [Team 11 (Coder)](https://jira.mdsol.com/secure/RapidBoard.jspa?rapidView=702).
+The Coder Rave Integration team is 70.  Our task board is [Team 70 (Coder - Rave Integration Team)](https://jira.mdsol.com/secure/RapidBoard.jspa?rapidView=702).
