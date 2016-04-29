@@ -285,6 +285,24 @@
     </Parameters>
     <ResultSets />
   </SP>
+  <SP Name="spSegmentGetByIMedidataId" CleanName="spSegmentGetByIMedidataId">
+    <Parameters>
+      <SPParam Name="iMedidataId" CleanName="iMedidataId" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets>
+      <ArrayOfColumn>
+        <Column Name="SegmentId" CleanName="SegmentId" SysType="Int32" NullableSysType="Int32?" DataType="System.Int32" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="4" IsNullable="true" IsForeignKey="false" />
+        <Column Name="SegmentName" CleanName="SegmentName" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="OID" CleanName="OID" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="50" IsNullable="true" IsForeignKey="false" />
+        <Column Name="Deleted" CleanName="Deleted" SysType="Boolean" NullableSysType="Boolean?" DataType="System.Boolean" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="1" IsNullable="true" IsForeignKey="false" />
+        <Column Name="Active" CleanName="Active" SysType="Boolean" NullableSysType="Boolean?" DataType="System.Boolean" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="1" IsNullable="true" IsForeignKey="false" />
+        <Column Name="Created" CleanName="Created" SysType="DateTime" NullableSysType="DateTime?" DataType="System.DateTime" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="8" IsNullable="true" IsForeignKey="false" />
+        <Column Name="Updated" CleanName="Updated" SysType="DateTime" NullableSysType="DateTime?" DataType="System.DateTime" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="8" IsNullable="true" IsForeignKey="false" />
+        <Column Name="UserDeactivated" CleanName="UserDeactivated" SysType="Boolean" NullableSysType="Boolean?" DataType="System.Boolean" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="1" IsNullable="true" IsForeignKey="false" />
+        <Column Name="IMedidataId" CleanName="IMedidataId" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="50" IsNullable="true" IsForeignKey="false" />
+      </ArrayOfColumn>
+    </ResultSets>
+  </SP>
   <SP Name="spSegmentInsert" CleanName="spSegmentInsert">
     <Parameters>
       <SPParam Name="OID" CleanName="OID" DataType="varchar" SysType="String" DbType="AnsiString" Mode="IN" IsUdtParam="false" />
@@ -352,6 +370,27 @@
       <SPParam Name="SegmentId" CleanName="SegmentId" DataType="int" SysType="Int32?" DbType="Int32" Mode="IN" IsUdtParam="false" />
     </Parameters>
     <ResultSets />
+  </SP>
+  <SP Name="spUserGetByIMedidataId" CleanName="spUserGetByIMedidataId">
+    <Parameters>
+      <SPParam Name="iMedidataId" CleanName="iMedidataId" DataType="nvarchar" SysType="String" DbType="String" Mode="IN" IsUdtParam="false" />
+    </Parameters>
+    <ResultSets>
+      <ArrayOfColumn>
+        <Column Name="UserID" CleanName="UserID" SysType="Int32" NullableSysType="Int32?" DataType="System.Int32" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="4" IsNullable="true" IsForeignKey="false" />
+        <Column Name="FirstName" CleanName="FirstName" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="LastName" CleanName="LastName" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="Email" CleanName="Email" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="255" IsNullable="true" IsForeignKey="false" />
+        <Column Name="Login" CleanName="Login" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="50" IsNullable="true" IsForeignKey="false" />
+        <Column Name="Locale" CleanName="Locale" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="3" IsNullable="true" IsForeignKey="false" />
+        <Column Name="Active" CleanName="Active" SysType="Boolean" NullableSysType="Boolean?" DataType="System.Boolean" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="1" IsNullable="true" IsForeignKey="false" />
+        <Column Name="Created" CleanName="Created" SysType="DateTime" NullableSysType="DateTime?" DataType="System.DateTime" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="8" IsNullable="true" IsForeignKey="false" />
+        <Column Name="Updated" CleanName="Updated" SysType="DateTime" NullableSysType="DateTime?" DataType="System.DateTime" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="8" IsNullable="true" IsForeignKey="false" />
+        <Column Name="Deleted" CleanName="Deleted" SysType="Boolean" NullableSysType="Boolean?" DataType="System.Boolean" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="1" IsNullable="true" IsForeignKey="false" />
+        <Column Name="IMedidataId" CleanName="IMedidataId" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="50" IsNullable="true" IsForeignKey="false" />
+        <Column Name="TimeZoneInfo" CleanName="TimeZoneInfo" SysType="String" NullableSysType="String" DataType="System.String" DbType="AnsiString" AutoIncrement="false" IsPK="false" MaxLength="256" IsNullable="true" IsForeignKey="false" />
+      </ArrayOfColumn>
+    </ResultSets>
   </SP>
   <SP Name="spUserInsert" CleanName="spUserInsert">
     <Parameters>

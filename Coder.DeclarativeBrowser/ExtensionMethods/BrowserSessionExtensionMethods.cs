@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Coder.DeclarativeBrowser.CoderConfiguration;
 using Coder.DeclarativeBrowser.Models;
+using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.PageObjects;
 using Coder.DeclarativeBrowser.PageObjects.Administration;
 using Coder.DeclarativeBrowser.PageObjects.Reports;
 using Coypu;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coder.DeclarativeBrowser.PageObjects.Rave;
-using Coypu.Timing;
 
 
 namespace Coder.DeclarativeBrowser.ExtensionMethods
@@ -217,37 +219,85 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             return iMedidataPage;
         }
 
-        internal static RaveModulesPage GetRaveModulesPage(this BrowserSession session)
-        {
-            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
-
-            var raveModulesPage = new RaveModulesPage(session);
-
-            raveModulesPage.GoTo();
-
-            return raveModulesPage;
-        }
-
         internal static RaveUserAdministrationPage GetRaveUserAdministrationPage(this BrowserSession session)
         {
             if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
 
             var raveUserAdministrationPage = new RaveUserAdministrationPage(session);
 
-            raveUserAdministrationPage.GoTo();
-
             return raveUserAdministrationPage;
         }
 
-        internal static RaveConfigrationLoaderPage GetRaveConfigrationLoaderPage(this BrowserSession session)
+        internal static RaveConfigurationLoaderPage GetRaveConfigurationLoaderPage(this BrowserSession session)
         {
             if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
 
-            var raveConfigPage = new RaveConfigrationLoaderPage(session);
-
-            raveConfigPage.GoTo();
+            var raveConfigPage = new RaveConfigurationLoaderPage(session);
 
             return raveConfigPage;
+        }
+
+        internal static RaveClinicalViewsPage GetRaveClinicalViewsPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveClinicalViewsPage = new RaveClinicalViewsPage(session);
+
+            return raveClinicalViewsPage;
+        }
+
+        internal static RaveReportsPage GetRaveReportsPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveReportsPage = new RaveReportsPage(session);
+
+            return raveReportsPage;
+        }
+
+        internal static RaveReportTypePage GetRaveReportTypePage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveReportsPage = new RaveReportTypePage(session);
+
+            return raveReportsPage;
+        }
+
+        internal static RaveClinicalViewSettingsCodingSettingsPage GetRaveClinicalViewSettingsCodingSettingsPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveClinicalViewSettingsCodingSettingsPage = new RaveClinicalViewSettingsCodingSettingsPage(session);
+
+            return raveClinicalViewSettingsCodingSettingsPage;
+        }
+
+        internal static RaveClinicalViewSettingsPage GetRaveClinicalViewSettingsPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveClinicalViewsSettingsPage = new RaveClinicalViewSettingsPage(session);
+
+            return raveClinicalViewsSettingsPage;
+        }
+
+        internal static RaveConfigurationOtherSettingsPage GetRaveCoderConfigurationOtherSettingsPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveOtherSettingsPage = new RaveConfigurationOtherSettingsPage(session);
+
+            return raveOtherSettingsPage;
+        }
+
+        internal static RaveConfigurationOtherSettingsCoderPage GetRaveConfigurationOtherSettingsCoderPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveOtherSettingsPage = new RaveConfigurationOtherSettingsCoderPage(session);
+
+            return raveOtherSettingsPage;
         }
 
         internal static AdminSegmentManagementPage GetAdminSegmentManagementPage(this BrowserSession session)
@@ -412,6 +462,24 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             return raveHomePage;
         }
 
+        internal static RaveStudyPage GetRaveStudyPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveStudyPage = new RaveStudyPage(session);
+
+            return raveStudyPage;
+        }
+
+        internal static RaveSitePage GetRaveSitePage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveSitePage = new RaveSitePage(session);
+
+            return raveSitePage;
+        }
+
         internal static RaveAddSubjectPage GetRaveAddSubjectPage(this BrowserSession session)
         {
             if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
@@ -430,6 +498,15 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             return raveAdverseEventsPage;
         }
 
+        internal static RaveFormPage GetRaveFormPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveFormPage = new RaveFormPage(session);
+
+            return raveFormPage;
+        }
+
         internal static RaveAuditsPage GetRaveAuditsPage(this BrowserSession session)
         {
             if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
@@ -438,16 +515,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
             return raveAuditsPage;
         }
-
-        internal static RaveStudyPage GetRaveStudyPage(this BrowserSession session)
-        {
-            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
-
-            var raveStudyPage = new RaveStudyPage(session);
-
-            return raveStudyPage;
-        }
-
+        
         internal static RaveArchitectPage GetRaveArchitectPage(this BrowserSession session)
         {
             if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
@@ -464,6 +532,24 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             var raveArchitectProjectPage = new RaveArchitectProjectPage(session);
 
             return raveArchitectProjectPage;
+        }
+
+        internal static RaveArchitectCRFDraftPage GetRaveArchitectCRFDraftPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveArchitectCRFDraftPage = new RaveArchitectCRFDraftPage(session);
+
+            return raveArchitectCRFDraftPage;
+        }
+
+        internal static RaveArchitectCRFDraftPushPage GetRaveArchitectCRFDraftPushPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var crfPushPage = new RaveArchitectCRFDraftPushPage(session);
+
+            return crfPushPage;
         }
 
         internal static RaveArchitectAddNewDraftPage GetRaveArchitectAddNewDraftPage(this BrowserSession session)
@@ -484,51 +570,273 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             return raveArchitectUploadDraftPage;
         }
 
-        internal static RaveStudyPage OpenRaveStudy(this BrowserSession session, string studyName)
+        internal static RaveArchitectFormsPage GetRaveArchitectFormsPage(this BrowserSession session)
         {
-            if (ReferenceEquals(session, null))       throw new ArgumentNullException("session");
-            if (String.IsNullOrWhiteSpace(studyName)) throw new ArgumentNullException("studyName");
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
 
-            var raveNavigation = session.GetRaveNavigation();
-            raveNavigation.OpenHomePage();
+            var raveArchitectFormsPage = new RaveArchitectFormsPage(session);
 
-            var raveHomePage = session.GetRaveHomePage();
-            raveHomePage.OpenStudy(studyName);
-
-            var raveStudyPage = session.GetRaveStudyPage();
-            return raveStudyPage;
+            return raveArchitectFormsPage;
         }
 
-        internal static void OpenRaveSubject(this BrowserSession session, string studyName, string subjectId)
+        internal static RaveArchitectFormPage GetRaveArchitectFormPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveArchitectFormPage = new RaveArchitectFormPage(session);
+
+            return raveArchitectFormPage;
+        }
+
+        internal static RaveArchitectAmendmentManagerPage GetRaveArchitectAmendmentManagerPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveArchitectAmendmentManagerPage = new RaveArchitectAmendmentManagerPage(session);
+
+            return raveArchitectAmendmentManagerPage;
+        }
+
+        internal static RaveArchitectExecuteAmendmentMigrationPlanPage GetRaveArchitectExecuteAmendmentMigrationPlanPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveArchitectExecuteAmendmentMigrationPlanPage = new RaveArchitectExecuteAmendmentMigrationPlanPage(session);
+
+            return raveArchitectExecuteAmendmentMigrationPlanPage;
+        }
+
+        internal static RaveArchitectCopySourcesPage GetRaveArchitectCopySourcesPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveArchitectCopySourcesPage = new RaveArchitectCopySourcesPage(session);
+
+            return raveArchitectCopySourcesPage;
+        }
+
+        internal static RaveArchitectCopyDraftWizardPage GetRaveArchitectCopyDraftWizardPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveArchitectCopyDraftWizardPage = new RaveArchitectCopyDraftWizardPage(session);
+
+            return raveArchitectCopyDraftWizardPage;
+        }
+        
+        internal static RaveCoderConfigurationPage GetRaveCoderConfigurationPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveCoderConfigurationPage = new RaveCoderConfigurationPage(session);
+
+            return raveCoderConfigurationPage;
+        }
+        
+        internal static void OpenRaveStudy(this BrowserSession session, RaveNavigationTarget target)
         {
             if (ReferenceEquals(session, null))              throw new ArgumentNullException("session");
-            if (String.IsNullOrWhiteSpace(studyName))        throw new ArgumentNullException("studyName");
-            if (String.IsNullOrWhiteSpace(subjectId))        throw new ArgumentNullException("subjectId");
+            if (ReferenceEquals(target, null))               throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(target.StudyName)) throw new ArgumentNullException("target.StudyName");
 
-            var raveStudyPage = session.OpenRaveStudy(studyName);
+            string studyName = target.StudyName;
 
-            raveStudyPage.SearchForSubject(subjectId);
+            var raveNavigation = session.GetRaveNavigation();
 
-            session.WaitForRaveSubjectSearchToComplete();
-
-            if (raveStudyPage.IsSubjectsGridLoaded())
+            if (!raveNavigation.GoToEDCTab(studyName))
             {
-                raveStudyPage.OpenSubject(subjectId);
+                raveNavigation.OpenHomePage();
+
+                var raveHomePage = session.GetRaveHomePage();
+                raveHomePage.SearchForStudy(studyName);
+
+                if(!raveNavigation.IsTabAvailable(studyName))
+                {
+                    raveHomePage.OpenStudy(studyName);
+                }
             }
         }
 
-        internal static RaveAdverseEventsPage OpenRaveAdverseEvent(this BrowserSession session, string studyName,
-            string subjectId)
+        internal static RaveSitePage OpenRaveSite(this BrowserSession session, RaveNavigationTarget target)
         {
             if (ReferenceEquals(session, null))              throw new ArgumentNullException("session");
-            if (String.IsNullOrWhiteSpace(studyName))        throw new ArgumentNullException("studyName");
-            if (String.IsNullOrWhiteSpace(subjectId))        throw new ArgumentNullException("subjectId");
+            if (ReferenceEquals(target, null))               throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(target.StudyName)) throw new ArgumentNullException("target.StudyName");
+            if (String.IsNullOrWhiteSpace(target.SiteName))  throw new ArgumentNullException("target.SiteName");
 
-            session.OpenRaveSubject(studyName, subjectId);
+            string studyName = target.StudyName;
+            string siteName  = target.SiteName;
 
             var raveNavigation = session.GetRaveNavigation();
 
-            raveNavigation.WaitForNavigationLink(subjectId);
+            if (!raveNavigation.GoToEDCTab(siteName))
+            {
+                session.OpenRaveStudy(target);
+
+                if (raveNavigation.OnTab(studyName))
+                {
+                    var raveStudyPage = session.GetRaveStudyPage();
+
+                    raveStudyPage.SearchForSite(siteName);
+                
+                if (!raveNavigation.OnTab(siteName))
+                {
+                    raveStudyPage.OpenSite(siteName);
+                }
+            }
+            }
+
+            var raveSitePage = session.GetRaveSitePage();
+
+            return raveSitePage;
+        }
+        
+        internal static void OpenRaveSubject(this BrowserSession session, RaveNavigationTarget target)
+        {
+            if (ReferenceEquals(session, null))              throw new ArgumentNullException("session");
+            if (ReferenceEquals(target, null))               throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(target.SubjectId)) throw new ArgumentNullException("target.SubjectId");
+
+            string subjectId = target.SubjectId;
+
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.GoToEDCTab(subjectId))
+            {
+                var raveSitePage = session.OpenRaveSite(target);
+
+                raveSitePage.SearchForSubject(subjectId);
+                
+                if (!raveNavigation.OnTab(subjectId))
+                {
+                    raveSitePage.OpenSubject(subjectId);
+                }
+            }
+        }
+
+        internal static RaveFormPage OpenRaveForm(this BrowserSession session, RaveNavigationTarget target)
+        {
+            if (ReferenceEquals(session, null))              throw new ArgumentNullException("session");
+            if (ReferenceEquals(target, null))               throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(target.FormName))  throw new ArgumentNullException("target.FormName");
+
+            string formName = target.FormName;
+
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.GoToEDCTab(formName))
+            {
+                session.OpenRaveSubject(target);
+                
+                raveNavigation.OpenFormPage(formName);
+            }
+
+            var raveFormPage = session.GetRaveFormPage();
+
+            raveFormPage.CancelCurrentEdit();
+
+            return raveFormPage;
+        }
+
+        internal static RaveClinicalViewsPage OpenRaveClinicalViewsPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.OpenClinicalViewsPage())
+            {
+                session.OpenRaveConfigurationPage();
+
+                raveNavigation.OpenClinicalViewsPage();
+            }
+
+            var raveClinicalViewsPage = session.GetRaveClinicalViewsPage();
+
+            return raveClinicalViewsPage;
+        }
+
+        internal static RaveClinicalViewSettingsPage OpenRaveClinicalViewSettingsPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveNavigation = session.GetRaveNavigation();
+            
+            if (!raveNavigation.OpenClinicalViewSettingsPage())
+            {
+                session.OpenRaveConfigurationPage();
+
+                raveNavigation.OpenClinicalViewSettingsPage();
+            }
+
+            var raveClinicalViewSettingsPage = session.GetRaveClinicalViewSettingsPage();
+
+            return raveClinicalViewSettingsPage;
+            }
+
+        internal static RaveClinicalViewSettingsCodingSettingsPage OpenRaveClinicalViewsCodingSettingsPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var clinicalViewSettingsPage = session.OpenRaveClinicalViewSettingsPage();
+
+            clinicalViewSettingsPage.OpenCodingSettings();
+
+            var codingSettingsPage = session.GetRaveClinicalViewSettingsCodingSettingsPage();
+
+            return codingSettingsPage;
+        }
+
+        internal static RaveReportsPage OpenRaveReportsPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+            
+            var raveNavigation = session.GetRaveNavigation();
+                
+            if (!raveNavigation.OpenReportsPage())
+            {
+                raveNavigation.OpenHomePage(); ;
+
+                raveNavigation.OpenReportsPage();
+            }
+            
+            var raveReportsPage = session.GetRaveReportsPage();
+
+            return raveReportsPage;
+            }
+        
+        internal static RaveReportTypePage OpenRaveReportTypePage(this BrowserSession session, string reportType)
+            {
+            if (ReferenceEquals(session, null))        throw new ArgumentNullException("session");
+            if (String.IsNullOrWhiteSpace(reportType)) throw new ArgumentNullException("reportType");
+
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.GoToEDCTab(reportType))
+            {
+                var raveReportsPage = session.OpenRaveReportsPage();
+                
+                raveReportsPage.ChooseReport(reportType);
+            }
+
+            var raveReportTypePage = session.GetRaveReportTypePage();
+
+            return raveReportTypePage;
+        }
+
+        internal static RaveAdverseEventsPage OpenRaveAdverseEvent(this BrowserSession session, RaveNavigationTarget target)
+        {
+            if (ReferenceEquals(session, null))              throw new ArgumentNullException("session");
+            if (ReferenceEquals(target, null))               throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(target.SubjectId)) throw new ArgumentNullException("target.SubjectId");
+
+            string subjectId = target.SubjectId;
+
+            session.OpenRaveSubject(target);
+
+            session.WaitForRaveNavigationLink(subjectId);
+
+            var raveNavigation = session.GetRaveNavigation();
 
             raveNavigation.OpenAdverseEventsPage();
 
@@ -537,20 +845,14 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             return raveAdverseEventPage;
         }
 
-        internal static RaveAuditsPage OpenRaveAuditsPageForAdverseEvent(
-            this BrowserSession session,
-            string studyName,
-            string subjectId,
-            string adverseEventText,
-            int adverseEventOccurrence = 1)
+        internal static RaveAuditsPage OpenRaveAuditsPageForAdverseEvent(this BrowserSession session, RaveNavigationTarget target, string adverseEventText, int adverseEventOccurrence = 1)
         {
             if (ReferenceEquals(session, null))              throw new ArgumentNullException("session");
-            if (String.IsNullOrWhiteSpace(studyName))        throw new ArgumentNullException("studyName");
-            if (String.IsNullOrWhiteSpace(subjectId))        throw new ArgumentNullException("subjectId");
+            if (ReferenceEquals(target, null))               throw new ArgumentNullException("target");
             if (String.IsNullOrWhiteSpace(adverseEventText)) throw new ArgumentNullException("adverseEventText");
             if (adverseEventOccurrence <= 0)                 throw new ArgumentException("adverseEventOccurrence must be greater than 0.");
 
-            var raveAdverseEventPage = session.OpenRaveAdverseEvent(studyName, subjectId);
+            var raveAdverseEventPage = session.OpenRaveAdverseEvent(target);
 
             raveAdverseEventPage.ViewAuditLog(adverseEventText, adverseEventOccurrence);
 
@@ -559,31 +861,163 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             return raveAuditsPage;
         }
 
-        internal static RaveArchitectProjectPage OpenRaveArchitectProjectPage(this BrowserSession session,
-            string projectName)
+        internal static RaveAuditsPage OpenRaveAuditsPageForFormRow(this BrowserSession session, RaveNavigationTarget target, string rowContents)
         {
             if (ReferenceEquals(session, null))         throw new ArgumentNullException("session");
-            if (String.IsNullOrWhiteSpace(projectName)) throw new ArgumentNullException("projectName");
+            if (ReferenceEquals(target, null))          throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(rowContents)) throw new ArgumentNullException("rowContents");
+
+            var raveFormPage = session.OpenRaveForm(target);
+
+            raveFormPage.ViewAuditLog(rowContents);
+
+            var raveAuditsPage = session.GetRaveAuditsPage();
+
+            return raveAuditsPage;
+        }
+
+        internal static RaveUserAdministrationPage OpenRaveUserAdministrationPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
 
             var raveNavigation = session.GetRaveNavigation();
 
-            raveNavigation.OpenArchitectPage();
+            if (!raveNavigation.OpenUserAdministrationPage())
+            {
+                raveNavigation.OpenHomePage();
 
-            var raveArchitectPage = session.GetRaveArchitectPage();
+                raveNavigation.OpenUserAdministrationPage();
+            }
 
-            raveArchitectPage.OpenProject(projectName);
+            var raveUserAdministrationPage = session.GetRaveUserAdministrationPage();
+
+            return raveUserAdministrationPage;
+        }
+
+        internal static void OpenRaveConfigurationPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+            
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.OpenConfigurationPage())
+            {
+                raveNavigation.OpenHomePage();
+
+                raveNavigation.OpenConfigurationPage();
+            }
+        }
+
+        internal static RaveConfigurationLoaderPage OpenRaveConfigurationLoaderPage(this BrowserSession session)
+            {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.OpenConfigurationLoaderPage())
+            {
+                session.OpenRaveConfigurationPage();
+
+                raveNavigation.OpenConfigurationLoaderPage();
+            }
+
+            var raveConfigPage = session.GetRaveConfigurationLoaderPage();
+
+            return raveConfigPage;
+        }
+
+        internal static RaveConfigurationOtherSettingsPage OpenRaveConfigurationOtherSettingsPage(this BrowserSession session)
+        {
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.GoToEDCTab("Settings"))
+            {
+                session.OpenRaveConfigurationPage();
+
+                raveNavigation.OpenConfigurationOtherSettingsPage();
+            }
+
+            var otherSettingsPage = session.GetRaveCoderConfigurationOtherSettingsPage();
+
+            return otherSettingsPage;
+        }
+
+        internal static RaveConfigurationOtherSettingsCoderPage OpenRaveConfigurationOtherSettingsCoderPage(this BrowserSession session)
+        {
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.GoToEDCTab("Coder Configuration"))
+            {
+                var otherSettingsPage = session.OpenRaveConfigurationOtherSettingsPage();
+
+                otherSettingsPage.OpenCoderConfiguration();
+            }
+
+            var otherSettingsCoderPage = session.GetRaveConfigurationOtherSettingsCoderPage();
+
+            return otherSettingsCoderPage;
+        }
+
+        internal static RaveArchitectPage OpenRaveArchitectPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.OpenArchitectPage())
+            {
+                raveNavigation.OpenHomePage();
+
+                raveNavigation.OpenArchitectPage();
+            }
+
+                var raveArchitectPage = session.GetRaveArchitectPage();
+
+            return raveArchitectPage;
+        }
+
+        internal static RaveArchitectProjectPage OpenRaveArchitectProjectPage(this BrowserSession session, string projectName)
+        {
+            if (ReferenceEquals(session, null))         throw new ArgumentNullException("session");
+            if (String.IsNullOrWhiteSpace(projectName)) throw new ArgumentNullException("projectName");
+            
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.GoToArchitectTab(projectName))
+            {
+                var raveArchitectPage = session.OpenRaveArchitectPage();
+
+                raveArchitectPage.OpenProject(projectName);
+            }
 
             var raveArchitectProjectPage = session.GetRaveArchitectProjectPage();
 
             return raveArchitectProjectPage;
         }
 
-        internal static RaveArchitectAddNewDraftPage OpenRaveArchitectAddNewDraftPage(this BrowserSession session,
-            string projectName)
+        internal static RaveArchitectUploadDraftPage OpenRaveArchitectUploadDraftPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null))         throw new ArgumentNullException("session");
+
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.OpenArchitectUploadDraftPage())
+            {
+                session.OpenRaveArchitectPage();
+
+                raveNavigation.OpenArchitectUploadDraftPage();
+            }
+            
+            var raveArchitectUploadDraftPage = session.GetRaveArchitectUploadDraftPage();
+
+            return raveArchitectUploadDraftPage;
+        }
+
+        internal static RaveArchitectAddNewDraftPage OpenRaveArchitectAddNewDraftPage(this BrowserSession session, string projectName)
         {
             if (ReferenceEquals(session, null))         throw new ArgumentNullException("session");
             if (String.IsNullOrWhiteSpace(projectName)) throw new ArgumentNullException("projectName");
-
+            
             var raveArchitectProjectPage = session.OpenRaveArchitectProjectPage(projectName);
 
             raveArchitectProjectPage.OpenAddNewDraftPage();
@@ -592,21 +1026,114 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
             return raveArchitectAddNewDraftPage;
         }
-
-        private static void WaitForRaveSubjectSearchToComplete(this BrowserSession session)
+        
+        internal static RaveArchitectCRFDraftPage OpenRaveArchitectCRFDraftPage(this BrowserSession session, RaveArchitectRecordTarget target)
         {
-            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+            if (ReferenceEquals(session, null))              throw new ArgumentNullException("session");
+            if (ReferenceEquals(target, null))               throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(target.StudyName)) throw new ArgumentNullException("target.StudyName");
+            if (String.IsNullOrWhiteSpace(target.DraftName)) throw new ArgumentNullException("target.DraftName");
 
-            RetryPolicy.FindElement.Execute(() =>
+            string studyName = target.StudyName;
+            string draftName = target.DraftName;
+            
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.GoToArchitectTab(draftName))
             {
-                var raveStudyPage = session.GetRaveStudyPage();
+            var raveArchitectProjectPage = session.OpenRaveArchitectProjectPage(studyName);
+
+            raveArchitectProjectPage.OpenDraft(draftName);
+            }
+
+            var raveArchitectCRFDraftPage = session.GetRaveArchitectCRFDraftPage();
+
+            return raveArchitectCRFDraftPage;
+        }
+
+        internal static RaveArchitectFormsPage OpenRaveArchitectFormsPage(this BrowserSession session, RaveArchitectRecordTarget target)
+        {
+            if (ReferenceEquals(session, null))              throw new ArgumentNullException("session");
+            if (ReferenceEquals(target, null))               throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(target.StudyName)) throw new ArgumentNullException("target.StudyName");
+            if (String.IsNullOrWhiteSpace(target.DraftName)) throw new ArgumentNullException("target.DraftName");
+            if (String.IsNullOrWhiteSpace(target.FormName))  throw new ArgumentNullException("target.FormName");
+            
+            string studyName = target.StudyName;
+            string draftName = target.DraftName;
+            string formName  = target.FormName;
+            
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.OpenArchitectFormsPage())
+            {
+                session.OpenRaveArchitectCRFDraftPage(target);
+
+                raveNavigation.OpenArchitectFormsPage();
+            }
+
+                var raveFormsPage = session.GetRaveArchitectFormsPage();
+
+            return raveFormsPage;
+            }
+
+        internal static RaveArchitectFormPage OpenRaveArchitectFormPage(this BrowserSession session, RaveArchitectRecordTarget target)
+        {
+            if (ReferenceEquals(session, null))             throw new ArgumentNullException("session");
+            if (String.IsNullOrWhiteSpace(target.FormName)) throw new ArgumentNullException("target.FormName");
+
+            string formName = target.FormName;
+
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.GoToArchitectTab(formName))
+            {
+                var raveFormsPage = session.OpenRaveArchitectFormsPage(target);
+
+                raveFormsPage.OpenForm(formName);
+                }
+
+            var raveFormPage = session.GetRaveArchitectFormPage();
+
+            return raveFormPage;
+        }
+
+        internal static RaveArchitectEnvironmentSetupPage OpenRaveArchitectEnvironmentSetupPage(this BrowserSession session, string projectName)
+        {
+            if (ReferenceEquals(session, null))         throw new ArgumentNullException("session");
+            if (String.IsNullOrWhiteSpace(projectName)) throw new ArgumentNullException("projectName");
+           
+            var raveNavigation = session.GetRaveNavigation();
+
+            if (!raveNavigation.OpenArchitectEnvironmentSetupPage())
+            {
+                session.OpenRaveArchitectProjectPage(projectName);
+
+                raveNavigation.OpenArchitectEnvironmentSetupPage();
+                }
+
+            var raveArchitectEnvironmentSetupPage = session.GetRaveArchitectEnvironmentSetupPage();
+
+            return raveArchitectEnvironmentSetupPage;
+        }
+
+        internal static RaveArchitectAmendmentManagerPage OpenRaveArchitectAmendmentManagerPage(this BrowserSession session, string projectName)
+        {
+            if (ReferenceEquals(session, null))         throw new ArgumentNullException("session");
+            if (String.IsNullOrWhiteSpace(projectName)) throw new ArgumentNullException("projectName");
+
                 var raveNavigation = session.GetRaveNavigation();
 
-                if (!raveStudyPage.IsSubjectsGridLoaded() && !raveNavigation.IsNavigationLinksGridLoaded())
+            if (!raveNavigation.OpenArchitectAmendmentManagerPage())
                 {
-                    throw new MissingHtmlException("Rave subject search is not complete.");
+                session.OpenRaveArchitectProjectPage(projectName);
+
+                raveNavigation.OpenArchitectAmendmentManagerPage();
                 }
-            });
+
+            var raveArchitectAmendmentManagerPage = session.GetRaveArchitectAmendmentManagerPage();
+
+            return raveArchitectAmendmentManagerPage;
         }
 
         internal static SynonymApprovalPage GetSynonymApprovalPage(this BrowserSession session)
@@ -636,7 +1163,6 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
 
             var synonymList = new SynonymListPage(session);
-
 
             return synonymList;
         }
@@ -768,12 +1294,13 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
         internal static BrowserWindow SwitchToBrowserWindowByName(
             this BrowserSession session,
-            string windowName)
+            string windowName,
+            Options options = null)
         {
             if (ReferenceEquals(session, null))    throw new ArgumentNullException("session");
             if (ReferenceEquals(windowName, null)) throw new ArgumentNullException("windowName");
 
-            var window = session.FindWindow(windowName);
+            var window = session.FindWindow(windowName, options);
 
             return window;
         }
@@ -884,80 +1411,67 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                 options.RetryInterval,
                 options);
         }
+        
+        internal static void WaitForRaveNavigationLink(this BrowserSession session, string linkText)
+        {
+            if (ReferenceEquals(session, null))      throw new ArgumentNullException("session");
+            if (String.IsNullOrWhiteSpace(linkText)) throw new ArgumentNullException("linkText");
 
-        internal static void WaitForIMedidataSync(this BrowserSession session)
+            var raveNavigation = session.GetRaveNavigation();
+
+            raveNavigation.WaitForNavigationLink(linkText);
+        }
+
+        private static IList<SessionElementScope> GetDXSelectListOptions(this BrowserSession session)
         {
             if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
 
-            var header = session.GetPageHeader();
-            header.WaitForSync();
+            var selectListOptions = session.FindAllSessionElementsByXPath("//*[contains(@id,'DDD_L_LBI')]");
+
+            return selectListOptions;
         }
 
-        internal static void TryToSelectValue(this BrowserSession session, string id, string selectedValue,
-            bool useContains = false)
+        private static SessionElementScope GetDXSelectListOption(this BrowserSession session, SessionElementScope selectList, string targetOptionText)
         {
-            if (ReferenceEquals(session, null))       throw new ArgumentNullException("session");
-            if (ReferenceEquals(id, null))            throw new ArgumentNullException("id");
-            if (ReferenceEquals(selectedValue, null)) throw new ArgumentNullException("selectedValue");
+            if (ReferenceEquals(session, null))              throw new ArgumentNullException("session");
+            if (ReferenceEquals(selectList, null))           throw new ArgumentNullException("selectList");
+            if (String.IsNullOrWhiteSpace(targetOptionText)) throw new ArgumentNullException("targetOptionText");
 
-            var option  = session.FindSessionElementByXPath(GetDxEditorSelectOptionXPath(id, selectedValue, useContains));
-            var table   = session.FindSessionElementByXPath(String.Format("//div[@id ='{0}_DDD_PW-1' and not(contains(@style,'visibility: hidden'))]", id));
-            var input   = session.FindSessionElementByXPath(String.Format("//input[@id = '{0}_I']", id));
-            var options = Config.GetDefaultCoypuOptions();
+            session.TryUntil(
+                () => selectList.Click(),
+                () => session.GetDXSelectListOptions().Any(),
+                Config.ExistsOptions.RetryInterval,
+                Config.ExistsOptions);
 
-            session.TryUntil(input.Click,   () => option.Exists(), options.RetryInterval, options);
-            session.TryUntil(input.Click,   () => table.Exists(), options.RetryInterval, options);
-            session.TryUntil(option.Hover,  () => option.Class.Contains("Hover"), options.RetryInterval, options);
-            session.TryUntil(option.Click,  () => useContains ? input.Value.Contains(selectedValue) : input.Value == selectedValue,options.RetryInterval, options);
+            var selectListOptions = session.GetDXSelectListOptions();
+
+            var selectListOption = selectListOptions.FirstOrDefault(x => x.Text.Equals(targetOptionText, StringComparison.OrdinalIgnoreCase));
+
+            if (ReferenceEquals(selectListOption, null))
+            {
+                selectListOption = selectListOptions.FirstOrDefault(x => x.Text.Contains(targetOptionText, StringComparison.OrdinalIgnoreCase));
+            }
+
+            if (ReferenceEquals(selectListOption, null))
+            {
+                throw new NullReferenceException(String.Format("No option {0} was found.", targetOptionText));
+            }
+
+            return selectListOption;
         }
 
-        internal static void TrySelectDxOptionEditor(
-            this BrowserSession session,
-            Func<SessionElementScope> getTextBox,
-            Func<string, SessionElementScope> getOption,
-            string optionSelect)
+        internal static void SelectDXOption(this BrowserSession session, Func<SessionElementScope> getSelectList, string targetOptionText)
         {
-            if (ReferenceEquals(session, null))          throw new ArgumentNullException("session");
-            if (ReferenceEquals(getTextBox, null))       throw new ArgumentNullException("getTextBox");
-            if (ReferenceEquals(getOption, null))        throw new ArgumentNullException("getOption");
-            if (String.IsNullOrWhiteSpace(optionSelect)) throw new ArgumentNullException("optionSelect");
+            if (ReferenceEquals(session, null))              throw new ArgumentNullException("session");
+            if (ReferenceEquals(getSelectList, null))        throw new ArgumentNullException("getSelectList");
+            if (String.IsNullOrWhiteSpace(targetOptionText)) throw new ArgumentNullException("targetOptionText");
 
-            getTextBox().Click();
-            var selection = getOption(optionSelect);
+            var selectList = getSelectList();
 
-            if (!selection.Exists())
-            {
-                throw new MissingHtmlException(String.Format("{0} doesn't exist", optionSelect));
-            }
+            var selectListOption = RetryPolicy.FindElement.Execute(
+                () => session.GetDXSelectListOption(selectList, targetOptionText));
 
-            selection.HoverAndClick();
-
-            var textBox = getTextBox();
-
-            if (String.IsNullOrWhiteSpace(textBox.Value))
-            {
-                throw new MissingHtmlException(String.Format("{0} not selected", optionSelect));
-            }
-
-            if (!textBox.Value.Contains(optionSelect, StringComparison.OrdinalIgnoreCase))
-            {
-                throw new MissingHtmlException(String.Format("{0} not selected", optionSelect));
-            }
-        }
-
-        private static string GetDxEditorSelectOptionXPath(string id, string selectedValue, bool useContains = false)
-        {
-            if (ReferenceEquals(id, null))            throw new ArgumentNullException("id");
-            if (ReferenceEquals(selectedValue, null)) throw new ArgumentNullException("selectedValue");
-
-            if (useContains == false)
-            {
-                return String.Format("//td[contains(@id, '{0}') and contains(@id, 'LB') and (text()='{1}')]", id,
-                    selectedValue);
-            }
-
-            return String.Format("//td[contains(@id, '{0}') and contains(@id, 'LB') and contains(text(), '{1}')]", id,
-                selectedValue);
+            selectListOption.Click();
         }
 
         internal static void GoToHomePage(this BrowserSession session)
@@ -1008,6 +1522,15 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                         throw new MissingHtmlException("Confirmation dialog does not exist.");
                     }
                 });
+        }
+
+        internal static RaveArchitectEnvironmentSetupPage GetRaveArchitectEnvironmentSetupPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveArchitectEnvironmentSetupPage = new RaveArchitectEnvironmentSetupPage(session);
+
+            return raveArchitectEnvironmentSetupPage;
         }
     }
 }

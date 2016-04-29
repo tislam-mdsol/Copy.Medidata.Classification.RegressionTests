@@ -324,7 +324,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Form"});
             table5.AddRow(new string[] {
-                        "<SourceSystemStudyName>",
+                        "<StudyName>",
                         "Subject 1",
                         "ACHES",
                         "Headache",
@@ -332,7 +332,7 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "Form 1"});
             table5.AddRow(new string[] {
-                        "<SourceSystemStudyName>",
+                        "<StudyName>",
                         "Subject 1",
                         "ACHES",
                         "Headache",
@@ -717,7 +717,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 199
      testRunner.When("starting synonym list migration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 200
-  testRunner.Then("the synonym for verbatim \"ACHES\" and code \"10019211\" should be active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Then("the synonym for verbatim \"ACHES\" and code \"10019211\" should be active after synon" +
+                    "ym migration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

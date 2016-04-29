@@ -143,7 +143,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority"});
             table1.AddRow(new string[] {
                         "<SourceSystem>",
-                        "<SourceSystemStudyDisplayName>",
+                        "<StudyDisplayName>",
                         "MedDRA - 15.0",
                         "ENG",
                         "Toxic effect of venom",
@@ -188,7 +188,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority"});
             table2.AddRow(new string[] {
                         "<SourceSystem>",
-                        "<SourceSystemStudyDisplayName>",
+                        "<StudyDisplayName>",
                         "MedDRA - 15.0",
                         "ENG",
                         "Adverse Event Term 1",
@@ -346,7 +346,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority"});
             table6.AddRow(new string[] {
                         "<SourceSystem>",
-                        "<SourceSystemStudyDisplayName>",
+                        "<StudyDisplayName>",
                         "MedDRA - 15.0",
                         "ENG",
                         "Adverse Event Term 2",

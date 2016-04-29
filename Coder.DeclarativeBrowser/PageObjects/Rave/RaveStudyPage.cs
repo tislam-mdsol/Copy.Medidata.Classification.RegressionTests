@@ -1,11 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coypu;
-using System.Linq;
-using System.Collections.Generic;
 using OpenQA.Selenium;
 
-namespace Coder.DeclarativeBrowser.PageObjects
+namespace Coder.DeclarativeBrowser.PageObjects.Rave
 {
     internal sealed class RaveStudyPage
     {
@@ -13,99 +13,95 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal RaveStudyPage(BrowserSession session)
         {
-            if (ReferenceEquals(session, null))
-            {
-                throw new ArgumentNullException("session");
-            }
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
             _Session = session;
         }
-
-        private SessionElementScope GetAddSubjectLink()
+        
+        private SessionElementScope GetSiteSearchLabel()
         {
-            var addSubjectLink = _Session.FindSessionElementById("_ctl0_Content_ListDisplayNavigation_lbAddSubject");
+            var siteSearchLabel = _Session.FindSessionElementById("_ctl0_Content_ListDisplayNavigation_lblFind");
 
-            return addSubjectLink;
+            return siteSearchLabel;
         }
 
-        private SessionElementScope GetSubjectSearchTextBox()
+        private SessionElementScope GetSiteSearchTextBox()
         {
-            var subjectSearchTextBox = _Session.FindSessionElementById("_ctl0_Content_ListDisplayNavigation_txtSearch");
+            var siteSearchTextBox = _Session.FindSessionElementById("_ctl0_Content_ListDisplayNavigation_txtSearch");
 
-            return subjectSearchTextBox;
+            return siteSearchTextBox;
         }
 
-        private SessionElementScope GetSubjectSearchButton()
+        private SessionElementScope GetSiteSearchButton()
         {
-            var subjectSearchButton = _Session.FindSessionElementById("_ctl0_Content_ListDisplayNavigation_ibSearch");
+            var siteSearchButton = _Session.FindSessionElementById("_ctl0_Content_ListDisplayNavigation_ibSearch");
 
-            return subjectSearchButton;
+            return siteSearchButton;
         }
 
-        private SessionElementScope GetSubjectsGrid()
+        private SessionElementScope GetSitesGrid()
         {
-            var subjectsGrid = _Session.FindSessionElementById("_ctl0_Content_ListDisplayNavigation_dgObjects");
+            var sitesGrid = _Session.FindSessionElementById("_ctl0_Content_ListDisplayNavigation_dgObjects");
 
-            return subjectsGrid;
+            return sitesGrid;
         }
 
-        private IList<SessionElementScope> GetSubjects()
+        private IList<SessionElementScope> GetSites()
         {
-            var subjectsGrid = GetSubjectsGrid();
+            var sitesGrid = GetSitesGrid();
 
-            var subjects = subjectsGrid.FindAllSessionElementsByXPath(".//a");
+            var sites = sitesGrid.FindAllSessionElementsByXPath(".//a");
 
-            return subjects.ToList();
+            return sites.ToList();
+        }
+
+        internal void SearchForSite(string siteName)
+        {
+            if (String.IsNullOrWhiteSpace(siteName)) throw new ArgumentNullException("siteName");
+
+            _Session.WaitUntilElementExists(GetSiteSearchTextBox);
+
+            var siteSearchTextBox = GetSiteSearchTextBox();
+
+            siteSearchTextBox.FillInWith(siteName).SendKeys(Keys.Return);
+        }
+
+        internal bool IsStudyPageLoaded()
+        {
+            bool searchLabelExists = GetSiteSearchLabel().Exists(Config.ExistsOptions);
+
+            if (!searchLabelExists)
+            {
+                return false;
+            }
+
+            bool pageIsLoaded = GetSiteSearchLabel().Text.Equals("Sites");
+
+            return pageIsLoaded;
         }
         
-        internal void SearchForSubject(string subjectId)
+        internal void OpenSite(string siteName)
         {
-            if (String.IsNullOrWhiteSpace(subjectId)) throw new ArgumentNullException("subjectId");
+            if (String.IsNullOrWhiteSpace(siteName)) throw new ArgumentNullException("siteName");
 
-            _Session.WaitUntilElementExists(GetSubjectSearchTextBox);
-
-            var subjectSearchTextBox = GetSubjectSearchTextBox();
-
-            subjectSearchTextBox.FillInWith(subjectId).SendKeys(Keys.Return);
-        }
-        
-        internal void OpenSubject(string subjectId)
-        {
-            if (String.IsNullOrWhiteSpace(subjectId)) throw new ArgumentNullException("subjectId");
-            
             RetryPolicy.FindElement.Execute(() =>
             {
-                var subjects = GetSubjects();
+                var sites = GetSites();
 
-                if (!subjects.Any())
+                if (!sites.Any())
                 {
-                    throw new MissingHtmlException(String.Format("No Subjects were found for search text, {0}.",
-                        subjectId));
+                    throw new MissingHtmlException("No sites were found.");
                 }
 
-                var subjectLink = subjects.FirstOrDefault(x => x.Text.EqualsIgnoreCase(subjectId));
+                var siteLink = sites.FirstOrDefault(x => x.Text.EqualsIgnoreCase(siteName));
 
-                if (ReferenceEquals(subjectLink, null))
+                if (ReferenceEquals(siteLink, null))
                 {
-                    throw new MissingHtmlException(String.Format("Subject, {0}, was not found.",
-                        subjectId));
+                    throw new MissingHtmlException(String.Format("Site, {0}, was not found.", siteName));
                 }
 
-                subjectLink.Click();
+                siteLink.Click();
             });
-        }
-        
-        internal bool IsSubjectsGridLoaded()
-        {
-            return GetSubjectsGrid().Exists(Config.ExistsOptions);
-        }
-        
-        internal void OpenAddSubjectPage()
-        {
-            _Session.WaitUntilElementExists(GetAddSubjectLink);
-
-            var addSubjectLink = GetAddSubjectLink();
-
-            addSubjectLink.Click();
         }
     }
 }

@@ -37,13 +37,11 @@ namespace Coder.TestSteps.StepDefinitions
             _StepContext.SetSourceSystemApplicationContext();
 
             _Browser.SetupCoderConfiguration(_StepContext, setupType);
-
-            _StepContext.SetupType = setupType;
-
+            
             _Browser.CleanUpCodingTasks();
 
             CoderDatabaseAccess.CreateAndActivateSynonymList(
-               segment:           _StepContext.Segment,
+               segment:           _StepContext.GetSegment(),
                dictionary:        _StepContext.Dictionary,
                dictionaryVersion: _StepContext.Version,
                locale:            _StepContext.Locale,
@@ -64,13 +62,12 @@ namespace Coder.TestSteps.StepDefinitions
             _StepContext.SetProjectRegistrationContext(dictionaryLocaleVersion);
             _StepContext.SetSourceSystemApplicationContext();
             _Browser.SetupCoderConfiguration(_StepContext, setupType);
-            _StepContext.SetupType = setupType;
             _Browser.CleanUpCodingTasks();
 
             foreach (var synonymList in list)
             {
                 CoderDatabaseAccess.CreateAndActivateSynonymList(
-                segment:           _StepContext.Segment,
+                segment:           _StepContext.GetSegment(),
                 dictionary:        synonymList.Dictionary,
                 dictionaryVersion: synonymList.Version,
                 locale:            synonymList.Locale,
@@ -85,7 +82,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
 
             var list = table.TransformFeatureTableStrings(_StepContext).CreateSet<SynonymList>().ToArray();
-            _Browser.RegisterProjects(_StepContext.Project,list);
+            _Browser.RegisterProjects(_StepContext.GetStudyName(), list);
         }
 
         [Then(@"the following content should be registered")]
@@ -105,7 +102,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             var list = table.CreateSet<SourceTerm>().ToArray();
             
-            _Browser.AssertThatAllStudiesForProjectAreRegisteredAndMevContentIsLoaded(_StepContext.Project,list);
+            _Browser.AssertThatAllStudiesForProjectAreRegisteredAndMevContentIsLoaded(_StepContext.GetStudyName(), list);
         }
 
         [Then(@"Registration History contains following information")]

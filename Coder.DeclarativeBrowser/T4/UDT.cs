@@ -3430,6 +3430,7 @@ namespace Coder.DeclarativeBrowser.Db {
         public String CodingContextURI { get; set; }
         public Int32 CodingRequestItemDataOrdinal { get; set; }
         public String DictionaryLocale { get; set; }
+        public String EventRef { get; set; }
         public String FieldRef { get; set; }
         public String FormRef { get; set; }
         public Int32 GroupId { get; set; }
@@ -3466,6 +3467,7 @@ namespace Coder.DeclarativeBrowser.Db {
             _DataTable.Columns.Add(new DataColumn("CodingContextURI", typeof(String)));
             _DataTable.Columns.Add(new DataColumn("CodingRequestItemDataOrdinal", typeof(Int32)));
             _DataTable.Columns.Add(new DataColumn("DictionaryLocale", typeof(String)));
+            _DataTable.Columns.Add(new DataColumn("EventRef", typeof(String)));
             _DataTable.Columns.Add(new DataColumn("FieldRef", typeof(String)));
             _DataTable.Columns.Add(new DataColumn("FormRef", typeof(String)));
             _DataTable.Columns.Add(new DataColumn("GroupId", typeof(Int32)));
@@ -3516,6 +3518,7 @@ namespace Coder.DeclarativeBrowser.Db {
             row["CodingContextURI"] = item.CodingContextURI;
             row["CodingRequestItemDataOrdinal"] = item.CodingRequestItemDataOrdinal;
             row["DictionaryLocale"] = item.DictionaryLocale;
+            row["EventRef"] = item.EventRef;
             row["FieldRef"] = item.FieldRef;
             row["FormRef"] = item.FormRef;
             row["GroupId"] = item.GroupId;

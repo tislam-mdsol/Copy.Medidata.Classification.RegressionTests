@@ -24,6 +24,11 @@ namespace Coder.DeclarativeBrowser.PageObjects
         {
             var iMedidataLink = _Session.FindSessionElementById("_ctl0_PgHeader_iMedidataLink");
 
+            if (!iMedidataLink.Exists(Config.ExistsOptions))
+            {
+                iMedidataLink = _Session.FindSessionElementById("iMedidataLink");
+            }
+
             return iMedidataLink;
         }
 

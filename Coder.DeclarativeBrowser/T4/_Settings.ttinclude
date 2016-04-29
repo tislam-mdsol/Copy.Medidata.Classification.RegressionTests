@@ -97,7 +97,9 @@
         "spFakeStudyMigrationFailure",
 		"spGetQueryUUIDByCodingElementUUID",
 		"spCreationDateAgingByCodingElementUUID",
-		"spAgeSynonymCreationDate"
+		"spAgeSynonymCreationDate",
+        "spSegmentGetByIMedidataId",
+        "spUserGetByIMedidataId"
 	};
 
 	Dictionary<string, string[]> ProcedureExcludeColumns = new Dictionary<string, string[]>

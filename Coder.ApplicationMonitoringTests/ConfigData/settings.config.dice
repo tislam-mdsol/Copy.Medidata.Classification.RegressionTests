@@ -1,34 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <appSettings>
-  <add key="AppHost"                              value="<%= configured.imedidata_login_url %>" />
-  <add key="LocalHost"                            value="localhost" />
-  <add key="Port"                                 value=" " />
-  <add key="DumpDirectory"                        value="C:\TempRegressionOdmFiles" />
-  <add key="DownloadDirectory"                    value="C:\TempRegressionDownloads" />
-  <add key="ScreenshotDirectoryName"              value="<%= configured.screenshot_directory_name || 'RegressionTestScreenshots' %>"/>
-  <add key="FirefoxExecutablePath"                value="C:\Program Files (x86)\Mozilla Firefox\Firefox.exe" />
-  <add key="Login"                                value="<%= configured.regression_test_user_id || 'coder3' %>"/>
-  <add key="Password"                             value="<%= configured.regression_test_user_password || 'Password1' %>"/>
-  <add key="Segment"                              value="<%= configured.segment || 'Mediflex' %>"/>
-  <add key="AdminLogin"                           value="CoderAdmin" />
-  <add key="AdminLoginPassword"                   value="Password1" />
-  <add key="ApplicationName"                      value="<%= configured.application_name %>" />
-  <add key="ELearningLoginTitle"                  value="Log In - Medidata Knowledge Spaces" />
-  <add key="ScreenHelpWindowName"                 value="Medidata Knowledge Spaces" />
-  <add key="HelpCenterWindowName"                 value="Medidata Help Center" />
-  <add key="HoursOffsetFromEst"                   value="-8" />
-  <add key="DateTimeFormat"                       value="dd MMM yyyy HH:mm:ss tt" />
-  <add key="AcceptableSecondsDiff"                value="60" />
-  <add key="BrowserAutoSaveFileTypes"             value="application/msword, application/csv, application/ris, text/csv, application/pdf, text/html, text/plain, application/download, application/octet-stream" />
-  <add key="ClientSettingsProvider.ServiceUri"    value="" />
-  <add key="DefaultCoypuOptionsTimeOut"           value="60"/>
-  <add key="DefaultCoypuOptionsRetryInternval"    value="1"/>
-  <add key="SynonymListTemplate"                  value="Verbatim|Code|Level|Path|Primary Flag|Supplemental Info|Status"/>
-  <add key="BuildAgentScreenWidth"                value="1024" />
-  <add key="BuildAgentScreenHeight"               value="768" />
-  <add key="DefaultSynonymListName"               value="Primary List" />
-  <add key="StudyNamePrefix"                      value="<%= configured.study_name_prefix  || 'Mediflex' %>" />
-  <add key="StudyName"                            value="<%= configured.study_name  || 'Mediflex' %>" />
-  <add key="TimeStampHoursDiff"                   value="<%= configured.timestamp_hours_diff  || '24' %>" />
-  <add key="GridHubHost"                          value="<%= configured.selenium_grid_hub_host || '' %>"/>
+  <add key="AppHost"                                  value="<%= configured.imedidata_login_url %>" />
+  <add key="LocalHost"                                value="localhost" />
+  <add key="Port"                                     value=" " />
+  <add key="DumpDirectory"                            value="C:\TempRegressionOdmFiles" />
+  <add key="DownloadDirectory"                        value="C:\TempRegressionDownloads" />
+  <add key="ScreenshotDirectoryName"                  value="RegressionTestScreenshots" />
+  <add key="FirefoxExecutablePath"                    value="C:\Program Files (x86)\Mozilla Firefox\Firefox.exe" />
+  <add key="Login"                                    value="<%= configured.regression_test_user_id || 'coder3' %>"/>
+  <add key="Password"                                 value="<%= configured.regression_test_user_password || 'Password1' %>"/>
+  <add key="Segment"                                  value="<%= configured.segment || 'Mediflex' %>"/>
+  <add key="Site"                                     value="<%= configured.site   || 'Active Site' %>"/>
+  <add key="AdminLogin"                               value="CoderAdmin" />
+  <add key="AdminLoginPassword"                       value="Password1" />
+  <add key="ApplicationName"                          value="<%= configured.application_name %>" />
+  <add key="ELearningLoginTitle"                      value="Log In - Medidata Knowledge Spaces" />
+  <add key="ScreenHelpWindowName"                     value="Medidata Knowledge Spaces" />
+  <add key="HelpCenterWindowName"                     value="Medidata Help Center" />
+  <add key="HoursOffsetFromEst"                       value="-8" />
+  <add key="DateTimeFormat"                           value="dd MMM yyyy HH:mm:ss tt" />
+  <add key="AcceptableSecondsDiff"                    value="60" />
+  <add key="BrowserAutoSaveFileTypes"                 value="application/msword, application/csv, application/ris, text/csv, application/pdf, text/html, text/plain, application/download, application/octet-stream" />
+  <add key="ClientSettingsProvider.ServiceUri"        value="" />
+  <add key="DefaultCoypuOptionsTimeOut"               value="60"/>
+  <add key="DefaultCoypuOptionsRetryInternval"        value="1"/>
+  <add key="DefaultTransmissionOptionsTimeOut"        value="1800"/>
+  <add key="DefaultTransmissionOptionsRetryInterval"  value="30"/>
+  <add key="SynonymListTemplate"                      value="Verbatim|Code|Level|Path|Primary Flag|Supplemental Info|Status"/>
+  <add key="BuildAgentScreenWidth"                    value="1024" />
+  <add key="BuildAgentScreenHeight"                   value="768" />
+  <add key="DefaultSynonymListName"                   value="Primary List" />
+  <add key="StudyNamePrefix"                          value="<%= configured.study_name_prefix  || 'Mediflex' %>" />
+  <add key="StudyName"                                value="<%= configured.study_name  || 'Mediflex' %>" />
+  <add key="TimeStampHoursDiff"                       value="<%= configured.timestamp_hours_diff  || '24' %>" />
+  <add key="GridHubHost"                              value="<%= configured.selenium_grid_hub_host || '' %>"/>
 </appSettings>

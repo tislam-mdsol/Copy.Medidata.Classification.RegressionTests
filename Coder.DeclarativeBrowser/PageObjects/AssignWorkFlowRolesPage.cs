@@ -181,6 +181,22 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             return assignWorkflowRoleGridValues;
         }
+        
+        private bool IsWorkflowRoleAssigned(string roleName, string study, string loginId)
+        {
+            if (ReferenceEquals(roleName, null))    throw new ArgumentNullException("roleName");
+            if (String.IsNullOrWhiteSpace(study))   throw new ArgumentNullException("study");
+            if (String.IsNullOrWhiteSpace(loginId)) throw new ArgumentNullException("loginId");
+
+            var assignedWorkflowRoles = GetAssignWorkflowRoleGridValues();
+
+            var targetWorkflowRole = assignedWorkflowRoles.FirstOrDefault(x => x.Name      .EqualsIgnoreCase(roleName) &&
+                                                                              (x.Study     .EqualsIgnoreCase(study   ) || x.Study.EqualsIgnoreCase("all")) &&
+                                                                               x.LoginId   .Contains        (loginId, StringComparison.OrdinalIgnoreCase ) &&
+                                                                               x.DenyAccess.Equals          (false   ) );
+
+            return !ReferenceEquals(targetWorkflowRole, null);
+        }
 
         internal SessionElementScope GetSearchButton()
         {
@@ -193,28 +209,18 @@ namespace Coder.DeclarativeBrowser.PageObjects
         {
             if (String.IsNullOrWhiteSpace(roleName)) throw new ArgumentNullException("roleName");
             if (String.IsNullOrWhiteSpace(study))    throw new ArgumentNullException("study");
-            if (String.IsNullOrWhiteSpace(loginId))  throw new ArgumentNullException("loginId"); 
+            if (String.IsNullOrWhiteSpace(loginId))  throw new ArgumentNullException("loginId");
+
+            if (IsWorkflowRoleAssigned(roleName, study, loginId))
+            {
+                return;
+            }
 
             GetAddNewButton().Click();
-
-            var policy = RetryPolicy.FindElement;
-            policy.Execute(
-                () =>
-                {
-                    _Browser.TrySelectDxOptionEditor(GetLogInTextBox, GetLoginIdTextBoxTd, loginId);
-                });
-
-            policy.Execute(
-                () =>
-                {
-                    _Browser.TrySelectDxOptionEditor(GetStudyTextBox, GetStudyTextboxTd, study);
-                });
-
-            policy.Execute(
-                () =>
-                {
-                    _Browser.TrySelectDxOptionEditor(GetWorkRoleNameTextBox, GetWorkRoleNameTextboxTd, roleName);
-                });
+            
+            _Browser.SelectDXOption(GetLogInTextBox,        loginId);
+            _Browser.SelectDXOption(GetStudyTextBox,        study);
+            _Browser.SelectDXOption(GetWorkRoleNameTextBox, roleName);
 
             GetAssignRoleUpdateButton().Click();
         }

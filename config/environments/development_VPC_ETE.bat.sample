@@ -1,0 +1,130 @@
+@ECHO OFF
+REM Client Database
+set database_name=coder_v1
+set database_server=127.0.0.1,14330
+
+set database_username=developer
+set database_password=
+set admin_user_id=codersuperuser
+set admin_user_password=
+set rave_admin_user_id=defuser
+set rave_admin_user_password=
+set regression_test_user_password=
+
+set setup_segment=MedidataReserved1
+set configured.ete_setup_suffix=0001
+set segment=Mediflex8e2342c6
+
+SET mauth_service_url=http://mauth-sandbox.imedidata.net
+SET imedidata_login_url=https://login-sandbox.imedidata.net
+SET imedidata_base_url=https://sandbox.imedidata.net
+SET rave_login_url=https://rave564conlabtesting6.mdsol.com/
+SET imedidata_auth_enabled=true
+
+SET codermauthprivatepemkey=
+
+set application_name=Coder VPC Sandbox
+SET app_uuid=01283b2e-b557-45a6-af40-c42ec72c8153
+set ete_edc_app_name=Rave EDC - rave564conlabtesting6.mdsol.com Rave EDC
+set ete_modules_app_name=Rave Modules - rave564conlabtesting6.mdsol.com Rave Modules
+set ete_architect_roles_app_name=Rave Architect Roles - rave564conlabtesting6.mdsol.com Rave Architect Roles
+
+set ete_edc_app_name_role=Power User
+set ete_modules_app_role=All Modules
+set ete_architect_roles_role=Project Admin Default
+set ete_segment_customer=Medidata Testing
+
+set screenshot_directory_name=ETETestScreenshots
+
+set MaxReturnResultsForManualSearch=100
+
+set SSL_CERT_FILE=c:\\Ruby193\\cacert.pem
+set hipchat_token=
+set hipchat_room=Coder
+set hipchat_username=deploy_verifier
+set hipchat_color=yellow
+
+set S3_ACCESS_KEY_ID=
+set S3_SECRET_ACCESS_KEY=
+set S3_BUCKET=aws-mdsol-dev-software-installation-coder
+
+set MEDISTRANO_USERNAME=
+set MEDISTRANO_PASSWORD=
+
+set chef_orgname=
+set chef_username=
+REM Replace new lines with ][
+set chef_org_pem=
+set chef_user_pem=
+
+REM Other Env Settings
+SET WEB_SERVICES_CONNECTOR_PROXY=
+SET HELP_URL_HTML_ENG=https://learn.mdsol.com/display/CODERstg
+SET HELP_URL_HTML_JPN=https://learn.mdsol.com/display/CODERstg
+SET WORKFLOW_SERVICE_URL=http://localhost:53794/
+SET AUTOMATION_SERVICE_URL=http://localhost:60509/
+SET WEBSERVER_URL=http://localhost:2494/
+SET REPORT_STREAMING_ROW_NUMBER=450
+SET STATICCONTENT_INDEX=1
+SET MEMCACHE_TIMEOUT=00:30
+SET CODERAPI_BASEURI=http://localhost:60300/api/v1.0/
+SET TOKEN_VALID_PERIOD_MILLISECONDS=3000
+SET LOG_LOCATION=
+
+REM deployment ENV settings
+SET RemoteDeploymentUser=user
+SET RemoteDeploymentPassword=password
+
+SET WebServiceServerNode=localhost
+SET WebServiceServerAppName=CoderCloudWS
+
+SET WorkflowServerNode=localhost
+SET WorkflowServerAppName=WorkflowWS
+
+SET AutomationServerNode=localhost
+SET AutomationServerAppName=AutomationWS
+
+SET WebServerNode=localhost
+SET WebServerAppName=CoderCloud
+
+SET APIServerNode=localhost
+SET APIServerAppName=CoderAPI
+
+SET S3Bucket=coder-dictionary
+SET MedicalDictionaryServiceUrl=https://s3.amazonaws.com/coder-dictionary/sandbox/
+SET S3Prefix=sandbox
+SET S3AccessKey=youkey
+SET S3SecretKey=yourkey
+SET CloudSearchServiceUrl=https://search-coder-sandbox-2-waanw7wiw6ecun4vebmw64lc4u.us-east-1.cloudsearch.amazonaws.com
+SET MaxRetryLimitForS3LexiconGets=10
+SET S3LexiconRefreshIntervalInSeconds=120
+SET S3LexiconWaitIntervalInSeconds=10
+
+REM - key related information
+
+SET imedidatapublicpemkey=MIGJAoGBANrvxzDxt92vWs73y6a524FxrNOS0+X+E3t2U/BYbfKeg7Tj0IYK4SZ2][+CeTRdt91DOL7sHTk98mHI/r6v2TmlJg9mTOdknjzx6Hj9/WVa56+meaZaNE9+yp][79PjPX9Gy8UglvDBgPy5R6Zu5lzZPMQFxh5LSDZvDtCd+sXMGAsNAgMBAAE=
+
+SET codermauthprivatepemkey=MIIEogIBAAKCAQEAmJVD847abF6DC+EpFdtWgU5raD/clepZj4BwecEC3btM/WzW][dkoC6odtrKJHq6LoIsQDKhHf/gyjYBgjddG6vbl1jiTM2N0oNaYYnIvQkDGbfsRP][4thmq5+E3ISN+FuOGDC6DwiIEJWIvIIatKe5KUU0rK4i6VlucH9X3xmb5ppELOjZ][f6mOIzmuwNLU0SuEWFlE21Pj0v5f4bVxLnJBj6RIDZxrApKejzgCwzZCHUloo+L+][q/XL+Wv56UEZeJEsz+PKMwiv+ATe96025khl0cQRqeNieiHB6/pLe467Q5QUEIMm][A9r+7e2XlIYS7Gud0SweKADFmUrG/61OtS8o7QIDAQABAoIBAGfjica1h0at+zAF][eIHnO7kC+eKbSMfSLnSkkPB1WEw8kSkkB8m2jtG8sBIQ1Beq7b9uEnF8hjRlyn9N][MCeySyGOutmzeL5Xpl8Q3kUIdVMYU7U2WOYtTYqhLEcxAbEONWuHEcfWmT4hcl5X][f3Ntl4bgFgNU9XRIbgeuzNeciiex6IDaVh7hfCRp8eIapoKGXuCU2U1sadEmRTVn][e9yQu310yrb39R4X7DLxl9EM6B9ogjoz7mtuAYC5b4axCpsMQum7ivpHbz0YHzBq][OHrIwlnoRzWnNd44no7fnbD1Mx0/YuGeaFqwUdbxj584ROR0Y/sVPAhWEF8wCUeR][aVtoukkCgYEAxwKwh6ydsfGHAc61dTN5anTCCDbvG6efP+1pRZ15WkICzW0uluX5][k2nk6z/FBg5QTh1oRna1kt//s04F6h3IbR7UKSu70Dy8v9JcSJA8sMFCzBou6T/6][fjMsBJ9N3tWbrfNw4T6MJK1whWtRCapDsw3d1pttjNf5T4DEx51HCNcCgYEAxEcD][7EtGXGsgKQnc+hvcS4hCDapWw8zesUbCI+a6DDnb80pStAG4KOehE824zb59W1yZ][B92EWew1mZkmr0ePWvLUDRTq8duS3NtA+g6T2mi29uIn6AZhER+unckKXq6CdIrT][ZuCLNw8kQfgk7/E4p8Sv6w7xpmUh6kkXLSSKD9sCgYB2vysYea5K3ERjlrT9ru42][0F5qymSYSseiPIZBLLqZWaQUcZ6IGcd254vZt15Xw7i1M6Thzrl/XztTAS5USNss][CWYs/tR9Z5B0oQ/BmJcuHNM/uCvfr/ZG0T/lriyn1yuiew0SyeCTjg4C/ksHiloF][ADQrdujCTqiLgNlqBnW5VwKBgDxB8RpiIb/Nw5nVxVmjpAYsVtsLKIgEJXoXVxLe][is+mE7ilYK6SuI8WTYVe6xV/Hc0mqHSZtUBGHE6DjjTRq1koo6FAgsCtwHC9fz1F][rG6pJ0K0O7wn+TTgnSMjzWM0ACj3Vd+HoDXPGDqIjA595/7Zi4iGlfmXosnilpLt][XNVxAoGAVpe3+txBtmdklI9/Nd4O5vox+zC0KYkTzk8hBvSk7+qldANhi2JN0sOD][MBaPUaWCMuPxvHP9GQEyk34aM+MSnC5F4goaeH+9wne7y+cIDovFoX8DBhs1Bltx][gAyCgGuvt1QxdljIbq0hAUbZIWX7M+957V7E5VJuK2HRCRc1eQc=
+
+SET coderimedidataprivatexmlmodulus=no5LMNccNlmyYtbi23ofio/kWQDB7JdG5PsdfTVxkWqtnXYQfPsazXRPsvhrmTGaQLkkWgUP+Fn4+f+9tpdQxJzzHQf4w3f86TULl4RZvjnKT52FQ9q9uiZtZtH6yB5bi5ukNw1EC8TGIWZhV+iHoGDk2nuUXAiHMDOno2THLg8=
+SET coderimedidataprivatexmlexponent=AQAB
+SET coderimedidataprivatexmlp=0mgKP4OQ34GjMQHTxeCTMGt8FcwJHKFh7fFRYtvuhUrQB1hpyf8q2AvJ8vvd/BtH+w1JF9kBuxLloDo6qPakGw==
+SET coderimedidataprivatexmlq=wOntBsOGeNQZ33XLDaZQisvwp5CNb1DaM1GhFyEHqH3UJiY/8FDnI5Ak2y9AdqzBTynSeDFV49EonJdkHmc1HQ==
+SET coderimedidataprivatexmldp=CteDl6w+3dV/RDo04GBnFTqkpTbjTU9fjXQ+3lo42zN0rrw2j0sPuRw6ZsPlt2Tse5o+pvTuquYZYP0/Io+6+w==
+SET coderimedidataprivatexmldq=Fk83LRARjgmhUFlT+SkhqVt6YjZyVMw537Nx+LXGJ/MdRKgpvsXsZQ13Za2qO88wr9H7WBEEiMsYcjuDxYxT9Q==
+SET coderimedidataprivatexmlinverseq=DGk6Sd+JZq75JTvOZYyGXFeQ06C/H7c2X4Iuh78hulC5NxzW2vnnNZfN2i9KAQm+hh0T6PVZpe/xIU4G9oNPBg==
+SET coderimedidataprivatexmld=SjwdADT2xIuidZxegpvfAKT2KKWuJfN+Ad+AowrOrWLg/oQ0nA+FMQRv/D9LQWJz8jG8z1jnbUPSylnunPqjmW18wYy6fvgi8Qv/K8S+NAZnB0okQWBO7iXFBsvbzttwLGLpug1IpX6F/0I8wRJcLYU0u9rTt9Utx80lzutUUaE=
+SET coderimedidataprivatexmld=ElB9bf3GVpgYbqNTyv82MZfL5YdnFTBrQOQ4ox4qd+yRDdqgnX4fUGFsUNAtRgbmE9OeMlTJAgpKDefcn1RBSmyaWZpUn47QVD5giKI0rFzgOKHZa7gqWcUEf9uVCISBXDW0p3EvfJJgZePaZuI+5o+FfNJL87g/xHev6EKlhEE=
+
+
+REM Actual config command
+CALL bundle exec rake config:deploy
+
+ECHO.
+ECHO Copy Keys From App Data to Different apps app_data
+CALL MKDIR .\CoderWeb\App_Data\
+CALL MKDIR .\CoderWS\App_Data\
+CALL ROBOCOPY .\App_Data\ .\CoderWeb\App_Data\ *.pem /NDL /NJH /NJS /nc /ns /np
+CALL ROBOCOPY .\App_Data\ .\CoderWeb\App_Data\ *.xml /NDL /NJH /NJS /nc /ns /np
+CALL ROBOCOPY .\App_Data\ .\CoderWS\App_Data\ *.pem /NDL /NJH /NJS /nc /ns /np
+CALL ROBOCOPY .\App_Data\ .\CoderWS\App_Data\ *.xml /NDL /NJH /NJS /nc /ns /np

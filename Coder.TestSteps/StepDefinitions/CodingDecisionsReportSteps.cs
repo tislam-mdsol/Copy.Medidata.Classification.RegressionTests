@@ -66,7 +66,7 @@ namespace Coder.TestSteps.StepDefinitions
         [When(@"exporting all columns in the Coding Decisions Report")]
         public void WhenExportingAllColumnsInTheReport()
         {
-            _SearchCriteria.Study      = _StepContext.SourceSystemStudyName;
+            _SearchCriteria.Study      = _StepContext.GetStudyName();
             _SearchCriteria.AllColumns = true;
 
             _Browser.ExportCodingDecisionsReport(_SearchCriteria);
@@ -83,11 +83,11 @@ namespace Coder.TestSteps.StepDefinitions
                 .ToArray()
                 .ValidateCodingDecisionsReportRequiredColumns()
                 .SetNonRequiredCodingDecisionsReportColumnsToDefaultValues(
-                    study     : _StepContext.Project,
+                    study     : _StepContext.GetStudyName(),
                     dictionary: _StepContext.Dictionary,
                     version   : _StepContext.Version,
                     locale    : _StepContext.Locale,
-                    userName  : _StepContext.User);
+                    userName  : _StepContext.GetUser());
 
             var actualResults = _Browser.GetCodingDecisionReportRows();
 

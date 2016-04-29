@@ -85,6 +85,13 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return workflowGridRows[0];
         }
 
+        private bool DoesWorkflowRoleExist(string roleName)
+        {
+            if (ReferenceEquals(roleName, null)) throw new ArgumentNullException("roleName");
+
+            return !ReferenceEquals(GetWorkflowRoleGridRowByRoleName(roleName), null);
+        }
+
         internal SessionElementScope GetAddNewButton()
         {
             var addNewButton =
@@ -241,6 +248,11 @@ namespace Coder.DeclarativeBrowser.PageObjects
         internal void CreateWorkflowRole(string roleName)
         {
             if (String.IsNullOrWhiteSpace(roleName)) throw new ArgumentNullException("roleName");
+
+            if (DoesWorkflowRoleExist(roleName))
+            {
+                return;
+            }
 
             GetAddNewButton().Click();
             GetRoleNameTextBox().FillInWith(roleName);

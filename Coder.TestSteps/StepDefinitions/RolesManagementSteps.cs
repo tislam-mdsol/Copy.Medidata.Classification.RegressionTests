@@ -47,7 +47,7 @@ namespace Coder.RegressionTests.StepDefinitions
             _Browser.AssignWorkflowRole(
                 roleName: roleName, 
                 study   : study,
-                loginId : _StepContext.User);
+                loginId : _StepContext.GetUser());
         }
 
         [When(@"assigning ""(.*)"" General Role ""(.*)"" for ""(.*)"" type")]
@@ -60,7 +60,7 @@ namespace Coder.RegressionTests.StepDefinitions
                 roleName      : roleName,
                 securityModule: securityModule,
                 type          : type,
-                loginId       : _StepContext.User);
+                loginId       : _StepContext.GetUser());
         }
 
         [When(@"assign all worflow role actions to ""(.*)""")]
@@ -115,7 +115,7 @@ namespace Coder.RegressionTests.StepDefinitions
             _Browser.DenyAccessToWorkFlowRole(
                 roleName: roleName, 
                 study   : study, 
-                loginId : _StepContext.User);
+                loginId : _StepContext.GetUser());
         }
 
         [When(@"removing Workflow Role ""(.*)"" for ""(.*)"" study")]
@@ -127,7 +127,7 @@ namespace Coder.RegressionTests.StepDefinitions
             _Browser.DeleteWorkFlowRole(
                 roleName: roleName, 
                 study   : study, 
-                loginId : _StepContext.User);
+                loginId : _StepContext.GetUser());
         }
 
         [When(@"creating and activating a ""(.*)"" role called ""(.*)""")]
@@ -266,7 +266,7 @@ namespace Coder.RegressionTests.StepDefinitions
         {
             var assignedWorkflowRole = new AssignedWorkflowRole
             {
-                LoginId    = _StepContext.User,
+                LoginId    = _StepContext.GetUser(),
                 Study      = study,
                 Name       = roleName,
                 DenyAccess = denyAccess
@@ -279,7 +279,7 @@ namespace Coder.RegressionTests.StepDefinitions
         {
             var assignedGeneralRole = new AssignedGeneralRole
         {
-                LoginId    = _StepContext.User,
+                LoginId    = _StepContext.GetUser(),
                 RoleType   = roleType,
                 Name       = roleName,
                 DenyAccess = denyAccess

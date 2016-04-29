@@ -2922,6 +2922,117 @@ namespace Coder.DeclarativeBrowser.Db {
     #endregion
 
 
+    #region  spSegmentGetByIMedidataId
+
+    #region  spSegmentGetByIMedidataId Command
+    
+    /// <summary>
+    /// A class which represents the spSegmentGetByIMedidataId procedure request in the Database.
+    /// </summary>
+    [GeneratedByMedidataDapper]
+[GeneratedCode("T4 medidata-dapper-dot-net","0.0.7")]
+    internal sealed class spSegmentGetByIMedidataIdCommand:ICommand<spSegmentGetByIMedidataIdCommandRequest, spSegmentGetByIMedidataIdCommandResponse>
+    {
+        private readonly IDbConnection _Connection;
+        private readonly Int32?        _CommandTimeout;
+
+        public spSegmentGetByIMedidataIdCommand(IDbConnection connection, Int32? commandTimeout)
+        {
+            Debug.Assert(!ReferenceEquals(connection, null), "connection can't be null");
+
+            _Connection = connection;
+            _CommandTimeout = commandTimeout;
+        }
+        
+        public spSegmentGetByIMedidataIdCommandResponse Execute(spSegmentGetByIMedidataIdCommandRequest request)
+        {
+            Debug.Assert(!ReferenceEquals(request, null), "request can't be null");
+
+            spSegmentGetByIMedidataIdCommandResponse response = new spSegmentGetByIMedidataIdCommandResponse();
+
+            var p = new DynamicParameters();
+
+            p.Add("@iMedidataId", request.iMedidataId);
+
+
+            var data = 
+                _Connection
+                .Query<spSegmentGetByIMedidataIdCommandResponseData>(
+                    "spSegmentGetByIMedidataId", 
+                    p,
+                    commandTimeout: _CommandTimeout,
+                    commandType: CommandType.StoredProcedure)
+                .ToList();
+
+
+            // TODO: Hanlde multiple result sets
+
+            response.Data = data;
+            return response;
+        }
+
+    }
+
+    #endregion
+
+    #region  spSegmentGetByIMedidataId Command Request
+        /// <summary>
+    /// A class which represents the spSegmentGetByIMedidataId procedure request in the coder_av Database.
+    /// </summary>
+    [GeneratedByMedidataDapper]
+[GeneratedCode("T4 medidata-dapper-dot-net","0.0.7")]
+    internal sealed class spSegmentGetByIMedidataIdCommandRequest
+    {
+        public String iMedidataId { get ; set; }
+
+    }
+
+    #endregion
+
+    #region  spSegmentGetByIMedidataId Command Response
+        /// <summary>
+    /// A class which represents the result data returned from executing spSegmentGetByIMedidataId procedure request in the coder_av Database.
+    /// </summary>
+    [GeneratedByMedidataDapper]
+[GeneratedCode("T4 medidata-dapper-dot-net","0.0.7")]
+    internal sealed class spSegmentGetByIMedidataIdCommandResponse
+    {
+        public IList<spSegmentGetByIMedidataIdCommandResponseData> Data { get ; set; }
+
+    }
+
+    #endregion
+
+    #region spSegmentGetByIMedidataId Response Data
+
+    
+
+    /// <summary>
+    /// A class which represents the result data returned from executing spSegmentGetByIMedidataId procedure request in the coder_av Database.
+    /// </summary>
+    [GeneratedByMedidataDapper]
+[GeneratedCode("T4 medidata-dapper-dot-net","0.0.7")]
+    internal sealed class spSegmentGetByIMedidataIdCommandResponseData
+    {
+
+        public Int32? SegmentId { get ; set; }
+        public String SegmentName { get ; set; }
+        public String OID { get ; set; }
+        public Boolean? Deleted { get ; set; }
+        public Boolean? Active { get ; set; }
+        public DateTime? Created { get ; set; }
+        public DateTime? Updated { get ; set; }
+        public Boolean? UserDeactivated { get ; set; }
+        public String IMedidataId { get ; set; }
+
+    }
+
+
+    #endregion
+
+    #endregion
+
+
     #region  spSegmentInsert
 
     #region  spSegmentInsert Command
@@ -3507,6 +3618,120 @@ namespace Coder.DeclarativeBrowser.Db {
     [GeneratedByMedidataDapper]
 [GeneratedCode("T4 medidata-dapper-dot-net","0.0.7")]
     internal sealed class spTrackableObjectInsertCommandResponseData{}
+
+
+    #endregion
+
+    #endregion
+
+
+    #region  spUserGetByIMedidataId
+
+    #region  spUserGetByIMedidataId Command
+    
+    /// <summary>
+    /// A class which represents the spUserGetByIMedidataId procedure request in the Database.
+    /// </summary>
+    [GeneratedByMedidataDapper]
+[GeneratedCode("T4 medidata-dapper-dot-net","0.0.7")]
+    internal sealed class spUserGetByIMedidataIdCommand:ICommand<spUserGetByIMedidataIdCommandRequest, spUserGetByIMedidataIdCommandResponse>
+    {
+        private readonly IDbConnection _Connection;
+        private readonly Int32?        _CommandTimeout;
+
+        public spUserGetByIMedidataIdCommand(IDbConnection connection, Int32? commandTimeout)
+        {
+            Debug.Assert(!ReferenceEquals(connection, null), "connection can't be null");
+
+            _Connection = connection;
+            _CommandTimeout = commandTimeout;
+        }
+        
+        public spUserGetByIMedidataIdCommandResponse Execute(spUserGetByIMedidataIdCommandRequest request)
+        {
+            Debug.Assert(!ReferenceEquals(request, null), "request can't be null");
+
+            spUserGetByIMedidataIdCommandResponse response = new spUserGetByIMedidataIdCommandResponse();
+
+            var p = new DynamicParameters();
+
+            p.Add("@iMedidataId", request.iMedidataId);
+
+
+            var data = 
+                _Connection
+                .Query<spUserGetByIMedidataIdCommandResponseData>(
+                    "spUserGetByIMedidataId", 
+                    p,
+                    commandTimeout: _CommandTimeout,
+                    commandType: CommandType.StoredProcedure)
+                .ToList();
+
+
+            // TODO: Hanlde multiple result sets
+
+            response.Data = data;
+            return response;
+        }
+
+    }
+
+    #endregion
+
+    #region  spUserGetByIMedidataId Command Request
+        /// <summary>
+    /// A class which represents the spUserGetByIMedidataId procedure request in the coder_av Database.
+    /// </summary>
+    [GeneratedByMedidataDapper]
+[GeneratedCode("T4 medidata-dapper-dot-net","0.0.7")]
+    internal sealed class spUserGetByIMedidataIdCommandRequest
+    {
+        public String iMedidataId { get ; set; }
+
+    }
+
+    #endregion
+
+    #region  spUserGetByIMedidataId Command Response
+        /// <summary>
+    /// A class which represents the result data returned from executing spUserGetByIMedidataId procedure request in the coder_av Database.
+    /// </summary>
+    [GeneratedByMedidataDapper]
+[GeneratedCode("T4 medidata-dapper-dot-net","0.0.7")]
+    internal sealed class spUserGetByIMedidataIdCommandResponse
+    {
+        public IList<spUserGetByIMedidataIdCommandResponseData> Data { get ; set; }
+
+    }
+
+    #endregion
+
+    #region spUserGetByIMedidataId Response Data
+
+    
+
+    /// <summary>
+    /// A class which represents the result data returned from executing spUserGetByIMedidataId procedure request in the coder_av Database.
+    /// </summary>
+    [GeneratedByMedidataDapper]
+[GeneratedCode("T4 medidata-dapper-dot-net","0.0.7")]
+    internal sealed class spUserGetByIMedidataIdCommandResponseData
+    {
+
+        public Int32? UserID { get ; set; }
+        public String FirstName { get ; set; }
+        public String LastName { get ; set; }
+        public String Email { get ; set; }
+        public String Login { get ; set; }
+        public String Locale { get ; set; }
+        public Boolean? Active { get ; set; }
+        public DateTime? Created { get ; set; }
+        public DateTime? Updated { get ; set; }
+        public Boolean? Deleted { get ; set; }
+        public String IMedidataId { get ; set; }
+        public String TimeZoneInfo { get ; set; }
+
+    }
 
 
     #endregion

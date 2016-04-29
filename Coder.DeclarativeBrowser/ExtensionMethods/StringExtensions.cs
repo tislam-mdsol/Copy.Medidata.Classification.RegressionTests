@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Coder.DeclarativeBrowser.Helpers;
-using Coder.DeclarativeBrowser.Models;
 
 namespace Coder.DeclarativeBrowser.ExtensionMethods
 {
@@ -214,7 +213,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             bool valueShouldBeBlank = expectedValue.Equals(String.Empty);
             if  (valueShouldBeBlank)
             {
-                return String.IsNullOrEmpty(actualValue);
+                return String.IsNullOrWhiteSpace(actualValue);
             }
             
             return actualValue.EqualsIgnoreCase(expectedValue);
@@ -341,11 +340,10 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
         public static string CreateUniqueRaveSubjectId(this string subjectInitials)
         {
             if (String.IsNullOrWhiteSpace(subjectInitials)) throw new ArgumentNullException("subjectInitials");
-            if (subjectInitials.Length != 3)                throw new ArgumentException("subjectInitials must be three (3) characters");
 
             const int MaxSubjectIdLengeth = 11;
 
-            var subjectId = String.Format("C{0}{1}", subjectInitials, Guid.NewGuid()).Substring(0, MaxSubjectIdLengeth);
+            var subjectId = String.Format("{0}{1}", subjectInitials, Guid.NewGuid()).Substring(0, MaxSubjectIdLengeth);
 
             return subjectId;
         }
@@ -359,6 +357,41 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             var adverseEventText = String.Format("{0}{1}", adverseEventTextPrefix, Guid.NewGuid()).RemoveNonAlphanumeric().Substring(0, maxAdverseEventTextLength);
 
             return adverseEventText;
+        }
+
+        public static string GetFirstSection(this Guid guid)
+        {
+            var guidString = guid.ToString();
+            var suffix = guidString.Substring(0, guidString.IndexOf('-'));
+
+            return suffix;
+        }
+
+        public static string GetRaveSearchText(this string raveObjectName)
+        {
+            if (String.IsNullOrWhiteSpace(raveObjectName)) throw new ArgumentNullException("raveObjectName");
+
+            var firstNonAlphanumeric = raveObjectName.ToCharArray().FirstOrDefault(x=>!Char.IsLetterOrDigit(x) && !Char.IsWhiteSpace(x));
+
+            if (firstNonAlphanumeric.Equals('\0'))
+            {
+                return raveObjectName;
+            }
+
+            var firstNonAlphanumericIndex = raveObjectName.IndexOf(firstNonAlphanumeric);
+
+            var raveSearchString = raveObjectName.Remove(firstNonAlphanumericIndex);
+
+            return raveSearchString;
+        }
+
+        public static string CreateUserEmail(this string userName)
+        {
+            if (String.IsNullOrWhiteSpace(userName)) throw new ArgumentNullException("userName");
+
+            var email = String.Format("medidatacoder+{0}@gmail.com", userName);
+
+            return email;
         }
     }
 }

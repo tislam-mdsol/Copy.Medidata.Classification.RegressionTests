@@ -38,11 +38,11 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
         internal void OpenProject(string projectName)
         {
             if (String.IsNullOrWhiteSpace(projectName)) throw new ArgumentNullException("projectName");
-            
+
             _Session.WaitUntilElementExists(GetProjectsGrid);
 
             var projects    = GetProjects();
-            
+
             var projectLink = projects.FirstOrDefault(x => x.Text.EqualsIgnoreCase(projectName));
 
             if (ReferenceEquals(projectLink, null))

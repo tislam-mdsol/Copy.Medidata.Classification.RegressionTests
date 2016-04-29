@@ -48,11 +48,11 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             GoTo();
 
-            GetDictionaryDDL().SelectOption(dictionary);
-            GetSegmentsDDL().Text.Contains(segment);
+            GetDictionaryDDL().SelectOptionAlphanumericOnly(dictionary);
+            GetSegmentsDDL().SelectOptionAlphanumericOnly(segment);
             GetNewDictionaryLicensePlusButton().Click();
-            GetLicenseCodeTextBox().FillInWith(Config.LicenseCode);
-            GetLicenseStartDDL().FillInWith(DateTime.Today.Date.ToShortDateString());
+            GetLicenseCodeTextBox().FillInWith(Guid.NewGuid().GetFirstSection());
+            GetLicenseStartDDL().FillInWith(DateTime.Today.Date.AddYears(-10).ToShortDateString());
             GetLicenseEndDDL().FillInWith(DateTime.Today.Date.AddYears(10).ToShortDateString());
             GetEdittingRowCheckMarkButton().Click();
         }
@@ -130,7 +130,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return dictionaryLicensesRow;
         }
 
-        internal IList<LicensedDictionaryDetail> GetLicensedDictionaryDetailValues()
+        private IList<LicensedDictionaryDetail> GetLicensedDictionaryDetailValues()
         {
 
             if (!GetDictionaryLicensesRows().Any())
@@ -141,13 +141,13 @@ namespace Coder.DeclarativeBrowser.PageObjects
             var licensedDictionaryValues = (
                 from licenseRow in GetDictionaryLicensesRows()
                 select licenseRow.FindAllSessionElementsByXPath("td")
-                    into licenseColumns
+                into licenseColumns
                 select new LicensedDictionaryDetail
                 {
-                    LicenseCode = licenseColumns[_LicenseCode].Text,
+                    LicenseCode      = licenseColumns[_LicenseCode]     .Text,
                     LicenseStartDate = licenseColumns[_LicenseStartDate].Text,
-                    LicenseEndDate = licenseColumns[_LicenseEndDate].Text,
-                    LoggedBy = licenseColumns[_LoggedBy].Text,             
+                    LicenseEndDate   = licenseColumns[_LicenseEndDate]  .Text,
+                    LoggedBy         = licenseColumns[_LoggedBy]        .Text,             
                 })
                 .ToList();
             return licensedDictionaryValues;

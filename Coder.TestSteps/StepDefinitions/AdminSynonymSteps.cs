@@ -657,18 +657,39 @@ namespace Coder.TestSteps.StepDefinitions
             synonymSearch.SearchText       = verbatim;
             synonymSearch.Code             = code;
 
+            AssertSynonymIsActive(synonymSearch);
+        }
+
+        [Then(@"the synonym for verbatim ""(.*)"" and code ""(.*)"" should be active after synonym migration")]
+        public void ThenTheSynonymForVerbatimAndCodeShouldBeActiveAfterSynonymMigration(string verbatimFeature, string code)
+        {
+            if (String.IsNullOrWhiteSpace(verbatimFeature)) throw new ArgumentNullException("verbatimFeature");
+            if (String.IsNullOrWhiteSpace(code))            throw new ArgumentNullException("code");
+
+            var verbatim = StepArgumentTransformations.TransformFeatureString(verbatimFeature, _StepContext);
+
+            var synonymSearch  = GetSynonymSearchAfterSynonymMigration(verbatim);
+            synonymSearch.Code = code;
+
+            AssertSynonymIsActive(synonymSearch);
+        }
+
+        private void AssertSynonymIsActive(SynonymSearch synonymSearch)
+        {
+            if (ReferenceEquals(synonymSearch, null)) throw new ArgumentNullException("synonymSearch");
+
             var synonym = _Browser.GetSynonymDetailRow(synonymSearch);
 
             if (ReferenceEquals(synonym, null))
             {
-                throw new AssertionFailedException(String.Format("Synonym with verbatim {0} and code {1} not found", verbatim, code));
+                throw new AssertionFailedException(String.Format("Synonym with verbatim {0} and code {1} not found", synonymSearch.SearchText, synonymSearch.Code));
             }
 
             synonym.Status.ShouldBeEquivalentTo(SynonymStatus.Approved);
-            
+
             _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }
-
+        
         [Then(@"the synonym for verbatim ""(.*)"" and code ""(.*)"" should not exist")]
         public void ThenTheSynonymForVerbatimAndCodeShouldNotExist(string verbatim, string code)
         {
@@ -828,22 +849,22 @@ namespace Coder.TestSteps.StepDefinitions
         public void WhenTheTimeElapsedSinceSynonymWasCreatedIsDays(string verbatim, int days)
         {
             if (String.IsNullOrEmpty(verbatim))             throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrEmpty(_StepContext.Segment)) throw new ArgumentNullException("_StepContext.Segment");
+            if (String.IsNullOrEmpty(_StepContext.GetSegment())) throw new ArgumentNullException("_StepContext.GetSegment()");
 
             int hoursToAge = (days * 24);
 
-            CoderDatabaseAccess.AgeSynonym(_StepContext.Segment, verbatim, hoursToAge, ageCreatedOnly:true);
+            CoderDatabaseAccess.AgeSynonym(_StepContext.GetSegment(), verbatim, hoursToAge, ageCreatedOnly:true);
         }
 
         [When(@"the time elapsed since synonym ""(.*)"" was updated is ""(.*)"" days")]
         public void WhenTheTimeElapsedSinceSynonymWasUpdatedIsDays(string verbatim, int days)
         {
             if (String.IsNullOrEmpty(verbatim))             throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrEmpty(_StepContext.Segment)) throw new ArgumentNullException("_StepContext.Segment");
+            if (String.IsNullOrEmpty(_StepContext.GetSegment())) throw new ArgumentNullException("_StepContext.GetSegment()");
 
             int hoursToAge = (days * 24);
 
-            CoderDatabaseAccess.AgeSynonym(_StepContext.Segment, verbatim, hoursToAge, ageCreatedOnly: false);
+            CoderDatabaseAccess.AgeSynonym(_StepContext.GetSegment(), verbatim, hoursToAge, ageCreatedOnly: false);
         }
 
         [Then(@"all provisional synonyms should be for a verbatim that contains ""(.*)""")]
@@ -1152,7 +1173,7 @@ namespace Coder.TestSteps.StepDefinitions
         {
             var synonymSearch = new SynonymSearch
             {
-                Study       = _StepContext.Project,
+                Study       = _StepContext.GetStudyName(),
                 Dictionary  = _StepContext.Dictionary,
                 Locale      = _StepContext.Locale,
                 Version     = _StepContext.Version
@@ -1173,11 +1194,11 @@ namespace Coder.TestSteps.StepDefinitions
             var synonymList = _StepContext.TargetSynonymList;
             var synonymSearch = new SynonymSearch
             {
-                Dictionary = synonymList.Dictionary,
-                Locale = synonymList.Locale,
-                Version = synonymList.Version,
+                Dictionary  = synonymList.Dictionary,
+                Locale      = synonymList.Locale,
+                Version     = synonymList.Version,
                 SynonymList = synonymList.SynonymListName,
-                SearchText = synonymName
+                SearchText  = synonymName
             };
 
             return synonymSearch;

@@ -421,6 +421,18 @@ namespace Coder.DeclarativeBrowser.Db
         );
 
         /// <summary>
+        /// Executes the specified spSegmentGetByIMedidataIdCommandRequest.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>The spSegmentGetByIMedidataIdCommandResponse</returns>
+        spSegmentGetByIMedidataIdCommandResponse Request(spSegmentGetByIMedidataIdCommandRequest request);
+
+        spSegmentGetByIMedidataIdCommandResponse spSegmentGetByIMedidataId
+        (
+            String piMedidataId 
+        );
+
+        /// <summary>
         /// Executes the specified spSegmentInsertCommandRequest.
         /// </summary>
         /// <param name="request">The request.</param>
@@ -516,6 +528,18 @@ namespace Coder.DeclarativeBrowser.Db
             String pAuditStudyGroupUUID ,
             DateTime? pSourceUpdatedAt ,
             Int32? pSegmentId 
+        );
+
+        /// <summary>
+        /// Executes the specified spUserGetByIMedidataIdCommandRequest.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>The spUserGetByIMedidataIdCommandResponse</returns>
+        spUserGetByIMedidataIdCommandResponse Request(spUserGetByIMedidataIdCommandRequest request);
+
+        spUserGetByIMedidataIdCommandResponse spUserGetByIMedidataId
+        (
+            String piMedidataId 
         );
 
         /// <summary>
@@ -1336,6 +1360,27 @@ namespace Coder.DeclarativeBrowser.Db
         }
 
         /// <summary>
+        /// Executes the specified spSegmentGetByIMedidataIdCommandRequest.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>The spSegmentGetByIMedidataIdCommandResponse</returns>
+        public abstract spSegmentGetByIMedidataIdCommandResponse Request(spSegmentGetByIMedidataIdCommandRequest request);
+
+        public spSegmentGetByIMedidataIdCommandResponse spSegmentGetByIMedidataId
+        (
+            String piMedidataId 
+        )
+        {
+            var request = new spSegmentGetByIMedidataIdCommandRequest
+            {
+                    iMedidataId = piMedidataId,
+            };
+
+            var response = Request(request);
+            return response;
+        }
+
+        /// <summary>
         /// Executes the specified spSegmentInsertCommandRequest.
         /// </summary>
         /// <param name="request">The request.</param>
@@ -1510,6 +1555,27 @@ namespace Coder.DeclarativeBrowser.Db
                     AuditStudyGroupUUID = pAuditStudyGroupUUID,
                     SourceUpdatedAt = pSourceUpdatedAt,
                     SegmentId = pSegmentId,
+            };
+
+            var response = Request(request);
+            return response;
+        }
+
+        /// <summary>
+        /// Executes the specified spUserGetByIMedidataIdCommandRequest.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>The spUserGetByIMedidataIdCommandResponse</returns>
+        public abstract spUserGetByIMedidataIdCommandResponse Request(spUserGetByIMedidataIdCommandRequest request);
+
+        public spUserGetByIMedidataIdCommandResponse spUserGetByIMedidataId
+        (
+            String piMedidataId 
+        )
+        {
+            var request = new spUserGetByIMedidataIdCommandRequest
+            {
+                    iMedidataId = piMedidataId,
             };
 
             var response = Request(request);
@@ -2071,6 +2137,19 @@ namespace Coder.DeclarativeBrowser.Db
         }
 
         /// <summary>
+        /// Executes the specified spSegmentGetByIMedidataIdCommandRequest.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>The spSegmentGetByIMedidataIdCommandResponse</returns>
+        public override spSegmentGetByIMedidataIdCommandResponse Request(spSegmentGetByIMedidataIdCommandRequest request)
+        {
+            Debug.Assert(!ReferenceEquals(request, null), "request can't be null");
+
+            var response = _Connection.Execute(request, _CommandTimeout);
+            return response;
+        }
+
+        /// <summary>
         /// Executes the specified spSegmentInsertCommandRequest.
         /// </summary>
         /// <param name="request">The request.</param>
@@ -2128,6 +2207,19 @@ namespace Coder.DeclarativeBrowser.Db
         /// <param name="request">The request.</param>
         /// <returns>The spTrackableObjectInsertCommandResponse</returns>
         public override spTrackableObjectInsertCommandResponse Request(spTrackableObjectInsertCommandRequest request)
+        {
+            Debug.Assert(!ReferenceEquals(request, null), "request can't be null");
+
+            var response = _Connection.Execute(request, _CommandTimeout);
+            return response;
+        }
+
+        /// <summary>
+        /// Executes the specified spUserGetByIMedidataIdCommandRequest.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>The spUserGetByIMedidataIdCommandResponse</returns>
+        public override spUserGetByIMedidataIdCommandResponse Request(spUserGetByIMedidataIdCommandRequest request)
         {
             Debug.Assert(!ReferenceEquals(request, null), "request can't be null");
 
@@ -2770,6 +2862,26 @@ namespace Coder.DeclarativeBrowser.Db
         }
 
 
+        public Func<spSegmentGetByIMedidataIdCommandRequest, spSegmentGetByIMedidataIdCommandResponse> spSegmentGetByIMedidataIdBehavior { get; set; }
+
+        /// <summary>
+        /// Executes the specified spSegmentGetByIMedidataIdCommandRequest.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>The spSegmentGetByIMedidataIdCommandResponse</returns>
+        public override spSegmentGetByIMedidataIdCommandResponse Request(spSegmentGetByIMedidataIdCommandRequest request)
+        {
+            Debug.Assert(!ReferenceEquals(request, null), "request can't be null");
+
+
+            if(ReferenceEquals(spSegmentGetByIMedidataIdBehavior, null))
+                return null;
+
+            var response = spSegmentGetByIMedidataIdBehavior(request);
+            return response;
+        }
+
+
         public Func<spSegmentInsertCommandRequest, spSegmentInsertCommandResponse> spSegmentInsertBehavior { get; set; }
 
         /// <summary>
@@ -2866,6 +2978,26 @@ namespace Coder.DeclarativeBrowser.Db
                 return null;
 
             var response = spTrackableObjectInsertBehavior(request);
+            return response;
+        }
+
+
+        public Func<spUserGetByIMedidataIdCommandRequest, spUserGetByIMedidataIdCommandResponse> spUserGetByIMedidataIdBehavior { get; set; }
+
+        /// <summary>
+        /// Executes the specified spUserGetByIMedidataIdCommandRequest.
+        /// </summary>
+        /// <param name="request">The request.</param>
+        /// <returns>The spUserGetByIMedidataIdCommandResponse</returns>
+        public override spUserGetByIMedidataIdCommandResponse Request(spUserGetByIMedidataIdCommandRequest request)
+        {
+            Debug.Assert(!ReferenceEquals(request, null), "request can't be null");
+
+
+            if(ReferenceEquals(spUserGetByIMedidataIdBehavior, null))
+                return null;
+
+            var response = spUserGetByIMedidataIdBehavior(request);
             return response;
         }
 

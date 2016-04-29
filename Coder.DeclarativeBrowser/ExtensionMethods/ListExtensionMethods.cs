@@ -35,16 +35,16 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                 switch (externalVerbatim.StudyID)
                 {
                     case "Development":
-                        externalVerbatim.StudyID = stepContext.DevUuid;
+                        externalVerbatim.StudyID = stepContext.GetDevStudyUuid();
                         break;
                     case "UAT":
                     case "User Acceptance":
                     case "UserAcceptanceTesting":
-                        externalVerbatim.StudyID = stepContext.UatUuid;
+                        externalVerbatim.StudyID = stepContext.GetUatStudyUuid();
                         break;
                     case "Production":
                     case "":
-                        externalVerbatim.StudyID = stepContext.Uuid;
+                        externalVerbatim.StudyID = stepContext.GetStudyUuid();
                         break;
                 }
            }

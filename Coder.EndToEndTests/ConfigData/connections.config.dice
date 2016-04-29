@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<connectionStrings>
+  <add name="coder" connectionString="Server=<%= configured.database_server %>;Failover Partner=<%= configured.failover_database_server %>;Database=<%= configured.database_name %>;uid=<%= configured.database_username %>;pwd=<%= configured.database_password %>; Connect Timeout=<%= configured.db_connect_timeout || '30'%>; Network Library=<%= configured.db_network_library || 'dbmssocn'%>;" providerName="System.Data.SqlClient" />
+</connectionStrings>

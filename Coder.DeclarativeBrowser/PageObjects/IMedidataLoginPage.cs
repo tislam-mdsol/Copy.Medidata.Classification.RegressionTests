@@ -6,6 +6,8 @@ namespace Coder.DeclarativeBrowser.PageObjects
 {
     internal sealed class IMedidataLoginPage
     {
+        private const string PageName = "iMedidata | Login";
+
         private readonly BrowserSession          _Browser;
 
         public IMedidataLoginPage(BrowserSession browser) { if (ReferenceEquals(browser, null)) { throw new ArgumentNullException("browser"); }  _Browser = browser; }
@@ -48,9 +50,19 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return userNameRadioButton;
         }
 
+        internal bool OnIMedidataLogInPage()
+        {
+            var title = _Browser.Title;
+
+            return title.Equals(PageName);
+        }
+
         internal void GoToPage()
         {
-            _Browser.Visit(Config.AppHost);
+            if (!OnIMedidataLogInPage())
+            {
+                _Browser.Visit(Config.AppHost);
+            }
         }
 
         internal void Login(string userName, string password)

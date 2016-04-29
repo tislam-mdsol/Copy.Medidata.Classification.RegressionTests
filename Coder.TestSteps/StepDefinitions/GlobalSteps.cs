@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Linq;
+using System.Collections.Generic;
+using System.IO;
 using Coder.DeclarativeBrowser;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coder.DeclarativeBrowser.ExtensionMethods.Assertions;
@@ -10,6 +11,7 @@ using Coder.TestSteps.Transformations;
 using FluentAssertions;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using System.Linq;
 
 namespace Coder.TestSteps.StepDefinitions
 {
@@ -40,9 +42,7 @@ namespace Coder.TestSteps.StepDefinitions
             _StepContext.SetSourceSystemApplicationContext();
 
             _Browser.SetupCoderConfiguration(_StepContext, setupType);
-
-            _StepContext.SetupType = setupType;
-
+            
             _StepContext.CleanUpAndRegisterProject();
         }
 
@@ -52,16 +52,9 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrEmpty(setupType))                throw new ArgumentNullException("setupType");
             if (String.IsNullOrEmpty(dictionaryLocaleVersion))  throw new ArgumentNullException("dictionaryLocaleVersion");
 
-            _StepContext.SetContextFromGeneratedUser(false);
+            _StepContext.ActiveStudyType = StudyType.Development;
 
-            _StepContext.SetProjectRegistrationContext(dictionaryLocaleVersion);
-            _StepContext.SetSourceSystemApplicationContext();
-
-            _Browser.SetupCoderConfiguration(_StepContext, setupType);
-
-            _StepContext.SetupType = setupType;
-
-            _StepContext.CleanUpAndRegisterProject();
+            GivenACoderSetupWithNoTasksAndNoSynonymsAndDictionary(setupType, dictionaryLocaleVersion);
         }
 
         [When(@"coding task ""(.*)"" for dictionary level ""(.*)""")]
@@ -121,17 +114,23 @@ namespace Coder.TestSteps.StepDefinitions
             if (ReferenceEquals(csvFilename, null)) throw new ArgumentNullException("csvFilename");
 
             string csvFilePath                     = BrowserUtility.GetDynamicCsvFilePath(csvFilename, Config.ApplicationCsvFolder);
-            
+
+            int currentTaskCount                   = _Browser.GetStudyReportTaskCount();
+
             Tuple<string, int> odmPathAndTaskCount = BrowserUtility.BuildOdmFile(csvFilePath, _StepContext);
             string odmFilePath                     = odmPathAndTaskCount.Item1;
             int expectedTaskCount                  = odmPathAndTaskCount.Item2;
 
             expectedTaskCount.Should().BeLessOrEqualTo(MaximumODMTasks, "There are too many tasks in the ODM to load. Split your CSV file into multiple files.");
-            
+
+            expectedTaskCount += currentTaskCount;
+
             _Browser.GoToAdminPage("CodingCleanup");
 
             _Browser.UploadOdm(odmFilePath);
-            
+
+            _Browser.WaitForTaskLoadComplete(expectedTaskCount);
+
             if (waitForAutoCodingComplete)
             {
                 _Browser.WaitForAutoCodingToComplete();
@@ -226,22 +225,192 @@ namespace Coder.TestSteps.StepDefinitions
             _StepContext.SetSourceSystemApplicationContext();
 
             _Browser.SetupCoderConfiguration(_StepContext, setupType);
-
-            _StepContext.SetupType = setupType;
-
+            
             _Browser.CleanUpCodingTasks();
 
             foreach (var expected in featureData)
             {
                 CoderDatabaseAccess.RegisterProject(
-                    project          : _StepContext.Project,
-                    segment          : _StepContext.Segment,
+                    protocolNumber   : _StepContext.GetProtocolNumber(),
+                    segment          : _StepContext.GetSegment(),
                     dictionary       : expected.Dictionary.Trim(),
                     dictionaryVersion: expected.Version.Trim(),
                     locale           : expected.Locale.Trim(),
                     synonymListName  : expected.ListName.Trim(),
                     registrationName : expected.Dictionary.Trim());
             }
+        }
+
+        [Given(@"Rave Modules App Segment is loaded")]
+        [When(@"Rave Modules App Segment is loaded")]
+        public void RaveModulesAppSegmentIsLoaded()
+        {
+            _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
+        }
+
+        [Given(@"Coder App Segment is loaded")]
+        [When(@"Coder App Segment is loaded")]
+        public void CoderAppSegmentIsLoaded()
+        {
+            _Browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
+        }
+        
+        [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicSegment")]
+        [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicStudy")]
+        public void GivenARaveProjectRegistrationWithDictionaryParallelExecution(string dictionaryLocaleVersion)
+        {
+            if (String.IsNullOrWhiteSpace(dictionaryLocaleVersion)) throw new ArgumentNullException("dictionaryLocaleVersion");
+
+            SetProjectContext(dictionaryLocaleVersion);
+
+            RolloutDictionary();
+
+            LoadCoderAsTestUser(clearTasks: false);
+
+            RegisterProjects();
+
+            _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
+
+            CreateEmptyRaveArchitectDrafts();
+
+            UploadTemplateRaveArchitectDraft();
+        }
+        
+        [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndStaticSegment")]
+        public void GivenARaveProjectRegistrationWithDictionarySerialExecution(string dictionaryLocaleVersion)
+        {
+            if (String.IsNullOrWhiteSpace(dictionaryLocaleVersion)) throw new ArgumentNullException("dictionaryLocaleVersion");
+
+            SetProjectContext(dictionaryLocaleVersion);
+
+            LoadCoderAsTestUser(clearTasks: true);
+
+            _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
+
+            UploadTemplateRaveArchitectDraft();
+        }
+        
+        private void SetProjectContext(string dictionaryLocaleVersion)
+        {
+            if (String.IsNullOrWhiteSpace(dictionaryLocaleVersion))                  throw new ArgumentNullException("dictionaryLocaleVersion");
+            if (ReferenceEquals(_StepContext.SegmentUnderTest, null))                throw new ArgumentNullException("_StepContext.SegmentUnderTest");
+            if (String.IsNullOrWhiteSpace(_StepContext.SegmentUnderTest.NameSuffix)) throw new ArgumentNullException("_StepContext.SegmentUnderTest.NameSuffix");
+
+            _StepContext.SetProjectRegistrationContext(dictionaryLocaleVersion);
+
+            var synonymListName = Config.DefaultSynonymListName + _StepContext.SegmentUnderTest.NameSuffix;
+
+            _StepContext.SetSynonymContext(synonymListName);
+        }
+
+        private void RolloutDictionary()
+        {
+            var browser = _StepContext.Browser;
+
+            browser.LoginToiMedidata(_StepContext.CoderAdminUser.Username, _StepContext.CoderAdminUser.Password);
+
+            browser.LoadiMedidataCoderAppSegment(Config.SetupSegment);
+
+            var dictionaryLocale = String.Format("{0} ({1})", _StepContext.Dictionary, _StepContext.Locale);
+
+            browser.RolloutDictionary(_StepContext.GetSegment(), dictionaryLocale);
+
+            browser.LogoutOfCoderAndImedidata();
+        }
+
+        private void LoadCoderAsTestUser(bool clearTasks = false)
+        {
+            var browser = _StepContext.Browser;
+
+            browser.LoginToiMedidata(_StepContext.CoderTestUser.Username, _StepContext.CoderTestUser.Password);
+
+            browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
+            
+            if (clearTasks)
+            {
+                browser.CleanUpCodingTasksOnly();
+            }
+        }
+
+        private void RegisterProjects()
+        {
+            CoderUserGenerator.AssignCoderRolesByIMedidataId(_StepContext.SegmentUnderTest.SegmentUuid, _StepContext.CoderTestUser.MedidataId);
+
+            CoderDatabaseAccess.CreateAndActivateSynonymList(
+                segment          : _StepContext.GetSegment(),
+                dictionary       : _StepContext.SourceSynonymList.Dictionary,
+                dictionaryVersion: _StepContext.SourceSynonymList.Version,
+                locale           : _StepContext.SourceSynonymList.Locale,
+                synonymListName  : _StepContext.SourceSynonymList.SynonymListName);
+            
+            var productionStudies = _StepContext.SegmentUnderTest.Studies.Select(x => x).Where(x => x.IsProduction);
+
+            foreach (var study in productionStudies)
+            {
+                //JPTODO:: The syncs are taking too long in parallel
+                // The project registration may not be immidiately available to the user on the first login due to the time it takes for Coder to sync with iMedidata.
+                // Explicitly wait here, so as not to affect the CoderCore tests.
+                _Browser.WaitUntilAdminLinkExists("Project Registration");
+                //browser.WaitForIMedidataSync();
+                _Browser.RegisterProjects(study.StudyName, new List<SynonymList> { _StepContext.SourceSynonymList });
+            }
+        }
+
+        private void CreateEmptyRaveArchitectDrafts()
+        {
+            var productionStudies = _StepContext.SegmentUnderTest.Studies.Select(x => x).Where(x => x.IsProduction);
+
+            foreach (var study in productionStudies)
+            {
+                _Browser.AddRaveArchitectDraft(study.StudyName, "Empty Test Draft");
+            }
+        }
+
+        private void UploadTemplateRaveArchitectDraft()
+        {
+            const string defaultDraftTemplateFileName = "RaveDraft_Template.xml";
+            const string defaultDraftName             = "RaveCoderDraft";
+
+            var productionStudies = _StepContext.SegmentUnderTest.Studies.Select(x => x).Where(x => x.IsProduction);
+
+            var draftTemplateFilePath = Path.Combine(Config.StaticContentFolder, defaultDraftTemplateFileName);
+
+            foreach (var study in productionStudies)
+            {
+                _Browser.UploadRaveArchitectDraftTemplate(study.StudyName, defaultDraftName, draftTemplateFilePath, _StepContext.DumpDirectory);
+            }
+
+            _StepContext.DraftName = defaultDraftName;
+        }
+        
+        private void CreateNewProjectCoderRoles()
+        {
+            _StepContext.Browser.CreateAndActivateWorkFlowRole("WorkflowAdmin");
+
+            _StepContext.Browser.AssignWorkflowRole(
+                roleName: "WorkflowAdmin",
+                study: _StepContext.GetStudyName(),
+                loginId: _StepContext.GetUser());
+
+            _StepContext.Browser.CreateAndActivateGeneralRole(
+                roleName: "StudyAdmin",
+                securityModule: "Page Study Security");
+
+            _StepContext.Browser.AssignGeneralRole(
+                 roleName: "StudyAdmin",
+                 securityModule: "Page Study Security",
+                 type: "All",
+                 loginId: _StepContext.GetUser());
+
+            _StepContext.Browser.CreateAndActivateGeneralRole(
+                roleName: "DictAdmin",
+                securityModule: "Page Dictionary Security");
+
+            _StepContext.Browser.AssignGeneralRole(
+                 roleName: "DictAdmin",
+                 securityModule: "Page Dictionary Security",
+                 type: "All",
+                 loginId: _StepContext.GetUser());
         }
     }
 }

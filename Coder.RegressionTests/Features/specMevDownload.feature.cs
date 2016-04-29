@@ -152,7 +152,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Level 5 Text",
                         "Level 5 Code"});
             table2.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "Headache",
                         "MedDRA-11_0-English",
                         "SupTermFieldA",

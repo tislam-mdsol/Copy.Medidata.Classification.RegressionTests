@@ -9,6 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Coder.DeclarativeBrowser</RootNamespace>
     <AssemblyName>Coder.DeclarativeBrowser</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -33,6 +34,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.7.4137.9688, Culture=neutral, PublicKeyToken=a4292a325f69b123, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CompoundFileStorage, Version=1.3.1.0, Culture=neutral, PublicKeyToken=3f3b3e125b6598d5, processorArchitecture=MSIL">
+      <HintPath>..\packages\CompoundFileStorage.1.3.1\lib\CompoundFileStorage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Coypu">
       <HintPath>..\packages\Coypu.2.9.1\lib\net40\Coypu.dll</HintPath>
       <Private>True</Private>
@@ -43,6 +52,10 @@
     </Reference>
     <Reference Include="Dapper, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FileHelpers">
@@ -60,16 +73,45 @@
       <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Medidata.Dapper">
-      <HintPath>..\packages\Medidata.Dapper.0.0.7\lib\net45\Medidata.Dapper.dll</HintPath>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSharpCode.SharpZipLib.dll.0.85.4.369\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.Dapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Medidata.Dapper.0.0.8\lib\net45\Medidata.Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Medidata.MAuth, Version=2.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.MAuth.2.10.1\lib\net452\Medidata.MAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Medidata.MAuth.Owin, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.MAuth.Owin.1.0.1\lib\net452\Medidata.MAuth.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OfficeExtractor, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OfficeExtractor.1.4.0\lib\OfficeExtractor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Polly, Version=2.2.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -82,7 +124,11 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -125,6 +171,15 @@
     <Compile Include="Drivers\CustomDriverFactory.cs" />
     <Compile Include="ExtensionMethods\BrowserWindowExtensionMethods.cs" />
     <Compile Include="ExtensionMethods\ListExtensionMethods.cs" />
+    <Compile Include="IMedidataApi\IMedidataClient.cs" />
+    <Compile Include="IMedidataApi\Models\IMedidataAPIApp.cs" />
+    <Compile Include="IMedidataApi\Models\IMedidataAPIInvite.cs" />
+    <Compile Include="IMedidataApi\Models\IMedidataAPIRole.cs" />
+    <Compile Include="IMedidataApi\Models\IMedidataAPISecurityQuestion.cs" />
+    <Compile Include="IMedidataApi\Models\IMedidataAPIStudy.cs" />
+    <Compile Include="IMedidataApi\Models\IMedidataAPIActivateUser.cs" />
+    <Compile Include="IMedidataApi\Models\IMedidataAPIStudySite.cs" />
+    <Compile Include="IMedidataApi\Models\IMedidataAPIUser.cs" />
     <Compile Include="Helpers\TaskAttempt.cs" />
     <Compile Include="Models\AssignedGeneralRole.cs" />
     <Compile Include="Models\AssignedWorkflowRole.cs" />
@@ -133,13 +188,23 @@
     <Compile Include="Models\CodingHistoryReportRow.cs" />
     <Compile Include="Models\CodingHistoryReportCriteria.cs" />
     <Compile Include="Models\DirectDictionaryMatch.cs" />
+    <Compile Include="Models\ETEModels\RaveArchitectCRFCoderWorkSheets.cs" />
+    <Compile Include="Models\ETEModels\RaveCoderGlobalConfiguration.cs" />
+    <Compile Include="Models\ETEModels\ReportDataModel.cs" />
     <Compile Include="Models\ETEModels\GeneratedUser.cs" />
     <Compile Include="Models\ETEModels\MedidataUser.cs" />
+    <Compile Include="Models\ETEModels\RaveArchitectRecordTarget.cs" />
+    <Compile Include="Models\ETEModels\RaveCoderFieldConfiguration.cs" />
+    <Compile Include="Models\ETEModels\RaveCodingSettingsModel.cs" />
+    <Compile Include="Models\ETEModels\RaveCoderSupplementalConfiguration.cs" />
+    <Compile Include="Models\ETEModels\RaveFormInputData.cs" />
+    <Compile Include="Models\ETEModels\RaveNavigationTarget.cs" />
     <Compile Include="Models\ExternalVerbatim.cs" />
     <Compile Include="ExtensionMethods\DictionarySearchExtensionMethods.cs" />
     <Compile Include="Models\GridModels\LicensedDictionaryDetail.cs" />
     <Compile Include="Models\GridModels\QueryHistoryDetail.cs" />
     <Compile Include="Models\GridModels\RaveAuditRecordDetail.cs" />
+    <Compile Include="Models\MedidataApp.cs" />
     <Compile Include="Models\OdmQueryParameters.cs" />
     <Compile Include="Models\GeneralRole.cs" />
     <Compile Include="Models\IngredientReportRow.cs" />
@@ -151,15 +216,33 @@
     <Compile Include="Models\StudyReport.cs" />
     <Compile Include="Models\IMedidataStudy.cs" />
     <Compile Include="Models\SynonymUploadRow.cs" />
+    <Compile Include="Models\UIDataModels\SiteSetupData.cs" />
+    <Compile Include="Models\UIDataModels\SubjectSetupData.cs" />
     <Compile Include="OdmBuilder\OdmManager.cs" />
     <Compile Include="Models\UIDataModels\StudySetupData.cs" />
     <Compile Include="Models\WorkflowRole.cs" />
     <Compile Include="PageObjects\AdminMedidataAdminConsolePage.cs" />
     <Compile Include="PageObjects\AdminSegmentManagementPage.cs" />
-    <Compile Include="PageObjects\RaveConfigurationLoaderPage.cs" />
-    <Compile Include="PageObjects\RaveUserAdministrationPage.cs" />
-    <Compile Include="PageObjects\RaveLoginPage.cs" />
-    <Compile Include="PageObjects\RaveModulesPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveArchitectAmendmentManagerPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveArchitectCopyDraftWizardPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveArchitectCopySourcesPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveArchitectCRFDraftPushPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveArchitectCRFDraftPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveArchitectExecuteAmendmentMigrationPlanPage.cs" />
+    <Compile Include="PageObjects\Rave\DataListingReportPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveConfigurationOtherSettingsCoderPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveClinicalViewsPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveClinicalViewSettingsPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveClinicalViewSettingsCodingSettingsPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveArchitectEnvironmentSetupPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveConfigurationOtherSettingsPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveConfigurationWorkflowPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveConfigurationLoaderPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveFormPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveReportsPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveReportTypePage.cs" />
+    <Compile Include="PageObjects\Rave\RaveUserAdministrationPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveLoginPage.cs" />
     <Compile Include="PageObjects\CoderLoginPage.cs" />
     <Compile Include="PageObjects\CodingDecisionsReportPage.cs" />
     <Compile Include="PageObjects\DoNotAutoCodePage.cs" />
@@ -234,9 +317,13 @@
     <Compile Include="PageObjects\Rave\RaveArchitectProjectPage.cs" />
     <Compile Include="PageObjects\Rave\RaveArchitectUploadDraftPage.cs" />
     <Compile Include="PageObjects\Rave\RaveAuditsPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveCoderConfigurationPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveArchitectFormPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveArchitectFormsPage.cs" />
     <Compile Include="PageObjects\Rave\RaveHeader.cs" />
     <Compile Include="PageObjects\Rave\RaveHomePage.cs" />
     <Compile Include="PageObjects\Rave\RaveNavigation.cs" />
+    <Compile Include="PageObjects\Rave\RaveSitePage.cs" />
     <Compile Include="PageObjects\Rave\RaveStudyPage.cs" />
     <Compile Include="PageObjects\Reports\StudyReportPage.cs" />
     <Compile Include="PageObjects\ProjectRegistrationPage.cs" />

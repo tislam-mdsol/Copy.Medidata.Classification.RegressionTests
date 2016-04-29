@@ -1,10 +1,13 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Linq;
 using Coder.DeclarativeBrowser;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coder.DeclarativeBrowser.Helpers;
 using Coder.DeclarativeBrowser.Models;
+using Coder.DeclarativeBrowser.Models.ETEModels;
+using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coder.DeclarativeBrowser.OdmBuilder;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
@@ -36,69 +39,320 @@ namespace Coder.TestSteps.StepDefinitions
 
             _StepContext.CoderTestUser    = generatedUser.User;
             _StepContext.SegmentUnderTest = generatedUser.Segment;
-            _StepContext.SetContextFromGeneratedUser(true);
 
             CommonBeforeScenario(_StepContext);
             
-            _StepContext.Browser.CoderCoreLogin(_StepContext.User);
+            _StepContext.Browser.CoderCoreLogin(_StepContext.GetUser());
         }
 
-        [BeforeScenario("EndToEnd")]
-        public void BeforeEndToEndScenario()
+        [BeforeScenario("EndToEndDynamicSegment")]
+        public void BeforeEndToEndScenarioDynamicSegment()
         {
-            _StepContext.User                  = Config.Login;
-            _StepContext.Segment               = Config.Segment;
-            _StepContext.SourceSystemStudyName = Config.StudyName;
+            var generatedSuffix = SetBrowsingContext();
 
-            _StepContext.DownloadDirectory     = CreateUserDirectory(Config.ParentDownloadDirectory, _StepContext.User);
-            _StepContext.DumpDirectory         = CreateUserDirectory(Config.ParentDumpDirectory, _StepContext.User);
+            var browser = _StepContext.Browser;
+            
+            LoginAsAdministrator();
 
-            _StepContext.Browser               = CoderDeclarativeBrowser.StartBrowsing(_StepContext.DownloadDirectory);
+            var newStudyGroup = CreateSegmentSetupData(generatedSuffix);
+            
+            SetSegmentContext(newStudyGroup);
 
-            _StepContext.Browser.LoginToiMedidata(_StepContext.User, Config.Password);
+            CreateTestUserContext(generatedSuffix, newStudyGroup, createNewSegment: true);
+            
+            browser.EnrollSegment(Config.SetupSegment, _StepContext.GetSegment());
+
+            browser.LogoutOfCoderAndImedidata();
+
+            CompleteUserRegistration(_StepContext.CoderTestUser, newStudyGroup);
+
+            WriteSetupDetails(_StepContext.CoderTestUser, newStudyGroup);
+        }
+        
+        [BeforeScenario("EndToEndDynamicStudy")]
+        public void BeforeEndToEndScenarioDynamicStudy()
+        {
+            var generatedSuffix = SetBrowsingContext();
+
+            var browser = _StepContext.Browser;
+
+            LoginAsAdministrator();
+            
+            var newStudyGroup = CreateSegmentSetupData(generatedSuffix);
+            
+            newStudyGroup.SegmentName = String.Concat(Config.StudyNamePrefix, Config.ETESetupSuffix);
+            newStudyGroup.SegmentUuid = browser.GetStudyGroupUUID(newStudyGroup.SegmentName);
+            
+            SetSegmentContext(newStudyGroup);
+            
+            CreateTestUserContext(generatedSuffix, newStudyGroup, createNewSegment: false);
+
+            browser.Logout();
+
+            CompleteUserRegistration(_StepContext.CoderTestUser, newStudyGroup);
+
+            WriteSetupDetails(_StepContext.CoderTestUser, newStudyGroup);
         }
 
+        [BeforeScenario("EndToEndStaticSegment")]
+        public void BeforeEndToEndScenarioSerialExecution()
+        {
+            SetBrowsingContext();
+
+            var newStudyGroup = CreateSegmentSetupData(Config.ETESetupSuffix);
+
+            _StepContext.SegmentUnderTest = newStudyGroup;
+
+            var userName  = String.Concat(Config.StudyNamePrefix, Config.ETESetupSuffix);
+            var userEmail = userName.CreateUserEmail();
+
+            _StepContext.CoderTestUser = new MedidataUser
+            {
+                Username = userEmail,
+                Password = Config.Password
+            };
+
+            WriteSetupDetails(_StepContext.CoderTestUser, newStudyGroup);
+        }
+
+        private string SetBrowsingContext()
+        {
+            var generatedSuffix            = Guid.NewGuid().GetFirstSection();
+
+            _StepContext.DownloadDirectory = CreateUserDirectory(Config.ParentDownloadDirectory, generatedSuffix);
+            _StepContext.DumpDirectory     = CreateUserDirectory(Config.ParentDumpDirectory, generatedSuffix);
+            var browser                    = CoderDeclarativeBrowser.StartBrowsing(_StepContext.DownloadDirectory);
+            _StepContext.Browser           = browser;
+
+            _StepContext.CoderSystemuser = new MedidataUser
+            {
+                Username = "systemuser"
+            };
+
+            return generatedSuffix;
+        }
+
+        private void LoginAsAdministrator()
+        {
+            var adminUser = new MedidataUser
+            {
+                Username = Config.AdminLogin,
+                Password = Config.AdminPassword
+            };
+            _StepContext.CoderAdminUser = adminUser;
+
+            _StepContext.Browser.LoginToiMedidata(adminUser.Username, adminUser.Password);
+        }
+        
+        private void SetSegmentContext(SegmentSetupData newStudyGroup)
+        {
+            if(ReferenceEquals(newStudyGroup, null)) throw new ArgumentNullException("newStudyGroup");
+
+            _StepContext.SegmentUnderTest = newStudyGroup;
+
+            _StepContext.SetStudyGroupSetupData(newStudyGroup);
+        }
+
+        private void CreateTestUserContext(string nameSuffix, SegmentSetupData newStudyGroup, bool createNewSegment)
+        {
+            if (String.IsNullOrWhiteSpace(nameSuffix)) throw new ArgumentNullException("nameSuffix");
+            if (ReferenceEquals(newStudyGroup, null))  throw new ArgumentNullException("newStudyGroup");
+
+            var userName = String.Concat(Config.StudyNamePrefix, nameSuffix);
+
+            var newUser = _StepContext.Browser.CreateTestUserContext(newStudyGroup, userName, createNewSegment);
+
+            _StepContext.CoderTestUser = newUser;
+        }
+
+        private void CompleteUserRegistration(MedidataUser user, SegmentSetupData studyGroup)
+        {
+            if (ReferenceEquals(user, null))       throw new ArgumentNullException("user");
+            if (ReferenceEquals(studyGroup, null)) throw new ArgumentNullException("studyGroup");
+
+            var browser = _StepContext.Browser;
+
+            browser.LoginToiMedidata(user.Username, user.Password);
+
+            browser.AcceptStudyInvitation();
+
+            browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
+
+            var productionStudies = studyGroup.Studies.Select(x => x).Where(x => x.IsProduction);
+
+            foreach (var study in productionStudies)
+            {
+                browser.AssignUserToStudyAndStudyGroup("coderimport", "Coder Import Role", study: study.StudyName, studyGroup: _StepContext.GetSegment());
+            }
+
+            browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
+
+            browser.LogoutOfCoderAndImedidata();
+        }
+        
+        private void WriteSetupDetails(MedidataUser user, SegmentSetupData studyGroup)
+        {
+            if (ReferenceEquals(user, null))       throw new ArgumentNullException("user");
+            if (ReferenceEquals(studyGroup, null)) throw new ArgumentNullException("studyGroup");
+
+            Console.WriteLine("Created the following test setup:");
+            Console.WriteLine(String.Format("Name Suffix: {0}", studyGroup.NameSuffix));
+            Console.WriteLine(String.Format("Segment: {0}", studyGroup.SegmentName));
+
+            foreach (var study in studyGroup.Studies)
+            {
+                var index = 0;
+                Console.WriteLine(String.Format("Study {0}: {1}", index++, study.StudyName));
+            }
+
+            Console.WriteLine(String.Format("Site: {0}", studyGroup.ProdStudy.Sites[0].SiteName));
+            Console.WriteLine(String.Format("User: {0}", user.Email));
+            Console.WriteLine(String.Format("User Password: {0}", user.Password));
+        }
+        
         [BeforeScenario("ApplicationMonitoring")]
         public void BeforeApplicationMonitoringScenario()
         {
-            _StepContext.User                  = Config.Login;
-            _StepContext.Segment               = Config.Segment;
-            _StepContext.SourceSystemStudyName = Config.StudyName;
+            _StepContext.CoderTestUser = new MedidataUser
+            {
+                Username = Config.Login,
+                Password = Config.Password
+            };
+            
+            var newStudyGroup = new SegmentSetupData
+            {
+                SegmentName = Config.Segment,
+                Studies     = new StudySetupData[]
+                {
+                    new StudySetupData
+                    {
+                        StudyName = Config.StudyName,
+                        Sites     = new SiteSetupData[]
+                        {
+                            new SiteSetupData
+                            {
+                                SiteName = Config.Site
+                            }
+                        }
+                    }
+                }
+            };
 
-            _StepContext.DownloadDirectory     = CreateUserDirectory(Config.ParentDownloadDirectory, _StepContext.User);
-            _StepContext.DumpDirectory         = CreateUserDirectory(Config.ParentDumpDirectory, _StepContext.User);
+            _StepContext.SegmentUnderTest = newStudyGroup;
+
+            _StepContext.DownloadDirectory     = CreateUserDirectory(Config.ParentDownloadDirectory, _StepContext.GetUser());
+            _StepContext.DumpDirectory         = CreateUserDirectory(Config.ParentDumpDirectory, _StepContext.GetUser());
 
             _StepContext.Browser               = CoderDeclarativeBrowser.StartBrowsing(_StepContext.DownloadDirectory);
 
-            _StepContext.Browser.LoginToiMedidata(_StepContext.User, Config.Password);
+            _StepContext.Browser.LoginToiMedidata(_StepContext.GetUser(), Config.Password);
         }
 
         [BeforeScenario("Deployment")]
         public void BeforeRaveDeploymentScenario()
         {
-            _StepContext.User = Config.Login;
+            var raveAdminUser = new MedidataUser
+            {
+                Username = Config.RaveAdminLogin,
+                Password = Config.RaveAdminPassword
+            };
 
-            _StepContext.DownloadDirectory = CreateUserDirectory(Config.ParentDownloadDirectory, _StepContext.User);
-            _StepContext.DumpDirectory = CreateUserDirectory(Config.ParentDumpDirectory, _StepContext.User);
-            _StepContext.Browser = CoderDeclarativeBrowser.StartBrowsing(_StepContext.DownloadDirectory);
+            _StepContext.RaveAdminUser = raveAdminUser;
 
-            _StepContext.Segment = Config.Segment;
+            _StepContext.DownloadDirectory = CreateUserDirectory(Config.ParentDownloadDirectory, raveAdminUser.Username);
+            _StepContext.DumpDirectory     = CreateUserDirectory(Config.ParentDumpDirectory, raveAdminUser.Username);
+            _StepContext.Browser           = CoderDeclarativeBrowser.StartBrowsing(_StepContext.DownloadDirectory);
 
-            _StepContext.Browser.LoginToRave(_StepContext.User, Config.Password);
+             _StepContext.Browser.LoginToRave(raveAdminUser);
+
         }
 
         private void CommonBeforeScenario(StepContext stepContext)
         {
             if (ReferenceEquals(stepContext,null))  throw new ArgumentNullException("stepContext");
-            if (String.IsNullOrWhiteSpace(stepContext.User)) throw new ArgumentNullException("loginId");
+            if (String.IsNullOrWhiteSpace(stepContext.GetUser())) throw new ArgumentNullException("loginId");
 
-            stepContext.DownloadDirectory = CreateUserDirectory(Config.ParentDownloadDirectory, stepContext.User);
-            stepContext.DumpDirectory     = CreateUserDirectory(Config.ParentDumpDirectory, stepContext.User);
-            stepContext.UserDisplayName   = CoderDatabaseAccess.GetUserNameByLogin(stepContext.User);
-            stepContext.SystemUser        = CoderDatabaseAccess.GetUserNameByLogin("System User");
+            var systemUser = CoderDatabaseAccess.GetUserNameByLogin("System User");
+            stepContext.CoderSystemuser   = new MedidataUser
+            {
+                Username                  = systemUser
+            };
+
+            var user                      = stepContext.GetUser();
+
+            stepContext.DownloadDirectory = CreateUserDirectory(Config.ParentDownloadDirectory, user);
+            stepContext.DumpDirectory     = CreateUserDirectory(Config.ParentDumpDirectory, user);
+
             stepContext.OdmManager        = new OdmManager();
 
             stepContext.Browser           = CoderDeclarativeBrowser.StartBrowsing(_StepContext.DownloadDirectory);
+        }
+
+        private SegmentSetupData CreateSegmentSetupData(string nameSuffix)
+        {
+            const string userAcceptanceStudySuffix = "(UAT)";
+            const string developmentStudySuffix    = "(Dev)";
+
+            if (String.IsNullOrWhiteSpace(nameSuffix)) throw new ArgumentNullException("nameSuffix");
+
+            var studyName = String.Concat(Config.StudyNamePrefix, nameSuffix, "_Study");
+            var studyExternalOid = studyName.RemoveNonAlphanumeric();
+
+            var siteName = String.Concat(Config.StudyNamePrefix, nameSuffix, "_Site");
+            var siteNumber = String.Concat(nameSuffix, "_Site").RemoveNonAlphanumeric();
+            
+            var newStudyGroup = new SegmentSetupData
+            {
+                NameSuffix = nameSuffix,
+                SegmentName = String.Concat(Config.StudyNamePrefix, nameSuffix),
+                Studies = new StudySetupData[]
+                {
+                    new StudySetupData()
+                    {
+                        StudyName    = studyName,
+                        ExternalOid  = studyExternalOid,
+                        IsProduction = true,
+                        Sites        = new SiteSetupData[]
+                        {
+                            new SiteSetupData
+                            {
+                                SiteName   = siteName,
+                                SiteNumber = siteNumber
+                            }
+                        }
+                    },
+                    new StudySetupData()
+                    {
+                        StudyName    = String.Concat(studyName, " ",userAcceptanceStudySuffix),
+                        ExternalOid  = String.Concat(studyExternalOid, userAcceptanceStudySuffix).RemoveNonAlphanumeric(),
+                        IsProduction = false,
+                        Sites        = new SiteSetupData[]
+                        {
+                            new SiteSetupData
+                            {
+                                SiteName   = String.Concat(siteName, " ", userAcceptanceStudySuffix),
+                                SiteNumber = String.Concat(siteNumber, userAcceptanceStudySuffix).RemoveNonAlphanumeric()
+                            }
+                        }
+                    },
+                    new StudySetupData()
+                    {
+                        StudyName    = String.Concat(studyName, " ", developmentStudySuffix),
+                        ExternalOid  = String.Concat(studyExternalOid, developmentStudySuffix).RemoveNonAlphanumeric(),
+                        IsProduction = false,
+                        Sites        = new SiteSetupData[]
+                        {
+                            new SiteSetupData
+                            {
+                                SiteName   = String.Concat(siteName, " ", developmentStudySuffix),
+                                SiteNumber = String.Concat(siteNumber, developmentStudySuffix).RemoveNonAlphanumeric()
+                            }
+                        }
+                    }
+                }
+            };
+
+            return newStudyGroup;
         }
 
         [AfterScenario("CoderCore")]
@@ -113,7 +367,7 @@ namespace Coder.TestSteps.StepDefinitions
                     try
                     {
                         TaskAttempt.TryAction(_StepContext.Browser.CleanUpCodingTasks, TimeSpan.FromSeconds(10));
-                    }
+                }
                     catch(Exception ex)
                     {
                         Console.WriteLine(String.Format("Error cleaning up tasks after test pass: {0}", ex));
@@ -138,7 +392,9 @@ namespace Coder.TestSteps.StepDefinitions
             AssertTestWasConclusive(_StepContext);
         }
 
-        [AfterScenario("EndToEnd")]
+        [AfterScenario("EndToEndDynamicSegment")]
+        [AfterScenario("EndToEndDynamicStudy")]
+        [AfterScenario("EndToEndStaticSegment")]
         [AfterScenario("Deployment")]
         private void CommonAfterScenario()
         {
@@ -147,7 +403,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (!ReferenceEquals(browser, null))
             {
 
-                Console.WriteLine("Test run with user: {0}", _StepContext.User);
+                Console.WriteLine("Test run with user: {0}", _StepContext.GetUser());
 
                 var error = ScenarioContext.Current.TestError;
 
@@ -157,7 +413,7 @@ namespace Coder.TestSteps.StepDefinitions
 
                     browser.SaveScreenshot(fileName);
 
-                    Console.WriteLine("An error occurred with user: " + _StepContext.User);
+                    Console.WriteLine("An error occurred with user: " + _StepContext.GetUser());
                     Console.WriteLine("Error: "+ error.Message);
                 }
 
@@ -198,7 +454,7 @@ namespace Coder.TestSteps.StepDefinitions
 
         private static string CreateUserDirectory(string parentDirectory, string loginId)
         {
-            if (String.IsNullOrWhiteSpace(parentDirectory)) throw new ArgumentNullException("loginId");
+            if (String.IsNullOrWhiteSpace(parentDirectory)) throw new ArgumentNullException("parentDirectory");
             if (String.IsNullOrWhiteSpace(loginId)) throw new ArgumentNullException("loginId");
 
             var directoryName = Path.Combine(parentDirectory, loginId);

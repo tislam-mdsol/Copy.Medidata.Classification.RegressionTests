@@ -14,8 +14,8 @@ Scenario Outline: A Coder User is able to search via the following criteria: Sub
 	And setting reclassification search value "True" for "IncludeAutocodedItems"
 	And performing reclassification search
 	Then the reclassification search should contain
-	   | Study                   | Subject   | Verbatim | Term     | Code     | Priority | Form   |
-	   | <SourceSystemStudyName> | Subject 1 | HEADACHE | Headache | 10019211 | 1        | Form 1 |
+	   | Study       | Subject   | Verbatim | Term     | Code     | Priority | Form   |
+	   | <StudyName> | Subject 1 | HEADACHE | Headache | 10019211 | 1        | Form 1 |
     Examples:
         | Field    | Value     |
         | Verbatim | HEADACHE  |
@@ -35,8 +35,8 @@ Scenario Outline: A user can review a coding decision's EDC Form. Enables an eas
 	And setting reclassification search value "True" for "IncludeAutocodedItems"
 	And performing reclassification search
 	Then the reclassification search should contain
-	   | Study                   | Subject   | Verbatim | Term     | Code     | Priority | Form        |
-	   | <SourceSystemStudyName> | Subject 1 | HEADACHE | Headache | 10019211 | 1        | <FormValue> |
+	   | Study       | Subject   | Verbatim | Term     | Code     | Priority | Form        |
+	   | <StudyName> | Subject 1 | HEADACHE | Headache | 10019211 | 1        | <FormValue> |
     Examples:
         | Field    | Value    | FormValue       |
         | Verbatim | Headache | Adverse Event   |
@@ -54,8 +54,8 @@ Scenario Outline: A Coder User is able to do a partial term search using the fol
 	And setting reclassification search value "True" for "IncludeAutocodedItems"
 	And performing reclassification search
 	Then the reclassification search should contain
-	   | Study                   | Subject   | Verbatim | Term     | Code     | Priority | Form   |
-	   | <SourceSystemStudyName> | Subject 1 | HEADACHE | Headache | 10019211 | 1        | Form 1 |
+	   | Study       | Subject   | Verbatim | Term     | Code     | Priority | Form   |
+	   | <StudyName> | Subject 1 | HEADACHE | Headache | 10019211 | 1        | Form 1 |
     Examples:
         | Field    | Value   |
         | Verbatim | Head    |
@@ -74,8 +74,8 @@ Scenario Outline: A Coder User is able to conduct a search using the following P
 	And setting reclassification search value "<Value>" for "<Field>"
 	And performing reclassification search
 	Then the reclassification search should contain
-	    | Study                   | Subject   | Verbatim   | Term             | Code     | Priority | Form   |
-	    | <SourceSystemStudyName> | Subject 1 | HEART BURN | Reflux gastritis | 10057969 | 1        | Form 1 |
+	    | Study       | Subject   | Verbatim   | Term             | Code     | Priority | Form   |
+	    | <StudyName> | Subject 1 | HEART BURN | Reflux gastritis | 10057969 | 1        | Form 1 |
 	Examples:
         | Field        | Value           |
         | PriorActions | Browse And Code |
@@ -93,8 +93,8 @@ Scenario Outline: A Coder User is able to conduct a search using the following P
 	And setting reclassification search value "True" for "IncludeAutocodedItems"
 	And performing reclassification search
 	Then the reclassification search should contain
-	    | Study                   | Subject   | Verbatim | Term     | Code     | Priority | Form   |
-	    | <SourceSystemStudyName> | Subject 1 | HEADACHE | Headache | 10019211 | 1        | Form 1 |
+	    | Study       | Subject   | Verbatim | Term     | Code     | Priority | Form   |
+	    | <StudyName> | Subject 1 | HEADACHE | Headache | 10019211 | 1        | Form 1 |
 	Examples:
         | Field        | Value                         |
         | PriorActions | Complete Without Transmission |
@@ -112,8 +112,8 @@ Scenario Outline: A Coder User is able to conduct a search using the following P
 	And setting reclassification search value "True" for "IncludeAutocodedItems"
 	And performing reclassification search
 	Then the reclassification search should contain
-	    | Study                   | Subject   | Verbatim | Term     | Code     | Priority | Form   |
-	    | <SourceSystemStudyName> | Subject 1 | HEADACHE | Headache | 10019211 | 1        | Form 1 |
+	    | Study       | Subject   | Verbatim | Term     | Code     | Priority | Form   |
+	    | <StudyName> | Subject 1 | HEADACHE | Headache | 10019211 | 1        | Form 1 |
 	Examples:
         | Field       | Value     |
         | PriorStatus | Completed |
@@ -132,8 +132,8 @@ Scenario Outline: A Coder User is able to conduct a search using the following P
 	And setting reclassification search value "<Value>" for "<Field>"
 	And performing reclassification search
 	Then the reclassification search should contain
-	    | Study                   | Subject   | Verbatim   | Term             | Code     | Priority | Form   |
-	    | <SourceSystemStudyName> | Subject 1 | HEART BURN | Reflux gastritis | 10057969 | 1        | Form 1 |
+	    | Study       | Subject   | Verbatim   | Term             | Code     | Priority | Form   |
+	    | <StudyName> | Subject 1 | HEART BURN | Reflux gastritis | 10057969 | 1        | Form 1 |
 	Examples:
         | Field       | Value               |
         | PriorStatus | Waiting Approval    |

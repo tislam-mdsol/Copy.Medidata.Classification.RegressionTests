@@ -20,6 +20,13 @@ namespace Coder.DeclarativeBrowser.PageObjects
             _Session = session;
         }
 
+        private SessionElementScope GetStudiesSearchLabel()
+        {
+            var studiesSearchLabel = _Session.FindSessionElementById("_ctl0_Content_ListDisplayNavigation_lblFind");
+
+            return studiesSearchLabel;
+        }
+
         private SessionElementScope GetStudySearchTextBox()
         {
             var studySearchTextBox = _Session.FindSessionElementById("_ctl0_Content_ListDisplayNavigation_txtSearch");
@@ -50,26 +57,36 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return studies.ToList();
         }
 
-        private void SearchForSite(string siteName)
+        internal void SearchForStudy(string study)
         {
-            if (String.IsNullOrWhiteSpace(siteName)) throw new ArgumentNullException("siteName");
+            if (String.IsNullOrWhiteSpace(study)) throw new ArgumentNullException("study");
 
             _Session.WaitUntilElementExists(GetStudySearchTextBox);
 
             var studySearchTextBox = GetStudySearchTextBox();
 
-            studySearchTextBox.FillInWith(siteName).SendKeys(Keys.Return);
+            var searchText = study.GetRaveSearchText();
 
-            _Session.WaitUntilElementExists(GetStudiesGrid);
+            studySearchTextBox.FillInWith(searchText).SendKeys(Keys.Return);
         }
 
+        internal bool IsHomePageLoaded()
+        {
+            bool searchLabelExists = GetStudiesSearchLabel().Exists(Config.ExistsOptions);
+
+            if (!searchLabelExists)
+            {
+                return false;
+            }
+
+            bool pageIsLoaded = GetStudiesSearchLabel().Text.Equals("Study");
+
+            return pageIsLoaded;
+        }
+        
         internal void OpenStudy(string studyName)
         {
             if (String.IsNullOrWhiteSpace(studyName)) throw new ArgumentNullException("studyName");
-            
-            var searchText = studyName.Split('(').ToArray()[0];
-
-            SearchForSite(searchText);
             
             RetryPolicy.FindElement.Execute(() =>
             {
@@ -77,21 +94,18 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
                 if (!studies.Any())
                 {
-                    throw new MissingHtmlException(String.Format("No Studies were found for search text, {0}",
-                        searchText));
+                    throw new MissingHtmlException("No Studies were found.");
                 }
                 
                 var studyLink = studies.FirstOrDefault(x => x.Text.EqualsIgnoreCase(studyName));
 
                 if (ReferenceEquals(studyLink, null))
                 {
-                    throw new MissingHtmlException(String.Format("Study, {0},  was not found for search text, {1}",
-                        studyName, searchText));
+                    throw new MissingHtmlException(String.Format("Study, {0}, was not found.", studyName));
                 }
 
                 studyLink.Click();
-            })
-            ;
+            });
         }
     }
 }

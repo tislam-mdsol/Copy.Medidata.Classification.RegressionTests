@@ -37,8 +37,8 @@ Scenario: The services required to code adverse events added to new subjects sha
 
 Given Rave Modules App Segment "<Segment>" is loaded
 And a unique adverse event "CoderAppMon"
-When adding a new subject "TST" to study "<SourceSystemStudyName>"
-And adding a new adverse event "<AdverseEventText>" to subject "<SubjectId>" of study "<SourceSystemStudyName>"
+When adding a new manual ID subject "TST"
+And adding a new adverse event "<AdverseEventText>" to subject "<SubjectId>" of study "<StudyName>"
 Then the audit log for occurrence "1" of the adverse event "<AdverseEventText>" is updated when the term is sent to coder
 When Coder App Segment "<Segment>" is loaded
 Then the MEV upload capability is available
@@ -58,5 +58,5 @@ Then the synonym for verbatim "<AdverseEventText>" and code "10066998" should be
 When approving task "<AdverseEventText>" if required
 Then the coding decision for the task "<AdverseEventText>" is approved for term "Gastroesophageal burning"
 And the audit log for occurrence "1" of the adverse event "<AdverseEventText>" is updated with the term path "SOC: Gastrointestinal disorders, HLGT: Gastrointestinal signs and symptoms, HLT: Dyspeptic signs and symptoms, PT: Dyspepsia, LLT: Gastroesophageal burning"
-When adding a new adverse event "<AdverseEventText>" to subject "<SubjectId>" of study "<SourceSystemStudyName>" and the coding decision approved
+When adding a new adverse event "<AdverseEventText>" to subject "<SubjectId>" of study "<StudyName>" and the coding decision approved
 Then the audit log for occurrence "2" of the adverse event "<AdverseEventText>" is updated with the term path "SOC: Gastrointestinal disorders, HLGT: Gastrointestinal signs and symptoms, HLT: Dyspeptic signs and symptoms, PT: Dyspepsia, LLT: Gastroesophageal burning"

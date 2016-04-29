@@ -9,6 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Coder.ApplicationMonitoringTests</RootNamespace>
     <AssemblyName>Coder.ApplicationMonitoringTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -149,6 +150,7 @@
     <ProjectReference Include="..\Coder.TestSteps\Coder.TestSteps.csproj">
       <Project>{f78bda11-98eb-45bc-ad23-120e600a6a19}</Project>
       <Name>Coder.TestSteps</Name>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

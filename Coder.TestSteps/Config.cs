@@ -73,6 +73,21 @@ namespace Coder.TestSteps
             }
         }
 
+        internal static string RaveAdminLogin
+        {
+            get
+            {
+                var raveAdminLogin = ConfigurationManager.AppSettings["RaveAdminLogin"];
+
+                if (String.IsNullOrWhiteSpace(raveAdminLogin))
+                {
+                    throw new ConfigurationErrorsException("RaveAdminLogin");
+                }
+
+                return raveAdminLogin;
+            }
+        }
+
         internal static string NewGeneratedSegment
         {
             get
@@ -115,6 +130,21 @@ namespace Coder.TestSteps
                 }
 
                 return configuredPassword;
+            }
+        }
+
+        internal static string RaveAdminPassword
+        {
+            get
+            {
+                var raveAdminPassword = ConfigurationManager.AppSettings["RaveAdminPassword"];
+
+                if (String.IsNullOrWhiteSpace(raveAdminPassword))
+                {
+                    throw new ConfigurationErrorsException("RaveAdminPassword");
+                }
+
+                return raveAdminPassword;
             }
         }
 
@@ -173,6 +203,18 @@ namespace Coder.TestSteps
                 if (String.IsNullOrWhiteSpace(studyName)) throw new ConfigurationErrorsException("StudyName");
 
                 return studyName;
+            }
+        }
+
+        internal static string Site
+        {
+            get
+            {
+                var site = ConfigurationManager.AppSettings["Site"];
+
+                if (String.IsNullOrWhiteSpace(site)) throw new ConfigurationErrorsException("Site");
+
+                return site;
             }
         }
 
@@ -256,6 +298,30 @@ namespace Coder.TestSteps
                 }
 
                 return configuredSegment;
+            }
+        }
+
+        internal static string SetupSegment
+        {
+            get
+            {
+                var setupSegment = ConfigurationManager.AppSettings["SetupSegment"];
+
+                if (String.IsNullOrEmpty(setupSegment)) throw new ConfigurationErrorsException("SetupSegment");
+
+                return setupSegment;
+            }
+        }
+
+        internal static string ETESetupSuffix
+        {
+            get
+            {
+                var setupSuffix = ConfigurationManager.AppSettings["ETESetupSuffix"];
+
+                if (String.IsNullOrEmpty(setupSuffix)) throw new ConfigurationErrorsException("ETESetupSuffix");
+
+                return setupSuffix;
             }
         }
 

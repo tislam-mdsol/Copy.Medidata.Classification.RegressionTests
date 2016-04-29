@@ -1,22 +1,21 @@
 ﻿@specCoderSetup.feature
-@EndToEnd
+#@author: smalik
+@EndToEndStaticSegment
 Feature: specCoderSetupSteps
 	Enroll a new segment in Coder
 	Roll out a dictionary
 	Create and assign workflow role, general role, page study role and dictionary role
 
-
-@VAL
+@DFT
 @Release2016.1.0
-@PBMCC211000
+@PBMCC_211000_003
 Scenario: CoderAdmin enrolls a new segment in Coder and rolls out a new dictionary
 	Given a new segment to be enrolled in Coder
 	When a dictionary "MedDRA (eng)" is rolled out
-	Then Verify dictionary has rolled out
 
-@VAL
+@DFT
 @Release2016.1.0
-@PBMCC211000
+@PBMCC_211000_004
 Scenario: Create and assign workflow role, general role, page study role and dictionary role
 	Given a new Coder User
 	When creating and activating a new workflow role called "Workflow Admin"

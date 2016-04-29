@@ -201,29 +201,36 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return assignGeneralRoleGridValues;
         }
 
+        private bool IsGeneralRoleAssigned(string roleName, string type, string loginId)
+        {
+            if (ReferenceEquals(roleName, null))    throw new ArgumentNullException("roleName");
+            if (String.IsNullOrWhiteSpace(type))    throw new ArgumentNullException("type");
+            if (String.IsNullOrWhiteSpace(loginId)) throw new ArgumentNullException("loginId");
+
+            var assignedGeneralRoles = GetAssignGeneralRoleGridValues();
+
+            var targetGeneralRole = assignedGeneralRoles.FirstOrDefault(x => x.Name      .EqualsIgnoreCase(roleName) &&
+                                                                            (x.RoleType.EqualsIgnoreCase  (type    ) || x.RoleType.EqualsIgnoreCase("all")) &&
+                                                                             x.LoginId   .Contains        (loginId, StringComparison.OrdinalIgnoreCase) &&
+                                                                             x.DenyAccess.Equals          (false   ) );
+
+            return !ReferenceEquals(targetGeneralRole, null);
+        }
+
         internal void AssignGeneralRole(string roleName, string securityModule, string type, string loginId)
         {
             GetSecurityModuleDropDownList().SelectOptionAlphanumericOnly(securityModule);
+
+            if (IsGeneralRoleAssigned(roleName, type, loginId))
+            {
+                return;
+            }
+
             GetAddNewButton().Click();
 
-            var policy = RetryPolicy.FindElement;
-            policy.Execute(
-                () =>
-                {
-                    _Browser.TrySelectDxOptionEditor(GetLogInTextBox, GetLoginIdTextboxTd, loginId);
-                });
-
-            policy.Execute(
-                () =>
-                {
-                    _Browser.TrySelectDxOptionEditor(GetTypeTextBox, GetTypeTextboxTd, type);
-                });
-
-            policy.Execute(
-                () =>
-                {
-                    _Browser.TrySelectDxOptionEditor(GetRoleNameTextBox, GetRoleNameTextboxTd, roleName);
-                });
+            _Browser.SelectDXOption(GetLogInTextBox,    loginId);
+            _Browser.SelectDXOption(GetTypeTextBox,     type);
+            _Browser.SelectDXOption(GetRoleNameTextBox, roleName);
 
             GetAssignRoleUpdateButton().Click();
 

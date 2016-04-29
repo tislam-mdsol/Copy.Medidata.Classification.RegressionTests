@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Coder.DeclarativeBrowser.Models;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coder.DeclarativeBrowser.Db;
+using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 
 namespace Coder.DeclarativeBrowser
@@ -89,8 +90,7 @@ namespace Coder.DeclarativeBrowser
                         string userName        = user.Item2;
 
                         InsertSegmentConfigurations(db, segmentId, userId);
-                        CreateAndAssignGeneralRoles(db, _GeneralRoles, segmentId, userId);
-                        CreateAndAssignWorkflowRole(db, _WorkflowRoleName, segmentId, userId, _WorkflowActionIds);
+                        CreateAndAssignCoderRoles(db, segmentId, userId);
 
                         string protocolName = String.Concat(segmentName, "Protocol");
                         string[] studyNames = BuildStudyNames(segmentName, _StudySuffixes);
@@ -107,21 +107,43 @@ namespace Coder.DeclarativeBrowser
 
                         generatedUser.User = new MedidataUser
                         {
-                            Id       = userId,
-                            Username = userName
+                            Id        = userId,
+                            Username  = userName,
+                            FirstName = Config.NewUserFirstName
                         };
 
                         generatedUser.Segment= new SegmentSetupData
                         {
                             SegmentId      = segmentId,
                             SegmentName    = segmentName,
-                            Studies        = createdStudies,
-                            ProtocolNumber = protocolName
+                            Studies        = createdStudies
                         };
                     }
                 });
 
             return generatedUser;
+        }
+
+        public static void AssignCoderRolesByIMedidataId(string segmentImedidataId, string userImedidataId)
+        {
+            if (String.IsNullOrWhiteSpace(segmentImedidataId)) throw new ArgumentNullException("segmentImedidataId");
+            if (String.IsNullOrWhiteSpace(userImedidataId))    throw new ArgumentNullException("userImedidataId");
+
+            using (var db = CoderDbFactory.Build())
+            {
+                var segmentId = GetSegmentIdByIMedidataId(db, segmentImedidataId);
+                var userId    = GetUserIdByIMedidataId(db, userImedidataId);
+
+                CreateAndAssignCoderRoles(db, segmentId, userId);
+            }
+        }
+
+        private static void CreateAndAssignCoderRoles(ICoderDbConnection db, int segmentId, int userId)
+        {
+            if (ReferenceEquals(db, null)) throw new ArgumentNullException("db");
+
+            CreateAndAssignGeneralRoles(db, _GeneralRoles, segmentId, userId);
+            CreateAndAssignWorkflowRole(db, _WorkflowRoleName, segmentId, userId, _WorkflowActionIds);
         }
 
         private static Tuple<int,string> CreateNewSegment(ICoderDbConnection db, Guid iMedidataIdGuid, string segmentNamePrefix)
@@ -130,7 +152,7 @@ namespace Coder.DeclarativeBrowser
             if (String.IsNullOrWhiteSpace(segmentNamePrefix)) throw new ArgumentNullException("segmentNamePrefix");
 
             var iMedidataString = iMedidataIdGuid.ToString();
-            var segmentSuffix   = GetFirstGuidSection(iMedidataIdGuid);
+            var segmentSuffix   = iMedidataIdGuid.GetFirstSection();
             var segmentName     = String.Concat(segmentNamePrefix, segmentSuffix);
             int segmentId       = 0;
 
@@ -200,7 +222,7 @@ namespace Coder.DeclarativeBrowser
         {
             if (ReferenceEquals(db, null)) throw new ArgumentNullException("db");
 
-            var segmentSuffix   = GetFirstGuidSection(iMedidataSegmentGuid);
+            var segmentSuffix   = iMedidataSegmentGuid.GetFirstSection();
             var imedidataUserId = iMedidataUserGuid.ToString();
             var lastName        = segmentSuffix;
             var login           = String.Concat(_FirstName, lastName);
@@ -294,10 +316,11 @@ namespace Coder.DeclarativeBrowser
 
                 studies[i] = new StudySetupData
                 {
-                    StudyId     = trackableObjectId,
-                    StudyName   = studyName,
-                    StudyUuid   = insertedData.StudyOid,
-                    ExternalOid = externalOid
+                    StudyId        = trackableObjectId,
+                    StudyName      = studyName,
+                    StudyUuid      = insertedData.StudyOid,
+                    ExternalOid    = externalOid,
+                    ProtocolNumber = prodStudyName
                 };
             }
 
@@ -332,6 +355,19 @@ namespace Coder.DeclarativeBrowser
             return (int)studyProjectId;
         }
 
+        public static void LicenseDictionariesByIMedidataId(string segmentImedidataId, string[,] coderDictionaries, DateTime currentDate)
+        {
+            if (String.IsNullOrWhiteSpace(segmentImedidataId)) throw new ArgumentNullException("segmentImedidataId");
+            if (ReferenceEquals(coderDictionaries, null)) throw new ArgumentNullException("coderDictionaries");
+
+            using (var db = CoderDbFactory.Build())
+            {
+                var segmentId = GetSegmentIdByIMedidataId(db, segmentImedidataId);
+
+                LicenseDictionaries(db, segmentId, coderDictionaries, currentDate);
+            }
+        }
+
         private static void LicenseDictionaries(ICoderDbConnection db, int segmentId, string[,] coderDictionaries, DateTime currentDate)
         {
             if (ReferenceEquals(db,null))                throw new ArgumentNullException("db");
@@ -354,14 +390,6 @@ namespace Coder.DeclarativeBrowser
             }
         }
 
-        private static string GetFirstGuidSection(Guid guid)
-        {
-            var guidString = guid.ToString();
-            var suffix = guidString.Substring(0, guidString.IndexOf('-'));
-
-            return suffix;
-        }
-
         private static string[] BuildStudyNames(string segmentName, string[] studySuffixes)
         {
             if (ReferenceEquals(studySuffixes, null))   throw new ArgumentNullException("studySuffixes");
@@ -376,6 +404,40 @@ namespace Coder.DeclarativeBrowser
             }
 
             return studies;
+        }
+
+        private static int GetSegmentIdByIMedidataId(ICoderDbConnection db, string segmentImedidataId)
+        {
+            if (ReferenceEquals(db, null))                     throw new ArgumentNullException("db");
+            if (String.IsNullOrWhiteSpace(segmentImedidataId)) throw new ArgumentNullException("segmentImedidataId");
+            
+            var segmentData = db.Execute.spSegmentGetByIMedidataId(segmentImedidataId).Data.FirstOrDefault();
+
+            if (ReferenceEquals(segmentData, null))
+            {
+                throw new ArgumentException(String.Format("Cannot find segment data for {0}", segmentImedidataId));
+            }
+
+            var segmentId = segmentData.SegmentId.Value;
+
+            return segmentId;
+        }
+
+        private static int GetUserIdByIMedidataId(ICoderDbConnection db, string userImedidataId)
+        {
+            if (ReferenceEquals(db, null))                  throw new ArgumentNullException("db");
+            if (String.IsNullOrWhiteSpace(userImedidataId)) throw new ArgumentNullException("userImedidataId");
+            
+            var userData = db.Execute.spUserGetByIMedidataId(userImedidataId).Data.FirstOrDefault();
+
+            if (ReferenceEquals(userData, null))
+            {
+                throw new ArgumentException(String.Format("Cannot find userData data for {0}", userImedidataId));
+            }
+            
+            var userId = userData.UserID.Value;
+
+            return userId;
         }
     }
 }

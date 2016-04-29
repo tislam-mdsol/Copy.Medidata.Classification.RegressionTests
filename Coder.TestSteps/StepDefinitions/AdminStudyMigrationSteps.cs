@@ -89,7 +89,7 @@ namespace Coder.TestSteps.StepDefinitions
         public void WhenPerformingStudyImpactAnalysis()
         {
             _Browser.PerformStudyImpactAnalysis(
-                study            : _StepContext.Project,
+                study            : _StepContext.GetStudyName(),
                 dictionary       : CreateDictionaryLocaleValue(_StepContext.Dictionary, _StepContext.Locale),
                 sourceSynonymList: _StepContext.SourceSynonymList,
                 targetSynonymList: _StepContext.TargetSynonymList);
@@ -100,7 +100,7 @@ namespace Coder.TestSteps.StepDefinitions
         public void WhenPerformingStudyMigration()
         {
              _Browser.MigrateStudy(
-                study            : _StepContext.Project,
+                study            : _StepContext.GetStudyName(),
                 dictionary       : CreateDictionaryLocaleValue(_StepContext.Dictionary, _StepContext.Locale),
                 sourceSynonymList: _StepContext.SourceSynonymList,
                 targetSynonymList: _StepContext.TargetSynonymList);
@@ -112,7 +112,7 @@ namespace Coder.TestSteps.StepDefinitions
         public void WhenPerformingStudyMigrationWithoutWaiting()
         {
             _Browser.MigrateStudy(
-               study                     : _StepContext.Project,
+               study                     : _StepContext.GetStudyName(),
                dictionary                : CreateDictionaryLocaleValue(_StepContext.Dictionary, _StepContext.Locale),
                sourceSynonymList         : _StepContext.SourceSynonymList,
                targetSynonymList         : _StepContext.TargetSynonymList,
@@ -126,8 +126,8 @@ namespace Coder.TestSteps.StepDefinitions
         {
              _Browser.FakeStudyMigration(
                 loginName        : Config.Login, 
-                segment          : _StepContext.Segment, 
-                studyName        : _StepContext.Project, 
+                segment          : _StepContext.GetSegment(), 
+                studyName        : _StepContext.GetStudyName(), 
                 sourceSynonymList: _StepContext.SourceSynonymList, 
                 targetSynonymList: _StepContext.TargetSynonymList);
         }
@@ -139,7 +139,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             _Browser.AssertThatVerbatimTermExistsUnderPathChanged(
                 verbatimTerm     : verbatimTerm,
-                study            : _StepContext.Project,
+                study            : _StepContext.GetStudyName(),
                 dictionary       : CreateDictionaryLocaleValue(_StepContext.Dictionary, _StepContext.Locale),
                 sourceSynonymList: _StepContext.SourceSynonymList,
                 targetSynonymList: _StepContext.TargetSynonymList);
@@ -152,7 +152,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             _Browser.AssertThatVerbatimTermExistsUnderTermNotFound(
                 verbatimTerm     : verbatimTerm,
-                study            : _StepContext.Project,
+                study            : _StepContext.GetStudyName(),
                 dictionary       : CreateDictionaryLocaleValue(_StepContext.Dictionary, _StepContext.Locale),
                 sourceSynonymList: _StepContext.SourceSynonymList,
                 targetSynonymList: _StepContext.TargetSynonymList);
@@ -165,7 +165,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             _Browser.AssertThatVerbatimTermExistsUnderCasingChanged(
                 verbatimTerm     : verbatimTerm,
-                study            : _StepContext.Project,
+                study            : _StepContext.GetStudyName(),
                 dictionary       : CreateDictionaryLocaleValue(_StepContext.Dictionary, _StepContext.Locale),
                 sourceSynonymList: _StepContext.SourceSynonymList,
                 targetSynonymList: _StepContext.TargetSynonymList);
@@ -179,7 +179,7 @@ namespace Coder.TestSteps.StepDefinitions
             foreach (var row in studyReport.Rows)
             {
                 _Browser.AssertThatVerbatimTermExistsWithCorrectCategoryAndStatus(
-                    study        : _StepContext.Project,
+                    study        : _StepContext.GetStudyName(),
                     verbatimTerm : row["Verbatim"],
                     categoryName : row["Category"],
                     dictionary   : CreateDictionaryLocaleValue(_StepContext.Dictionary, _StepContext.Locale),
@@ -203,7 +203,7 @@ namespace Coder.TestSteps.StepDefinitions
         public void ThenStudyMigrationIsCompleteForTheLatestVersion()
         {
             _Browser.AssertThatStudyMigrationIsCompleteForTheLatestVersion( 
-                study            : _StepContext.Project,
+                study            : _StepContext.GetStudyName(),
                 dictionary       : CreateDictionaryLocaleValue(_StepContext.Dictionary, _StepContext.Locale),
                 sourceVersion    : _StepContext.SourceSynonymList.Version,
                 targetVersion    : _StepContext.TargetSynonymList.Version);
@@ -214,7 +214,7 @@ namespace Coder.TestSteps.StepDefinitions
         {
             _Browser.AssertThatTheNotAffectedCountIsEqualToNumberOfTasks(
                 numberOfTasks    : numberOfTasks,
-                study            : _StepContext.Project,
+                study            : _StepContext.GetStudyName(),
                 dictionary       : CreateDictionaryLocaleValue(_StepContext.Dictionary, _StepContext.Locale),
                 sourceSynonymList: _StepContext.SourceSynonymList,
                 targetSynonymList: _StepContext.TargetSynonymList);

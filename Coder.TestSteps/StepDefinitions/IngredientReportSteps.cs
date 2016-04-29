@@ -29,7 +29,7 @@ namespace Coder.TestSteps.StepDefinitions
         [When(@"an Ingredient Report is requested")]
         public void WhenAnIngredientReportIsRequested()
         {
-            _Browser.GenerateIngredientReport(_StepContext.SourceSystemStudyName, _StepContext.Dictionary);
+            _Browser.GenerateIngredientReport(_StepContext.GetStudyName(), _StepContext.Dictionary);
         }
 
         [Then(@"the appropriate ingredient report is generated")]

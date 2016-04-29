@@ -9,6 +9,13 @@ set regression_test_user_id=Coder3
 set smoke_test_user_id=Coder2
 set uitest_login_url=https://coder-vpc-sandbox.imedidata.net
 set MaxReturnResultsForManualSearch=100
+set ete_segment_customer=Medidata Testing
+set ete_edc_app_name=Rave EDC - conlabtesting56.mdsol.com Rave EDC
+set ete_modules_app_name=Rave Modules - conlabtesting56.mdsol.com Rave Modules
+set ete_architect_roles_app_name=Rave Architect Roles - conlabtesting56.mdsol.com Rave Architect Roles
+set ete_edc_app_name_role=Power User
+set ete_modules_app_role=All Modules
+set ete_architect_roles_role=Project Admin Default
 
 set SSL_CERT_FILE=c:\\Ruby193\\cacert.pem
 set hipchat_token=
@@ -62,7 +69,7 @@ SET WebServerAppName=CoderCloud
 SET APIServerNode=localhost
 SET APIServerAppName=CoderAPI
 
-SET app_uuid=9cddecf7-4e04-405e-8b1d-f326c151c120
+SET app_uuid=b14c5063-2cb4-40db-8d82-284475f0a444
 SET mauth_service_url=http://mauth-sandbox.imedidata.net
 SET imedidata_login_url=https://coder-vpc-sandbox.imedidata.net
 SET imedidata_base_url=https://sandbox.imedidata.net

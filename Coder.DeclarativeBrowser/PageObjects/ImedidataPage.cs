@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coypu;
-using FluentAssertions;
+using OpenQA.Selenium;
 
 namespace Coder.DeclarativeBrowser.PageObjects
 {
@@ -11,16 +11,9 @@ namespace Coder.DeclarativeBrowser.PageObjects
     {
         private readonly BrowserSession _Browser;
 
-        internal static readonly string RaveEdcAppName     = "Rave EDC";
-        internal static readonly string RaveModulesAppName = "Rave Modules";
-        internal static readonly string CoderAppName       = "Coder";
-
-        private readonly IDictionary<string,string> _AppIds = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
-        {
-            {RaveEdcAppName    , "app_type_1" },
-            {RaveModulesAppName, "app_type_4" },
-            {CoderAppName      , "app_type_9" }
-        };
+        internal const string CoderAppName       = "Coder";
+        internal const string RaveEdcAppName     = "Rave EDC";
+        internal const string RaveModulesAppName = "Rave Modules";
 
         internal ImedidataPage(BrowserSession browser)
         {
@@ -43,7 +36,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         private SessionElementScope GetSegmentSearchBox()
         {
-            var segmentSearchBox = _Browser.FindSessionElementByXPath("//form[@id='studies_search']//input[@id='search_field_search_terms']");
+            var segmentSearchBox = _Browser.FindSessionElementById("studies_search_term");
 
             return segmentSearchBox;
         }
@@ -130,35 +123,40 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             return links;
         }
-
-        private SessionElementScope GetManageLink(Func<IList<SessionElementScope>> getRows, string groupName)
+        
+        private SessionElementScope GetStudiesGrid()
         {
-            if (String.IsNullOrWhiteSpace(groupName)) throw new ArgumentNullException("groupName");
+            var studiesGrid = _Browser.FindSessionElementById("studies");
 
-            var row = GetRow(getRows, groupName);
-
-            var manageLink = row.FindSessionElementByXPath("div[1]/a");
-
-            return manageLink;
+            return studiesGrid;
         }
 
-        private SessionElementScope GetAppLink(Func<IList<SessionElementScope>> getRows, string groupName, string appName)
+        private IEnumerable<SessionElementScope> GetStudyGridLinks()
         {
-            if (String.IsNullOrWhiteSpace(appName)) throw new ArgumentNullException("appName");
-            if (String.IsNullOrWhiteSpace(groupName)) throw new ArgumentNullException("groupName");
+            var studiesGrid = GetStudiesGrid();
 
-            var row = GetRow(getRows, groupName);
+            var studyGridLinks = studiesGrid.FindAllSessionElementsByXPath(".//a");
 
-            var appLink = row.FindSessionElementByLink(appName);
-
-            return appLink;
+            return studyGridLinks;
         }
 
         private SessionElementScope GetAppLinkAfterSearching(string appName)
         {
             if (String.IsNullOrWhiteSpace(appName)) throw new ArgumentNullException("appName");
 
-            var appLink = _Browser.FindSessionElementByLink(appName);
+            var appLinks = GetStudyGridLinks();
+
+            var appLink = appLinks.FirstOrDefault(x => x.Text.EqualsIgnoreCase(appName));
+
+            if (ReferenceEquals(appLink, null))
+            {
+                appLink = appLinks.FirstOrDefault(x => x.Text.Contains(appName, StringComparison.OrdinalIgnoreCase));
+            }
+
+            if (ReferenceEquals(appLink, null))
+            {
+                throw new MissingHtmlException(String.Format("Could not find a link to app {0}", appName));
+            }
 
             return appLink;
         }
@@ -204,21 +202,61 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             return row;
         }
+        
+        private SessionElementScope GetAppsGrid()
+        {
+            var appsGrid = _Browser.FindSessionElementById("apps");
 
-        private SessionElementScope GetAppLink(string appName)
+            return appsGrid;
+        }
+
+        private SessionElementScope GetApp(string appName)
         {
             if (String.IsNullOrWhiteSpace(appName)) throw new ArgumentNullException("appName");
 
-            var appLink = _Browser.FindSessionElementById(appName);
+            var appsGrid = GetAppsGrid();
 
-            return appLink;
+            var apps = appsGrid.FindAllSessionElementsByXPath("div");
+            
+            var app = apps.FirstOrDefault(x => x.Text.Replace("\r\n", " ").Contains(appName, StringComparison.OrdinalIgnoreCase));
+
+            return app;
         }
-        
+
+        private SessionElementScope GetUserMenu()
+        {
+            var userMenu = _Browser.FindSessionElementById("user");
+
+            return userMenu;
+        }
+
+        private SessionElementScope GetUserMenuLink()
+        {
+            var userMenuList = GetUserMenu().FindSessionElementById("username");
+
+            return userMenuList;
+        }
+
+        private IList<SessionElementScope> GetUserMenuItems()
+        {
+            GetUserMenuLink().Click();
+
+            var menuItems = GetUserMenu().FindAllSessionElementsByXPath("ul/li/a");
+
+            return menuItems;
+        }
+
+        private SessionElementScope GetLogoutLink()
+        {
+            var logoutLink = _Browser.FindSessionElementById("logout");
+
+            return logoutLink;
+        }
+
         internal void LoadSegmentForApp(string appName, string segment)
         {
             if (String.IsNullOrEmpty(appName))   throw new ArgumentNullException("appName");
             if (String.IsNullOrEmpty(segment))   throw new ArgumentNullException("segment");
-            if (!_AppIds.Keys.Contains(appName)) throw new ArgumentException(String.Format("Unknown application appName, '{0}'", appName));
 
             bool loadSuccessful = LoadSegmentFromAppList(appName, segment);
 
@@ -228,13 +266,19 @@ namespace Coder.DeclarativeBrowser.PageObjects
             }
         }
 
-        private bool  LoadSegmentFromAppList(string appName, string segment)
+        private bool LoadSegmentFromAppList(string appName, string segment)
         {
             if (String.IsNullOrEmpty(appName))   throw new ArgumentNullException("appName");
             if (String.IsNullOrEmpty(segment))   throw new ArgumentNullException("segment");
-            if (!_AppIds.Keys.Contains(appName)) throw new ArgumentException(String.Format("Unknown application appName, '{0}'", appName));
+
+            var serachAppName = appName;
+
+            if (appName.Contains(ImedidataPage.CoderAppName, StringComparison.OrdinalIgnoreCase))
+            {
+                serachAppName = ImedidataPage.CoderAppName;
+            }
             
-            var app = GetAppLink(_AppIds[appName]);
+            var app = GetApp(serachAppName);
 
             if (ReferenceEquals(app, null) || String.IsNullOrEmpty(app.Text))
             {
@@ -243,7 +287,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             string appText = app.Text.Replace("\r\n", " ");
 
-            if (!appText.Contains(appName, StringComparison.OrdinalIgnoreCase) || !appText.Contains(segment, StringComparison.OrdinalIgnoreCase))
+            if (!appText.Contains(serachAppName, StringComparison.OrdinalIgnoreCase) || !appText.Contains(segment, StringComparison.OrdinalIgnoreCase))
             {
                 return false;
             }
@@ -261,21 +305,19 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return true;
         }
         
-        private void LoadSearchedSegmentForApp(string segment, string app)
+        private void LoadSearchedSegmentForApp(string app, string segment)
         {
+            if (String.IsNullOrEmpty(app))     throw new ArgumentNullException("app");
             if (String.IsNullOrEmpty(segment)) throw new ArgumentNullException("segment");
-            if (String.IsNullOrEmpty(app)) throw new ArgumentNullException("app");
-            
+
             SearchImedidataSegment(segment);
-            
-            GetAppLinkAfterSearching(app).Click();
+
+            RetryPolicy.FindElement.Execute(()=> GetAppLinkAfterSearching(app).Click());
         }
 
         private void SearchImedidataSegment(string segmentName)
         {
-            GetSegmentSearchBox().FillInWith(segmentName);
-
-            GetSegmentSearchButton().Click();
+            GetSegmentSearchBox().FillInWith(segmentName).SendKeys(Keys.Return);
         }
 
         internal ImedidataStudyGroupPage ManageSegment(string studyGroup)
@@ -318,7 +360,53 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             iMedidataLink.Click();
 
-            _Browser.GetImedidataPage().WaitForPageToFinishLoading();
+            WaitForPageToFinishLoading();
+        }
+
+        internal void OpenStudyGroupPage()
+        {
+            var adminLink =
+                GetUserMenuItems().FirstOrDefault(x => x.Text.Contains("Admin", StringComparison.OrdinalIgnoreCase));
+
+            if (ReferenceEquals(adminLink, null) || !adminLink.Exists(Config.ExistsOptions))
+            {
+                throw new MissingHtmlException("Admin link not found");
+            }
+
+            adminLink.Click();
+            _Browser.FindLink("Study Groups").Click();
+        }
+        
+        private IEnumerable<SessionElementScope> GetInvitationAcceptLinks()
+        {
+            var invitationAcceptLinks =
+                _Browser.FindAllSessionElementsByXPath("//a[(contains(@id, 'accept_study_group_invitation_'))]");
+
+            return invitationAcceptLinks;
+        }
+
+        internal void AcceptAllStudyGroupInvitations()
+        {
+            var invitationAcceptLinks = GetInvitationAcceptLinks();
+
+            foreach (var invitationAcceptLink in invitationAcceptLinks)
+            {
+                invitationAcceptLink.Click();
+            }
+        }
+
+        internal bool Logout()
+        {
+            GetUserMenuLink().Click();
+
+            if (!GetLogoutLink().Exists(Config.ExistsOptions))
+            {
+                return false;
+            }
+
+            GetLogoutLink().Click();
+
+            return true;
         }
     }
 }

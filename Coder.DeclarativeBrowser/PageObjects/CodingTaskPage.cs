@@ -491,13 +491,9 @@ namespace Coder.DeclarativeBrowser.PageObjects
         private void ClickFilterButtonUntilTaskGridTermIsAvailable(string verbatim)
         {
             if (String.IsNullOrEmpty(verbatim)) throw new ArgumentNullException("verbatim");
-
-            var options = new Options
-            {
-                RetryInterval = TimeSpan.FromSeconds(1),
-                Timeout       = TimeSpan.FromSeconds(75)
-            };
             
+            var options = Config.GetDefaultTransmissionOptions();
+
             try
             {
                 _Session.TryUntil(
@@ -522,11 +518,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             if (String.IsNullOrEmpty(value))          throw new ArgumentNullException("value");
             if (!HeaderToIndexMap.ContainsKey(field)) throw new KeyNotFoundException("field");
 
-            var options = new Options
-            {
-                RetryInterval = TimeSpan.FromSeconds(1),
-                Timeout = TimeSpan.FromSeconds(75)
-            };
+            var options = Config.GetDefaultTransmissionOptions();
 
             try
             {

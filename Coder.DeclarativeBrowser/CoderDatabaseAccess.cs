@@ -14,7 +14,7 @@ namespace Coder.DeclarativeBrowser
         {
            {"eng", "English" },
            {"jpn", "Japanese"},
-           {"kor", "Korean"  },
+           {"kor", "Korean"  }, 
            {"chn", "Chinese" }
         };
 
@@ -83,11 +83,15 @@ namespace Coder.DeclarativeBrowser
                 var setupData = new SegmentSetupData
                 {
                     SegmentName                     = responseData.SegmentName,
-                    Project                         = responseData.ProjectName,
-                    SourceSystemStudyName           = responseData.SourceSystemStudyName,
-                    SourceSystemStudyDisplayName    = responseData.SourceSystemStudyDisplayName,
-                    StudyOid                        = responseData.StudyOid,
-                    ProtocolNumber                  = responseData.ProtocolNumber
+                    Studies = new StudySetupData[]
+                    {
+                        new StudySetupData()
+                        {
+                            StudyName = responseData.SourceSystemStudyName, //responseData.ProjectName
+                            StudyUuid = responseData.StudyOid,
+                            ProtocolNumber = responseData.ProtocolNumber
+                        }
+                    }
                 };
 
                 return setupData;
@@ -106,23 +110,23 @@ namespace Coder.DeclarativeBrowser
                 return responseData.UserName;
             }
         }
-
+        
         private static string GetVersionLocaleKey(string dictionary, string dictionaryVersion, string locale)
         {
-            if (String.IsNullOrEmpty(dictionary)) throw new ArgumentNullException("dictionary");
-            if (String.IsNullOrEmpty(dictionaryVersion)) throw new ArgumentNullException("dictionaryVersion");
-            if (String.IsNullOrEmpty(locale)) throw new ArgumentNullException("locale");
+            if (String.IsNullOrEmpty(dictionary))            throw new ArgumentNullException("dictionary");         
+            if (String.IsNullOrEmpty(dictionaryVersion))     throw new ArgumentNullException("dictionaryVersion");  
+            if (String.IsNullOrEmpty(locale))                throw new ArgumentNullException("locale");
 
             string localeKey;
-
+            
             if (!LocaleConversion.TryGetValue(locale, out localeKey))
             {
                 throw new ArgumentOutOfRangeException("locale", "not recognized");
             }
-
+            
             var versionKey = dictionaryVersion.Replace('.', '_');
 
-            var versionLocaleKey = String.Format("{0}-{1}-{2}", dictionary, versionKey, localeKey);
+            var versionLocaleKey = String.Format("{0}-{1}-{2}",dictionary, versionKey, localeKey);
 
             return versionLocaleKey;
         }
@@ -189,7 +193,7 @@ namespace Coder.DeclarativeBrowser
         }
 
         public static void RegisterProject(
-            string project,
+            string protocolNumber,
             string segment,
             string dictionary,
             string dictionaryVersion,
@@ -197,7 +201,7 @@ namespace Coder.DeclarativeBrowser
             string synonymListName,
             string registrationName)
         {
-            if (String.IsNullOrEmpty(project))               throw new ArgumentNullException("project");           
+            if (String.IsNullOrEmpty(protocolNumber))        throw new ArgumentNullException("protocolNumber");           
             if (String.IsNullOrEmpty(segment))               throw new ArgumentNullException("segment");           
             if (String.IsNullOrEmpty(dictionary))            throw new ArgumentNullException("dictionary");        
             if (String.IsNullOrEmpty(dictionaryVersion))     throw new ArgumentNullException("dictionaryVersion"); 
@@ -212,7 +216,7 @@ namespace Coder.DeclarativeBrowser
                 var versionLocaleKey = GetVersionLocaleKey(dictionaryKey, dictionaryVersion, locale);
                 db.Execute.spCreateSynonymList(segment, versionLocaleKey, synonymListName);
                 db.Execute.spActivateSynonymListForDictionaryVersionLocaleSegment(versionLocaleKey, segment, synonymListName);
-                db.Execute.spDoProjectRegistration(project, segment, versionLocaleKey, synonymListName, registrationName);
+                db.Execute.spDoProjectRegistration(protocolNumber, segment, versionLocaleKey, synonymListName, registrationName);
             }
         }
 

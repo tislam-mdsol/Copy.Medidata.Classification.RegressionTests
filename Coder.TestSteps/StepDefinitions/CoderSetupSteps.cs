@@ -24,7 +24,7 @@ namespace Coder.TestSteps.StepDefinitions
         [Given("a new segment to be enrolled in Coder")]
         public void aNewSegmentToBeEnrolledInCoder()
         {
-            _Browser.EnrollSegment(_StepContext.NewGeneratedSegment);
+            _Browser.EnrollSegment(Config.SetupSegment, _StepContext.GetSegment());
         }
 
         [When(@"a dictionary ""(.*)"" is rolled out")]
@@ -32,19 +32,13 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (ReferenceEquals(dictionaryName, null)) throw new ArgumentNullException("dictionaryName");
 
-            _Browser.RolloutDictionary(_StepContext.NewGeneratedSegment, dictionaryName);
-        }
-
-        [Then(@"Verify dictionary has rolled out")]
-        public void ThenVerifyDictionaryHasRolledOut()
-        {
-            _Browser.VerifyRollOutDictionaryResult(_StepContext.User);
+            _Browser.RolloutDictionary(_StepContext.GetSegment(), dictionaryName);
         }
 
         [Given(@"a new Coder User")]
         public void GivenANewCoderUser()
         {
-            _Browser.LoadiMedidataCoderAppSegment(_StepContext.Segment);
+            _Browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
         }
 
     }

@@ -6,6 +6,7 @@ using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coder.DeclarativeBrowser.ExtensionMethods.Assertions;
 using Coder.DeclarativeBrowser.Helpers;
 using Coder.DeclarativeBrowser.Models;
+using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.TestSteps.Transformations;
 using FluentAssertions;
 using TechTalk.SpecFlow;
@@ -159,7 +160,23 @@ namespace Coder.TestSteps.StepDefinitions
         public void WhenIOpenAQueryForTaskWithComment(string verbatim, string comment)
         {
             if (string.IsNullOrEmpty(verbatim))  throw new ArgumentNullException("verbatim"); 
-            if (string.IsNullOrEmpty(comment))   throw new ArgumentNullException("comment"); 
+            if (string.IsNullOrEmpty(comment))   throw new ArgumentNullException("comment");
+
+            if (ScenarioContext.Current.ScenarioInfo.Tags.Contains("EndToEndDynamicSegment") ||
+                ScenarioContext.Current.ScenarioInfo.Tags.Contains("EndToEndDynamicStudy"))
+            {
+                _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
+
+                var configurationSetting = new RaveCoderGlobalConfiguration
+                {
+                    ReviewMarkingGroup = "site from system",
+                    IsRequiresResponse = true
+                };
+
+                _Browser.EditGlobalRaveConfiguration(configurationSetting);
+
+                _Browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
+            }
 
             _Browser.OpenQuery(verbatim, comment);
 

@@ -3,26 +3,11 @@ using System.Linq;
 using Coder.DeclarativeBrowser.Models;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coypu;
-using FluentAssertions;
 
 namespace Coder.DeclarativeBrowser.ExtensionMethods
 {
     public static class StepContextExtensionMethods
     {
-        public static void SetSegmentSetupDataContext(this StepContext stepContext, bool isProductionStudy)
-        { 
-            if (ReferenceEquals(stepContext, null)) throw new ArgumentNullException("stepContext");
-
-            var segmentSetupData = CoderDatabaseAccess.GetSegmentSetupDataByUserName(stepContext.User, isProductionStudy);
-
-            stepContext.Project                      = segmentSetupData.Project;
-            stepContext.SourceSystemStudyName        = segmentSetupData.SourceSystemStudyName;
-            stepContext.SourceSystemStudyDisplayName = segmentSetupData.SourceSystemStudyDisplayName;
-            stepContext.StudyOid                     = segmentSetupData.StudyOid;
-            stepContext.ProtocolNumber               = segmentSetupData.ProtocolNumber;
-            stepContext.Segment                      = segmentSetupData.SegmentName;
-        }
-
         public static void SetProjectRegistrationContext(this StepContext stepContext, string dictionaryLocaleVersion)
         {
             if (ReferenceEquals(stepContext, null))              throw new ArgumentNullException("stepContext");                
@@ -33,6 +18,23 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             stepContext.Dictionary              = registrationValues[0].Trim();
             stepContext.Locale                  = registrationValues[1].Trim();
             stepContext.Version                 = registrationValues[2].Trim();
+        }
+
+        public static void SetSynonymContext(this StepContext stepContext, string synonymListName)
+        {
+            if (ReferenceEquals(stepContext, null))    throw new ArgumentNullException("stepContext");
+            if (String.IsNullOrEmpty(synonymListName)) throw new ArgumentNullException("synonymListName");
+
+            var synonymList = new SynonymList
+            {
+                Dictionary       = stepContext.Dictionary,
+                Locale           = stepContext.Locale,
+                Version          = stepContext.Version,
+                SynonymListName  = synonymListName,
+                RegistrationName = stepContext.Dictionary
+            };
+
+            stepContext.SourceSynonymList = synonymList;
         }
 
         public static void SetDictionaryAndSynonymContext(this StepContext stepContext, string task)
@@ -85,21 +87,20 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
         {
             if (ReferenceEquals(stepContext, null)) throw new ArgumentNullException("stepContext");                 
 
-            var applicationData                 = CoderDatabaseAccess.GetSourceSystemApplicationData(Config.ApplicationName);
+            var applicationData = CoderDatabaseAccess.GetSourceSystemApplicationData(Config.ApplicationName);
 
-            stepContext.SourceSystem            = applicationData.SourceSystem;
-            stepContext.SourceSystemLocale      = applicationData.SourceSystemLocale;
-            stepContext.ConnectionUri           = applicationData.ConnectionUri;
+            stepContext.SourceSystem       = applicationData.SourceSystem;
+            stepContext.ConnectionUri      = applicationData.ConnectionUri;
         }
 
         public static void SetCurrentCodingElementContext(this StepContext stepContext)
         {
             if (ReferenceEquals(stepContext, null))  throw new ArgumentNullException("stepContext");
 
-            var codingElementData = CoderDatabaseAccess.GetCurrentCodingElementData(stepContext.Segment);
+            var codingElementData = CoderDatabaseAccess.GetCurrentCodingElementData(stepContext.GetSegment());
 
-            stepContext.CreationDate            = codingElementData.CreationDate;
-            stepContext.AutoCodeDate            = codingElementData.AutoCodeDate;
+            stepContext.CreationDate = codingElementData.CreationDate;
+            stepContext.AutoCodeDate = codingElementData.AutoCodeDate;
         }
 
         public static void SetOdmTermApprovalContext(this StepContext stepContext, string isAutoApproval, string isApprovalRequired)
@@ -119,8 +120,8 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             stepContext.Browser.CleanUpCodingTasks();
 
             CoderDatabaseAccess.RegisterProject(
-                project          : stepContext.Project,
-                segment          : stepContext.Segment,
+                protocolNumber   : stepContext.GetProtocolNumber(),
+                segment          : stepContext.GetSegment(),
                 dictionary       : stepContext.Dictionary,
                 dictionaryVersion: stepContext.Version,
                 locale           : stepContext.Locale,
@@ -147,8 +148,8 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             foreach (var synonymList in synonymLists)
             {
                 CoderDatabaseAccess.RegisterProject(
-                project          : stepContext.Project,
-                segment          : stepContext.Segment,
+                protocolNumber   : stepContext.GetProtocolNumber(),
+                segment          : stepContext.GetSegment(),
                 dictionary       : synonymList.Dictionary,
                 dictionaryVersion: synonymList.Version,
                 locale:            synonymList.Locale,
@@ -156,42 +157,6 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                 registrationName:  synonymList.Dictionary
                 );
             }
-        }
-
-        public static void SetStudyDataContextByProjectName(this StepContext stepContext)
-        {
-            if (ReferenceEquals(stepContext,null))      throw new ArgumentNullException("stepContext");
-
-            var studyAttributes = CoderDatabaseAccess.GetStudyDataByProjectName(stepContext.Segment, stepContext.Project);
-
-            stepContext.ProtocolNumber               = studyAttributes.ProtocolNumber;
-            stepContext.StudyOid                     = studyAttributes.ObjectID;
-            stepContext.SourceSystemStudyDisplayName = String.Concat(stepContext.Project, " - ", stepContext.ProtocolNumber);
-        }
-
-        public static void SetContextFromGeneratedUser(this StepContext stepContext, bool isProductionStudy)
-        {
-            if (ReferenceEquals(stepContext,null)) throw new ArgumentNullException("stepContext");
-
-            StudySetupData primaryStudy;
-
-            if (isProductionStudy)
-            {
-                primaryStudy        = stepContext.SegmentUnderTest.ProdStudy;
-                stepContext.Project = primaryStudy.StudyName;
-            }
-            else
-            {
-                primaryStudy        = stepContext.SegmentUnderTest.DevStudy;
-                stepContext.Project = primaryStudy.StudyName.Substring(0, primaryStudy.StudyName.IndexOf(' '));
-            }
-
-            stepContext.User                         = stepContext.CoderTestUser.Username;
-            stepContext.Segment                      = stepContext.SegmentUnderTest.SegmentName;
-            stepContext.SourceSystemStudyName        = primaryStudy.StudyName;
-            stepContext.ProtocolNumber               = primaryStudy.ExternalOid;
-            stepContext.SourceSystemStudyDisplayName = String.Concat(primaryStudy.StudyName, " - ", stepContext.ProtocolNumber);
-            stepContext.StudyOid                     = primaryStudy.StudyUuid;
         }
 
         public static void SetWorkflowVariablesContext(this StepContext stepContext, string task)
@@ -247,6 +212,52 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             }
 
             return workflowVariableValue;
+        }
+
+        public static void SetStudyGroupSetupData(this StepContext stepContext, SegmentSetupData segmentSetupData)
+        {
+            if (ReferenceEquals(stepContext, null))                      throw new ArgumentNullException("stepContext");
+            if (ReferenceEquals(segmentSetupData, null))                 throw new ArgumentNullException("segmentSetupData");
+            if (String.IsNullOrWhiteSpace(segmentSetupData.SegmentName)) throw new ArgumentNullException("segmentSetupData.SegmentName");
+
+            segmentSetupData.Customer = Config.TestSegmentCustomer;
+            segmentSetupData.UseRaveX = stepContext.UseRaveX;
+
+            segmentSetupData.StudyGroupApps = new []
+            {
+                new MedidataApp
+                {
+                    Name = Config.ApplicationName
+                },
+
+                new MedidataApp
+                {
+                    Name = Config.EdcAppName,
+                    Roles = new string[] { Config.EdcAppRole }
+                },
+
+                new MedidataApp
+                {
+                    Name = Config.EdcModulesAppName,
+                    Roles = new string[] { Config.EdcModulesAppRole }
+                },
+
+                new MedidataApp
+                {
+                    Name = Config.ArchitectRolesAppName,
+                    Roles = new string[] { Config.ArchitectRolesAppRole }
+                },
+
+                new MedidataApp
+                {
+                    Name = Config.SafetyGatewayManagementAppName
+                },
+
+                new MedidataApp
+            {
+                    Name = Config.SafetyGatewayMappingAppName
+                },
+            };
         }
     }
 }
