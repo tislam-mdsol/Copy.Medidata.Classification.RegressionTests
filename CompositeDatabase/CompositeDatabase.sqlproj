@@ -880,8 +880,6 @@
     <None Include="Stored Procedures\Automation\spDeleteGeneratedUser.sql" />
     <None Include="CleanWipe\coder_zero_ofV1_20160223.bak" />
     <None Include="CMP\CMP_FixTimeoutExceptionForSynonymApproval.sql" />
-    <None Include="PreQMMigration\RaveUnload.cmd" />
-    <None Include="PreQMMigration\CoderUpload.cmd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Change Scripts\Daily Changes\DailyChangeScript.xml" />
@@ -1831,20 +1829,9 @@
     <None Include="CRI\CodingConfigurationAccess\spSynonymLoadBySynonymList_CRI.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="PreQMMigration\spRaveCoderExtract.sql" />
+    <None Include="PreQMMigration\RaveExtractSQL.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="PreQMMigration\RaveExtractCreateTable.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="PreQMMigration\spCorrelateCoderTasks.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="CRI\CodingConfigurationAccess\spCodingPatternInsert_CRI.sql" />
-    <None Include="CRI\CodingConfigurationAccess\spCodingPatternGetByPath_CRI.sql" />
-    <None Include="CRI\CodingConfigurationAccess\spSegmentedGroupCodingPatternGetByGroup_CRI.sql" />
-    <None Include="CRI\CodingConfigurationAccess\spSegmentedGroupCodingPatternUpdate_CRI.sql" />
-    <None Include="CRI\CodingConfigurationAccess\spSegmentedGroupCodingPatternInsert_CRI.sql" />
     <None Include="CRI\MEV\spCriEdcDataGetByStudy.sql" />
   </ItemGroup>
 </Project>

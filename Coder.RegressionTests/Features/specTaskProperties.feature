@@ -70,8 +70,8 @@ Scenario: The following information will be available to the client as a term's 
   And coding task "Adverse Event Term 1" for dictionary level "LLT"
   When I view task "Adverse Event Term 1"
   Then I verify the following Source System Property information is displayed
-       | Source System  | Locale               | Study Name              | Connection URI  | File OID  | Protocol Number  | Protocol Name |
-       | <SourceSystem> | <SourceSystemLocale> | <SourceSystemStudyName> | <ConnectionUri> | <FileOid> | <ProtocolNumber> |               |
+       | Source System  | Locale   | Study Name  | Connection URI  | File OID  | Protocol Number  | Protocol Name |
+       | <SourceSystem> | <Locale> | <StudyName> | <ConnectionUri> | <FileOid> | <ProtocolNumber> |               |
 
 
 @VAL

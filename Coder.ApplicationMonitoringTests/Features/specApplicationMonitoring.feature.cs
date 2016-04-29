@@ -117,10 +117,10 @@ testRunner.Given("Rave Modules App Segment \"<Segment>\" is loaded", ((string)(n
 #line 39
 testRunner.And("a unique adverse event \"CoderAppMon\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
-testRunner.When("adding a new subject \"TST\" to study \"<SourceSystemStudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("adding a new manual ID subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 41
 testRunner.And("adding a new adverse event \"<AdverseEventText>\" to subject \"<SubjectId>\" of study" +
-                    " \"<SourceSystemStudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    " \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
 testRunner.Then("the audit log for occurrence \"1\" of the adverse event \"<AdverseEventText>\" is upd" +
                     "ated when the term is sent to coder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -177,7 +177,7 @@ testRunner.Then("the coding decision for the task \"<AdverseEventText>\" is appr
 testRunner.And(@"the audit log for occurrence ""1"" of the adverse event ""<AdverseEventText>"" is updated with the term path ""SOC: Gastrointestinal disorders, HLGT: Gastrointestinal signs and symptoms, HLT: Dyspeptic signs and symptoms, PT: Dyspepsia, LLT: Gastroesophageal burning""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
 testRunner.When("adding a new adverse event \"<AdverseEventText>\" to subject \"<SubjectId>\" of study" +
-                    " \"<SourceSystemStudyName>\" and the coding decision approved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    " \"<StudyName>\" and the coding decision approved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 62
 testRunner.Then(@"the audit log for occurrence ""2"" of the adverse event ""<AdverseEventText>"" is updated with the term path ""SOC: Gastrointestinal disorders, HLGT: Gastrointestinal signs and symptoms, HLT: Dyspeptic signs and symptoms, PT: Dyspepsia, LLT: Gastroesophageal burning""", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

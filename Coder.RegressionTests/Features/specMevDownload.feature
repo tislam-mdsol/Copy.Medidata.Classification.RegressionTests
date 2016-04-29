@@ -15,8 +15,8 @@ Scenario: Coder will provide the user with the ability to extract imported data
 	Then task "HEADACHE" is available within reclassification
 	When downloading MEV file
 	Then the downloaded MEV file should contain the following external verbatims
-        | Study ID  | Verbatim Term | Dictionary Version Locale | Supplemental Field 1 | Supplemental Value 1 | Supplemental Field 2 | Supplemental Value 2 | Level 1 | Level 1 Text             | Level 1 Code | Level 2 | Level 2 Text | Level 2 Code | Level 3 | Level 3 Text  | Level 3 Code | Level 4 | Level 4 Text | Level 4 Code | Level 5 | Level 5 Text | Level 5 Code |
-        | <Project> | Headache      | MedDRA-11_0-English       | SupTermFieldA        | Sup Term Value 1     | SupTermFieldB        | Sup Term Value 2     | SOC     | Nervous system disorders | 10029205     | HLGT    | Headaches    | 10019231     | HLT     | Headaches NEC | 10019233     | PT      | Headache     | 10019211     | LLT     | Headache     | 10019211     |
+        | Study ID    | Verbatim Term | Dictionary Version Locale | Supplemental Field 1 | Supplemental Value 1 | Supplemental Field 2 | Supplemental Value 2 | Level 1 | Level 1 Text             | Level 1 Code | Level 2 | Level 2 Text | Level 2 Code | Level 3 | Level 3 Text  | Level 3 Code | Level 4 | Level 4 Text | Level 4 Code | Level 5 | Level 5 Text | Level 5 Code |
+        | <StudyName> | Headache      | MedDRA-11_0-English       | SupTermFieldA        | Sup Term Value 1     | SupTermFieldB        | Sup Term Value 2     | SOC     | Nervous system disorders | 10029205     | HLGT    | Headaches    | 10019231     | HLT     | Headaches NEC | 10019233     | PT      | Headache     | 10019211     | LLT     | Headache     | 10019211     |
 
 @VAL
 @PBMCC_168482_002

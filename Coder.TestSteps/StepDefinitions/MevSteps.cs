@@ -66,7 +66,7 @@ namespace Coder.TestSteps.StepDefinitions
                 .ValidateMevRequiredColumns()
                 .SetStudyIdColumn(_StepContext)
                 .SetNonRequiredMevColumnsToDefaultValues(
-                    defaultStudyOid: _StepContext.StudyOid,
+                    defaultStudyOid: _StepContext.GetStudyUuid(),
                     defaultLocale  : _StepContext.Locale);
 
             _UploadedMevFile = Path.Combine(_StepContext.DumpDirectory, DefaultFileName.AppendRandomString() + ".csv");
@@ -235,8 +235,6 @@ namespace Coder.TestSteps.StepDefinitions
                 _StepContext.SetSourceSystemApplicationContext();
                 _Browser.SetupCoderConfiguration(_StepContext, setupType);
             }
-
-            _StepContext.SetupType = setupType;
             
             _StepContext.CleanUpAndRegisterProject(synonymLists);
         }
@@ -364,7 +362,7 @@ namespace Coder.TestSteps.StepDefinitions
                 .ToArray()
                 .ValidateMevRequiredColumns()
                 .SetNonRequiredMevColumnsToDefaultValues(
-                    defaultStudyOid: _StepContext.StudyOid,
+                    defaultStudyOid: _StepContext.GetStudyUuid(),
                     defaultLocale  : _StepContext.Locale);
 
             return externalVerbatims;

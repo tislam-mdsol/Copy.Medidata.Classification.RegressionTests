@@ -29,12 +29,12 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrWhiteSpace(dictionaryLevel)) throw new ArgumentNullException("dictionaryLevel");
 
             _Browser.DoNotAutoCodeTerm(
-                segmentName    : _StepContext.Segment,
+                segmentName    : _StepContext.GetSegment(),
                 verbatimTerm   : verbatimTerm,
                 dictionaryList : dictionaryList,
                 dictionaryLevel: dictionaryLevel,
                 dictionary     : _StepContext.Dictionary,
-                login          : _StepContext.User);
+                login          : _StepContext.GetUser());
         }
 
         [Then(@"the dictionary list term has the following coding history comments")]

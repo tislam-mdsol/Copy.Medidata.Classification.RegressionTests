@@ -38,6 +38,7 @@ namespace Coder.DeclarativeBrowser
         internal string Value                           { get { return _ElementScope.Value;             } }
         internal string Id                              { get { return _ElementScope.Id;                } }
         internal string Class                           { get { return _ElementScope["class"];          } }
+        internal string Type                            { get { return _ElementScope["type"];           } }
         internal bool Disabled                          { get { return _ElementScope.Disabled;          } }
 
         internal string GetAttribute(string attributeName)
@@ -54,7 +55,7 @@ namespace Coder.DeclarativeBrowser
             bool result;
 
             if (ReferenceEquals(options, null))
-                result = _ElementScope.Exists();
+                result = _ElementScope.Exists(Config.ExistsOptions);
             else
                 result = _ElementScope.Exists(options);
 
@@ -219,11 +220,22 @@ namespace Coder.DeclarativeBrowser
             _ElementScope.SelectOption(option);
         }
 
-        internal string GetOption(string optionText)
-            {
+        internal void SelectClosestOption(string optionText)
+        {
+            if (String.IsNullOrEmpty(optionText)) return;
+
+            var option = RetryPolicy.FindElement.Execute(
+                () =>
+                GetClosestOption(optionText));
+
+            _ElementScope.SelectOption(option);
+        }
+
+        private string GetOption(string optionText)
+        {
             if (String.IsNullOrWhiteSpace(optionText)) throw new ArgumentNullException("optionText");
 
-            var optionsDictionary = RetryPolicy.SyncStaleElement.Execute(() => GetOptionsDictionary());
+            var optionsDictionary = RetryPolicy.SyncStaleElement.Execute(() => GetOptionsDictionaryAlphanumericOnly());
 
             var searchText = optionText.RemoveNonAlphanumeric();
 
@@ -238,7 +250,36 @@ namespace Coder.DeclarativeBrowser
             {
                 throw new MissingHtmlException(
                     String.Format("option {0} was not found in element with selected option: {1}", optionText, _ElementScope.SelectedOption));
-                }
+            }
+
+            return option;
+        }
+
+        private string GetClosestOption(string optionText)
+        {
+            if (String.IsNullOrWhiteSpace(optionText)) throw new ArgumentNullException("optionText");
+
+            var optionsDictionary = RetryPolicy.SyncStaleElement.Execute(() => GetOptionsDictionaryAlphanumericOnly());
+            var searchText        = optionText.RemoveNonAlphanumeric();
+
+            if (String.IsNullOrWhiteSpace(searchText))
+            {
+                optionsDictionary = RetryPolicy.SyncStaleElement.Execute(() => GetOptionsDictionary());
+                searchText        = optionText;
+            }
+
+            var option = optionsDictionary.FirstOrDefault(x => x.Value.Equals(searchText, StringComparison.OrdinalIgnoreCase)).Key;
+
+            if (ReferenceEquals(option, null))
+            {
+                option = optionsDictionary.FirstOrDefault(x => x.Value.Contains(searchText, StringComparison.OrdinalIgnoreCase)).Key;
+            }
+
+            if (ReferenceEquals(option, null))
+            {
+                throw new MissingHtmlException(
+                    String.Format("close option {0} was not found in element with selected option: {1}", optionText, _ElementScope.SelectedOption));
+            }
 
             return option;
         }
@@ -249,9 +290,31 @@ namespace Coder.DeclarativeBrowser
 
             if (!selectOptions.Any()) throw new InvalidOperationException("Element has no options");
 
+            var optionsDictionary = selectOptions.ToDictionary(d => d.GetAttribute("value"), d => d.Text);
+
+            return optionsDictionary;
+        }
+
+        private IDictionary<string, string> GetOptionsDictionaryAlphanumericOnly()
+        {
+            var selectOptions = FindAllSessionElementsByXPath("option");
+
+            if (!selectOptions.Any()) throw new InvalidOperationException("Element has no options");
+
             var optionsDictionary = selectOptions.ToDictionary(d => d.GetAttribute("value"), d => d.Text.RemoveNonAlphanumeric());
 
             return optionsDictionary;
+        }
+
+        internal IEnumerable<string> GetSelectListOptions()
+        {
+            var selectOptionsElements = FindAllSessionElementsByXPath("option");
+
+            if (!selectOptionsElements.Any()) throw new InvalidOperationException("Element has no options");
+
+            var selectOptions = selectOptionsElements.Select(d => d.Text);
+
+            return selectOptions;
         }
 
         internal void SelectSingleListBoxOption(string optionText)

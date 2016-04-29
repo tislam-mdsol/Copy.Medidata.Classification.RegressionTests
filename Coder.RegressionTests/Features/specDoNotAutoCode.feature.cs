@@ -99,14 +99,14 @@ this.ScenarioSetup(scenarioInfo);
                         "SynonymListName",
                         "RegistrationName"});
             table1.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "MedDRA",
                         "15.0",
                         "eng",
                         "Primary List",
                         "MedDRA"});
             table1.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "MedDRA",
                         "15.0",
                         "eng",

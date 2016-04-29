@@ -21,6 +21,7 @@ namespace Coder.EndToEndTests.Features
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("The following scenarios will serve as a coder setup script")]
     [NUnit.Framework.CategoryAttribute("specRaveModulesIntegration.feature")]
+    [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
     public partial class TheFollowingScenariosWillServeAsACoderSetupScriptFeature
     {
         
@@ -34,7 +35,8 @@ namespace Coder.EndToEndTests.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "The following scenarios will serve as a coder setup script", "", ProgrammingLanguage.CSharp, new string[] {
-                        "specRaveModulesIntegration.feature"});
+                        "specRaveModulesIntegration.feature",
+                        "EndToEndDynamicSegment"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -67,73 +69,2557 @@ namespace Coder.EndToEndTests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Successfully upload a configuration file in Rave Modules")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
-        [NUnit.Framework.CategoryAttribute("Deployment")]
-        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
-        [NUnit.Framework.CategoryAttribute("PBMCC211000")]
-        public virtual void SuccessfullyUploadAConfigurationFileInRaveModules()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successfully upload a configuration file in Rave Modules", new string[] {
-                        "DFT",
-                        "Deployment",
-                        "Release2016.1.0",
-                        "PBMCC211000"});
-#line 9
- this.ScenarioSetup(scenarioInfo);
-#line 10
- testRunner.Given("a configuration file to be uploaded in Rave Modules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 11
- testRunner.When("the configuration file \"RaveCoreConfig_eng.xls\" is uploaded in Rave Modules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
- testRunner.Then("a verification message \"Save successful\" is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Assign Roles to Users in Rave")]
-        [NUnit.Framework.CategoryAttribute("DDF")]
-        [NUnit.Framework.CategoryAttribute("Deployment")]
-        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
-        [NUnit.Framework.CategoryAttribute("PBMCC211000")]
-        public virtual void AssignRolesToUsersInRave()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Assign Roles to Users in Rave", new string[] {
-                        "DDF",
-                        "Deployment",
-                        "Release2016.1.0",
-                        "PBMCC211000"});
-#line 18
- this.ScenarioSetup(scenarioInfo);
-#line 19
- testRunner.Given("a new user \"coderimport\" that needs to be assigned roles", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Upload a Rave Draft CRF template")]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Different Rave Architect Coding Configurations")]
         [NUnit.Framework.CategoryAttribute("DFT")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
         [NUnit.Framework.CategoryAttribute("PBMCC_216333_001")]
-        [NUnit.Framework.CategoryAttribute("EndToEnd")]
-        [NUnit.Framework.CategoryAttribute("IncreaseTimeout_180000")]
-        public virtual void UploadARaveDraftCRFTemplate()
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleDifferentRaveArchitectCodingConfigurations()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Upload a Rave Draft CRF template", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Different Rave Architect Coding Configurations", new string[] {
                         "DFT",
                         "Release2016.1.0",
                         "PBMCC_216333_001",
-                        "EndToEnd",
-                        "IncreaseTimeout_180000"});
-#line 27
+                        "IncreaseTimeout_1800000"});
+#line 13
 this.ScenarioSetup(scenarioInfo);
+#line 15
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 16
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
+            table1.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false",
+                        "LogSuppField2, LogSuppField4"});
+#line 17
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
+            table2.AddRow(new string[] {
+                        "ETE17",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false",
+                        "AGESUP17"});
+#line 20
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table2, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
+            table3.AddRow(new string[] {
+                        "ETE11",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false",
+                        ""});
+#line 23
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table3, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
+            table4.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+#line 26
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table4, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "SupplementalTerm"});
+            table5.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "LogSuppField2"});
+            table5.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "LogSuppField4"});
 #line 29
-testRunner.Given("Rave Modules App Segment \"<Segment>\" is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 30
-testRunner.When("uploading a rave architect draft template \"RaveDraft_Template.xml\" to \"RaveCoderD" +
-                    "raft\" for study \"<SourceSystemStudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("supplemental terms for the following fields", ((string)(null)), table5, "And ");
+#line 33
+ testRunner.When("the supplemental term \"LogSuppField4\" is removed from the Rave Coder setup of for" +
+                    "m \"ETE2\" field \"Coding Field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 34
+ testRunner.And("the Coding Dictionary for the Rave Coder setup of form \"ETE2\" field \"Coding Field" +
+                    "\" is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+ testRunner.And("the Coding Dictionary for the Rave Coder setup of form \"ETE2\" field \"Coding Field" +
+                    "\" is set to \"Rave- MedDRA 10.0 Version: 10.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+ testRunner.And("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"c\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Add data to forms with different input types")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_002")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleAddDataToFormsWithDifferentInputTypes()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Add data to forms with different input types", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_002",
+                        "IncreaseTimeout_1800000"});
+#line 43
+this.ScenarioSetup(scenarioInfo);
+#line 45
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 46
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 48
+ testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table6.AddRow(new string[] {
+                        "Coding Field",
+                        "Headache",
+                        "LongText"});
+            table6.AddRow(new string[] {
+                        "Log Supplemental Field A",
+                        "Top",
+                        ""});
+            table6.AddRow(new string[] {
+                        "Std Supplemental Field B",
+                        "Head",
+                        ""});
+#line 50
+ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table6, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table7.AddRow(new string[] {
+                        "Coding Field",
+                        "person",
+                        ""});
+            table7.AddRow(new string[] {
+                        "Log Dropdown Supplemental Field A",
+                        "male",
+                        "DropDownList"});
+#line 55
+ testRunner.And("adding a new verbatim term to form \"ETE10\"", ((string)(null)), table7, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table8.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+            table8.AddRow(new string[] {
+                        "Log Start Date Supplemental Field",
+                        "02/29/2016",
+                        "DateTime"});
+            table8.AddRow(new string[] {
+                        "Log Vertical Radio Supplemental Field",
+                        "No",
+                        "RadioButtonVertical"});
+#line 59
+ testRunner.And("adding a new verbatim term to form \"ETE11\"", ((string)(null)), table8, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table9.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        ""});
+            table9.AddRow(new string[] {
+                        "Log Dropdown Supplemental Field A",
+                        "Other Option",
+                        "DropDownList"});
+            table9.AddRow(new string[] {
+                        "Log Dropdown Supplemental Field A",
+                        "other text",
+                        ""});
+            table9.AddRow(new string[] {
+                        "Log Radio Supplemental Field",
+                        "Other Option",
+                        "RadioButton"});
+            table9.AddRow(new string[] {
+                        "Log Radio Supplemental Field",
+                        "another text",
+                        ""});
+            table9.AddRow(new string[] {
+                        "Log Vertical Radio Supplemental Field",
+                        "Other Option",
+                        "RadioButtonVertical"});
+            table9.AddRow(new string[] {
+                        "Log Vertical Radio Supplemental Field",
+                        "test again",
+                        ""});
+            table9.AddRow(new string[] {
+                        "Log Search List Supplemental Field",
+                        "Specify Other 2",
+                        "SearchList"});
+            table9.AddRow(new string[] {
+                        "Log Search List Supplemental Field",
+                        "more text",
+                        "SearchListOther"});
+#line 64
+ testRunner.And("adding a new verbatim term to form \"ETE17\"", ((string)(null)), table9, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table10.AddRow(new string[] {
+                        "Log Dynamic Search List Supplemental Field A",
+                        "DarkRed",
+                        "DynamicSearchList"});
+#line 75
+ testRunner.And("adding a new verbatim term to form \"ETE19\"", ((string)(null)), table10, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table11.AddRow(new string[] {
+                        "Std Supplemental Field B",
+                        "Leg",
+                        ""});
+#line 79
+ testRunner.And("modifying a verbatim term on form \"ETE2\"", ((string)(null)), table11, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table12.AddRow(new string[] {
+                        "Coding Field",
+                        "Ankle Pain",
+                        "LongText"});
+            table12.AddRow(new string[] {
+                        "Std Supplemental Field B",
+                        "Ankle",
+                        ""});
+#line 82
+ testRunner.And("modifying a verbatim term of the log line containing \"Headache\" on form \"ETE2\"", ((string)(null)), table12, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table13.AddRow(new string[] {
+                        "Coding Field",
+                        "Foot Pain",
+                        "LongText"});
+            table13.AddRow(new string[] {
+                        "Std Supplemental Field B",
+                        "Foot",
+                        ""});
+#line 86
+ testRunner.And("modifying a verbatim term of log line \"1\" on form \"ETE2\"", ((string)(null)), table13, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Adding or modifying loglines on a landscape form")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_003")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleAddingOrModifyingLoglinesOnALandscapeForm()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Adding or modifying loglines on a landscape form", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_003",
+                        "IncreaseTimeout_1800000"});
+#line 95
+this.ScenarioSetup(scenarioInfo);
+#line 97
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 98
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 100
+ testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table14.AddRow(new string[] {
+                        "1",
+                        "Headachery",
+                        "LongText"});
+#line 102
+ testRunner.And("adding a new verbatim term to form \"ETE12\"", ((string)(null)), table14, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table15.AddRow(new string[] {
+                        "2",
+                        "Foot Pains",
+                        "LongText"});
+#line 105
+ testRunner.And("adding a new verbatim term to form \"ETE12\"", ((string)(null)), table15, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table16.AddRow(new string[] {
+                        "1",
+                        "Ankle Pain",
+                        "LongText"});
+#line 108
+ testRunner.And("modifying a verbatim term of the log line containing \"Headachery\" on form \"ETE12\"" +
+                    "", ((string)(null)), table16, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table17.AddRow(new string[] {
+                        "2",
+                        "Leg Ouch",
+                        "LongText"});
+#line 111
+ testRunner.And("modifying a verbatim term of the log line containing \"Foot Pains\" on form \"ETE12\"" +
+                    "", ((string)(null)), table17, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table18.AddRow(new string[] {
+                        "1",
+                        "hand",
+                        "LongText"});
+#line 114
+ testRunner.And("modifying a verbatim term of log line \"1\" on form \"ETE12\"", ((string)(null)), table18, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table19.AddRow(new string[] {
+                        "2",
+                        "arm",
+                        "LongText"});
+#line 117
+ testRunner.And("modifying a verbatim term of log line \"2\" on form \"ETE12\"", ((string)(null)), table19, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table20.AddRow(new string[] {
+                        "1",
+                        "Headachery",
+                        ""});
+#line 121
+ testRunner.And("adding a new verbatim term to form \"ETE15\"", ((string)(null)), table20, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table21.AddRow(new string[] {
+                        "2",
+                        "Foot Pains",
+                        ""});
+#line 124
+ testRunner.And("adding a new verbatim term to form \"ETE15\"", ((string)(null)), table21, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table22.AddRow(new string[] {
+                        "1",
+                        "Ankle Pain",
+                        ""});
+#line 127
+ testRunner.And("modifying a verbatim term of the log line containing \"Headachery\" on form \"ETE15\"" +
+                    "", ((string)(null)), table22, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table23.AddRow(new string[] {
+                        "2",
+                        "Leg Ouch",
+                        ""});
+#line 130
+ testRunner.And("modifying a verbatim term of the log line containing \"Foot Pains\" on form \"ETE15\"" +
+                    "", ((string)(null)), table23, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table24.AddRow(new string[] {
+                        "1",
+                        "hand",
+                        ""});
+#line 133
+ testRunner.And("modifying a verbatim term of log line \"1\" on form \"ETE15\"", ((string)(null)), table24, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table25.AddRow(new string[] {
+                        "2",
+                        "arm",
+                        ""});
+#line 136
+ testRunner.And("modifying a verbatim term of log line \"2\" on form \"ETE15\"", ((string)(null)), table25, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Verifying Query comments from Coder")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_004")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleVerifyingQueryCommentsFromCoder()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Verifying Query comments from Coder", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_004",
+                        "IncreaseTimeout_1800000"});
+#line 144
+this.ScenarioSetup(scenarioInfo);
+#line 146
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 147
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
+            table26.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+            table26.AddRow(new string[] {
+                        "ETE12",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+            table26.AddRow(new string[] {
+                        "ETE15",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+#line 148
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table26, "And ");
+#line 153
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 154
+ testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table27.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 155
+ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table27, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table28.AddRow(new string[] {
+                        "1",
+                        "LLHeadachery",
+                        "LongText"});
+#line 158
+ testRunner.And("adding a new verbatim term to form \"ETE12\"", ((string)(null)), table28, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table29.AddRow(new string[] {
+                        "1",
+                        "UUHeadachery",
+                        ""});
+#line 161
+ testRunner.And("adding a new verbatim term to form \"ETE15\"", ((string)(null)), table29, "And ");
+#line 164
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 165
+ testRunner.And("I open a query for task \"Headachery\" with comment \"Now we test two too\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 166
+ testRunner.And("I open a query for task \"LLHeadachery\" with comment \"Then we test one with two\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 167
+ testRunner.And("I open a query for task \"UUHeadachery\" with comment \"Test one\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 168
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 169
+ testRunner.Then("the coder query \"Now we test two too\" is available to the Rave form \"ETE2\" field " +
+                    "\"Coding Field\" with verbatim term \"Headachery\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 170
+ testRunner.And("the coder query \"Then we test one with two\" is available to the Rave form \"ETE12\"" +
+                    " field \"Coding Field\" with verbatim term \"LLHeadachery\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 171
+ testRunner.And("the coder query \"Test one\" is available to the Rave form \"ETE15\" field \"Coding Fi" +
+                    "eld\" with verbatim term \"UUHeadachery\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Respond to Query comments from Coder")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_005")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleRespondToQueryCommentsFromCoder()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Respond to Query comments from Coder", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_005",
+                        "IncreaseTimeout_1800000"});
+#line 177
+this.ScenarioSetup(scenarioInfo);
+#line 179
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 180
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 181
+ testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table30.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 182
+ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table30, "And ");
+#line 185
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 186
+ testRunner.And("I open a query for task \"Headachery\" with comment \"Now we test two too\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 187
+ testRunner.And("a coding task \"Headachery\" returns to \"Open\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 188
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 189
+ testRunner.And("the coder query to the Rave form \"ETE2\" field \"Coding Field\" with verbatim term \"" +
+                    "Headachery\" is responded to with \"Test Worked\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 190
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 191
+ testRunner.And("a coding task \"Headachery\" returns to \"Closed\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                        "User",
+                        "Verbatim Term",
+                        "Query Status",
+                        "Query Text",
+                        "Query Response",
+                        "Query Notes"});
+            table31.AddRow(new string[] {
+                        "<SystemUser>",
+                        "Headachery",
+                        "Closed",
+                        "",
+                        "",
+                        ""});
+            table31.AddRow(new string[] {
+                        "<User>",
+                        "Headachery",
+                        "Answered",
+                        "",
+                        "Test Worked",
+                        ""});
+            table31.AddRow(new string[] {
+                        "CoderImport",
+                        "Headachery",
+                        "Open",
+                        "Now we test two too",
+                        "",
+                        ""});
+            table31.AddRow(new string[] {
+                        "<User>",
+                        "Headachery",
+                        "Queued",
+                        "Now we test two too",
+                        "",
+                        ""});
+#line 192
+ testRunner.Then("the query history contains the following information", ((string)(null)), table31, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Cancel Query from Coder")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_005")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleCancelQueryFromCoder()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Cancel Query from Coder", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_005",
+                        "IncreaseTimeout_1800000"});
+#line 203
+this.ScenarioSetup(scenarioInfo);
+#line 205
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 206
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 207
+ testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table32.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 208
+ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table32, "And ");
+#line 211
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 212
+ testRunner.And("I open a query for task \"Headachery\" with comment \"Now we test two too\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 213
+ testRunner.And("a coding task \"Headachery\" returns to \"Open\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 214
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 215
+ testRunner.And("the coder query to the Rave form \"ETE2\" field \"Coding Field\" with verbatim term \"" +
+                    "Headachery\" is canceled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 216
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 217
+ testRunner.And("a coding task \"Headachery\" returns to \"Cancelled\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                        "User",
+                        "Verbatim Term",
+                        "Query Status",
+                        "Query Text",
+                        "Query Response",
+                        "Query Notes"});
+            table33.AddRow(new string[] {
+                        "<User>",
+                        "Headachery",
+                        "Cancelled",
+                        "",
+                        "",
+                        ""});
+            table33.AddRow(new string[] {
+                        "CoderImport",
+                        "Headachery",
+                        "Open",
+                        "Now we test two too",
+                        "",
+                        ""});
+            table33.AddRow(new string[] {
+                        "<User>",
+                        "Headachery",
+                        "Queued",
+                        "Now we test two too",
+                        "",
+                        ""});
+#line 218
+ testRunner.Then("the query history contains the following information", ((string)(null)), table33, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Respond to Query comments from Coder on landscape forms")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_006")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleRespondToQueryCommentsFromCoderOnLandscapeForms()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Respond to Query comments from Coder on landscape forms", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_006",
+                        "IncreaseTimeout_1800000"});
+#line 228
+this.ScenarioSetup(scenarioInfo);
+#line 230
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 231
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
+            table34.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+            table34.AddRow(new string[] {
+                        "ETE12",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+            table34.AddRow(new string[] {
+                        "ETE15",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+#line 232
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table34, "And ");
+#line 237
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 238
+ testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table35.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 239
+ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table35, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table36.AddRow(new string[] {
+                        "1",
+                        "LLHeadachery",
+                        "LongText"});
+#line 242
+ testRunner.And("adding a new verbatim term to form \"ETE12\"", ((string)(null)), table36, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table37.AddRow(new string[] {
+                        "1",
+                        "UUHeadachery",
+                        ""});
+#line 245
+ testRunner.And("adding a new verbatim term to form \"ETE15\"", ((string)(null)), table37, "And ");
+#line 248
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 249
+ testRunner.And("I open a query for task \"Headachery\" with comment \"Now we test two too\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 250
+ testRunner.And("I open a query for task \"LLHeadachery\" with comment \"Then we test one with two\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 251
+ testRunner.And("I open a query for task \"UUHeadachery\" with comment \"Test one\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 252
+ testRunner.And("a coding task \"Headachery\" returns to \"Open\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 253
+ testRunner.And("a coding task \"LLHeadachery\" returns to \"Open\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 254
+ testRunner.And("a coding task \"UUHeadachery\" returns to \"Open\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 255
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 256
+ testRunner.And("the coder query to the Rave form \"ETE2\" field \"Coding Field\" with verbatim term \"" +
+                    "Headachery\" is responded to with \"Test Worked\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 257
+ testRunner.And("the coder query to the Rave form \"ETE12\" field \"Coding Field\" with verbatim term " +
+                    "\"LLHeadachery\" is responded to with \"Test again\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 258
+ testRunner.And("the coder query to the Rave form \"ETE15\" field \"Coding Field\" with verbatim term " +
+                    "\"UUHeadachery\" is responded to with \"Test did work\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 259
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 260
+ testRunner.And("a coding task \"Headachery\" returns to \"Closed\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+                        "User",
+                        "Verbatim Term",
+                        "Query Status",
+                        "Query Text",
+                        "Query Response",
+                        "Query Notes"});
+            table38.AddRow(new string[] {
+                        "<SystemUser>",
+                        "Headachery",
+                        "Closed",
+                        "",
+                        "",
+                        ""});
+            table38.AddRow(new string[] {
+                        "<User>",
+                        "Headachery",
+                        "Answered",
+                        "",
+                        "Test Worked",
+                        ""});
+            table38.AddRow(new string[] {
+                        "CoderImport",
+                        "Headachery",
+                        "Open",
+                        "Now we test two too",
+                        "",
+                        ""});
+            table38.AddRow(new string[] {
+                        "<User>",
+                        "Headachery",
+                        "Queued",
+                        "Now we test two too",
+                        "",
+                        ""});
+#line 261
+ testRunner.Then("the query history contains the following information", ((string)(null)), table38, "Then ");
+#line 267
+ testRunner.When("a coding task \"LLHeadachery\" returns to \"Closed\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+                        "User",
+                        "Verbatim Term",
+                        "Query Status",
+                        "Query Text",
+                        "Query Response",
+                        "Query Notes"});
+            table39.AddRow(new string[] {
+                        "<SystemUser>",
+                        "LLHeadachery",
+                        "Closed",
+                        "",
+                        "",
+                        ""});
+            table39.AddRow(new string[] {
+                        "<User>",
+                        "LLHeadachery",
+                        "Answered",
+                        "",
+                        "Test again",
+                        ""});
+            table39.AddRow(new string[] {
+                        "CoderImport",
+                        "LLHeadachery",
+                        "Open",
+                        "Then we test one with two",
+                        "",
+                        ""});
+            table39.AddRow(new string[] {
+                        "<User>",
+                        "LLHeadachery",
+                        "Queued",
+                        "Then we test one with two",
+                        "",
+                        ""});
+#line 268
+ testRunner.Then("the query history contains the following information", ((string)(null)), table39, "Then ");
+#line 274
+ testRunner.When("a coding task \"UUHeadachery\" returns to \"Closed\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
+                        "User",
+                        "Verbatim Term",
+                        "Query Status",
+                        "Query Text",
+                        "Query Response",
+                        "Query Notes"});
+            table40.AddRow(new string[] {
+                        "<SystemUser>",
+                        "UUHeadachery",
+                        "Closed",
+                        "",
+                        "",
+                        ""});
+            table40.AddRow(new string[] {
+                        "<User>",
+                        "UUHeadachery",
+                        "Answered",
+                        "",
+                        "Test did work",
+                        ""});
+            table40.AddRow(new string[] {
+                        "CoderImport",
+                        "UUHeadachery",
+                        "Open",
+                        "Test one",
+                        "",
+                        ""});
+            table40.AddRow(new string[] {
+                        "<User>",
+                        "UUHeadachery",
+                        "Queued",
+                        "Test one",
+                        "",
+                        ""});
+#line 275
+ testRunner.Then("the query history contains the following information", ((string)(null)), table40, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Cancel Query from Coder on landscape forms")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_007")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleCancelQueryFromCoderOnLandscapeForms()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Cancel Query from Coder on landscape forms", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_007",
+                        "IncreaseTimeout_1800000"});
+#line 286
+this.ScenarioSetup(scenarioInfo);
+#line 288
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 289
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
+            table41.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+            table41.AddRow(new string[] {
+                        "ETE12",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+            table41.AddRow(new string[] {
+                        "ETE15",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+#line 290
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table41, "And ");
+#line 295
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 296
+ testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table42.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 297
+ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table42, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table43.AddRow(new string[] {
+                        "1",
+                        "LLHeadachery",
+                        "LongText"});
+#line 300
+ testRunner.And("adding a new verbatim term to form \"ETE12\"", ((string)(null)), table43, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table44.AddRow(new string[] {
+                        "1",
+                        "UUHeadachery",
+                        ""});
+#line 303
+ testRunner.And("adding a new verbatim term to form \"ETE15\"", ((string)(null)), table44, "And ");
+#line 306
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 307
+ testRunner.And("I open a query for task \"Headachery\" with comment \"Now we test two too\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 308
+ testRunner.And("I open a query for task \"LLHeadachery\" with comment \"Then we test one with two\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 309
+ testRunner.And("I open a query for task \"UUHeadachery\" with comment \"Test one\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 310
+ testRunner.And("a coding task \"Headachery\" returns to \"Open\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 311
+ testRunner.And("a coding task \"LLHeadachery\" returns to \"Open\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 312
+ testRunner.And("a coding task \"UUHeadachery\" returns to \"Open\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 313
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 314
+ testRunner.And("the coder query to the Rave form \"ETE2\" field \"Coding Field\" with verbatim term \"" +
+                    "Headachery\" is canceled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 315
+ testRunner.And("the coder query to the Rave form \"ETE12\" field \"Coding Field\" with verbatim term " +
+                    "\"LLHeadachery\" is canceled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 316
+ testRunner.And("the coder query to the Rave form \"ETE15\" field \"Coding Field\" with verbatim term " +
+                    "\"UUHeadachery\" is canceled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 317
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 318
+ testRunner.And("a coding task \"Headachery\" returns to \"Cancelled\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
+                        "User",
+                        "Verbatim Term",
+                        "Query Status",
+                        "Query Text",
+                        "Query Response",
+                        "Query Notes"});
+            table45.AddRow(new string[] {
+                        "<User>",
+                        "Headachery",
+                        "Cancelled",
+                        "",
+                        "",
+                        ""});
+            table45.AddRow(new string[] {
+                        "CoderImport",
+                        "Headachery",
+                        "Open",
+                        "Now we test two too",
+                        "",
+                        ""});
+            table45.AddRow(new string[] {
+                        "<User>",
+                        "Headachery",
+                        "Queued",
+                        "Now we test two too",
+                        "",
+                        ""});
+#line 319
+ testRunner.Then("the query history contains the following information", ((string)(null)), table45, "Then ");
+#line 324
+ testRunner.When("a coding task \"LLHeadachery\" returns to \"Cancelled\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
+                        "User",
+                        "Verbatim Term",
+                        "Query Status",
+                        "Query Text",
+                        "Query Response",
+                        "Query Notes"});
+            table46.AddRow(new string[] {
+                        "<User>",
+                        "LLHeadachery",
+                        "Cancelled",
+                        "",
+                        "",
+                        ""});
+            table46.AddRow(new string[] {
+                        "CoderImport",
+                        "LLHeadachery",
+                        "Open",
+                        "Then we test one with two",
+                        "",
+                        ""});
+            table46.AddRow(new string[] {
+                        "<User>",
+                        "LLHeadachery",
+                        "Queued",
+                        "Then we test one with two",
+                        "",
+                        ""});
+#line 325
+ testRunner.Then("the query history contains the following information", ((string)(null)), table46, "Then ");
+#line 330
+ testRunner.When("a coding task \"UUHeadachery\" returns to \"Cancelled\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
+                        "User",
+                        "Verbatim Term",
+                        "Query Status",
+                        "Query Text",
+                        "Query Response",
+                        "Query Notes"});
+            table47.AddRow(new string[] {
+                        "<User>",
+                        "UUHeadachery",
+                        "Cancelled",
+                        "",
+                        "",
+                        ""});
+            table47.AddRow(new string[] {
+                        "CoderImport",
+                        "UUHeadachery",
+                        "Open",
+                        "Test one",
+                        "",
+                        ""});
+            table47.AddRow(new string[] {
+                        "<User>",
+                        "UUHeadachery",
+                        "Queued",
+                        "Test one",
+                        "",
+                        ""});
+#line 331
+ testRunner.Then("the query history contains the following information", ((string)(null)), table47, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Freeze and Lock Rave Forms")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_008")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleFreezeAndLockRaveForms()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Freeze and Lock Rave Forms", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_008",
+                        "IncreaseTimeout_1800000"});
+#line 341
+this.ScenarioSetup(scenarioInfo);
+#line 343
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 344
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
+            table48.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+            table48.AddRow(new string[] {
+                        "ETE12",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+            table48.AddRow(new string[] {
+                        "ETE15",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+#line 345
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table48, "And ");
+#line 350
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 351
+ testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table49.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 352
+ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table49, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table50.AddRow(new string[] {
+                        "1",
+                        "LLHeadachery",
+                        "LongText"});
+#line 355
+ testRunner.And("adding a new verbatim term to form \"ETE12\"", ((string)(null)), table50, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table51.AddRow(new string[] {
+                        "1",
+                        "UUHeadachery",
+                        ""});
+#line 358
+ testRunner.And("adding a new verbatim term to form \"ETE15\"", ((string)(null)), table51, "And ");
+#line 361
+ testRunner.And("form \"ETE2\" is frozen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 362
+ testRunner.And("form \"ETE12\" is locked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 363
+ testRunner.And("form \"ETE15\" is frozen and locked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Freeze and Lock Rave Fields")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_009")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleFreezeAndLockRaveFields()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Freeze and Lock Rave Fields", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_009",
+                        "IncreaseTimeout_1800000"});
+#line 369
+this.ScenarioSetup(scenarioInfo);
+#line 371
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 372
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
+            table52.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+            table52.AddRow(new string[] {
+                        "ETE12",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+            table52.AddRow(new string[] {
+                        "ETE15",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false"});
+#line 373
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table52, "And ");
+#line 378
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 379
+ testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table53.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 380
+    testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table53, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table54.AddRow(new string[] {
+                        "1",
+                        "LLHeadachery",
+                        "LongText"});
+#line 383
+ testRunner.And("adding a new verbatim term to form \"ETE12\"", ((string)(null)), table54, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table55.AddRow(new string[] {
+                        "1",
+                        "UUHeadachery",
+                        ""});
+#line 386
+ testRunner.And("adding a new verbatim term to form \"ETE15\"", ((string)(null)), table55, "And ");
+#line 389
+ testRunner.And("the Rave row on form \"ETE2\" with verbatim term \"Headachery\" is frozen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 390
+ testRunner.And("the Rave row on form \"ETE12\" with verbatim term \"LLHeadachery\" is locked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 391
+ testRunner.And("the Rave row on form \"ETE15\" with verbatim term \"UUHeadachery\" is frozen and lock" +
+                    "ed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Amendment Manager Migration Success")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_010")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleAmendmentManagerMigrationSuccess()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Amendment Manager Migration Success", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_010",
+                        "IncreaseTimeout_1800000"});
+#line 397
+this.ScenarioSetup(scenarioInfo);
+#line 399
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 400
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
+            table56.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "1",
+                        "false",
+                        "true",
+                        "LogSuppField2, LogSuppField4"});
+#line 401
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table56, "And ");
+#line 404
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 405
+    testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table57.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+            table57.AddRow(new string[] {
+                        "Log Supplemental Field B",
+                        "Top",
+                        ""});
+            table57.AddRow(new string[] {
+                        "Std Supplemental Field B",
+                        "Head",
+                        ""});
+#line 406
+    testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table57, "And ");
+#line 411
+ testRunner.When("the supplemental term \"LogSuppField4\" is removed from the Rave Coder setup of for" +
+                    "m \"ETE2\" field \"Coding Field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 412
+ testRunner.And("a Rave Draft is published using draft \"<DraftName>\" for Project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 413
+ testRunner.When("an Amendment Manager migration is started for Project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Amendment Manager Migration Failure")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_011")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleAmendmentManagerMigrationFailure()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Amendment Manager Migration Failure", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_011",
+                        "IncreaseTimeout_1800000"});
+#line 419
+this.ScenarioSetup(scenarioInfo);
+#line 421
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 422
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
+            table58.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "1",
+                        "false",
+                        "true"});
+#line 423
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table58, "And ");
+#line 426
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 427
+    testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table59.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 428
+    testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table59, "And ");
+#line 431
+ testRunner.When("the Coding Dictionary for the Rave Coder setup of form \"ETE2\" field \"Coding Field" +
+                    "\" is removed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 432
+ testRunner.And("the Coding Dictionary for the Rave Coder setup of form \"ETE2\" field \"Coding Field" +
+                    "\" is set to \"Rave- MedDRA 10.0 Version: 10.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 433
+ testRunner.And("a Rave Draft is published using draft \"<DraftName>\" for Project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 434
+ testRunner.When("an Amendment Manager migration is started for Project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Verifying Coding Decision")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_219307_001")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_219308_001")]
+        public virtual void RaveETEExampleVerifyingCodingDecision()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Verifying Coding Decision", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_219307_001",
+                        "PBMCC_219308_001"});
+#line 440
+this.ScenarioSetup(scenarioInfo);
+#line 442
+    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 443
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
+            table60.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "false",
+                        "true",
+                        "LogSuppField2, LogSuppField4"});
+#line 444
+    testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table60, "And ");
+#line 447
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 448
+ testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table61.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 449
+ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table61, "And ");
+#line 452
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 453
+    testRunner.And("task \"Headachery\" is coded to term \"atrial fibrillation\" at search level \"Low Lev" +
+                    "el Term\" with code \"10003658\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 454
+    testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Level",
+                        "Code",
+                        "Term Path"});
+            table62.AddRow(new string[] {
+                        "SOC",
+                        "10007541",
+                        "Cardiac disorders"});
+            table62.AddRow(new string[] {
+                        "HLGT",
+                        "10007521",
+                        "Cardiac arrhythmias"});
+            table62.AddRow(new string[] {
+                        "HLT",
+                        "10042600",
+                        "Supraventricular arrhythmias"});
+            table62.AddRow(new string[] {
+                        "PT",
+                        "10003658",
+                        "Atrial fibrillation"});
+            table62.AddRow(new string[] {
+                        "LLT",
+                        "10003658",
+                        "Atrial fibrillation"});
+#line 455
+ testRunner.Then("the coding decision for verbatim \"Headachery\" on form \"ETE2\" for field \"Coding Fi" +
+                    "eld\" contains the following data", ((string)(null)), table62, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Inactivate and Reactivate Form Row")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_012")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleInactivateAndReactivateFormRow()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Inactivate and Reactivate Form Row", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_012",
+                        "IncreaseTimeout_1800000"});
+#line 468
+this.ScenarioSetup(scenarioInfo);
+#line 470
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 471
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
+            table63.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "1",
+                        "false",
+                        "true"});
+#line 472
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table63, "And ");
+#line 475
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 476
+    testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table64.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 477
+    testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table64, "And ");
+#line 480
+ testRunner.When("the log line on form \"ETE2\" containing \"Headachery\" is inactivated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 481
+ testRunner.And("the log line on form \"ETE2\" containing \"Headachery\" is reactivated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Inactivate and Reactivate Form")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_013")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleInactivateAndReactivateForm()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Inactivate and Reactivate Form", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_013",
+                        "IncreaseTimeout_1800000"});
+#line 487
+this.ScenarioSetup(scenarioInfo);
+#line 489
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 490
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
+            table65.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "1",
+                        "false",
+                        "true"});
+#line 491
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table65, "And ");
+#line 494
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 495
+    testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table66.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 496
+    testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table66, "And ");
+#line 499
+ testRunner.When("form \"ETE2\" is inactivated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 500
+ testRunner.And("form \"ETE2\" is reactivated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Marking Open Query")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_014")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleMarkingOpenQuery()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Marking Open Query", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_014",
+                        "IncreaseTimeout_1800000"});
+#line 506
+this.ScenarioSetup(scenarioInfo);
+#line 508
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 509
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
+            table67.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "1",
+                        "false",
+                        "true"});
+#line 510
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table67, "And ");
+#line 513
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 514
+    testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table68.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 515
+    testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table68, "And ");
+#line 518
+ testRunner.And("row on form \"ETE2\" containing \"Headachery\" is marked with a query", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Marking Place Sticky")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_015")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleMarkingPlaceSticky()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Marking Place Sticky", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_015",
+                        "IncreaseTimeout_1800000"});
+#line 524
+this.ScenarioSetup(scenarioInfo);
+#line 526
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 527
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
+            table69.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "1",
+                        "false",
+                        "true"});
+#line 528
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table69, "And ");
+#line 531
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 532
+    testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table70.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 533
+    testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table70, "And ");
+#line 536
+ testRunner.And("row on form \"ETE2\" containing \"Headachery\" is marked with a sticky", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Marking Protocol Deviation")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_016")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleMarkingProtocolDeviation()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Marking Protocol Deviation", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_016",
+                        "IncreaseTimeout_1800000"});
+#line 542
+this.ScenarioSetup(scenarioInfo);
+#line 544
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 545
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
+            table71.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "1",
+                        "false",
+                        "true"});
+#line 546
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table71, "And ");
+#line 549
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 550
+    testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table72.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 551
+    testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table72, "And ");
+#line 554
+ testRunner.And("row on form \"ETE2\" containing \"Headachery\" is marked with a protocol deviation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Add Audit Log Comment")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_016")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleAddAuditLogComment()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Add Audit Log Comment", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_016",
+                        "IncreaseTimeout_1800000"});
+#line 561
+this.ScenarioSetup(scenarioInfo);
+#line 563
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 564
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
+            table73.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "1",
+                        "false",
+                        "true"});
+#line 565
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table73, "And ");
+#line 568
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 569
+    testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table74.AddRow(new string[] {
+                        "Coding Field",
+                        "ALPHA",
+                        "LongText"});
+            table74.AddRow(new string[] {
+                        "Log Supplemental Field A",
+                        "BRAVO",
+                        ""});
+            table74.AddRow(new string[] {
+                        "Std Supplemental Field A",
+                        "ZULU",
+                        ""});
+#line 570
+    testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table74, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table75.AddRow(new string[] {
+                        "Coding Field",
+                        "CHARLIE",
+                        "LongText"});
+            table75.AddRow(new string[] {
+                        "Log Supplemental Field A",
+                        "DELTA",
+                        ""});
+#line 575
+    testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table75, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table76.AddRow(new string[] {
+                        "Coding Field",
+                        "ECHO",
+                        "LongText"});
+#line 579
+    testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table76, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table77 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table77.AddRow(new string[] {
+                        "Coding Field",
+                        "FOXTROT",
+                        "LongText"});
+#line 582
+    testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table77, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table78.AddRow(new string[] {
+                        "Coding Field",
+                        "GULF",
+                        ""});
+#line 585
+    testRunner.And("adding a new verbatim term to form \"ETE3\"", ((string)(null)), table78, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table79.AddRow(new string[] {
+                        "Coding Field A",
+                        "XRAY",
+                        ""});
+            table79.AddRow(new string[] {
+                        "Coding Field B",
+                        "YANKEE",
+                        ""});
+#line 588
+    testRunner.And("adding a new verbatim term to form \"ETEMCC62552\"", ((string)(null)), table79, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table80 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table80.AddRow(new string[] {
+                        "1",
+                        "HOTEL",
+                        "LongText"});
+#line 592
+ testRunner.And("adding a new verbatim term to form \"ETE12\"", ((string)(null)), table80, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table81.AddRow(new string[] {
+                        "2",
+                        "INDIA",
+                        "LongText"});
+#line 595
+ testRunner.And("adding a new verbatim term to form \"ETE12\"", ((string)(null)), table81, "And ");
+#line 598
+ testRunner.And("an audit log entry \"ALPHA1\" is manually added to field \"Coding Field\" of the form" +
+                    " \"ETE2\" row containing \"ALPHA\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 599
+ testRunner.And("an audit log entry \"BRAVO1\" is manually added to field \"Log Supplemental Field A\"" +
+                    " of the form \"ETE2\" row containing \"BRAVO\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 600
+ testRunner.And("an audit log entry \"CHARLIE1\" is manually added to field \"Coding Field\" of the fo" +
+                    "rm \"ETE2\" row containing \"CHARLIE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 601
+ testRunner.And("an audit log entry \"DELTA1\" is manually added to field \"Log Supplemental Field A\"" +
+                    " of the form \"ETE2\" row containing \"DELTA\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 602
+ testRunner.And("an audit log entry \"ECHO1\" is manually added to field \"Coding Field\" of the form " +
+                    "\"ETE2\" row containing \"ECHO\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 603
+ testRunner.And("an audit log entry \"FOXTROT1\" is manually added to field \"Coding Field\" of the fo" +
+                    "rm \"ETE2\" row containing \"FOXTROT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 604
+ testRunner.And("an audit log entry \"GULF1\" is manually added to field \"Coding Field\" of the form " +
+                    "\"ETE3\" row containing \"GULF\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 605
+ testRunner.And("an audit log entry \"HOTEL1\" is manually added to field \"Coding Field\" of the form" +
+                    " \"ETE12\" row containing \"HOTEL\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 606
+ testRunner.And("an audit log entry \"INDIA1\" is manually added to field \"Coding Field\" of the form" +
+                    " \"ETE12\" row containing \"INDIA\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 607
+ testRunner.And("an audit log entry \"XRAY1\" is manually added to field \"Coding Field A\" of the for" +
+                    "m \"ETEMCC62552\" row containing \"XRAY\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 608
+ testRunner.And("an audit log entry \"YANKEE1\" is manually added to field \"Coding Field B\" of the f" +
+                    "orm \"ETEMCC62552\" row containing \"YANKEE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 609
+ testRunner.And("an audit log entry \"ZULU1\" is manually added to field \"Std Supplemental Field A\" " +
+                    "of the form \"ETE2\" row containing \"ZULU\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Copy CRF Draft")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_017")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleCopyCRFDraft()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Copy CRF Draft", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_017",
+                        "IncreaseTimeout_1800000"});
+#line 615
+this.ScenarioSetup(scenarioInfo);
+#line 617
+ testRunner.Given("a Rave project registration with dictionary \"WhoDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 618
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 619
+ testRunner.And("a Rave CRF copy source is added for the project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "Coding Level",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
+            table82.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "",
+                        "PRODUCTSYNONYM",
+                        "2",
+                        "true",
+                        "true",
+                        "LogSuppField4"});
+            table82.AddRow(new string[] {
+                        "ETEMCC62552",
+                        "Coding Field A",
+                        "MedDRA",
+                        "ENG",
+                        "LLT",
+                        "3",
+                        "false",
+                        "true",
+                        "ETEDRUG01, STDFIELD01"});
+            table82.AddRow(new string[] {
+                        "ETEMCC62552",
+                        "Coding Field B",
+                        "MedDRA",
+                        "ENG",
+                        "LLT",
+                        "4",
+                        "false",
+                        "false",
+                        ""});
+#line 620
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table82, "And ");
+#line 625
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 626
+ testRunner.And("a new Draft \"NewCopiedDraft\" is created through copy wizard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "Coding Level",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
+            table83.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "",
+                        "PRODUCTSYNONYM",
+                        "2",
+                        "true",
+                        "true",
+                        "LogSuppField4"});
+            table83.AddRow(new string[] {
+                        "ETEMCC62552",
+                        "Coding Field A",
+                        "MedDRA",
+                        "ENG",
+                        "LLT",
+                        "3",
+                        "false",
+                        "true",
+                        "ETEDRUG01, STDFIELD01"});
+            table83.AddRow(new string[] {
+                        "ETEMCC62552",
+                        "Coding Field B",
+                        "MedDRA",
+                        "ENG",
+                        "LLT",
+                        "4",
+                        "false",
+                        "false",
+                        ""});
+#line 627
+ testRunner.Then("the Rave Coder setup for draft \"NewCopiedDraft\" has the following options configu" +
+                    "red", ((string)(null)), table83, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Copy CRF Draft to a Different Study")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_018")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleCopyCRFDraftToADifferentStudy()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Copy CRF Draft to a Different Study", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_018",
+                        "IncreaseTimeout_1800000"});
+#line 638
+this.ScenarioSetup(scenarioInfo);
+#line 640
+ testRunner.Given("a Rave project registration with dictionary \"WhoDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 641
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 642
+ testRunner.And("a Rave CRF copy source from project \"<StudyName>\" draft \"<DraftName>\" is added fo" +
+                    "r project \"NewStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 643
+ testRunner.When("a new Draft \"NewCopiedDraft\" is created through copy wizard for project \"NewStudy" +
+                    "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Copy CRF Draft to a Different Study Verify Coder Settings are no" +
+            "t Copied")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_216333_019")]
+        [NUnit.Framework.Timeout(1800000)]
+        public virtual void RaveETEExampleCopyCRFDraftToADifferentStudyVerifyCoderSettingsAreNotCopied()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Copy CRF Draft to a Different Study Verify Coder Settings are no" +
+                    "t Copied", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_216333_019",
+                        "IncreaseTimeout_1800000"});
+#line 649
+this.ScenarioSetup(scenarioInfo);
+#line 651
+ testRunner.Given("a Rave project registration with dictionary \"WhoDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 652
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 653
+ testRunner.And("a Rave CRF copy source from project \"<StudyName>\" draft \"<DraftName>\" is added fo" +
+                    "r project \"NewStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "Coding Level",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
+            table84.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "",
+                        "PRODUCTSYNONYM",
+                        "2",
+                        "true",
+                        "true",
+                        "LogSuppField4"});
+            table84.AddRow(new string[] {
+                        "ETEMCC62552",
+                        "Coding Field A",
+                        "MedDRA",
+                        "ENG",
+                        "LLT",
+                        "3",
+                        "false",
+                        "true",
+                        "ETEDRUG01, STDFIELD01"});
+            table84.AddRow(new string[] {
+                        "ETEMCC62552",
+                        "Coding Field B",
+                        "MedDRA",
+                        "ENG",
+                        "LLT",
+                        "4",
+                        "false",
+                        "false",
+                        ""});
+#line 654
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table84, "And ");
+#line 659
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 660
+ testRunner.And("a new Draft \"NewCopiedDraft\" is created through copy wizard for project \"NewStudy" +
+                    "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 661
+ testRunner.Then("the project \"NewStudy\" draft \"NewCopiedDraft\" form \"ETE2\" field \"Coding Field\" ha" +
+                    "s no Rave Coder setup options configured", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 662
+ testRunner.And("the project \"NewStudy\" draft \"NewCopiedDraft\" form \"ETEMCC62552\" field \"Coding Fi" +
+                    "eld A\" has no Rave Coder setup options configured", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 663
+ testRunner.And("the project \"NewStudy\" draft \"NewCopiedDraft\" form \"ETEMCC62552\" field \"Coding Fi" +
+                    "eld B\" has no Rave Coder setup options configured", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example Verifying Coding Decision within the Clincial Views")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_223229_001")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_223228_001")]
+        public virtual void RaveETEExampleVerifyingCodingDecisionWithinTheClincialViews()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example Verifying Coding Decision within the Clincial Views", new string[] {
+                        "DFT",
+                        "Release2016.1.0",
+                        "PBMCC_223229_001",
+                        "PBMCC_223228_001"});
+#line 670
+this.ScenarioSetup(scenarioInfo);
+#line 671
+    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 19.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 672
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "CodingLevel",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
+            table85.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "2",
+                        "true",
+                        "false",
+                        "LogSuppField2, LogSuppField4"});
+#line 673
+    testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table85, "And ");
+#line 676
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Sour" +
+                    "ceSystemStudyName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Column",
+                        "Term Suffix",
+                        "Term SAS Suffix",
+                        "Term Length",
+                        "Code Suffix",
+                        "Code SAS Suffix",
+                        "Code Length"});
+            table86.AddRow(new string[] {
+                        "ATC",
+                        "_ATC_",
+                        "_SAS_ATC_",
+                        "50",
+                        "_ATC_CD_",
+                        "_SAS_ATC_CD_",
+                        "50"});
+#line 677
+    testRunner.And("setting the clinical view settings for dictionary \"<Dictionary>\" with the followi" +
+                    "ng data", ((string)(null)), table86, "And ");
+#line 680
+    testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table87.AddRow(new string[] {
+                        "Coding Field",
+                        "Headachery",
+                        "LongText"});
+#line 681
+ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table87, "And ");
+#line 684
+ testRunner.And("configure Clinical Views for Project \"<SourceSystemStudyName>\" with mode \"Full Th" +
+                    "en Incremental\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 685
+ testRunner.And("generate report \"Data Listing\" for Project \"<SourceSystemStudyName>\", Data Source" +
+                    " \"Clinical Views\" and Form \"ETE2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table88 = new TechTalk.SpecFlow.Table(new string[] {
+                        "project",
+                        "subject",
+                        "CODERFIELD2_PS",
+                        "CODERFIELD2_PS_C"});
+            table88.AddRow(new string[] {
+                        "<SourceSystemStudyName>",
+                        "AA1",
+                        "SLOW RELEASE IRON",
+                        "000235 01 027 9"});
+#line 686
+ testRunner.Then("In report generated, I should see the data below", ((string)(null)), table88, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Rave ETE Example editting global Rave-Coder Configuration settings")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_223226_001")]
+        public virtual void RaveETEExampleEdittingGlobalRave_CoderConfigurationSettings()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rave ETE Example editting global Rave-Coder Configuration settings", new string[] {
+                        "DFT",
+                        "PBMCC_223226_001"});
+#line 694
+this.ScenarioSetup(scenarioInfo);
+#line 696
+testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 697
+testRunner.And("edit global Rave-Coder Configuration settings with Review Marking Group set to \"D" +
+                    "ata Management\" and Requires Response set to \"false\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -10,28 +10,28 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         public CodingCleanupPage(BrowserSession browser) { if (ReferenceEquals(browser, null)) { throw new ArgumentNullException("browser"); }  _Browser = browser; }
 
-        public SessionElementScope GetCleanupButton()
+        private SessionElementScope GetCleanupButton()
         {
             var cleanupButton = _Browser.FindSessionElementByXPath("//a[@id = 'ctl00_Content_btnCleanup']");
 
             return cleanupButton;
         }
 
-        public SessionElementScope GetUploadButton()
+        internal SessionElementScope GetUploadButton()
         {
             var uploadButton = _Browser.FindSessionElementByXPath("//a[@id = 'ctl00_Content_btnPopulate']");
 
             return uploadButton;
         }
 
-        public SessionElementScope GetUploadField()
+        internal SessionElementScope GetUploadField()
         {
             var uploadField = _Browser.FindSessionElementByXPath("//input[@id = 'ctl00_Content_fileUpload']");
 
             return uploadField;
         }
 
-        public SessionElementScope GetResetSynonymStateCheckBox()
+        private SessionElementScope GetResetSynonymStateCheckBox()
         {
             var resetSynonymStateCheckBox =
                 _Browser.FindSessionElementByXPath("//input[@id = 'ctl00_Content_chkResetSynonymState']");
@@ -47,7 +47,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return uploadSuccessIndicator;
         }
 
-        internal SessionElementScope GetUploadFailureIndicator()
+        private SessionElementScope GetUploadFailureIndicator()
         {
             var uploadSuccessIndicator = _Browser.
                 FindSessionElementById("ctl00_StatusPaneACG_ErrorPane");
@@ -69,6 +69,14 @@ namespace Coder.DeclarativeBrowser.PageObjects
         internal void CleanUpTasksAndSynonyms()
         {
             GetResetSynonymStateCheckBox().SetCheckBoxState(true);
+            GetCleanupButton().Click();
+
+            WaitUntilUploadCompletes();
+        }
+
+        internal void CleanUpTasks()
+        {
+            GetResetSynonymStateCheckBox().SetCheckBoxState(false);
             GetCleanupButton().Click();
 
             WaitUntilUploadCompletes();

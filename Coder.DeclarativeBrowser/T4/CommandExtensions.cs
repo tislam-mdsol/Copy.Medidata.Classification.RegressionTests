@@ -297,6 +297,16 @@ namespace Coder.DeclarativeBrowser.Db {
             return result;
         }
 
+        public static spSegmentGetByIMedidataIdCommandResponse  Execute(this IDbConnection connection, spSegmentGetByIMedidataIdCommandRequest request, Int32? commandTimeout = null)
+        {
+            Debug.Assert(!ReferenceEquals(connection, null), "connection can't be null");
+            Debug.Assert(!ReferenceEquals(request, null), "request can't be null");
+
+            var command = new spSegmentGetByIMedidataIdCommand(connection, commandTimeout);
+            var result = command.Execute(request);
+            return result;
+        }
+
         public static spSegmentInsertCommandResponse  Execute(this IDbConnection connection, spSegmentInsertCommandRequest request, Int32? commandTimeout = null)
         {
             Debug.Assert(!ReferenceEquals(connection, null), "connection can't be null");
@@ -343,6 +353,16 @@ namespace Coder.DeclarativeBrowser.Db {
             Debug.Assert(!ReferenceEquals(request, null), "request can't be null");
 
             var command = new spTrackableObjectInsertCommand(connection, commandTimeout);
+            var result = command.Execute(request);
+            return result;
+        }
+
+        public static spUserGetByIMedidataIdCommandResponse  Execute(this IDbConnection connection, spUserGetByIMedidataIdCommandRequest request, Int32? commandTimeout = null)
+        {
+            Debug.Assert(!ReferenceEquals(connection, null), "connection can't be null");
+            Debug.Assert(!ReferenceEquals(request, null), "request can't be null");
+
+            var command = new spUserGetByIMedidataIdCommand(connection, commandTimeout);
             var result = command.Execute(request);
             return result;
         }

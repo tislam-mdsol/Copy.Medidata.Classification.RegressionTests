@@ -20,5 +20,16 @@ namespace Coder.DeclarativeBrowser.Models
 
             return result;
         }
+
+        public bool EqualsIgnoreCode(TermPathRow other)
+        {
+            if (ReferenceEquals(other, null)) throw new ArgumentNullException("other");
+
+            var result = Level.Equals(other.Level, StringComparison.OrdinalIgnoreCase)
+                   && TermPath.Equals(other.TermPath, StringComparison.OrdinalIgnoreCase)
+                   && HasSynonym.Equals(other.HasSynonym);
+
+            return result;
+        }
     }
 }

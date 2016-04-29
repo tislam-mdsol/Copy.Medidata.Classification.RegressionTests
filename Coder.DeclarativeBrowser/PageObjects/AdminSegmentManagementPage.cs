@@ -32,7 +32,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             }
         }
 
-        internal String EnrollSegment(String newGeneratedSegment)
+        internal void EnrollSegment(String newGeneratedSegment)
         {
             if (String.IsNullOrEmpty(newGeneratedSegment)) throw new ArgumentNullException("newGeneratedSegment");
 
@@ -42,9 +42,14 @@ namespace Coder.DeclarativeBrowser.PageObjects
             GetNewSegmentNameTextBox().FillInWith(newGeneratedSegment);
             GetEditingRowCheckMarkButton().Click();
 
-            String message = WaitForStatusPaneMessage();
+            WaitUntilFinishLoading();
 
-            return message;
+            var resultIndicator = GetStatusPaneIndicator();
+
+            if(resultIndicator.Exists(Config.ExistsOptions) && !String.IsNullOrWhiteSpace(resultIndicator.Text))
+            {
+                throw new MissingHtmlException(String.Format("Error enrolling segment {0}: {1}", newGeneratedSegment, resultIndicator.Text));
+            }
         }
 
         private SessionElementScope GetNewSegmentPlusButton()
@@ -70,22 +75,21 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         private SessionElementScope GetStatusPaneIndicator()
         {
-            var statusPane = _Browser.FindSessionElementByXPath("//span[@id='ctl00_StatusPaneACG']/div");
+            var statusPane = _Browser.FindSessionElementById("ctl00_StatusPaneACG");
 
             return statusPane;
         }
-
-        private String WaitForStatusPaneMessage()
+        
+        internal void WaitUntilFinishLoading()
         {
-            var syncIndicator = GetStatusPaneIndicator();
-            var options       = Config.ExistsOptions;
+            _Browser.WaitUntilElementDisappears(GetLoadingIndicator);
+        }
 
-            if (!syncIndicator.Exists(options))
-            {
-                WaitForStatusPaneMessage();
-            }
+        private SessionElementScope GetLoadingIndicator()
+        {
+            var loadingIndicator = _Browser.FindSessionElementByXPath("//*[contains(@id, '_LPV')]");
 
-            return syncIndicator.Text;
+            return loadingIndicator;
         }
     }
 }

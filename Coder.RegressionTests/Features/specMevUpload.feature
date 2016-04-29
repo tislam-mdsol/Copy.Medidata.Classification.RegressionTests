@@ -214,16 +214,16 @@ Scenario: Upload history contains a downloadable csv file with error information
 	When downloading MEV failure content
 	Then the downloaded Mev error file should contain following
 	| Study ID                            | Supplemental Field 1 | Supplemental Field 5 | Dictionary                | Dictionary Level     | Error                                                                       |
-	| <DevUuid>                           |                      |                      | MedDRA                    | SOC                  | Medical Dictionary Level is not codable                                     |
+	| <DevStudyUuid>                      |                      |                      | MedDRA                    | SOC                  | Medical Dictionary Level is not codable                                     |
 	| 00000000-1111-2222-3333-44444444444 |                      |                      | MedDRA                    | LLT                  | Study does Not Exist                                                        |
-	| <DevUuid>                           |                      |                      | MedDRA                    | Level Does Not Exist | Unknown error occurred                                                      |
+	| <DevStudyUuid>                      |                      |                      | MedDRA                    | Level Does Not Exist | Unknown error occurred                                                      |
 	| Study Does Not Exist                |                      |                      | MedDRA                    | LLT                  | Study Does Not Exist                                                        |
-	| <DevUuid>                           |                      |                      | Dictionary Does Not Exist | LLT                  | Study must be registered                                                    |
-	| <DevUuid>                           |                      |                      | MedDRA                    | "LLT "               | Dictionary Level contains invalid leading or trailing spaces                |
-	| <DevUuid>                           |                      |                      | MedDRA                    | "LLT "               | Dictionary Level contains invalid leading or trailing spaces                |
-	| <DevUuid>                           |                      |                      | "MedDRA "                 | LLT                  | Dictionary contains invalid leading or trailing spaces                      |
-	| <DevUuid>                           | SupplementalFieldA   |                      | WhoDrugDDEB2              | PRODUCTSYNONYM       | Supplement Field OID must be unique                                         |
-	| <Uuid>                              |                      | Supplemental Field 5 | MedDRA                    | LLT                  | Supplemental Field 5 is required to be alphanumeric with zero or one period |
+	| <DevStudyUuid>                      |                      |                      | Dictionary Does Not Exist | LLT                  | Study must be registered                                                    |
+	| <DevStudyUuid>                      |                      |                      | MedDRA                    | "LLT "               | Dictionary Level contains invalid leading or trailing spaces                |
+	| <DevStudyUuid>                      |                      |                      | MedDRA                    | "LLT "               | Dictionary Level contains invalid leading or trailing spaces                |
+	| <DevStudyUuid>                      |                      |                      | "MedDRA "                 | LLT                  | Dictionary contains invalid leading or trailing spaces                      |
+	| <DevStudyUuid>                      | SupplementalFieldA   |                      | WhoDrugDDEB2              | PRODUCTSYNONYM       | Supplement Field OID must be unique                                         |
+	| <StudyUuid>                         |                      | Supplemental Field 5 | MedDRA                    | LLT                  | Supplemental Field 5 is required to be alphanumeric with zero or one period |
 
 
 @VAL

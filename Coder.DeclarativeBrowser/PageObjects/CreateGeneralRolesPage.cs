@@ -86,6 +86,13 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return generalRolesRows[0];
         }
 
+        private bool DoesGeneralRoleExist(string roleName)
+        {
+            if (ReferenceEquals(roleName, null)) throw new ArgumentNullException("roleName");
+
+            return !ReferenceEquals(GetGeneralRoleGridRowByRoleName(roleName), null);
+        }
+
         internal SessionElementScope GetAddNewButton()
         {
             var addNewButton = _Browser.FindSessionElementById("ctl00_Content_gridRole_FooterRow_LnkAddNewgridRole");
@@ -196,9 +203,15 @@ namespace Coder.DeclarativeBrowser.PageObjects
         internal void CreateGeneralRole(string roleName, string securityModule)
         {
             if (String.IsNullOrWhiteSpace(roleName))       throw new ArgumentNullException("roleName");
-            if (String.IsNullOrWhiteSpace(securityModule)) throw new ArgumentNullException("securityModule"); 
-
+            if (String.IsNullOrWhiteSpace(securityModule)) throw new ArgumentNullException("securityModule");
+            
             GetSecurityModuleDropDownList().SelectOptionAlphanumericOnly(securityModule);
+
+            if (DoesGeneralRoleExist(roleName))
+            {
+                return;
+            }
+
             GetAddNewButton().Click();
             GetRoleNameTextBox().FillInWith(roleName);
             GetSaveRoleButton().Click();

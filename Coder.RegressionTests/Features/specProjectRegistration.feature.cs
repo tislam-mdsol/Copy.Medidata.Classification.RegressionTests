@@ -96,14 +96,14 @@ this.ScenarioSetup(scenarioInfo);
                         "SynonymListName",
                         "RegistrationName"});
             table1.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "MedDRA",
                         "11.0",
                         "eng",
                         "Primary List",
                         "MedDRA"});
             table1.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "MedDRA",
                         "11.0",
                         "eng",
@@ -120,14 +120,14 @@ this.ScenarioSetup(scenarioInfo);
                         "SynonymListName",
                         "RegistrationName"});
             table2.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "MedDRA",
                         "11.0",
                         "eng",
                         "Primary List",
                         "MedDRA"});
             table2.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "MedDRA",
                         "11.0",
                         "eng",
@@ -184,14 +184,14 @@ this.ScenarioSetup(scenarioInfo);
                         "SynonymListName",
                         "RegistrationName"});
             table4.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "MedDRA",
                         "11.0",
                         "jpn",
                         "Primary List",
                         "MedDRA"});
             table4.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "MedDRA",
                         "11.0",
                         "eng",
@@ -208,14 +208,14 @@ this.ScenarioSetup(scenarioInfo);
                         "SynonymListName",
                         "RegistrationName"});
             table5.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "MedDRA",
                         "11.0",
                         "jpn",
                         "Primary List",
                         "MedDRA"});
             table5.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "MedDRA",
                         "11.0",
                         "eng",
@@ -272,14 +272,14 @@ this.ScenarioSetup(scenarioInfo);
                         "SynonymListName",
                         "RegistrationName"});
             table7.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "MedDRA",
                         "11.0",
                         "eng",
                         "Primary List",
                         "MedDRA"});
             table7.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "MedDRA",
                         "11.0",
                         "eng",
@@ -296,7 +296,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SynonymListName",
                         "RegistrationName"});
             table8.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "MedDRA",
                         "11.0",
                         "eng",
@@ -335,7 +335,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SynonymListName",
                         "RegistrationName"});
             table9.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "MedDRA",
                         "11.0",
                         "Eng",
@@ -344,8 +344,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 68
  testRunner.When("registering a project with the following options", ((string)(null)), table9, "When ");
 #line 71
- testRunner.Then("I should see success message \"Dictionary has been successfully registered to <pro" +
-                    "ject> Project\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should see success message \"Dictionary has been successfully registered to <Stu" +
+                    "dyName> Project\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -377,7 +377,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SynonymListName",
                         "RegistrationName"});
             table10.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "WhoDrugDDEB2",
                         "200703",
                         "eng",
@@ -429,7 +429,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SynonymListName",
                         "RegistrationName"});
             table12.AddRow(new string[] {
-                        "<Project>",
+                        "<StudyName>",
                         "WhoDrugDDEB2",
                         "200703",
                         "eng",
@@ -514,13 +514,13 @@ this.ScenarioSetup(scenarioInfo);
                         "Study"});
             table14.AddRow(new string[] {
                         "3-BENZHYDRYLOXY-8-ISOPROPYL-NORTROPAN MESILA.",
-                        "<Project>"});
+                        "<StudyName>"});
             table14.AddRow(new string[] {
                         "Allergy to Venom",
-                        "<Project> (Dev)"});
+                        "<StudyName> (Dev)"});
             table14.AddRow(new string[] {
                         "BLOOD BUILDER",
-                        "<Project> (UAT)"});
+                        "<StudyName> (UAT)"});
 #line 101
  testRunner.Then("all studies for Project are registered and MEV content is loaded", ((string)(null)), table14, "Then ");
 #line hidden

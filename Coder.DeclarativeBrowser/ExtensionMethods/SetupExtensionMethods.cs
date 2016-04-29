@@ -20,9 +20,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             if (ReferenceEquals(synonymList, null))             throw new ArgumentNullException("synonymList");
 
             browser.SetupCoderConfiguration(stepContext, setupType);
-
-            stepContext.SetupType = setupType;
-
+            
             browser.CleanUpCodingTasks();
 
             browser.CreateSynonymList(synonymList);
@@ -41,14 +39,12 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             if (ReferenceEquals(synonymList, null))             throw new ArgumentNullException("synonymList");
 
             browser.SetupCoderConfiguration(stepContext, setupType);
-
-            stepContext.SetupType = setupType;
-
+            
             browser.CleanUpCodingTasks();
 
             CoderDatabaseAccess.RegisterProject(
-                project:                    stepContext.Project,
-                segment:                    stepContext.Segment,
+                protocolNumber:             stepContext.GetProtocolNumber(),
+                segment:                    stepContext.GetSegment(),
                 dictionary:                 synonymList.Dictionary,
                 dictionaryVersion:          synonymList.Version,
                 locale:                     synonymList.Locale,
@@ -76,7 +72,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             if (ReferenceEquals(synonymList, null))             throw new ArgumentNullException("synonymList");
 
             CoderDatabaseAccess.CreateSynonymList(
-                segment:                    stepContext.Segment,
+                segment:                    stepContext.GetSegment(),
                 dictionary:                 synonymList.Dictionary,
                 dictionaryVersion:          synonymList.Version,
                 locale:                     synonymList.Locale,
@@ -142,7 +138,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
             coderTestContext.Set(
                 coderConfiguration   : coderConfiguration,
-                segment              : stepContext.Segment,
+                segment              : stepContext.GetSegment(),
                 dictionary           : stepContext.Dictionary,
                 version              : stepContext.Version);
 

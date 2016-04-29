@@ -85,9 +85,9 @@ Scenario: Tasks shall remain in the current status when synonyms are retired fro
          | ACHES         | 2     | Waiting Approval |
 	When performing reclassification search
 	Then the reclassification search should contain
-	   | Study                   | Subject   | Verbatim | Term     | Code     | Priority | Form   |
-	   | <SourceSystemStudyName> | Subject 1 | ACHES    | Headache | 10019211 | 1        | Form 1 |
-	   | <SourceSystemStudyName> | Subject 1 | ACHES    | Headache | 10019211 | 1        | Form 1 |
+	   | Study       | Subject   | Verbatim | Term     | Code     | Priority | Form   |
+	   | <StudyName> | Subject 1 | ACHES    | Headache | 10019211 | 1        | Form 1 |
+	   | <StudyName> | Subject 1 | ACHES    | Headache | 10019211 | 1        | Form 1 |
 
 @VAL
 @Release2015.3.0
@@ -197,7 +197,7 @@ Scenario: Uploaded provisional synonyms shall be added in the provisional status
      Given a "Auto Code Synonyms Need Approval" Coder setup with registered synonym list "MedDRA ENG 15.0 Current_List" containing entry "ACHES|10019211|LLT|LLT:10019211;PT:10019211;HLT:10019233;HLGT:10019231;SOC:10029205|True||Provisional|Cluster headache"
      And an unactivated synonym list "MedDRA ENG 16.0 New_List"
      When starting synonym list migration
-	 Then the synonym for verbatim "ACHES" and code "10019211" should be active
+	 Then the synonym for verbatim "ACHES" and code "10019211" should be active after synonym migration
 
 @VAL
 @Release2015.3.0

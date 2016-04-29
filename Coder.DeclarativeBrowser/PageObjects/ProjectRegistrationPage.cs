@@ -115,82 +115,39 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return dictionarySelectList;
         }
 
-        private IList<SessionElementScope> GetSelectListOptions()
-        {
-            var selectListOptions = _Browser.FindAllSessionElementsByXPath("//*[contains(@id,'DDD_L_LBI')]");
-
-            return selectListOptions;
-        }
-
-        private SessionElementScope GetSelectListOption(SessionElementScope selectList, string targetOptionText)
-        {
-            if (ReferenceEquals(selectList, null))           throw new ArgumentNullException("selectList");
-            if (String.IsNullOrWhiteSpace(targetOptionText)) throw new ArgumentNullException("targetOptionText");
-
-            _Browser.TryUntil(
-                () => selectList.Click(),
-                () => GetSelectListOptions().Any(),
-                _Options.RetryInterval,
-                _Options);
-
-            var selectListOptions = GetSelectListOptions();
-
-            var selectListOption = selectListOptions.FirstOrDefault(x => x.Text.Equals(targetOptionText));
-
-            if (ReferenceEquals(selectListOption, null))
-            {
-                throw new NullReferenceException(String.Format("No option {0} was found.", targetOptionText));
-            }
-
-            return selectListOption;
-        }
-
-        private void SelectOption(Func<SessionElementScope> getSelectList, string targetOptionText)
-        {
-            if (ReferenceEquals(getSelectList, null)) throw new ArgumentNullException("getSelectList");
-            if (String.IsNullOrWhiteSpace(targetOptionText)) throw new ArgumentNullException("targetOptionText");
-
-            var selectList = getSelectList();
-
-            var selectListOption = RetryPolicy.FindElement.Execute(
-                () => GetSelectListOption(selectList, targetOptionText));
-
-            selectListOption.Click();
-        }
-
         public void SelectDictionaryType(string selectedValue)
         {
             if (ReferenceEquals(selectedValue, null)) throw new ArgumentNullException("selectedValue");
 
-            SelectOption(GetDictionaryTypeSelectList, selectedValue);
+            _Browser.SelectDXOption(GetDictionaryTypeSelectList, selectedValue);
         }
         
         public void SelectVersion(string selectedValue)
         {
             if (ReferenceEquals(selectedValue, null)) throw new ArgumentNullException("selectedValue");
 
-            SelectOption(GetVersionSelectList, selectedValue);
+            _Browser.SelectDXOption(GetVersionSelectList, selectedValue);
         }
 
         public void SelectLocale(string selectedValue)
         {
             if (ReferenceEquals(selectedValue, null)) throw new ArgumentNullException("selectedValue");
 
-            SelectOption(GetLocalesSelectList, selectedValue);
+            _Browser.SelectDXOption(GetLocalesSelectList, selectedValue);
         }
 
         public void SelectSynonymList(string selectedValue)
         {
             if (ReferenceEquals(selectedValue, null)) throw new ArgumentNullException("selectedValue");
 
-            SelectOption(GetSynonymListsSelectList, selectedValue);
+            _Browser.SelectDXOption(GetSynonymListsSelectList, selectedValue);
         }
 
         public void SelectDictionary(string selectedValue)
         {
             if (ReferenceEquals(selectedValue, null)) throw new ArgumentNullException("selectedValue");
 
-            SelectOption(GetDictionarySelectList, selectedValue);
+            _Browser.SelectDXOption(GetDictionarySelectList, selectedValue);
         }
 
         public SessionElementScope GetUpdateButton()

@@ -1262,7 +1262,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Dictionary Level",
                         "Error"});
             table19.AddRow(new string[] {
-                        "<DevUuid>",
+                        "<DevStudyUuid>",
                         "",
                         "",
                         "MedDRA",
@@ -1276,7 +1276,7 @@ this.ScenarioSetup(scenarioInfo);
                         "LLT",
                         "Study does Not Exist"});
             table19.AddRow(new string[] {
-                        "<DevUuid>",
+                        "<DevStudyUuid>",
                         "",
                         "",
                         "MedDRA",
@@ -1290,42 +1290,42 @@ this.ScenarioSetup(scenarioInfo);
                         "LLT",
                         "Study Does Not Exist"});
             table19.AddRow(new string[] {
-                        "<DevUuid>",
+                        "<DevStudyUuid>",
                         "",
                         "",
                         "Dictionary Does Not Exist",
                         "LLT",
                         "Study must be registered"});
             table19.AddRow(new string[] {
-                        "<DevUuid>",
+                        "<DevStudyUuid>",
                         "",
                         "",
                         "MedDRA",
                         "\"LLT \"",
                         "Dictionary Level contains invalid leading or trailing spaces"});
             table19.AddRow(new string[] {
-                        "<DevUuid>",
+                        "<DevStudyUuid>",
                         "",
                         "",
                         "MedDRA",
                         "\"LLT \"",
                         "Dictionary Level contains invalid leading or trailing spaces"});
             table19.AddRow(new string[] {
-                        "<DevUuid>",
+                        "<DevStudyUuid>",
                         "",
                         "",
                         "\"MedDRA \"",
                         "LLT",
                         "Dictionary contains invalid leading or trailing spaces"});
             table19.AddRow(new string[] {
-                        "<DevUuid>",
+                        "<DevStudyUuid>",
                         "SupplementalFieldA",
                         "",
                         "WhoDrugDDEB2",
                         "PRODUCTSYNONYM",
                         "Supplement Field OID must be unique"});
             table19.AddRow(new string[] {
-                        "<Uuid>",
+                        "<StudyUuid>",
                         "",
                         "Supplemental Field 5",
                         "MedDRA",

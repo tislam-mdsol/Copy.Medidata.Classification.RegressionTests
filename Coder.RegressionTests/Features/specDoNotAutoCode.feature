@@ -10,9 +10,9 @@ Scenario: Verify that when direct dictionary terms are set to do not auto code t
 	Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" unregistered
 	And an activated synonym list "MedDRA ENG 15.0 History_List"
 	When registering a project with the following options
-		| Project   | Dictionary | Version | Locale | SynonymListName | RegistrationName |
-		| <Project> | MedDRA     | 15.0    | eng    | Primary List    | MedDRA           |
-		| <Project> | MedDRA     | 15.0    | eng    | History_List    | MedDRAMedHistory |
+		| Project     | Dictionary | Version | Locale | SynonymListName | RegistrationName |
+		| <StudyName> | MedDRA     | 15.0    | eng    | Primary List    | MedDRA           |
+		| <StudyName> | MedDRA     | 15.0    | eng    | History_List    | MedDRAMedHistory |
 	And do not auto code "Back arched backwards" for dictionary "MedDRA-15_0-English" level "LLT"
 	And do not auto code "Death sudden" for dictionary "MedDRAMedHistory-15_0-English" level "LLT"
 	And uploading MEV content

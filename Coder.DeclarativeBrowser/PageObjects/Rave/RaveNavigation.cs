@@ -43,24 +43,159 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return navigationLinks.ToList();
         }
 
-        private SessionElementScope GetNavigationLink(string linkText)
+        internal SessionElementScope GetNavigationLink(string linkText)
         {
             if (String.IsNullOrWhiteSpace(linkText)) throw new ArgumentNullException("linkText");
 
             var navigationLinks = GetNavigationLinks();
 
-            if (!navigationLinks.Any())
-            {
-                throw new MissingHtmlException("No navigation links were found in Rave Navigation");
-            }
-
             var navigationLink = navigationLinks.FirstOrDefault(x => x.Text.EqualsIgnoreCase(linkText));
 
-            if (ReferenceEquals(navigationLink, null))
-            {
-                throw new MissingHtmlException(String.Format("Navigation link, {0}, was not found in Rave Navigation", linkText));
-            }
             return navigationLink;
+        }
+
+        internal bool IsNavigationLinkAvailable(String linkText)
+        {
+            if (String.IsNullOrWhiteSpace(linkText)) throw new ArgumentNullException("linkText");
+            
+            var link = GetNavigationLink(linkText);
+
+            bool linkAvailable = !ReferenceEquals(link, null);
+
+            return linkAvailable;
+        }
+
+        private bool OpenNavigationLink(string linkText)
+        {
+            if (String.IsNullOrWhiteSpace(linkText)) throw new ArgumentNullException("linkText");
+
+            if (!IsNavigationLinkAvailable(linkText))
+            {
+                return false;
+            }
+
+            var link = GetNavigationLink(linkText);
+
+            link.Click();
+
+            return true;
+        }
+
+        private bool OpenEDCNavigationLink(string linkText)
+        {
+            if (String.IsNullOrWhiteSpace(linkText)) throw new ArgumentNullException("linkText");
+
+            if (GoToEDCTab(linkText))
+            {
+                return true;
+            }
+
+            return OpenNavigationLink(linkText);
+        }
+
+        private bool OpenArchitectNavigationLink(string linkText)
+        {
+            if (String.IsNullOrWhiteSpace(linkText)) throw new ArgumentNullException("linkText");
+
+            if (GoToArchitectTab(linkText))
+            {
+                return true;
+            }
+
+            return OpenNavigationLink(linkText);
+        }
+
+        private SessionElementScope GetHorizontalTabsTable()
+        {
+            var tabsTable = _Session.FindSessionElementById("_ctl0_PgHeader_TabTable");
+
+            return tabsTable;
+        }
+
+        private IList<SessionElementScope> GetTabs()
+        {
+            var tabsTable = GetHorizontalTabsTable();
+
+            var tabs = tabsTable.FindAllSessionElementsByXPath(".//a");
+
+            return tabs.ToList();
+        }
+
+        private SessionElementScope GetTab(String tabName)
+        {
+            if(String.IsNullOrWhiteSpace(tabName)) throw new ArgumentNullException("tabName");
+
+            var tabs = GetTabs();
+
+            var tabLink = tabs.FirstOrDefault(x => x.Text.Equals(tabName));
+
+            return tabLink;
+        }
+
+        internal bool OnTab(String tabName)
+        {
+            var tabs    = GetTabs();
+
+            var lastTab = tabs.LastOrDefault();
+
+            if (ReferenceEquals(lastTab, null))
+            {
+                return false;
+            }
+            
+            bool onTab  = lastTab.Text.Equals(tabName);
+
+            return onTab;
+        }
+
+        internal bool IsTabAvailable(String tabName)
+        {
+            if (String.IsNullOrWhiteSpace(tabName)) throw new ArgumentNullException("tabName");
+
+            var tab = GetTab(tabName);
+
+            bool tabAvailable = !ReferenceEquals(tab, null);
+
+            return tabAvailable;
+        }
+
+        internal void GoToTab(String tabName)
+        {
+            if (!OnTab(tabName))
+            {
+                var tabLink = GetTab(tabName);
+
+                if (ReferenceEquals(tabLink, null))
+                {
+                    throw new MissingHtmlException(String.Format("No tab found for {0}", tabName));
+                }
+
+                tabLink.Click();
+            }
+        }
+
+        internal bool GoToEDCTab(String tabName)
+        {
+            if (IsTabAvailable("Architect") || !IsTabAvailable(tabName))
+            {
+                return false;
+            }
+            
+            GoToTab(tabName);
+
+            return true;
+        }
+
+        internal bool GoToArchitectTab(String tabName)
+        {
+            if (!IsTabAvailable("Architect") || !IsTabAvailable(tabName))
+            {
+                return false;
+            }
+
+            GoToTab(tabName);
+
+            return true;
         }
 
         internal bool IsNavigationLinksGridLoaded()
@@ -82,22 +217,91 @@ namespace Coder.DeclarativeBrowser.PageObjects
             GetHomePageLink().Click();
         }
 
-        internal void OpenAdverseEventsPage()
+        internal bool OpenAdverseEventsPage()
         {
-            var adverseEventLink = RetryPolicy.FindElement.Execute(() => GetNavigationLink("Adverse Events"));
-            adverseEventLink.Click();
+            return OpenArchitectNavigationLink("Adverse Events");
         }
 
-        internal void OpenArchitectPage()
+        internal bool OpenArchitectPage()
         {
-            var architectLink = RetryPolicy.FindElement.Execute(() => GetNavigationLink("Architect"));
-            architectLink.Click();
+            return OpenArchitectNavigationLink("Architect");
         }
 
-        internal void OpenArchitectUploadDraftPage()
+        internal bool OpenArchitectUploadDraftPage()
         {
-            var architectUploadDraftLink = RetryPolicy.FindElement.Execute(() => GetNavigationLink("Upload Draft"));
-            architectUploadDraftLink.Click();
+            return OpenArchitectNavigationLink("Upload Draft");
+        }
+
+        internal bool OpenArchitectFormsPage()
+        {
+            return OpenArchitectNavigationLink("Forms");
+        }
+        
+        internal bool OpenArchitectAmendmentManagerPage()
+        {
+            return OpenArchitectNavigationLink("Amendment Manager");
+        }
+
+        internal bool OpenArchitectExecuteAmendmentMigrationPlanPage()
+        {
+            return OpenArchitectNavigationLink("Execute Plan");
+        }
+
+        internal bool OpenArchitectDefineCopySourcesPage()
+        {
+            return OpenArchitectNavigationLink("Define Copy Sources");
+        }
+
+        internal bool OpenArchitectCopyDraftWizardPage()
+        {
+            return OpenArchitectNavigationLink("Copy to Draft");
+        }
+
+        internal bool OpenArchitectEnvironmentSetupPage()
+        {
+            return OpenArchitectNavigationLink("Studies Environment Setup");
+        }
+
+        internal bool OpenFormPage(string formName)
+        {
+            if (ReferenceEquals(formName, null)) throw new ArgumentNullException("formName");
+
+            return OpenEDCNavigationLink(formName);
+        }
+
+        internal bool OpenUserAdministrationPage()
+        {
+            return OpenEDCNavigationLink("User Administration");
+        }
+
+        internal bool OpenConfigurationPage()
+        {
+            return OpenEDCNavigationLink("Configuration");
+        }
+
+        internal bool OpenConfigurationLoaderPage()
+        {
+            return OpenEDCNavigationLink("Configuration Loader");
+        }
+
+        internal bool OpenConfigurationOtherSettingsPage()
+        {
+            return OpenEDCNavigationLink("Other Settings");
+        }
+        
+        internal bool OpenClinicalViewsPage()
+        {
+            return OpenEDCNavigationLink("Clinical Views");
+        }
+        
+        internal bool OpenClinicalViewSettingsPage()
+        {
+            return OpenEDCNavigationLink("Clinical View Settings");
+        }
+
+        internal bool OpenReportsPage()
+        {
+            return OpenEDCNavigationLink("Reporter");
         }
     }
 }

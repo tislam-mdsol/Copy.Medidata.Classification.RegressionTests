@@ -27,6 +27,8 @@ NDependOut/
 NDependOut*/
 BuildPackages/
 */ConfigData/*.config
+*/ConfigData/*.srprofile
+*/ConfigData/mauth_private_key.txt
 *_i.c
 *_p.c
 *.ilk

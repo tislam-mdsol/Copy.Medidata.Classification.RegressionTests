@@ -83,7 +83,7 @@ namespace Coder.TestSteps.StepDefinitions
         [When(@"exporting all columns in the Coding History Report")]
         public void WhenExportingAllColumnsInTheCodingHistoryReport()
         {
-            _SearchCriteria.Study      = _StepContext.SourceSystemStudyName;
+            _SearchCriteria.Study      = _StepContext.GetStudyName();
             _SearchCriteria.AllColumns = true;
 
             _Browser.ExportCodingHistoryReport(_SearchCriteria);
@@ -121,7 +121,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             _SearchCriteria.IncludeAutoCodedItems = true;
             _SearchCriteria.AllColumns            = exportAllColumns;
-            _SearchCriteria.Study                 = _StepContext.SourceSystemStudyName;
+            _SearchCriteria.Study                 = _StepContext.GetStudyName();
 
             _Browser.ExportCodingHistoryReport(_SearchCriteria);
         }
@@ -139,7 +139,7 @@ namespace Coder.TestSteps.StepDefinitions
                     dictionary: _StepContext.Dictionary,
                     version   : _StepContext.Version,
                     locale    : _StepContext.Locale,
-                    study     : _StepContext.Project);
+                    study     : _StepContext.GetStudyName());
 
             var actualResults = _Browser.GetCodingHistoryReportRows();
             

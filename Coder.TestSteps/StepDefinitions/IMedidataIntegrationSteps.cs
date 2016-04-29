@@ -1,8 +1,10 @@
 ﻿using System;
 using Coder.DeclarativeBrowser;
 using Coder.DeclarativeBrowser.ExtensionMethods;
+using Coder.DeclarativeBrowser.IMedidataApi.Models;
 using Coder.DeclarativeBrowser.Models;
 using Coder.DeclarativeBrowser.Models.GridModels;
+using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coder.TestSteps.Transformations;
 using FluentAssertions;
 using TechTalk.SpecFlow;
@@ -15,7 +17,7 @@ namespace Coder.TestSteps.StepDefinitions
     {
         private readonly CoderDeclarativeBrowser    _Browser;
         private readonly StepContext                _StepContext;
-        private IMedidataStudy _MedidataStudy;
+        private StudySetupData _MedidataStudy;
 
         public IMedidataIntegrationSteps(StepContext stepContext)
         {
@@ -24,31 +26,27 @@ namespace Coder.TestSteps.StepDefinitions
 
             _StepContext    = stepContext;
             _Browser        = _StepContext.Browser;
-            _MedidataStudy  = new IMedidataStudy
-            {
-                StudyGroup     = _StepContext.Segment,
-                Environment    = StudyEnvironment.Other,
-                Name           = String.Concat(_StepContext.Segment, DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString()),
-                ProtocolNumber = _StepContext.ProtocolNumber
-            };
+
+            var studyName = String.Concat(_StepContext.GetSegment(), DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString());
+
         }
 
         [Given(@"a new study is created in the current study group")]
         public void GivenANewStudyIsCreatedInTheCurrentStudyGroup()
         {
-            _Browser.LoadiMedidataCoderAppSegment(_StepContext.Segment);
-            _Browser.CreateNewStudy(_MedidataStudy, _StepContext);
+            ScenarioContext.Current.Pending();
         }
 
         [When(@"the study name is changed")]
         public void WhenTheStudyNameIsChanged()
         {
-            var newName  = String.Concat(_StepContext.Segment, DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString());
-            var newStudy = new IMedidataStudy { Name = newName };
+            var newName = String.Concat(_StepContext.GetSegment(), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString());
 
-            _StepContext.Project = newName;
+            var currentStudy = _StepContext.SegmentUnderTest.ProdStudy;
 
-            _Browser.UpdateStudy(_MedidataStudy, newStudy, _StepContext);
+            _Browser.UpdateStudyName(currentStudy, newName);
+
+            _StepContext.SegmentUnderTest.ProdStudy.StudyName = newName;
         }
 
         [Then(@"task ""(.*)"" should contain the following source term information")]
@@ -66,6 +64,5 @@ namespace Coder.TestSteps.StepDefinitions
 
             actualData.ShouldBeEquivalentTo(featureData);
         }
-
     }
 }

@@ -5,6 +5,7 @@ using System;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using OpenQA.Selenium;
 
@@ -53,6 +54,7 @@ namespace Coder.DeclarativeBrowser
             Policy
                 .Handle<NullReferenceException>()
                 .Or<MissingHtmlException>()
+                .Or<InvalidOperationException>()
                 .WaitAndRetry(
                     from attempt in Enumerable.Range(1, 6)
                     select TimeSpan.FromSeconds(Math.Pow(2, attempt)));
@@ -113,5 +115,13 @@ namespace Coder.DeclarativeBrowser
                 .Handle<MissingHtmlException>()
                 .WaitAndRetry(10, retryAttempt =>
                 TimeSpan.FromSeconds(30));
+
+        internal static readonly Policy HttpRequest =
+            Policy
+                .Handle<HttpRequestException>()
+                .Or<AggregateException>()
+                .WaitAndRetry(
+                from attempt in Enumerable.Range(1, 8)
+                select TimeSpan.FromSeconds(Math.Pow(2, attempt)));
     }
 }

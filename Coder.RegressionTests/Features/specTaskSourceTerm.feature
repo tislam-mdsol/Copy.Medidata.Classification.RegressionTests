@@ -58,8 +58,8 @@ Scenario: The following information will be available to the client as Source Te
   And coding task "Toxic effect of venom" for dictionary level "LLT"
   Then the task "Toxic effect of venom" should have a status of "Waiting Approval"
   And I verify the following Source Term information is displayed
-       | Source System  | Study                          | Dictionary    | Locale | Term                  | Level          | Priority |
-       | <SourceSystem> | <SourceSystemStudyDisplayName> | MedDRA - 15.0 | ENG    | Toxic effect of venom | Low Level Term | 1        |
+       | Source System  | Study              | Dictionary    | Locale | Term                  | Level          | Priority |
+       | <SourceSystem> | <StudyDisplayName> | MedDRA - 15.0 | ENG    | Toxic effect of venom | Low Level Term | 1        |
 
 
 @VAL
@@ -70,8 +70,8 @@ Scenario: The following information will be available to the client as a term's 
   And coding task "Adverse Event Term 1" for dictionary level "LLT"
   When I view task "Adverse Event Term 1"
   Then I verify the following Source Term information is displayed
-       | Source System  | Study                          | Dictionary    | Locale | Term                 | Level          | Priority |
-       | <SourceSystem> | <SourceSystemStudyDisplayName> | MedDRA - 15.0 | ENG    | Adverse Event Term 1 | Low Level Term | 1        |
+       | Source System  | Study              | Dictionary    | Locale | Term                 | Level          | Priority |
+       | <SourceSystem> | <StudyDisplayName> | MedDRA - 15.0 | ENG    | Adverse Event Term 1 | Low Level Term | 1        |
 
 
 @VAL
@@ -121,8 +121,8 @@ Scenario: Non-production studies are displayed in the source term information
   And coding task "Adverse Event Term 2" for dictionary level "LLT"
   When I view task "Adverse Event Term 2"
   Then I verify the following Source Term information is displayed
-       | Source System  | Study                          | Dictionary    | Locale | Term                 | Level          | Priority |
-       | <SourceSystem> | <SourceSystemStudyDisplayName> | MedDRA - 15.0 | ENG    | Adverse Event Term 2 | Low Level Term | 1        |
+       | Source System  | Study              | Dictionary    | Locale | Term                 | Level          | Priority |
+       | <SourceSystem> | <StudyDisplayName> | MedDRA - 15.0 | ENG    | Adverse Event Term 2 | Low Level Term | 1        |
 
 
 @VAL

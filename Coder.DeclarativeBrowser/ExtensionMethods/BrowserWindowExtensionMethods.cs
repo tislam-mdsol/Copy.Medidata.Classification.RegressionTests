@@ -1,5 +1,6 @@
 ﻿using System;
 using Coder.DeclarativeBrowser.PageObjects;
+using Coder.DeclarativeBrowser.PageObjects.Rave;
 using Coypu;
 
 namespace Coder.DeclarativeBrowser.ExtensionMethods
@@ -31,6 +32,15 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             var screenHelpPage = new ScreenHelpPage(browserWindow);
 
             return screenHelpPage;
+        }
+
+        internal static DataListingReportPage GetDataListingReportPage(this BrowserWindow browserWindow)
+        {
+            if (ReferenceEquals(browserWindow, null)) throw new ArgumentNullException("browserWindow");
+
+            var dataListingReportPage = new DataListingReportPage(browserWindow);
+
+            return dataListingReportPage;
         }
 
         internal static KnowledgeSpacePage GetKnowledgeSpacePage(this BrowserWindow browserWindow)

@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,6 @@ using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coypu.Drivers.Selenium;
 using Coypu;
 using Coypu.Drivers;
-using OpenQA.Selenium;
 using FluentAssertions;
 using NUnit.Framework;
 using System.Reflection;
@@ -18,6 +18,8 @@ using Coder.DeclarativeBrowser.ExtensionMethods.Assertions;
 using Coder.DeclarativeBrowser.FileHelpers;
 using Coder.DeclarativeBrowser.PageObjects.Reports;
 using Coder.DeclarativeBrowser.Helpers;
+using Coder.DeclarativeBrowser.IMedidataApi;
+using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.PageObjects;
 
 namespace Coder.DeclarativeBrowser
@@ -33,6 +35,8 @@ namespace Coder.DeclarativeBrowser
     {
         public readonly BrowserSession Session;
         private readonly string _DownloadDirectory;
+        private const string _DataListingReportsBrowserWindowTitle = "DataListingsReport";
+        private const string _OldReportsBrowserWindowTitle = "Reports";
 
         internal CoderDeclarativeBrowser(BrowserSession session, string downloadDirectory)
         {
@@ -60,7 +64,7 @@ namespace Coder.DeclarativeBrowser
             var sessionConfiguration = new SessionConfiguration
             {
                 AppHost = Config.AppHost ?? Config.LocalHost,
-                Driver  = typeof (SeleniumWebDriver),
+                Driver = typeof(SeleniumWebDriver),
                 Browser = browserDriver
             };
 
@@ -82,7 +86,7 @@ namespace Coder.DeclarativeBrowser
             try
             {
                 Logout();
-            }
+        }
             catch (Exception ex)
             {
                 Console.WriteLine(String.Format("Error while logging out: {0}", ex));
@@ -103,7 +107,7 @@ namespace Coder.DeclarativeBrowser
         public bool BuildAndUploadOdm(OdmParameters odmParameters, string dumpDirectory, bool haltOnFailure = true)
         {
             //TODO::Move to BrowserUtility and remove page objects once Use of Web Service to upload ODMs is complete (MCC-191945)
-            if (ReferenceEquals(odmParameters, null))     throw new ArgumentNullException("odmParameters");
+            if (ReferenceEquals(odmParameters, null)) throw new ArgumentNullException("odmParameters");
             if (String.IsNullOrWhiteSpace(dumpDirectory)) throw new ArgumentNullException("dumpDirectory");
 
             var filePath = BrowserUtility.BuildOdmFile(odmParameters, dumpDirectory);
@@ -114,20 +118,20 @@ namespace Coder.DeclarativeBrowser
 
             return uploadCompletedSuccesfully;
         }
-
+        
         public bool UploadOdm(string filePath, bool haltOnFailure = true)
         {
             //TODO::Move to BrowserUtility and remove page objects once Use of Web Service to upload ODMs is complete (MCC-191945)
-            if (String.IsNullOrEmpty(filePath))   throw new ArgumentNullException("filePath");
+            if (String.IsNullOrEmpty(filePath)) throw new ArgumentNullException("filePath");
 
             Session.GoToAdminPage("CodingCleanup");
 
             var codingCleanupPage = Session.GetCodingCleanupPage();
-            
+
             codingCleanupPage.GetUploadField().FillInWith(filePath);
             codingCleanupPage.GetUploadButton().ClickWhenAvailable();
             codingCleanupPage.WaitUntilUploadCompletes();
-
+            
             var uploadCompletedSuccesfully = codingCleanupPage.GetUploadSuccessIndicator().Exists(Config.ExistsOptions);
             
             if (!haltOnFailure)
@@ -143,7 +147,7 @@ namespace Coder.DeclarativeBrowser
 
             return uploadCompletedSuccesfully;
         }
-
+        
         //TODO: DJ Usage of this, along with a lot of pre-execution setup steps, needs to be better encapsulated
         public void CleanUpCodingTasks()
         {
@@ -151,6 +155,14 @@ namespace Coder.DeclarativeBrowser
 
             var codingCleanupPage = Session.GetCodingCleanupPage();
             codingCleanupPage.CleanUpTasksAndSynonyms();
+        }
+
+        public void CleanUpCodingTasksOnly()
+        {
+            Session.GoToAdminPage("Coding Cleanup");
+
+            var codingCleanupPage = Session.GetCodingCleanupPage();
+            codingCleanupPage.CleanUpTasks();
         }
 
         public void ExportCodingHistoryReport(CodingHistoryReportCriteria searchCriteria)
@@ -181,7 +193,7 @@ namespace Coder.DeclarativeBrowser
 
         public void GenerateIngredientReport(string studyName, string dictionaryName)
         {
-            if (String.IsNullOrEmpty(studyName))      throw new ArgumentNullException("studyName");
+            if (String.IsNullOrEmpty(studyName)) throw new ArgumentNullException("studyName");
             if (String.IsNullOrEmpty(dictionaryName)) throw new ArgumentNullException("dictionaryName");
 
             var reportPage = Session.GetIngredientReportPage();
@@ -238,27 +250,27 @@ namespace Coder.DeclarativeBrowser
         public void AssignWorkflowRole(string roleName, string study, string loginId)
         {
             if (String.IsNullOrWhiteSpace(roleName)) throw new ArgumentNullException("roleName");
-            if (String.IsNullOrWhiteSpace(study))    throw new ArgumentNullException("study");
-            if (String.IsNullOrWhiteSpace(loginId))  throw new ArgumentNullException("loginId"); 
+            if (String.IsNullOrWhiteSpace(study)) throw new ArgumentNullException("study");
+            if (String.IsNullOrWhiteSpace(loginId)) throw new ArgumentNullException("loginId");
 
             var assignWorkflowRolePage = Session.GetAssignWorkFlowRolesPage();
 
             assignWorkflowRolePage.AssignWorkFlowRole(
                 roleName: roleName,
-                study   : study,
-                loginId : loginId);
+                study: study,
+                loginId: loginId);
         }
 
         public void RemoveWorkflowAction(string actionName, string roleName)
         {
             if (String.IsNullOrWhiteSpace(actionName)) throw new ArgumentNullException("actionName");
-            if (String.IsNullOrWhiteSpace(roleName))   throw new ArgumentNullException("roleName"); 
+            if (String.IsNullOrWhiteSpace(roleName)) throw new ArgumentNullException("roleName");
 
             var createWorkflowRolesPage = Session.GetCreateWorkflowRolesPage();
 
             createWorkflowRolesPage.RemoveWorkflowAction(
                 actionName: actionName,
-                roleName  : roleName);
+                roleName: roleName);
         }
 
         public void DeactivateWorkflowRole(string roleName)
@@ -269,38 +281,38 @@ namespace Coder.DeclarativeBrowser
 
             createWorkflowRolesPage.DeActivateWorkflowRole(roleName);
         }
-
+        
         public void DenyAccessToWorkFlowRole(string roleName, string study, string loginId)
         {
             if (String.IsNullOrWhiteSpace(roleName)) throw new ArgumentNullException("roleName");
-            if (String.IsNullOrWhiteSpace(study))    throw new ArgumentNullException("study");
-            if (String.IsNullOrWhiteSpace(loginId))  throw new ArgumentNullException("loginId"); 
+            if (String.IsNullOrWhiteSpace(study)) throw new ArgumentNullException("study");
+            if (String.IsNullOrWhiteSpace(loginId)) throw new ArgumentNullException("loginId");
 
             var assignWorkFlowRolesPage = Session.GetAssignWorkFlowRolesPage();
 
             assignWorkFlowRolesPage.DenyAccessToWorkflowRole(
                 roleName: roleName,
-                study   : study,
-                loginId : loginId);
+                study: study,
+                loginId: loginId);
         }
 
         public void DeleteWorkFlowRole(string roleName, string study, string loginId)
         {
             if (String.IsNullOrWhiteSpace(roleName)) throw new ArgumentNullException("roleName");
-            if (String.IsNullOrWhiteSpace(study))    throw new ArgumentNullException("study");
-            if (String.IsNullOrWhiteSpace(loginId))  throw new ArgumentNullException("loginId"); 
+            if (String.IsNullOrWhiteSpace(study)) throw new ArgumentNullException("study");
+            if (String.IsNullOrWhiteSpace(loginId)) throw new ArgumentNullException("loginId");
 
             var assignWorkFlowRolesPage = Session.GetAssignWorkFlowRolesPage();
 
             assignWorkFlowRolesPage.DeleteWorkflowRole(
                 roleName: roleName,
-                study   : study,
-                loginId : loginId);
+                study: study,
+                loginId: loginId);
         }
 
         public void CreateAndActivateGeneralRole(string roleName, string securityModule)
         {
-            if (String.IsNullOrWhiteSpace(roleName))       throw new ArgumentNullException("roleName");
+            if (String.IsNullOrWhiteSpace(roleName)) throw new ArgumentNullException("roleName");
             if (String.IsNullOrWhiteSpace(securityModule)) throw new ArgumentNullException("securityModule"); 
 
             var createGeneralRolesPage = Session.GetCreateGeneralRolesPage();
@@ -311,24 +323,24 @@ namespace Coder.DeclarativeBrowser
 
         public void AssignGeneralRole(string roleName, string securityModule, string type, string loginId)
         {
-            if (String.IsNullOrWhiteSpace(roleName))       throw new ArgumentNullException("roleName");
+            if (String.IsNullOrWhiteSpace(roleName)) throw new ArgumentNullException("roleName");
             if (String.IsNullOrWhiteSpace(securityModule)) throw new ArgumentNullException("securityModule");
-            if (String.IsNullOrWhiteSpace(type))           throw new ArgumentNullException("type"); 
-            if (String.IsNullOrWhiteSpace(loginId))        throw new ArgumentNullException("loginId"); 
+            if (String.IsNullOrWhiteSpace(type)) throw new ArgumentNullException("type");
+            if (String.IsNullOrWhiteSpace(loginId)) throw new ArgumentNullException("loginId");
 
             var assignGeneralRolePage = Session.GetAssignGeneralRolesPage();
 
             assignGeneralRolePage.AssignGeneralRole(
-                roleName      : roleName,
+                roleName: roleName,
                 securityModule: securityModule,
-                type          : type,
-                loginId       : loginId);
+                type: type,
+                loginId: loginId);
         }
 
         public void AssignAllGeneralRoleActions(string securityModule, string roleName)
         {
             if (String.IsNullOrWhiteSpace(securityModule)) throw new ArgumentNullException("securityModule");
-            if (String.IsNullOrWhiteSpace(roleName))       throw new ArgumentNullException("roleName"); 
+            if (String.IsNullOrWhiteSpace(roleName)) throw new ArgumentNullException("roleName");
 
             var createGeneralRolesPage = Session.GetCreateGeneralRolesPage();
 
@@ -337,31 +349,31 @@ namespace Coder.DeclarativeBrowser
 
         public void RemoveGeneralRoleAction(string roleName, string securityModule, string actionName)
         {
-            if (String.IsNullOrWhiteSpace(roleName))       throw new ArgumentNullException("roleName");
+            if (String.IsNullOrWhiteSpace(roleName)) throw new ArgumentNullException("roleName");
             if (String.IsNullOrWhiteSpace(securityModule)) throw new ArgumentNullException("securityModule");
-            if (String.IsNullOrWhiteSpace(actionName))     throw new ArgumentNullException("actionName");
+            if (String.IsNullOrWhiteSpace(actionName)) throw new ArgumentNullException("actionName");
 
             var createGeneralRolesPage = Session.GetCreateGeneralRolesPage();
 
             createGeneralRolesPage.RemoveGeneralRoleAction(
-                roleName      : roleName,
+                roleName: roleName,
                 securityModule: securityModule,
-                actionName    : actionName);
+                actionName: actionName);
         }
 
         public void LoginToELearningPage()
         {
-            var window              = Session.SwitchToBrowserWindowByName(Config.ELearningLoginTitle);
-            var eLearningLoginPage  = window.GetELearningLoginPage();
+            var window = Session.SwitchToBrowserWindowByName(Config.ELearningLoginTitle);
+            var eLearningLoginPage = window.GetELearningLoginPage();
             
             eLearningLoginPage.GetUserNameTextBox().FillInWith("testuser");
             eLearningLoginPage.GetPasswordTextBox().FillInWith("password123");          
             eLearningLoginPage.GetLoginButton().Click();
         }
-
+        
         public void LoginToHelpCenter()
         {
-            var window    = Session.SwitchToBrowserWindowByName("Login");
+            var window = Session.SwitchToBrowserWindowByName("Login");
             var loginPage = window.GetHelpCenterPage();
 
             loginPage.GetUserNameTextBox().FillInWith(Config.AdminLogin);
@@ -378,21 +390,21 @@ namespace Coder.DeclarativeBrowser
         public void SelectCodingTask(string verbatim)
         {
             if (String.IsNullOrEmpty(verbatim)) throw new ArgumentNullException("verbatim");
-            
+
             SelectTaskGridByVerbatimName(verbatim);
         }
-        
+
         public void SelectCodingTask(string verbatim, string field, string value)
         {
             if (String.IsNullOrEmpty(verbatim)) throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrEmpty(field))    throw new ArgumentNullException("field");
-            if (String.IsNullOrEmpty(value))    throw new ArgumentNullException("value");
+            if (String.IsNullOrEmpty(field)) throw new ArgumentNullException("field");
+            if (String.IsNullOrEmpty(value)) throw new ArgumentNullException("value");
             
             Session
             .GetCodingTaskPage()
              .SelectTaskGridByVerbatimNameAndAdditionalField(verbatim, field, value);
         }
-        
+
         public void ApproveCodingTask(string verbatim)
         {
             if (String.IsNullOrWhiteSpace(verbatim)) throw new ArgumentNullException("verbatim"); 
@@ -413,10 +425,10 @@ namespace Coder.DeclarativeBrowser
             codingTaskPage.GetReasonOkButton().ClickWhenAvailable();
         }
 
-        public void CommentOnCodingTask(string comment,string task)
+        public void CommentOnCodingTask(string comment, string task)
         {
             if (string.IsNullOrEmpty(comment)) { throw new ArgumentNullException("comment"); }
-            if (string.IsNullOrEmpty(task))    { throw new ArgumentNullException("task");    }
+            if (string.IsNullOrEmpty(task)) { throw new ArgumentNullException("task"); }
 
             var codingTaskPage = Session.GetCodingTaskPage();
             SelectTaskGridByVerbatimName(task);
@@ -436,10 +448,10 @@ namespace Coder.DeclarativeBrowser
         public void LoadiMedidataCoderAppSegment(string segmentName)
         {
             if (String.IsNullOrEmpty(segmentName)) throw new ArgumentNullException("segmentName");
-
+            
             GoToiMedidataHome();
 
-            Session.GetImedidataPage().LoadSegmentForApp(ImedidataPage.CoderAppName, segmentName);
+            Session.GetImedidataPage().LoadSegmentForApp(Config.ApplicationName, segmentName);
         }
 
         public void LoadiMedidataRaveModulesAppSegment(string segmentName)
@@ -460,14 +472,14 @@ namespace Coder.DeclarativeBrowser
             Session.GetImedidataPage().LoadSegmentForApp(ImedidataPage.RaveEdcAppName, segmentName);
         }
 
-        private void GoToiMedidataHome()
+        public void GoToiMedidataHome()
         {
-            var coderHeader   = Session.GetPageHeader();
-            var raveHeader    = Session.GetRaveHeader();
+            var coderHeader = Session.GetPageHeader();
+            var raveHeader = Session.GetRaveHeader();
             var imedidataPage = Session.GetImedidataPage();
 
-            bool coderActive     = coderHeader  .IMedidataLinkExists();
-            bool raveActive      = raveHeader   .IMedidataLinkExists();
+            bool coderActive = coderHeader.IMedidataLinkExists();
+            bool raveActive = raveHeader.IMedidataLinkExists();
             bool imedidataActive = imedidataPage.IMedidataLinkExists();
             
             if (!coderActive && !raveActive && !imedidataActive)
@@ -491,106 +503,400 @@ namespace Coder.DeclarativeBrowser
             }
         }
         
-        public void LoginToRave(string username, string password)
+        public void LoginToRave(MedidataUser user)
         {
-            if (String.IsNullOrEmpty(username)) throw new ArgumentNullException("userName");
-            if (String.IsNullOrEmpty(password)) throw new ArgumentNullException("password");
+            if (ReferenceEquals(user, null)) throw new ArgumentNullException("user");
 
-            Session.GetRaveLoginPage().Login(username, password);
+            Session.GetRaveLoginPage().Login(user);
+        }
+        
+        public void AddSubjectToRaveStudy(RaveNavigationTarget target, string subjectInitials, string subjectId)
+        {
+            if (ReferenceEquals(target, null))              throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(subjectInitials)) throw new ArgumentNullException("subjectInitials");
+            if (String.IsNullOrWhiteSpace(subjectId)) throw new ArgumentNullException("subjectId");
+
+            var raveSitePage = Session.OpenRaveSite(target);
+
+            raveSitePage.OpenAddSubjectPage();
+
+            var raveAddSubjectPage = Session.GetRaveAddSubjectPage();
+            
+            var subjectNumber = subjectId.Replace(subjectInitials, "");
+            
+            raveAddSubjectPage.CreateNewSubjectWithNumber(subjectInitials, subjectNumber);
+
+            Session.WaitForRaveNavigationLink(subjectId);
         }
 
-        public string AddSubjectToRaveStudy(string studyName, string subjectInitials)
+        public string AddSubjectToRaveStudyWithManualId(RaveNavigationTarget target, string subjectInitials)
         {
-            if (String.IsNullOrWhiteSpace(studyName))       throw new ArgumentNullException("studyName");
+            if (ReferenceEquals(target, null))              throw new ArgumentNullException("target");
             if (String.IsNullOrWhiteSpace(subjectInitials)) throw new ArgumentNullException("subjectInitials");
-            if (subjectInitials.Length != 3)                throw new ArgumentException("subjectInitials must be three (3) characters");
-            
-            var raveStudyPage = Session.OpenRaveStudy(studyName);
+            if (subjectInitials.Length != 3) throw new ArgumentException("subjectInitials must be three (3) characters");
 
-            raveStudyPage.OpenAddSubjectPage();
+            var raveSitePage = Session.OpenRaveSite(target);
+
+            raveSitePage.OpenAddSubjectPage();
 
             var raveAddSubjectPage = Session.GetRaveAddSubjectPage();
 
             var subjectId = subjectInitials.CreateUniqueRaveSubjectId();
 
             raveAddSubjectPage.CreateNewSubject(subjectInitials, subjectId);
-            
-            var raveNavigation = Session.GetRaveNavigation();
 
-            raveNavigation.WaitForNavigationLink(subjectId);
+            Session.WaitForRaveNavigationLink(subjectId);
 
             return subjectId;
         }
 
-        public void AddAdverseEvent(string studyName, string subjectId, string adverseEventText)
+        public void AddAdverseEvent(RaveNavigationTarget target, string adverseEventText)
         {
-            if (String.IsNullOrWhiteSpace(studyName))        throw new ArgumentNullException("studyName");
-            if (String.IsNullOrWhiteSpace(subjectId))        throw new ArgumentNullException("subjectId");
-            if (String.IsNullOrWhiteSpace(adverseEventText)) throw new ArgumentNullException("adverseEventText");
+            if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(adverseEventText))        throw new ArgumentNullException("adverseEventText");
             
-            var raveAdverseEventPage = Session.OpenRaveAdverseEvent(studyName, subjectId);
+            var raveAdverseEventPage = Session.OpenRaveAdverseEvent(target);
             
             raveAdverseEventPage.CreateNewCoderAdverseEvent(adverseEventText);
         }
         
-        public void WaitUntilAdverseEventTransmitted(
-            string studyName,
-            string subjectId,
-            string adverseEventText,
-            int adverseEventOccurrence = 1)
+        public void CreateFormSubmission(RaveNavigationTarget target, IEnumerable<RaveFormInputData> formInputData)
         {
-            if (String.IsNullOrWhiteSpace(studyName)) throw new ArgumentNullException("studyName");
-            if (String.IsNullOrWhiteSpace(subjectId)) throw new ArgumentNullException("subjectId");
-            if (String.IsNullOrWhiteSpace(adverseEventText)) throw new ArgumentNullException("adverseEventText");
-            if (adverseEventOccurrence <= 0) throw new ArgumentException("adverseEventOccurrence must be greater than 0.");
+            if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
+            if (ReferenceEquals(formInputData, null))               throw new NullReferenceException("formInputData");
+            
+            var raveFormPage = Session.OpenRaveForm(target);
 
-            var raveAuditsPage = Session.OpenRaveAuditsPageForAdverseEvent(studyName, subjectId, adverseEventText, adverseEventOccurrence);
-
-            raveAuditsPage.WaitUntilTermSent();
+            raveFormPage.CreateFormSubmission(formInputData);
         }
 
-        public string GetAdverseEventCodedPathFromRaveAuditRecords(
-            string studyName,
-            string subjectId,
-            string adverseEventText,
-            int adverseEventOccurrence = 1)
+        public void CreateCodingSettingsSubmission(string dictionary, IEnumerable<RaveCodingSettingsModel> settingsInputData)
         {
-            if (String.IsNullOrWhiteSpace(studyName))        throw new ArgumentNullException("studyName");
-            if (String.IsNullOrWhiteSpace(subjectId))        throw new ArgumentNullException("subjectId");
-            if (String.IsNullOrWhiteSpace(adverseEventText)) throw new ArgumentNullException("adverseEventText");
-            if (adverseEventOccurrence <= 0)                 throw new ArgumentException("adverseEventOccurrence must be greater than 0.");
+            if (String.IsNullOrWhiteSpace(dictionary))    throw new ArgumentNullException("dictionary");
+            if (ReferenceEquals(settingsInputData, null)) throw new NullReferenceException("settingsInputData");
 
-            var raveAuditsPage = Session.OpenRaveAuditsPageForAdverseEvent(studyName, subjectId, adverseEventText, adverseEventOccurrence);
+            var raveCodingSettingsPage = Session.OpenRaveClinicalViewsCodingSettingsPage();
 
-            string codedPath = raveAuditsPage.GetCodedPathFromAuditRecord();
+            raveCodingSettingsPage.CreateCodingSettingSubmission(dictionary, settingsInputData);
+        }
+
+        public void SetClinicalViewsModeForProject(string project, string mode)
+        {
+            if (String.IsNullOrWhiteSpace(project)) throw new ArgumentNullException("project");
+            if (String.IsNullOrWhiteSpace(mode))    throw new ArgumentNullException("mode");
+
+            var raveClinicalViewsPage = Session.OpenRaveClinicalViewsPage();
+
+            raveClinicalViewsPage.SetModeForProject(project, mode);
+        }
+
+        public void GenerateReportForProject(string project, string dataSource, string form, string report)
+        {
+            if (String.IsNullOrWhiteSpace(project))    throw new ArgumentNullException("project");
+            if (String.IsNullOrWhiteSpace(dataSource)) throw new ArgumentNullException("dataSource");
+            if (String.IsNullOrWhiteSpace(form))       throw new ArgumentNullException("form");
+            if (String.IsNullOrWhiteSpace(report))     throw new ArgumentNullException("report");
+
+            var raveReportTypePage = Session.OpenRaveReportTypePage(report);
+            raveReportTypePage.GenerateReportForProject(project);
+            
+            var options = Config.GetDefaultCoypuOptions();
+            BrowserWindow window = Session.SwitchToBrowserWindowByName(_DataListingReportsBrowserWindowTitle, options);
+
+            var dataListingPage = window.GetDataListingReportPage();
+            dataListingPage.SetUpDDLValuesInDataListingReport(dataSource,form);
+         }
+
+        public DataTable GetCodingDecisionFromDataListingReport()
+        {       
+            var dataListingReportWindow = Session.SwitchToBrowserWindowByName(_DataListingReportsBrowserWindowTitle);
+            var dataListingPage         = dataListingReportWindow.GetDataListingReportPage();
+
+            DataTable codingDecisionsDataTable = dataListingPage.GetReportResultData();
+
+            return codingDecisionsDataTable;
+        }
+        
+        public void LockRaveForm(RaveNavigationTarget target, bool freezeForm, bool lockForm)
+        {
+            if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(target.FormName))         throw new ArgumentNullException("target.FormName");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.LockForm(freezeForm, lockForm);
+        }
+
+        public void LockRaveFormRow(RaveNavigationTarget target, string verbatimTerm, bool freezeForm, bool lockForm)
+        {
+            if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(verbatimTerm))            throw new ArgumentNullException("verbatimTerm");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.LockRow(verbatimTerm, freezeForm, lockForm);
+        }
+
+        public void UpdateForm(RaveNavigationTarget target, IEnumerable<RaveFormInputData> formInputData)
+        {
+            if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
+            if (ReferenceEquals(formInputData, null))               throw new NullReferenceException("formInputData");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.UpdateForm(formInputData);
+        }
+
+        public void UpdateLogLine(RaveNavigationTarget target, string logLineContents, IEnumerable<RaveFormInputData> formInputData)
+        {
+            if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(logLineContents))         throw new ArgumentNullException("logLineContents");
+            if (ReferenceEquals(formInputData, null))               throw new NullReferenceException("formInputData");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.UpdateLogLine(logLineContents, formInputData);
+        }
+
+        public void UpdateLogLine(RaveNavigationTarget target, int logLineIndex, IEnumerable<RaveFormInputData> formInputData)
+        {
+            if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
+            if (logLineIndex < 1)                                   throw new ArgumentOutOfRangeException("logLineIndex cannot be less than 1");
+            if (ReferenceEquals(formInputData, null))               throw new NullReferenceException("formInputData");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.UpdateLogLine(logLineIndex, formInputData);
+        }
+
+        public void RespondToQueryCommentInRave(RaveNavigationTarget target, string fieldName, string verbatimTerm, string queryResponse)
+        {
+            if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(fieldName))               throw new ArgumentNullException("fieldName");
+            if (String.IsNullOrWhiteSpace(verbatimTerm))            throw new ArgumentNullException("verbatimTerm");
+            if (String.IsNullOrWhiteSpace(queryResponse))           throw new ArgumentNullException("queryResponse");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.RespondToQueryComment(fieldName, verbatimTerm, queryResponse);
+        }
+
+        public void CancelQueryCommentInRave(RaveNavigationTarget target, string fieldName, string verbatimTerm, string queryResponse=null)
+        {
+            if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(fieldName))               throw new ArgumentNullException("fieldName");
+            if (String.IsNullOrWhiteSpace(verbatimTerm))            throw new ArgumentNullException("verbatimTerm");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.CancelQueryComment(fieldName, verbatimTerm, queryResponse);
+        }
+
+        public string GetRaveFormQueryComment(RaveNavigationTarget target, string fieldName, string verbatimTerm)
+        {
+            if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(fieldName))               throw new ArgumentNullException("fieldName");
+            if (String.IsNullOrWhiteSpace(verbatimTerm))            throw new ArgumentNullException("verbatimTerm");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            string queryComment = raveFormPage.GetQueryComment(fieldName, verbatimTerm);
+
+            return queryComment;
+        }
+
+        public IEnumerable<TermPathRow> GetCodingDecisionFromRaveAuditRecords(RaveNavigationTarget target, string fieldName, string verbatimTerm)
+        {
+            if (ReferenceEquals(target, null))           throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(fieldName))    throw new ArgumentNullException("fieldName");
+            if (String.IsNullOrWhiteSpace(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+            var auditPage    = Session.GetRaveAuditsPage();
+
+            raveFormPage.ViewAuditLog(verbatimTerm);
+
+            IEnumerable<TermPathRow> codingDecisions = auditPage.GetCodingDecisionFromAuditRecord(fieldName);
+
+            return codingDecisions;
+        }
+
+        public IEnumerable<TermPathRow> GetCodingDecisionFromRaveForm(RaveNavigationTarget target, string rowContents, string verbatimTerm)
+        {
+            if (ReferenceEquals(target, null))           throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(rowContents))  throw new ArgumentNullException("rowContents");
+            if (String.IsNullOrWhiteSpace(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");
+
+            var raveFormPage                         = Session.OpenRaveForm(target);
+
+            IEnumerable<TermPathRow> codingDecisions = raveFormPage.GetCodingDecision(rowContents, verbatimTerm);
+
+            return codingDecisions;
+        }
+
+        public string GetQueryCommentFromRaveAuditRecords(RaveNavigationTarget target, string fieldName, string verbatimTerm)
+        {
+            if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(fieldName))               throw new ArgumentNullException("fieldName");
+            if (String.IsNullOrWhiteSpace(verbatimTerm))            throw new ArgumentNullException("verbatimTerm");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.ViewAuditLog(verbatimTerm);
+
+            var auditPage = Session.GetRaveAuditsPage();
+
+            string queryComment = auditPage.GetQueryCommentFromAuditRecord(fieldName);
+
+            return queryComment;
+        }
+
+        public void WaitUntilAdverseEventTransmitted(RaveNavigationTarget target, string adverseEventText, int adverseEventOccurrence = 1)
+        {
+            if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(adverseEventText))        throw new ArgumentNullException("adverseEventText");
+            if (adverseEventOccurrence <= 0)                        throw new ArgumentException("adverseEventOccurrence must be greater than 0.");
+
+            var raveAuditsPage = Session.OpenRaveAuditsPageForAdverseEvent(target, adverseEventText, adverseEventOccurrence);
+
+            raveAuditsPage.WaitUntilTermSent("Coder AE");
+        }
+
+        public string GetAdverseEventCodedPathFromRaveAuditRecords(RaveNavigationTarget target, string adverseEventText, int adverseEventOccurrence = 1)
+        {
+            if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(adverseEventText))        throw new ArgumentNullException("adverseEventText");
+            if (adverseEventOccurrence <= 0)                        throw new ArgumentException("adverseEventOccurrence must be greater than 0.");
+
+            var raveAuditsPage = Session.OpenRaveAuditsPageForAdverseEvent(target, adverseEventText, adverseEventOccurrence);
+
+            string codedPath = raveAuditsPage.GetCodedPathFromAuditRecord("Coder AE");
 
             return codedPath;
+        }
+
+        public void InactivateRaveFormLogLine(RaveNavigationTarget target, string rowContents)
+        {
+            if (ReferenceEquals(target, null))          throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(rowContents)) throw new ArgumentNullException("rowContents");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.InactivateLogLine(rowContents);
+        }
+
+        public void ReactivateRaveFormLogLine(RaveNavigationTarget target, string rowContents)
+        {
+            if (ReferenceEquals(target, null))          throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(rowContents)) throw new ArgumentNullException("rowContents");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.ReactivateLogLine(rowContents);
+        }
+
+        public void InactivateRaveForm(RaveNavigationTarget target)
+        {
+            if (ReferenceEquals(target, null))          throw new ArgumentNullException("target");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.InactivateForm();
+        }
+
+        public void ReactivateRaveForm(RaveNavigationTarget target)
+        {
+            if (ReferenceEquals(target, null))          throw new ArgumentNullException("target");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.ReactivateForm();
+        }
+        
+        public void MarkRaveFormRowWithQuery(RaveNavigationTarget target, string rowContents)
+        {
+            if (ReferenceEquals(target, null)) throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(rowContents)) throw new ArgumentNullException("rowContents");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.MarkRowWithQuery(rowContents);
+        }
+
+        public void MarkRaveFormRowWithSticky(RaveNavigationTarget target, string rowContents)
+        {
+            if (ReferenceEquals(target, null)) throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(rowContents)) throw new ArgumentNullException("rowContents");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.MarkRowWithSticky(rowContents);
+        }
+
+        public void MarkRaveFormRowWithProtocolDeviation(RaveNavigationTarget target, string rowContents)
+        {
+            if (ReferenceEquals(target, null)) throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(rowContents)) throw new ArgumentNullException("rowContents");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+            raveFormPage.MarkRowWithProtocolDeviation(rowContents);
+        }
+
+        public void AddAuditLogEntryToRaveFormRow(RaveNavigationTarget target, string rowContents, string fieldName, string auditLogEntry)
+        {
+            if (ReferenceEquals(target, null))            throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(rowContents))   throw new ArgumentNullException("rowContents");
+            if (String.IsNullOrWhiteSpace(fieldName))     throw new ArgumentNullException("fieldName");
+            if (String.IsNullOrWhiteSpace(auditLogEntry)) throw new ArgumentNullException("auditLogEntry");
+
+            var raveAuditPage = Session.OpenRaveAuditsPageForFormRow(target, rowContents);
+
+            raveAuditPage.DisplayChildsAuditRecords(fieldName);
+
+            raveAuditPage.AddEntry(auditLogEntry);
         }
 
         public void GetAccessToConfigModule(String userName)
         {
             if (String.IsNullOrEmpty(userName)) throw new ArgumentNullException("userName");
 
-            Session.GetRaveUserAdministrationPage().GetAccessToConfigModule(userName);
+            Session.OpenRaveUserAdministrationPage().GetAccessToConfigModule(userName);
         }
 
-        public void AssignUserToStudyAndStudyGroup(String userName)
+
+        public void EditGlobalRaveConfiguration(RaveCoderGlobalConfiguration configurationSetting)
+        {
+            if (ReferenceEquals(configurationSetting, null)) throw new ArgumentNullException("configurationSettings");
+
+            var otherSettingsCoderPage = Session.OpenRaveConfigurationOtherSettingsCoderPage();
+
+            otherSettingsCoderPage.SetCoderOtherSettingsCoderPageDefaults(configurationSetting);
+
+        }
+        
+        public void AssignUserToStudyAndStudyGroup(String userName, String roleName, String study, string studyGroup)
         {
             if (String.IsNullOrEmpty(userName)) throw new ArgumentNullException("userName");
+            if (String.IsNullOrEmpty(roleName)) throw new ArgumentNullException("roleName");
+            if (String.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
+            if (String.IsNullOrEmpty(studyGroup)) throw new ArgumentNullException("studyGroup");
 
-            Session.GetRaveUserAdministrationPage().AssignUserToStudyAndStudyGroup(userName);
+            Session.OpenRaveUserAdministrationPage().AssignUserToStudyAndStudyGroup(userName, roleName, study, studyGroup);
         }
 
-        public void UploadConfigurationFileInRaveModules(string csvFileName)
+        public bool UploadConfigurationFileInRaveModules(string csvFileName)
         {
             if (String.IsNullOrEmpty(csvFileName)) throw new ArgumentNullException("csvFileName");
 
-            Session.GetRaveConfigrationLoaderPage().UploadConfigFile(csvFileName);
+            bool uploadSuccessful = Session.OpenRaveConfigurationLoaderPage().UploadConfigFile(csvFileName);
+
+            return uploadSuccessful;
         }
 
         public void AddRaveArchitectDraft(string study, string draftName)
         {
-            if (String.IsNullOrEmpty(study))     throw new ArgumentNullException("study");
+            if (String.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
             if (String.IsNullOrEmpty(draftName)) throw new ArgumentNullException("draftName");
 
             var addNewDraftPage = Session.OpenRaveArchitectAddNewDraftPage(study);
@@ -600,95 +906,308 @@ namespace Coder.DeclarativeBrowser
 
         public void DeleteRaveArchitectDraft(string study, string draftName)
         {
-            if (String.IsNullOrEmpty(study))     throw new ArgumentNullException("study");
+            if (String.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
             if (String.IsNullOrEmpty(draftName)) throw new ArgumentNullException("draftName");
-
-            var raveArchitectProjectPage = Session.OpenRaveArchitectProjectPage(study);
-
-            raveArchitectProjectPage.DeleteDraft(draftName);
-        }
-
-        public void UploadRaveArchitectDraft(string study, string draftName, string draftFilePath)
-        {
-            if (String.IsNullOrEmpty(study))         throw new ArgumentNullException("study");
-            if (String.IsNullOrEmpty(draftName))     throw new ArgumentNullException("draftName");
-            if (String.IsNullOrEmpty(draftFilePath)) throw new ArgumentNullException("draftFilePath");
-
+            
             var raveArchitectProjectPage = Session.OpenRaveArchitectProjectPage(study);
 
             if (raveArchitectProjectPage.DoesDraftExist(draftName))
             {
                 raveArchitectProjectPage.DeleteDraft(draftName);
             }
+        }
             
-            var raveNavigation = Session.GetRaveNavigation();
+        public void UploadRaveArchitectDraftTemplate(string studyName, string draftName, string draftTemplateFilePath, string targetDirectory)
+        {
+            if (String.IsNullOrWhiteSpace(studyName))             throw new ArgumentNullException("studyName");
+            if (String.IsNullOrWhiteSpace(draftName))             throw new ArgumentNullException("draftName");
+            if (String.IsNullOrWhiteSpace(draftTemplateFilePath)) throw new ArgumentNullException("draftTemplateFilePath");
+            if (String.IsNullOrWhiteSpace(targetDirectory))       throw new ArgumentNullException("targetDirectory");
 
-            raveNavigation.OpenHomePage();
+            var draftFilePath = BrowserUtility.CreateDraftFile(studyName, draftName, draftTemplateFilePath, targetDirectory);
 
-            raveNavigation.OpenArchitectPage();
+            DeleteRaveArchitectDraft(studyName, draftName);
 
-            raveNavigation.OpenArchitectUploadDraftPage();
+            var raveArchitectUploadDraftPage = Session.OpenRaveArchitectUploadDraftPage();
+
+            raveArchitectUploadDraftPage.UploadDraftFile(draftFilePath);
+        }
+        
+        public void UploadRaveArchitectDraft(string study, string draftName, string draftFilePath)
+        {
+            if (String.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
+            if (String.IsNullOrEmpty(draftName)) throw new ArgumentNullException("draftName");
+            if (String.IsNullOrEmpty(draftFilePath)) throw new ArgumentNullException("draftFilePath");
+            
+            DeleteRaveArchitectDraft(study, draftName);    
 
             var raveArchitectUploadDraftPage = Session.GetRaveArchitectUploadDraftPage();
             
             raveArchitectUploadDraftPage.UploadDraftFile(draftFilePath);
         }
+        
+        public string PublishAndPushRaveArchitectDraft (string study, string draftName, string environment) 
+        {
+            if (String.IsNullOrEmpty(study))         throw new ArgumentNullException("study");
+            if (String.IsNullOrEmpty(draftName))     throw new ArgumentNullException("draftName");
+            if (String.IsNullOrEmpty(environment))   throw new ArgumentNullException("environment");
+            
+            var draftVersion = PublishRaveArchitectDraft(study, draftName);
 
+            var raveArchitectProjectPage = Session.OpenRaveArchitectProjectPage(study);
+
+            raveArchitectProjectPage.OpenCRFPushDraftPage(draftVersion);
+
+            var crfPushPage = Session.GetRaveArchitectCRFDraftPushPage();
+
+            crfPushPage.PushDraft(environment);
+
+            return draftVersion;
+        }
+
+        public string PublishRaveArchitectDraft(string study, string draftName)
+        {
+            if (String.IsNullOrEmpty(study))     throw new ArgumentNullException("study");
+            if (String.IsNullOrEmpty(draftName)) throw new ArgumentNullException("draftName");
+
+            var raveArchitectProjectPage = Session.OpenRaveArchitectProjectPage(study);
+
+            raveArchitectProjectPage.OpenDraft(draftName);
+
+            var draftVersion = Session.GetRaveArchitectCRFDraftPage().PublishDraft();
+
+            return draftVersion;
+        }
+
+        internal SessionElementScope GetPushMessage()
+        {
+            var pushMessage = Session.FindSessionElementById("_ctl0_Content_SuccessMessageLBL");
+
+            return pushMessage;
+        }
+
+        public string GetCRFPushExpectedSuccessMessage()
+        {
+            var pushMessage = GetPushMessage();
+
+            var successMessage = pushMessage.Text;
+
+            return successMessage;
+        }
+        
+        public bool MigrateRaveArchitectDraftVersion(string studyName, string sourceDraftVersionName, string targetDraftVersionName)
+        {
+            if (String.IsNullOrWhiteSpace(studyName))              throw new ArgumentNullException("studyName");
+            if (String.IsNullOrWhiteSpace(sourceDraftVersionName)) throw new ArgumentNullException("sourceDraftVersionName");
+            if (String.IsNullOrWhiteSpace(targetDraftVersionName)) throw new ArgumentNullException("targetDraftVersionName");
+
+            var migrationSuccessful = false;
+            
+            var raveArchitectAmendmentManagerPage = Session.OpenRaveArchitectAmendmentManagerPage(studyName);
+            
+            var createPlanSuccessful = raveArchitectAmendmentManagerPage.CreatePlan(sourceDraftVersionName, targetDraftVersionName);
+            
+            if (createPlanSuccessful)
+            {
+                var raveNavigation = Session.GetRaveNavigation();
+
+                raveNavigation.OpenArchitectExecuteAmendmentMigrationPlanPage();
+
+                var raveArchitectExecuteAmendmentMigrationPlanPage = Session.GetRaveArchitectExecuteAmendmentMigrationPlanPage();
+
+                migrationSuccessful = raveArchitectExecuteAmendmentMigrationPlanPage.ExecuteMigrationPlan();
+            }
+
+            return migrationSuccessful;
+        }
+
+        public void AddRaveCRFCopySource(string targetStudyName, string copySourceType, string sourceStudyName, string sourceDraftName)
+        {
+            if (String.IsNullOrWhiteSpace(targetStudyName))      throw new ArgumentNullException("targetStudyName");
+            if (String.IsNullOrWhiteSpace(copySourceType))       throw new ArgumentNullException("copySourceType");
+            if (String.IsNullOrWhiteSpace(sourceStudyName))      throw new ArgumentNullException("sourceStudyName");
+            if (String.IsNullOrWhiteSpace(sourceDraftName))      throw new ArgumentNullException("sourceDraftName");
+
+            Session.OpenRaveArchitectProjectPage(targetStudyName);
+
+            var raveNavigation = Session.GetRaveNavigation();
+
+            raveNavigation.OpenArchitectDefineCopySourcesPage();
+
+            var raveArchitectCopySourcesPage = Session.GetRaveArchitectCopySourcesPage();
+
+            raveArchitectCopySourcesPage.AddCopySource(copySourceType, sourceStudyName, sourceDraftName);
+        }
+        
+        public void CreateNewCRFDraftCopy(string targetStudyName, string targetDraftName, string sourceDraftName)
+        {
+            if (String.IsNullOrEmpty(targetStudyName))       throw new ArgumentNullException("targetStudyName");
+            if (String.IsNullOrEmpty(targetDraftName))       throw new ArgumentNullException("targetDraftName");
+            if (String.IsNullOrEmpty(sourceDraftName))       throw new ArgumentNullException("sourceDraftName");
+
+            DeleteRaveArchitectDraft(targetStudyName, targetDraftName);
+            
+            AddRaveArchitectDraft(targetStudyName, targetDraftName);
+
+            var target = new RaveArchitectRecordTarget
+            {
+                StudyName = targetStudyName,
+                DraftName = targetDraftName
+            };
+
+            Session.OpenRaveArchitectCRFDraftPage(target);
+
+            var raveNavigation = Session.GetRaveNavigation();
+
+            raveNavigation.OpenArchitectCopyDraftWizardPage();
+
+            var raveArchitectCopyDraftWizardPage = Session.GetRaveArchitectCopyDraftWizardPage();
+
+            raveArchitectCopyDraftWizardPage.CopyDraft(sourceDraftName);
+        }
+
+        public void SetCoderConfigurationForRaveFields(RaveArchitectRecordTarget target, IList<RaveCoderFieldConfiguration> coderConfigurations)
+        {
+            if (ReferenceEquals(target, null))                 throw new ArgumentNullException("target");
+            if (ReferenceEquals(coderConfigurations,null))     throw new ArgumentNullException("coderConfigurations");
+
+            foreach (var coderConfiguration in coderConfigurations)
+            {
+                target.FormName = coderConfiguration.Form;
+
+                var raveFormPage = Session.OpenRaveArchitectFormPage(target);
+
+                raveFormPage.SetCoderCodingDictionary(coderConfiguration.Field, coderConfiguration.Dictionary);
+                
+                raveFormPage.OpenRaveCoderConfiguration(coderConfiguration.Field);
+
+                var raveCoderConfigurationPage = Session.GetRaveCoderConfigurationPage();
+
+                raveCoderConfigurationPage.SetCoderConfiguration(coderConfiguration);
+            }
+        }
+        
+        public IList<RaveCoderFieldConfiguration> GetCoderConfigurationForRaveFields(RaveArchitectRecordTarget target, IList<RaveCoderFieldConfiguration> expectedCoderConfigurations)
+        {
+            if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
+            if (ReferenceEquals(expectedCoderConfigurations, null)) throw new ArgumentNullException("expectedCoderConfigurations");
+
+            var actualCoderConfigurations = new List<RaveCoderFieldConfiguration>();
+
+            foreach (var expectedCoderConfiguration in expectedCoderConfigurations)
+            {
+                target.FormName  = expectedCoderConfiguration.Form;
+                target.FieldName = expectedCoderConfiguration.Field;
+                
+                var actualCoderConfiguration = GetCoderConfigurationForRaveField(target);
+                
+                actualCoderConfigurations.Add(actualCoderConfiguration);
+            }
+
+            return actualCoderConfigurations;
+        }
+
+        public RaveCoderFieldConfiguration GetCoderConfigurationForRaveField(RaveArchitectRecordTarget target)
+        {
+            if (ReferenceEquals(target, null))               throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(target.FormName))  throw new ArgumentNullException("target.FormName");
+            if (String.IsNullOrWhiteSpace(target.FieldName)) throw new ArgumentNullException("target.FieldName");
+
+            string formName  = target.FormName;
+            string fieldName = target.FieldName;
+            
+            var raveFormPage = Session.OpenRaveArchitectFormPage(target);
+
+            var dictionary = raveFormPage.GetCoderCodingDictionary(fieldName);
+
+            RaveCoderFieldConfiguration actualCoderConfiguration = new RaveCoderFieldConfiguration();
+
+            if (!String.IsNullOrWhiteSpace(dictionary))
+            {
+                raveFormPage.OpenRaveCoderConfiguration(fieldName);
+
+                var raveCoderConfigurationPage = Session.GetRaveCoderConfigurationPage();
+
+                actualCoderConfiguration = raveCoderConfigurationPage.GetCoderConfiguration();
+
+                actualCoderConfiguration.Dictionary = dictionary;
+            }
+            
+            actualCoderConfiguration.Form       = formName;
+            actualCoderConfiguration.Field      = fieldName;
+
+            return actualCoderConfiguration;
+        }
+
+        public void SetCodingDictionaryForRaveField(RaveArchitectRecordTarget target, string dictionaryName)
+        {
+            if (ReferenceEquals(target, null))               throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(target.FieldName)) throw new ArgumentNullException("target.FieldName");
+            if (String.IsNullOrWhiteSpace(dictionaryName))   throw new ArgumentNullException("dictionaryName");
+
+            var raveFormPage = Session.OpenRaveArchitectFormPage(target);
+
+            raveFormPage.SetCodingDictionary(target.FieldName, dictionaryName);
+        }
+        
+        public void SetSupplementalTermsForRaveFields(RaveArchitectRecordTarget target, IList<RaveCoderSupplementalConfiguration> coderSupplementalConfigurations)
+        {
+            if (ReferenceEquals(target, null)) throw new ArgumentNullException("target");
+            if (ReferenceEquals(coderSupplementalConfigurations, null)) throw new ArgumentNullException("coderSupplementalConfigurations");
+
+            Session.OpenRaveArchitectCRFDraftPage(target);
+            
+            var formFieldGroups =
+                    from coderSupplementalConfiguration in coderSupplementalConfigurations
+                    group coderSupplementalConfiguration.SupplementalTerm by new { coderSupplementalConfiguration.Form, coderSupplementalConfiguration.Field } into fields
+                    select fields;
+            
+            foreach (var formFieldGroup in formFieldGroups)
+            {
+                target.FormName = formFieldGroup.Key.Form;
+                var raveFormPage = Session.OpenRaveArchitectFormPage(target);
+
+                raveFormPage.OpenRaveCoderConfiguration(formFieldGroup.Key.Field);
+                var raveCoderConfigurationPage = Session.GetRaveCoderConfigurationPage();
+                
+                foreach (var supplementalTerm in formFieldGroup)
+                {
+                    raveCoderConfigurationPage.AddSupplementalTerm(supplementalTerm);
+                }
+            }
+        }
+
+        public void RemoveSupplementalTermFromRaveField(RaveArchitectRecordTarget target, string supplementalTerm)
+        {
+            if (ReferenceEquals(target, null))               throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(supplementalTerm)) throw new ArgumentNullException("supplementalTerm");
+
+            var raveFormPage = Session.OpenRaveArchitectFormPage(target);
+
+            raveFormPage.OpenRaveCoderConfiguration(target.FieldName);
+            var raveCoderConfigurationPage = Session.GetRaveCoderConfigurationPage();
+
+            raveCoderConfigurationPage.RemoveSupplementalTerm(supplementalTerm);
+        }
+    
         public void VerifyConfigUploadResult(String message)
         {
             if (String.IsNullOrEmpty(message)) throw new ArgumentNullException("message");
 
-            Session.GetRaveConfigrationLoaderPage().VerifyConfigUploadHasCompleted(message);        
+            if (Session.OpenRaveConfigurationLoaderPage().VerifyConfigUploadHasCompleted(message))
+                Assert.Pass();
+            else
+                Assert.Fail();
         }
 
-        public void VerifyRollOutDictionaryResult(String userName)
+        public void EnrollSegment(string setupSegment, string newGeneratedSegment)
         {
-            if (String.IsNullOrEmpty(userName)) throw new ArgumentNullException("userName");
-
-            var htmlData         = Session.GetAdminMedidataAdminConsolePage().GetLicensedDictionaryDetailValues();
-            var licenseDataCount = htmlData.Count();
-
-            for (var i = 0; i < licenseDataCount; i++)
-            {
-                if ((htmlData[i].LicenseCode.Equals(Config.LicenseCode))
-                    && (htmlData[i].LicenseStartDate.Equals(DateTime.Today.Date.ToShortDateString())) 
-                    && (htmlData[i].LicenseEndDate.Equals(DateTime.Today.Date.AddYears(10).ToShortDateString()))
-                    && (htmlData[i].LoggedBy.Equals(userName,StringComparison.OrdinalIgnoreCase) ))
-                {
-                    Assert.Pass("Dictionary was rolled out successfully");
-                }
-            }
-
-            Assert.Fail("Dictionary was not rolled out successfully");
-        }
-
-        //TODO: uncomment call to VerifyEnrollingSegmentResult(message); and provide correct success message
-        public void EnrollSegment(String newGeneratedSegment)
-        {
+            if (String.IsNullOrEmpty(setupSegment))        throw new ArgumentNullException("setupSegment");
             if (String.IsNullOrEmpty(newGeneratedSegment)) throw new ArgumentNullException("newGeneratedSegment");
 
-            LoadiMedidataCoderAppSegment(newGeneratedSegment);
-            SetUpSegment();
+            LoadiMedidataCoderAppSegment(setupSegment);
             
-            var message = Session.GetAdminSegmentManagementPage().EnrollSegment(newGeneratedSegment);
-
-            //The verification of enrolling a segment will always fail if the segment has already been registered or if the Study Group/segment does not exist in iMedidata. 
-            //Right now since the iMedidata part has not been implemented and we are passing an existing study we do not get a success message.
-           // VerifyEnrollingSegmentResult(message); 
-        }
-
-        public void VerifyEnrollingSegmentResult(String message)
-        {
-            if (String.IsNullOrEmpty(message)) throw new ArgumentNullException("message");
-
-            Assert.That(message.Contains("success", StringComparison.OrdinalIgnoreCase));
-        }
-
-        public void SetUpSegment()
-        {
-            var pageHeader = Session.GetPageHeader();
-            pageHeader.WaitForSync();
-            pageHeader.GetSegmentDDL().SelectOption(Config.SetupSegment);
+            Session.GetAdminSegmentManagementPage().EnrollSegment(newGeneratedSegment);
         }
 
         public void RolloutDictionary(String newGeneratedSegment, String dictionaryName)
@@ -711,7 +1230,34 @@ namespace Coder.DeclarativeBrowser
 
         public void Logout()
         {
+            GoToiMedidataHome();
+
+            bool successfulLogout = Session.GetImedidataPage().Logout();
+
+            if (!successfulLogout)
+            {
             Session.Visit("/logout");
+        }
+
+            RetryPolicy.FindElement.Execute(
+                () =>
+                {
+                    if (!Session.Text.Contains("logged out", StringComparison.OrdinalIgnoreCase))
+                    {
+                        throw new MissingHtmlException("Logout still in progress");
+                    }
+                });
+        }
+
+        public void LogoutOfCoderAndImedidata()
+        {
+            GoToTaskPage();
+            
+            var pageHeader = Session.GetPageHeader();
+
+            pageHeader.LogoutFromCoder();
+
+            Logout();
         }
 
         //TODO: moved to page object for coding task page, remove this method during refactor story since its still being used
@@ -754,8 +1300,8 @@ namespace Coder.DeclarativeBrowser
         public void ReCodeTask(string verbatimTerm, string comment)
         {
             if (String.IsNullOrEmpty(verbatimTerm)) throw new ArgumentNullException("verbatimTerm"); 
-            if (String.IsNullOrEmpty(comment))      throw new ArgumentNullException("comment");
-            
+            if (String.IsNullOrEmpty(comment)) throw new ArgumentNullException("comment");
+
             var codingTaskPage = Session.GetCodingTaskPage();
 
             codingTaskPage.InitiateReCode(verbatimTerm);
@@ -768,8 +1314,8 @@ namespace Coder.DeclarativeBrowser
 
         public void ReclassifyTask(string verbatim, string comment, string includeAutoCodedItems, ReclassificationTypes reclassificationType)
         {
-            if (String.IsNullOrEmpty(verbatim))              throw new ArgumentNullException("verbatim");              
-            if (String.IsNullOrEmpty(comment))               throw new ArgumentNullException("comment");               
+            if (String.IsNullOrEmpty(verbatim)) throw new ArgumentNullException("verbatim");
+            if (String.IsNullOrEmpty(comment)) throw new ArgumentNullException("comment");
             if (String.IsNullOrEmpty(includeAutoCodedItems)) throw new ArgumentNullException("includeAutoCodedItems");
             
             var reclassificationPage = Session.GetCodingReclassificationPage();
@@ -840,11 +1386,11 @@ namespace Coder.DeclarativeBrowser
             string configurationType,
             string medicalDictionaryName)
         {
-            if (String.IsNullOrWhiteSpace(configurationType))     throw new ArgumentNullException("configurationType");
+            if (String.IsNullOrWhiteSpace(configurationType)) throw new ArgumentNullException("configurationType");
             if (String.IsNullOrWhiteSpace(medicalDictionaryName)) throw new ArgumentNullException("medicalDictionaryName");
 
-            var coderTestContext            = Session.GetCoderTestContext();
-            var coderConfiguration          = coderTestContext.GetCoderConfiguration(configurationType);
+            var coderTestContext = Session.GetCoderTestContext();
+            var coderConfiguration = coderTestContext.GetCoderConfiguration(configurationType);
             var configurationManagementPage = Session.GetAdminConfigurationManagementPage();
 
             configurationManagementPage.GoTo();
@@ -863,12 +1409,12 @@ namespace Coder.DeclarativeBrowser
                 .SetCheckBoxState(coderConfiguration.BypassReconsiderUponReclassifyFlag);
 
             configurationManagementPage.GetSaveButton().Click();
-            
+
             bool isAutoAddSynonym = coderConfiguration.IsAutoAddSynonym.EqualsIgnoreCase("True");
-            bool isAutoApproval   = coderConfiguration.IsAutoApproval.EqualsIgnoreCase("True");
+            bool isAutoApproval = coderConfiguration.IsAutoApproval.EqualsIgnoreCase("True");
 
             SetDictionaryConfigurationAutoAddSynonymsCheckbox(medicalDictionaryName, isAutoAddSynonym);
-            SetDictionaryConfigurationAutoApproveCheckbox    (medicalDictionaryName, isAutoApproval);
+            SetDictionaryConfigurationAutoApproveCheckbox(medicalDictionaryName, isAutoApproval);
         }
 
         public void SetConfigurationFunctionalityTextboxByTextboxName(string textboxName, int value)
@@ -982,7 +1528,7 @@ namespace Coder.DeclarativeBrowser
 
         public void CreateSynonymList(SynonymList synonymList)
         {
-            if (ReferenceEquals(synonymList, null))     throw new ArgumentNullException("synonymList");
+            if (ReferenceEquals(synonymList, null)) throw new ArgumentNullException("synonymList");
 
             var adminSynonymPage = Session.OpenAdminSynonymPage();
 
@@ -996,9 +1542,9 @@ namespace Coder.DeclarativeBrowser
         
         public void AcceptSynonymSuggestion(SynonymList targetSynonymList, string categoryType, string synonymName)
         {
-            if (ReferenceEquals(targetSynonymList, null))   throw new ArgumentNullException("targetSynonymList");
-            if (String.IsNullOrEmpty(categoryType))         throw new ArgumentNullException("categoryType");
-            if (String.IsNullOrEmpty(synonymName))          throw new ArgumentNullException("synonymName");
+            if (ReferenceEquals(targetSynonymList, null)) throw new ArgumentNullException("targetSynonymList");
+            if (String.IsNullOrEmpty(categoryType)) throw new ArgumentNullException("categoryType");
+            if (String.IsNullOrEmpty(synonymName)) throw new ArgumentNullException("synonymName");
 
             var adminSynonymMigrationPage = Session.OpenAdminSynonymMigrationPage(targetSynonymList);
 
@@ -1009,9 +1555,9 @@ namespace Coder.DeclarativeBrowser
 
         public void AcceptNoClearMatchSynonymSuggestion(SynonymList targetSynonymList, string categoryType, string synonymName)
         {
-            if (ReferenceEquals(targetSynonymList, null))   throw new ArgumentNullException("targetSynonymList");
-            if (String.IsNullOrEmpty(categoryType))         throw new ArgumentNullException("categoryType");
-            if (String.IsNullOrEmpty(synonymName))          throw new ArgumentNullException("synonymName");
+            if (ReferenceEquals(targetSynonymList, null)) throw new ArgumentNullException("targetSynonymList");
+            if (String.IsNullOrEmpty(categoryType)) throw new ArgumentNullException("categoryType");
+            if (String.IsNullOrEmpty(synonymName)) throw new ArgumentNullException("synonymName");
 
             var adminSynonymMigrationPage = Session.OpenAdminSynonymMigrationPage(targetSynonymList);
 
@@ -1023,9 +1569,9 @@ namespace Coder.DeclarativeBrowser
 
         public void DropSynonym(SynonymList targetSynonymList, string categoryType, string synonymName)
         {
-            if (ReferenceEquals(targetSynonymList, null))   throw new ArgumentNullException("targetSynonymList");
-            if (String.IsNullOrEmpty(categoryType))         throw new ArgumentNullException("categoryType");
-            if (String.IsNullOrEmpty(synonymName))          throw new ArgumentNullException("synonymName");
+            if (ReferenceEquals(targetSynonymList, null)) throw new ArgumentNullException("targetSynonymList");
+            if (String.IsNullOrEmpty(categoryType)) throw new ArgumentNullException("categoryType");
+            if (String.IsNullOrEmpty(synonymName)) throw new ArgumentNullException("synonymName");
 
             var adminSynonymMigrationPage = Session.OpenAdminSynonymMigrationPage(targetSynonymList);
 
@@ -1036,9 +1582,9 @@ namespace Coder.DeclarativeBrowser
 
         public void AcceptDeclinedSynonym(SynonymList targetSynonymList, string categoryType, string synonymName)
         {
-            if (ReferenceEquals(targetSynonymList, null))   throw new ArgumentNullException("targetSynonymList");
-            if (String.IsNullOrEmpty(categoryType))         throw new ArgumentNullException("categoryType");
-            if (String.IsNullOrEmpty(synonymName))          throw new ArgumentNullException("synonymName");
+            if (ReferenceEquals(targetSynonymList, null)) throw new ArgumentNullException("targetSynonymList");
+            if (String.IsNullOrEmpty(categoryType)) throw new ArgumentNullException("categoryType");
+            if (String.IsNullOrEmpty(synonymName)) throw new ArgumentNullException("synonymName");
 
             var adminSynonymMigrationPage = Session.OpenAdminSynonymMigrationPage(targetSynonymList);
 
@@ -1064,8 +1610,8 @@ namespace Coder.DeclarativeBrowser
 
         public void AcceptSynonymsByCategoryTypeAndCount(SynonymList targetSynonymList, string categoryType, int synonymsToAcceptCount)
         {
-            if (ReferenceEquals(targetSynonymList, null))   throw new ArgumentNullException("targetSynonymList");
-            if (String.IsNullOrEmpty(categoryType))         throw new ArgumentNullException("categoryType");
+            if (ReferenceEquals(targetSynonymList, null)) throw new ArgumentNullException("targetSynonymList");
+            if (String.IsNullOrEmpty(categoryType)) throw new ArgumentNullException("categoryType");
 
             var adminSynonymMigrationPage = Session.OpenAdminSynonymMigrationPage(targetSynonymList);
             
@@ -1079,8 +1625,8 @@ namespace Coder.DeclarativeBrowser
 
         public void AcceptDeclinedSynonymsByCategoryTypeAndCount(SynonymList targetSynonymList, string categoryType, int synonymsToAcceptCount)
         {
-            if (ReferenceEquals(targetSynonymList, null))   throw new ArgumentNullException("targetSynonymList");
-            if (String.IsNullOrEmpty(categoryType))         throw new ArgumentNullException("categoryType");
+            if (ReferenceEquals(targetSynonymList, null)) throw new ArgumentNullException("targetSynonymList");
+            if (String.IsNullOrEmpty(categoryType)) throw new ArgumentNullException("categoryType");
 
             var adminSynonymMigrationPage = Session.OpenAdminSynonymMigrationPage(targetSynonymList);
             
@@ -1094,8 +1640,8 @@ namespace Coder.DeclarativeBrowser
 
         public void DropSynonymsByCategoryTypeAndCount(SynonymList targetSynonymList, string categoryType, int synonymsToDropCount)
         {
-            if (ReferenceEquals(targetSynonymList, null))   throw new ArgumentNullException("targetSynonymList");
-            if (String.IsNullOrEmpty(categoryType))         throw new ArgumentNullException("categoryType");
+            if (ReferenceEquals(targetSynonymList, null)) throw new ArgumentNullException("targetSynonymList");
+            if (String.IsNullOrEmpty(categoryType)) throw new ArgumentNullException("categoryType");
 
             var adminSynonymMigrationPage = Session.OpenAdminSynonymMigrationPage(targetSynonymList);
 
@@ -1109,8 +1655,8 @@ namespace Coder.DeclarativeBrowser
 
         public void DropMigratedSynonymsByCategoryTypeAndCount(SynonymList targetSynonymList, string categoryType, int synonymsToDropCount)
         {
-            if (ReferenceEquals(targetSynonymList, null))   throw new ArgumentNullException("targetSynonymList");
-            if (String.IsNullOrEmpty(categoryType))         throw new ArgumentNullException("categoryType");
+            if (ReferenceEquals(targetSynonymList, null)) throw new ArgumentNullException("targetSynonymList");
+            if (String.IsNullOrEmpty(categoryType)) throw new ArgumentNullException("categoryType");
 
             var adminSynonymMigrationPage = Session.OpenAdminSynonymMigrationPage(targetSynonymList);
 
@@ -1138,9 +1684,9 @@ namespace Coder.DeclarativeBrowser
 
         public TimeSpan ExecuteOpenDictionarySearch(DictionarySearchCriteria searchCriteria)
         {
-            if (ReferenceEquals(searchCriteria, null))                    throw new ArgumentNullException("searchCriteria");
+            if (ReferenceEquals(searchCriteria, null)) throw new ArgumentNullException("searchCriteria");
             if (String.IsNullOrWhiteSpace(searchCriteria.DictionaryName)) throw new InvalidOperationException("Search dictionary is required");
-            if (String.IsNullOrWhiteSpace(searchCriteria.SearchText))     throw new InvalidOperationException("SearchText dictionary is required");
+            if (String.IsNullOrWhiteSpace(searchCriteria.SearchText)) throw new InvalidOperationException("SearchText dictionary is required");
 
             var header = Session.GetPageHeader();
             header.GoToBrowserPage();
@@ -1154,8 +1700,8 @@ namespace Coder.DeclarativeBrowser
         public TimeSpan CompleteBrowseAndCode(string verbatimTerm, DictionarySearchCriteria searchCriteria, TermPathRow targetResult, bool createSynonym, string group = null)
         {
             if (String.IsNullOrWhiteSpace(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");
-            if (ReferenceEquals(searchCriteria, null))   throw new ArgumentNullException("searchCriteria");
-            if (ReferenceEquals(targetResult, null))     throw new ArgumentNullException("targetResult");
+            if (ReferenceEquals(searchCriteria, null)) throw new ArgumentNullException("searchCriteria");
+            if (ReferenceEquals(targetResult, null)) throw new ArgumentNullException("targetResult");
 
             var taskPage = Session.GetCodingTaskPage();
 
@@ -1171,7 +1717,7 @@ namespace Coder.DeclarativeBrowser
             var searchTime = RerunBrowseAndCodeSearch(searchCriteria);
 
             var dictionarySearchPanel = Session.GetDictionarySearchPanel();
-            this.CodeTaskWithTerm(dictionarySearchPanel,targetResult,createSynonym);
+            this.CodeTaskWithTerm(dictionarySearchPanel, targetResult, createSynonym);
 
             return searchTime;
         }
@@ -1207,41 +1753,41 @@ namespace Coder.DeclarativeBrowser
         public void ReCodeTaskToNewTerm(string verbatimTerm, DictionarySearchCriteria searchCriteria, TermPathRow targetResult, bool createSynonym, string comment)
         {
             if (String.IsNullOrWhiteSpace(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");
-            if (ReferenceEquals(searchCriteria, null))   throw new ArgumentNullException("searchCriteria");
-            if (ReferenceEquals(targetResult, null))     throw new ArgumentNullException("targetResult");
-            if (String.IsNullOrWhiteSpace(comment))      throw new ArgumentNullException("comment");
+            if (ReferenceEquals(searchCriteria, null)) throw new ArgumentNullException("searchCriteria");
+            if (ReferenceEquals(targetResult, null)) throw new ArgumentNullException("targetResult");
+            if (String.IsNullOrWhiteSpace(comment)) throw new ArgumentNullException("comment");
 
             Session.GetCodingTaskPage();
 
             ReCodeTask(verbatimTerm, comment);
 
             CompleteBrowseAndCode(
-                verbatimTerm  : verbatimTerm,
+                verbatimTerm: verbatimTerm,
                 searchCriteria: searchCriteria,
-                targetResult  : targetResult,
-                createSynonym : createSynonym);
+                targetResult: targetResult,
+                createSynonym: createSynonym);
         }
 
         public SynonymRow[] GetAllProvisionalSynonyms(SynonymSearch synonymSearch, int expectedSynonymCount)
         {
             if (ReferenceEquals(synonymSearch, null)) throw new ArgumentNullException("synonymSearch");
-            if (expectedSynonymCount < 0)             throw new ArgumentOutOfRangeException("expectedSynonymCount should be > 0");
+            if (expectedSynonymCount < 0) throw new ArgumentOutOfRangeException("expectedSynonymCount should be > 0");
 
             LoadProvisionalSynonymsWhenReady(synonymSearch, expectedSynonymCount);
 
             var synonymApprovalPage = Session.GetSynonymApprovalPage();
-            var allSynonymSets      = synonymApprovalPage.GetAllProvisionalSynonyms();
+            var allSynonymSets = synonymApprovalPage.GetAllProvisionalSynonyms();
 
             return allSynonymSets;
         }
 
         public SynonymRow[] GetFilteredProvisionalSynonyms(SynonymSearch synonymSearch, int expectedSynonymCount)
         {
-            if (ReferenceEquals(synonymSearch,null)) throw new ArgumentNullException("synonymSearch");
-            if (expectedSynonymCount < 0)            throw new ArgumentOutOfRangeException("expectedSynonymCount should be > 0");
+            if (ReferenceEquals(synonymSearch, null)) throw new ArgumentNullException("synonymSearch");
+            if (expectedSynonymCount < 0) throw new ArgumentOutOfRangeException("expectedSynonymCount should be > 0");
 
             LoadProvisionalSynonymsWhenReady(synonymSearch, expectedSynonymCount);
-            
+
             var synonymsToApprove = GetFilteredProvisionalSynonyms(synonymSearch);
 
             return synonymsToApprove;
@@ -1252,7 +1798,7 @@ namespace Coder.DeclarativeBrowser
             if (ReferenceEquals(synonymSearch, null)) throw new ArgumentNullException("synonymSearch");
             
             var synonymApprovalPage = Session.GetSynonymApprovalPage();
-            var synonymsToApprove   = synonymApprovalPage.GetFilteredProvisionalSynonyms(synonymSearch);
+            var synonymsToApprove = synonymApprovalPage.GetFilteredProvisionalSynonyms(synonymSearch);
 
             return synonymsToApprove;
         }
@@ -1262,7 +1808,7 @@ namespace Coder.DeclarativeBrowser
             if (ReferenceEquals(synonymSearch, null)) throw new ArgumentNullException("synonymSearch");
 
             var adminSynonymDetailsPage = Session.OpenAdminSynonymDetailsPage(synonymSearch);
-            var synonymsDetails         = adminSynonymDetailsPage.GetSynonymsDetails(synonymSearch);
+            var synonymsDetails = adminSynonymDetailsPage.GetSynonymsDetails(synonymSearch);
 
             return synonymsDetails;
         }
@@ -1277,7 +1823,7 @@ namespace Coder.DeclarativeBrowser
         private void LoadProvisionalSynonymsWhenReady(SynonymSearch synonymSearch, int expectedSynonymCount)
         {
             if (ReferenceEquals(synonymSearch, null)) throw new ArgumentNullException("synonymSearch");
-            if (expectedSynonymCount < 0)             throw new ArgumentOutOfRangeException("expectedSynonymCount should be > 0");
+            if (expectedSynonymCount < 0) throw new ArgumentOutOfRangeException("expectedSynonymCount should be > 0");
 
             var synonymListPage = Session.GetSynonymListPage();
             synonymListPage.WaitForSynonymListToReachCount(synonymSearch, expectedSynonymCount);
@@ -1288,8 +1834,8 @@ namespace Coder.DeclarativeBrowser
 
         public void OpenQuery(string verbatim, string comment)
         {
-            if (string.IsNullOrEmpty(verbatim))  throw new ArgumentNullException("verbatim"); 
-            if (string.IsNullOrEmpty(comment))   throw new ArgumentNullException("comment"); 
+            if (string.IsNullOrEmpty(verbatim)) throw new ArgumentNullException("verbatim");
+            if (string.IsNullOrEmpty(comment)) throw new ArgumentNullException("comment");
             
             SelectTaskGridByVerbatimName(verbatim);
 
@@ -1307,7 +1853,7 @@ namespace Coder.DeclarativeBrowser
         
         public void ApproveSynonym(SynonymSearch synonymSearch)
         {
-            if (ReferenceEquals(synonymSearch,null)) throw new ArgumentNullException("synonymSearch");
+            if (ReferenceEquals(synonymSearch, null)) throw new ArgumentNullException("synonymSearch");
 
             var synonymApprovalPage = Session.GetSynonymApprovalPage();
 
@@ -1339,11 +1885,11 @@ namespace Coder.DeclarativeBrowser
 
         public SynonymRow GetSynonymDetailRow(SynonymSearch synonymSearch)
         {
-            if (ReferenceEquals(synonymSearch,null)) throw new ArgumentNullException("synonymSearch");
+            if (ReferenceEquals(synonymSearch, null)) throw new ArgumentNullException("synonymSearch");
 
             var synonymDetailPage = Session.OpenAdminSynonymDetailsPage(synonymSearch);
 
-            var synonym           = synonymDetailPage.GetSynonymDetails(synonymSearch);
+            var synonym = synonymDetailPage.GetSynonymDetails(synonymSearch);
 
             return synonym;
         }
@@ -1402,8 +1948,8 @@ namespace Coder.DeclarativeBrowser
 
         public void DownloadMevFile(MevDownloadCriteria downloadCriteria, string downloadedFileName)
         {
-            if (ReferenceEquals(downloadCriteria, null))    throw new ArgumentNullException("downloadCriteria");
-            if (String.IsNullOrEmpty(downloadedFileName))   throw new ArgumentNullException("downloadedFileName"); 
+            if (ReferenceEquals(downloadCriteria, null)) throw new ArgumentNullException("downloadCriteria");
+            if (String.IsNullOrEmpty(downloadedFileName)) throw new ArgumentNullException("downloadedFileName");
             
             WaitForAutoCodingToComplete();
 
@@ -1427,7 +1973,7 @@ namespace Coder.DeclarativeBrowser
 
         public void OpenQueryForTask(string term, string query)
         {
-            if (String.IsNullOrEmpty(term))  throw new ArgumentNullException("term");
+            if (String.IsNullOrEmpty(term)) throw new ArgumentNullException("term");
             if (String.IsNullOrEmpty(query)) throw new ArgumentNullException("query");
 
             var codingTaskPage = Session.GetCodingTaskPage();
@@ -1439,7 +1985,7 @@ namespace Coder.DeclarativeBrowser
         public DictionarySearchCriteria GetDictionarySearchCriteria()
         {
             var dictionarySearchPanel = Session.GetDictionarySearchPanel();
-            var searchCriteria        = dictionarySearchPanel.GetCurrentSearchCriteria();
+            var searchCriteria = dictionarySearchPanel.GetCurrentSearchCriteria();
 
             return searchCriteria;
         }
@@ -1461,7 +2007,7 @@ namespace Coder.DeclarativeBrowser
 
             var projectRegisterationPage = Session.GetProjectRegistrationPage();
 
-            projectRegisterationPage.GetProjectDropdownList().SelectOption(project);
+            projectRegisterationPage.GetProjectDropdownList().SelectOptionAlphanumericOnly(project);
             projectRegisterationPage.GetEditProjectButton().Click();
 
             foreach (var synonym in synonymLists)
@@ -1490,10 +2036,10 @@ namespace Coder.DeclarativeBrowser
 
             for (var i = 0; i < htmlData.Count; i++)
             {
-                Assert.AreEqual(synonymLists[i].Dictionary,       htmlData[i].Dictionary);
-                Assert.AreEqual(synonymLists[i].Version,          htmlData[i].Version);
-                Assert.AreEqual(synonymLists[i].Locale,           htmlData[i].Locale);
-                Assert.AreEqual(synonymLists[i].SynonymListName,  htmlData[i].SynonymListName);
+                Assert.AreEqual(synonymLists[i].Dictionary, htmlData[i].Dictionary);
+                Assert.AreEqual(synonymLists[i].Version, htmlData[i].Version);
+                Assert.AreEqual(synonymLists[i].Locale, htmlData[i].Locale);
+                Assert.AreEqual(synonymLists[i].SynonymListName, htmlData[i].SynonymListName);
                 Assert.AreEqual(synonymLists[i].RegistrationName, htmlData[i].RegistrationName);
             }
 
@@ -1512,12 +2058,12 @@ namespace Coder.DeclarativeBrowser
 
             for (var i = 0; i < featureData.Count; i++)
             {
-                Assert.That(featureData[i].User,         Is.StringContaining(htmlData[i].User));
-                Assert.That(featureData[i].Action,       Is.EqualTo(htmlData[i].Action.Trim()));
-                Assert.That(featureData[i].Status,       Is.EqualTo(htmlData[i].Status));
+                Assert.That(featureData[i].User, Is.StringContaining(htmlData[i].User));
+                Assert.That(featureData[i].Action, Is.EqualTo(htmlData[i].Action.Trim()));
+                Assert.That(featureData[i].Status, Is.EqualTo(htmlData[i].Status));
 
                 string displayedVerbatim = featureData[i].VerbatimTerm.RemoveAdditionalInformationFromGridDataVerbatim();
-                Assert.That(displayedVerbatim                 , Is.EqualTo(htmlData[i].VerbatimTerm), 
+                Assert.That(displayedVerbatim, Is.EqualTo(htmlData[i].VerbatimTerm),
                     String.Format("'VerbatimTerm' does not match in row {0}", i));
                 Assert.That(featureData[i].VerbatimTerm.Trim(), Is.EqualTo(htmlData[i].VerbatimTerm + additionalInformationValues[i].Trim()), 
                     String.Format("'Expanded VerbatimTerm' does not match in row {0}", i));
@@ -1525,9 +2071,9 @@ namespace Coder.DeclarativeBrowser
                 // Comment may have transmission queue Ids we don't care to verify, so reverse the check and only look for the leading text
                 Assert.That(htmlData[i].Comment, Is.StringContaining(featureData[i].Comment.Trim()));
 
-                var expectedDateTime   = DateTime.Parse(featureData[i].TimeStamp);
+                var expectedDateTime = DateTime.Parse(featureData[i].TimeStamp);
                 var displayedTimeStamp = DateTime.Parse(htmlData[i].TimeStamp);
-                var timeStampDiff      = expectedDateTime.Subtract(displayedTimeStamp);
+                var timeStampDiff = expectedDateTime.Subtract(displayedTimeStamp);
 
                 Assert.That(Math.Abs(timeStampDiff.Hours) < hoursDiff, Is.True);
             }
@@ -1537,8 +2083,8 @@ namespace Coder.DeclarativeBrowser
 
         public void CreateATaskWithReconsiderState(string verbatim, string reclassifyComment, string includeAutoCodedItems)
         {
-            if (String.IsNullOrWhiteSpace(verbatim))              throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrWhiteSpace(reclassifyComment))     throw new ArgumentNullException("reclassifyComment");
+            if (String.IsNullOrWhiteSpace(verbatim)) throw new ArgumentNullException("verbatim");
+            if (String.IsNullOrWhiteSpace(reclassifyComment)) throw new ArgumentNullException("reclassifyComment");
             if (String.IsNullOrWhiteSpace(includeAutoCodedItems)) throw new ArgumentNullException("includeAutoCodedItems");
 
             SelectTaskGridByVerbatimName(verbatim);
@@ -1554,8 +2100,8 @@ namespace Coder.DeclarativeBrowser
             SynonymList sourceSynonymList, 
             SynonymList targetSynonymList)
         {
-            if (String.IsNullOrEmpty(study))              throw new ArgumentNullException("study");
-            if (String.IsNullOrEmpty(dictionary))         throw new ArgumentNullException("dictionary");
+            if (String.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
+            if (String.IsNullOrEmpty(dictionary)) throw new ArgumentNullException("dictionary");
             if (ReferenceEquals(sourceSynonymList, null)) throw new ArgumentNullException("sourceSynonymList");
             if (ReferenceEquals(targetSynonymList, null)) throw new ArgumentNullException("targetSynonymList");
 
@@ -1573,8 +2119,8 @@ namespace Coder.DeclarativeBrowser
             SynonymList targetSynonymList,
             bool waitForMigrationToComplete = true)
         {
-            if (String.IsNullOrEmpty(study))              throw new ArgumentNullException("study");
-            if (String.IsNullOrEmpty(dictionary))         throw new ArgumentNullException("dictionary");
+            if (String.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
+            if (String.IsNullOrEmpty(dictionary)) throw new ArgumentNullException("dictionary");
             if (ReferenceEquals(sourceSynonymList, null)) throw new ArgumentNullException("sourceSynonymList");
             if (ReferenceEquals(targetSynonymList, null)) throw new ArgumentNullException("targetSynonymList");
 
@@ -1588,7 +2134,7 @@ namespace Coder.DeclarativeBrowser
             studyImpactAnalysisPage.GetPopupMigrateStudyButton().Click();
 
             Session.WaitUntilElementDisappears(() => studyImpactAnalysisPage.GetStudyMigrationStartingIndicator(), Config.GetLoadingCoypuOptions());
-            Session.WaitUntilElementExists    (() => studyImpactAnalysisPage.GetStudyMigrationStartedIndicator());
+            Session.WaitUntilElementExists(() => studyImpactAnalysisPage.GetStudyMigrationStartedIndicator());
 
             if (waitForMigrationToComplete)
             {
@@ -1620,7 +2166,7 @@ namespace Coder.DeclarativeBrowser
 
             adminSynonymListPage.DisplaySynonymListUploadHistoryForFileName(Path.GetFileName(synonymFilePath));
 
-            int expectedNumberOfSynonymsToUpload =  SynonymUploadRow.GetSynonymsFromTxtFile(synonymFilePath).Count;
+            int expectedNumberOfSynonymsToUpload = SynonymUploadRow.GetSynonymsFromTxtFile(synonymFilePath).Count;
             adminSynonymListPage.WaitForSynonymUploadToComplete(new FileInfo(synonymFilePath).Length, expectedNumberOfSynonymsToUpload);
         }
 
@@ -1631,16 +2177,16 @@ namespace Coder.DeclarativeBrowser
 
             var adminSynonymPage = Session.OpenAdminSynonymPage();
 
-            int synonymsCount =  adminSynonymPage.SelectDownloadSynonymList(synonymList);
+            int synonymsCount = adminSynonymPage.SelectDownloadSynonymList(synonymList);
             
             RetryPolicy
                 .CheckDownLoadFileComplete
                 .Execute(
                     () =>
                         AssertFileDownloadComplete(
-                            filename:"SynonymList_Segment_MEDIFLEX*_SynonymList*.txt",
+                            filename: "SynonymList_Segment_MEDIFLEX*_SynonymList*.txt",
                             expectedNumberOfSynonyms: synonymsCount,
-                            secondsSinceLastModified:5, 
+                            secondsSinceLastModified: 5,
                             newFilename: synonymFileName)
                         );
         }
@@ -1669,7 +2215,7 @@ namespace Coder.DeclarativeBrowser
         public void ValidateSynonymUpload(string synonymFileName, SynonymSearch synonymSearch)
         {
             if (ReferenceEquals(synonymFileName, null)) throw new ArgumentNullException("synonymFileName");
-            if (ReferenceEquals(synonymSearch,null))    throw new ArgumentNullException("synonymSearch");
+            if (ReferenceEquals(synonymSearch, null)) throw new ArgumentNullException("synonymSearch");
 
             int synonymCount = File.ReadAllLines(synonymFileName).Length - 1;
 
@@ -1689,50 +2235,15 @@ namespace Coder.DeclarativeBrowser
             synonymList.NumberOfSynonyms.ToInteger().ShouldBeEquivalentTo(synonymCount);
         }
 
-        public void CreateNewStudy(IMedidataStudy newStudy, StepContext stepContext)
-        {
-            if (ReferenceEquals(newStudy, null))    throw new ArgumentNullException("newStudy");
-            if (ReferenceEquals(stepContext, null)) throw new ArgumentNullException("stepContext");
-
-            GoToiMedidataHome();
-            var imedidataPage = Session.GetImedidataPage();
-            var studyGroup = imedidataPage.ManageSegment(newStudy.StudyGroup);
-
-            studyGroup.AddNewStudy(newStudy);
-
-            stepContext.Project = newStudy.Name;
-
-            GoToiMedidataHome();
-
-            imedidataPage.LoadSegmentForApp(ImedidataPage.CoderAppName, newStudy.StudyGroup);
-
-            Session.WaitForIMedidataSync();
-
-            stepContext.SetStudyDataContextByProjectName();
-            stepContext.CleanUpAndRegisterProject();
-        }
-
-        public void UpdateStudy(IMedidataStudy currentStudy, IMedidataStudy newStudy, StepContext stepContext)
+        public void UpdateStudyName(StudySetupData currentStudy, string newName)
         {
             if (ReferenceEquals(currentStudy, null)) throw new ArgumentNullException("currentStudy");
-            if (ReferenceEquals(newStudy, null))     throw new ArgumentNullException("newStudy");
+            if (String.IsNullOrWhiteSpace(newName)) throw new ArgumentNullException("newName");
 
-            GoToiMedidataHome();
-            var imedidataPage = Session.GetImedidataPage();
-            var studyPage     = imedidataPage.ManageStudy(currentStudy.Name);
-
-            var mergedStudy = currentStudy.Merge(newStudy);
-            studyPage.UpdateStudyAttributes(mergedStudy);
-
-            stepContext.Project = newStudy.Name;
-
-            GoToiMedidataHome();
-
-            imedidataPage.LoadSegmentForApp(ImedidataPage.CoderAppName, mergedStudy.StudyGroup);
-
-            Session.WaitForIMedidataSync();
-
-            stepContext.SetStudyDataContextByProjectName();
+            using (var iMedidataClient = new IMedidataClient())
+            {
+                iMedidataClient.UpdateStudyName(currentStudy, newName);
+            }
         }
 
         public void AssertThatRegistrationHistoryContainsFollowingInformation(IList<ProjectRegistrationHistory> featureData, int hoursDiff)
@@ -1745,13 +2256,13 @@ namespace Coder.DeclarativeBrowser
 
             for (var i = 0; i < featureData.Count; i++)
             {
-                Assert.That(featureData[i].User,                         Is.StringContaining(htmlData[i].User));
-                Assert.That(featureData[i].DictionaryAndVersions,        Is.EqualTo(htmlData[i].DictionaryAndVersions));
+                Assert.That(featureData[i].User, Is.StringContaining(htmlData[i].User));
+                Assert.That(featureData[i].DictionaryAndVersions, Is.EqualTo(htmlData[i].DictionaryAndVersions));
                 Assert.That(featureData[i].ProjectRegistrationSucceeded, Is.EqualTo(htmlData[i].ProjectRegistrationSucceeded));
 
-                var expectedDateTime   = DateTime.Parse(featureData[i].Created);
+                var expectedDateTime = DateTime.Parse(featureData[i].Created);
                 var displayedTimeStamp = DateTime.Parse(htmlData[i].Created);
-                var timeStampDiff      = expectedDateTime.Subtract(displayedTimeStamp);
+                var timeStampDiff = expectedDateTime.Subtract(displayedTimeStamp);
 
                 Assert.That(Math.Abs(timeStampDiff.Hours) < hoursDiff, Is.True);
             }
@@ -1788,7 +2299,7 @@ namespace Coder.DeclarativeBrowser
         public void AccessHelpContentByContext(string pageName, string tabName)
         {
             if (String.IsNullOrEmpty(pageName)) throw new ArgumentNullException("pageName");
-            if (String.IsNullOrEmpty(tabName))  throw new ArgumentNullException("tabName");
+            if (String.IsNullOrEmpty(tabName)) throw new ArgumentNullException("tabName");
 
             var codingTaskPage = Session.GetCodingTaskPage();
 
@@ -1920,7 +2431,7 @@ namespace Coder.DeclarativeBrowser
             // so select each dictionary in the dropdown to get the complete count.
             string dictionaryTypeDropdownText = studyReportPage.GetDictionaryTypeDropDownList().Text;
 
-            string[] splitDropdownText = dictionaryTypeDropdownText.Split(new char[] {'\n', '\r'},
+            string[] splitDropdownText = dictionaryTypeDropdownText.Split(new char[] { '\n', '\r' },
                 StringSplitOptions.RemoveEmptyEntries);
 
             if (splitDropdownText.Length > 0)
@@ -2003,7 +2514,7 @@ namespace Coder.DeclarativeBrowser
 
             var codingTaskPage = Session.GetCodingTaskPage();
 
-            int sortAttempts          = 0;
+            int sortAttempts = 0;
             const int maxSortAttempts = 2;
 
             do
@@ -2079,47 +2590,47 @@ namespace Coder.DeclarativeBrowser
 
         public void DoNotAutoCodeTerm(string segmentName, string verbatimTerm, string dictionaryList, string dictionaryLevel, string dictionary, string login)
         {
-            if (String.IsNullOrWhiteSpace(segmentName))     throw new ArgumentNullException("segmentName"); 
-            if (String.IsNullOrWhiteSpace(verbatimTerm))    throw new ArgumentNullException("verbatimTerm");
-            if (String.IsNullOrWhiteSpace(dictionaryList))  throw new ArgumentNullException("dictionaryList");
+            if (String.IsNullOrWhiteSpace(segmentName)) throw new ArgumentNullException("segmentName");
+            if (String.IsNullOrWhiteSpace(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");
+            if (String.IsNullOrWhiteSpace(dictionaryList)) throw new ArgumentNullException("dictionaryList");
             if (String.IsNullOrWhiteSpace(dictionaryLevel)) throw new ArgumentNullException("dictionaryLevel");
-            if (String.IsNullOrWhiteSpace(dictionary))      throw new ArgumentNullException("dictionary");
-            if (String.IsNullOrWhiteSpace(login))           throw new ArgumentNullException("login"); 
+            if (String.IsNullOrWhiteSpace(dictionary)) throw new ArgumentNullException("dictionary");
+            if (String.IsNullOrWhiteSpace(login)) throw new ArgumentNullException("login");
 
             var doNotAutoCodePage = Session.OpenDoNotAutoCodePage();
          
             doNotAutoCodePage.CleanUpTermsBySegmentAndList(
-                segmentName   : segmentName, 
+                segmentName: segmentName,
                 dictionaryList: dictionaryList);
 
             doNotAutoCodePage.CreateDoNotAutoCodeTerm(
-                segmentName    : segmentName,
-                dictionaryList : dictionaryList,
-                verbatimTerm   : verbatimTerm,
-                dictionary     : dictionary,
+                segmentName: segmentName,
+                dictionaryList: dictionaryList,
+                verbatimTerm: verbatimTerm,
+                dictionary: dictionary,
                 dictionaryLevel: dictionaryLevel,
-                login          : login);
+                login: login);
         }
 
         public StudyImpactAnalysisActions GetAvailableStudyImpactActions(StepContext stepContext)
         {
-            if (ReferenceEquals(stepContext,null)) throw new ArgumentNullException("stepContext");
+            if (ReferenceEquals(stepContext, null)) throw new ArgumentNullException("stepContext");
 
             PerformStudyImpactAnalysis(
-                study            : stepContext.Project,
-                dictionary       : String.Format("{0} ({1})",stepContext.Dictionary, stepContext.Locale),
+                study: stepContext.GetStudyName(),
+                dictionary: String.Format("{0} ({1})", stepContext.Dictionary, stepContext.Locale),
                 sourceSynonymList: stepContext.SourceSynonymList,
                 targetSynonymList: stepContext.TargetSynonymList);
 
             var studyImpactAnalysisPage = Session.GetStudyImpactAnalysisPage();
-            var availableActions        = studyImpactAnalysisPage.GetAvailableActions();
+            var availableActions = studyImpactAnalysisPage.GetAvailableActions();
 
             return availableActions;
         }
 
         public IList<DictionarySearchResult> ExecuteMultipleOpenDictionarySearches(IList<DictionarySearchCriteria> searchCriteriaList)
         {
-            if (ReferenceEquals(searchCriteriaList,null)) throw new ArgumentNullException("searchCriteriaList");
+            if (ReferenceEquals(searchCriteriaList, null)) throw new ArgumentNullException("searchCriteriaList");
 
             var searchResultList = new List<DictionarySearchResult>();
 
@@ -2134,7 +2645,7 @@ namespace Coder.DeclarativeBrowser
             return searchResultList;
         }
 
-        private void AssertFileDownloadComplete(string filename, int expectedNumberOfSynonyms, int secondsSinceLastModified=-1, string newFilename="")
+        private void AssertFileDownloadComplete(string filename, int expectedNumberOfSynonyms, int secondsSinceLastModified = -1, string newFilename = "")
         {
             if (String.IsNullOrWhiteSpace(filename)) throw new ArgumentNullException("filename");
             if (ReferenceEquals(expectedNumberOfSynonyms, null)) throw new ArgumentNullException("expectedNumberOfSynonyms");
@@ -2169,7 +2680,7 @@ namespace Coder.DeclarativeBrowser
             if (!String.IsNullOrWhiteSpace(newFilename))
             {
                 string newFilePath = _DownloadDirectory + "\\" + newFilename;
-                File.Copy(downloadedFilePath, newFilePath, overwrite:true);
+                File.Copy(downloadedFilePath, newFilePath, overwrite: true);
                 File.Delete(downloadedFilePath);
                 Assert.IsTrue(File.Exists(newFilePath), "Renamed file does not exist.");
             }
@@ -2178,7 +2689,7 @@ namespace Coder.DeclarativeBrowser
 
         public void AssertSynonymListFilesMatch(string uploadedFilePath, string downloadedFilePath)
         {
-            SortedList<string, SynonymUploadRow> uploadedSynonyms   = SynonymUploadRow.GetSynonymsFromTxtFile(uploadedFilePath);
+            SortedList<string, SynonymUploadRow> uploadedSynonyms = SynonymUploadRow.GetSynonymsFromTxtFile(uploadedFilePath);
             SortedList<string, SynonymUploadRow> downloadedSynonyms = SynonymUploadRow.GetSynonymsFromTxtFile(downloadedFilePath);
 
             Assert.AreEqual(uploadedSynonyms.Count, downloadedSynonyms.Count);
@@ -2186,11 +2697,11 @@ namespace Coder.DeclarativeBrowser
             for (int synonymIndex = 0; synonymIndex < uploadedSynonyms.Count; synonymIndex++)
             {
                 Assert.IsTrue(uploadedSynonyms.Values[synonymIndex].Equals(downloadedSynonyms.Values[synonymIndex]),
-                    string.Format("The synonyms in position {0} do not match: \n Expected Verbatim: \"{1}\"\n Actual Verbatim: \"{2}\""+
+                    string.Format("The synonyms in position {0} do not match: \n Expected Verbatim: \"{1}\"\n Actual Verbatim: \"{2}\"" +
                     "\nNote: The verbatim terms are for reference only and may match. Other fields likely caused the comparison failure.",
                     synonymIndex,
                     uploadedSynonyms.Keys[synonymIndex], 
-                    downloadedSynonyms.Keys[synonymIndex]) );
+                    downloadedSynonyms.Keys[synonymIndex]));
             }
         }
 
@@ -2218,18 +2729,18 @@ namespace Coder.DeclarativeBrowser
 
         public void AssertNumberOfSynonymsForListIs(SynonymList synonymList, int expectedNumberOfSynonyms)
         {
-            if (ReferenceEquals(synonymList, null))              throw new ArgumentNullException("synonymList");
+            if (ReferenceEquals(synonymList, null)) throw new ArgumentNullException("synonymList");
             if (ReferenceEquals(expectedNumberOfSynonyms, null)) throw new ArgumentNullException("expectedNumberOfSynonyms");
 
-            var adminSynonymPage    = Session.OpenAdminSynonymPage();
+            var adminSynonymPage = Session.OpenAdminSynonymPage();
             int actualSynonymsCount = adminSynonymPage.GetNumberOfSynonymsByListName(synonymList);
 
             Assert.AreEqual(expectedNumberOfSynonyms, actualSynonymsCount);
 
             this.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
 
-            var synonymListPage     = Session.GetSynonymListPage();
-            actualSynonymsCount     = synonymListPage.GetSynonymListCount(synonymList.Dictionary, synonymList.Locale, synonymList.Version);
+            var synonymListPage = Session.GetSynonymListPage();
+            actualSynonymsCount = synonymListPage.GetSynonymListCount(synonymList.Dictionary, synonymList.Locale, synonymList.Version);
 
             Assert.AreEqual(expectedNumberOfSynonyms, actualSynonymsCount);
 
@@ -2289,8 +2800,8 @@ namespace Coder.DeclarativeBrowser
         public TimeSpan CodeAndNext(string verbatimTerm, DictionarySearchCriteria searchCriteria, TermPathRow targetResult, bool createSynonym)
         {
             if (String.IsNullOrWhiteSpace(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");
-            if (ReferenceEquals(searchCriteria, null)) throw new ArgumentNullException("searchCriteria");
-            if (ReferenceEquals(targetResult, null)) throw new ArgumentNullException("targetResult");
+            if (ReferenceEquals(searchCriteria, null))   throw new ArgumentNullException("searchCriteria");
+            if (ReferenceEquals(targetResult, null))     throw new ArgumentNullException("targetResult");
 
 
             var dictionarySearchPanel = Session.GetDictionarySearchPanel();
@@ -2316,9 +2827,9 @@ namespace Coder.DeclarativeBrowser
             if (ReferenceEquals(targetSynonymList, null)) throw new ArgumentNullException("targetSynonymList");
 
             CoderDatabaseAccess.FakeStudyMigration(
-                loginName        : loginName,
-                segment          : segment,
-                studyName        : studyName,
+                loginName: loginName,
+                segment: segment,
+                studyName: studyName,
                 sourceSynonymList: sourceSynonymList,
                 targetSynonymList: targetSynonymList);
         }
@@ -2332,7 +2843,7 @@ namespace Coder.DeclarativeBrowser
 
         public CodingDecisionsReportRow[] GetCodingDecisionReportRows()
         {
-            var filePath   = Path.Combine(_DownloadDirectory, Config.CodingDecisionsReportFileName);
+            var filePath = Path.Combine(_DownloadDirectory, Config.CodingDecisionsReportFileName);
             var reportRows = GenericCsvHelper.GetReportRows<CodingDecisionsReportRow>(filePath).ToArray();
 
             return reportRows;
@@ -2340,7 +2851,7 @@ namespace Coder.DeclarativeBrowser
 
         public CodingHistoryReportRow[] GetCodingHistoryReportRows()
         {
-            var filePath   = Path.Combine(_DownloadDirectory, Config.CodingHistoryReportFileName);
+            var filePath = Path.Combine(_DownloadDirectory, Config.CodingHistoryReportFileName);
             var reportRows = GenericCsvHelper.GetReportRows<CodingHistoryReportRow>(filePath).ToArray();
 
             return reportRows;
@@ -2348,10 +2859,238 @@ namespace Coder.DeclarativeBrowser
 
         public IngredientReportRow[] GetIngredientReportRows()
         {
-            var filePath   = Path.Combine(_DownloadDirectory, Config.IngredientReportFileName);
+            var filePath = Path.Combine(_DownloadDirectory, Config.IngredientReportFileName);
             var reportRows = GenericCsvHelper.GetReportRows<IngredientReportRow>(filePath).ToArray();
 
             return reportRows;
         }
+
+        public MedidataUser CreateTestUserContext(SegmentSetupData newStudyGroup, string userName, bool createNewSegment = false)
+        {
+            if (ReferenceEquals(newStudyGroup, null)) throw new ArgumentNullException("newStudyGroup");
+            if (String.IsNullOrWhiteSpace(userName))  throw new ArgumentNullException("userName");
+
+            if (createNewSegment)
+            {
+                Session.GetImedidataPage().OpenStudyGroupPage();
+
+                Session.GetImedidataStudyGroupPage().CreateStudyGroup(newStudyGroup);
+            }
+
+            CreateNewStudyWithSite(newStudyGroup);
+
+            MedidataUser newUser = CreateNewStudyUser(newStudyGroup, userName);
+            
+            return newUser;
+        }
+
+        public void CreateNewStudyWithSite(SegmentSetupData studyGroup)
+        {
+            if (ReferenceEquals(studyGroup, null)) throw new ArgumentNullException("studyGroup");
+
+            using (var iMedidataClient = new IMedidataClient())
+            {
+                iMedidataClient.AddStudiesToIMedidata(studyGroup);
+                iMedidataClient.CreateStudySite(studyGroup);
+            }
+        }
+
+        public MedidataUser CreateNewStudyUser(SegmentSetupData studyGroup, string userName, bool inviteNewUserWhenCreated = true)
+        {
+            if (ReferenceEquals(studyGroup, null))   throw new ArgumentNullException("studyGroup");
+            if (String.IsNullOrWhiteSpace(userName)) throw new ArgumentNullException("userName");
+
+            MedidataUser newUser;
+
+            using (var iMedidataClient = new IMedidataClient())
+            {
+                newUser = iMedidataClient.CreateStudyOwner(studyGroup, userName, inviteNewUserWhenCreated);
+            }
+
+            InviteUserToStudyGroup(studyGroup, newUser);
+
+            return newUser;
+        }
+
+        public void InviteUserToStudyGroup(SegmentSetupData studyGroup, MedidataUser user)
+        {
+            if (ReferenceEquals(studyGroup, null)) throw new ArgumentNullException("studyGroup");
+            if (ReferenceEquals(user, null))       throw new ArgumentNullException("user");
+
+            Session.GetImedidataPage().OpenStudyGroupPage();
+
+            Session.GetImedidataStudyGroupPage().InviteUser(studyGroup.SegmentName, Config.ApplicationName, user);
+        }
+
+        public string GetStudyGroupUUID(string segmentName)
+        {
+            if (ReferenceEquals(segmentName, null)) throw new ArgumentNullException("segmentName");
+
+            Session.GetImedidataPage().OpenStudyGroupPage();
+
+            var uuid = Session.GetImedidataStudyGroupPage().GetUUID(segmentName);
+
+            return uuid;
+        }
+
+        public void AcceptStudyInvitation()
+        {
+            Session.GetImedidataPage().AcceptAllStudyGroupInvitations();
+        }
+        
+        public void PublishAndIncompletePushRaveArchitectDraft(string study, string draftName, string studyEnvironment)
+        {
+            if (String.IsNullOrEmpty(study))            throw new ArgumentNullException("study");
+            if (String.IsNullOrEmpty(draftName))        throw new ArgumentNullException("draftName");
+            if (String.IsNullOrEmpty(studyEnvironment)) throw new ArgumentNullException("study environment");
+
+            var draftVersion = PublishRaveArchitectDraft(study, draftName);
+
+            var raveArchitectProjectPage = Session.OpenRaveArchitectProjectPage(study);
+
+            raveArchitectProjectPage.OpenCRFPushDraftPage(draftVersion);
+
+            var crfPushPage = Session.GetRaveArchitectCRFDraftPushPage();
+
+            crfPushPage.IncompletePushDraft(studyEnvironment);
+        }
+        
+        public bool IsCRFPushEnabled()
+        {
+            var crfPushPage = Session.GetRaveArchitectCRFDraftPushPage();
+
+            var pushEnabled = crfPushPage.IsPushButtonEnabled();
+
+            return pushEnabled;
+        }
+
+        public string GetCRFPushErrorMessage()
+        {
+            var crfPushPage = Session.GetRaveArchitectCRFDraftPushPage();
+
+            var failedMessage = crfPushPage.GetErrorMessageForPushIsDisabled();
+
+            return failedMessage;
+        }
+        
+        public void ARaveStudyEnvironmentIsCreatedForProject(string studyEnvironment, string studyProject)
+        {
+            if (String.IsNullOrEmpty(studyEnvironment)) throw new ArgumentNullException("studyEnvironment");
+            if (String.IsNullOrEmpty(studyProject))     throw new ArgumentNullException("studyProject");
+
+            var raveArchitectEnvironmentSetupPage = Session.OpenRaveArchitectEnvironmentSetupPage(studyProject);
+
+            raveArchitectEnvironmentSetupPage.SetNewEnvironmentProperties(studyEnvironment);
+        }
+
+        public bool IsRaveCoderGlobalConfigurationXLSFileCorrect(string downloadDirectory, string workSheetName, string reviewMarkingGroup, string isRequiresResponse)
+        {
+            if (String.IsNullOrEmpty(downloadDirectory))  throw new ArgumentNullException("downloadDirectory");
+            if (String.IsNullOrEmpty(workSheetName))      throw new ArgumentNullException("workSheetName");
+            if (String.IsNullOrEmpty(reviewMarkingGroup)) throw new ArgumentNullException("reviewMarkingGroup");
+            if (String.IsNullOrEmpty(isRequiresResponse)) throw new ArgumentNullException("isRequiresResponse");
+
+            var raveRaveConfigurationLoaderPage    = Session.GetRaveConfigurationLoaderPage();
+
+            var verifyRaveCoderGlobalConfiguration = raveRaveConfigurationLoaderPage.IsRaveCoderGlobalConfigurationDownloadXLSFileCorrect(downloadDirectory, workSheetName, reviewMarkingGroup, isRequiresResponse);
+
+            return verifyRaveCoderGlobalConfiguration;
+        }
+
+        public bool IsRaveCRFCoderConfigurationXLSFileCorrect(string zippedFileName, string zipDownloadDirectory, List<RaveCoderFieldConfiguration> expectedSheetDataValues)
+        {
+            if (String.IsNullOrEmpty(zipDownloadDirectory))     throw new ArgumentNullException("zipDownloadDirectory");
+            if (String.IsNullOrEmpty(zippedFileName))           throw new ArgumentNullException("zippedFileName");
+            if (ReferenceEquals(expectedSheetDataValues, null)) throw new NullReferenceException("expectedSheetDataValues");
+
+            List<String> convertedExpectedSheetDataValues = new List<string>();
+            foreach (var dataRow in expectedSheetDataValues)
+            {
+                convertedExpectedSheetDataValues.Add(dataRow.Form);
+                convertedExpectedSheetDataValues.Add(dataRow.Field);
+                convertedExpectedSheetDataValues.Add(dataRow.Dictionary);
+                convertedExpectedSheetDataValues.Add(dataRow.Locale);
+                convertedExpectedSheetDataValues.Add(dataRow.CodingLevel);
+                convertedExpectedSheetDataValues.Add(dataRow.Priority);
+                convertedExpectedSheetDataValues.Add(dataRow.IsApprovalRequired);
+                convertedExpectedSheetDataValues.Add(dataRow.IsAutoApproval);
+            }
+
+            var actualUnzippedPath = GenericFileHelper.UnzipFile(zipDownloadDirectory, zippedFileName, zipDownloadDirectory);
+
+            bool correctCRFCoderConfigComparison = GenericFileHelper.IsRaveXLSWorkSheetRowDataComparison(actualUnzippedPath, RaveArchitectCRFCoderWorkSheets.CoderConfigurationWorkSheetName, RaveArchitectCRFCoderWorkSheets.StartCoderConfigurationIndex, convertedExpectedSheetDataValues);
+
+            return correctCRFCoderConfigComparison;
+        }
+        
+        public void WaitUntilAdminLinkExists(string adminPage)
+        {
+            if (String.IsNullOrWhiteSpace(adminPage)) throw new ArgumentNullException("adminPage");
+
+            var headerPage = Session.GetPageHeader();
+
+            var options = Config.GetDefaultCoypuOptions();
+
+            Session.TryUntil(
+                        () => Session.Refresh(),
+                        () => headerPage.AdminLinkAvailable(adminPage),
+                        options.RetryInterval,
+                        options);
+        }
+        
+        public void WaitForIMedidataSync()
+        {
+            var header = Session.GetPageHeader();
+            header.WaitForSync();
+        }
+
+        public bool IsRaveCRFCoderSupplementalTermsXLSFileCorrect(string zippedFileName, string zipDownloadDirectory, List<RaveCoderSupplementalConfiguration> expectedSheetDataValues)
+        {
+            if (String.IsNullOrEmpty(zipDownloadDirectory))     throw new ArgumentNullException("zipDownloadDirectory");
+            if (String.IsNullOrEmpty(zippedFileName))           throw new ArgumentNullException("zippedFileName");
+            if (ReferenceEquals(expectedSheetDataValues, null)) throw new NullReferenceException("expectedSheetDataValues");
+
+            List<String> convertedExpectedSheetDataValues = new List<string>();
+            foreach (var dataRow in expectedSheetDataValues)
+            {
+                convertedExpectedSheetDataValues.Add(dataRow.Form);
+                convertedExpectedSheetDataValues.Add(dataRow.Field);
+                convertedExpectedSheetDataValues.Add(dataRow.SupplementalTerm);
+            }
+
+            var actualUnzippedPath = GenericFileHelper.UnzipFile(zipDownloadDirectory, zippedFileName, zipDownloadDirectory);
+
+            bool correctCRFCoderSupComparison = GenericFileHelper.IsRaveXLSWorkSheetRowDataComparison(actualUnzippedPath, RaveArchitectCRFCoderWorkSheets.CoderSupplementalTermsWorkSheetName, RaveArchitectCRFCoderWorkSheets.StartCoderSupplementIndex, convertedExpectedSheetDataValues);
+
+            return correctCRFCoderSupComparison;
+        }
+
+        public void DownloadRaveArchitectDraft(string studyName, string draftName, string fileName, string filePath)
+        {
+            if (String.IsNullOrWhiteSpace(studyName)) throw new ArgumentNullException(studyName);
+            if (String.IsNullOrWhiteSpace(draftName)) throw new ArgumentNullException(draftName);
+            if (String.IsNullOrWhiteSpace(fileName))  throw new ArgumentNullException(fileName);
+            if (String.IsNullOrWhiteSpace(filePath))  throw new ArgumentNullException(filePath);
+
+            var raveArchitectProjectPage = Session.OpenRaveArchitectProjectPage(studyName);
+
+            raveArchitectProjectPage.OpenDraft(draftName);
+
+            GenericFileHelper.DownloadVerifiedFile(filePath, fileName, raveArchitectProjectPage.DownloadDraft);
+        }
+
+        public string GetFieldReportErrMsg(string filePath)
+        {
+            if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException(filePath);
+
+            var raveArchitectUploadDraftPage = Session.OpenRaveArchitectUploadDraftPage();
+
+            raveArchitectUploadDraftPage.UploadDraftFile(filePath);
+
+            var actualErrorMessage = raveArchitectUploadDraftPage.GetFieldReportActualErrorMsg();
+
+            return actualErrorMessage;
+        }
+
     }
 }

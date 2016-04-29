@@ -212,8 +212,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Protocol Name"});
             table2.AddRow(new string[] {
                         "<SourceSystem>",
-                        "<SourceSystemLocale>",
-                        "<SourceSystemStudyName>",
+                        "<Locale>",
+                        "<StudyName>",
                         "<ConnectionUri>",
                         "<FileOid>",
                         "<ProtocolNumber>",

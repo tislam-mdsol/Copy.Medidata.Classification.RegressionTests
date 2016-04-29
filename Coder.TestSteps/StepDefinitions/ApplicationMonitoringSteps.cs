@@ -76,19 +76,6 @@ namespace Coder.TestSteps.StepDefinitions
             _StepContext.SetWorkflowVariablesContext(task);
         }
         
-        [When(@"adding a new subject ""(.*)"" to study ""(.*)""")]
-        public void WhenAddingANewSubjectToStudy(string subjectInitials, string studyFeature)
-        {
-            if (String.IsNullOrWhiteSpace(subjectInitials))        throw new ArgumentNullException("subjectInitials");
-            if (String.IsNullOrWhiteSpace(studyFeature))           throw new ArgumentNullException("studyFeature");
-            
-            var study           = StepArgumentTransformations.TransformFeatureString(studyFeature          , _StepContext);
-
-            RaveModulesAppSegmentIsLoaded(_StepContext.Segment);
-
-            _StepContext.SubjectId = _Browser.AddSubjectToRaveStudy(study, subjectInitials);
-        }
-
         [When(@"adding a new adverse event ""(.*)"" to subject ""(.*)"" of study ""(.*)""")]
         public void WhenAddingANewAdverseEventToSubjectOfStudy(string adverseEventTextFeature, string subjectIdFeature, string studyFeature)
         {
@@ -100,9 +87,12 @@ namespace Coder.TestSteps.StepDefinitions
             var subjectId        = StepArgumentTransformations.TransformFeatureString(subjectIdFeature       , _StepContext);
             var study            = StepArgumentTransformations.TransformFeatureString(studyFeature           , _StepContext);
 
-            RaveModulesAppSegmentIsLoaded(_StepContext.Segment);
+            RaveModulesAppSegmentIsLoaded(_StepContext.GetSegment());
 
-            _Browser.AddAdverseEvent(study, subjectId, adverseEventText);
+            var target       = _StepContext.GetRaveNavigationTarget();
+            target.SubjectId = subjectId;
+            
+            _Browser.AddAdverseEvent(target, adverseEventText);
         }
 
         [When(@"adding a new adverse event ""(.*)"" to subject ""(.*)"" of study ""(.*)"" and the coding decision approved")]
@@ -132,7 +122,7 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 ThenTheAuditLogForOccurrenceOfTheAdverseEventIsUpdatedWhenTheTermIsSentToCoder(_AdverseEventOccurrences, adverseEventText);
 
-                CoderAppSegmentIsLoaded(_StepContext.Segment);
+                CoderAppSegmentIsLoaded(_StepContext.GetSegment());
 
                 _GlobalSteps.WhenApprovingTaskIfRequired(adverseEventText);
             }
@@ -158,8 +148,8 @@ namespace Coder.TestSteps.StepDefinitions
 
             ReclassificationSearch reclassificationSearchResult = new ReclassificationSearch
             {
-                Study    = _StepContext.SourceSystemStudyName,
-                Subject  = _StepContext.SubjectId,
+                Study    = _StepContext.GetStudyName(),
+                Subject  = _StepContext.GetSubjectId(),
                 Verbatim = task,
                 Term     = term
             };
@@ -177,13 +167,11 @@ namespace Coder.TestSteps.StepDefinitions
 
             var adverseEventText = StepArgumentTransformations.TransformFeatureString(adverseEventTextFeature, _StepContext);
 
-            RaveModulesAppSegmentIsLoaded(_StepContext.Segment);
+            RaveModulesAppSegmentIsLoaded(_StepContext.GetSegment());
 
-            _Browser.WaitUntilAdverseEventTransmitted(
-                _StepContext.SourceSystemStudyName,
-                _StepContext.SubjectId,
-                adverseEventText,
-               adverseEventOccurrence);
+            var target = _StepContext.GetRaveNavigationTarget();
+
+            _Browser.WaitUntilAdverseEventTransmitted(target, adverseEventText, adverseEventOccurrence);
 
             _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }
@@ -197,13 +185,11 @@ namespace Coder.TestSteps.StepDefinitions
             
             var adverseEventText = StepArgumentTransformations.TransformFeatureString(adverseEventTextFeature, _StepContext);
 
-            RaveModulesAppSegmentIsLoaded(_StepContext.Segment);
+            RaveModulesAppSegmentIsLoaded(_StepContext.GetSegment());
 
-            string codedPath = _Browser.GetAdverseEventCodedPathFromRaveAuditRecords(
-                _StepContext.SourceSystemStudyName,
-                _StepContext.SubjectId,
-                adverseEventText,
-                adverseEventOccurrence);
+            var target = _StepContext.GetRaveNavigationTarget();
+
+            string codedPath = _Browser.GetAdverseEventCodedPathFromRaveAuditRecords(target, adverseEventText, adverseEventOccurrence);
 
             codedPath.Should().ContainEquivalentOf(termPath);
 

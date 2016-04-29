@@ -10,8 +10,7 @@ AS
 BEGIN
 
     SELECT CP.CodingPath, SGCP.CodingElementGroupID,SGCP.IsExactMatch, 
-	SGCP.SegmentID,SGCP.SynonymStatus,SGCP.UserId, SGCP.SegmentedGroupCodingPatternID,
-	SGCP.SynonymManagementId
+	SGCP.SegmentID,SGCP.SynonymStatus,SGCP.UserId, SGCP.SegmentedGroupCodingPatternID
 
 
 	FROM SegmentedGroupCodingPatterns SGCP

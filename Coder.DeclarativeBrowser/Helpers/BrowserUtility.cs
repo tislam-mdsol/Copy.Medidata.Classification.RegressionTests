@@ -6,6 +6,7 @@ using Coder.DeclarativeBrowser.Models;
 using Coder.DeclarativeBrowser.OdmBuilder;
 using System.Linq;
 using Coder.DeclarativeBrowser.CoderConfiguration;
+using Coder.DeclarativeBrowser.ExtensionMethods;
 
 namespace Coder.DeclarativeBrowser.Helpers
 {
@@ -41,7 +42,7 @@ namespace Coder.DeclarativeBrowser.Helpers
                 DictionaryLevel    = GetDefaultDictionaryLevel(stepContext.Dictionary),
                 IsApprovalRequired = stepContext.IsApprovalRequired,
                 IsAutoApproval     = stepContext.IsAutoApproval,
-                StudyOid           = stepContext.StudyOid,
+                StudyOid           = stepContext.GetStudyUuid(),
 
                 VerbatimTerm       = verbatim
             };
@@ -64,7 +65,7 @@ namespace Coder.DeclarativeBrowser.Helpers
 
             stepContext.FileOid        = odmParameters.FileOid;
             stepContext.CodingTermUuid = odmParameters.CodingTermUUID;
-            
+
             bool uploadCompletedSuccesfully = stepContext.Browser.BuildAndUploadOdm(odmParameters, stepContext.DumpDirectory, haltOnFailure);
 
             if (waitForAutoCodingComplete)
@@ -238,7 +239,27 @@ namespace Coder.DeclarativeBrowser.Helpers
 
             return DictionaryToDefaultDictionaryLevelMap[dictionary];
         }
+        
+        public static string CreateDraftFile(string studyName, string draftName, string draftTemplateFilePath, string targetDirectory)
+        {
+            if (String.IsNullOrWhiteSpace(studyName))             throw new ArgumentNullException("studyName");
+            if (String.IsNullOrWhiteSpace(draftName))             throw new ArgumentNullException("draftName");
+            if (String.IsNullOrWhiteSpace(draftTemplateFilePath)) throw new ArgumentNullException("draftTemplateFilePath");
+            if (String.IsNullOrWhiteSpace(targetDirectory))       throw new ArgumentNullException("targetDirectory");
+            
+            var draftFileName = String.Format("{0}_{1}.xml", studyName.RemoveNonAlphanumeric(), draftName);
+            var draftFilePath = Path.Combine(targetDirectory, draftFileName);
 
+            Dictionary<string, string> replacementPairs = new Dictionary<string, string>
+            {
+                {"RaveCoderDraftTemplateName"       , draftName},
+                {"RaveCoderDraftTemplateProjectName", studyName}
+            };
+
+            BrowserUtility.ReplaceTextInFile(draftTemplateFilePath, draftFilePath, replacementPairs);
+
+            return draftFilePath;
+        }
 
         public static void ReplaceTextInFile(string sourceFilePath, string destinationFilePath, Dictionary<string,string> replacementPairs)
         {

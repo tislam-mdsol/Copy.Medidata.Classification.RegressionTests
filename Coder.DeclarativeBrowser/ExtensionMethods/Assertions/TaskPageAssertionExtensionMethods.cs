@@ -253,22 +253,30 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods.Assertions
 
             for (var i = 0; i < featureData.Count; i++)
             {
-                Assert.That(featureData[i].User,          Is.StringContaining(htmlData[i].User),        String.Format("'User' does not match in row {0}",i));
-                Assert.That(featureData[i].QueryStatus,   Is.EqualTo(htmlData[i].QueryStatus),          String.Format("'QueryStatus' does not match in row {0}",i));
-                Assert.That(featureData[i].QueryText,     Is.EqualTo(htmlData[i].QueryText.Trim()),     String.Format("'QueryText' does not match in row {0}",i));
-                Assert.That(featureData[i].QueryResponse, Is.EqualTo(htmlData[i].QueryResponse.Trim()), String.Format("'QueryResponse' does not match in row {0}",i));
-                Assert.That(featureData[i].OpenTo,        Is.EqualTo(htmlData[i].OpenTo.Trim()),        String.Format("'OpenTo' does not match in row {0}",i));
-                Assert.That(featureData[i].QueryNotes,    Is.EqualTo(htmlData[i].QueryNotes.Trim()),    String.Format("'QueryNotes' does not match in row {0}", i));
+                var actualResult   = htmlData[i];
+                var expectedResult = featureData[i];
+                var result         = actualResult.Equals(expectedResult);
 
-                string displayedVerbatim = featureData[i].VerbatimTerm.RemoveAdditionalInformationFromGridDataVerbatim();
-                Assert.That(displayedVerbatim                 , Is.EqualTo(htmlData[i].VerbatimTerm)                                        , string.Format("'VerbatimTerm' does not match in row {0}", i));
-                Assert.That(featureData[i].VerbatimTerm.Trim(), Is.EqualTo(htmlData[i].VerbatimTerm + additionalInformationValues[i].Trim()), string.Format("'Expanded VerbatimTerm' does not match in row {0}", i));
+                result.Should().BeTrue(String.Format("QueryHistoryDetail for row {0} should be {1} but was {2}", i, expectedResult.ToString(), actualResult.ToString()));
 
-                var expectedDateTime = DateTime.Parse(featureData[i].TimeStamp);
-                var displayedTimeStamp = DateTime.Parse(htmlData[i].TimeStamp);
-                var timeStampDiff = expectedDateTime.Subtract(displayedTimeStamp);
+                if (!String.IsNullOrWhiteSpace(expectedResult.VerbatimTerm))
+                { 
+                    string displayedVerbatim = expectedResult.VerbatimTerm.RemoveAdditionalInformationFromGridDataVerbatim();
 
-                Assert.That(Math.Abs(timeStampDiff.Hours) < hoursDiff, Is.True);
+                    displayedVerbatim                 .Should().BeEquivalentTo(actualResult.VerbatimTerm,
+                        String.Format("'VerbatimTerm' does not match in row {0}", i));
+                    expectedResult.VerbatimTerm.Trim().Should().BeEquivalentTo(actualResult.VerbatimTerm + additionalInformationValues[i].Trim(),
+                        String.Format("'Expanded VerbatimTerm' does not match in row {0}", i));
+                }
+
+                if (!String.IsNullOrWhiteSpace(expectedResult.TimeStamp))
+                {
+                    var expectedDateTime   = DateTime.Parse(expectedResult.TimeStamp);
+                    var displayedTimeStamp = DateTime.Parse(actualResult.TimeStamp);
+                    var timeStampDiff      = expectedDateTime.Subtract(displayedTimeStamp);
+
+                    Math.Abs(timeStampDiff.Hours).Should().BeLessThan(hoursDiff);
+                }
             }
 
             browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);

@@ -113,7 +113,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Form"});
             table1.AddRow(new string[] {
-                        "<SourceSystemStudyName>",
+                        "<StudyName>",
                         "Subject 1",
                         "HEADACHE",
                         "Headache",
@@ -169,7 +169,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Form"});
             table2.AddRow(new string[] {
-                        "<SourceSystemStudyName>",
+                        "<StudyName>",
                         "Subject 1",
                         "HEADACHE",
                         "Headache",
@@ -225,7 +225,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Form"});
             table3.AddRow(new string[] {
-                        "<SourceSystemStudyName>",
+                        "<StudyName>",
                         "Subject 1",
                         "HEADACHE",
                         "Headache",
@@ -284,7 +284,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Form"});
             table4.AddRow(new string[] {
-                        "<SourceSystemStudyName>",
+                        "<StudyName>",
                         "Subject 1",
                         "HEART BURN",
                         "Reflux gastritis",
@@ -340,7 +340,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Form"});
             table5.AddRow(new string[] {
-                        "<SourceSystemStudyName>",
+                        "<StudyName>",
                         "Subject 1",
                         "HEADACHE",
                         "Headache",
@@ -396,7 +396,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Form"});
             table6.AddRow(new string[] {
-                        "<SourceSystemStudyName>",
+                        "<StudyName>",
                         "Subject 1",
                         "HEADACHE",
                         "Headache",
@@ -455,7 +455,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Form"});
             table7.AddRow(new string[] {
-                        "<SourceSystemStudyName>",
+                        "<StudyName>",
                         "Subject 1",
                         "HEART BURN",
                         "Reflux gastritis",

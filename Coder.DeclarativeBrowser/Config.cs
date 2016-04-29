@@ -18,8 +18,16 @@ namespace Coder.DeclarativeBrowser
 {
     internal static class Config
     {
-        internal static readonly Browser BrowserDriver    = Browser.Firefox;
-        internal static readonly String EmptyHtmlValue    = "&nbsp;";
+        internal static readonly Browser BrowserDriver   = Browser.Firefox;
+
+        internal const String EmptyHtmlValue     = "&nbsp;";
+        internal const String NewUserPassword    = "Password5";
+        internal const String ActiveUserPassword = "Password1";
+        internal const String NewUserLocale      = "eng";
+        internal const String NewUserTimeZone    = "Eastern Time (US & Canada)";
+        internal const String NewUserFirstName   = "Coder";
+        internal const String NewUserLastName    = "User";
+        internal const String NewUserTelephone   = "800-888-9876";
 
         internal static string CoderDbConnectionString
         {
@@ -202,18 +210,6 @@ namespace Coder.DeclarativeBrowser
             }
         }
 
-        internal static string SetupSegment
-        {
-            get
-            {
-                var setupSegment = ConfigurationManager.AppSettings["SetupSegment"];
-
-                if (String.IsNullOrEmpty(setupSegment)) throw new ConfigurationErrorsException("SetupSegment");
-
-                return setupSegment;
-            }
-        }
-
         internal static string DateTimeFormat
         {
             get
@@ -291,6 +287,20 @@ namespace Coder.DeclarativeBrowser
             return options;
         }
 
+        internal static Options GetDefaultTransmissionOptions()
+        {
+            var timeOut       = TransmissionOptionsTimeOut;
+            var retryInterval = TransmissionOptionsRetryInterval;
+
+            var options = new Options
+            {
+                Timeout = TimeSpan.FromSeconds(timeOut),
+                RetryInterval = TimeSpan.FromSeconds(retryInterval)
+            };
+
+            return options;
+        }
+
         private static int OptionsTimeOut
         {
             get
@@ -317,6 +327,38 @@ namespace Coder.DeclarativeBrowser
                 if (!Double.TryParse(retryIntervalString, out retryInterval))
                 {
                     throw new ConfigurationErrorsException("DefaultCoypuOptionsRetryInterval");
+                };
+
+                return retryInterval;
+            }
+        }
+
+        private static int TransmissionOptionsTimeOut
+        {
+            get
+            {
+                var timeOutString = ConfigurationManager.AppSettings["DefaultTransmissionOptionsTimeOut"] ?? "75";
+
+                int timeOut;
+                if (!Int32.TryParse(timeOutString, out timeOut))
+                {
+                    throw new ConfigurationErrorsException("DefaultTransmissionOptionsTimeOut");
+                };
+
+                return timeOut;
+            }
+        }
+
+        private static double TransmissionOptionsRetryInterval
+        {
+            get
+            {
+                var retryIntervalString = ConfigurationManager.AppSettings["DefaultTransmissionOptionsRetryInterval"] ?? "1";
+
+                double retryInterval;
+                if (!Double.TryParse(retryIntervalString, out retryInterval))
+                {
+                    throw new ConfigurationErrorsException("DefaultTransmissionOptionsRetryInterval");
                 };
 
                 return retryInterval;
@@ -395,7 +437,7 @@ namespace Coder.DeclarativeBrowser
             }
         }
 
-        public static string SynonymListTemplate
+        internal static string SynonymListTemplate
         {
             get
             {
@@ -706,7 +748,7 @@ namespace Coder.DeclarativeBrowser
             }
         }
 
-        public static Uri GridHubHost
+        internal static Uri GridHubHost
         {
             get
             {
@@ -724,7 +766,7 @@ namespace Coder.DeclarativeBrowser
             }
         }
 
-        public static bool IsGridConfigured
+        internal static bool IsGridConfigured
         {
             get
             {
@@ -778,6 +820,186 @@ namespace Coder.DeclarativeBrowser
             csv.Configuration.WillThrowOnMissingField = false;
             csv.Configuration.IsHeaderCaseSensitive   = false;
             csv.Configuration.Quote                   = '"';
+        }
+
+        internal static string IMedidataHost
+        {
+            get
+            {
+                var mAuthHost = ConfigurationManager.AppSettings["IMedidataHost"];
+
+                if (String.IsNullOrWhiteSpace(mAuthHost))
+                {
+                    throw new ConfigurationErrorsException("IMedidataHost");
+                }
+
+                return mAuthHost;
+            }
+        }
+
+        internal static string IMedidataCoderAppId
+        {
+            get
+            {
+                var mAuthAppId = ConfigurationManager.AppSettings["IMedidataAppId"];
+
+                if (String.IsNullOrWhiteSpace(mAuthAppId))
+                {
+                    throw new ConfigurationErrorsException("IMedidataAppId");
+                }
+
+                return mAuthAppId;
+            }
+        }
+
+        internal static string IMedidataPrivateKeyPath
+        {
+            get
+            {
+                var relativePath = ConfigurationManager.AppSettings["IMedidataPrivateKeyPath"];
+
+                if (String.IsNullOrWhiteSpace(relativePath))
+                {
+                    throw new ConfigurationErrorsException("IMedidataPrivateKeyPath");
+                }
+
+                return relativePath;
+            }
+        }
+
+        internal static string TestSegmentCustomer
+        {
+            get
+            {
+                var customer = ConfigurationManager.AppSettings["TestSegmentCustomer"];
+
+                if (String.IsNullOrWhiteSpace(customer))
+                {
+                    customer = "Medidata Testing";
+                }
+
+                return customer;
+            }
+        }
+
+        internal static string EdcAppName
+        {
+            get
+            {
+                var appName = ConfigurationManager.AppSettings["EdcAppName"];
+
+                if (String.IsNullOrWhiteSpace(appName))
+                {
+                    throw new ConfigurationErrorsException("EdcAppName");
+                }
+
+                return appName;
+            }
+        }
+
+        internal static string EdcModulesAppName
+        {
+            get
+            {
+                var appName = ConfigurationManager.AppSettings["EdcModulesAppName"];
+
+                if (String.IsNullOrWhiteSpace(appName))
+                {
+                    throw new ConfigurationErrorsException("EdcModulesAppName");
+                }
+
+                return appName;
+            }
+        }
+
+        internal static string ArchitectRolesAppName
+        {
+            get
+            {
+                var appName = ConfigurationManager.AppSettings["ArchitectRolesAppName"];
+
+                if (String.IsNullOrWhiteSpace(appName))
+                {
+                    throw new ConfigurationErrorsException("ArchitectRolesAppName");
+                }
+
+                return appName;
+            }
+        }
+
+        internal static string SafetyGatewayMappingAppName
+        {
+            get
+            {
+                var appName = ConfigurationManager.AppSettings["SafetyGatewayMappingAppName"];
+
+                if (String.IsNullOrWhiteSpace(appName))
+                {
+                    appName = String.Empty;
+                }
+
+                return appName;
+            }
+        }
+
+        internal static string SafetyGatewayManagementAppName
+        {
+            get
+            {
+                var appName = ConfigurationManager.AppSettings["SafetyGatewayManagementAppName"];
+
+                if (String.IsNullOrWhiteSpace(appName))
+                {
+                    appName = String.Empty;
+                }
+
+                return appName;
+            }
+        }
+
+        internal static string EdcAppRole
+        {
+            get
+            {
+                var roleName = ConfigurationManager.AppSettings["EdcAppRole"];
+
+                if (String.IsNullOrWhiteSpace(roleName))
+                {
+                    throw new ConfigurationErrorsException("EdcAppRole");
+                }
+
+                return roleName;
+            }
+        }
+
+        internal static string EdcModulesAppRole
+        {
+            get
+            {
+                var roleName = ConfigurationManager.AppSettings["EdcModulesAppRole"];
+
+                if (String.IsNullOrWhiteSpace(roleName))
+                {
+                    throw new ConfigurationErrorsException("EdcModulesAppRole");
+                }
+
+                return roleName;
+            }
+        }
+
+        internal static string ArchitectRolesAppRole
+        {
+            get
+            {
+                var roleName = ConfigurationManager.AppSettings["ArchitectRolesAppRole"];
+
+                if (String.IsNullOrWhiteSpace(roleName))
+                {
+                    throw new ConfigurationErrorsException("ArchitectRolesAppRole");
+                }
+
+                return roleName;
+            }
         }
     }
 }

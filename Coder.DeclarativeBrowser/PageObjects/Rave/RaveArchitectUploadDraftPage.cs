@@ -2,6 +2,7 @@
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coypu;
 using FluentAssertions;
+using System.IO;
 
 namespace Coder.DeclarativeBrowser.PageObjects.Rave
 {
@@ -82,7 +83,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             
             var options = Config.GetDefaultCoypuOptions();
 
-            options.RetryInterval = TimeSpan.FromSeconds(30);
+            options.RetryInterval = TimeSpan.FromSeconds(10);
             options.Timeout       = TimeSpan.FromMinutes(5);
 
             _Session.TryUntil(
@@ -93,5 +94,32 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             
             _Session.WaitUntilElementIsActive  (GetBackButton);
         }
+
+        private SessionElementScope GetFieldReportErrorMessageButton()
+        {
+            var errorMessageButton = _Session.FindSessionElementById("Fields_Errors");
+
+            return errorMessageButton;
+        }
+
+        private SessionElementScope GetFieldReportTable()
+        {
+            var fieldReportTable = _Session.FindSessionElementById("FieldsReport");
+
+            return fieldReportTable;
+        }
+
+        internal string GetFieldReportActualErrorMsg()
+        {
+            var errFieldReportButton = GetFieldReportErrorMessageButton();
+            var errFieldReportTable  = GetFieldReportTable();
+
+            errFieldReportButton.Click();
+
+            var actualErrorMessage = errFieldReportTable.FindSessionElementByXPath(".//li");
+
+            return actualErrorMessage.Text;
+        }
+
     }
 }
