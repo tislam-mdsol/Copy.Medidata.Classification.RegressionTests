@@ -49,6 +49,7 @@ BuildPackages/
 *.vssscc
 *.orig
 .builds
+/psake
 
 # Visual C++ cache files
 ipch/
