@@ -8,7 +8,8 @@ Feature: Verify Coding History Report
 Scenario: Verify the user is able to export using verbatim
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
 	And coding task "Adverse Event Term 1" for dictionary level "LLT"
-	When searching for the verbatim "Adverse Event Term 1" in Coding History Report
+	When a new report type "Coding History" is created 
+	And searching for the verbatim "Adverse Event Term 1" in Coding History Report
 	And searching for auto coded items in Coding History Report
 	And exporting all columns in the Coding History Report
 	Then the Coding History Report should contain the following
@@ -23,7 +24,8 @@ Scenario: Verify the user is able to export using verbatim
 Scenario: Verify the user is able to export using code
 	Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "WhoDrugDDEB2 ENG 200703" 
 	And coding task "ASPIRIN PLUS C" for dictionary level "PRODUCT"
-	When searching for the term "ASPIRIN PLUS C" in Coding History Report
+	When a new report type "Coding History" is created 
+	And searching for the term "ASPIRIN PLUS C" in Coding History Report
 	And searching for the code "003467 01 001" in Coding History Report
 	And searching for auto coded items in Coding History Report
 	And exporting all columns in the Coding History Report
@@ -39,7 +41,8 @@ Scenario: Verify the user is able to export using code
 Scenario: Verify the user is able to export using term
 	Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "WhoDrugDDEB2 ENG 200703" 
 	And coding task "ASPIRIN PLUS C" for dictionary level "PRODUCT"
-	When searching for the term "ASPIRIN PLUS C" in Coding History Report
+	When a new report type "Coding History" is created 
+	And searching for the term "ASPIRIN PLUS C" in Coding History Report
 	And searching for auto coded items in Coding History Report
 	And exporting all columns in the Coding History Report
 	Then the Coding History Report should contain the following
@@ -54,7 +57,8 @@ Scenario: Verify the user is able to export using term
 Scenario: Verify the user is able to select statuses in current status
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
 	And coding task "Adverse Event Term 1" for dictionary level "LLT"
-	When searching for the verbatim "Adverse Event Term 1" in Coding History Report
+	When a new report type "Coding History" is created 
+	And searching for the verbatim "Adverse Event Term 1" in Coding History Report
 	And searching for the status "Waiting Manual Code"
 	And searching for auto coded items in Coding History Report
 	And exporting all columns in the Coding History Report
@@ -70,7 +74,8 @@ Scenario: Verify the user is able to select statuses in current status
 Scenario: Verify the user is able to enter a start and end date
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
 	And coding task "Adverse Event Term 1" for dictionary level "LLT"
-	When searching for the verbatim "Adverse Event Term 1" in Coding History Report
+	When a new report type "Coding History" is created 
+	And searching for the verbatim "Adverse Event Term 1" in Coding History Report
 	And searching for start date of "01 Jan 2015" and end date of "01 Jan 2050" in Coding History Report
 	And searching for auto coded items in Coding History Report
 	And exporting all columns in the Coding History Report
@@ -90,6 +95,7 @@ Scenario: Verify the user is able to export multiple terms
 	| Verbatim Term        | Dictionary | Dictionary Level | Is Approval Required | Is Auto Approval | Locale |
 	| Adverse Event Term 1 | MedDRA     | LLT              | TRUE                 | FALSE            | eng    |
 	| Adverse Event Term 1 | MedDRA     | LLT              | TRUE                 | FALSE            | eng    |
+	And a new report type "Coding History" is created 
 	And searching for auto coded items in Coding History Report
 	And exporting all columns in the Coding History Report
 	Then the Coding History Report should contain the following
@@ -104,7 +110,8 @@ Scenario: Verify the user is able to export multiple terms
 Scenario: Verify the user is able to export using verbatim on a non production study
   Given a "Basic" Coder setup for a non-production study with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
   And coding task "Adverse Event Term 2" for dictionary level "LLT"
-  When searching for the verbatim "Adverse Event Term 2" in Coding History Report
+  When a new report type "Coding History" is created 
+  And searching for the verbatim "Adverse Event Term 2" in Coding History Report
   And searching for auto coded items in Coding History Report
   And exporting all columns in the Coding History Report
   Then the Coding History Report should contain the following

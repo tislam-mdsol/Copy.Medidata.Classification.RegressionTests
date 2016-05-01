@@ -93,8 +93,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
  testRunner.And("coding task \"blood\" for dictionary level \"PRODUCTSYNONYM\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.When("an Ingredient Report is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("a new report type \"Ingredient\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
+ testRunner.And("an Ingredient Report is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
  testRunner.Then("the appropriate ingredient report is generated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

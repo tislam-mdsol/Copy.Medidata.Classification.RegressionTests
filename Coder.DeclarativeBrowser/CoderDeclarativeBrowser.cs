@@ -165,67 +165,135 @@ namespace Coder.DeclarativeBrowser
             codingCleanupPage.CleanUpTasks();
         }
 
-        public void ExportCodingHistoryReport(CodingHistoryReportCriteria searchCriteria)
+        public void CreateCodingHistoryReport(CodingHistoryReportCriteria searchCriteria)
         {
             if (ReferenceEquals(searchCriteria, null)) throw new ArgumentNullException("searchCriteria");
 
             var reportPage = Session.GetCodingHistoryReportPage();
             reportPage.SetReportCriteria(searchCriteria);
 
-            GenericFileHelper.DownloadVerifiedFile(
-                _DownloadDirectory,
-                Config.CodingHistoryReportFileName,
-                reportPage.ExportReport);
+            //TODO
+            //reportPage.EnterCodingHistoryReportDescription(descriptionText);
+            //reportPage.NewCodingHistoryReportButton();
         }
 
-        public void ExportCodingDecisionsReport(CodingDecisionsReportCriteria searchCriteria)
+        public void CreateCodingDecisionsReport(CodingDecisionsReportCriteria searchCriteria)
         {
             if (ReferenceEquals(searchCriteria, null)) throw new ArgumentNullException("searchCriteria");
 
             var reportPage = Session.GetCodingDecisionsReportPage();
             reportPage.SetReportCriteria(searchCriteria);
 
-            GenericFileHelper.DownloadVerifiedFile(
-                _DownloadDirectory,
-                Config.CodingDecisionsReportFileName,
-                reportPage.ExportReport);
+            //TODO
+            //reportPage.EnterCodingDecisionsReportDescription(descriptionText);
+            //reportPage.NewCodingDecisionsReportButton();
         }
 
-        public void GenerateIngredientReport(string studyName, string dictionaryName)
+        public void CreateIngredientReport(string studyName, string dictionaryName, string descriptionText)
         {
-            if (String.IsNullOrEmpty(studyName)) throw new ArgumentNullException("studyName");
-            if (String.IsNullOrEmpty(dictionaryName)) throw new ArgumentNullException("dictionaryName");
+            if (String.IsNullOrEmpty(studyName))       throw new ArgumentNullException("studyName");
+            if (String.IsNullOrEmpty(dictionaryName))  throw new ArgumentNullException("dictionaryName");
+            if (String.IsNullOrEmpty(descriptionText)) throw new ArgumentNullException("descriptionText");
 
             var reportPage = Session.GetIngredientReportPage();
             reportPage.SetReportParameters(studyName, dictionaryName);
-
-            GenericFileHelper.DownloadVerifiedFile(
-                _DownloadDirectory,
-                Config.IngredientReportFileName,
-                reportPage.ExportReport);
+            reportPage.EnterIngredientReportDescription(descriptionText);
+            reportPage.NewIngredientReportButton();
         }
 
-        //TODO: move this method to BrowserSessionExtensionMethods remove once refactoring begins for the method calls
-        private void FollowReportLink(string reportLink)
+        public void DownloadCoderVerifiedFile(string downloadDirectory, string fileName, string descriptionText, int expectedRows = 2)
         {
-            if (String.IsNullOrEmpty(reportLink)) throw new ArgumentNullException("reportLink");
+            if (String.IsNullOrWhiteSpace(downloadDirectory)) throw new ArgumentNullException("downloadDirectory");
+            if (String.IsNullOrWhiteSpace(fileName))          throw new ArgumentNullException("fileName");
+            if (!Directory.Exists(downloadDirectory))         throw new ArgumentException(String.Format("Directory {0} does not eixst", downloadDirectory));
 
-            var header = Session.GetPageHeader();
+            var filePath = Path.Combine(downloadDirectory, fileName);
 
-            header.GetReportsTab().Hover();
-            header.GetReportsTab().Click();
-            header.GetReportsMenuItemByName(reportLink).Click();
-        }
-
-        //TODO: move this method to BrowserSessionExtensionMethods remove once refactoring begins for the method calls
-        public void GoToReportPage(string pageName)
-        {
-            if (ReferenceEquals(pageName, null)) throw new ArgumentNullException("pageName");
-
-            if (Session.FindWindow(pageName).Missing())
+            RetryPolicy.ValidateDownloadedFile.Execute(() =>
             {
-                FollowReportLink(pageName);
+                File.Delete(filePath);
+                ExportReportLink(descriptionText);
+                GenericFileHelper.VerifyFileRows(filePath, expectedRows);
+            });
+        }
+
+        public void ExportReport(string reportType, string descriptionText)
+        {
+            if (String.IsNullOrEmpty(reportType))      throw new ArgumentNullException(reportType);
+            if (String.IsNullOrEmpty(descriptionText)) throw new ArgumentNullException(descriptionText);
+
+            string configReportFileName = null;
+            switch (reportType)
+            {
+                case "Coding History"  : { configReportFileName = Config.CodingHistoryReportFileName;   break; }
+                case "Coding Decisions": { configReportFileName = Config.CodingDecisionsReportFileName; break; }
+                case "Ingredients"     : { configReportFileName = Config.IngredientReportFileName;      break; }
+                default: { throw new ArgumentNullException("Invalid Report Select Option: " + reportType);     }
             }
+
+            var mainReportPage = Session.GetMainReportCoderPage();
+            
+            DownloadCoderVerifiedFile
+                              (
+                                _DownloadDirectory,
+                                configReportFileName,
+                                descriptionText
+                              );
+        }
+
+        public void CreateMainReportForType(string reportType)
+        {
+            if (String.IsNullOrWhiteSpace(reportType)) throw new ArgumentNullException(reportType);
+
+            Session.OpenSpecificNewReportPage(reportType);
+
+            var mainReportPage = Session.GetMainReportCoderPage();
+
+            mainReportPage.CreateNewReport(reportType);
+        }
+
+        public void ExportReportLink(string descriptionText)
+        {
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+
+            Session.OpenMainReportPage();
+
+            var mainReportPage = Session.GetMainReportCoderPage();
+
+            mainReportPage.SelectExportReport(descriptionText);
+        }
+
+        public void ViewStudyReport(string descriptionText)
+        {
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+
+            Session.OpenMainReportPage();
+
+            var mainReportPage = Session.GetMainReportCoderPage();
+
+            mainReportPage.SelectStudyReportViewLink(descriptionText);
+        }
+
+        public void DeleteReport(string descriptionText)
+        {
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+
+            Session.OpenMainReportPage();
+
+            var mainReportPage = Session.GetMainReportCoderPage();
+
+            mainReportPage.DeleteReport(descriptionText);
+        }
+
+        public void UpdateReport(string descriptionText)
+        {
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+
+            Session.OpenMainReportPage();
+
+            var mainReportPage = Session.GetMainReportCoderPage();
+
+            mainReportPage.UpdateReport(descriptionText);
         }
 
         public void CreateAndActivateWorkFlowRole(string roleName)

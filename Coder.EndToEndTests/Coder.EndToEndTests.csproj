@@ -341,10 +341,10 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="runtests.cmd" />
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="StaticContent\ErrorGeneratingCRFDraft.xls" />
     <None Include="StaticContent\RaveCoreConfig_eng.xls">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

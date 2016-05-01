@@ -4,6 +4,7 @@ using System.Linq;
 using Coder.DeclarativeBrowser.Models.GridModels;
 using Coder.DeclarativeBrowser.PageObjects;
 using Coypu;
+using NUnit.Framework.Constraints;
 
 namespace Coder.DeclarativeBrowser.ExtensionMethods
 {
@@ -123,6 +124,31 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             throw new ArgumentException("No synonym row found to select");
         }
 
+        internal static IList<SessionElementScope> SyncSnapshots(this IEnumerable<SnapshotElementScope> snapshots) //d
+        {
+            if (ReferenceEquals(snapshots,null)) throw new ArgumentNullException("snapshots");
+
+            var synchedElements = snapshots.Select(element => element.FindSessionElementByXPath(".")).ToList();
+
+            return synchedElements;
+        }
+
+        internal static void SetSingleListBoxOptionCriteria(this SessionElementScope sessionElementScope, string text)
+        {
+            if (ReferenceEquals(sessionElementScope, null)) throw new ArgumentNullException("sessionElementScope");
+            if (String.IsNullOrWhiteSpace(text))            return;
+
+            sessionElementScope.SelectSingleListBoxOption(text);
+        }
+
+        internal static void SetTextBoxSearchCriteria(this SessionElementScope sessionElementScope, string text)
+        {
+            if (ReferenceEquals(sessionElementScope, null)) throw new ArgumentNullException("sessionElementScope");
+            if (String.IsNullOrWhiteSpace(text))            return;
+
+            sessionElementScope.FillInWith(text);
+        }
+
         internal static SessionElementScope FindTableRow(this SessionElementScope table, string rowContents)
         {
             if (ReferenceEquals(table, null))           throw new ArgumentNullException("table");
@@ -178,10 +204,10 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             {
                 throw new MissingHtmlException("The table is empty.");
             }
-            
+
             int columnIndex = table.GetTableColumnIndex(targetColumnHeader);
-            
-            var tableRow     = table.FindTableRow(rowContents);
+
+            var tableRow = table.FindTableRow(rowContents);
 
             var tableColumns = tableRow.FindAllSessionElementsByXPath("td");
 
@@ -191,14 +217,14 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             }
 
             var tableCell = tableColumns[columnIndex];
-            
+
             return tableCell;
         }
 
         /// <summary>
         /// Finds a specific cell in a table based on the filter criteria. Limit use to locating control elements (links, inputs, etc) in dynamic tables.
         /// </summary>
-        internal static SessionElementScope FindTableCell(this SessionElementScope table, string rowFilterHeader, string rowFilterValue, string targetColumnHeader )
+        internal static SessionElementScope FindTableCell(this SessionElementScope table, string rowFilterHeader, string rowFilterValue, string targetColumnHeader)
         {
             if (ReferenceEquals(table, null))             throw new ArgumentNullException("table");
             if (String.IsNullOrEmpty(rowFilterHeader))    throw new ArgumentNullException("rowFilterHeader");
@@ -212,8 +238,8 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                 throw new MissingHtmlException("The table is empty.");
             }
 
-            int filterIndex  = table.GetTableColumnIndex(rowFilterHeader);
-            int columnIndex  = table.GetTableColumnIndex(targetColumnHeader);
+            int filterIndex = table.GetTableColumnIndex(rowFilterHeader);
+            int columnIndex = table.GetTableColumnIndex(targetColumnHeader);
 
             var tableCell =
                 (
@@ -231,7 +257,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
             return tableCell;
         }
-        
+
         internal static IList<SessionElementScope> GetRowColumns(this SessionElementScope row)
         {
             var columns = row.FindAllSessionElementsByXPath(".//td");
@@ -250,7 +276,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             {
                 throw new MissingHtmlException("The table is empty.");
             }
-            
+
             var headerRow = tableRows.First();
 
             var headers   = headerRow.FindAllSessionElementsByXPath("td").ToList();
@@ -266,7 +292,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
             return columnIndex;
         }
-        
+
         internal static IEnumerable<SessionElementScope> GetTableRows(this SessionElementScope table)
         {
             if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
@@ -276,29 +302,5 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             return tableRows;
         }
 
-        internal static IList<SessionElementScope> SyncSnapshots(this IEnumerable<SnapshotElementScope> snapshots)
-        {
-            if (ReferenceEquals(snapshots,null)) throw new ArgumentNullException("snapshots");
-
-            var synchedElements = snapshots.Select(element => element.FindSessionElementByXPath(".")).ToList();
-
-            return synchedElements;
-        }
-
-        internal static void SetSingleListBoxOptionCriteria(this SessionElementScope sessionElementScope, string text)
-        {
-            if (ReferenceEquals(sessionElementScope, null)) throw new ArgumentNullException("sessionElementScope");
-            if (String.IsNullOrWhiteSpace(text))            return;
-
-            sessionElementScope.SelectSingleListBoxOption(text);
-        }
-
-        internal static void SetTextBoxSearchCriteria(this SessionElementScope sessionElementScope, string text)
-        {
-            if (ReferenceEquals(sessionElementScope, null)) throw new ArgumentNullException("sessionElementScope");
-            if (String.IsNullOrWhiteSpace(text))            return;
-
-            sessionElementScope.FillInWith(text);
-        }
     }
 }

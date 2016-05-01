@@ -24,12 +24,15 @@ namespace Coder.TestSteps.StepDefinitions
 
             _StepContext = stepContext;
             _Browser     = _StepContext.Browser;
+
+            _StepContext.IngredientReportDescription = "Ingredient Rport Description " + _StepContext.CreationDate;
         }
 
         [When(@"an Ingredient Report is requested")]
         public void WhenAnIngredientReportIsRequested()
         {
-            _Browser.GenerateIngredientReport(_StepContext.GetStudyName(), _StepContext.Dictionary);
+            _Browser.CreateIngredientReport(_StepContext.GetStudyName(), _StepContext.Dictionary, _StepContext.IngredientReportDescription);
+            _Browser.ExportReport("Ingredients", _StepContext.IngredientReportDescription);
         }
 
         [Then(@"the appropriate ingredient report is generated")]

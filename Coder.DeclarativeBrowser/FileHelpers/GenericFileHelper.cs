@@ -44,7 +44,7 @@ namespace Coder.DeclarativeBrowser.FileHelpers
             });
         }
 
-        private static void VerifyFileRows(string filePath, int expectedRows)
+        internal static void VerifyFileRows(string filePath, int expectedRows)
         {
             if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException("filePath");
 
@@ -97,5 +97,9 @@ namespace Coder.DeclarativeBrowser.FileHelpers
             return true;
         }
 
+        internal static void DownloadVerifiedFile(string _DownloadDirectory, string configReportFileName, object v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

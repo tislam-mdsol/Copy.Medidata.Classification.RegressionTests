@@ -203,6 +203,7 @@
     <Compile Include="Models\StudyReport.cs" />
     <Compile Include="Models\IMedidataStudy.cs" />
     <Compile Include="Models\SynonymUploadRow.cs" />
+    <Compile Include="Models\UIDataModels\MainReportTableModel.cs" />
     <Compile Include="Models\UIDataModels\SiteSetupData.cs" />
     <Compile Include="Models\UIDataModels\SubjectSetupData.cs" />
     <Compile Include="OdmBuilder\OdmManager.cs" />
@@ -210,6 +211,7 @@
     <Compile Include="Models\WorkflowRole.cs" />
     <Compile Include="PageObjects\AdminMedidataAdminConsolePage.cs" />
     <Compile Include="PageObjects\AdminSegmentManagementPage.cs" />
+    <Compile Include="PageObjects\MainReportCreationPage.cs" />
     <Compile Include="PageObjects\Rave\RaveArchitectAmendmentManagerPage.cs" />
     <Compile Include="PageObjects\Rave\RaveArchitectCopyDraftWizardPage.cs" />
     <Compile Include="PageObjects\Rave\RaveArchitectCopySourcesPage.cs" />
@@ -391,9 +393,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

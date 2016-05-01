@@ -89,6 +89,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 12
  testRunner.And("coding tasks from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
+ testRunner.When("a new report type \"Study\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
  testRunner.Then("Study Report data should have \"6\" tasks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -107,14 +109,16 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.0",
                         "PBMCC_185572_002",
                         "IncreaseTimeout"});
-#line 20
-this.ScenarioSetup(scenarioInfo);
 #line 21
+this.ScenarioSetup(scenarioInfo);
+#line 22
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 22
- testRunner.And("coding tasks from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
+ testRunner.And("coding tasks from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.When("a new report type \"Study\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 25
  testRunner.Then("Study Report data should have \"6\" tasks  with a workflow state of \"NotCoded\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -133,14 +137,14 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.0",
                         "PBMCC_185572_003",
                         "IncreaseTimeout"});
-#line 30
+#line 32
 this.ScenarioSetup(scenarioInfo);
-#line 31
+#line 33
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 32
+#line 34
  testRunner.And("coding tasks from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
+#line 35
  testRunner.And("a browse and code for task \"Burning\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -192,9 +196,11 @@ this.ScenarioSetup(scenarioInfo);
                         "10042041",
                         "LLT",
                         "False"});
-#line 34
+#line 36
  testRunner.When("I code next available task", ((string)(null)), table1, "When ");
-#line 42
+#line 44
+ testRunner.And("a new report type \"Study\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
  testRunner.Then("Study Report data should have \"6\" tasks  with a workflow state of \"Completed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -215,19 +221,21 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.0",
                         "PBMCC_185572_004",
                         "IncreaseTimeout"});
-#line 50
+#line 53
 this.ScenarioSetup(scenarioInfo);
-#line 51
+#line 54
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 52
- testRunner.And("coding tasks from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 53
- testRunner.And("task \"Congestion\" is coded to term \"Congestion nasal\" at search level \"Low Level " +
-                    "Term\" with code \"10010676\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
- testRunner.Then("Study Report data should have \"1\" tasks  with a workflow state of \"Completed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 55
+ testRunner.And("coding tasks from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.When("task \"Congestion\" is coded to term \"Congestion nasal\" at search level \"Low Level " +
+                    "Term\" with code \"10010676\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 57
+ testRunner.And("a new report type \"Study\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+ testRunner.Then("Study Report data should have \"1\" tasks  with a workflow state of \"Completed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 59
  testRunner.And("Study Report data should have \"5\" tasks  with a workflow state of \"NotCoded\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -248,19 +256,21 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.0",
                         "PBMCC_185572_005",
                         "IncreaseTimeout"});
-#line 63
+#line 67
 this.ScenarioSetup(scenarioInfo);
-#line 64
+#line 68
     testRunner.Given("a \"Approval\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG" +
                     " 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 65
+#line 69
  testRunner.And("coding task \"Congestion\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
- testRunner.And("task \"Congestion\" is coded to term \"Congestion nasal\" at search level \"Low Level " +
-                    "Term\" with code \"10010676\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
- testRunner.When("reclassifying task \"CONGESTION\" with Include Autocoded Items set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 68
+#line 70
+ testRunner.When("task \"Congestion\" is coded to term \"Congestion nasal\" at search level \"Low Level " +
+                    "Term\" with code \"10010676\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 71
+ testRunner.And("reclassifying task \"CONGESTION\" with Include Autocoded Items set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+ testRunner.And("a new report type \"Study\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
  testRunner.Then("Study Report data should have \"1\" tasks  with a workflow state of \"CodedButNotCom" +
                     "plete\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

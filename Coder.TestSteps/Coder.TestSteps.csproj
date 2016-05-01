@@ -87,6 +87,7 @@
     <Compile Include="StepDefinitions\HelpLinkSteps.cs" />
     <Compile Include="StepDefinitions\IMedidataIntegrationSteps.cs" />
     <Compile Include="StepDefinitions\IngredientReportSteps.cs" />
+    <Compile Include="StepDefinitions\MainReportSteps.cs" />
     <Compile Include="StepDefinitions\MevSteps.cs" />
     <Compile Include="StepDefinitions\ProjectRegistrationSteps.cs" />
     <Compile Include="StepDefinitions\ApplicationMonitoringSteps.cs" />
@@ -109,7 +110,6 @@
     <Compile Include="Transformations\TableTransformer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

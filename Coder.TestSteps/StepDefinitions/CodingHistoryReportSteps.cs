@@ -86,7 +86,7 @@ namespace Coder.TestSteps.StepDefinitions
             _SearchCriteria.Study      = _StepContext.GetStudyName();
             _SearchCriteria.AllColumns = true;
 
-            _Browser.ExportCodingHistoryReport(_SearchCriteria);
+            _Browser.CreateCodingHistoryReport(_SearchCriteria);
         }
 
         [When(@"exporting the Coding History Report with export columns ""(.*)""")]
@@ -123,7 +123,7 @@ namespace Coder.TestSteps.StepDefinitions
             _SearchCriteria.AllColumns            = exportAllColumns;
             _SearchCriteria.Study                 = _StepContext.GetStudyName();
 
-            _Browser.ExportCodingHistoryReport(_SearchCriteria);
+            _Browser.CreateCodingHistoryReport(_SearchCriteria);
         }
 
         [Then(@"the Coding History Report should contain the following")]

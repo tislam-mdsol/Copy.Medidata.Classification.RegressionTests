@@ -69,7 +69,7 @@ namespace Coder.TestSteps.StepDefinitions
             _SearchCriteria.Study      = _StepContext.GetStudyName();
             _SearchCriteria.AllColumns = true;
 
-            _Browser.ExportCodingDecisionsReport(_SearchCriteria);
+            _Browser.CreateCodingDecisionsReport(_SearchCriteria);
         }
 
         [Then(@"the Coding Decisions Report should contain the following")]
