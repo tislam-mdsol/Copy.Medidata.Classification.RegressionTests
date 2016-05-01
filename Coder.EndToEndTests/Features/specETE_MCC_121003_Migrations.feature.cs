@@ -103,8 +103,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
 #line 12
- testRunner.When("a Rave Draft is published using draft \"<Draft>\" for Project \"<SourceSystemStudyNa" +
-                    "me>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("a Rave Draft is published using draft \"<Draft>\" for Project \"<StudyName>\" to envi" +
+                    "ronment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -245,8 +245,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 43
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table6, "And ");
 #line 46
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<SourceSy" +
-                    "stemStudyName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
+                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 47
  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -305,8 +305,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 58
  testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table9, "And ");
 #line 62
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<SourceSy" +
-                    "stemStudyName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
+                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 63
  testRunner.And("an Amendment Manager migration is started with \"SETE5<CoderRaveStudy>\" in \"AM Sub" +
                     "ject Search\" and \"SETE5<CoderRaveStudy>\" in \"Rave Migration Subject Seletion Dro" +

@@ -85,8 +85,8 @@ namespace Coder.DeclarativeBrowser
 
             try
             {
-                Logout();
-        }
+                Session.Visit("/logout");
+            }
             catch (Exception ex)
             {
                 Console.WriteLine(String.Format("Error while logging out: {0}", ex));

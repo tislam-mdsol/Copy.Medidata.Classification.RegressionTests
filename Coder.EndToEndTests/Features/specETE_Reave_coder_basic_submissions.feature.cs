@@ -81,11 +81,11 @@ namespace Coder.EndToEndTests.Features
                         "DFT",
                         "ETE_ENG_Rave_coder_basic_Sub",
                         "Release2016.1.0"});
-#line 13
-  this.ScenarioSetup(scenarioInfo);
 #line 14
-    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  this.ScenarioSetup(scenarioInfo);
 #line 15
+    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 16
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -106,12 +106,12 @@ namespace Coder.EndToEndTests.Features
                         "1",
                         "false",
                         "false"});
-#line 16
+#line 17
     testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
-#line 19
+#line 20
     testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
+#line 21
     testRunner.And("adding a new subject \"TEST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -122,7 +122,7 @@ namespace Coder.EndToEndTests.Features
                         "Coding Field",
                         "Headache",
                         "LongText"});
-#line 21
+#line 22
     testRunner.When("adding a new verbatim term to form \"ETE1\"", ((string)(null)), table2, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -149,7 +149,7 @@ namespace Coder.EndToEndTests.Features
                         "LLT",
                         "10019198",
                         "Head pain"});
-#line 24
+#line 25
  testRunner.Then("the coding decision for verbatim \"Headache\" on form \"ETE1\" for field \"Coding Fiel" +
                     "d\" contains the following data", ((string)(null)), table3, "Then ");
 #line hidden
@@ -167,11 +167,11 @@ namespace Coder.EndToEndTests.Features
                         "DFT",
                         "ETE_ENG_Rave_coder_basic_Sub_change_term",
                         "Release2016.1.0"});
-#line 37
-  this.ScenarioSetup(scenarioInfo);
 #line 38
-    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  this.ScenarioSetup(scenarioInfo);
 #line 39
+    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 40
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -192,12 +192,12 @@ namespace Coder.EndToEndTests.Features
                         "1",
                         "false",
                         "false"});
-#line 40
+#line 41
     testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table4, "And ");
-#line 43
+#line 44
     testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 44
+#line 45
     testRunner.And("adding a new subject \"TEST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -208,11 +208,11 @@ namespace Coder.EndToEndTests.Features
                         "Coding Field",
                         "terrible head pain",
                         "LongText"});
-#line 45
+#line 46
     testRunner.And("adding a new verbatim term to form \"ETE1\"", ((string)(null)), table5, "And ");
-#line 48
-    testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
+    testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
  testRunner.And("a coding task \"terrible head pain\" returns to \"Waiting Manual Code\" status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -223,7 +223,7 @@ namespace Coder.EndToEndTests.Features
                         "Coding Field",
                         "foot pain in left leg",
                         "LongText"});
-#line 50
+#line 51
     testRunner.And("modifying a verbatim term of the log line containing \"terrible head pain\" on form" +
                     " \"ETE1\"", ((string)(null)), table6, "And ");
 #line hidden
@@ -251,7 +251,7 @@ namespace Coder.EndToEndTests.Features
                         "LLT",
                         "10019198",
                         "Head pain"});
-#line 53
+#line 54
  testRunner.Then("the coding decision for verbatim \"foot pain in left leg\" on form \"ETE1\" for field" +
                     " \"Coding Field\" contains the following data", ((string)(null)), table7, "Then ");
 #line hidden
@@ -269,11 +269,11 @@ namespace Coder.EndToEndTests.Features
                         "DFT",
                         "ETE_ENG_Rave_coder_basic_Sub_autocode",
                         "Release2016.1.0"});
-#line 66
-  this.ScenarioSetup(scenarioInfo);
 #line 67
-    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  this.ScenarioSetup(scenarioInfo);
 #line 68
+    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 69
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -294,12 +294,12 @@ namespace Coder.EndToEndTests.Features
                         "1",
                         "false",
                         "false"});
-#line 69
+#line 70
     testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table8, "And ");
-#line 72
+#line 73
     testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 73
+#line 74
     testRunner.And("adding a new subject \"TEST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -314,14 +314,14 @@ namespace Coder.EndToEndTests.Features
                         "Log Supplemental Field A",
                         "ALPHA",
                         ""});
-#line 74
+#line 75
     testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table9, "And ");
-#line 78
-    testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 79
+    testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
     testRunner.And("task \"terrible head pain\" is coded to term \"Head pain\" at search level \"Low Level" +
                     " Term\" with code \"10019198\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
+#line 81
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -348,7 +348,7 @@ namespace Coder.EndToEndTests.Features
                         "LLT",
                         "10019198",
                         "Head pain"});
-#line 81
+#line 82
  testRunner.Then("the coding decision on form \"ETE2\" for field \"Coding Field\" with row text \"ALPHA\"" +
                     " for verbatim \"terrible head pain\" contains the following data", ((string)(null)), table10, "Then ");
 #line hidden
@@ -364,7 +364,7 @@ namespace Coder.EndToEndTests.Features
                         "Log Supplemental Field A",
                         "BRAVO",
                         ""});
-#line 88
+#line 89
     testRunner.When("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table11, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -391,7 +391,7 @@ namespace Coder.EndToEndTests.Features
                         "LLT",
                         "10019198",
                         "Head pain"});
-#line 92
+#line 93
  testRunner.Then("the coding decision on form \"ETE2\" for field \"Coding Field\" with row text \"BRAVO\"" +
                     " for verbatim \"terrible head pain\" contains the following data", ((string)(null)), table12, "Then ");
 #line hidden
@@ -409,11 +409,11 @@ namespace Coder.EndToEndTests.Features
                         "DFT",
                         "ETE_ENG_Rave_coder_basic_Sub_recon",
                         "Release2016.1.0"});
-#line 105
-  this.ScenarioSetup(scenarioInfo);
 #line 106
-    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  this.ScenarioSetup(scenarioInfo);
 #line 107
+    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 108
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -434,12 +434,12 @@ namespace Coder.EndToEndTests.Features
                         "1",
                         "false",
                         "false"});
-#line 108
+#line 109
     testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table13, "And ");
-#line 111
+#line 112
     testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 112
+#line 113
     testRunner.And("adding a new subject \"TEST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -450,14 +450,14 @@ namespace Coder.EndToEndTests.Features
                         "Coding Field",
                         "terrible head pain",
                         "LongText"});
-#line 113
+#line 114
     testRunner.And("adding a new verbatim term to form \"ETE1\"", ((string)(null)), table14, "And ");
-#line 116
-    testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 117
+    testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 118
     testRunner.And("task \"terrible head pain\" is coded to term \"Head pain\" at search level \"Low Level" +
                     " Term\" with code \"10019198\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
+#line 119
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -484,20 +484,20 @@ namespace Coder.EndToEndTests.Features
                         "LLT",
                         "10019198",
                         "Head pain"});
-#line 119
+#line 120
  testRunner.Then("the coding decision for verbatim \"terrible head pain\" on form \"ETE1\" for field \"C" +
                     "oding Field\" contains the following data", ((string)(null)), table15, "Then ");
-#line 126
-    testRunner.When("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 127
+    testRunner.When("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 128
  testRunner.And("reclassifying and retiring synonym task \"terrible head pain\" with Include Autocod" +
                     "ed Items set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 128
- testRunner.When("rejecting coding decision for the task \"terrible head pain\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 129
+ testRunner.And("rejecting coding decision for the task \"terrible head pain\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 130
  testRunner.And("task \"terrible head pain\" is coded to term \"Biopsy skin\" at search level \"Low Lev" +
                     "el Term\" with code \"10004873\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 130
+#line 131
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -524,7 +524,7 @@ namespace Coder.EndToEndTests.Features
                         "LLT",
                         "10004873",
                         "Biopsy skin"});
-#line 131
+#line 132
  testRunner.Then("the coding decision for verbatim \"terrible head pain\" on form \"ETE1\" for field \"C" +
                     "oding Field\" contains the following data", ((string)(null)), table16, "Then ");
 #line hidden
@@ -542,11 +542,11 @@ namespace Coder.EndToEndTests.Features
                         "DFT",
                         "MCC-207807",
                         "ETE_ENG_Rave_coder_basic_Sub_code_group"});
-#line 144
-  this.ScenarioSetup(scenarioInfo);
 #line 145
-    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  this.ScenarioSetup(scenarioInfo);
 #line 146
+    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 147
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -567,12 +567,12 @@ namespace Coder.EndToEndTests.Features
                         "1",
                         "false",
                         "false"});
-#line 147
+#line 148
     testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table17, "And ");
-#line 150
+#line 151
     testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 151
+#line 152
     testRunner.And("adding a new subject \"TEST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -587,7 +587,7 @@ namespace Coder.EndToEndTests.Features
                         "Log Supplemental Field A",
                         "ALPHA",
                         ""});
-#line 152
+#line 153
     testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table18, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -602,9 +602,9 @@ namespace Coder.EndToEndTests.Features
                         "Log Supplemental Field A",
                         "BRAVO",
                         ""});
-#line 156
+#line 157
     testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table19, "And ");
-#line 160
+#line 161
     testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -615,12 +615,12 @@ namespace Coder.EndToEndTests.Features
                         "raving head pain",
                         "2",
                         "1"});
-#line 161
+#line 162
  testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table20, "Then ");
-#line 164
+#line 165
     testRunner.When("task \"raving head pain\" is coded to term \"Head pain\" at search level \"Low Level T" +
                     "erm\" with code \"10019198\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 165
+#line 166
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -647,7 +647,7 @@ namespace Coder.EndToEndTests.Features
                         "LLT",
                         "10019198",
                         "Head pain"});
-#line 166
+#line 167
  testRunner.Then("the coding decision on form \"ETE2\" for field \"Coding Field\" with row text \"ALPHA\"" +
                     " for verbatim \"terrible head pain\" contains the following data", ((string)(null)), table21, "Then ");
 #line hidden
@@ -675,7 +675,7 @@ namespace Coder.EndToEndTests.Features
                         "LLT",
                         "10019198",
                         "Head pain"});
-#line 173
+#line 174
  testRunner.Then("the coding decision on form \"ETE2\" for field \"Coding Field\" with row text \"BRAVO\"" +
                     " for verbatim \"terrible head pain\" contains the following data", ((string)(null)), table22, "Then ");
 #line hidden

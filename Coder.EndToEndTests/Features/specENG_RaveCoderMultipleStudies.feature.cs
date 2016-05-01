@@ -111,14 +111,13 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
   testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
 #line 13
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<SourceSy" +
-                    "stemStudyName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
+                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
  testRunner.And("a Rave Draft is published using draft \"<Draft1>\" for Project \"<SourceSystemStudyN" +
                     "ame1>\" to environment \"UAT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.And("adding a new subject \"TST\" for Project \"<SourceSystemStudyName>\" to environment \"" +
-                    "Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("adding a new subject \"TST\" for Project \"<StudyName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -133,8 +132,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Sup1",
                         "DynamicSearchList"});
 #line 16
- testRunner.And("adding a new verbatim term to form \"ETE19\" for Project \"<SourceSystemStudyName>\" " +
-                    "to environment \"Prod\"", ((string)(null)), table2, "And ");
+ testRunner.And("adding a new verbatim term to form \"ETE19\" for Project \"<StudyName>\" to environme" +
+                    "nt \"Prod\"", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Supplemental Term",

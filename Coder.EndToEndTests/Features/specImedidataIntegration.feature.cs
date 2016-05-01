@@ -22,7 +22,7 @@ namespace Coder.EndToEndTests.Features
     [NUnit.Framework.DescriptionAttribute("The following scenarios will validate the behavior of the integration between the" +
         " coding system and iMedidata")]
     [NUnit.Framework.CategoryAttribute("specImedidataIntegration.feature")]
-    [NUnit.Framework.CategoryAttribute("EndToEndDynamicStudy")]
+    [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
     public partial class TheFollowingScenariosWillValidateTheBehaviorOfTheIntegrationBetweenTheCodingSystemAndIMedidataFeature
     {
         
@@ -38,7 +38,7 @@ namespace Coder.EndToEndTests.Features
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "The following scenarios will validate the behavior of the integration between the" +
                     " coding system and iMedidata", "", ProgrammingLanguage.CSharp, new string[] {
                         "specImedidataIntegration.feature",
-                        "EndToEndDynamicStudy"});
+                        "EndToEndDynamicSegment"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -83,11 +83,11 @@ namespace Coder.EndToEndTests.Features
                         "DFT",
                         "Release2016.1.0",
                         "PBMCC_182173_001"});
-#line 8
+#line 9
 this.ScenarioSetup(scenarioInfo);
-#line 10
- testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 12
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -108,12 +108,12 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "true",
                         "true"});
-#line 12
+#line 13
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
-#line 15
+#line 16
  testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 16
+#line 17
  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -124,7 +124,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Coder Field 2",
                         "Adverse Event 4",
                         "LongText"});
-#line 17
+#line 18
  testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -141,9 +141,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Adverse Event 4",
                         "Low Level Term",
                         "1"});
-#line 20
+#line 21
  testRunner.Then("task \"Adverse Event 4\" should contain the following source term information", ((string)(null)), table3, "Then ");
-#line 23
+#line 24
  testRunner.When("the study name is changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -160,7 +160,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Adverse Event 4",
                         "Low Level Term",
                         "1"});
-#line 24
+#line 25
  testRunner.Then("task \"Adverse Event 4\" should contain the following source term information", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -177,12 +177,12 @@ this.ScenarioSetup(scenarioInfo);
                         "DFT",
                         "Release2015.3.3",
                         "PBMCC_211001_001"});
-#line 32
-this.ScenarioSetup(scenarioInfo);
 #line 33
+this.ScenarioSetup(scenarioInfo);
+#line 34
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 34
+#line 35
  testRunner.And("a new study is created in the current study group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

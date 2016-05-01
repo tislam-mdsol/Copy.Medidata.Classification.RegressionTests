@@ -1,3 +1,5 @@
+
+
 #@EndToEndDynamicSegment
 #@EndToEndDynamicStudy
 @EndToEndStaticSegment
@@ -13,7 +15,7 @@ Scenario: Log line verbatim fields using a control type of Search List will be s
  	And a Rave Coder setup with the following options
   	 | Form  | Field                        | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | 
   	 | ETE19 | Log Search List Coding Field | <Dictionary> | <Locale> | PRODUCTSYNONYM | 1        | true               | true           | 
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE19"
  	| Field                        | Value                    | ControlType |
@@ -38,7 +40,7 @@ Scenario: Standard verbatim fields using a control type of Search List will be s
  	And a Rave Coder setup with the following options
   	 | Form  | Field                    | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | 
   	 | ETE19 | Search List Coding Field | <Dictionary> | <Locale> | PRODUCTSYNONYM | 1        | true               | true           | 
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE19"
  	| Field              	| Value 					  	| ControlType       |
@@ -64,7 +66,7 @@ Scenario: Standard verbatim and supplemental fields using a control type of Sear
  	And a Rave Coder setup with the following options
   	 | Form  | Field                    | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms  |
   	 | ETE19 | Search List Coding Field | <Dictionary> | <Locale> | PRODUCTSYNONYM | 1        | true               | true           | Std Searchlist Sup |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE19"
  	| Field                            | Value                    | ControlType |
@@ -88,13 +90,13 @@ Scenario: Standard verbatim and supplemental fields using a control type of Sear
 @DFT
 @PB92926SL-008
 @Release2016.1.0
-Scenario: Standard verbatim and supplemental fields using a control type of Search List will be successfully coded.
+Scenario: Log line verbatim and  supplement fields using a control type of Search List will be successfully coded. 
 	Given a Rave project registration with dictionary "WhoDrugDDEB2 ENG 200703"
 	And Rave Modules App Segment is loaded
  	And a Rave Coder setup with the following options
   	 | Form  | Field            | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE19 | Log Coding Field | <Dictionary> | <Locale> | PRODUCTSYNONYM | 1        | true               | true           | LL SL Sup         |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE19"
  	| Field                                | Value                    | ControlType |

@@ -1,3 +1,9 @@
+
+
+@EndToEndDynamicSegment
+#@EndToEndDynamicStudy
+#@EndToEndStaticSegment
+
 Feature: Verify Integration between Rave Coder Synonyms
 
 @DFT
@@ -5,26 +11,31 @@ Feature: Verify Integration between Rave Coder Synonyms
 @Release2012.2.0
 @DE2089
 Scenario: Verify in Rave that Verbatim terms with a synonym that have been accepted during the synonym upversioning process, will ReCode automatically during study upversioning to new accepted synonym and be sent back to Rave with the new path
+	
 	Given a Rave project registration with dictionary "MedDRA ENG 15.0"
+	# I don't know if the unactivated synonym list command will work when running ETE. A new step may be required.
+	And an unactivated synonym list "MedDRA ENG 18.0 New_Primary_List"
 	And Rave Modules App Segment is loaded
  	And a Rave Coder setup with the following options
-  	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
-  	 | ETE5 | CoderField5 | <Dictionary> | <Locale> | LLT         | 1        | true               | false          |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
+  	 | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
+  	 | ETE5 | Coding Field | <Dictionary> | <Locale> | LLT         | 1        | true               | false          |
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE5"
-	| Field         | Value           | ControlType |
-	| AdverseEvent1 | Adverse Event 1 |             |
+	| Field        | Value           | ControlType |
+	| Coding Field | Adverse Event 1 |             |
+	And Coder App Segment is loaded
 	When task "Adverse Event 1" is coded to term "Infusion site bruising" at search level "Lower Level Term" with code "10059203" at level "LLT" and a synonym is created
-	Then Rave should contain the following coding decision information for subject "CoderSubject" on field "Coding Field"
-		| Level | Code     | Term                           |
-		| SOC   | 10022891 | Investigations                 |
-		| HLGT  | 10040879 | Skin investigations            |
-		| HLT   | 10040862 | Skin histopathology procedures |
-		| PT    | 10004873 | Biopsy skin                    |
-		| LLT   | 10004873 | Biopsy skin                    |
-	And an unactivated synonym list "MedDRA ENG 18.0 New_Primary_List"
-	And starting synonym list migration
+	And Rave Modules App Segment is loaded
+	#Verify that this is the correct term path
+	Then the coding decision for verbatim "Adverse Event 1" on form "ETE5" for field "Coding Field" contains the following data
+             | Level | Code     | Term Path                      |
+             | SOC   | 10022891 | Investigations                 |
+             | HLGT  | 10040879 | Skin investigations            |
+             | HLT   | 10040862 | Skin histopathology procedures |
+             | PT    | 10004873 | Biopsy skin                    |
+             | LLT   | 10004873 | Biopsy skin                    |
+	When starting synonym list migration
 	And accepting the reconciliation suggestion for the synonym "Adverse Event 1" under the category "Path Does Not Exist"	
 	And completing synonym migration																							  
 	And performing Study Impact Analysis																						  
@@ -37,6 +48,7 @@ Scenario: Verify in Rave that Verbatim terms with a synonym that have been accep
 	And the term has the following coding history comments
 		| Verbatim        | Comment                                                                                                         | Workflow Status     |
 		| Adverse Event 1 | Version Change - From MedDRA-15_0-English To MedDRA-18_0-English. Recoded due to synonym change across versions | Waiting Approval    |
+    # There should be a step here to verify the coding decision in Rave, remember to add a step to switch to Rave context first.
 
 	
 @DFT
@@ -44,26 +56,30 @@ Scenario: Verify in Rave that Verbatim terms with a synonym that have been accep
 @Release2012.2.0
 @DE1655
 Scenario: Verify in Rave that Verbatim terms with a synonym that have been accepted during the synonym upversioning process, while in a reclassified state will ReCode automatically during study upversioning
+	
 	Given a Rave project registration with dictionary "MedDRA ENG 11.0"
+	# I don't know if the unactivated synonym list command will work when running ETE. A new step may be required.
+	And an unactivated synonym list "MedDRA ENG 18.0 New_Primary_List"
 	And Rave Modules App Segment is loaded
  	And a Rave Coder setup with the following options
-  	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
-  	 | ETE5 | CoderField5 | <Dictionary> | <Locale> | LLT         | 1        | false              | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
+  	 | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
+  	 | ETE5 | Coding Field | <Dictionary> | <Locale> | LLT         | 1        | false              | true           |
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE5"
-	| Field         | Value           | ControlType |
-	| AdverseEvent1 | Adverse Event 1 |             |
+	| Field        | Value           | ControlType |
+	| Coding Field | Adverse Event 1 |             |
+	And Coder App Segment is loaded
 	When task "Adverse Event 1" is coded to term "Infusion site bruising" at search level "Lower Level Term" with code "10059203" at level "LLT" and a synonym is created
-	Then Rave should contain the following coding decision information for subject "CoderSubject" on field "Coding Field"
-		| Level | Code     | Term                           |
-		| SOC   | 10022891 | Investigations                 |
-		| HLGT  | 10040879 | Skin investigations            |
-		| HLT   | 10040862 | Skin histopathology procedures |
-		| PT    | 10004873 | Biopsy skin                    |
-		| LLT   | 10004873 | Biopsy skin                    |
-	And an unactivated synonym list "MedDRA ENG 18.0 New_Primary_List"
-	And starting synonym list migration
+	#Verify that this is the correct term path
+	Then the coding decision for verbatim "Adverse Event 1" on form "ETE5" for field "Coding Field" contains the following data
+             | Level | Code     | Term Path                      |
+             | SOC   | 10022891 | Investigations                 |
+             | HLGT  | 10040879 | Skin investigations            |
+             | HLT   | 10040862 | Skin histopathology procedures |
+             | PT    | 10004873 | Biopsy skin                    |
+             | LLT   | 10004873 | Biopsy skin                    |
+	When starting synonym list migration
 	And accepting the reconciliation suggestion for the synonym "Adverse Event 1" under the category "Path Does Not Exist"	
 	And completing synonym migration																							  
 	And reclassifying task "Adverse Event 1" with Include Autocoded Items set to "True"
@@ -77,6 +93,7 @@ Scenario: Verify in Rave that Verbatim terms with a synonym that have been accep
 	And the term has the following coding history comments
 		| Verbatim        | Comment                                                                                                         | Workflow Status  |
 		| Adverse Event 1 | Version Change - From MedDRA-15_0-English To MedDRA-18_0-English. Recoded due to synonym change across versions | Waiting Approval |
+    # There should be a step here to verify the coding decision in Rave, remember to add a step to switch to Rave context first.
 
 @DFT
 @PB11147_001cETE
@@ -88,7 +105,7 @@ Scenario: Verify in Rave that a new exact match should re-code automatically upo
  	And a Rave Coder setup with the following options
   	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE1 | CoderField1 | <Dictionary> | <Locale> | LLT         | 1        | false              | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE1"
 	| Field         | Value           | ControlType |
@@ -127,7 +144,7 @@ Scenario: Verify in Rave that a new exact match should re-code automatically upo
  	And a Rave Coder setup with the following options
   	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE1 | CoderField1 | <Dictionary> | <Locale> | TN          | 1        | false              | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE1"
 	| Field         | Value     | ControlType |
@@ -165,7 +182,7 @@ Scenario: Verify in Rave a new exact match should re-code automatically upon stu
  	And a Rave Coder setup with the following options
   	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE1 | CoderField1 | <Dictionary> | <Locale> | TN          | 1        | false              | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE1"
 	| Field         | Value  | ControlType |
@@ -200,7 +217,7 @@ Scenario: An exact match should remain coded upon study upversioning completing 
  	And a Rave Coder setup with the following options
   	 | Form | Field       | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE1 | CoderField1 | <Dictionary> | <Locale> | LLT         | 1        | false              | true           |                   |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<SourceSystemStudyName>" to environment "Prod"
+	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE1"
 	| Field         | Value         | ControlType |
