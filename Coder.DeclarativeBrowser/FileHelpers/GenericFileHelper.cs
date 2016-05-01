@@ -97,9 +97,5 @@ namespace Coder.DeclarativeBrowser.FileHelpers
             return true;
         }
 
-        internal static void DownloadVerifiedFile(string _DownloadDirectory, string configReportFileName, object v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

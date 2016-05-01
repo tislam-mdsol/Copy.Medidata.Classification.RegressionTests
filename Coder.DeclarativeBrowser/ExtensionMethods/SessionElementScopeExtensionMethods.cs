@@ -124,7 +124,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             throw new ArgumentException("No synonym row found to select");
         }
 
-        internal static IList<SessionElementScope> SyncSnapshots(this IEnumerable<SnapshotElementScope> snapshots) //d
+        internal static IList<SessionElementScope> SyncSnapshots(this IEnumerable<SnapshotElementScope> snapshots)
         {
             if (ReferenceEquals(snapshots,null)) throw new ArgumentNullException("snapshots");
 
