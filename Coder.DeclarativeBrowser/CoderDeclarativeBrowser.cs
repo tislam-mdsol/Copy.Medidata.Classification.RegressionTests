@@ -114,8 +114,6 @@ namespace Coder.DeclarativeBrowser
             //ToDo: update broadcastingSuccesfully to actually values
             bool broadcastingSuccesfully = 5 > new Random().Next(10);
 
-            GoToTaskPage();
-
             return broadcastingSuccesfully;
         }
 
