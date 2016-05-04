@@ -333,6 +333,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="ConfigData\Default.srprofile.dice" />
+    <None Include="ConfigData\mauth_private_key.txt.dice" />
     <None Include="ConfigData\settings.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

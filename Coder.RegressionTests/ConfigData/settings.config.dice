@@ -1,35 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <appSettings>
-    <add key="AppHost"                                    value="<%= configured.uitest_login_url %>" />
-    <add key="LocalHost"                                  value="localhost" />
-    <add key="Port"                                       value=" " />
-    <add key="DumpDirectory"                              value="C:\TempRegressionOdmFiles" />
-    <add key="DownloadDirectory"                          value="C:\TempRegressionDownloads" />
-    <add key="ScreenshotDirectoryName"                    value="RegressionTestScreenshots" />
-    <add key="FirefoxExecutablePath"                      value="C:\Program Files (x86)\Mozilla Firefox\Firefox.exe" />
-    <add key="Login"                                      value="<%= configured.regression_test_user_id || 'coder3' %>"/>
-    <add key="Password"                                   value="Password1" />
-    <add key="Segment"                                    value="Mediflex" />
-    <add key="AdminLogin"                                 value="CoderAdmin" />
-    <add key="AdminLoginPassword"                         value="Password1" />
-    <add key="ApplicationName"                            value="<%= configured.application_name %>" />
-    <add key="ELearningLoginTitle"                        value="Log In - Medidata Knowledge Spaces" />
-    <add key="ScreenHelpWindowName"                       value="Medidata Knowledge Spaces" />
-    <add key="HelpCenterWindowName"                       value="Medidata Help Center" />
-    <add key="HoursOffsetFromEst"                         value="-8" />
-    <add key="DateTimeFormat"                             value="dd MMM yyyy HH:mm:ss tt" />
-    <add key="AcceptableSecondsDiff"                      value="60" />
-    <add key="BrowserAutoSaveFileTypes"                   value="application/msword, application/csv, application/ris, text/csv, application/pdf, text/html, text/plain, application/download, application/octet-stream" />
-    <add key="ClientSettingsProvider.ServiceUri"          value="" />
-    <add key="DefaultCoypuOptionsTimeOut"                 value="60"/>
-    <add key="DefaultCoypuOptionsRetryInternval"          value="1"/>
-    <add key="DefaultTransmissionOptionsTimeOut"          value="75"/>
-    <add key="DefaultTransmissionOptionsRetryInterval"    value="1"/>
-    <add key="SynonymListTemplate"                        value="Verbatim|Code|Level|Path|Primary Flag|Supplemental Info|Status"/>
-    <add key="BuildAgentScreenWidth"                      value="1024" />
-    <add key="BuildAgentScreenHeight"                     value="768" />
-    <add key="DefaultSynonymListName"                     value="Primary List" />
-    <add key="StudyNamePrefix"                            value="<%= configured.study_name_prefix  || 'Mediflex' %>" />
-    <add key="TimeStampHoursDiff"                         value="<%= configured.timestamp_hours_diff  || '24' %>" />
-    <add key="GridHubHost"                                value="<%= configured.selenium_grid_hub_host || '' %>"/>
+    <add key="AppHost"                                                           value="<%= configured.uitest_login_url %>" />
+    <add key="LocalHost"                                                         value="localhost" />
+    <add key="Port"                                                              value=" " />
+    <add key="DumpDirectory"                                                     value="C:\TempRegressionOdmFiles" />
+    <add key="DownloadDirectory"                                                 value="C:\TempRegressionDownloads" />
+    <add key="ScreenshotDirectoryName"                                           value="RegressionTestScreenshots" />
+    <add key="FirefoxExecutablePath"                                             value="C:\Program Files (x86)\Mozilla Firefox\Firefox.exe" />
+    <add key="Login"                                                             value="<%= configured.regression_test_user_id || 'coder3' %>"/>
+    <add key="Password"                                                          value="Password1" />
+    <add key="Segment"                                                           value="Mediflex" />
+    <add key="AdminLogin"                                                        value="CoderAdmin" />
+    <add key="AdminLoginPassword"                                                value="Password1" />
+    <add key="ApplicationName"                                                   value="<%= configured.application_name %>" />
+    <add key="ELearningLoginTitle"                                               value="Log In - Medidata Knowledge Spaces" />
+    <add key="ScreenHelpWindowName"                                              value="Medidata Knowledge Spaces" />
+    <add key="HelpCenterWindowName"                                              value="Medidata Help Center" />
+    <add key="HoursOffsetFromEst"                                                value="-8" />
+    <add key="DateTimeFormat"                                                    value="dd MMM yyyy HH:mm:ss tt" />
+    <add key="AcceptableSecondsDiff"                                             value="60" />
+    <add key="BrowserAutoSaveFileTypes"                                          value="application/msword, application/csv, application/ris, text/csv, application/pdf, text/html, text/plain, application/download, application/octet-stream" />
+    <add key="ClientSettingsProvider.ServiceUri"                                 value="" />
+    <add key="DefaultCoypuOptionsTimeOut"                                        value="60"/>
+    <add key="DefaultCoypuOptionsRetryInternval"                                 value="1"/>
+    <add key="DefaultTransmissionOptionsTimeOut"                                 value="75"/>
+    <add key="DefaultTransmissionOptionsRetryInterval"                           value="1"/>
+    <add key="SynonymListTemplate"                                               value="Verbatim|Code|Level|Path|Primary Flag|Supplemental Info|Status"/>
+    <add key="BuildAgentScreenWidth"                                             value="1024" />
+    <add key="BuildAgentScreenHeight"                                            value="768" />
+    <add key="DefaultSynonymListName"                                            value="Primary List" />
+    <add key="StudyNamePrefix"                                                   value="<%= configured.study_name_prefix  || 'Mediflex' %>" />
+    <add key="TimeStampHoursDiff"                                                value="<%= configured.timestamp_hours_diff  || '24' %>" />
+    <add key="GridHubHost"                                                       value="<%= configured.selenium_grid_hub_host || '' %>"/>
+    <add key="AwsAccessKey"                                                      value=""<%= configured.S3AccessKey                                   || ''                                                   %>"/>
+    <add key="AwsSecretKey"                                                      value=""<%= configured.S3SecretKey                                   || ''                                                   %>"/>
+    <add key="iMedidataAppId"                                                    value=""<%= configured.app_uuid                                      || ''                                                   %>"/>
+    <add key="iMedidataBaseUrl"                                                  value=""<%= configured.mauth_service_url                             || ''                                                   %>"/>
+    <add key="iMedidataPrivateKeyFile"                                           value=""<%= configured.mAuth_private_location                        || 'ConfigData/mauth_private_key.txt'                   %>"/>
+    <add key="ArchonBaseUrl"                                                     value=""<%= configured.archonBaseUrl                                 || ''                                                   %>"/>
+    <add key="MessageRetentionPeriod"                                            value=""<%= configured.messageRetentionPeriod                        || '345600'                                             %>"/>
+    <add key="MaximumDeliveries"                                                 value=""<%= configured.maximumDeliveries                             || '3'                                                  %>"/>
+    <add key="SubsystemName"                                                     value=""<%= configured.subsystemName                                 || 'Coder.RegressionTests'                              %>"/>
+    <add key="PollingTimeInterval"                                               value=""<%= configured.pollingTimeInterval                           || '5000'                                               %>"/>
 </appSettings>

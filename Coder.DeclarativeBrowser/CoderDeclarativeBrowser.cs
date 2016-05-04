@@ -16,11 +16,12 @@ using NUnit.Framework;
 using System.Reflection;
 using Coder.DeclarativeBrowser.ExtensionMethods.Assertions;
 using Coder.DeclarativeBrowser.FileHelpers;
-using Coder.DeclarativeBrowser.PageObjects.Reports;
 using Coder.DeclarativeBrowser.Helpers;
 using Coder.DeclarativeBrowser.IMedidataApi;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.PageObjects;
+using Medidata.Classification;
+using WorkflowState = Coder.DeclarativeBrowser.PageObjects.Reports.WorkflowState;
 
 namespace Coder.DeclarativeBrowser
 {
@@ -102,6 +103,20 @@ namespace Coder.DeclarativeBrowser
             }
 
             Session.Dispose();
+        }
+
+        public bool InitiateCodingRequests(AutomatedCodingRequestSection data)
+        {                                                                                                    
+            var client = new ClassificationClient.ClassificationClient();
+
+            client.BroadcastingAutomatedCodingRequestSection(data);
+
+            //ToDo: update broadcastingSuccesfully to actually values
+            bool broadcastingSuccesfully = 5 > new Random().Next(10);
+
+            GoToTaskPage();
+
+            return broadcastingSuccesfully;
         }
 
         public bool BuildAndUploadOdm(OdmParameters odmParameters, string dumpDirectory, bool haltOnFailure = true)
