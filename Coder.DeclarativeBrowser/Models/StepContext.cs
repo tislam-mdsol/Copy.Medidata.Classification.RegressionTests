@@ -52,12 +52,6 @@ namespace Coder.DeclarativeBrowser.Models
         public MedidataUser CoderTestUser           { get; set; }
         public MedidataUser CoderSystemuser         { get; set; }
 
-        // Reports
-        public string IngredientReportDescription      { get; set; }
-        public string CodingHistoryReportDescription   { get; set; }
-        public string CodingDescisionReportDescription { get; set; }
-        public string StudyReportDescription           { get; set; }
-
         public string GetUser()
         {
             if (ReferenceEquals(CoderTestUser, null)) return String.Empty;

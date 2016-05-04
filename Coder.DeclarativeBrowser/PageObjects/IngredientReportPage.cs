@@ -15,7 +15,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal IngredientReportPage(BrowserSession browser) 
         { 
-            if (ReferenceEquals(browser, null)) throw new ArgumentNullException("browser"); 
+            if (ReferenceEquals(browser, null)) throw new ArgumentNullException(nameof(browser)); 
             _Browser = browser; 
         }
 
@@ -25,16 +25,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
             var onPage = title.Equals(_PageName, StringComparison.OrdinalIgnoreCase);
 
             return onPage;
-        }
-
-        internal void GoTo()
-        {
-            var onPage = BrowserOnPage();
-
-            if (!onPage)
-            {
-                _Browser.GoToReportPage(_PageName);
-            }
         }
 
         private SessionElementScope GetCreateNewIngredientReportButton()
@@ -58,12 +48,19 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return dictionaryDropdown;
         }
 
+        private SessionElementScope IngredientReportDescription(string descriptionText)
+        {
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
+
+            var enterDescriptionTextbox = _Browser.FindSessionElementById("reportDescription");
+
+            return enterDescriptionTextbox;
+        }
+
         internal void SetReportParameters(string study, string dictionary)
         {
-            if (String.IsNullOrWhiteSpace(study))      throw new ArgumentNullException(study);
-            if (String.IsNullOrWhiteSpace(dictionary)) throw new ArgumentNullException(dictionary);
-
-            GoTo();
+            if (String.IsNullOrWhiteSpace(study))      throw new ArgumentNullException(nameof(study));
+            if (String.IsNullOrWhiteSpace(dictionary)) throw new ArgumentNullException(nameof(dictionary));
 
             GetStudySelectList()     .SelectOptionAlphanumericOnly(study);
             GetDictionarySelectList().SelectOptionAlphanumericOnly(dictionary);
@@ -78,12 +75,14 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal void EnterIngredientReportDescription(string descriptionText)
         {
-            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
-            var enterDescriptionTextbox = _Browser.FindSessionElementById("reportDescription");
+            var enterDescriptionTextbox = IngredientReportDescription(descriptionText);
 
             enterDescriptionTextbox.FillInWith(descriptionText);
         }
+
+
 
     }
 }

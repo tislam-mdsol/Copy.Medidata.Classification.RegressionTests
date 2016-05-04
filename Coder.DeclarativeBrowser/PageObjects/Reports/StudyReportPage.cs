@@ -37,6 +37,37 @@ namespace Coder.DeclarativeBrowser.PageObjects.Reports
 
         private readonly BrowserSession _Session;
 
+        private SessionElementScope GetStudyReportDescription(string descriptionText)
+        {
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+
+            var enterDescriptionTextbox = _Session.FindSessionElementById("reportDescription");
+
+            return enterDescriptionTextbox;
+        }
+
+        private SessionElementScope GetCreateNewStudyReportButton()
+        {
+            var createButton = _Session.FindSessionElementById("createNew");
+
+            return createButton;
+        }
+        internal void NewStudyReportButton()
+        {
+            var createNewIngReportButton = GetCreateNewStudyReportButton();
+
+            createNewIngReportButton.Click();
+        }
+
+        internal void EnterStudyReportDescription(string descriptionText)
+        {
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+
+            var enterDescriptionTextbox = GetStudyReportDescription(descriptionText);
+
+            enterDescriptionTextbox.FillInWith(descriptionText);
+        }
+
         internal StudyReportPage(BrowserSession session)
         {
             if (ReferenceEquals(session, null))  throw new ArgumentNullException("session"); 

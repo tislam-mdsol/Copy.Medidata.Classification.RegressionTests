@@ -93,12 +93,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
  testRunner.And("coding task \"Headache\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.When("a new report type \"Coding Decision\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("searching for the verbatim \"Headache\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
- testRunner.And("searching for the verbatim \"Headache\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
  testRunner.And("searching for auto coded items in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
+#line 13
  testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -124,7 +122,7 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "SOC: Nervous system disorders: 10029205; HLGT: Headaches: 10019231; HLT: Headache" +
                             "s NEC: 10019233; PT: Headache: 10019211; LLT: Headache: 10019211"});
-#line 15
+#line 14
  testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -141,12 +139,12 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197264_001",
                         "Release2015.3.2"});
-#line 22
+#line 21
 this.ScenarioSetup(scenarioInfo);
-#line 23
+#line 22
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 24
+#line 23
  testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -157,16 +155,14 @@ this.ScenarioSetup(scenarioInfo);
                         "Has",
                         "System Organ Class",
                         "Vascular disorders"});
-#line 25
+#line 24
     testRunner.When("task \"Adverse Event Term 1\" is coded to term \"Dizzy on standing\" at search level " +
                     "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table2, "When ");
-#line 28
- testRunner.And("a new report type \"Coding Decisions\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
+#line 27
  testRunner.And("searching for the verbatim \"Adverse Event Term 1\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
+#line 28
  testRunner.And("searching for auto coded items in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
+#line 29
  testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -191,7 +187,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SOC: Vascular disorders: 10047065; HLGT: Decreased and nonspecific blood pressure" +
                             " disorders and shock: 10011954; HLT: Circulatory collapse and shock: 10009193; P" +
                             "T: Dizziness postural: 10013578; LLT: Dizzy on standing: 10013581"});
-#line 32
+#line 30
  testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -210,12 +206,12 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197264_002",
                         "Release2015.3.2"});
-#line 39
+#line 37
 this.ScenarioSetup(scenarioInfo);
-#line 40
+#line 38
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 41
+#line 39
  testRunner.And("coding task \"PAIN IN UPPER CHEST\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -226,14 +222,12 @@ this.ScenarioSetup(scenarioInfo);
                         "Has",
                         "System Organ Class",
                         "General disorders and administration site conditions"});
-#line 42
+#line 40
     testRunner.When("task \"PAIN IN UPPER CHEST\" is coded to term \"Acute chest pain\" at search level \"L" +
                     "ow Level Term\" with code \"10066987\" at level \"LLT\" and higher level terms", ((string)(null)), table4, "When ");
-#line 45
- testRunner.And("a new report type \"Coding Decisions\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 46
+#line 43
  testRunner.And("searching for the verbatim \"PAIN IN UPPER CHEST\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 47
+#line 44
  testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -258,7 +252,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SOC: General disorders and administration site conditions: 10018065; HLGT: Genera" +
                             "l system disorders NEC: 10018073; HLT: Pain and discomfort NEC: 10033372; PT: Ch" +
                             "est pain: 10008479; LLT: Acute chest pain: 10066987"});
-#line 48
+#line 45
  testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -277,12 +271,12 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197264_003",
                         "Release2015.3.2"});
-#line 55
+#line 52
 this.ScenarioSetup(scenarioInfo);
-#line 56
+#line 53
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 57
+#line 54
  testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -293,18 +287,16 @@ this.ScenarioSetup(scenarioInfo);
                         "Has",
                         "System Organ Class",
                         "Vascular disorders"});
-#line 58
+#line 55
     testRunner.When("task \"Adverse Event Term 1\" is coded to term \"Dizzy on standing\" at search level " +
                     "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table6, "When ");
-#line 61
- testRunner.And("a new report type \"Coding Decisions\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
+#line 58
  testRunner.And("searching for the verbatim \"Adverse Event Term 1\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
+#line 59
  testRunner.And("searching for the status \"Waiting Approval\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
+#line 60
  testRunner.And("searching for auto coded items in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
+#line 61
  testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -329,7 +321,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SOC: Vascular disorders: 10047065; HLGT: Decreased and nonspecific blood pressure" +
                             " disorders and shock: 10011954; HLT: Circulatory collapse and shock: 10009193; P" +
                             "T: Dizziness postural: 10013578; LLT: Dizzy on standing: 10013581"});
-#line 66
+#line 62
  testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -348,12 +340,12 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197264_004",
                         "Release2015.3.2"});
-#line 74
+#line 70
 this.ScenarioSetup(scenarioInfo);
-#line 75
+#line 71
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 76
+#line 72
  testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -364,19 +356,17 @@ this.ScenarioSetup(scenarioInfo);
                         "Has",
                         "System Organ Class",
                         "Vascular disorders"});
-#line 77
+#line 73
  testRunner.When("task \"Adverse Event Term 1\" is coded to term \"Dizzy on standing\" at search level " +
                     "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table8, "When ");
-#line 80
- testRunner.And("a new report type \"Coding Decisions\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
+#line 76
  testRunner.And("searching for the verbatim \"Adverse Event Term 1\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 82
+#line 77
  testRunner.And("searching for start date of \"01 Jan 2015\" and end date of \"01 Jan 2050\" in Coding" +
                     " Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
+#line 78
  testRunner.And("searching for auto coded items in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
+#line 79
  testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -401,7 +391,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SOC: Vascular disorders: 10047065; HLGT: Decreased and nonspecific blood pressure" +
                             " disorders and shock: 10011954; HLT: Circulatory collapse and shock: 10009193; P" +
                             "T: Dizziness postural: 10013578; LLT: Dizzy on standing: 10013581"});
-#line 85
+#line 80
  testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table9, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -420,9 +410,9 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_197264_005",
                         "Release2015.3.2",
                         "IncreaseTimeout_3000000"});
-#line 94
+#line 89
 this.ScenarioSetup(scenarioInfo);
-#line 95
+#line 90
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
@@ -447,7 +437,7 @@ this.ScenarioSetup(scenarioInfo);
                         "TRUE",
                         "FALSE",
                         "eng"});
-#line 96
+#line 91
  testRunner.When("uploading MEV content", ((string)(null)), table10, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -458,16 +448,14 @@ this.ScenarioSetup(scenarioInfo);
                         "Has",
                         "System Organ Class",
                         "Vascular disorders"});
-#line 100
+#line 95
  testRunner.And("task \"Adverse Event Term 1\" is coded to term \"Dizzy on standing\" at search level " +
                     "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table11, "And ");
-#line 103
- testRunner.And("a new report type \"Coding Decisions\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
+#line 98
  testRunner.And("searching for the verbatim \"Adverse Event Term 1\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
+#line 99
  testRunner.And("searching for auto coded items in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 100
  testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -504,7 +492,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SOC: Vascular disorders: 10047065; HLGT: Decreased and nonspecific blood pressure" +
                             " disorders and shock: 10011954; HLT: Circulatory collapse and shock: 10009193; P" +
                             "T: Dizziness postural: 10013578; LLT: Dizzy on standing: 10013581"});
-#line 107
+#line 101
  testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -523,12 +511,12 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197264_006",
                         "Release2015.3.2"});
-#line 116
+#line 110
 this.ScenarioSetup(scenarioInfo);
-#line 117
+#line 111
  testRunner.Given("a \"Waiting Approval\" Coder setup for a non-production study with no tasks and no " +
                     "synonyms and dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 118
+#line 112
  testRunner.And("coding task \"Adverse Event Term 2\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -539,16 +527,14 @@ this.ScenarioSetup(scenarioInfo);
                         "Has",
                         "System Organ Class",
                         "Vascular disorders"});
-#line 119
+#line 113
  testRunner.When("task \"Adverse Event Term 2\" is coded to term \"Dizzy on standing\" at search level " +
                     "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table13, "When ");
-#line 122
- testRunner.And("a new report type \"Coding Decisions\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 123
+#line 116
  testRunner.And("searching for the verbatim \"Adverse Event Term 2\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 124
+#line 117
  testRunner.And("searching for auto coded items in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
+#line 118
  testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -575,7 +561,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SOC: Vascular disorders: 10047065; HLGT: Decreased and nonspecific blood pressure" +
                             " disorders and shock: 10011954; HLT: Circulatory collapse and shock: 10009193; P" +
                             "T: Dizziness postural: 10013578; LLT: Dizzy on standing: 10013581"});
-#line 126
+#line 119
  testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();

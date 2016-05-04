@@ -13,7 +13,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal CodingDecisionsReportPage(BrowserSession browser)
         {
-            if (ReferenceEquals(browser, null)) throw new ArgumentNullException("browser");
+            if (ReferenceEquals(browser, null)) throw new ArgumentNullException(nameof(browser));
             _Browser = browser;
         }
 
@@ -24,125 +24,203 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         private SessionElementScope GetVerbatimTextBox()
         {
-            var verbatimTextBox = _Browser.FindSessionElementById("ctl00_Content_controlACG_TxtVerbatimTerm");
+            var verbatimTextBox = _Browser.FindSessionElementById("verbatim");
 
             return verbatimTextBox;
         }
 
         private SessionElementScope GetFromDateTextBox()
         {
-            var fromDateTextBox = _Browser.FindSessionElementById("ctl00_Content_controlACG_TxtWorkflowActionStartDate");
+            var fromDateTextBox = _Browser.FindSessionElementById("startDate");
                                                                         
             return fromDateTextBox;
         }
 
         private SessionElementScope GetToDateTextBox()
         {
-            var toDateTextBox = _Browser.FindSessionElementById("ctl00_Content_controlACG_TxtWorkflowActionEndDate");
+            var toDateTextBox = _Browser.FindSessionElementById("endDate");
 
             return toDateTextBox;
         }
 
-        private SessionElementScope GetExportButton()
-        {
-            var exportButton = _Browser.FindSessionElementById("ctl00_Content_btnExportReport");
-
-            return exportButton;
-        }
-
         private SessionElementScope GetIncludeAutocodedItemsCheckbox()
         {
-            var includeAutocodedItemsCheckbox = _Browser.FindSessionElementById("ctl00_Content_controlACG_ChkIncludeAutoCodedItems");
+            var includeAutocodedItemsCheckbox = _Browser.FindSessionElementById("autoCodeItemYes");
 
             return includeAutocodedItemsCheckbox;
         }
 
-        private SessionElementScope GetCurrentStatusListBox()
+        private SessionElementScope GetExcludeAutocodedItemsCheckbox()
         {
-            var currentStatus = _Browser.FindSessionElementById("ctl00_Content_controlACG_LstCurrentWorkflowStates");
+            var excludeAutocodedItemsCheckbox = _Browser.FindSessionElementById("autoCodeItemNo");
+
+            return excludeAutocodedItemsCheckbox;
+        }
+
+        private SessionElementScope GetSingleStatusOption(string currentStatus)
+        {
+            var allStatus = _Browser.FindAllSessionElementsByXPath("//input[contains(@id, 'currentStatus-')]");
+
+            foreach (var item in allStatus)
+            {
+                if (item.Text == currentStatus) return item;
+            }
+
+            throw new ArgumentNullException("Unable to find matching status: " + nameof(currentStatus));
+        }
+
+        private IList<SessionElementScope> GetExportColumnOptions()
+        {
+            var currentStatus = _Browser.FindAllSessionElementsByXPath("//input[contains(@id, 'exportColumn-')]");
 
             return currentStatus;
         }
 
-        private SessionElementScope GetCodedByListBox()
+        private SessionElementScope GetExportSingleOption(string exportOption)
         {
-            var currentStatus = _Browser.FindSessionElementById("ctl00_Content_controlACG_LstUsers");
+            var allExportOptions = GetExportColumnOptions();
 
-            return currentStatus;
+            foreach (var item in allExportOptions)
+            {
+                if (item.Text == exportOption) return item;
+            }
+
+            throw new ArgumentNullException("Unable to find matching status: " + nameof(exportOption));
         }
 
-        private SessionElementScope GetCurrentStatus()
+        private IList<SessionElementScope> GetCodedByUsersSpans()
         {
-            var currentStatus = _Browser.FindSessionElementById("ctl00_Content_controlACG_LstCurrentWorkflowStates");
+            var userSpans = _Browser.FindAllSessionElementsByXPath("//span[contains(@class, 'ui-select-match-item btn btn-default btn-xs')]");
 
-            return currentStatus;
+            return userSpans;         
         }
 
+        private SessionElementScope RemoveCodedByUser(string userText)
+        {
+            var userSpans = GetCodedByUsersSpans();
+
+            foreach (var parentSpan in userSpans)
+            {
+                if (parentSpan.Text == userText)
+                {
+                  var closeSpan = parentSpan.FindSessionElementByXPath("//span[contains(@class, 'close ui-select-match')]");
+
+                    return closeSpan;
+                }
+            }
+
+            throw new ArgumentNullException("Unable to find matching user text: " + nameof(userText));
+        }
+       
         private SessionElementScope GetSelectAllCodedBy()
         {
-            var currentStatus = _Browser.FindSessionElementById("ctl00_Content_controlACG_LstUsers");
+            var codedBy = _Browser.FindSessionElementById("selectAllCodedBy");
 
-            return currentStatus;
+            return codedBy;
         }
 
-        private IList<SessionElementScope> GetSelectAllCodedByOptions()
+        private SessionElementScope GetDeSelectAllCodedBy()
         {
-            var currentStatusOptions = GetSelectAllCodedBy().FindAllSessionElementsByXPath("option");
+            var codedBy = _Browser.FindSessionElementById("deSelectAllCodedBy");
 
-            return currentStatusOptions;
+            return codedBy;
         }
 
-        private SessionElementScope GetMoveAllFieldsToRightColumn()
+        private SessionElementScope GetStatusAll()
         {
-            var moveAllFieldsToRightColumn = _Browser.FindSessionElementById("MoveAllToRight");
+            var allStatus = _Browser.FindSessionElementById("selectAllStatuses");
 
-            return moveAllFieldsToRightColumn;
+            return allStatus;
+        }
+
+        private SessionElementScope GetAllColumns()
+        {
+            var allColumns = _Browser.FindSessionElementById("selectAllExportColumns");
+
+            return allColumns;
+        }
+        
+        private SessionElementScope GetStatusDeselectAll()
+        {
+            var allColumns = _Browser.FindSessionElementById("deSelectAllStatuses");
+
+            return allColumns;
         }
 
         private SessionElementScope GetStudyDropDown()
         {
-            var studyDropdown = _Browser.FindSessionElementById("ctl00_Content_controlACG_DdlStudies");
+            var studyDropdown = _Browser.FindSessionElementById("study");
 
             return studyDropdown;
         }
 
         private SessionElementScope GetDictionaryDropDown()
         {
-            var dictionaryDropDown = _Browser.FindSessionElementById("ctl00_Content_controlACG_DdlDictionaryAndLocales");
+            var dictionaryDropDown = _Browser.FindSessionElementById("dictionaryType");
 
             return dictionaryDropDown;
         }
 
         private SessionElementScope GetVersionDropDown()
         {
-            var versionDropDown = _Browser.FindSessionElementById("ctl00_Content_controlACG_DdlDictionaryVersions");
+            var versionDropDown = _Browser.FindSessionElementById("dictionaryVersion");
 
             return versionDropDown;
         }
 
-        internal void SetReportCriteria(CodingDecisionsReportCriteria searchCriteria)
+        private SessionElementScope GetCodingDecisionsReportDescription(string descriptionText)
         {
-            if (ReferenceEquals(searchCriteria, null)) throw new ArgumentNullException("searchCriteria");
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
-            GetStudyDropDown()                .SelectOptionAlphanumericOnly(searchCriteria.Study);
-            GetVerbatimTextBox()              .SetTextBoxSearchCriteria(searchCriteria.Verbatim);
-            GetFromDateTextBox()              .SetTextBoxSearchCriteria(searchCriteria.StartDate);
-            GetToDateTextBox()                .SetTextBoxSearchCriteria(searchCriteria.EndDate);
-            GetIncludeAutocodedItemsCheckbox().SetCheckBoxState(searchCriteria.IncludeAutoCodedItems);
-            GetCurrentStatusListBox()         .SetSingleListBoxOptionCriteria(searchCriteria.CurrentStatus);
-            GetCodedByListBox()               .SetSingleListBoxOptionCriteria(searchCriteria.CodedBy);
+            var enterDescriptionTextbox = _Browser.FindSessionElementById("reportDescription");
 
-            if (searchCriteria.AllColumns)
-            {
-                GetMoveAllFieldsToRightColumn().Click();
-            }
+            return enterDescriptionTextbox;
         }
 
-        internal void ExportReport()
+        private SessionElementScope GetCreateNewCodingDecisionsReportButton()
         {
-            var exportButton = GetExportButton();
+            var createButton = _Browser.FindSessionElementById("createNew");
 
-            exportButton.Click();
+            return createButton;
         }
+
+        internal void NewCodingDecisionsReportButton()
+        {
+            var createNewIngReportButton = GetCreateNewCodingDecisionsReportButton();
+
+            createNewIngReportButton.Click();
+        }
+
+        internal void EnterCodingDecisionsReportDescription(string descriptionText)
+        {
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
+
+            var enterDescriptionTextbox = GetCodingDecisionsReportDescription(descriptionText);
+
+            enterDescriptionTextbox.FillInWith(descriptionText);
+        }
+
+        internal void SetDefaultReportCriteria(CodingDecisionsReportCriteria searchCriteria)
+        {
+            if (ReferenceEquals(searchCriteria, null)) throw new ArgumentNullException(nameof(searchCriteria));
+
+            GetStudyDropDown()                                 .SelectOptionAlphanumericOnly(searchCriteria.Study);
+            GetDictionaryDropDown()                            .SelectOptionAlphanumericOnly(searchCriteria.Dictionary);
+            GetVersionDropDown()                               .SelectOptionAlphanumericOnly(searchCriteria.VersionLocale);
+
+            GetVerbatimTextBox()                               .SetTextBoxSearchCriteria(searchCriteria.Verbatim);
+            GetToDateTextBox()                                 .SetTextBoxSearchCriteria(searchCriteria.EndDate);
+            GetFromDateTextBox()                               .SetTextBoxSearchCriteria(searchCriteria.StartDate);
+
+            GetExportSingleOption(searchCriteria.SingleColumn)                                                         .Click();
+            GetSingleStatusOption(searchCriteria.SingleStatus)                                                         .Click();
+
+            if (searchCriteria.AllStatus  == true && GetStatusAll().Exists())        GetStatusAll()                    .Click();
+            if (searchCriteria.AllColumns == true && GetAllColumns().Exists())       GetAllColumns()                   .Click();
+            if (searchCriteria.AllCodedBy == true && GetSelectAllCodedBy().Exists()) GetSelectAllCodedBy()             .Click();
+            if (searchCriteria.IncludeAutoCodedItems.Equals(true))                   GetIncludeAutocodedItemsCheckbox().Click();
+            else                                                                     GetExcludeAutocodedItemsCheckbox().Click();            
+        }
+
     }
 }

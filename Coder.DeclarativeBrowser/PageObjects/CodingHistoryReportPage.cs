@@ -126,6 +126,29 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return studyDropdown;
         }
 
+        private SessionElementScope GetCodingHistoryReportDescription(string descriptionText)
+        {
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+
+            var enterDescriptionTextbox = _Browser.FindSessionElementById("reportDescription");
+
+            return enterDescriptionTextbox;
+        }
+
+        private SessionElementScope GetCreateNewCodingHistoryReportButton()
+        {
+            var createButton = _Browser.FindSessionElementById("createNew");
+
+            return createButton;
+        }
+        internal void NewCodingHistoryReportButton()
+        {
+            var createNewIngReportButton = GetCreateNewCodingHistoryReportButton();
+
+            createNewIngReportButton.Click();
+        }
+
+
         internal void AddExportColumnToReport(string exportColumn)
         {
             if (String.IsNullOrWhiteSpace(exportColumn)) throw new ArgumentNullException("exportColumn");
@@ -142,6 +165,15 @@ namespace Coder.DeclarativeBrowser.PageObjects
             GetSelectedReportColumnsListBox().SelectOption(exportColumn);
 
             GetMoveOneToLeftButton().Click();
+        }
+
+        internal void EnterCodingHistoryReportDescription(string descriptionText)
+        {
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+
+            var enterDescriptionTextbox = GetCodingHistoryReportDescription(descriptionText);
+
+            enterDescriptionTextbox.FillInWith(descriptionText);
         }
 
         internal void SetReportCriteria(CodingHistoryReportCriteria searchCriteria)

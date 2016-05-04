@@ -22,7 +22,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal ReportMainCreationCoderPage(BrowserSession browser)
         {
-            if (ReferenceEquals(browser, null)) throw new ArgumentNullException("browser");
+            if (ReferenceEquals(browser, null)) throw new ArgumentNullException(nameof(browser));
 
             _Browser = browser;
         }
@@ -43,7 +43,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         private SessionElementScope GetDescriptionLink(string descriptionText)
         {
-            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+            if (string.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
             var descriptionLink = _Browser.FindSessionElementByLink(descriptionText);
 
@@ -52,7 +52,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         private SessionElementScope GetReportInformationButton(string descriptionText)
         {
-            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+            if (string.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
             var reportTable = GetMainReportTable();
             var reportRow = reportTable.FindTableRow(descriptionText);
@@ -69,7 +69,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         private List<string> GetInformationStudyAndDictionaryText(string descriptionText)
         {
-            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+            if (string.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
             List<string> hiddenInformation = null;
 
             var reportTable = GetMainReportTable();
@@ -85,10 +85,9 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return hiddenInformation;
         }
 
-
         private SessionElementScope GetViewLink(string descriptionText)
         {
-            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+            if (string.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
             var reportTable = GetMainReportTable();
             var reportRow   = reportTable.FindTableRow(descriptionText);
@@ -97,29 +96,39 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return viewLink;
         }
 
-        private SessionElementScope SelectMainReportRadioOption(string reportRadioOption)
-        {
-            if (String.IsNullOrWhiteSpace(reportRadioOption)) throw new ArgumentNullException(reportRadioOption);
-
-            switch (reportRadioOption)
-            {
-                case "Coding History":   { SessionElementScope selectedRadioOption = _Browser.FindSessionElementById("codingHistoryFilter");   return selectedRadioOption; }
-                case "Coding Decisions": { SessionElementScope selectedRadioOption = _Browser.FindSessionElementById("codingDecisionsFilter"); return selectedRadioOption; }
-                case "Ingredients":      { SessionElementScope selectedRadioOption = _Browser.FindSessionElementById("ingredientsFilter");     return selectedRadioOption; }
-                case "Study":            { SessionElementScope selectedRadioOption = _Browser.FindSessionElementById("studyFilter");           return selectedRadioOption; }
-                default:                 { throw new ArgumentNullException("Invalid Report Select Option: " + reportRadioOption);                                          }
-            }
-        }
-
         private SessionElementScope GetExportLink(string descriptionText)
         {
-            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+            if (string.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
             var reportTable = GetMainReportTable();
             var reportRow = reportTable.FindTableRow(descriptionText);
             var reportRowExportLink = reportRow.FindSessionElementByLink("Export");
 
             return reportRowExportLink;
+        }
+
+        internal void SelectCodingDecisionReportOption()
+        {
+            var selectedRadioOption = _Browser.FindSessionElementById("codingDecisionsFilter");
+            selectedRadioOption.Click();
+        }
+
+        internal void SelectCodingHistoryReportOption()
+        {
+            var selectedRadioOption = _Browser.FindSessionElementById("codingHistoryFilter");
+            selectedRadioOption.Click();
+        }
+
+        internal void SelectIngredientReportOption()
+        {
+            var selectedRadioOption = _Browser.FindSessionElementById("ingredientsFilter");
+            selectedRadioOption.Click();
+        }
+
+        internal void SelectStudyReportOption()
+        {
+            var selectedRadioOption = _Browser.FindSessionElementById("studyFilter");
+            selectedRadioOption.Click();
         }
 
         internal MainReportTableModel GetMainReportPageTableRowText(string descriptionText)
@@ -142,21 +151,16 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return mainReportTableRowsValues;
         }
 
-
-        internal void CreateNewReport(string reportType)
+        internal void SelectCreateNewButton()
         {
-            if (String.IsNullOrWhiteSpace(reportType)) throw new ArgumentNullException(reportType);
-
-            var selectRadioOption  = SelectMainReportRadioOption(reportType);
             var createReportButton = GetCreateNewFilterButton();
 
-            selectRadioOption.Click();
             createReportButton.Click();
         }
 
         internal void SelectExportReport(string descriptionText)
         {
-            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+            if (string.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
             var exportLink = GetExportLink(descriptionText);
 
@@ -167,8 +171,8 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal void SelectStudyReportViewLink(string descriptionText)
         {
-            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
-            
+            if (string.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
+
             var viewLink = GetViewLink(descriptionText);
 
             _Browser.WaitUntilElementExists(() => viewLink);
@@ -178,7 +182,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal void DeleteReport(string descriptionText)
         {
-            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+            if (string.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
             var reportTable  = GetMainReportTable();
             var reportRow    = reportTable.FindTableRow(descriptionText); 
@@ -195,7 +199,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal void UpdateReport(string descriptionText)
         {
-            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+            if (string.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
             GetDescriptionLink(descriptionText).Click();
         }

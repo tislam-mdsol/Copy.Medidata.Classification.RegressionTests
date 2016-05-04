@@ -14,7 +14,7 @@ namespace Coder.DeclarativeBrowser.FileHelpers
     {
         public static int GetFileRowCount(string filePath)
         {
-            if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException("filePath");
+            if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException(nameof(filePath));
 
             RetryPolicy.CheckDownloadFileExists.Execute( 
                 () =>
@@ -30,9 +30,9 @@ namespace Coder.DeclarativeBrowser.FileHelpers
 
         internal static void DownloadVerifiedFile(string downloadDirectory, string fileName, Action downloadAction, int expectedRows = 2)
         {
-            if (String.IsNullOrWhiteSpace(downloadDirectory)) throw new ArgumentNullException("downloadDirectory");
-            if (String.IsNullOrWhiteSpace(fileName))          throw new ArgumentNullException("fileName");
-            if (!Directory.Exists(downloadDirectory))         throw new ArgumentException(String.Format("Directory {0} does not eixst", downloadDirectory));
+            if (String.IsNullOrWhiteSpace(downloadDirectory)) throw new ArgumentNullException(nameof(downloadDirectory));
+            if (String.IsNullOrWhiteSpace(fileName))          throw new ArgumentNullException(nameof(fileName));
+            if (!Directory.Exists(downloadDirectory))         throw new ArgumentException(String.Format("Directory {0} does not exist", nameof(downloadDirectory)));
 
             var filePath = Path.Combine(downloadDirectory, fileName);
 
@@ -46,7 +46,7 @@ namespace Coder.DeclarativeBrowser.FileHelpers
 
         internal static void VerifyFileRows(string filePath, int expectedRows)
         {
-            if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException("filePath");
+            if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException(nameof(filePath));
 
             var rowCount = GetFileRowCount(filePath);
 
@@ -61,9 +61,9 @@ namespace Coder.DeclarativeBrowser.FileHelpers
 
         internal static string UnzipFile(string zippedPath, string zippedFileName, string downloadDirectory)
         {
-            if (String.IsNullOrWhiteSpace(zippedPath)) throw new ArgumentNullException("zippedPath");
-            if (String.IsNullOrWhiteSpace(zippedFileName)) throw new ArgumentNullException("zippedFileName");
-            if (String.IsNullOrWhiteSpace(downloadDirectory)) throw new ArgumentNullException("downloadDirectory");
+            if (String.IsNullOrWhiteSpace(zippedPath)) throw new ArgumentNullException(nameof(zippedPath));
+            if (String.IsNullOrWhiteSpace(zippedFileName)) throw new ArgumentNullException(nameof(zippedFileName));
+            if (String.IsNullOrWhiteSpace(downloadDirectory)) throw new ArgumentNullException(nameof(downloadDirectory));
 
             var zippedFilePath = Path.Combine(zippedPath, zippedFileName);
 
@@ -74,8 +74,8 @@ namespace Coder.DeclarativeBrowser.FileHelpers
 
         internal static bool IsRaveXLSWorkSheetRowDataComparison(string filePath, string workSheetName, int startValueIndex, List<string> expectedSheetDataValues)
         {
-            if (String.IsNullOrWhiteSpace(filePath))                   throw new ArgumentNullException("filePath");
-            if (String.IsNullOrWhiteSpace(workSheetName))              throw new ArgumentNullException("workSheetName");
+            if (String.IsNullOrWhiteSpace(filePath))                   throw new ArgumentNullException(nameof(filePath));
+            if (String.IsNullOrWhiteSpace(workSheetName))              throw new ArgumentNullException(nameof(workSheetName));
             if (String.IsNullOrWhiteSpace(startValueIndex.ToString())) throw new ArgumentNullException("startIndex");
             if (!expectedSheetDataValues.Any())                        throw new ArgumentNullException("No expected values from table");
 

@@ -19,19 +19,11 @@ namespace Coder.TestSteps.StepDefinitions
 
         public MainReportSteps(StepContext stepContext)
         {
-            if (ReferenceEquals(stepContext, null)) throw new ArgumentNullException("stepContext");
+            if (ReferenceEquals(stepContext, null))         throw new ArgumentNullException(nameof(stepContext));
             if (ReferenceEquals(stepContext.Browser, null)) throw new NullReferenceException("Browser");
 
             _StepContext = stepContext;
             _Browser     = _StepContext.Browser;
-        }
-
-        [When(@"a new report type ""(.*)"" is created")]
-        public void ANewReportTypeIsCreated(string reportType)
-        {
-            if (String.IsNullOrWhiteSpace(reportType)) throw new ArgumentNullException(reportType);
-
-            _Browser.CreateMainReportForType(reportType);
         }
 
     }

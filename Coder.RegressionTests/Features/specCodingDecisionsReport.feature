@@ -8,8 +8,7 @@ Feature: This feature will demonstrate Coder's functionality on generating Codin
 Scenario: Coder will allow a user to be able to export a Coding Decision Report, which contains information on coded and approved coding decisions via verbatim text
     Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0" 
 	And coding task "Headache" for dictionary level "LLT"
-	When a new report type "Coding Decision" is created
-	And searching for the verbatim "Headache" in Coding Decisions Report
+	When searching for the verbatim "Headache" in Coding Decisions Report
 	And searching for auto coded items in Coding Decisions Report
 	And exporting all columns in the Coding Decisions Report
 	Then the Coding Decisions Report should contain the following
@@ -25,7 +24,6 @@ Scenario: Verify the user is able to export using verbatim for Coding Decisions 
     When task "Adverse Event Term 1" is coded to term "Dizzy on standing" at search level "Low Level Term" with code "10013581" at level "LLT" and higher level terms
 	     | Operator | Attribute          | Text               |
 	     | Has      | System Organ Class | Vascular disorders |
-	And a new report type "Coding Decisions" is created
 	And searching for the verbatim "Adverse Event Term 1" in Coding Decisions Report
 	And searching for auto coded items in Coding Decisions Report
 	And exporting all columns in the Coding Decisions Report
@@ -42,7 +40,6 @@ Scenario: Verify the user is able to export using verbatim for Coding Decisions 
     When task "PAIN IN UPPER CHEST" is coded to term "Acute chest pain" at search level "Low Level Term" with code "10066987" at level "LLT" and higher level terms
 	     | Operator | Attribute          | Text               |
 	     | Has      | System Organ Class | General disorders and administration site conditions |
-	And a new report type "Coding Decisions" is created
 	And searching for the verbatim "PAIN IN UPPER CHEST" in Coding Decisions Report
 	And exporting all columns in the Coding Decisions Report
 	Then the Coding Decisions Report should contain the following
@@ -58,7 +55,6 @@ Scenario: Verify the user is able to select statuses in current status for Codin
     When task "Adverse Event Term 1" is coded to term "Dizzy on standing" at search level "Low Level Term" with code "10013581" at level "LLT" and higher level terms
 	     | Operator | Attribute          | Text               |
 	     | Has      | System Organ Class | Vascular disorders |
-	And a new report type "Coding Decisions" is created
 	And searching for the verbatim "Adverse Event Term 1" in Coding Decisions Report
 	And searching for the status "Waiting Approval" in Coding Decisions Report
 	And searching for auto coded items in Coding Decisions Report
@@ -77,7 +73,6 @@ Scenario: Verify the user is able to enter a start and end date for Coding Decis
 	When task "Adverse Event Term 1" is coded to term "Dizzy on standing" at search level "Low Level Term" with code "10013581" at level "LLT" and higher level terms
 	    | Operator | Attribute          | Text               |
 	    | Has      | System Organ Class | Vascular disorders |
-	And a new report type "Coding Decisions" is created
 	And searching for the verbatim "Adverse Event Term 1" in Coding Decisions Report
 	And searching for start date of "01 Jan 2015" and end date of "01 Jan 2050" in Coding Decisions Report
 	And searching for auto coded items in Coding Decisions Report
@@ -100,7 +95,6 @@ Scenario: Verify the user is able to export multiple terms for Coding Decisions 
 	And task "Adverse Event Term 1" is coded to term "Dizzy on standing" at search level "Low Level Term" with code "10013581" at level "LLT" and higher level terms
 	    | Operator | Attribute          | Text               |
 	    | Has      | System Organ Class | Vascular disorders |
-	And a new report type "Coding Decisions" is created
 	And searching for the verbatim "Adverse Event Term 1" in Coding Decisions Report
 	And searching for auto coded items in Coding Decisions Report
 	And exporting all columns in the Coding Decisions Report
@@ -119,7 +113,6 @@ Scenario: Verify the user is able to export using verbatim on a non production s
 	When task "Adverse Event Term 2" is coded to term "Dizzy on standing" at search level "Low Level Term" with code "10013581" at level "LLT" and higher level terms
 	    | Operator | Attribute          | Text               |
 	    | Has      | System Organ Class | Vascular disorders |
-	And a new report type "Coding Decisions" is created
 	And searching for the verbatim "Adverse Event Term 2" in Coding Decisions Report
 	And searching for auto coded items in Coding Decisions Report
 	And exporting all columns in the Coding Decisions Report

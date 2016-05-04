@@ -1542,37 +1542,5 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             return mainReportCoderPage;
         }
 
-        internal static void OpenMainReportPage(this BrowserSession session)
-        {
-            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
-
-            var headerPage = session.GetPageHeader();
-            headerPage.OpenReportHeader();
-        }
-
-
-        internal static void OpenSpecificNewReportPage(this BrowserSession session, string reportType)
-        {
-            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
-            if (String.IsNullOrWhiteSpace(reportType)) throw new ArgumentNullException("reportType");
-
-            session.OpenMainReportPage();
-
-            var reportsMainPage = session.GetMainReportCoderPage();
-            reportsMainPage.CreateNewReport(reportType);
-        }
-
-        internal static void OpenStudyReportViewPage(this BrowserSession session, string descriptionText)
-        {
-            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
-            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
-
-            session.OpenMainReportPage();
-
-            var mainReportCoderPage = session.GetMainReportCoderPage();
-
-            mainReportCoderPage.SelectStudyReportViewLink(descriptionText);
-        }
-
     }
 }

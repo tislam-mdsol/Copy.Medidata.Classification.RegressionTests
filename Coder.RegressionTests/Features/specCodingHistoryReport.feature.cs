@@ -87,12 +87,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
  testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.When("a new report type \"Coding History\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("searching for the verbatim \"Adverse Event Term 1\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
- testRunner.And("searching for the verbatim \"Adverse Event Term 1\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
  testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
+#line 13
  testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -126,7 +124,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Start Auto Code",
                         "",
                         ""});
-#line 15
+#line 14
  testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -143,22 +141,20 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_37359_MCC_178485_002",
                         "Release2015.3.0"});
-#line 24
+#line 23
 this.ScenarioSetup(scenarioInfo);
-#line 25
+#line 24
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Wh" +
                     "oDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 26
+#line 25
  testRunner.And("coding task \"ASPIRIN PLUS C\" for dictionary level \"PRODUCT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.When("searching for the term \"ASPIRIN PLUS C\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
- testRunner.When("a new report type \"Coding History\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 28
- testRunner.And("searching for the term \"ASPIRIN PLUS C\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
  testRunner.And("searching for the code \"003467 01 001\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
+#line 28
  testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
+#line 29
  testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -194,7 +190,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Start Auto Code",
                         "Auto Coding",
                         "Auto coded by direct dictionary match"});
-#line 32
+#line 30
  testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -211,20 +207,18 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_37359_MCC_178485_003",
                         "Release2015.3.0"});
-#line 41
+#line 39
 this.ScenarioSetup(scenarioInfo);
-#line 42
+#line 40
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Wh" +
                     "oDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 43
+#line 41
  testRunner.And("coding task \"ASPIRIN PLUS C\" for dictionary level \"PRODUCT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
- testRunner.When("a new report type \"Coding History\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 45
- testRunner.And("searching for the term \"ASPIRIN PLUS C\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 46
+#line 42
+ testRunner.When("searching for the term \"ASPIRIN PLUS C\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 43
  testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 47
+#line 44
  testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -260,7 +254,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Start Auto Code",
                         "Auto Coding",
                         "Auto coded by direct dictionary match"});
-#line 48
+#line 45
  testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -277,22 +271,20 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_37359_MCC_178485_004",
                         "Release2015.3.0"});
-#line 57
+#line 54
 this.ScenarioSetup(scenarioInfo);
-#line 58
+#line 55
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 59
+#line 56
  testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
- testRunner.When("a new report type \"Coding History\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 61
- testRunner.And("searching for the verbatim \"Adverse Event Term 1\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
+#line 57
+ testRunner.When("searching for the verbatim \"Adverse Event Term 1\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 58
  testRunner.And("searching for the status \"Waiting Manual Code\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
+#line 59
  testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
+#line 60
  testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -326,7 +318,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Start Auto Code",
                         "",
                         ""});
-#line 65
+#line 61
  testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -343,23 +335,21 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_37359_MCC_178485_005",
                         "Release2015.3.0"});
-#line 74
+#line 70
 this.ScenarioSetup(scenarioInfo);
-#line 75
+#line 71
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 76
+#line 72
  testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
- testRunner.When("a new report type \"Coding History\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 78
- testRunner.And("searching for the verbatim \"Adverse Event Term 1\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 73
+ testRunner.When("searching for the verbatim \"Adverse Event Term 1\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 74
  testRunner.And("searching for start date of \"01 Jan 2015\" and end date of \"01 Jan 2050\" in Coding" +
                     " History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
+#line 75
  testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
+#line 76
  testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -393,7 +383,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Start Auto Code",
                         "",
                         ""});
-#line 82
+#line 77
  testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -410,9 +400,9 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_37359_MCC_178485_006",
                         "Release2015.3.0"});
-#line 92
+#line 87
 this.ScenarioSetup(scenarioInfo);
-#line 93
+#line 88
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
@@ -437,13 +427,11 @@ this.ScenarioSetup(scenarioInfo);
                         "TRUE",
                         "FALSE",
                         "eng"});
-#line 94
+#line 89
  testRunner.When("uploading MEV content", ((string)(null)), table6, "When ");
-#line 98
- testRunner.And("a new report type \"Coding History\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
+#line 93
  testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
+#line 94
  testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -477,7 +465,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Start Auto Code",
                         "",
                         ""});
-#line 101
+#line 95
  testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -494,20 +482,18 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_37359_MCC_178485_007",
                         "Release2015.3.0"});
-#line 110
+#line 104
 this.ScenarioSetup(scenarioInfo);
-#line 111
+#line 105
   testRunner.Given("a \"Basic\" Coder setup for a non-production study with no tasks and no synonyms an" +
                     "d dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 112
+#line 106
   testRunner.And("coding task \"Adverse Event Term 2\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 113
-  testRunner.When("a new report type \"Coding History\" is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 114
-  testRunner.And("searching for the verbatim \"Adverse Event Term 2\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
+#line 107
+  testRunner.When("searching for the verbatim \"Adverse Event Term 2\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 108
   testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
+#line 109
   testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -544,7 +530,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Start Auto Code",
                         "",
                         ""});
-#line 117
+#line 110
   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
