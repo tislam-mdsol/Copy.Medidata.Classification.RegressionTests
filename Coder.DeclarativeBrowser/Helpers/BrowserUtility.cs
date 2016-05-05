@@ -7,6 +7,8 @@ using Coder.DeclarativeBrowser.OdmBuilder;
 using System.Linq;
 using Coder.DeclarativeBrowser.CoderConfiguration;
 using Coder.DeclarativeBrowser.ExtensionMethods;
+using Medidata.Classification;
+using ServiceModelEx;
 
 namespace Coder.DeclarativeBrowser.Helpers
 {
@@ -19,6 +21,45 @@ namespace Coder.DeclarativeBrowser.Helpers
             {"WhoDrugDDEB2", "PRODUCT" },
             {"AZDD"        , "PRODUCT" }
         };
+
+        public static bool CreateAutomatedCodingRequestSection(
+                        StepContext stepContext,
+            string verbatim,
+            string dictionaryLevel         = null,
+            string formName                = null,
+            string components              = null,
+            string supplements             = null,
+            string markingGroup            = null,
+            bool haltOnFailure             = true,
+            bool waitForAutoCodingComplete = true)
+        {
+            if (ReferenceEquals(stepContext, null)) throw new ArgumentNullException("stepContext");
+            if (String.IsNullOrEmpty(verbatim)) throw new ArgumentNullException("verbatim");
+
+            var initialData      = new AutomatedCodingRequestSection();
+
+            initialData.Request  = new StartAutomatedCodingRequest()
+            {
+                StudyUuid        = stepContext.GetStudyUuid(),
+                UserId           = stepContext.GetUser(),
+            };
+            
+           var codingRequest     = new CodingRequest()
+           {
+               AppUuid           = stepContext.GetStudyUuid(),
+               BatchOid          = stepContext.FileOid,
+               CodingContextUri  = stepContext.ConnectionUri,
+               CreationDateTime  = stepContext.AutoCodeDate
+           };
+
+            initialData.Items    = new CodingRequest[1];
+            initialData.Items[0] = codingRequest;
+
+            //send initial data to DeclarativeBrowser for broadcasting to service bus
+            bool uploadCompletedSuccesfully = stepContext.Browser.InitiateCodingRequests(initialData);
+
+            return uploadCompletedSuccesfully;
+        }
 
         public static bool CreateNewTask(
             StepContext stepContext                     ,

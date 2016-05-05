@@ -1202,7 +1202,11 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             if (ReferenceEquals(sourceSynonymList, null)) throw new ArgumentNullException("sourceSynonymList");
             if (ReferenceEquals(targetSynonymList, null)) throw new ArgumentNullException("targetSynonymList");
 
+
+
             var studyImpactAnalysisPage = new StudyImpactAnalysisPage(session);
+
+            studyImpactAnalysisPage.CreateNewStudyImpactAnalysisReport();
 
             studyImpactAnalysisPage.GoToWithValues(
                 study,

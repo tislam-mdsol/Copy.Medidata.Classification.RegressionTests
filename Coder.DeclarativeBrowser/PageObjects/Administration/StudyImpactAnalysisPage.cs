@@ -39,17 +39,29 @@ namespace Coder.DeclarativeBrowser.PageObjects.Administration
 
             GetStudyDropDownList().SelectOption(study);
             GetDictionaryDropDownList().SelectOption(dictionary);
-            GetIncludeKeptCheckBox().SetCheckBoxState("True");
+            //GetIncludeKeptCheckBox().SetCheckBoxState("True");
             GetFromVersionDropDownList().SelectOption(sourceSynonymList.Version + "-" + sourceSynonymList.Locale);
             GetFromSynonymListDropDownList().SelectOption(sourceSynonymList.SynonymListName);
             GetToVersionDropDownList().SelectOption(targetSynonymList.Version + "-" + targetSynonymList.Locale);
             GetToSynonymListDropDownList().SelectOption(targetSynonymList.SynonymListName);
         }
 
+        private SessionElementScope GetCreateNewStudyImpactAnalysisReportButton()
+        {
+            var createNewButton = _Session.FindSessionElementById("gotoFilter");
+            return createNewButton;
+        }
+
+        internal void CreateNewStudyImpactAnalysisReport()
+        {
+            var createNewButton = GetCreateNewStudyImpactAnalysisReportButton();
+            createNewButton.Click();
+        }
+
         internal SessionElementScope GetStudyDropDownList()
         {
             var studyDropDownList = _Session
-                .FindSessionElementById("ctl00_Content_controlACG_ddlStudy");
+                .FindSessionElementById("study");
 
             return studyDropDownList;
         }
@@ -57,7 +69,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Administration
         internal SessionElementScope GetDictionaryDropDownList()
         {
             var dictionaryDropDownList = _Session
-                .FindSessionElementById("ctl00_Content_controlACG_ddlDictionary");
+                .FindSessionElementById("dictionary");
 
             return dictionaryDropDownList;
         }
@@ -65,7 +77,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Administration
         internal SessionElementScope GetFromVersionDropDownList()
         {
             var fromVersionDropDownList = _Session
-                .FindSessionElementById("ctl00_Content_controlACG_ddlFromVersion");
+                .FindSessionElementById("dictionaryFromVersion");
 
             return fromVersionDropDownList;
         }
@@ -73,7 +85,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Administration
         internal SessionElementScope GetFromSynonymListDropDownList()
         {
             var fromSynonymListDropDownList = _Session
-                .FindSessionElementById("ctl00_Content_controlACG_ddlFromSynonymList");
+                .FindSessionElementById("fromSynonymList");
 
             return fromSynonymListDropDownList;
         }
@@ -81,7 +93,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Administration
         internal SessionElementScope GetToVersionDropDownList()
         {
             var toVersionDropDownList = _Session
-                .FindSessionElementById("ctl00_Content_controlACG_ddlToVersion");
+                .FindSessionElementById("dictionaryToVersion");
 
             return toVersionDropDownList;
         }
@@ -89,7 +101,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Administration
         internal SessionElementScope GetToSynonymListDropDownList()
         {
             var toSynonymListDropDownList = _Session
-                .FindSessionElementById("ctl00_Content_controlACG_ddlToSynonymList");
+                .FindSessionElementById("toSynonymList");
 
             return toSynonymListDropDownList;
         }
@@ -105,7 +117,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Administration
         internal SessionElementScope GetGenerateReportButton()
         {
             var generateReportButton = _Session
-                .FindSessionElementById("ctl00_Content_btnSearch");
+                .FindSessionElementById("createNew");
 
             return generateReportButton;
         }
@@ -124,14 +136,6 @@ namespace Coder.DeclarativeBrowser.PageObjects.Administration
                 .FindSessionElementById("ctl00_Content_btnExportStudyDetailReport");
 
             return exportStudyDetailReportButton;
-        }
-
-        internal SessionElementScope GetStudyReportGridRow()
-        {
-            var studyReportGridRow = _Session
-                .FindSessionElementById("ctl00_Content_studyVersionView_DXDataRow0");
-
-            return studyReportGridRow;
         }
 
         internal SessionElementScope GetStudyReportGridActionButton()
@@ -372,13 +376,26 @@ namespace Coder.DeclarativeBrowser.PageObjects.Administration
 
         internal void WaitForMigrationReportToLoad()
         {
+            // wait for report to generate
             var options = Config.GetLoadingCoypuOptions();
 
             _Session.TryUntil(
-                GetStudyReportGridRow().Click,
-                () => GetStudyReportGridRow().Exists(),
-                options.WaitBeforeClick,
-                options);
+              () => GetCompletedReportLink(),
+              GetCompletedReportLink,
+              options.RetryInterval,
+              options);
         }
+
+        private bool GetCompletedReportLink()
+        {
+            var table = _Session.FindSessionElementById("tableAllReports");
+            if (ReferenceEquals(table, null)) { return false; }
+            var link = table.FindAllSessionElementsByXPath("//input[contains(@id, 'viewReport-')]");
+            var completed = !ReferenceEquals(link, null);
+            return completed;
+        }
+        
+
+
     }
 }

@@ -55,7 +55,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             return codingHistoryGridRows;
         }
-
+       
         internal CodingHistoryDetail[] GetCodingHistoryDetailValues(CodingTask selectedTask = null)
         {
             GetCodingHistoryTab().Click();

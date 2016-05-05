@@ -333,6 +333,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="ConfigData\Default.srprofile.dice" />
+    <None Include="ConfigData\mauth_private_key.txt.dice" />
     <None Include="ConfigData\settings.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -563,6 +564,9 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ConfigData\mauth_private_key.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="StaticContent\JDrug_2015H1_ENG_2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

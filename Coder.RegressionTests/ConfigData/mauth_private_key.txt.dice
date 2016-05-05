@@ -1,0 +1,5 @@
+﻿-----BEGIN RSA PRIVATE KEY-----
+<% puts 'MAuth private key not set in environment, skipping...' if !configured.codermauthprivatepemkey %>
+<%= (configured.codermauthprivatepemkey || '').gsub '][', "\n" %>
+
+-----END RSA PRIVATE KEY-----
