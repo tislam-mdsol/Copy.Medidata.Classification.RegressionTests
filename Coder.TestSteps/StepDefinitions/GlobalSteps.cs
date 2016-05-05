@@ -62,9 +62,10 @@ namespace Coder.TestSteps.StepDefinitions
         public void GivenCodingTaskForDictionaryLevel(string verbatim, string dictionaryLevel)
         {
             if (String.IsNullOrEmpty(verbatim))          throw new ArgumentNullException("verbatim");          
-            if (String.IsNullOrEmpty(dictionaryLevel))   throw new ArgumentNullException("dictionaryLevel");   
+            if (String.IsNullOrEmpty(dictionaryLevel))   throw new ArgumentNullException("dictionaryLevel");
 
-            BrowserUtility.CreateNewTask(_StepContext, verbatim, dictionaryLevel);
+            //BrowserUtility.CreateNewTask(_StepContext, verbatim, dictionaryLevel);
+            BrowserUtility.CreateAutomatedCodingRequestSection(_StepContext, verbatim, dictionaryLevel);
         }
 
         [When(@"coding tasks ""(.*)""")]
