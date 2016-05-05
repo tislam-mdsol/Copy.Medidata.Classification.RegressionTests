@@ -34,6 +34,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.Core.3.1.5.3\lib\net45\AWSSDK.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AWSSDK.SQS, Version=3.1.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.SQS.3.1.0.6\lib\net45\AWSSDK.SQS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.7.4137.9688, Culture=neutral, PublicKeyToken=a4292a325f69b123, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
       <Private>True</Private>
@@ -98,23 +106,31 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.IFX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000043-01\lib\net40\Medidata.IFX.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000047-01\lib\net40\Medidata.IFX.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.IFX.CommunicationHub, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000043-01\lib\net40\Medidata.IFX.CommunicationHub.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000047-01\lib\net40\Medidata.IFX.CommunicationHub.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.IFX.IOC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000043-01\lib\net40\Medidata.IFX.IOC.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000047-01\lib\net40\Medidata.IFX.IOC.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.IFX.UnitTestHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000043-01\lib\net40\Medidata.IFX.UnitTestHelper.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000047-01\lib\net40\Medidata.IFX.UnitTestHelper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.MAuth, Version=2.10.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Medidata.MAuth.2.10.1\lib\net452\Medidata.MAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Medidata.Messaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.Messaging.1.1.2-pre000047-01\lib\net40\Medidata.Messaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Medidata.Messaging.Archon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.Messaging.1.1.2-pre000047-01\lib\net40\Medidata.Messaging.Archon.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
@@ -137,7 +153,7 @@
       <HintPath>..\packages\Polly.2.2.3\lib\net45\Polly.dll</HintPath>
     </Reference>
     <Reference Include="ServiceModelEx, Version=3.0.0.0, Culture=neutral, PublicKeyToken=d0f8277329bba7a0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000043-01\lib\net40\ServiceModelEx.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000047-01\lib\net40\ServiceModelEx.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -201,6 +217,7 @@
     <Compile Include="IMedidataApi\Models\IMedidataAPIStudySite.cs" />
     <Compile Include="IMedidataApi\Models\IMedidataAPIUser.cs" />
     <Compile Include="Helpers\TaskAttempt.cs" />
+    <Compile Include="MessagingSystem.cs" />
     <Compile Include="Models\AssignedGeneralRole.cs" />
     <Compile Include="Models\AssignedWorkflowRole.cs" />
     <Compile Include="Models\CodingDecisionsReportRow.cs" />
@@ -424,6 +441,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -465,7 +483,9 @@
       <LastGenOutput>_Schema.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Analyzer Include="..\packages\AWSSDK.SQS.3.1.0.6\analyzers\dotnet\cs\AWSSDK.SQS.CodeAnalysis.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

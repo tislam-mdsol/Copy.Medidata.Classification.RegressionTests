@@ -20,6 +20,7 @@ using Coder.DeclarativeBrowser.Helpers;
 using Coder.DeclarativeBrowser.IMedidataApi;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.PageObjects;
+using Medidata;
 using Medidata.Classification;
 using WorkflowState = Coder.DeclarativeBrowser.PageObjects.Reports.WorkflowState;
 
@@ -46,6 +47,15 @@ namespace Coder.DeclarativeBrowser
 
             Session = session;
             _DownloadDirectory = downloadDirectory;
+        }
+
+        public static void go()
+        {
+
+            CommunicationHub.Get<AutomatedCodingRequestSection>().Event += (snd, arg) =>
+            {
+
+            };
         }
 
         public static CoderDeclarativeBrowser StartBrowsing(string downloadDirectory)

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <appSettings>
+    <add key="SubsystemAssemblyExclusionFilters"                                 value="Medidata.SpecFlow,IKVM"   />
     <add key="AppHost"                                                           value="<%= configured.uitest_login_url %>" />
     <add key="LocalHost"                                                         value="localhost" />
     <add key="Port"                                                              value=" " />
@@ -7,7 +8,7 @@
     <add key="DownloadDirectory"                                                 value="C:\TempRegressionDownloads" />
     <add key="ScreenshotDirectoryName"                                           value="RegressionTestScreenshots" />
     <add key="FirefoxExecutablePath"                                             value="C:\Program Files (x86)\Mozilla Firefox\Firefox.exe" />
-    <add key="Login"                                                             value="<%= configured.regression_test_user_id || 'coder3' %>"/>
+    <add key="Login"                                                             value="<%= configured.regression_test_user_id || 'coder3' %>" />
     <add key="Password"                                                          value="Password1" />
     <add key="Segment"                                                           value="Mediflex" />
     <add key="AdminLogin"                                                        value="CoderAdmin" />
@@ -32,14 +33,15 @@
     <add key="StudyNamePrefix"                                                   value="<%= configured.study_name_prefix  || 'Mediflex' %>" />
     <add key="TimeStampHoursDiff"                                                value="<%= configured.timestamp_hours_diff  || '24' %>" />
     <add key="GridHubHost"                                                       value="<%= configured.selenium_grid_hub_host || '' %>"/>
-    <add key="AwsAccessKey"                                                      value=""<%= configured.S3AccessKey                                   || ''                                                   %>"/>
-    <add key="AwsSecretKey"                                                      value=""<%= configured.S3SecretKey                                   || ''                                                   %>"/>
-    <add key="iMedidataAppId"                                                    value=""<%= configured.app_uuid                                      || ''                                                   %>"/>
-    <add key="iMedidataBaseUrl"                                                  value=""<%= configured.mauth_service_url                             || ''                                                   %>"/>
-    <add key="iMedidataPrivateKeyFile"                                           value=""<%= configured.mAuth_private_location                        || 'ConfigData/mauth_private_key.txt'                   %>"/>
-    <add key="ArchonBaseUrl"                                                     value=""<%= configured.archonBaseUrl                                 || ''                                                   %>"/>
-    <add key="MessageRetentionPeriod"                                            value=""<%= configured.messageRetentionPeriod                        || '345600'                                             %>"/>
-    <add key="MaximumDeliveries"                                                 value=""<%= configured.maximumDeliveries                             || '3'                                                  %>"/>
-    <add key="SubsystemName"                                                     value=""<%= configured.subsystemName                                 || 'Coder.RegressionTests'                              %>"/>
-    <add key="PollingTimeInterval"                                               value=""<%= configured.pollingTimeInterval                           || '5000'                                               %>"/>
+    <add key="AwsAccessKey"                                                      value="<%= configured.S3AccessKey                                   || ''                                                   %>"/>
+    <add key="AwsSecretKey"                                                      value="<%= configured.S3SecretKey                                   || ''                                                   %>"/>
+    <add key="iMedidataAppId"                                                    value="<%= configured.app_uuid                                      || ''                                                   %>"/>
+    <add key="iMedidataBaseUrl"                                                  value="<%= configured.mauth_service_url                             || ''                                                   %>"/>
+    <add key="iMedidataPrivateKeyFile"                                           value="ConfigData/mauth_private_key.txt"/>
+    <add key="ArchonBaseUrl"                                                     value="<%= configured.archonBaseUrl                                 || ''                                                   %>"/>
+    <add key="ArchonDefaultExchange"                                             value="<%= configured.archonDefaultExchange                         || ''                                                   %>"/>
+    <add key="MessageRetentionPeriod"                                            value="<%= configured.messageRetentionPeriod                        || '345600'                                             %>"/>
+    <add key="MaximumDeliveries"                                                 value="<%= configured.maximumDeliveries                             || '3'                                                  %>"/>
+    <add key="SubsystemName"                                                     value="<%= configured.subsystemName                                 || 'Coder.RegressionTests'                              %>"/>
+	  <add key="PollingTimeInterval"                                               value="<%= configured.pollingTimeInterval                           || '5000'                                               %>"/>
 </appSettings>

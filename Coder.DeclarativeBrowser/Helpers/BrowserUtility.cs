@@ -52,6 +52,7 @@ namespace Coder.DeclarativeBrowser.Helpers
                CreationDateTime  = stepContext.AutoCodeDate
            };
 
+            initialData.Items    = new CodingRequest[1];
             initialData.Items[0] = codingRequest;
 
             //send initial data to DeclarativeBrowser for broadcasting to service bus
