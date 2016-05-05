@@ -167,7 +167,7 @@ namespace Coder.DeclarativeBrowser
 
         public void CreateCodingHistoryReport(CodingHistoryReportCriteria searchCriteria, string descriptionText)
         {
-            if (ReferenceEquals(searchCriteria, null)) throw new ArgumentNullException(nameof(searchCriteria));
+            if (ReferenceEquals(searchCriteria, null))  throw new ArgumentNullException(nameof(searchCriteria));
             if (ReferenceEquals(descriptionText, null)) throw new ArgumentNullException(nameof(descriptionText));
 
             var headerReport = Session.GetPageHeader();
@@ -185,7 +185,7 @@ namespace Coder.DeclarativeBrowser
 
         public void CreateCodingDecisionsReport(CodingDecisionsReportCriteria searchCriteria, string descriptionText)
         {
-            if (ReferenceEquals(searchCriteria, null)) throw new ArgumentNullException(nameof(searchCriteria));
+            if (ReferenceEquals(searchCriteria, null))  throw new ArgumentNullException(nameof(searchCriteria));
             if (ReferenceEquals(descriptionText, null)) throw new ArgumentNullException(nameof(descriptionText));
 
             var headerReport = Session.GetPageHeader();
@@ -222,8 +222,8 @@ namespace Coder.DeclarativeBrowser
 
         public void CreateStudyReport(string studyName, string dictionaryName, string descriptionText)
         {
-            if (string.IsNullOrEmpty(studyName)) throw new ArgumentNullException(nameof(studyName));
-            if (string.IsNullOrEmpty(dictionaryName)) throw new ArgumentNullException(nameof(dictionaryName));
+            if (string.IsNullOrEmpty(studyName))       throw new ArgumentNullException(nameof(studyName));
+            if (string.IsNullOrEmpty(dictionaryName))  throw new ArgumentNullException(nameof(dictionaryName));
             if (string.IsNullOrEmpty(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
             var headerReport = Session.GetPageHeader();

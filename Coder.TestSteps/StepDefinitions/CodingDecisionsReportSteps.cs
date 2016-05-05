@@ -46,7 +46,7 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (String.IsNullOrWhiteSpace(status)) throw new ArgumentNullException("status");
 
-            _SearchCriteria.SingleStatus = status;
+            _SearchCriteria.StatusOptions = status.Split(',').ToList();
         }
 
         [When(@"searching for start date of ""(.*)"" and end date of ""(.*)"" in Coding Decisions Report")]
@@ -69,7 +69,6 @@ namespace Coder.TestSteps.StepDefinitions
         public void WhenExportingAllColumnsInTheReport()
         {
             _SearchCriteria.Study      = _StepContext.GetStudyName();
-            _SearchCriteria.AllColumns = true;
 
             _Browser.CreateCodingDecisionsReport(_SearchCriteria, _CodingDecisionsReportDescription);
             _Browser.CodingDecisionsExportReport(_CodingDecisionsReportDescription);
@@ -98,7 +97,7 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 var anyMatch = actualResults.Any(x => x.Equals(expectedResult));
 
-                anyMatch.Should().BeTrue(String.Format("Coding Decision should contain {0}", expectedResult.ToString()));
+                anyMatch.Should().BeTrue(string.Format("Coding Decision should contain {0}", expectedResult.ToString()));
             }
         }
     }

@@ -63,7 +63,7 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (String.IsNullOrWhiteSpace(status)) throw new ArgumentNullException(nameof(status));
 
-            _SearchCriteria.CurrentStatus = status;
+                _SearchCriteria.StatusOptions = status.Split(',').ToList();
         }
 
         [When(@"searching for start date of ""(.*)"" and end date of ""(.*)"" in Coding History Report")]
@@ -86,7 +86,6 @@ namespace Coder.TestSteps.StepDefinitions
         public void WhenExportingAllColumnsInTheCodingHistoryReport()
         {
             _SearchCriteria.Study      = _StepContext.GetStudyName();
-            _SearchCriteria.AllColumns = true;
 
             _Browser.CreateCodingHistoryReport(_SearchCriteria, _CodingHistoryReportDescription);
         }
@@ -96,33 +95,38 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (String.IsNullOrWhiteSpace(exportColumnsValues)) throw new ArgumentNullException(nameof(exportColumnsValues));
 
-            SelectReportColumnsAndExport(exportColumnsValues);
+            _SearchCriteria.IncludeAutoCodedItems = true;
+            _SearchCriteria.ExportColumns         = exportColumnsValues.Split(',').ToList();
+            _SearchCriteria.Study                 = _StepContext.GetStudyName();
+
+            _Browser.CreateCodingHistoryReport(_SearchCriteria, _CodingHistoryReportDescription);
         }
         
         [When(@"exporting the Coding History Report for term ""(.*)"" with export columns ""(.*)""")]
-        public void WhenExportingTheCodingHistoryReportForTermWithExportColumns(string verbatim, string exportColumnsValues)
+        public void WhenExportingTheCodingHistoryReportForTermWithExportColumns(string term, string exportColumnsValues)
+        {
+            if (String.IsNullOrWhiteSpace(term))                throw new ArgumentNullException(nameof(term));
+            if (String.IsNullOrWhiteSpace(exportColumnsValues)) throw new ArgumentNullException(nameof(exportColumnsValues));
+
+            WhenSearchingForTheTermInCodingHistoryReport(term);
+
+            _SearchCriteria.IncludeAutoCodedItems = true;
+            _SearchCriteria.ExportColumns         = exportColumnsValues.Split(',').ToList();
+            _SearchCriteria.Study                 = _StepContext.GetStudyName();
+
+            _Browser.CreateCodingHistoryReport(_SearchCriteria, _CodingHistoryReportDescription);
+        }
+
+        [When(@"exporting the Coding History Report for verbatim ""(.*)"" with export columns ""(.*)""")]
+        public void WhenExportingTheCodingHistoryReportForVerbatimWithExportColumns(string verbatim, string exportColumnsValues)
         {
             if (String.IsNullOrWhiteSpace(verbatim))            throw new ArgumentNullException(nameof(verbatim));
             if (String.IsNullOrWhiteSpace(exportColumnsValues)) throw new ArgumentNullException(nameof(exportColumnsValues));
-            
-            WhenSearchingForTheVerbatimInCodingHistoryReport(verbatim);
 
-            SelectReportColumnsAndExport(exportColumnsValues);
-        }
-
-        private void SelectReportColumnsAndExport(string exportColumnsValues)
-        {
-            if (String.IsNullOrWhiteSpace(exportColumnsValues)) throw new ArgumentNullException(nameof(exportColumnsValues));
-            
-            bool exportAllColumns = exportColumnsValues.ToUpper().Equals("ALL");
-
-            if (!exportColumnsValues.ToUpper().Equals("ALL") && !exportColumnsValues.ToUpper().Equals("NONE"))
-            {
-                _SearchCriteria.ExportColumns = exportColumnsValues.Split(',').ToList();
-            }
+            WhenSearchingForTheTermInCodingHistoryReport(verbatim);
 
             _SearchCriteria.IncludeAutoCodedItems = true;
-            _SearchCriteria.AllColumns            = exportAllColumns;
+            _SearchCriteria.ExportColumns         = exportColumnsValues.Split(',').ToList();
             _SearchCriteria.Study                 = _StepContext.GetStudyName();
 
             _Browser.CreateCodingHistoryReport(_SearchCriteria, _CodingHistoryReportDescription);

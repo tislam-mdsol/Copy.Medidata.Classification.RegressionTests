@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coder.DeclarativeBrowser.Models;
 using Coypu;
@@ -57,35 +58,30 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return excludeAutocodedItemsCheckbox;
         }
 
-        private SessionElementScope GetSingleStatusOption(string currentStatus)
+        private IList<SessionElementScope> GetStatusOptions()
         {
-            var allStatus = _Browser.FindAllSessionElementsByXPath("//input[contains(@id, 'currentStatus-')]");
+            var allStats = _Browser.FindAllSessionElementsByXPath("//input[contains(@id, 'currentStatus-')]");
 
-            foreach (var item in allStatus)
-            {
-                if (item.Text == currentStatus) return item;
-            }
-
-            throw new ArgumentNullException("Unable to find matching status: " + nameof(currentStatus));
+            return allStats;
         }
 
-        private IList<SessionElementScope> GetExportColumnOptions()
+        private void SelectOptions(IEnumerable<string> currentOptions, IList<SessionElementScope> elementsToSelect)
+        {
+            var optionsToSelect = from element in elementsToSelect
+                                  where currentOptions.Contains(element.Text)
+                                  select element;
+
+            foreach (var option in optionsToSelect)
+            {
+                option.Click();
+            }
+        }
+
+        private IList<SessionElementScope> ExportColumnOptions()
         {
             var currentStatus = _Browser.FindAllSessionElementsByXPath("//input[contains(@id, 'exportColumn-')]");
 
             return currentStatus;
-        }
-
-        private SessionElementScope GetExportSingleOption(string exportOption)
-        {
-            var allExportOptions = GetExportColumnOptions();
-
-            foreach (var item in allExportOptions)
-            {
-                if (item.Text == exportOption) return item;
-            }
-
-            throw new ArgumentNullException("Unable to find matching status: " + nameof(exportOption));
         }
 
         private IList<SessionElementScope> GetCodedByUsersSpans()
@@ -111,13 +107,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             throw new ArgumentNullException("Unable to find matching user text: " + nameof(userText));
         }
-       
-        private SessionElementScope GetSelectAllCodedBy()
-        {
-            var codedBy = _Browser.FindSessionElementById("selectAllCodedBy");
-
-            return codedBy;
-        }
 
         private SessionElementScope GetDeSelectAllCodedBy()
         {
@@ -126,7 +115,14 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return codedBy;
         }
 
-        private SessionElementScope GetStatusAll()
+        private SessionElementScope GetSelectAllCodedBy()
+        {
+            var codedBy = _Browser.FindSessionElementById("selectAllCodedBy");
+
+            return codedBy;
+        }
+
+        private SessionElementScope GetStatusSelectAll()
         {
             var allStatus = _Browser.FindSessionElementById("selectAllStatuses");
 
@@ -139,8 +135,15 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             return allColumns;
         }
+
+        private SessionElementScope GetDeselectExportColumns()
+        {
+            var deselectColumns = _Browser.FindSessionElementById("deSelectAllExportColumns");
+
+            return deselectColumns;
+        }
         
-        private SessionElementScope GetStatusDeselectAll()
+        private SessionElementScope GetDeselectAllStatus()
         {
             var allColumns = _Browser.FindSessionElementById("deSelectAllStatuses");
 
@@ -184,6 +187,20 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return createButton;
         }
 
+        private SessionElementScope GetTermTextBox()
+        {
+            var termTextBox = _Browser.FindSessionElementById("term");
+
+            return termTextBox;
+        }
+
+        private SessionElementScope GetCodeTextBox()
+        {
+            var codeTextBox = _Browser.FindSessionElementById("verbatim");
+
+            return codeTextBox;
+        }
+
         internal void NewCodingDecisionsReportButton()
         {
             var createNewIngReportButton = GetCreateNewCodingDecisionsReportButton();
@@ -205,21 +222,29 @@ namespace Coder.DeclarativeBrowser.PageObjects
             if (ReferenceEquals(searchCriteria, null)) throw new ArgumentNullException(nameof(searchCriteria));
 
             GetStudyDropDown()                                 .SelectOptionAlphanumericOnly(searchCriteria.Study);
-            GetDictionaryDropDown()                            .SelectOptionAlphanumericOnly(searchCriteria.Dictionary);
-            GetVersionDropDown()                               .SelectOptionAlphanumericOnly(searchCriteria.VersionLocale);
-
+            GetDictionaryDropDown()                            .SelectOptionAlphanumericOnly(searchCriteria.DictionaryLocale);
+            GetVersionDropDown()                               .SelectOptionAlphanumericOnly(searchCriteria.Version);
             GetVerbatimTextBox()                               .SetTextBoxSearchCriteria(searchCriteria.Verbatim);
+            GetTermTextBox()                                   .SetTextBoxSearchCriteria(searchCriteria.Term);
+            GetCodeTextBox()                                   .SetTextBoxSearchCriteria(searchCriteria.Code);
             GetToDateTextBox()                                 .SetTextBoxSearchCriteria(searchCriteria.EndDate);
             GetFromDateTextBox()                               .SetTextBoxSearchCriteria(searchCriteria.StartDate);
+            GetIncludeAutocodedItemsCheckbox()                 .SetCheckBoxState(searchCriteria.IncludeAutoCodedItems);
 
-            GetExportSingleOption(searchCriteria.SingleColumn)                                                         .Click();
-            GetSingleStatusOption(searchCriteria.SingleStatus)                                                         .Click();
+            if (searchCriteria.IncludeAutoCodedItems.Equals(true)) GetIncludeAutocodedItemsCheckbox().Click();
+            else                                                   GetExcludeAutocodedItemsCheckbox().Click();
 
-            if (searchCriteria.AllStatus  == true && GetStatusAll().Exists())        GetStatusAll()                    .Click();
-            if (searchCriteria.AllColumns == true && GetAllColumns().Exists())       GetAllColumns()                   .Click();
-            if (searchCriteria.AllCodedBy == true && GetSelectAllCodedBy().Exists()) GetSelectAllCodedBy()             .Click();
-            if (searchCriteria.IncludeAutoCodedItems.Equals(true))                   GetIncludeAutocodedItemsCheckbox().Click();
-            else                                                                     GetExcludeAutocodedItemsCheckbox().Click();            
+            if (searchCriteria.StatusOptions.ToString().Equals("None", StringComparison.OrdinalIgnoreCase))         GetDeselectAllStatus().Click();            
+            else if (searchCriteria.StatusOptions == null)                                                          throw new ArgumentNullException((nameof(searchCriteria.StatusOptions)));
+            else if (!(searchCriteria.StatusOptions.ToString().Equals("All", StringComparison.OrdinalIgnoreCase)))  SelectOptions(searchCriteria.StatusOptions, GetStatusOptions());
+           
+            if (searchCriteria.ExportColumns.ToString().Equals("None", StringComparison.OrdinalIgnoreCase))         GetDeselectExportColumns().Click();
+            else if (searchCriteria.ExportColumns == null)                                                          throw new ArgumentNullException((nameof(searchCriteria.ExportColumns)));
+            else if (!(searchCriteria.ExportColumns.ToString().Equals("All", StringComparison.OrdinalIgnoreCase)))  SelectOptions(searchCriteria.ExportColumns, ExportColumnOptions());
+
+            if (searchCriteria.CodedByOptions.ToString().Equals("None", StringComparison.OrdinalIgnoreCase))        GetDeSelectAllCodedBy().Click();
+            else if (searchCriteria.CodedByOptions == null)                                                         throw new ArgumentNullException((nameof(searchCriteria.CodedByOptions)));
+            else if (!(searchCriteria.CodedByOptions.ToString().Equals("All", StringComparison.OrdinalIgnoreCase))) SelectOptions(searchCriteria.CodedByOptions, GetCodedByUsersSpans());
         }
 
     }
