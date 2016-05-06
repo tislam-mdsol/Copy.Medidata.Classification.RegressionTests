@@ -94,11 +94,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.Classification.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Classification.Contracts.1.4.2-pre000023-01\lib\net40\Medidata.Classification.Contracts.dll</HintPath>
+      <HintPath>..\packages\Medidata.Classification.Contracts.1.4.2-pre000029-01\lib\net40\Medidata.Classification.Contracts.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.Classification.Contracts.Legacy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Classification.Contracts.1.4.2-pre000023-01\lib\net40\Medidata.Classification.Contracts.Legacy.dll</HintPath>
+      <HintPath>..\packages\Medidata.Classification.Contracts.1.4.2-pre000029-01\lib\net40\Medidata.Classification.Contracts.Legacy.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.Dapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -106,19 +106,19 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.IFX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000047-01\lib\net40\Medidata.IFX.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\Medidata.IFX.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.IFX.CommunicationHub, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000047-01\lib\net40\Medidata.IFX.CommunicationHub.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\Medidata.IFX.CommunicationHub.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.IFX.IOC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000047-01\lib\net40\Medidata.IFX.IOC.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\Medidata.IFX.IOC.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.IFX.UnitTestHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000047-01\lib\net40\Medidata.IFX.UnitTestHelper.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\Medidata.IFX.UnitTestHelper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.MAuth, Version=2.10.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -153,7 +153,7 @@
       <HintPath>..\packages\Polly.2.2.3\lib\net45\Polly.dll</HintPath>
     </Reference>
     <Reference Include="ServiceModelEx, Version=3.0.0.0, Culture=neutral, PublicKeyToken=d0f8277329bba7a0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000047-01\lib\net40\ServiceModelEx.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\ServiceModelEx.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

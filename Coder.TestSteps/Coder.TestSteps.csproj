@@ -46,12 +46,32 @@
       <HintPath>..\packages\ImpromptuInterface.6.2.2\lib\net40\ImpromptuInterface.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Medidata.IFX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\Medidata.IFX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Medidata.IFX.CommunicationHub, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\Medidata.IFX.CommunicationHub.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Medidata.IFX.IOC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\Medidata.IFX.IOC.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Medidata.IFX.UnitTestHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\Medidata.IFX.UnitTestHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceModelEx, Version=3.0.0.0, Culture=neutral, PublicKeyToken=d0f8277329bba7a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\ServiceModelEx.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SpecFlow.Assist.Dynamic, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
