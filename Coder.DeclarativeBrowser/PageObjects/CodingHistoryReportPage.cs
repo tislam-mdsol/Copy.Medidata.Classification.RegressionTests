@@ -202,6 +202,24 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return codeTextBox;
         }
 
+        private SessionElementScope GetEnterCoderByUserInput()
+        {
+            var codedByTextBox = _Browser.FindSessionElementByXPath("//input[contains(@role, 'combobox')]");
+
+            return codedByTextBox;
+        }
+
+        internal void AddUsersCodedBy(IEnumerable<string> searchUsersToAdd)
+        {
+            var enterUserTextBox = GetEnterCoderByUserInput();
+
+            foreach (var option in searchUsersToAdd)
+            {
+                enterUserTextBox.SendKeys(option);
+                enterUserTextBox.SendKeys("{ENTER}");
+            }
+        }
+
         internal void NewCodingHistoryReportButton()
         {
             var createNewIngReportButton = GetCreateNewCodingHistoryReportButton();
@@ -232,6 +250,8 @@ namespace Coder.DeclarativeBrowser.PageObjects
             GetFromDateTextBox()               .SetTextBoxSearchCriteria(searchCriteria.StartDate);
             GetIncludeAutocodedItemsCheckbox() .SetCheckBoxState(searchCriteria.IncludeAutoCodedItems);
 
+            AddUsersCodedBy(searchCriteria.CodedByAddUsers);
+
             if (searchCriteria.IncludeAutoCodedItems.Equals(true)) GetIncludeAutocodedItemsCheckbox().Click();
             else                                                   GetExcludeAutocodedItemsCheckbox().Click();
 
@@ -246,6 +266,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             if (searchCriteria.CodedByOptions.ToString().Equals("None", StringComparison.OrdinalIgnoreCase))        GetDeSelectAllCodedBy().Click();
             else if (searchCriteria.CodedByOptions == null)                                                         throw new ArgumentNullException((nameof(searchCriteria.CodedByOptions)));
             else if (!(searchCriteria.CodedByOptions.ToString().Equals("All", StringComparison.OrdinalIgnoreCase))) SelectOptions(searchCriteria.CodedByOptions, GetCodedByUsersSpans());
+
         }
 
     }

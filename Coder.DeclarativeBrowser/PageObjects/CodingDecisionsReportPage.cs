@@ -201,6 +201,24 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return codeTextBox;
         }
 
+        private SessionElementScope GetEnterCoderByUserInput()
+        {
+            var codedByTextBox = _Browser.FindSessionElementByXPath("//input[contains(@role, 'combobox')]");
+
+            return codedByTextBox;
+        }
+
+        internal void AddUsersCodedBy(IEnumerable<string> searchUsersToAdd)
+        {
+            var enterUserTextBox = GetEnterCoderByUserInput();
+
+            foreach (var option in searchUsersToAdd)
+            {
+                enterUserTextBox.SendKeys(option);
+                enterUserTextBox.SendKeys("{ENTER}");
+            }
+        }
+
         internal void NewCodingDecisionsReportButton()
         {
             var createNewIngReportButton = GetCreateNewCodingDecisionsReportButton();
@@ -230,6 +248,8 @@ namespace Coder.DeclarativeBrowser.PageObjects
             GetToDateTextBox()                                 .SetTextBoxSearchCriteria(searchCriteria.EndDate);
             GetFromDateTextBox()                               .SetTextBoxSearchCriteria(searchCriteria.StartDate);
             GetIncludeAutocodedItemsCheckbox()                 .SetCheckBoxState(searchCriteria.IncludeAutoCodedItems);
+
+
 
             if (searchCriteria.IncludeAutoCodedItems.Equals(true)) GetIncludeAutocodedItemsCheckbox().Click();
             else                                                   GetExcludeAutocodedItemsCheckbox().Click();

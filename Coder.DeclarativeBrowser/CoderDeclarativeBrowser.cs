@@ -197,13 +197,13 @@ namespace Coder.DeclarativeBrowser
             headerReport.OpenReportHeader();
 
             var mainReportPage = Session.GetMainReportCoderPage();
-            mainReportPage.SelectCodingHistoryReportOption();
-            mainReportPage.SelectCreateNewButton();
+            mainReportPage      .SelectCodingHistoryReportOption();
+            mainReportPage      .SelectCreateNewButton();
 
-            var reportPage = Session.GetCodingHistoryReportPage();
-            reportPage.SetReportCriteria(searchCriteria);
-            reportPage.EnterCodingHistoryReportDescription(descriptionText);
-            reportPage.NewCodingHistoryReportButton();
+            var reportPage    = Session.GetCodingHistoryReportPage();
+            reportPage         .SetReportCriteria(searchCriteria);
+            reportPage         .EnterCodingHistoryReportDescription(descriptionText);
+            reportPage         .NewCodingHistoryReportButton();
         }
 
         public void CreateCodingDecisionsReport(CodingDecisionsReportCriteria searchCriteria, string descriptionText)
@@ -211,17 +211,17 @@ namespace Coder.DeclarativeBrowser
             if (ReferenceEquals(searchCriteria, null))  throw new ArgumentNullException(nameof(searchCriteria));
             if (ReferenceEquals(descriptionText, null)) throw new ArgumentNullException(nameof(descriptionText));
 
-            var headerReport = Session.GetPageHeader();
-            headerReport.OpenReportHeader();
+            var headerReport   = Session.GetPageHeader();
+            headerReport        .OpenReportHeader();
 
             var mainReportPage = Session.GetMainReportCoderPage();
-            mainReportPage.SelectCodingDecisionReportOption();
-            mainReportPage.SelectCreateNewButton();
+            mainReportPage      .SelectCodingDecisionReportOption();
+            mainReportPage      .SelectCreateNewButton();
 
-            var reportPage = Session.GetCodingDecisionsReportPage();
-            reportPage.SetDefaultReportCriteria(searchCriteria);
-            reportPage.EnterCodingDecisionsReportDescription(descriptionText);
-            reportPage.NewCodingDecisionsReportButton();
+            var reportPage     = Session.GetCodingDecisionsReportPage();
+            reportPage          .SetDefaultReportCriteria(searchCriteria);
+            reportPage          .EnterCodingDecisionsReportDescription(descriptionText);
+            reportPage          .NewCodingDecisionsReportButton();
         }
 
         public void CreateIngredientReport(string studyName, string dictionaryName, string descriptionText)
@@ -230,17 +230,17 @@ namespace Coder.DeclarativeBrowser
             if (string.IsNullOrEmpty(dictionaryName))  throw new ArgumentNullException(nameof(dictionaryName));
             if (string.IsNullOrEmpty(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
-            var headerReport = Session.GetPageHeader();
-            headerReport.OpenReportHeader();
+            var headerReport   = Session.GetPageHeader();
+            headerReport        .OpenReportHeader();
 
             var mainReportPage = Session.GetMainReportCoderPage();
-            mainReportPage.SelectIngredientReportOption();
-            mainReportPage.SelectCreateNewButton();
+            mainReportPage      .SelectIngredientReportOption();
+            mainReportPage      .SelectCreateNewButton();
 
-            var reportPage = Session.GetIngredientReportPage();
-            reportPage.SetReportParameters(studyName, dictionaryName);
-            reportPage.EnterIngredientReportDescription(descriptionText);
-            reportPage.NewIngredientReportButton();
+            var reportPage     = Session.GetIngredientReportPage();
+            reportPage          .SetReportParameters(studyName, dictionaryName);
+            reportPage          .EnterIngredientReportDescription(descriptionText);
+            reportPage          .NewIngredientReportButton();
         }
 
         public void CreateStudyReport(string studyName, string dictionaryName, string descriptionText)
@@ -249,19 +249,18 @@ namespace Coder.DeclarativeBrowser
             if (string.IsNullOrEmpty(dictionaryName))  throw new ArgumentNullException(nameof(dictionaryName));
             if (string.IsNullOrEmpty(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
-            var headerReport = Session.GetPageHeader();
-            headerReport.OpenReportHeader();
+            var headerReport   = Session.GetPageHeader();
+            headerReport        .OpenReportHeader();
 
             var mainReportPage = Session.GetMainReportCoderPage();
-            mainReportPage.SelectStudyReportOption();
-            mainReportPage.SelectCreateNewButton();
+            mainReportPage      .SelectStudyReportOption();
+            mainReportPage      .SelectCreateNewButton();
 
-            //ToDo purge this wickedness of page object actions in declarative browser
-            var reportPage  = Session.OpenStudyReportPage();
-            reportPage.GetStudyDropDownList().SelectOption(studyName);  
-            reportPage.GetDictionaryTypeDropDownList().SelectOption(dictionaryName);
-            reportPage.EnterStudyReportDescription(descriptionText);
-            reportPage.NewStudyReportButton();
+            var reportPage     = Session.OpenStudyReportPage();
+            reportPage          .GetStudyDropDownList().SelectOption(studyName);  
+            reportPage          .GetDictionaryTypeDropDownList().SelectOption(dictionaryName);
+            reportPage          .EnterStudyReportDescription(descriptionText);
+            reportPage          .NewStudyReportButton();
         }
 
         public void IngredientExportReport(string descriptionText)
@@ -269,7 +268,7 @@ namespace Coder.DeclarativeBrowser
             if (string.IsNullOrEmpty(descriptionText))      throw new ArgumentNullException(nameof(descriptionText));
 
             var headerReport = Session.GetPageHeader();
-            headerReport.OpenReportHeader();
+            headerReport      .OpenReportHeader();
 
             var mainReportPage = Session.GetMainReportCoderPage();
 
@@ -286,7 +285,7 @@ namespace Coder.DeclarativeBrowser
             if (string.IsNullOrEmpty(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
             var headerReport = Session.GetPageHeader();
-            headerReport.OpenReportHeader();
+            headerReport      .OpenReportHeader();
 
             var mainReportPage = Session.GetMainReportCoderPage();
 
@@ -303,7 +302,7 @@ namespace Coder.DeclarativeBrowser
             if (string.IsNullOrEmpty(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
             var headerReport = Session.GetPageHeader();
-            headerReport.OpenReportHeader();
+            headerReport      .OpenReportHeader();
 
             var mainReportPage = Session.GetMainReportCoderPage();
 
@@ -320,10 +319,10 @@ namespace Coder.DeclarativeBrowser
             if (string.IsNullOrEmpty(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
             var headerReport = Session.GetPageHeader();
-            headerReport.OpenReportHeader();
+            headerReport       .OpenReportHeader();
 
             var mainReportPage = Session.GetMainReportCoderPage();
-            mainReportPage.SelectStudyReportViewLink(descriptionText);
+            mainReportPage      .SelectStudyReportViewLink(descriptionText);
         }
 
         public void CreateAndActivateWorkFlowRole(string roleName)
@@ -331,9 +330,8 @@ namespace Coder.DeclarativeBrowser
             if (string.IsNullOrWhiteSpace(roleName)) throw new ArgumentNullException("roleName"); 
 
             var createWorkflowRolesPage = Session.GetCreateWorkflowRolesPage();
-
-            createWorkflowRolesPage.CreateWorkflowRole(roleName);
-            createWorkflowRolesPage.ActivateWorkflowRole(roleName);
+            createWorkflowRolesPage      .CreateWorkflowRole(roleName);
+            createWorkflowRolesPage      .ActivateWorkflowRole(roleName);
         }
 
         public void AssignAllWorkflowRoleActions(string roleName)
@@ -341,8 +339,7 @@ namespace Coder.DeclarativeBrowser
             if (string.IsNullOrWhiteSpace(roleName)) throw new ArgumentNullException("roleName"); 
 
             var createWorkflowRolesPage = Session.GetCreateWorkflowRolesPage();
-
-            createWorkflowRolesPage.AssignAllWorkflowActions(roleName);
+            createWorkflowRolesPage      .AssignAllWorkflowActions(roleName);
         }
 
         public void AssignWorkflowRole(string roleName, string study, string loginId)

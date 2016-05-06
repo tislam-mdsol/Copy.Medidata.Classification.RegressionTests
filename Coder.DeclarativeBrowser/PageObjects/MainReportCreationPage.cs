@@ -54,9 +54,9 @@ namespace Coder.DeclarativeBrowser.PageObjects
         {
             if (string.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
-            var reportTable = GetMainReportTable();
-            var reportRow = reportTable.FindTableRow(descriptionText);
-            var informationIcon = reportRow.FindAllSessionElementsByXPath(".//a");
+            var reportTable           = GetMainReportTable();
+            var reportRow             = reportTable.FindTableRow(descriptionText);
+            var informationIcon       = reportRow.FindAllSessionElementsByXPath(".//a");
             var informationReportLink = informationIcon.FirstOrDefault(x => x.Class.Contains("lnk btn-link plain-tooltip", StringComparison.OrdinalIgnoreCase));
 
             if (ReferenceEquals(informationReportLink, null))
@@ -73,10 +73,10 @@ namespace Coder.DeclarativeBrowser.PageObjects
             List<string> hiddenInformation = null;
 
             var reportTable = GetMainReportTable();
-            var reportRow = reportTable.FindTableRow(descriptionText);
+            var reportRow   = reportTable.FindTableRow(descriptionText);
 
             GetReportInformationButton(descriptionText).Hover();
-            var hiddenTable = reportRow.FindSessionElementById("tooltipContent");
+            var hiddenTable    = reportRow.FindSessionElementById("tooltipContent");
             var hiddenTableTDs = hiddenTable.FindAllSessionElementsByXPath(".//tbody/tr/td");
 
             hiddenInformation.Add(hiddenTableTDs[_InformationStudyTextIndex].Text);
@@ -100,8 +100,8 @@ namespace Coder.DeclarativeBrowser.PageObjects
         {
             if (string.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
-            var reportTable = GetMainReportTable();
-            var reportRow = reportTable.FindTableRow(descriptionText);
+            var reportTable         = GetMainReportTable();
+            var reportRow           = reportTable.FindTableRow(descriptionText);
             var reportRowExportLink = reportRow.FindSessionElementByLink("Export");
 
             return reportRowExportLink;
@@ -110,33 +110,37 @@ namespace Coder.DeclarativeBrowser.PageObjects
         internal void SelectCodingDecisionReportOption()
         {
             var selectedRadioOption = _Browser.FindSessionElementById("codingDecisionsFilter");
+
             selectedRadioOption.Click();
         }
 
         internal void SelectCodingHistoryReportOption()
         {
             var selectedRadioOption = _Browser.FindSessionElementById("codingHistoryFilter");
+
             selectedRadioOption.Click();
         }
 
         internal void SelectIngredientReportOption()
         {
             var selectedRadioOption = _Browser.FindSessionElementById("ingredientsFilter");
+
             selectedRadioOption.Click();
         }
 
         internal void SelectStudyReportOption()
         {
             var selectedRadioOption = _Browser.FindSessionElementById("studyFilter");
+
             selectedRadioOption.Click();
         }
 
         internal MainReportTableModel GetMainReportPageTableRowText(string descriptionText)
         {
-            var mainReportTable = GetMainReportTable();
-            var mainReportRow = mainReportTable.FindTableRow(descriptionText);
+            var mainReportTable       = GetMainReportTable();
+            var mainReportRow         = mainReportTable.FindTableRow(descriptionText);
             var mainReportTableRowTds = mainReportRow.FindAllSessionElementsByXPath(".//td");
-            var hiddenInformation = GetInformationStudyAndDictionaryText(descriptionText);
+            var hiddenInformation     = GetInformationStudyAndDictionaryText(descriptionText);
 
             var mainReportTableRowsValues = new MainReportTableModel
             {
@@ -184,9 +188,9 @@ namespace Coder.DeclarativeBrowser.PageObjects
         {
             if (string.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
 
-            var reportTable  = GetMainReportTable();
-            var reportRow    = reportTable.FindTableRow(descriptionText); 
-            var deleteIcon   = reportRow.FindAllSessionElementsByXPath(".//a");
+            var reportTable      = GetMainReportTable();
+            var reportRow        = reportTable.FindTableRow(descriptionText); 
+            var deleteIcon       = reportRow.FindAllSessionElementsByXPath(".//a");
             var deleteReportLink = deleteIcon.FirstOrDefault(x => x.Class.Contains("lnk btn-link", StringComparison.OrdinalIgnoreCase));
 
             if (ReferenceEquals(deleteReportLink, null))
