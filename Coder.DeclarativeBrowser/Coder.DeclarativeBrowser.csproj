@@ -218,6 +218,7 @@
     <Compile Include="IMedidataApi\Models\IMedidataAPIUser.cs" />
     <Compile Include="Helpers\TaskAttempt.cs" />
     <Compile Include="MessagingSystem.cs" />
+    <Compile Include="Mocks\MockStudyEdcService.cs" />
     <Compile Include="Models\AssignedGeneralRole.cs" />
     <Compile Include="Models\AssignedWorkflowRole.cs" />
     <Compile Include="Models\CodingDecisionsReportRow.cs" />
