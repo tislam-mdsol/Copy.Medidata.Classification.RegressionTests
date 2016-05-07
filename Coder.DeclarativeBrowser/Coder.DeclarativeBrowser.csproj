@@ -126,11 +126,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.Messaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Messaging.1.1.2-pre000047-01\lib\net40\Medidata.Messaging.dll</HintPath>
+      <HintPath>..\packages\Medidata.Messaging.1.1.2-pre000049-01\lib\net40\Medidata.Messaging.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.Messaging.Archon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Messaging.1.1.2-pre000047-01\lib\net40\Medidata.Messaging.Archon.dll</HintPath>
+      <HintPath>..\packages\Medidata.Messaging.1.1.2-pre000049-01\lib\net40\Medidata.Messaging.Archon.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
