@@ -234,6 +234,9 @@
     <Compile Include="Models\ETEModels\RaveNavigationTarget.cs" />
     <Compile Include="Models\ExternalVerbatim.cs" />
     <Compile Include="ExtensionMethods\DictionarySearchExtensionMethods.cs" />
+    <Compile Include="Models\GridModels\ImpactAnalysisAllReportRow.cs" />
+    <Compile Include="Models\GridModels\ImpactAnalysisReportDetailRow.cs" />
+    <Compile Include="Models\GridModels\ImpactAnalysisReportRow.cs" />
     <Compile Include="Models\GridModels\LicensedDictionaryDetail.cs" />
     <Compile Include="Models\GridModels\QueryHistoryDetail.cs" />
     <Compile Include="Models\GridModels\RaveAuditRecordDetail.cs" />
