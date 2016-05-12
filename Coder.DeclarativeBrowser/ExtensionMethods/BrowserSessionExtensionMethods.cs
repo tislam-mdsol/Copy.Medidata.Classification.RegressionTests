@@ -1216,6 +1216,8 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
             studyImpactAnalysisPage.GenerateReport();
 
+            studyImpactAnalysisPage.ViewReport();
+
             return studyImpactAnalysisPage;
         }
 
