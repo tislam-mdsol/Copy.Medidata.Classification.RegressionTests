@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FluentAssertions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentAssertions.4.0.1\lib\net45\FluentAssertions.dll</HintPath>
       <Private>True</Private>
@@ -47,19 +51,19 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.IFX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\Medidata.IFX.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000055-01\lib\net40\Medidata.IFX.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.IFX.CommunicationHub, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\Medidata.IFX.CommunicationHub.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000055-01\lib\net40\Medidata.IFX.CommunicationHub.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.IFX.IOC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\Medidata.IFX.IOC.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000055-01\lib\net40\Medidata.IFX.IOC.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.IFX.UnitTestHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\Medidata.IFX.UnitTestHelper.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000055-01\lib\net40\Medidata.IFX.UnitTestHelper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -71,7 +75,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="ServiceModelEx, Version=3.0.0.0, Culture=neutral, PublicKeyToken=d0f8277329bba7a0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000051-01\lib\net40\ServiceModelEx.dll</HintPath>
+      <HintPath>..\packages\Medidata.IFX.1.5.2-pre000055-01\lib\net40\ServiceModelEx.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SpecFlow.Assist.Dynamic, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
