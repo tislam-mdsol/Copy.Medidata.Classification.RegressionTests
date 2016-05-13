@@ -185,10 +185,6 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 browser.AssignUserToStudyAndStudyGroup("coderimport", "Coder Import Role", study: study.StudyName, studyGroup: _StepContext.GetSegment());
             }
-
-            browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
-
-            browser.LogoutOfCoderAndImedidata();
         }
         
         private void WriteSetupDetails(MedidataUser user, SegmentSetupData studyGroup)

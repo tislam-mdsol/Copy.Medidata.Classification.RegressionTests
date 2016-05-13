@@ -1,8 +1,6 @@
-@specETE_Reave_coder_basic_submissions.feature
+@specETE_Rave_coder_basic_submissions.feature
 
-#@EndToEndDynamicSegment
-#@EndToEndDynamicStudy
-@EndToEndStaticSegment
+@EndToEndDynamicSegment
 
 Feature: Test full round trip integration from Rave to Coder.  New features converted from ETE_ENGRaveCoder_BasicSubmissions.feature from task MCC-208901
 
