@@ -247,7 +247,6 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Coder does not allow users to code non-primary paths when \"Force Primary Path Sel" +
             "ection\" is set to \"True\"")]
-        [NUnit.Framework.IgnoreAttribute()]
         [NUnit.Framework.CategoryAttribute("DFT")]
         [NUnit.Framework.CategoryAttribute("PBMCC166013_09")]
         [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
@@ -259,21 +258,20 @@ this.ScenarioSetup(scenarioInfo);
                         "DFT",
                         "PBMCC166013_09",
                         "Release2015.3.0",
-                        "IncreaseTimeout_360000",
-                        "ignore"});
-#line 76
+                        "IncreaseTimeout_360000"});
+#line 75
 this.ScenarioSetup(scenarioInfo);
-#line 77
+#line 76
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 78
+#line 77
    testRunner.And("coding task \"Adverse Event 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 78
    testRunner.When("a browse and code for task \"Adverse Event 1\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 80
+#line 79
    testRunner.And("the browse and code search is done for \"Heart attack\" against \"Text\" at Level \"Lo" +
                     "w Level Term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
+#line 80
    testRunner.And("selecting the primary path \"false\" dictionary result for term \"Heart attack\" code" +
                     " \"10019250\" level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -285,7 +283,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Heart attack",
                         "10019250",
                         "LLT"});
-#line 82
+#line 81
    testRunner.Then("the task should not be able to be coded to the following terms", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -306,21 +304,21 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC166013_10",
                         "Release2015.3.0",
                         "IncreaseTimeout_360000"});
-#line 90
+#line 89
 this.ScenarioSetup(scenarioInfo);
-#line 91
+#line 90
    testRunner.Given("a \"No Enforced Primary Path\" Coder setup with no tasks and no synonyms and dictio" +
                     "nary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 92
+#line 91
    testRunner.And("coding task \"Adverse Event 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 92
    testRunner.When("a browse and code for task \"Adverse Event 1\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 94
+#line 93
    testRunner.And("including non primary paths in the dictionary search criteria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+#line 94
    testRunner.And("the browse and code search is done for \"Heart attack\" against \"Text\" at Level \"Lo" +
                     "w Level Term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
+#line 95
    testRunner.And("selecting the primary path \"true\" dictionary result for term \"Heart attack\" code " +
                     "\"10019250\" level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -332,7 +330,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Heart attack",
                         "10019250",
                         "LLT"});
-#line 97
+#line 96
    testRunner.Then("the task should be able to be coded to the following terms", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -353,19 +351,19 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC166013_11",
                         "Release2015.3.0",
                         "IncreaseTimeout_360000"});
-#line 106
+#line 105
 this.ScenarioSetup(scenarioInfo);
-#line 107
+#line 106
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 108
+#line 107
    testRunner.And("coding task \"Adverse Event 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 109
+#line 108
    testRunner.When("a browse and code for task \"Adverse Event 1\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 110
+#line 109
    testRunner.And("the browse and code search is done for \"Heart attack\" against \"Text\" at Level \"Lo" +
                     "w Level Term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 111
+#line 110
    testRunner.And("selecting the primary path \"true\" dictionary result for term \"Heart attack\" code " +
                     "\"10019250\" level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -377,7 +375,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Heart attack",
                         "10019250",
                         "LLT"});
-#line 112
+#line 111
    testRunner.Then("the task should be able to be coded to the following terms", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -396,14 +394,14 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC166013_12",
                         "Release2015.3.0"});
-#line 119
+#line 118
 this.ScenarioSetup(scenarioInfo);
-#line 120
+#line 119
    testRunner.Given("a \"No Enforced Primary Path\" Coder setup with no tasks and no synonyms and dictio" +
                     "nary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 121
+#line 120
    testRunner.And("coding task \"Heart Attack\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 122
+#line 121
    testRunner.Then("the task \"Heart Attack\" should have a status of \"Waiting Manual Code\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
