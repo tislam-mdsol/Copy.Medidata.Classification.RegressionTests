@@ -71,7 +71,6 @@ Scenario: Coder allows users to code non-primary paths when "Force Primary Path 
 @PBMCC166013_09
 @Release2015.3.0
 @IncreaseTimeout_360000
-@ignore
 #Bug: MCC-205296
 Scenario: Coder does not allow users to code non-primary paths when "Force Primary Path Selection" is set to "True" 
    Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
