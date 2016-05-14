@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using Coder.DeclarativeBrowser;
 using Coder.DeclarativeBrowser.ExtensionMethods;
@@ -6,6 +7,7 @@ using Coder.DeclarativeBrowser.Models;
 using Coder.DeclarativeBrowser.PageObjects.Reports;
 using FluentAssertions;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 
 namespace Coder.TestSteps.StepDefinitions
 {
@@ -30,44 +32,76 @@ namespace Coder.TestSteps.StepDefinitions
         [Then(@"Study Report data should have ""(.*)"" tasks")]
         public void ThenStudyReportDataShouldHaveTasks(int count)
         {
-            _Browser.CreateIngredientReport(_StepContext.GetStudyName(), _StepContext.Dictionary, _StudyReportDescription);
-            _Browser.StudyViewReport(_StudyReportDescription);
-
-            var studyReportTaskCount = _Browser.GetStudyReportTaskCount();
+            _Browser.WaitForAutoCodingToComplete();
+            _Browser.CreateStudyReport(_StepContext.GetStudyName(), _StepContext.Dictionary, _StudyReportDescription);
+  
+            var studyReportTaskCount = _Browser.GetStudyReportTotalTaskCount(_StudyReportDescription);
             studyReportTaskCount.ShouldBeEquivalentTo(count);
             _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }
 
-        [Then(@"Study Report data should have ""(.*)"" tasks  with a workflow state of ""(.*)""")]
-        public void ThenStudyReportDataShouldHaveTasksWithAWorkflowStateOf(int count, string status)
+        [Then(@"the study report information for study ""(.*)"" and dictionary ""(.*)"" should have the following")]
+        public void ThenTheStudyReportInformationForStudyAndDictionaryShouldHaveTheFollowing(string studyName, string dictionary, Table featureTable)
         {
+            if (ReferenceEquals(featureTable, null))   throw new ArgumentNullException(nameof(featureTable));
+            if (String.IsNullOrWhiteSpace(studyName))  throw new ArgumentNullException(nameof(studyName));
+            if (String.IsNullOrWhiteSpace(dictionary)) throw new ArgumentNullException(nameof(dictionary));
 
-            if (ReferenceEquals(status, null)) throw new ArgumentNullException(nameof(status));
+            _Browser.CreateStudyReport(studyName, dictionary, _StudyReportDescription);
+ 
+            var actualStudyReportDataSet = _Browser.GetStudyReportDataSet(_StudyReportDescription);
+            var actualStudyReportData    = actualStudyReportDataSet.StudyStats;
+            var expectedStudyStatData    = featureTable.CreateInstance<StudyReportStats>();
 
-            _Browser.CreateIngredientReport(_StepContext.GetStudyName(), _StepContext.Dictionary, _StudyReportDescription);
-            _Browser.StudyViewReport(_StudyReportDescription);
+            var actualStudyReportStats   =
+                actualStudyReportData.FirstOrDefault(
+                    x => x.StudyStatName .Equals(studyName,  StringComparison.OrdinalIgnoreCase) 
+                      && x.DictionaryName.Equals(dictionary, StringComparison.OrdinalIgnoreCase));
 
-            if (status == "NotCoded")
+            if (ReferenceEquals(actualStudyReportStats, null))
             {
-                var studyReportTaskCount = _Browser.GetStudyReportTaskCount(WorkflowState.NotCoded);
-                studyReportTaskCount.ShouldBeEquivalentTo(count);
-                _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
+                throw new ArgumentException($"Could not find study report stats with study name of {studyName} and dictionary of {dictionary}");
             }
 
-            if (status == "Completed")
+            expectedStudyStatData.NotCodedCount.ShouldBeEquivalentTo(actualStudyReportStats.NotCodedCount);
+            expectedStudyStatData.CompletedCount.ShouldBeEquivalentTo(actualStudyReportStats.CompletedCount);
+            expectedStudyStatData.CodedNotCompletedCount.ShouldBeEquivalentTo(actualStudyReportStats.CodedNotCompletedCount);
+            expectedStudyStatData.WithOpenQueryCount.ShouldBeEquivalentTo(actualStudyReportStats.WithOpenQueryCount);
+
+            _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
+        }
+
+        [Then(@"the study report task status count information should have the following")]
+        public void ThenTheStudyReportInformationShouldHaveTheFollowing(Table featureTable)
+        {
+            if (ReferenceEquals(featureTable, null))   throw new ArgumentNullException(nameof(featureTable));
+ 
+            _Browser.CreateStudyReport(_StepContext.GetStudyName(), _StepContext.Dictionary, _StudyReportDescription);
+
+            var actualStudyReportDataSet = _Browser.GetStudyReportDataSet(_StudyReportDescription);
+
+            var actualStudyReportData    = actualStudyReportDataSet.StudyStats;
+
+            var expectedStudyStatData    = featureTable.CreateInstance<StudyReportStats>();
+
+            var actualStudyReportStats   =
+                actualStudyReportData.FirstOrDefault(
+                    x => x.StudyStatName .Equals(_StepContext.GetStudyName(), StringComparison.OrdinalIgnoreCase)
+                      && x.DictionaryName.Equals(_StepContext.Dictionary,     StringComparison.OrdinalIgnoreCase));
+
+            if (ReferenceEquals(actualStudyReportStats, null))
             {
-                var studyReportTaskCount = _Browser.GetStudyReportTaskCount(WorkflowState.Completed);
-                studyReportTaskCount.ShouldBeEquivalentTo(count);
-                _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
+                throw new ArgumentException($"Could not find study report stats with study name of {_StepContext.GetStudyName()} and dictionary of {_StepContext.Dictionary}");
             }
 
-            if (status == "CodedButNotComplete")
-            {
-                var studyReportTaskCount = _Browser.GetStudyReportTaskCount(WorkflowState.CodedButNotComplete);
-                studyReportTaskCount.ShouldBeEquivalentTo(count);
-                _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
-            }
+            expectedStudyStatData.NotCodedCount.ShouldBeEquivalentTo(actualStudyReportStats.NotCodedCount);
+            expectedStudyStatData.CompletedCount.ShouldBeEquivalentTo(actualStudyReportStats.CompletedCount);
+            expectedStudyStatData.CodedNotCompletedCount.ShouldBeEquivalentTo(actualStudyReportStats.CodedNotCompletedCount);
+            expectedStudyStatData.WithOpenQueryCount.ShouldBeEquivalentTo(actualStudyReportStats.WithOpenQueryCount);
+
+            _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }
 
     }
 }
+

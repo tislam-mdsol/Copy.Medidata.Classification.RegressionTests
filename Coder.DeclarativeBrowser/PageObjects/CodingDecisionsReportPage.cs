@@ -235,36 +235,57 @@ namespace Coder.DeclarativeBrowser.PageObjects
             enterDescriptionTextbox.FillInWith(descriptionText);
         }
 
-        internal void SetDefaultReportCriteria(CodingDecisionsReportCriteria searchCriteria)
+        internal void SetReportCriteria(CodingDecisionsReportCriteria searchCriteria)
         {
             if (ReferenceEquals(searchCriteria, null)) throw new ArgumentNullException(nameof(searchCriteria));
 
-            GetStudyDropDown()                                 .SelectOptionAlphanumericOnly(searchCriteria.Study);
-            GetDictionaryDropDown()                            .SelectOptionAlphanumericOnly(searchCriteria.DictionaryLocale);
-            GetVersionDropDown()                               .SelectOptionAlphanumericOnly(searchCriteria.Version);
-            GetVerbatimTextBox()                               .SetTextBoxSearchCriteria(searchCriteria.Verbatim);
-            GetTermTextBox()                                   .SetTextBoxSearchCriteria(searchCriteria.Term);
-            GetCodeTextBox()                                   .SetTextBoxSearchCriteria(searchCriteria.Code);
-            GetToDateTextBox()                                 .SetTextBoxSearchCriteria(searchCriteria.EndDate);
-            GetFromDateTextBox()                               .SetTextBoxSearchCriteria(searchCriteria.StartDate);
-            GetIncludeAutocodedItemsCheckbox()                 .SetCheckBoxState(searchCriteria.IncludeAutoCodedItems);
+            GetStudyDropDown()                .SelectOptionAlphanumericOnly(searchCriteria.Study);
+            GetDictionaryDropDown()           .SelectOptionAlphanumericOnly(searchCriteria.DictionaryLocale);
+            GetVersionDropDown()              .SelectOptionAlphanumericOnly(searchCriteria.Version);
+            GetVerbatimTextBox()              .SetTextBoxSearchCriteria(searchCriteria.Verbatim);
+            GetTermTextBox()                  .SetTextBoxSearchCriteria(searchCriteria.Term);
+            GetCodeTextBox()                  .SetTextBoxSearchCriteria(searchCriteria.Code);
+            GetToDateTextBox()                .SetTextBoxSearchCriteria(searchCriteria.EndDate);
+            GetFromDateTextBox()              .SetTextBoxSearchCriteria(searchCriteria.StartDate);
+            GetIncludeAutocodedItemsCheckbox().SetCheckBoxState(searchCriteria.IncludeAutoCodedItems);
 
+            AddUsersCodedBy(searchCriteria.CodedByAddUsers);
 
+            if (searchCriteria.IncludeAutoCodedItems.Equals(true))
+            {
+                GetIncludeAutocodedItemsCheckbox().Click();
+            }
+            else
+            {
+                GetExcludeAutocodedItemsCheckbox().Click();
+            }
 
-            if (searchCriteria.IncludeAutoCodedItems.Equals(true)) GetIncludeAutocodedItemsCheckbox().Click();
-            else                                                   GetExcludeAutocodedItemsCheckbox().Click();
+            if (searchCriteria.StatusOptions.FirstOrDefault().Equals("None", StringComparison.OrdinalIgnoreCase))
+            {
+                GetDeselectAllStatus().Click();
+            }            
+            else if (!(searchCriteria.StatusOptions.FirstOrDefault().Equals("All", StringComparison.OrdinalIgnoreCase)))
+            {
+                SelectOptions(searchCriteria.StatusOptions, GetStatusOptions());
+            }
 
-            if (searchCriteria.StatusOptions.ToString().Equals("None", StringComparison.OrdinalIgnoreCase))         GetDeselectAllStatus().Click();            
-            else if (searchCriteria.StatusOptions == null)                                                          throw new ArgumentNullException((nameof(searchCriteria.StatusOptions)));
-            else if (!(searchCriteria.StatusOptions.ToString().Equals("All", StringComparison.OrdinalIgnoreCase)))  SelectOptions(searchCriteria.StatusOptions, GetStatusOptions());
-           
-            if (searchCriteria.ExportColumns.ToString().Equals("None", StringComparison.OrdinalIgnoreCase))         GetDeselectExportColumns().Click();
-            else if (searchCriteria.ExportColumns == null)                                                          throw new ArgumentNullException((nameof(searchCriteria.ExportColumns)));
-            else if (!(searchCriteria.ExportColumns.ToString().Equals("All", StringComparison.OrdinalIgnoreCase)))  SelectOptions(searchCriteria.ExportColumns, ExportColumnOptions());
+            if (searchCriteria.ExportColumns.FirstOrDefault().Equals("None", StringComparison.OrdinalIgnoreCase))
+            {
+                GetDeselectExportColumns().Click();
+            }
+            else if (!(searchCriteria.ExportColumns.FirstOrDefault().Equals("All", StringComparison.OrdinalIgnoreCase)))
+            {
+                SelectOptions(searchCriteria.ExportColumns, ExportColumnOptions());
+            }
 
-            if (searchCriteria.CodedByOptions.ToString().Equals("None", StringComparison.OrdinalIgnoreCase))        GetDeSelectAllCodedBy().Click();
-            else if (searchCriteria.CodedByOptions == null)                                                         throw new ArgumentNullException((nameof(searchCriteria.CodedByOptions)));
-            else if (!(searchCriteria.CodedByOptions.ToString().Equals("All", StringComparison.OrdinalIgnoreCase))) SelectOptions(searchCriteria.CodedByOptions, GetCodedByUsersSpans());
+            if (searchCriteria.CodedByOptions.FirstOrDefault().Equals("None", StringComparison.OrdinalIgnoreCase))
+            {
+                GetDeSelectAllCodedBy().Click();
+            }
+            else if (!(searchCriteria.CodedByOptions.FirstOrDefault().Equals("All", StringComparison.OrdinalIgnoreCase)))
+            {
+                SelectOptions(searchCriteria.CodedByOptions, GetCodedByUsersSpans());
+            }
         }
 
     }

@@ -97,7 +97,7 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 var anyMatch = actualResults.Any(x => x.Equals(expectedResult));
 
-                anyMatch.Should().BeTrue(string.Format("Coding Decision should contain {0}", expectedResult.ToString()));
+                anyMatch.Should().BeTrue(String.Format("Coding Decision should contain {0}", expectedResult.ToString()));
             }
         }
     }

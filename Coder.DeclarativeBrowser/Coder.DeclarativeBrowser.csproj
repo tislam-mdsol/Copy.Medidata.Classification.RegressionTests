@@ -220,6 +220,9 @@
     <Compile Include="MessagingSystem.cs" />
     <Compile Include="Models\AssignedGeneralRole.cs" />
     <Compile Include="Models\AssignedWorkflowRole.cs" />
+    <Compile Include="Models\StudyReportUpVersion.cs" />
+    <Compile Include="Models\StudyReportStatsDetails.cs" />
+    <Compile Include="Models\StudyReportStats.cs" />
     <Compile Include="Models\CodingDecisionsReportRow.cs" />
     <Compile Include="Models\CodingDecisionsReportCriteria.cs" />
     <Compile Include="Models\CodingHistoryReportRow.cs" />
@@ -250,8 +253,9 @@
     <Compile Include="Models\ReclassificationSearchCriteria.cs" />
     <Compile Include="Models\StudyImpactAnalysisActions.cs" />
     <Compile Include="Models\StudyImpactAnalysisDetail.cs" />
-    <Compile Include="Models\StudyReport.cs" />
     <Compile Include="Models\IMedidataStudy.cs" />
+    <Compile Include="Models\StudyReport.cs" />
+    <Compile Include="Models\StudyReportUpversionHistoryDetails.cs" />
     <Compile Include="Models\SynonymUploadRow.cs" />
     <Compile Include="Models\UIDataModels\MainReportTableModel.cs" />
     <Compile Include="Models\UIDataModels\SiteSetupData.cs" />
@@ -288,7 +292,6 @@
     <Compile Include="PageObjects\ImedidataStudyGroupPage.cs" />
     <Compile Include="PageObjects\ImedidataStudyPage.cs" />
     <Compile Include="Models\GridModels\ProjectRegistrationHistory.cs" />
-    <Compile Include="Models\StudyReportCodingElements.cs" />
     <Compile Include="PageObjects\MevPage.cs" />
     <Compile Include="ExtensionMethods\SetupExtensionMethods.cs" />
     <Compile Include="ExtensionMethods\ElementScopeExtensionMethods.cs" />

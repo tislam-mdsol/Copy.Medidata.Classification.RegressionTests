@@ -1,16 +1,15 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Coder.DeclarativeBrowser.Models
 {
-    internal class StudyReport
+    public class StudyReport
     {
-        internal string Study                   { get; set; }
-        internal string CurrentVersion          { get; set; }
-        internal string InitialVersion          { get; set; }
-        internal string NumberOfMigrations      { get; set; }
-        internal string NotCoded                { get; set; }
-        internal string CodedButNotYetCompleted { get; set; }
-        internal string OpenQuery               { get; set; }
-        internal string Completed               { get; set; }
-        internal string Dictionary              { get; set; }
+        public IEnumerable<StudyReportStats> StudyStats             { get; set; }
+
+        public IEnumerable<StudyReportUpVersion> UpversionHistories { get; set; }
     }
 }

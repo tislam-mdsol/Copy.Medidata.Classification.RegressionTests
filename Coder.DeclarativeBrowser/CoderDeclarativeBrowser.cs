@@ -1,4 +1,5 @@
 using System;
+using System.CodeDom;
 using System.Data;
 using System.IO;
 using System.Collections.Generic;
@@ -22,7 +23,6 @@ using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.PageObjects;
 using Medidata;
 using Medidata.Classification;
-using WorkflowState = Coder.DeclarativeBrowser.PageObjects.Reports.WorkflowState;
 
 namespace Coder.DeclarativeBrowser
 {
@@ -219,7 +219,7 @@ namespace Coder.DeclarativeBrowser
             mainReportPage      .SelectCreateNewButton();
 
             var reportPage     = Session.GetCodingDecisionsReportPage();
-            reportPage          .SetDefaultReportCriteria(searchCriteria);
+            reportPage          .SetReportCriteria(searchCriteria);
             reportPage          .EnterCodingDecisionsReportDescription(descriptionText);
             reportPage          .NewCodingDecisionsReportButton();
         }
@@ -257,8 +257,8 @@ namespace Coder.DeclarativeBrowser
             mainReportPage      .SelectCreateNewButton();
 
             var reportPage     = Session.OpenStudyReportPage();
-            reportPage          .GetStudyDropDownList().SelectOption(studyName);  
-            reportPage          .GetDictionaryTypeDropDownList().SelectOption(dictionaryName);
+            reportPage          .SelectStudyOption(studyName);  
+            reportPage          .SelectDictionaryType(dictionaryName);
             reportPage          .EnterStudyReportDescription(descriptionText);
             reportPage          .NewStudyReportButton();
         }
@@ -2231,14 +2231,6 @@ namespace Coder.DeclarativeBrowser
             Session.WaitUntilElementDisappears(() => studyImpactAnalysisPage.GetStudyMigrationStartingIndicator(), Config.GetLoadingCoypuOptions());
             Session.WaitUntilElementExists(() => studyImpactAnalysisPage.GetStudyMigrationStartedIndicator());
 
-            if (waitForMigrationToComplete)
-            {
-                var studyReportPage = Session.OpenStudyReportPage();
-
-                studyReportPage.GetDictionaryTypeDropDownList().SelectOption(dictionary);
-                studyReportPage.GetStudyDropDownList().SelectOption(study);
-                studyReportPage.WaitForStudyMigrationToComplete(study, targetSynonymList.Version);
-            }
         }
 
         public void UploadSynonymFile(SynonymList synonymList, string synonymFilePath)
@@ -2508,55 +2500,39 @@ namespace Coder.DeclarativeBrowser
             return taskCount;
         }
 
-        /// <summary>Returns the count of all tasks loaded into the Coder system.</summary>
-        public int GetStudyReportTaskCount()
+        public int GetTotalStudyReportTaskCountsByStudyDictionary(string studyName, string dictionaryType, string descriptionText)
         {
-            return GetStudyReportTaskCount(WorkflowState.AllWorkflowStates);
+            if (string.IsNullOrEmpty(studyName))      throw new ArgumentNullException(nameof(studyName));
+            if (string.IsNullOrEmpty(dictionaryType)) throw new ArgumentNullException(nameof(dictionaryType));
+
+            var studyReportPage       = Session.GetStudyReportPage(descriptionText);
+
+            var totalStudyReportCount = studyReportPage.GetTotalStudyReportTaskCounts(studyName, dictionaryType);
+
+            return totalStudyReportCount;
         }
 
-        /// <summary>Returns the count of all tasks loaded into the Coder system for a specific workflow state.</summary>
-        public int GetStudyReportTaskCount(WorkflowState workflowState)
+        public int GetStudyReportTotalTaskCount(string descriptionText)
         {
-            int taskCount = 0;
-            int firstDictionaryPosition = 0;
+            var studyReportPage = Session.GetStudyReportPage(descriptionText);
 
-            var studyReportPage = Session.OpenStudyReportPage();
+            var totalStatCount  = studyReportPage.GetStudyReportTotalTaskCount();
 
-            // GetStudyReportTaskCount will get all tasks for all dictionaries. There is no way to display all dictionaries at once,
-            // so select each dictionary in the dropdown to get the complete count.
-            string dictionaryTypeDropdownText = studyReportPage.GetDictionaryTypeDropDownList().Text;
-
-            string[] splitDropdownText = dictionaryTypeDropdownText.Split(new char[] { '\n', '\r' },
-                StringSplitOptions.RemoveEmptyEntries);
-
-            if (splitDropdownText.Length > 0)
-            {
-                if (splitDropdownText[firstDictionaryPosition].Equals("Select Dictionary Type"))
-                {
-                    firstDictionaryPosition++;
-                }
-
-                for (int dictionaryIndex = firstDictionaryPosition;
-                    dictionaryIndex < splitDropdownText.Length;
-                    dictionaryIndex++)
-                {
-                    studyReportPage.GetDictionaryTypeDropDownList().SelectOption(splitDropdownText[dictionaryIndex]);
-                    studyReportPage.GetGenerateReportButton().ClickWhenAvailable();
-
-                    if (!studyReportPage.IsStudyReportGridEmpty())
-                    {
-                        taskCount += studyReportPage.TotalTaskCounts(workflowState);
-                    }
-                }
-            }
-            return taskCount;
+            return totalStatCount;
         }
 
-        public void WaitForTaskLoadComplete(int expectedTaskCount)
+        public StudyReport GetStudyReportDataSet(string descriptionText)
         {
-            RetryPolicy.CompletionAssertion.Execute(
-                () => Assert.AreEqual(expectedTaskCount, GetStudyReportTaskCount(), "Could not confirm that all tasks were loaded."));
+            var studyReportPage = Session.GetStudyReportPage(descriptionText);
+
+            StudyViewReport(descriptionText);
+
+            var studyReportDataSet = studyReportPage.GetStudyReportDataSet();
+
+            return studyReportDataSet;
         }
+
+
 
         public void WaitForAutoCodingToComplete()
         {
@@ -2573,17 +2549,18 @@ namespace Coder.DeclarativeBrowser
             codingTaskPage.ClearFilters();
         }
 
+        //TODO Repair Count without description or add description
         public void WaitUntilSystemTaskCountAtOrAboveThreshold(string taskableState, int percentThreshold)
         {
             if (string.IsNullOrEmpty(taskableState)) throw new ArgumentNullException("taskableState");
 
-            int systemTaskCountMinimum = GetStudyReportTaskCount() * percentThreshold / 100;
+            //int systemTaskCountMinimum = () * percentThreshold / 100;
 
             RetryPolicy.CompletionAssertion.Execute(
                 () =>
                 {
                     Assert.GreaterOrEqual(GetSystemTaskCount(taskableState),
-                        systemTaskCountMinimum,
+                     //   systemTaskCountMinimum,
                         string.Format("Not enough tasks were in the {0} state.", taskableState));
                 });
         }
@@ -2592,13 +2569,13 @@ namespace Coder.DeclarativeBrowser
         {
             if (string.IsNullOrEmpty(taskableState)) throw new ArgumentNullException("taskableState");
 
-            int systemTaskCountMaximum = GetStudyReportTaskCount() * percentThreshold / 100;
+         //   int systemTaskCountMaximum = GetStudyReportTaskCount() * percentThreshold / 100;
             
             RetryPolicy.CompletionAssertion.Execute(
                 () =>
                 {
                     Assert.LessOrEqual(GetSystemTaskCount(taskableState),
-                        systemTaskCountMaximum,
+              //          systemTaskCountMaximum,
                         string.Format("Too many tasks were in the {0} state.", taskableState));
                 });
         }

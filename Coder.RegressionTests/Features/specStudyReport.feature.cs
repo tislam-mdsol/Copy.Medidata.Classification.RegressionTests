@@ -95,14 +95,14 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Study Report returns data for task with a workflow state of \"Not Coded\"")]
+        [NUnit.Framework.DescriptionAttribute("Study Report returns data for task with a task state of \"Not Coded\"")]
         [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
         [NUnit.Framework.CategoryAttribute("PBMCC_185572_002")]
         [NUnit.Framework.Timeout(600000)]
-        public virtual void StudyReportReturnsDataForTaskWithAWorkflowStateOfNotCoded()
+        public virtual void StudyReportReturnsDataForTaskWithATaskStateOfNotCoded()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Study Report returns data for task with a workflow state of \"Not Coded\"", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Study Report returns data for task with a task state of \"Not Coded\"", new string[] {
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_185572_002",
@@ -114,155 +114,216 @@ this.ScenarioSetup(scenarioInfo);
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 22
  testRunner.When("coding tasks are loaded from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Status",
+                        "Count"});
+            table1.AddRow(new string[] {
+                        "Completed Count",
+                        "0"});
+            table1.AddRow(new string[] {
+                        "Not Coded Count",
+                        "6"});
+            table1.AddRow(new string[] {
+                        "Coded Not Completed Count",
+                        "0"});
+            table1.AddRow(new string[] {
+                        "With Open Query Count",
+                        "0"});
 #line 23
- testRunner.Then("Study Report data should have \"6\" tasks  with a workflow state of \"NotCoded\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the study report task status count information should have the following", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Study Report returns data for task with a workflow state of \"completed\"")]
+        [NUnit.Framework.DescriptionAttribute("Study Report returns data for task with a task state of \"completed\"")]
         [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
         [NUnit.Framework.CategoryAttribute("PBMCC_185572_003")]
         [NUnit.Framework.Timeout(600000)]
-        public virtual void StudyReportReturnsDataForTaskWithAWorkflowStateOfCompleted()
+        public virtual void StudyReportReturnsDataForTaskWithATaskStateOfCompleted()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Study Report returns data for task with a workflow state of \"completed\"", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Study Report returns data for task with a task state of \"completed\"", new string[] {
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_185572_003",
                         "IncreaseTimeout"});
-#line 30
+#line 35
 this.ScenarioSetup(scenarioInfo);
-#line 31
+#line 36
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 32
+#line 37
  testRunner.When("coding tasks are loaded from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 33
+#line 38
  testRunner.And("a browse and code for task \"Burning\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
                         "SearchText",
                         "SearchLevel",
                         "Code",
                         "Level",
                         "CreateSynonym"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Burning",
                         "Gastroesophageal burning",
                         "Low Level Term",
                         "10066998",
                         "LLT",
                         "False"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Congestion",
                         "Congestion nasal",
                         "Low Level Term",
                         "10010676",
                         "LLT",
                         "False"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Heart Burn",
                         "Reflux gastritis",
                         "Low Level Term",
                         "10057969",
                         "LLT",
                         "False"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Nasal Drip",
                         "Postnasal drip",
                         "Low Level Term",
                         "10036402",
                         "LLT",
                         "False"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Reflux",
                         "Gastritis alkaline reflux",
                         "Low Level Term",
                         "10017858",
                         "LLT",
                         "False"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Stiff Joints",
                         "Stiff joint",
                         "Low Level Term",
                         "10042041",
                         "LLT",
                         "False"});
-#line 34
- testRunner.And("I code next available task", ((string)(null)), table1, "And ");
-#line 42
- testRunner.Then("Study Report data should have \"6\" tasks  with a workflow state of \"Completed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 39
+ testRunner.And("I code next available task", ((string)(null)), table2, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Status",
+                        "Count"});
+            table3.AddRow(new string[] {
+                        "Completed Count",
+                        "6"});
+            table3.AddRow(new string[] {
+                        "Not Coded Count",
+                        "0"});
+            table3.AddRow(new string[] {
+                        "Coded Not Completed Count",
+                        "0"});
+            table3.AddRow(new string[] {
+                        "With Open Query Count",
+                        "0"});
+#line 47
+ testRunner.Then("the study report task status count information should have the following", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Study Report returns data for tasks with a workflow state of \"completed\" as wells" +
-            " as \"NotCoded\"")]
+        [NUnit.Framework.DescriptionAttribute("Study Report returns data for tasks with a task state of \"completed\" as wells as " +
+            "\"NotCoded\"")]
         [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
         [NUnit.Framework.CategoryAttribute("PBMCC_185572_004")]
         [NUnit.Framework.Timeout(600000)]
-        public virtual void StudyReportReturnsDataForTasksWithAWorkflowStateOfCompletedAsWellsAsNotCoded()
+        public virtual void StudyReportReturnsDataForTasksWithATaskStateOfCompletedAsWellsAsNotCoded()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Study Report returns data for tasks with a workflow state of \"completed\" as wells" +
-                    " as \"NotCoded\"", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Study Report returns data for tasks with a task state of \"completed\" as wells as " +
+                    "\"NotCoded\"", new string[] {
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_185572_004",
                         "IncreaseTimeout"});
-#line 50
+#line 60
 this.ScenarioSetup(scenarioInfo);
-#line 51
+#line 61
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 52
+#line 62
  testRunner.And("coding tasks from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 53
+#line 63
  testRunner.When("task \"Congestion\" is coded to term \"Congestion nasal\" at search level \"Low Level " +
                     "Term\" with code \"10010676\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 54
- testRunner.Then("Study Report data should have \"1\" tasks  with a workflow state of \"Completed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 55
- testRunner.And("Study Report data should have \"5\" tasks  with a workflow state of \"NotCoded\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Status",
+                        "Count"});
+            table4.AddRow(new string[] {
+                        "Completed Count",
+                        "1"});
+            table4.AddRow(new string[] {
+                        "Not Coded Count",
+                        "5"});
+            table4.AddRow(new string[] {
+                        "Coded Not Completed Count",
+                        "0"});
+            table4.AddRow(new string[] {
+                        "With Open Query Count",
+                        "0"});
+#line 64
+ testRunner.Then("the study report task status count information should have the following", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Study Report returns data for tasks with a workflow state of \"Coded But Not Compl" +
-            "eted\"")]
+        [NUnit.Framework.DescriptionAttribute("Study Report returns data for tasks with a task state of \"Coded But Not Completed" +
+            "\"")]
         [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
         [NUnit.Framework.CategoryAttribute("PBMCC_185572_005")]
         [NUnit.Framework.Timeout(600000)]
-        public virtual void StudyReportReturnsDataForTasksWithAWorkflowStateOfCodedButNotCompleted()
+        public virtual void StudyReportReturnsDataForTasksWithATaskStateOfCodedButNotCompleted()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Study Report returns data for tasks with a workflow state of \"Coded But Not Compl" +
-                    "eted\"", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Study Report returns data for tasks with a task state of \"Coded But Not Completed" +
+                    "\"", new string[] {
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_185572_005",
                         "IncreaseTimeout"});
-#line 63
+#line 76
 this.ScenarioSetup(scenarioInfo);
-#line 64
+#line 77
     testRunner.Given("a \"Approval\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG" +
                     " 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 65
+#line 78
  testRunner.And("coding task \"Congestion\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
+#line 79
  testRunner.When("task \"Congestion\" is coded to term \"Congestion nasal\" at search level \"Low Level " +
                     "Term\" with code \"10010676\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 67
+#line 80
  testRunner.And("reclassifying task \"CONGESTION\" with Include Autocoded Items set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
- testRunner.Then("Study Report data should have \"1\" tasks  with a workflow state of \"CodedButNotCom" +
-                    "plete\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Status",
+                        "Count"});
+            table5.AddRow(new string[] {
+                        "Completed Count",
+                        "0"});
+            table5.AddRow(new string[] {
+                        "Not Coded Count",
+                        "0"});
+            table5.AddRow(new string[] {
+                        "Coded Not Completed Count",
+                        "1"});
+            table5.AddRow(new string[] {
+                        "With Open Query Count",
+                        "0"});
+#line 81
+ testRunner.Then("the study report task status count information should have the following", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
