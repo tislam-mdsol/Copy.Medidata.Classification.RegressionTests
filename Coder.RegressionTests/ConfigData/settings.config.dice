@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <appSettings>
-    <add key="SubsystemAssemblyExclusionFilters"                                 value="Medidata.SpecFlow,IKVM"   />
+    <add key="SubsystemAssemblyExclusionFilters"                                 value="Medidata.SpecFlow,IKVM,RestSharp"   />
     <add key="AppHost"                                                           value="<%= configured.uitest_login_url %>" />
     <add key="LocalHost"                                                         value="localhost" />
     <add key="Port"                                                              value=" " />
