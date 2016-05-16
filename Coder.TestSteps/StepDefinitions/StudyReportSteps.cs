@@ -63,10 +63,10 @@ namespace Coder.TestSteps.StepDefinitions
                 throw new ArgumentException($"Could not find study report stats with study name of {studyName} and dictionary of {dictionary}");
             }
 
-            expectedStudyStatData.NotCodedCount.ShouldBeEquivalentTo(actualStudyReportStats.NotCodedCount);
-            expectedStudyStatData.CompletedCount.ShouldBeEquivalentTo(actualStudyReportStats.CompletedCount);
+            expectedStudyStatData.NotCodedCount         .ShouldBeEquivalentTo(actualStudyReportStats.NotCodedCount);
+            expectedStudyStatData.CompletedCount        .ShouldBeEquivalentTo(actualStudyReportStats.CompletedCount);
             expectedStudyStatData.CodedNotCompletedCount.ShouldBeEquivalentTo(actualStudyReportStats.CodedNotCompletedCount);
-            expectedStudyStatData.WithOpenQueryCount.ShouldBeEquivalentTo(actualStudyReportStats.WithOpenQueryCount);
+            expectedStudyStatData.WithOpenQueryCount    .ShouldBeEquivalentTo(actualStudyReportStats.WithOpenQueryCount);
 
             _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }
@@ -94,10 +94,10 @@ namespace Coder.TestSteps.StepDefinitions
                 throw new ArgumentException($"Could not find study report stats with study name of {_StepContext.GetStudyName()} and dictionary of {_StepContext.Dictionary}");
             }
 
-            expectedStudyStatData.NotCodedCount.ShouldBeEquivalentTo(actualStudyReportStats.NotCodedCount);
-            expectedStudyStatData.CompletedCount.ShouldBeEquivalentTo(actualStudyReportStats.CompletedCount);
+            expectedStudyStatData.NotCodedCount         .ShouldBeEquivalentTo(actualStudyReportStats.NotCodedCount);
+            expectedStudyStatData.CompletedCount        .ShouldBeEquivalentTo(actualStudyReportStats.CompletedCount);
             expectedStudyStatData.CodedNotCompletedCount.ShouldBeEquivalentTo(actualStudyReportStats.CodedNotCompletedCount);
-            expectedStudyStatData.WithOpenQueryCount.ShouldBeEquivalentTo(actualStudyReportStats.WithOpenQueryCount);
+            expectedStudyStatData.WithOpenQueryCount    .ShouldBeEquivalentTo(actualStudyReportStats.WithOpenQueryCount);
 
             _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }

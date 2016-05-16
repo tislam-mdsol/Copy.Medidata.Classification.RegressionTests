@@ -359,7 +359,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Reports
                     TermPath = pathTerm,
                     Level    = pathLevel,
                     Code     = pathCode
-                }).ToList();
+                }).ToArray();
 
             return collectionTermPathRows;
         }
@@ -412,16 +412,24 @@ namespace Coder.DeclarativeBrowser.PageObjects.Reports
             var completedCountStatsDetailsButton    = GetCompletedButton(statsValues.StudyStatName, statsValues.DictionaryName);
 
             if (statsValues.NotCodedCount > 0)
-                statsValues.NotCodedTasks           = GetStudyReportStatsDetailsByStatus(notCodedStatsDetailsButton);
-            
+            {
+                statsValues.NotCodedTasks          = GetStudyReportStatsDetailsByStatus(notCodedStatsDetailsButton);
+            }
+
             if (statsValues.CodedNotCompletedCount > 0)
-                statsValues.CodedNotCompletedTasks  = GetStudyReportStatsDetailsByStatus(codedNotCompletedStatsDetailsButton);
-            
+            {
+                statsValues.CodedNotCompletedTasks = GetStudyReportStatsDetailsByStatus(codedNotCompletedStatsDetailsButton);
+            }
+
             if (statsValues.WithOpenQueryCount > 0)
-                statsValues.WithOpenQueryTasks      = GetStudyReportStatsDetailsByStatus(withOpenQueryStatsDetailsButton);                
-            
+            {
+                statsValues.WithOpenQueryTasks     = GetStudyReportStatsDetailsByStatus(withOpenQueryStatsDetailsButton);
+            }
+
             if (statsValues.CompletedCount > 0)
-                statsValues.CompletedTasks          = GetStudyReportStatsDetailsByStatus(completedCountStatsDetailsButton);
+            {
+                statsValues.CompletedTasks         = GetStudyReportStatsDetailsByStatus(completedCountStatsDetailsButton);
+            }
 
             return statsValues;
         }
@@ -447,7 +455,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Reports
                     }
                     into statsValues
                     select GetStudyReportStatsDetails(statsValues)
-                ).ToList();
+                ).ToArray();
 
             return collectionOfStudyReportStatsWithDetails;
         }
@@ -472,7 +480,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Reports
                                                       Obsolete                     = historyColumns[_Obsolete].Text.Trim(),
                                                       TermNotFound                 = historyColumns[_TermNotFound].Text.Trim()
                                                   })
-                                                  .ToList();
+                                                  .ToArray();
             return upVerHistoryDetailsCollection;
         }
 

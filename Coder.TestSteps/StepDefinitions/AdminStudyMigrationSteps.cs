@@ -206,16 +206,16 @@ namespace Coder.TestSteps.StepDefinitions
                 throw new ArgumentException($"Could not find expected study report stats with study name of {_StepContext.GetStudyName()} and dictionary of {_StepContext.Dictionary}");
             }
 
-            expectedReportUpVer.FromVersion.ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().FromVersion);
-            expectedReportUpVer.ToVersion.ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().ToVersion);
-            expectedReportUpVer.User.ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().User);
-            expectedReportUpVer.NotAffected.ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().NotAffected);
-            expectedReportUpVer.CodedToNewVersionSynonym.ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().CodedToNewVersionSynonym);
+            expectedReportUpVer.FromVersion                 .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().FromVersion);
+            expectedReportUpVer.ToVersion                   .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().ToVersion);
+            expectedReportUpVer.User                        .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().User);
+            expectedReportUpVer.NotAffected                 .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().NotAffected);
+            expectedReportUpVer.CodedToNewVersionSynonym    .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().CodedToNewVersionSynonym);
             expectedReportUpVer.CodedToNewVersionBetterMatch.ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().CodedToNewVersionBetterMatch);
-            expectedReportUpVer.PathChanged.ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().PathChanged);
-            expectedReportUpVer.CasingChangeOnly.ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().CasingChangeOnly);
-            expectedReportUpVer.Obsolete.ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().Obsolete);
-            expectedReportUpVer.TermNotFound.ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().TermNotFound);
+            expectedReportUpVer.PathChanged                 .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().PathChanged);
+            expectedReportUpVer.CasingChangeOnly            .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().CasingChangeOnly);
+            expectedReportUpVer.Obsolete                    .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().Obsolete);
+            expectedReportUpVer.TermNotFound                .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().TermNotFound);
         }
 
         [Then(@"I verify the following Coding Tasks are displayed")]
