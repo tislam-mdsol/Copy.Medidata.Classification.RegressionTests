@@ -248,31 +248,37 @@ namespace Coder.DeclarativeBrowser.PageObjects
                 GetExcludeAutocodedItemsCheckbox().Click();
             }
 
-            if (searchCriteria.StatusOptions.FirstOrDefault().Equals("None", StringComparison.OrdinalIgnoreCase))
+            if (searchCriteria.StatusOptions.First().Equals("None", StringComparison.OrdinalIgnoreCase))
             {
                 GetDeselectAllStatus().Click();
             }            
-            else if (!(searchCriteria.StatusOptions.FirstOrDefault().Equals("All", StringComparison.OrdinalIgnoreCase)))
+            else if (!(searchCriteria.StatusOptions.First().Equals("All", StringComparison.OrdinalIgnoreCase)))
             {
-                SessionElementScopeExtensions.SelectOptions(GetStatusOptions(), searchCriteria.StatusOptions );
+                var elementsToSelect = GetStatusOptions();
+
+                elementsToSelect.SelectOptions(searchCriteria.StatusOptions);
             }
 
-            if (searchCriteria.ExportColumns.FirstOrDefault().Equals("None", StringComparison.OrdinalIgnoreCase))
+            if (searchCriteria.ExportColumns.First().Equals("None", StringComparison.OrdinalIgnoreCase))
             {
                 GetDeselectExportColumns().Click();
             }
-            else if (!(searchCriteria.ExportColumns.FirstOrDefault().Equals("All", StringComparison.OrdinalIgnoreCase)))
+            else if (!(searchCriteria.ExportColumns.First().Equals("All", StringComparison.OrdinalIgnoreCase)))
             {
-                SessionElementScopeExtensions.SelectOptions(GetStatusOptions(), searchCriteria.ExportColumns);
+                var elementsToSelect = ExportColumnOptions();
+
+                elementsToSelect.SelectOptions(searchCriteria.ExportColumns);
             }
 
-            if (searchCriteria.CodedByOptions.FirstOrDefault().Equals("None", StringComparison.OrdinalIgnoreCase))
+            if (searchCriteria.CodedByOptions.First().Equals("None", StringComparison.OrdinalIgnoreCase))
             {
                 GetDeSelectAllCodedBy().Click();
             }
-            else if (!(searchCriteria.CodedByOptions.FirstOrDefault().Equals("All", StringComparison.OrdinalIgnoreCase)))
+            else if (!(searchCriteria.CodedByOptions.First().Equals("All", StringComparison.OrdinalIgnoreCase)))
             {
-                SessionElementScopeExtensions.SelectOptions(GetCodedByUsersSpans(), searchCriteria.CodedByOptions);
+                var elementsToSelect = GetCodedByUsersSpans();
+
+                elementsToSelect.SelectOptions(searchCriteria.CodedByOptions);
             }
         }
 

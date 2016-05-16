@@ -302,7 +302,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             return tableRows;
         }
 
-        internal static void SelectOptions(this IList<SessionElementScope> elementsToSelect, IEnumerable<string> currentOptions)
+        internal static void SelectOptions(this IEnumerable<SessionElementScope> elementsToSelect, IEnumerable<string> currentOptions)
         {
             if (ReferenceEquals(currentOptions, null))   throw new ArgumentNullException(nameof(currentOptions));
             if (ReferenceEquals(elementsToSelect, null)) throw new ArgumentNullException(nameof(elementsToSelect));
