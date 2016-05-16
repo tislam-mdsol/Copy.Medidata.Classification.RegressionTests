@@ -302,5 +302,21 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             return tableRows;
         }
 
+        internal static void SelectOptions(this IList<SessionElementScope> elementsToSelect, IEnumerable<string> currentOptions)
+        {
+            if (ReferenceEquals(currentOptions, null))   throw new ArgumentNullException(nameof(currentOptions));
+            if (ReferenceEquals(elementsToSelect, null)) throw new ArgumentNullException(nameof(elementsToSelect));
+
+            var optionsToSelect = from element in elementsToSelect
+                                  where currentOptions.Contains(element.Text)
+                                  select element;
+
+            foreach (var option in optionsToSelect)
+            {
+                option.Click();
+            }
+        }
+
+
     }
 }

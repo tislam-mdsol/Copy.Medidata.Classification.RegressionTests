@@ -65,18 +65,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return allStats;
         }
 
-        private void SelectOptions(IEnumerable<string> currentOptions, IList<SessionElementScope> elementsToSelect)
-        {
-            var optionsToSelect = from element in elementsToSelect
-                                  where currentOptions.Contains(element.Text)
-                                  select element;
-
-            foreach (var option in optionsToSelect)
-            {
-                option.Click();
-            }
-        }
-
         private IList<SessionElementScope> ExportColumnOptions()
         {
             var currentStatus = _Browser.FindAllSessionElementsByXPath("//input[contains(@id, 'exportColumn-')]");
@@ -266,7 +254,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             }            
             else if (!(searchCriteria.StatusOptions.FirstOrDefault().Equals("All", StringComparison.OrdinalIgnoreCase)))
             {
-                SelectOptions(searchCriteria.StatusOptions, GetStatusOptions());
+                SessionElementScopeExtensions.SelectOptions(GetStatusOptions(), searchCriteria.StatusOptions );
             }
 
             if (searchCriteria.ExportColumns.FirstOrDefault().Equals("None", StringComparison.OrdinalIgnoreCase))
@@ -275,7 +263,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             }
             else if (!(searchCriteria.ExportColumns.FirstOrDefault().Equals("All", StringComparison.OrdinalIgnoreCase)))
             {
-                SelectOptions(searchCriteria.ExportColumns, ExportColumnOptions());
+                SessionElementScopeExtensions.SelectOptions(GetStatusOptions(), searchCriteria.ExportColumns);
             }
 
             if (searchCriteria.CodedByOptions.FirstOrDefault().Equals("None", StringComparison.OrdinalIgnoreCase))
@@ -284,7 +272,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             }
             else if (!(searchCriteria.CodedByOptions.FirstOrDefault().Equals("All", StringComparison.OrdinalIgnoreCase)))
             {
-                SelectOptions(searchCriteria.CodedByOptions, GetCodedByUsersSpans());
+                SessionElementScopeExtensions.SelectOptions(GetCodedByUsersSpans(), searchCriteria.CodedByOptions);
             }
         }
 
