@@ -21,12 +21,12 @@ Feature: Test full round trip integration from Rave to Coder.  New features conv
       | Field        | Value    | ControlType |
       | Coding Field | Headache | LongText    |
 	Then the coding decision for verbatim "Headache" on form "ETE1" for field "Coding Field" contains the following data
-      |Coding Level  |  Code    | Term                       |
-      |SOC           | 10029205 | Nervous system disorders   |
-      |HLGT          | 10019231 | Headaches                  |
-      |HLT           | 10019233 | Headaches NEC              |
-      |PT            | 10019211 | Headache                   |
-      |LLT           | 10019198 | Head pain                  |
+      | Level | Code     | Term Path                |
+      | SOC   | 10029205 | Nervous system disorders |
+      | HLGT  | 10019231 | Headaches                |
+      | HLT   | 10019233 | Headaches NEC            |
+      | PT    | 10019211 | Headache                 |
+      | LLT   | 10019211 | Headache                 |
 
 
   @DFT
