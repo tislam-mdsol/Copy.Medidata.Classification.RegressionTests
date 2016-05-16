@@ -126,9 +126,9 @@ namespace Coder.EndToEndTests.Features
     testRunner.When("adding a new verbatim term to form \"ETE1\"", ((string)(null)), table2, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Coding Level",
+                        "Level",
                         "Code",
-                        "Term"});
+                        "Term Path"});
             table3.AddRow(new string[] {
                         "SOC",
                         "10029205",
@@ -147,8 +147,8 @@ namespace Coder.EndToEndTests.Features
                         "Headache"});
             table3.AddRow(new string[] {
                         "LLT",
-                        "10019198",
-                        "Head pain"});
+                        "10019211",
+                        "Headache"});
 #line 23
  testRunner.Then("the coding decision for verbatim \"Headache\" on form \"ETE1\" for field \"Coding Fiel" +
                     "d\" contains the following data", ((string)(null)), table3, "Then ");
