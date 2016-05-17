@@ -72,14 +72,14 @@ namespace Coder.EndToEndTests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Basic Rave Coder Submission")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("ETE_ENG_Rave_coder_basic_Sub")]
         [NUnit.Framework.CategoryAttribute("PB1.1.2.001")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
         public virtual void BasicRaveCoderSubmission()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Basic Rave Coder Submission", new string[] {
-                        "DFT",
+                        "VAL",
                         "ETE_ENG_Rave_coder_basic_Sub",
                         "PB1.1.2.001",
                         "Release2016.1.0"});

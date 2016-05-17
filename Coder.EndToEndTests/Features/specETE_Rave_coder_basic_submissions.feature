@@ -5,7 +5,7 @@
 Feature: Test full round trip integration from Rave to Coder.  New features converted from ETE_ENGRaveCoder_BasicSubmissions.feature from task MCC-208901
 
 
-  @DFT
+  @VAL
   @ETE_ENG_Rave_coder_basic_Sub
   @PB1.1.2.001
   @Release2016.1.0
