@@ -100,7 +100,7 @@
     <Reference Include="Medidata.Classification.Contracts.Legacy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Medidata.Classification.Contracts.1.5.0-pre000036-01\lib\net40\Medidata.Classification.Contracts.Legacy.dll</HintPath>
       <Private>True</Private>
-	</Reference>
+    </Reference>
     <Reference Include="Medidata.Classification.Contracts">
       <HintPath>..\packages\Medidata.Classification.Contracts.1.5.0-pre000036-01\lib\net40\Medidata.Classification.Contracts.dll</HintPath>
     </Reference>
@@ -126,7 +126,7 @@
     <Reference Include="Medidata.IFX.UnitTestHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Medidata.IFX.1.5.2-pre000055-01\lib\net40\Medidata.IFX.UnitTestHelper.dll</HintPath>
       <Private>True</Private>
-	</Reference>
+    </Reference>
     <Reference Include="Medidata.IFX">
       <HintPath>..\packages\Medidata.IFX.1.5.2-pre000055-01\lib\net40\Medidata.IFX.dll</HintPath>
     </Reference>
@@ -144,11 +144,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.Messaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Messaging.1.1.2-pre000048-01\lib\net40\Medidata.Messaging.dll</HintPath>
+      <HintPath>..\packages\Medidata.Messaging.1.1.2-pre000055-01\lib\net40\Medidata.Messaging.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Medidata.Messaging.Archon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Messaging.1.1.2-pre000048-01\lib\net40\Medidata.Messaging.Archon.dll</HintPath>
+      <HintPath>..\packages\Medidata.Messaging.1.1.2-pre000055-01\lib\net40\Medidata.Messaging.Archon.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
