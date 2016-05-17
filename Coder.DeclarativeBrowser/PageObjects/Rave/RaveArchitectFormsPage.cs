@@ -95,8 +95,6 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
                 throw new MissingHtmlException(String.Format("Form, {0}, was not found.", formName));
             }
 
-            //formLink.Click();
-
             RetryPolicy.FindElement.Execute(() =>
                 _Session.TryUntil(
                     () => formLink.Click(),
