@@ -88,6 +88,13 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             return fieldLink;
         }
 
+        internal SessionElementScope GetFormLabel()
+        {
+            var formLabel = _Session.FindSessionElementById("_ctl0_Content_DispFormName");
+
+            return formLabel;
+        }
+
         private void SelectField(string fieldLabel)
         {
             if (String.IsNullOrWhiteSpace(fieldLabel)) throw new ArgumentNullException("fieldLabel");

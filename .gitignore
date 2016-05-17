@@ -184,10 +184,9 @@ CoderWS/Controllers/Scripts/jquery.validate.min.js.map
 
 CoderWS/App_Data/*.pem
 CoderWeb/App_Data/*.pem
-App_Data/*.pem
 CoderWS/App_Data/*.xml
 CoderWeb/App_Data/*.xml
-App_Data/*.xml
+App_Data/**
 config/environments/*.bat
 
 CoderWeb/StaticContent/coder_ui/src/browser/_Chutzpah.*
