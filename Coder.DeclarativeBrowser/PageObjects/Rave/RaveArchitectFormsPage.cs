@@ -79,7 +79,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
 
             var formLinkCell = formsGrid.FindTableCell(_FormNameHeaderText, formName, _FormLinkHeaderText);
 
-            var formLink     = formLinkCell.FindSessionElementByXPath(".//a");
+            var formLink     = formLinkCell.FindSessionElementByXPath(".//a[contains(@id, '_FormDesignerLnk')]");
 
             return formLink;
         }
@@ -95,10 +95,12 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
                 throw new MissingHtmlException(String.Format("Form, {0}, was not found.", formName));
             }
 
-            RetryPolicy.FindElement.Execute(() => 
+            //formLink.Click();
+
+            RetryPolicy.FindElement.Execute(() =>
                 _Session.TryUntil(
-                    ()=> formLink.Click(),
-                    ()=> _Session.GetRaveArchitectFormPage().GetFormLabel().Exists(),
+                    () => formLink.Click(),
+                    () => _Session.GetRaveArchitectFormPage().GetFormLabel().Exists(),
                     Config.ExistsOptions.RetryInterval,
                     Config.ExistsOptions)
             );
