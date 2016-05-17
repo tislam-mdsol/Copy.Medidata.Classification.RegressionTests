@@ -187,7 +187,7 @@ namespace Coder.TestSteps.StepDefinitions
             }
 
             browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
-
+            
             browser.LogoutOfCoderAndImedidata();
         }
         

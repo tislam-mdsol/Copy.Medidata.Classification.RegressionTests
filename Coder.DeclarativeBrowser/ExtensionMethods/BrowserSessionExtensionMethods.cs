@@ -1091,7 +1091,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                 var raveFormsPage = session.OpenRaveArchitectFormsPage(target);
 
                 raveFormsPage.OpenForm(formName);
-                }
+            }
 
             var raveFormPage = session.GetRaveArchitectFormPage();
 
@@ -1446,8 +1446,8 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             session.TryUntil(
                 () => selectList.Click(),
                 () => session.GetDXSelectListOptions().Any(),
-                Config.ExistsOptions.RetryInterval,
-                Config.ExistsOptions);
+                Config.LongExistsOptions.RetryInterval,
+                Config.LongExistsOptions);
 
             var selectListOptions = session.GetDXSelectListOptions();
 

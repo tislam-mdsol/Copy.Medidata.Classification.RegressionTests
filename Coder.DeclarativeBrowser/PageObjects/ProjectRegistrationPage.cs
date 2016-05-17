@@ -159,7 +159,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         public SessionElementScope GetSendToSourceButton()
         {
-            var saveButton = _Browser.FindSessionElementById("ctl00_Content_btnSaveSend");
+            var saveButton = _Browser.FindSessionElementByXPath("//a[.//u[text()='Save Send To Source']]");
 
             return saveButton;
         }
