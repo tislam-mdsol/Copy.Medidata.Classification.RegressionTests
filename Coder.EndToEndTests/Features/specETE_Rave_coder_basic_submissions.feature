@@ -5,9 +5,9 @@
 Feature: Test full round trip integration from Rave to Coder.  New features converted from ETE_ENGRaveCoder_BasicSubmissions.feature from task MCC-208901
 
 
-  @VAL
+  @DFT
   @ETE_ENG_Rave_coder_basic_Sub
-  @PB1.1.2-001
+  @PB1.1.2.001
   @Release2016.1.0
   Scenario: Basic Rave Coder Submission
     Given a Rave project registration with dictionary "MedDRA ENG 12.0"
@@ -31,7 +31,7 @@ Feature: Test full round trip integration from Rave to Coder.  New features conv
 
   @VAL
   @ETE_ENG_Rave_coder_basic_Sub_change_term
-  @PB1.1.2-002
+  @PB1.1.2.002
   @Release2016.1.0
   Scenario:Basic Rave Coder Submission and change verbatim
     Given a Rave project registration with dictionary "MedDRA ENG 12.0"

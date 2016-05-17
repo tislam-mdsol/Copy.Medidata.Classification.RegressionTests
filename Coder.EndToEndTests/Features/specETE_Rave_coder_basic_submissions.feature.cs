@@ -72,16 +72,16 @@ namespace Coder.EndToEndTests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Basic Rave Coder Submission")]
-        [NUnit.Framework.CategoryAttribute("VAL")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
         [NUnit.Framework.CategoryAttribute("ETE_ENG_Rave_coder_basic_Sub")]
-        [NUnit.Framework.CategoryAttribute("PB1.1.2-001")]
+        [NUnit.Framework.CategoryAttribute("PB1.1.2.001")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
         public virtual void BasicRaveCoderSubmission()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Basic Rave Coder Submission", new string[] {
-                        "VAL",
+                        "DFT",
                         "ETE_ENG_Rave_coder_basic_Sub",
-                        "PB1.1.2-001",
+                        "PB1.1.2.001",
                         "Release2016.1.0"});
 #line 12
   this.ScenarioSetup(scenarioInfo);
@@ -162,14 +162,14 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.DescriptionAttribute("Basic Rave Coder Submission and change verbatim")]
         [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("ETE_ENG_Rave_coder_basic_Sub_change_term")]
-        [NUnit.Framework.CategoryAttribute("PB1.1.2-002")]
+        [NUnit.Framework.CategoryAttribute("PB1.1.2.002")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
         public virtual void BasicRaveCoderSubmissionAndChangeVerbatim()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Basic Rave Coder Submission and change verbatim", new string[] {
                         "VAL",
                         "ETE_ENG_Rave_coder_basic_Sub_change_term",
-                        "PB1.1.2-002",
+                        "PB1.1.2.002",
                         "Release2016.1.0"});
 #line 36
   this.ScenarioSetup(scenarioInfo);
