@@ -149,14 +149,14 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.0",
                         "PBMCC_185572_003",
                         "IncreaseTimeout"});
-#line 35
-this.ScenarioSetup(scenarioInfo);
 #line 36
+this.ScenarioSetup(scenarioInfo);
+#line 37
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 37
- testRunner.When("coding tasks are loaded from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 38
+ testRunner.When("coding tasks are loaded from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 39
  testRunner.And("a browse and code for task \"Burning\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -208,7 +208,7 @@ this.ScenarioSetup(scenarioInfo);
                         "10042041",
                         "LLT",
                         "False"});
-#line 39
+#line 40
  testRunner.And("I code next available task", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -226,7 +226,7 @@ this.ScenarioSetup(scenarioInfo);
             table3.AddRow(new string[] {
                         "With Open Query Count",
                         "0"});
-#line 47
+#line 48
  testRunner.Then("the study report task status count information should have the following", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -247,14 +247,14 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.0",
                         "PBMCC_185572_004",
                         "IncreaseTimeout"});
-#line 60
-this.ScenarioSetup(scenarioInfo);
 #line 61
+this.ScenarioSetup(scenarioInfo);
+#line 62
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 62
- testRunner.And("coding tasks from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63
+ testRunner.And("coding tasks from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
  testRunner.When("task \"Congestion\" is coded to term \"Congestion nasal\" at search level \"Low Level " +
                     "Term\" with code \"10010676\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -273,7 +273,7 @@ this.ScenarioSetup(scenarioInfo);
             table4.AddRow(new string[] {
                         "With Open Query Count",
                         "0"});
-#line 64
+#line 65
  testRunner.Then("the study report task status count information should have the following", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -294,17 +294,17 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.0",
                         "PBMCC_185572_005",
                         "IncreaseTimeout"});
-#line 76
+#line 78
 this.ScenarioSetup(scenarioInfo);
-#line 77
+#line 79
     testRunner.Given("a \"Approval\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG" +
                     " 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 78
+#line 80
  testRunner.And("coding task \"Congestion\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 81
  testRunner.When("task \"Congestion\" is coded to term \"Congestion nasal\" at search level \"Low Level " +
                     "Term\" with code \"10010676\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 80
+#line 82
  testRunner.And("reclassifying task \"CONGESTION\" with Include Autocoded Items set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -322,8 +322,142 @@ this.ScenarioSetup(scenarioInfo);
             table5.AddRow(new string[] {
                         "With Open Query Count",
                         "0"});
-#line 81
+#line 83
  testRunner.Then("the study report task status count information should have the following", ((string)(null)), table5, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Study Report returns data for tasks with a task state of \"With Open Query Count\"")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
+        [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_185572_006")]
+        [NUnit.Framework.Timeout(600000)]
+        public virtual void StudyReportReturnsDataForTasksWithATaskStateOfWithOpenQueryCount()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Study Report returns data for tasks with a task state of \"With Open Query Count\"", new string[] {
+                        "VAL",
+                        "Release2015.3.0",
+                        "PBMCC_185572_006",
+                        "IncreaseTimeout"});
+#line 96
+this.ScenarioSetup(scenarioInfo);
+#line 97
+    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
+                    ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 98
+    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with respon" +
+                    "se \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Status",
+                        "Count"});
+            table6.AddRow(new string[] {
+                        "Completed Count",
+                        "0"});
+            table6.AddRow(new string[] {
+                        "Not Coded Count",
+                        "1"});
+            table6.AddRow(new string[] {
+                        "Coded Not Completed Count",
+                        "0"});
+            table6.AddRow(new string[] {
+                        "With Open Query Count",
+                        "1"});
+#line 99
+ testRunner.Then("the study report task status count information should have the following", ((string)(null)), table6, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Study Report returns verbatim data for tasks with a task state of \"Not Coded\"")]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_185572_007")]
+        [NUnit.Framework.Timeout(600000)]
+        public virtual void StudyReportReturnsVerbatimDataForTasksWithATaskStateOfNotCoded()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Study Report returns verbatim data for tasks with a task state of \"Not Coded\"", new string[] {
+                        "DFT",
+                        "Release2015.3.0",
+                        "PBMCC_185572_007",
+                        "IncreaseTimeout"});
+#line 112
+this.ScenarioSetup(scenarioInfo);
+#line 113
+    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
+                    ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 114
+ testRunner.When("coding tasks are loaded from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim",
+                        "Dictionary",
+                        "Dictionary Level",
+                        "Code",
+                        "Term",
+                        "Workflow Status",
+                        "Path",
+                        "Batch"});
+            table7.AddRow(new string[] {
+                        "Burning",
+                        "MedDRA 15.0",
+                        "Low Level Term",
+                        "",
+                        "",
+                        "Waiting Manual Code",
+                        "",
+                        "MedDRA Batch 1"});
+            table7.AddRow(new string[] {
+                        "Congestion",
+                        "MedDRA 15.0",
+                        "Low Level Term",
+                        "",
+                        "",
+                        "Waiting Manual Code",
+                        "",
+                        "MedDRA Batch 1"});
+            table7.AddRow(new string[] {
+                        "Heart Burn",
+                        "MedDRA 15.0",
+                        "Low Level Term",
+                        "",
+                        "",
+                        "Waiting Manual Code",
+                        "",
+                        "MedDRA Batch 1"});
+            table7.AddRow(new string[] {
+                        "Nasal Drip",
+                        "MedDRA 15.0",
+                        "Low Level Term",
+                        "",
+                        "",
+                        "Waiting Manual Code",
+                        "",
+                        "MedDRA Batch 1"});
+            table7.AddRow(new string[] {
+                        "Reflux",
+                        "MedDRA 15.0",
+                        "Low Level Term",
+                        "",
+                        "",
+                        "Waiting Manual Code",
+                        "",
+                        "MedDRA Batch 1"});
+            table7.AddRow(new string[] {
+                        "Stiff Joints",
+                        "MedDRA 15.0",
+                        "Low Level Term",
+                        "",
+                        "",
+                        "Waiting Manual Code",
+                        "",
+                        "MedDRA Batch 1"});
+#line 115
+ testRunner.Then("the study report task detail information for a study with task category \"Not Code" +
+                    "d\" should have the following", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

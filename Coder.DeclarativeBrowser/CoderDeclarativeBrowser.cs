@@ -21,6 +21,8 @@ using Coder.DeclarativeBrowser.Helpers;
 using Coder.DeclarativeBrowser.IMedidataApi;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.PageObjects;
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+using FluentAssertions.Common;
 using Medidata;
 using Medidata.Classification;
 
@@ -323,6 +325,33 @@ namespace Coder.DeclarativeBrowser
 
             var mainReportPage = Session.GetMainReportCoderPage();
             mainReportPage      .SelectStudyReportViewLink(descriptionText);
+        }
+
+        public bool GetComparisonStudyReportInformation(StudyReportStats actualData, StudyReportStats expectedData, string statusCategory)
+        {
+            var actualDataStatsNotCoded          = actualData.NotCodedTasks;
+            var actualDataStatsCodedNotCompleted = actualData.CodedNotCompletedTasks;
+            var actualDataStatsWithOpenQuery     = actualData.WithOpenQueryTasks;
+            var actualDataStatsCompleted         = actualData.CompletedTasks;
+
+            var expectedDataStatsNotCoded          = expectedData.NotCodedTasks;
+            var expectedDataStatsCodedNotCompleted = expectedData.CodedNotCompletedTasks;
+            var expectedDataStatsWithOpenQuery     = expectedData.WithOpenQueryTasks;
+            var expectedDataStatsCompleted         = expectedData.CompletedTasks;
+
+            switch (statusCategory)
+            {
+                case "NotCoded":
+                    return actualDataStatsNotCoded         .Equals(expectedDataStatsNotCoded);
+                case "CodedNotCompleted":
+                    return actualDataStatsCodedNotCompleted.Equals(expectedDataStatsCodedNotCompleted);
+                case "WithOpenQuery":
+                    return actualDataStatsWithOpenQuery    .Equals(expectedDataStatsWithOpenQuery);
+                case "Completed":
+                    return actualDataStatsCompleted        .Equals(expectedDataStatsCompleted);
+                default:
+                    throw new ArgumentException ("Invalid status category: " + nameof(statusCategory));
+            }
         }
 
         public void CreateAndActivateWorkFlowRole(string roleName)

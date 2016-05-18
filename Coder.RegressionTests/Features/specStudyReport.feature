@@ -27,6 +27,7 @@ Scenario:  Study Report returns data for task with a task state of "Not Coded"
 	| Coded Not Completed Count | 0     |
 	| With Open Query Count     | 0     |
 
+
 @VAL
 @Release2015.3.0
 @PBMCC_185572_003
@@ -68,6 +69,7 @@ Scenario:  Study Report returns data for tasks with a task state of "completed" 
 	| Coded Not Completed Count | 0     |
 	| With Open Query Count     | 0     |
 
+
 @VAL
 @Release2015.3.0
 @PBMCC_185572_005
@@ -84,3 +86,37 @@ Scenario:  Study Report returns data for tasks with a task state of "Coded But N
 	| Not Coded Count           | 0     |
 	| Coded Not Completed Count | 1     |
 	| With Open Query Count     | 0     |
+
+
+@VAL
+@Release2015.3.0
+@PBMCC_185572_006
+@IncreaseTimeout
+
+Scenario:  Study Report returns data for tasks with a task state of "With Open Query Count" 
+    Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
+    When the query for new task "HEADACHES" with comment "Severity?" is "Open" with response "Acute"	
+	Then the study report task status count information should have the following   
+	| Status                    | Count |
+	| Completed Count           | 0     |
+	| Not Coded Count           | 1     |
+	| Coded Not Completed Count | 0     |
+	| With Open Query Count     | 1     |
+
+
+@DFT
+@Release2015.3.0
+@PBMCC_185572_007
+@IncreaseTimeout
+
+Scenario:  Study Report returns verbatim data for tasks with a task state of "Not Coded"
+    Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
+	When coding tasks are loaded from CSV file "Tasks_6_CodeAndNext.csv"
+	Then the study report task detail information for a study with task category "Not Coded" should have the following   
+	| Verbatim     | Dictionary  | Dictionary Level | Code | Term | Workflow Status     | Path | Batch          |
+	| Burning      | MedDRA 15.0 | Low Level Term   |      |      | Waiting Manual Code |      | MedDRA Batch 1 |
+	| Congestion   | MedDRA 15.0 | Low Level Term   |      |      | Waiting Manual Code |      | MedDRA Batch 1 |
+	| Heart Burn   | MedDRA 15.0 | Low Level Term   |      |      | Waiting Manual Code |      | MedDRA Batch 1 |
+	| Nasal Drip   | MedDRA 15.0 | Low Level Term   |      |      | Waiting Manual Code |      | MedDRA Batch 1 |
+	| Reflux       | MedDRA 15.0 | Low Level Term   |      |      | Waiting Manual Code |      | MedDRA Batch 1 |
+	| Stiff Joints | MedDRA 15.0 | Low Level Term   |      |      | Waiting Manual Code |      | MedDRA Batch 1 |      
