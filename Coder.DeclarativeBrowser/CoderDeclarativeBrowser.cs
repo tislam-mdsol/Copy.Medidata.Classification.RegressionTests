@@ -2124,7 +2124,7 @@ namespace Coder.DeclarativeBrowser
 
         public void RegisterProjects(string project, IList<SynonymList> synonymLists)
         {
-            if (ReferenceEquals(project, null)) throw new ArgumentNullException("project");
+            if (ReferenceEquals(project, null))      throw new ArgumentNullException("project");
             if (ReferenceEquals(synonymLists, null)) throw new ArgumentNullException("synonymLists");
 
             Session.GoToAdminPage("Project Registration");

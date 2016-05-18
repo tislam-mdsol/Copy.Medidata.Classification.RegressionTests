@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <appSettings>
+  <add key="SubsystemAssemblyExclusionFilters"        value="Medidata.SpecFlow,IKVM"   />
   <add key="AppHost"                                  value="<%= configured.imedidata_login_url %>" />
   <add key="RaveHost"                                 value="<%= configured.rave_login_url %>" />
   <add key="IMedidataHost"                            value="<%= configured.imedidata_base_url %>" />
@@ -56,4 +57,15 @@
   <add key="EdcModulesAppRole"                        value="<%= configured.ete_modules_app_role  || 'All Modules' %>" />
   <add key="ArchitectRolesAppRole"                    value="<%= configured.ete_architect_roles_role || 'Project Admin Default' %>" />
   <add key="IMedidataPrivateKeyPath"                  value="ConfigData\mauth_private_key.txt" />
+  <add key="AwsAccessKey"                             value="<%= configured.S3AccessKey              || ''                                                   %>"/>
+  <add key="AwsSecretKey"                             value="<%= configured.S3SecretKey              || ''                                                   %>"/>
+  <add key="iMedidataAppId"                           value="<%= configured.app_uuid                 || ''                                                   %>"/>
+  <add key="iMedidataBaseUrl"                         value="<%= configured.mauth_service_url        || ''                                                   %>"/>
+  <add key="iMedidataPrivateKeyFile"                  value="ConfigData/mauth_private_key.txt"/>
+  <add key="ArchonBaseUrl"                            value="<%= configured.archonBaseUrl            || ''                                                   %>"/>
+  <add key="ArchonDefaultExchange"                    value="<%= configured.archonDefaultExchange    || ''                                                   %>"/>
+  <add key="MessageRetentionPeriod"                   value="<%= configured.messageRetentionPeriod   || '345600'                                             %>"/>
+  <add key="MaximumDeliveries"                        value="<%= configured.maximumDeliveries        || '3'                                                  %>"/>
+  <add key="SubsystemName"                            value="<%= configured.subsystemName            || 'Coder.RegressionTests'                              %>"/>
+  <add key="ArchonPollingTimeInterval"                value="<%= configured.pollingTimeInterval      || '5000'                                               %>"/>
 </appSettings>
