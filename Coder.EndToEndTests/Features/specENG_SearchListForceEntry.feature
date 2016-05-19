@@ -1,3 +1,6 @@
+@specENG_SearchListForceEntry.feature
+
+@EndToEndDynamicSegment
 Feature: Verify using the search list by entering a value not in the options is fully supported and the around trip integration works successfully.
 
 @DFT
