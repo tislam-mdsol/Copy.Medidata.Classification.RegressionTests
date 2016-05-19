@@ -100,12 +100,11 @@ Feature: Test full round trip integration from Rave to Coder.  New features conv
       |PT           |10019211 | Headache                   |
       |LLT          |10019198 | Head pain                  |
 
-  @DFT
-  #@PB1.1.2-004
+  @VAL
+  @PB1.1.2.004
   @ETE_ENG_Rave_coder_basic_Sub_recon
-  #@PB1.1.2-003
   @Release2016.1.0
-  Scenario:Basic Rave Coder Submission and reconsider term and recod
+  Scenario:Basic Rave Coder Submission and reconsider term and recode
     Given a Rave project registration with dictionary "MedDRA ENG 12.0"
     And Rave Modules App Segment is loaded
     And a Rave Coder setup with the following options
@@ -140,8 +139,8 @@ Feature: Test full round trip integration from Rave to Coder.  New features conv
       | LLT   | 10004873 | Biopsy skin                    |
 
 
-  @DFT
-  #@PB1.1.2-005
+  @VAL
+  @PB1.1.2.005
   @MCC207807
   @IncreaseTimeout_1800000
   @ETE_ENG_Rave_coder_basic_Sub_code_group
