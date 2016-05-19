@@ -76,6 +76,12 @@ namespace Coder.DeclarativeBrowser.PageObjects
             GetPasswordTextBox().FillInWith(password);
 
             GetIMedidataLoginButton().Click();
+
+            if (OnIMedidataLogInPage())
+            {
+
+                throw new MissingWindowException("Log In unsuccessful. User still on iMedidata Log In Page.");
+            }
         }
     }
 }

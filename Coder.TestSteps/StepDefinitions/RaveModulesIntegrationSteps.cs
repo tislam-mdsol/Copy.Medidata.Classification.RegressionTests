@@ -67,7 +67,7 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (ReferenceEquals(userName, null)) throw new ArgumentNullException("userName");
      
-            _Browser.AssignUserToStudyAndStudyGroup(userName, roleName, _StepContext.GetStudyName(), _StepContext.GetSegment());
+            _Browser.AssignUserToStudy(userName, roleName, _StepContext.GetStudyName());
 
         }
 
