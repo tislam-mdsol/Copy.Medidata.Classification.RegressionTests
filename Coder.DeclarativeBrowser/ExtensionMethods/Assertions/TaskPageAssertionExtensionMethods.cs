@@ -67,6 +67,14 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods.Assertions
 
             codingTaskPage.GoTo();
 
+            browser.Session.TryUntil
+                (
+                () => codingTaskPage.GetFilterButton().Click(),
+                () => codingTaskPage.GetCodingTaskValues().Count.Equals(codingTasks.Count),
+                Config.GetDefaultCoypuOptions().RetryInterval,
+                Config.GetDefaultCoypuOptions()
+                );
+
             var htmlData = codingTaskPage.GetCodingTaskValues();
 
             for (var taskIndex = 0; taskIndex < codingTasks.Count; taskIndex++)

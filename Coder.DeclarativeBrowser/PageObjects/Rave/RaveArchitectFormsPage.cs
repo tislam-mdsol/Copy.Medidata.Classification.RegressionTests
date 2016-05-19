@@ -79,7 +79,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
 
             var formLinkCell = formsGrid.FindTableCell(_FormNameHeaderText, formName, _FormLinkHeaderText);
 
-            var formLink     = formLinkCell.FindSessionElementByXPath(".//a[contains(@id, '_FormDesignerLnk')]");
+            var formLink     = formLinkCell.FindSessionElementByXPath(".//a");
 
             return formLink;
         }

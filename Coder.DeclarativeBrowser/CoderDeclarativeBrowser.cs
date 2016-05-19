@@ -898,14 +898,13 @@ namespace Coder.DeclarativeBrowser
 
         }
         
-        public void AssignUserToStudyAndStudyGroup(String userName, String roleName, String study, string studyGroup)
+        public void AssignUserToStudy(String userName, String roleName, String study)
         {
             if (String.IsNullOrEmpty(userName)) throw new ArgumentNullException("userName");
             if (String.IsNullOrEmpty(roleName)) throw new ArgumentNullException("roleName");
             if (String.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
-            if (String.IsNullOrEmpty(studyGroup)) throw new ArgumentNullException("studyGroup");
 
-            Session.OpenRaveUserAdministrationPage().AssignUserToStudyAndStudyGroup(userName, roleName, study, studyGroup);
+            Session.OpenRaveUserAdministrationPage().AssignUserToStudy(userName, roleName, study);
         }
 
         public bool UploadConfigurationFileInRaveModules(string csvFileName)

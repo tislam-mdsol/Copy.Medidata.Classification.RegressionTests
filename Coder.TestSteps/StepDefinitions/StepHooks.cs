@@ -183,7 +183,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             foreach (var study in productionStudies)
             {
-                browser.AssignUserToStudyAndStudyGroup("coderimport", "Coder Import Role", study: study.StudyName, studyGroup: _StepContext.GetSegment());
+                browser.AssignUserToStudy("coderimport", "Coder Import Role", study: study.StudyName);
             }
 
             browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());

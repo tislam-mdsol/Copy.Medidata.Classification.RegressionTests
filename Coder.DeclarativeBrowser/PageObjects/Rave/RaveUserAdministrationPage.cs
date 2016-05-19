@@ -12,8 +12,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
         private readonly BrowserSession _Browser;
 
         private readonly String _AuthenticatorDDLValueInternal = "Internal";
-        // Will be used to search for users created through iMedidata
-        private readonly String _AuthenticatorDDLValueMedidata = "Medidata";
+      
         private readonly String _UserGroupOption               = "All Modules";
 
         private const int _LogIn      = 0;
@@ -53,16 +52,14 @@ namespace Coder.DeclarativeBrowser.PageObjects
             GetUpdateLink().Click();
         }
 
-        internal void AssignUserToStudyAndStudyGroup(String userName, String roleName, String study, String studyGroup)
+        internal void AssignUserToStudy(String userName, String roleName, String study)
         {
             if (String.IsNullOrEmpty(userName))   throw new ArgumentNullException("userName");
             if (String.IsNullOrEmpty(roleName))   throw new ArgumentNullException("roleName");
             if (String.IsNullOrEmpty(study))      throw new ArgumentNullException("study");
-            if (String.IsNullOrEmpty(studyGroup)) throw new ArgumentNullException("studyGroup");
 
             SearchforLogInUser(userName);
             AssignStudyToUser(roleName, study);
-            //AssignStudyToUser(roleName, studyGroup);
         }
 
         private void AssignStudyToUser(String role, String study)
