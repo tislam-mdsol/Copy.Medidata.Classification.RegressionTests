@@ -118,10 +118,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Features\specETEJPNRaveCoderBasicSubmissions.feature.cs">
+    <Compile Include="Features\specETE_JPNRaveCoderBasicSubmissions.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>specETEJPNRaveCoderBasicSubmissions.feature</DependentUpon>
+      <DependentUpon>specETE_JPNRaveCoderBasicSubmissions.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\specENG_DynamicSearchList.feature.cs">
       <AutoGen>True</AutoGen>
@@ -158,10 +158,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>specETEMCC42706GlobalLibraryWithCoder.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\specETE_Rave_coder_basic_submissions.feature.cs">
+    <Compile Include="Features\specETE_ENGRave_coder_basic_submissions.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>specETE_Rave_coder_basic_submissions.feature</DependentUpon>
+      <DependentUpon>specETE_ENGRave_coder_basic_submissions.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\specETE_UpdatingQueriesResendTermsBackToCoder.feature.cs">
       <AutoGen>True</AutoGen>
@@ -254,9 +254,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>specCoderSetup.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\specETEJPNRaveCoderBasicSubmissions.feature">
+    <None Include="Features\specETE_JPNRaveCoderBasicSubmissions.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>specETEJPNRaveCoderBasicSubmissions.feature.cs</LastGenOutput>
+      <LastGenOutput>specETE_JPNRaveCoderBasicSubmissions.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\specENG_DynamicSearchList.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -286,9 +286,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>specETEMCC42706GlobalLibraryWithCoder.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\specETE_Rave_coder_basic_submissions.feature">
+    <None Include="Features\specETE_ENGRave_coder_basic_submissions.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>specETE_Rave_coder_basic_submissions.feature.cs</LastGenOutput>
+      <LastGenOutput>specETE_ENGRave_coder_basic_submissions.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\specETE_UpdatingQueriesResendTermsBackToCoder.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
