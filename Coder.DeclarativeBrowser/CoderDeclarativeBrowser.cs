@@ -15,6 +15,7 @@ using Coypu.Drivers;
 using FluentAssertions;
 using NUnit.Framework;
 using System.Reflection;
+using Castle.Core.Internal;
 using Coder.DeclarativeBrowser.ExtensionMethods.Assertions;
 using Coder.DeclarativeBrowser.FileHelpers;
 using Coder.DeclarativeBrowser.Helpers;
@@ -327,31 +328,24 @@ namespace Coder.DeclarativeBrowser
             mainReportPage      .SelectStudyReportViewLink(descriptionText);
         }
 
-        public bool GetComparisonStudyReportInformation(StudyReportStats actualData, StudyReportStats expectedData, string statusCategory)
+        public StudyReportStats GetNewStudyReportStats(string study, string dictionary, string descriptionText)
         {
-            var actualDataStatsNotCoded          = actualData.NotCodedTasks;
-            var actualDataStatsCodedNotCompleted = actualData.CodedNotCompletedTasks;
-            var actualDataStatsWithOpenQuery     = actualData.WithOpenQueryTasks;
-            var actualDataStatsCompleted         = actualData.CompletedTasks;
+            CreateStudyReport(study, dictionary, descriptionText);
 
-            var expectedDataStatsNotCoded          = expectedData.NotCodedTasks;
-            var expectedDataStatsCodedNotCompleted = expectedData.CodedNotCompletedTasks;
-            var expectedDataStatsWithOpenQuery     = expectedData.WithOpenQueryTasks;
-            var expectedDataStatsCompleted         = expectedData.CompletedTasks;
+            var actualStudyReportDataSet = GetStudyReportDataSet(descriptionText);
 
-            switch (statusCategory)
+            var actualStudyReportData    = actualStudyReportDataSet.StudyStats;
+
+            var actualStudyReportStats   = actualStudyReportData.FirstOrDefault(
+                                          x => x.StudyStatName .Equals(study,      StringComparison.OrdinalIgnoreCase)
+                                            && x.DictionaryName.Equals(dictionary, StringComparison.OrdinalIgnoreCase));
+
+            if (ReferenceEquals(actualStudyReportStats, null))
             {
-                case "NotCoded":
-                    return actualDataStatsNotCoded         .Equals(expectedDataStatsNotCoded);
-                case "CodedNotCompleted":
-                    return actualDataStatsCodedNotCompleted.Equals(expectedDataStatsCodedNotCompleted);
-                case "WithOpenQuery":
-                    return actualDataStatsWithOpenQuery    .Equals(expectedDataStatsWithOpenQuery);
-                case "Completed":
-                    return actualDataStatsCompleted        .Equals(expectedDataStatsCompleted);
-                default:
-                    throw new ArgumentException ("Invalid status category: " + nameof(statusCategory));
+                throw new ArgumentException($"Could not find study report stats with study name of {study} and dictionary of {dictionary}");
             }
+
+            return actualStudyReportStats;
         }
 
         public void CreateAndActivateWorkFlowRole(string roleName)

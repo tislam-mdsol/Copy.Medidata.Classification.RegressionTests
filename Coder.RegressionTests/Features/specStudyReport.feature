@@ -79,14 +79,22 @@ Scenario:  Study Report returns data for tasks with a task state of "Coded But N
     Given a "Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
 	And coding task "Congestion" for dictionary level "LLT"
 	When task "Congestion" is coded to term "Congestion nasal" at search level "Low Level Term" with code "10010676" at level "LLT" and a synonym is created
-	And reclassifying task "CONGESTION" with Include Autocoded Items set to "True"
 	Then the study report task status count information should have the following   
 	| Status                    | Count |
 	| Completed Count           | 0     |
 	| Not Coded Count           | 0     |
 	| Coded Not Completed Count | 1     |
 	| With Open Query Count     | 0     |
-
+	And the study report task detail information for a study with task category Coded Not Completed should have the following   
+	| Verbatim   | Status                  | Batch          |
+	| Congestion | Coded But Not Completed | MedDRA Batch 1 |
+	And the study coding path for a task within category Coded Not Completed should have the following
+	| Level | Code     | TermPath                                            |
+	| LLT   | 10010676 | Congestion nasal                                    |
+	| PT    | 10028735 | Nasal congestion                                    |
+	| HLT   | 10028736 | Nasal congestion and inflammations                  |
+	| HLGT  | 10046304 | Upper respiratory tract disorders (excl infections) |
+	| SOC   | 10038738 | Respiratory, thoracic and mediastinal disorders     |
 
 @VAL
 @Release2015.3.0
@@ -102,21 +110,30 @@ Scenario:  Study Report returns data for tasks with a task state of "With Open Q
 	| Not Coded Count           | 1     |
 	| Coded Not Completed Count | 0     |
 	| With Open Query Count     | 1     |
+	And the study report task detail information for a study with task category With Open Query should have the following   
+	| Verbatim   | Status          | Batch          |
+	| HEADACHES  | With Open Query | MedDRA Batch 1 |
+	And the study coding path for a task within category With Open Query should be empty
 
 
-@DFT
+@VAL
 @Release2015.3.0
 @PBMCC_185572_007
 @IncreaseTimeout
 
-Scenario:  Study Report returns verbatim data for tasks with a task state of "Not Coded"
+Scenario:  Study Report returns data for task with a task state of "completed" 
     Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
-	When coding tasks are loaded from CSV file "Tasks_6_CodeAndNext.csv"
-	Then the study report task detail information for a study with task category "Not Coded" should have the following   
-	| Verbatim     | Dictionary  | Dictionary Level | Code | Term | Workflow Status     | Path | Batch          |
-	| Burning      | MedDRA 15.0 | Low Level Term   |      |      | Waiting Manual Code |      | MedDRA Batch 1 |
-	| Congestion   | MedDRA 15.0 | Low Level Term   |      |      | Waiting Manual Code |      | MedDRA Batch 1 |
-	| Heart Burn   | MedDRA 15.0 | Low Level Term   |      |      | Waiting Manual Code |      | MedDRA Batch 1 |
-	| Nasal Drip   | MedDRA 15.0 | Low Level Term   |      |      | Waiting Manual Code |      | MedDRA Batch 1 |
-	| Reflux       | MedDRA 15.0 | Low Level Term   |      |      | Waiting Manual Code |      | MedDRA Batch 1 |
-	| Stiff Joints | MedDRA 15.0 | Low Level Term   |      |      | Waiting Manual Code |      | MedDRA Batch 1 |      
+	When coding tasks are loaded from CSV file "Tasks_2_CodeAndNext.csv"
+	And a browse and code for task "Heart Burn" is performed
+	| Verbatim     | SearchText                  | SearchLevel    | Code     | Level | CreateSynonym |
+	| Heart Burn   | Reflux gastritis            | Low Level Term | 10057969 | LLT   | False         |
+	Then the study report task detail information for a study with task category Completed should have the following   
+	| Verbatim     | Status     | Batch          |
+	| Heart Burn   | Completed  | MedDRA Batch 1 |
+	And the study coding path for a task within category Completed should have the following
+	| Level | Code     | TermPath                                 |
+	| LLT   | 10057969 | Reflux gastritis                         |
+	| PT    | 10057969 | Reflux gastritis                         |
+	| HLT   | 10017854 | Gastritis (excl infective)               |
+	| HLGT  | 1017969  | Gastrointestinal inflammatory conditions |
+	| SOC   | 10017947 | Gastrointestinal disorders               |

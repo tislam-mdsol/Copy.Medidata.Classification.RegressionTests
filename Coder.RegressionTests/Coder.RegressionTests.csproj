@@ -348,6 +348,9 @@
     <None Include="DynamicCSVReports\Tasks_21_GroupedVerbatimsOfVaryingPriority.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="DynamicCSVReports\Tasks_2_CodeAndNext.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="DynamicCSVReports\Tasks_6_CodeAndNext.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
