@@ -118,12 +118,12 @@ Feature: Test the full round trip integration from Rave to Coder back to Rave fo
 
 
 
-  @DFT
-  @ETE_JPN_Rave_coder_basic_sub_syn_rule
+  @VAL
+  @ETE_ENG_Rave_coder_basic_Sub_autocode
   @PB1.1.2.004J
   @Release2016.1.0
   Scenario: Basic Rave Coder Submission and submit same verbatim and autocode
-    Given a Rave project registration with dictionary "MedDRA ENG 12.0"
+  Given a Rave project registration with dictionary "MedDRA JPN 11.0"
     And Rave Modules App Segment is loaded
     And a Rave Coder setup with the following options
       | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
@@ -135,14 +135,15 @@ Feature: Test the full round trip integration from Rave to Coder back to Rave fo
       | Coding Field             | 左脚の足の痛み | LongText    |
       | Log Supplemental Field A | ALPHA   |             |
     And Coder App Segment is loaded
-    And task "左脚の足の痛み" is coded to term "片側頭痛" at search level "Preferred Term" with code "10067040" at level "PT" and a synonym is created
+    And task "左脚の足の痛み" is coded to term "頭痛" at search level "Low Level Term" with code "10019211" at level "LLT" and a synonym is created
     And Rave Modules App Segment is loaded
 	Then the coding decision on form "ETE2" for field "Coding Field" with row text "ALPHA" for verbatim "左脚の足の痛み" contains the following data
       | Level | Code     | Term Path |
       | SOC   | 10029205 | 神経系障害     |
       | HLGT  | 10019231 | 頭痛        |
       | HLT   | 10019233 | 頭痛ＮＥＣ     |
-      | PT    | 10067040 | 片側頭痛      |
+      | PT    | 10019211 | 頭痛        |
+      | LLT   | 10019211 | 頭痛        |
     When adding a new verbatim term to form "ETE2"
       | Field                    | Value   | ControlType |
       | Coding Field             | 左脚の足の痛み | LongText    |
@@ -152,7 +153,8 @@ Feature: Test the full round trip integration from Rave to Coder back to Rave fo
       | SOC   | 10029205 | 神経系障害     |
       | HLGT  | 10019231 | 頭痛        |
       | HLT   | 10019233 | 頭痛ＮＥＣ     |
-      | PT    | 10067040 | 片側頭痛      |
+      | PT    | 10019211 | 頭痛        |
+      | LLT   | 10019211 | 頭痛        |
 
   @DFT
   @ETE_JPN_Rave_coder_basic_up_version
@@ -194,34 +196,35 @@ Feature: Test the full round trip integration from Rave to Coder back to Rave fo
     Given a Rave project registration with dictionary "MedDRA JPN 11.0"
     And Rave Modules App Segment is loaded
     And a Rave Coder setup with the following options
-      | Form | Field           | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms            |
-      | ETE1 | Adverse Event 1 | <Dictionary> | <Locale> | LLT            | 1        | true               | false          |                              |
+      | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
+      | ETE1 | Coding Field | <Dictionary> | <Locale> | LLT         | 1        | false              | false          |
     When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
     And adding a new subject "TEST"
     And adding a new verbatim term to form "ETE1"
-      | Field           | Value      | ControlType |
-      | Adverse Event 1 | ひどい頭痛   |             |
+      | Field        | Value | ControlType |
+      | Coding Field | ひどい頭痛 | LongText    |
     And Coder App Segment is loaded
-    And I browse and code Term "左脚の足の痛み" located in "Coder Main Table" entering value "片側頭痛" and selecting "片側頭痛" located in "Dictionary Tree Table"
-    And I navigate to Rave App form
-    Then the field "ETE1" on form "ETE1" for study "<Study>" site "<Site>" subject "TEST" contains the following coding decision data
-      |Coding Level |  Code   | Term     |
-      |SOC          |10029205 |神経系障害     |
-      | HLGT        |10019231 |頭痛        |
-      | HLT         |10019233 |頭痛ＮＥＣ     |
-      | PT          |10019211 |頭痛        |
-    And Coder App Segment is loaded
-    And reclassify and Retire "左脚の足の痛み" entering value "Reclassifying to test message."
-    And in Coder I reject the coding decision for "左脚の足の痛み"
-    And I browse and code Term "左脚の足の痛み" located in "Coder Main Table" on row "1", entering value "頚原性頭痛" and selecting "頚原性頭痛" located in "Dictionary Tree Table"
-    Then the field "ETE1" on form "ETE1" for study "<Study>" site "<Site>" subject "TEST" contains the following coding decision data
-      |Coding Level |  Code   | Term     |
-      |SOC          |10029205 |神経系障害     |
-      | HLGT        |10019231 |頭痛        |
-      | HLT         |10019233 |頭痛ＮＥＣ     |
-      | PT          |10064888 |頚原性頭痛        |
-
-
+    And task "ひどい頭痛" is coded to term "頭痛" at search level "Low Level Term" with code "10019211" at level "LLT" and a synonym is created
+    And Rave Modules App Segment is loaded
+	Then the coding decision for verbatim "ひどい頭痛" on form "ETE1" for field "Coding Field" contains the following data
+      | Level | Code     | Term Path |
+      | SOC   | 10029205 | 神経系障害     |
+      | HLGT  | 10019231 | 頭痛        |
+      | HLT   | 10019233 | 頭痛ＮＥＣ     |
+      | PT    | 10019211 | 頭痛        |
+      | LLT   | 10019211 | 頭痛        |
+    When Coder App Segment is loaded
+	And reclassifying and retiring synonym task "ひどい頭痛" with Include Autocoded Items set to "True"
+	And rejecting coding decision for the task "ひどい頭痛"
+	And task "ひどい頭痛" is coded to term "片側頭痛" at search level "Low Level Term" with code "10004873" at level "LLT" and a synonym is created
+    And Rave Modules App Segment is loaded
+	Then the coding decision for verbatim "ひどい頭痛" on form "ETE1" for field "Coding Field" contains the following data
+      | Level | Code     | Term Path |
+      | SOC   | 10029205 | 神経系障害     |
+      | HLGT  | 10019231 | 頭痛        |
+      | HLT   | 10019233 | 頭痛ＮＥＣ     |
+      | PT    | 10067040 | 片側頭痛      |
+      | LLT   | 10067040 | 片側頭痛      |
 
 
 
