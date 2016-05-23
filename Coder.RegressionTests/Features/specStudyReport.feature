@@ -121,7 +121,7 @@ Scenario:  Study Report returns data for tasks with a task state of "With Open Q
 @PBMCC_185572_007
 @IncreaseTimeout
 
-Scenario:  Study Report returns data for task with a task state of "completed" 
+Scenario:  Study Report returns data for task with a task state of "completed" with a coding path
     Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
 	When coding tasks are loaded from CSV file "Tasks_2_CodeAndNext.csv"
 	And a browse and code for task "Heart Burn" is performed
