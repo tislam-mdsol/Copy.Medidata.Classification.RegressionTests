@@ -161,31 +161,28 @@ Feature: Test the full round trip integration from Rave to Coder back to Rave fo
   @PB1.1.2.005J
   @Release2016.1.0
   Scenario: Setup Rave study, enter verbatim in Rave, code verbatim in Coder and create synonym rule, complete the up-versioning process, enter verbatim term again in Rave, verify term gets autocoded and results display in Rave
-    Given a Rave project registration with dictionary "MedDRA ENG 12.0"
+    Given a Rave project registration with dictionary "MedDRA JPN 11.0"
     And Rave Modules App Segment is loaded
     And a Rave Coder setup with the following options
-      | Form | Field           | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms            |
-      | ETE7 | ETE7            | <Dictionary> | <Locale> | LLT            | 1        | true               | false          |                              |
+      | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
+      | ETE1 | Coding Field | <Dictionary> | <Locale> | LLT         | 1        | false              | false          |
     When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
     And adding a new subject "TEST"
     And adding a new verbatim term to form "ETE1"
-      | Field    | Value         | ControlType |
-      | ETE7     | 左脚の足の痛み  |             |
+      | Field                    | Value   | ControlType |
+      | Coding Field             | 左脚の足の痛み | LongText    |
     And Coder App Segment is loaded
-    And I browse and code task "左脚の足の痛み" entering value "片側頭痛" and selecting "片側頭痛" located in Dictionary Tree Table
-    And I perform synonym migration to (Upgrade) list to "Primary"
-    And I generate a study impact Analysis for the following data
-      |Value        |dropdown               |
-      |Project      |Register Study Dropdown|
-      |Medra (Jpn)  |IADitionary Dropdown   |
-      |11.1         |To Ordinal Dropdown    |
-    And I navigate to Rave App form
-    Then the field "CoderField1" on form "ETE7" for study "<Study>" site "<Site>" subject "TEST" contains the following coding decision data
-      |Coding Level |  Code   | Term       |
-      |SOC          |10029205 |神経系障害   |
-      |HLGT         |10019231 |頭痛        |
-      |HLT          |10019233 |頭痛ＮＥＣ   |
-      |PT           |10067040 |片側頭痛    |
+	And task "左脚の足の痛み" is coded to term "頭痛" at search level "Low Level Term" with code "10019211" at level "LLT" and a synonym is created
+    And I perform a synonym migration accepting the reconciliation suggestion for the synonym "左脚の足の痛み" under the category "Primary"
+    When performing Study Impact Analysis
+    And Rave Modules App Segment is loaded
+	Then the coding decision on form "ETE2" for field "Coding Field" with row text "ALPHA" for verbatim "左脚の足の痛み" contains the following data
+      | Level | Code     | Term Path |
+      | SOC   | 10029205 | 神経系障害     |
+      | HLGT  | 10019231 | 頭痛        |
+      | HLT   | 10019233 | 頭痛ＮＥＣ     |
+      | PT    | 10019211 | 頭痛        |
+      | LLT   | 10019211 | 頭痛        |
 
 
   @DFT
@@ -216,7 +213,7 @@ Feature: Test the full round trip integration from Rave to Coder back to Rave fo
     When Coder App Segment is loaded
 	And reclassifying and retiring synonym task "ひどい頭痛" with Include Autocoded Items set to "True"
 	And rejecting coding decision for the task "ひどい頭痛"
-	And task "ひどい頭痛" is coded to term "片側頭痛" at search level "Low Level Term" with code "10004873" at level "LLT" and a synonym is created
+	And task "ひどい頭痛" is coded to term "片側頭痛" at search level "Low Level Term" with code "10067040" at level "LLT" and a synonym is created
     And Rave Modules App Segment is loaded
 	Then the coding decision for verbatim "ひどい頭痛" on form "ETE1" for field "Coding Field" contains the following data
       | Level | Code     | Term Path |
