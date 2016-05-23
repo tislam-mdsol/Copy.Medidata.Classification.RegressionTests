@@ -4,7 +4,7 @@
 
 Feature: Test the full round trip integration from Rave to Coder back to Rave for Japanese
 
-  @DFT
+  @VAL
   @ETE_JPN_Rave_coder_basic_sub
   @PB1.1.2.001J
   @Release2016.1.0
@@ -12,20 +12,20 @@ Feature: Test the full round trip integration from Rave to Coder back to Rave fo
     Given a Rave project registration with dictionary "MedDRA JPN 11.0"
     And Rave Modules App Segment is loaded
     And a Rave Coder setup with the following options
-      | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
-      | ETE1 | Coding Field | <Dictionary> | <Locale> | LLT         | 1        | true               | true           |                   |
+      | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
+      | ETE1 | Coding Field | <Dictionary> | <Locale> | LLT         | 1        | false              | false          |
     When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
     When adding a new subject "TEST"
     When adding a new verbatim term to form "ETE1"
       | Field        | Value | ControlType |
       | Coding Field | 頭痛 | LongText    |
    Then the coding decision for verbatim "頭痛" on form "ETE1" for field "Coding Field" contains the following data
-      | Coding Level | Code     | Term  |
-      | SOC          | 10029205 | 神経系障害 |
-      | HLGT         | 10019231 | 頭痛    |
-      | HLT          | 10019233 | 頭痛ＮＥＣ |
-      | PT           | 10019211 | 頭痛    |
-      | LLT          | 10019211 | 頭痛    |
+      | Level | Code     | Term Path |
+      | SOC   | 10029205 | 神経系障害     |
+      | HLGT  | 10019231 | 頭痛        |
+      | HLT   | 10019233 | 頭痛ＮＥＣ     |
+      | PT    | 10019211 | 頭痛        |
+      | LLT   | 10019211 | 頭痛        |
 
 
   @DFT
@@ -85,7 +85,7 @@ Feature: Test the full round trip integration from Rave to Coder back to Rave fo
 
 
 
-  @DFT
+  @VAL
   @ETE_JPN_Rave_coder_basic_sub_change_verbatim
   @PB1.1.2.003J
   @Release2016.1.0
@@ -93,8 +93,8 @@ Feature: Test the full round trip integration from Rave to Coder back to Rave fo
     Given a Rave project registration with dictionary "MedDRA JPN 11.0"
     And Rave Modules App Segment is loaded
     And a Rave Coder setup with the following options
-      | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
-      | ETE3 | Coding Field | <Dictionary> | <Locale> | LLT         | 1        | true               | True           |                   |
+      | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
+      | ETE3 | Coding Field | <Dictionary> | <Locale> | PT         | 1        | false              | false          |
     When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
     And adding a new subject "TEST"
     And adding a new verbatim term to form "ETE3"
@@ -107,14 +107,14 @@ Feature: Test the full round trip integration from Rave to Coder back to Rave fo
       | Field        | Value   | ControlType |
       | Coding Field | 左脚の足の痛み |             |
 	And Coder App Segment is loaded
-    And task "ひどい頭痛" is coded to term "片側頭痛" at search level "Preferred Term" with code "10067040" at level "PT" and a synonym is created
+    And task "左脚の足の痛み" is coded to term "片側頭痛" at search level "Preferred Term" with code "10067040" at level "PT" and a synonym is created
     And Rave Modules App Segment is loaded
 	Then the coding decision for verbatim "左脚の足の痛み" on form "ETE3" for field "Coding Field" contains the following data
-      | Coding Level | Code     | Term  |
-      | SOC          | 10029205 | 神経系障害 |
-      | HLGT         | 10019231 | 頭痛    |
-      | HLT          | 10019233 | 頭痛ＮＥＣ |
-      | PT           | 10067040 | 片側頭痛  |
+      | Level | Code     | Term Path |
+      | SOC   | 10029205 | 神経系障害     |
+      | HLGT  | 10019231 | 頭痛        |
+      | HLT   | 10019233 | 頭痛ＮＥＣ     |
+      | PT    | 10067040 | 片側頭痛      |
 
 
 
@@ -122,7 +122,8 @@ Feature: Test the full round trip integration from Rave to Coder back to Rave fo
   @ETE_JPN_Rave_coder_basic_sub_syn_rule
   @PB1.1.2.004J
   @Release2016.1.0
- Given a Rave project registration with dictionary "MedDRA ENG 12.0"
+  Scenario: Basic Rave Coder Submission and submit same verbatim and autocode
+    Given a Rave project registration with dictionary "MedDRA ENG 12.0"
     And Rave Modules App Segment is loaded
     And a Rave Coder setup with the following options
       | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
@@ -130,28 +131,28 @@ Feature: Test the full round trip integration from Rave to Coder back to Rave fo
     When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
     And adding a new subject "TEST"
     And adding a new verbatim term to form "ETE2"
-      | Field                    | Value              | ControlType |
+      | Field                    | Value   | ControlType |
       | Coding Field             | 左脚の足の痛み | LongText    |
-      | Log Supplemental Field A | ALPHA              |             |
+      | Log Supplemental Field A | ALPHA   |             |
     And Coder App Segment is loaded
-    And task "terrible head pain" is coded to term "Head pain" at search level "Low Level Term" with code "10019198" at level "LLT" and a synonym is created
+    And task "左脚の足の痛み" is coded to term "片側頭痛" at search level "Preferred Term" with code "10067040" at level "PT" and a synonym is created
     And Rave Modules App Segment is loaded
-	Then the coding decision on form "ETE2" for field "Coding Field" with row text "ALPHA" for verbatim "terrible head pain" contains the following data
-         | Coding Level | Code     | Term  |
-         | SOC          | 10029205 | 神経系障害 |
-         | HLGT         | 10019231 | 頭痛    |
-         | HLT          | 10019233 | 頭痛ＮＥＣ |
-         | PT           | 10067040 | 片側頭痛  |
+	Then the coding decision on form "ETE2" for field "Coding Field" with row text "ALPHA" for verbatim "左脚の足の痛み" contains the following data
+      | Level | Code     | Term Path |
+      | SOC   | 10029205 | 神経系障害     |
+      | HLGT  | 10019231 | 頭痛        |
+      | HLT   | 10019233 | 頭痛ＮＥＣ     |
+      | PT    | 10067040 | 片側頭痛      |
     When adding a new verbatim term to form "ETE2"
-      | Field                    | Value              | ControlType |
+      | Field                    | Value   | ControlType |
       | Coding Field             | 左脚の足の痛み | LongText    |
-      | Log Supplemental Field A | BRAVO              |             |
-	Then the coding decision on form "ETE2" for field "Coding Field" with row text "BRAVO" for verbatim "terrible head pain" contains the following data
-         | Coding Level | Code     | Term  |
-         | SOC          | 10029205 | 神経系障害 |
-         | HLGT         | 10019231 | 頭痛    |
-         | HLT          | 10019233 | 頭痛ＮＥＣ |
-         | PT           | 10067040 | 片側頭痛  |
+      | Log Supplemental Field A | BRAVO   |             |
+	Then the coding decision on form "ETE2" for field "Coding Field" with row text "BRAVO" for verbatim "左脚の足の痛み" contains the following data
+      | Level | Code     | Term Path |
+      | SOC   | 10029205 | 神経系障害     |
+      | HLGT  | 10019231 | 頭痛        |
+      | HLT   | 10019233 | 頭痛ＮＥＣ     |
+      | PT    | 10067040 | 片側頭痛      |
 
   @DFT
   @ETE_JPN_Rave_coder_basic_up_version
