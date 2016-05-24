@@ -8,22 +8,22 @@
   <add key="Port"                                     value=" " />
   <add key="DumpDirectory"                            value="C:\TempRegressionOdmFiles" />
   <add key="DownloadDirectory"                        value="C:\TempRegressionDownloads" />
-  <add key="ScreenshotDirectoryName"                  value="<%= configured.screenshot_directory_name || 'RegressionTestScreenshots' %>"/>
+  <add key="ScreenshotDirectoryName"                  value="<%= configured.screenshot_directory_name     || 'RegressionTestScreenshots' %>"/>
   <add key="FirefoxExecutablePath"                    value="C:\Program Files (x86)\Mozilla Firefox\Firefox.exe" />
-  <add key="Login"                                    value="<%= configured.regression_test_user_id || 'coder3' %>"/>
+  <add key="Login"                                    value="<%= configured.regression_test_user_id       || 'coder3' %>"/>
   <add key="Password"                                 value="<%= configured.regression_test_user_password || 'Password1' %>"/>
   <add key="RaveAdminLogin"                           value="defuser"/>
   <add key="RaveAdminPassword"                        value="password"/>
-  <add key="SetupSegment"                             value="<%= configured.setup_segment || 'MedidataReserved1' %>"/>
-  <add key="ETESetupSuffix"                           value="<%= configured.ete_setup_suffix || '0001' %>"/>
-  <add key="Segment"                                  value="<%= configured.segment || 'Mediflex' %>"/>
-  <add key="Site"                                     value="<%= configured.site   || 'Active Site' %>"/>
+  <add key="SetupSegment"                             value="<%= configured.setup_segment                 || 'MedidataReserved1' %>"/>
+  <add key="ETESetupSuffix"                           value="<%= configured.ete_setup_suffix              || '0001' %>"/>
+  <add key="Segment"                                  value="<%= configured.segment                       || 'Mediflex' %>"/>
+  <add key="Site"                                     value="<%= configured.site                          || 'Active Site' %>"/>
   <add key="LicenseCode"                              value="lc123"/>
   <add key="NewGeneratedSegment"                      value="ProjectStudy1" />
-  <add key="AdminLogin"                               value="<%= configured.coder_admin_user_id || 'CoderSuperUser' %>"/>
-  <add key="AdminLoginPassword"                       value="<%= configured.coder_admin_user_password || 'Password1' %>"/>
-  <add key="RaveAdminLogin"                           value="<%= configured.rave_admin_user_id || 'defuser' %>"/>
-  <add key="RaveAdminPassword"                        value="<%= configured.rave_admin_user_password || 'password' %>"/>
+  <add key="AdminLogin"                               value="<%= configured.coder_admin_user_id           || 'CoderSuperUser' %>"/>
+  <add key="AdminLoginPassword"                       value="<%= configured.coder_admin_user_password     || 'Password1' %>"/>
+  <add key="RaveAdminLogin"                           value="<%= configured.rave_admin_user_id            || 'defuser' %>"/>
+  <add key="RaveAdminPassword"                        value="<%= configured.rave_admin_user_password      || 'password' %>"/>
   <add key="ApplicationName"                          value="<%= configured.application_name %>" />
   <add key="ELearningLoginTitle"                      value="Log In - Medidata Knowledge Spaces" />
   <add key="ScreenHelpWindowName"                     value="Medidata Knowledge Spaces" />
@@ -41,31 +41,31 @@
   <add key="BuildAgentScreenWidth"                    value="1024" />
   <add key="BuildAgentScreenHeight"                   value="768" />
   <add key="DefaultSynonymListName"                   value="Primary List" />
-  <add key="StudyNamePrefix"                          value="<%= configured.study_name_prefix  || 'Mediflex' %>" />
-  <add key="TestSegmentCustomer"                      value="<%= configured.ete_segment_customer || 'Medidata Testing'%>" />
-  <add key="StudyName"                                value="<%= configured.study_name  || 'Mediflex' %>" />
+  <add key="StudyNamePrefix"                          value="<%= configured.study_name_prefix               || 'Mediflex' %>" />
+  <add key="TestSegmentCustomer"                      value="<%= configured.ete_segment_customer            || 'Medidata Testing'%>" />
+  <add key="StudyName"                                value="<%= configured.study_name                      || 'Mediflex' %>" />
   <add key="EdcAppName"                               value="<%= configured.ete_edc_app_name %>" />
-  <add key="TimeStampHoursDiff"                       value="<%= configured.timestamp_hours_diff  || '24' %>" />
+  <add key="TimeStampHoursDiff"                       value="<%= configured.timestamp_hours_diff            || '24' %>" />
   <add key="EdcModulesAppName"                        value="<%= configured.ete_modules_app_name %>" />
-  <add key="GridHubHost"                              value="<%= configured.selenium_grid_hub_host || '' %>"/>
+  <add key="GridHubHost"                              value="<%= configured.selenium_grid_hub_host          || '' %>"/>
   <add key="ArchitectRolesAppName"                    value="<%= configured.ete_architect_roles_app_name %>" />
   <add key="SafetyGatewayMappingAppName"              value="<%= configured.ete_safety_gateway_mapping_app_name %>" />
   <add key="SafetyGatewayManagementAppName"           value="<%= configured.ete_safety_gateway_mgmt_app_name %>" />
-  <add key="StudyNamePrefix"                          value="<%= configured.study_name_prefix  || 'Mediflex' %>" />
+  <add key="StudyNamePrefix"                          value="<%= configured.study_name_prefix               || 'Mediflex' %>" />
   <add key="IMedidataAppId"                           value="<%= configured.app_uuid  %>" />
-  <add key="EdcAppRole"                               value="<%= configured.ete_edc_app_name_role || 'Power User' %>" />
-  <add key="EdcModulesAppRole"                        value="<%= configured.ete_modules_app_role  || 'All Modules' %>" />
-  <add key="ArchitectRolesAppRole"                    value="<%= configured.ete_architect_roles_role || 'Project Admin Default' %>" />
-  <add key="IMedidataPrivateKeyPath"                  value="ConfigData\mauth_private_key.txt" />
-  <add key="AwsAccessKey"                             value="<%= configured.S3AccessKey              || ''                                                   %>"/>
-  <add key="AwsSecretKey"                             value="<%= configured.S3SecretKey              || ''                                                   %>"/>
-  <add key="iMedidataAppId"                           value="<%= configured.app_uuid                 || ''                                                   %>"/>
-  <add key="iMedidataBaseUrl"                         value="<%= configured.mauth_service_url        || ''                                                   %>"/>
+  <add key="EdcAppRole"                               value="<%= configured.ete_edc_app_name_role           || 'Power User' %>" />
+  <add key="EdcModulesAppRole"                        value="<%= configured.ete_modules_app_role            || 'All Modules' %>" />
+  <add key="ArchitectRolesAppRole"                    value="<%= configured.ete_architect_roles_role        || 'Project Admin Default' %>" />
+  <add key="IMedidataPrivateKeyPath"                  value="ConfigData/mauth_private_key.txt" />
+  <add key="AwsAccessKey"                             value="<%= configured.aws_access_key                  || ''                                                   %>"/>
+  <add key="AwsSecretKey"                             value="<%= configured.aws_secret_Key                  || ''                                                   %>"/>
+  <add key="iMedidataAppId"                           value="<%= configured.app_uuid                        || ''                                                   %>"/>
+  <add key="iMedidataBaseUrl"                         value="<%= configured.imedidata_base_url              || ''                                                   %>"/>
   <add key="iMedidataPrivateKeyFile"                  value="ConfigData/mauth_private_key.txt"/>
-  <add key="ArchonBaseUrl"                            value="<%= configured.archonBaseUrl            || ''                                                   %>"/>
-  <add key="ArchonDefaultExchange"                    value="<%= configured.archonDefaultExchange    || ''                                                   %>"/>
-  <add key="MessageRetentionPeriod"                   value="<%= configured.messageRetentionPeriod   || '345600'                                             %>"/>
-  <add key="MaximumDeliveries"                        value="<%= configured.maximumDeliveries        || '3'                                                  %>"/>
-  <add key="SubsystemName"                            value="<%= configured.subsystemName            || 'Coder.RegressionTests'                              %>"/>
-  <add key="ArchonPollingTimeInterval"                value="<%= configured.polling_time_interval    || '5000'                                               %>"/>
+  <add key="ArchonBaseUrl"                            value="<%= configured.archon_base_url                 || ''                                                   %>"/>
+  <add key="ArchonDefaultExchange"                    value="<%= configured.archon_default_exchange         || ''                                                   %>"/>
+  <add key="MessageRetentionPeriod"                   value="<%= configured.dlq_message_retention_period    || '345600'                                             %>"/>
+  <add key="MaximumDeliveries"                        value="<%= configured.maximum_message_deliveries      || '3'                                                  %>"/>
+  <add key="SubsystemName"                            value="<%= configured.subsystemName                   || 'Coder.RegressionTests'                              %>"/>
+  <add key="ArchonPollingTimeInterval"                value="<%= configured.polling_time_interval           || '5000'                                               %>"/>
 </appSettings>
