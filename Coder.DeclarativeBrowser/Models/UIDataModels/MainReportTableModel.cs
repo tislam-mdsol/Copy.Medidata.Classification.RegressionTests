@@ -25,11 +25,11 @@ namespace Coder.DeclarativeBrowser.Models.ETEModels
         {
             if (ReferenceEquals(expectedText, null)) throw new ArgumentNullException("expectedText");
 
-            var result = ReportType.IsNullOrEqualsIfRequired(expectedText.ReportType)
-                      && Description.IsNullOrEqualsIfRequired(expectedText.Description)
-                      && InformationStudyText.IsNullOrEqualsIfRequired(expectedText.InformationStudyText)
+            var result = ReportType               .IsNullOrEqualsIfRequired(expectedText.ReportType)
+                      && Description              .IsNullOrEqualsIfRequired(expectedText.Description)
+                      && InformationStudyText     .IsNullOrEqualsIfRequired(expectedText.InformationStudyText)
                       && InformationDictionaryText.IsNullOrEqualsIfRequired(expectedText.InformationDictionaryText)
-                      && LastRun.IsNullOrEqualsIfRequired(expectedText.LastRun);
+                      && LastRun                  .IsNullOrEqualsIfRequired(expectedText.LastRun);
 
             return result;
         }

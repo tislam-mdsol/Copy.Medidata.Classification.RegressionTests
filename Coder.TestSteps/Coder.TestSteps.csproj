@@ -111,7 +111,6 @@
     <Compile Include="StepDefinitions\HelpLinkSteps.cs" />
     <Compile Include="StepDefinitions\IMedidataIntegrationSteps.cs" />
     <Compile Include="StepDefinitions\IngredientReportSteps.cs" />
-    <Compile Include="StepDefinitions\MainReportSteps.cs" />
     <Compile Include="StepDefinitions\MevSteps.cs" />
     <Compile Include="StepDefinitions\ProjectRegistrationSteps.cs" />
     <Compile Include="StepDefinitions\ApplicationMonitoringSteps.cs" />
