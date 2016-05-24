@@ -214,10 +214,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>specRaveCoderFormConfigurations.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\specRaveModulesIntegration.feature.cs">
+    <Compile Include="Features\specRaveStepExamples.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>specRaveModulesIntegration.feature</DependentUpon>
+      <DependentUpon>specRaveStepExamples.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -326,9 +326,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>specETE_SpecifyTermsDropdown.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\specRaveModulesIntegration.feature">
+    <None Include="Features\specRaveStepExamples.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>specRaveModulesIntegration.feature.cs</LastGenOutput>
+      <LastGenOutput>specRaveStepExamples.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\specImedidataIntegration.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -340,6 +340,7 @@
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="StaticContent\ErrorGeneratingCRFDraft.xls" />
     <None Include="StaticContent\RaveCoreConfig_eng.xls">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

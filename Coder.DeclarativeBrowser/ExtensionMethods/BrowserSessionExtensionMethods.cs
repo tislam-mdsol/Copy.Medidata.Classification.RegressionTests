@@ -110,6 +110,19 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             return ingredientReportPage;
         }
 
+        internal static StudyReportPage GetStudyReportPage(this BrowserSession Session, string descriptionText)
+        {
+            if (ReferenceEquals(Session, null))         throw new ArgumentNullException(nameof(Session));
+            if (ReferenceEquals(descriptionText, null)) throw new ArgumentNullException(nameof(descriptionText));
+
+            var mainReportPage  = Session.GetMainReportCoderPage();
+            mainReportPage.SelectStudyReportViewLink(descriptionText);
+           
+            var studyReportPage = new StudyReportPage(Session);
+
+            return studyReportPage;
+        }
+
         internal static CreateWorkflowRolesPage GetCreateWorkflowRolesPage(this BrowserSession session)
         {
             if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
@@ -1538,5 +1551,15 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
             return raveArchitectEnvironmentSetupPage;
         }
+
+        internal static ReportMainCreationCoderPage GetMainReportCoderPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var mainReportCoderPage = new ReportMainCreationCoderPage(session);
+
+            return mainReportCoderPage;
+        }
+
     }
 }

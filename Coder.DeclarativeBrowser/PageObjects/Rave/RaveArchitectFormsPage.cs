@@ -103,6 +103,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
                     Config.ExistsOptions.RetryInterval,
                     Config.ExistsOptions)
             );
+            _Session.ResizeTo(Config.ScreenWidth, Config.ScreenHeight);
         }
         
         private SessionElementScope SearchForFormLink(string formName)

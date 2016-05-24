@@ -33,15 +33,15 @@
     <add key="StudyNamePrefix"                                                   value="<%= configured.study_name_prefix  || 'Mediflex' %>" />
     <add key="TimeStampHoursDiff"                                                value="<%= configured.timestamp_hours_diff  || '24' %>" />
     <add key="GridHubHost"                                                       value="<%= configured.selenium_grid_hub_host || '' %>"/>
-    <add key="AwsAccessKey"                                                      value="<%= configured.S3AccessKey                                   || ''                                                   %>"/>
-    <add key="AwsSecretKey"                                                      value="<%= configured.S3SecretKey                                   || ''                                                   %>"/>
+    <add key="AwsAccessKey"                                                      value="<%= configured.aws_access_key                                || ''                                                   %>"/>
+    <add key="AwsSecretKey"                                                      value="<%= configured.aws_secret_Key                                || ''                                                   %>"/>
     <add key="iMedidataAppId"                                                    value="<%= configured.app_uuid                                      || ''                                                   %>"/>
-    <add key="iMedidataBaseUrl"                                                  value="<%= configured.mauth_service_url                             || ''                                                   %>"/>
-    <add key="iMedidataPrivateKeyFile"                                           value="ConfigData/mauth_private_key.txt"/>
-    <add key="ArchonBaseUrl"                                                     value="<%= configured.archonBaseUrl                                 || ''                                                   %>"/>
-    <add key="ArchonDefaultExchange"                                             value="<%= configured.archonDefaultExchange                         || ''                                                   %>"/>
-    <add key="MessageRetentionPeriod"                                            value="<%= configured.messageRetentionPeriod                        || '345600'                                             %>"/>
-    <add key="MaximumDeliveries"                                                 value="<%= configured.maximumDeliveries                             || '3'                                                  %>"/>
+    <add key="iMedidataBaseUrl"                                                  value="<%= configured.imedidata_base_url                            || ''                                                   %>"/>
+      <add key="iMedidataPrivateKeyFile"                                         value="ConfigData/mauth_private_key.txt"/>
+    <add key="ArchonBaseUrl"                                                     value="<%= configured.archon_base_url                               || ''                                                   %>"/>
+    <add key="ArchonDefaultExchange"                                             value="<%= configured.archon_default_exchange                       || ''                                                   %>"/>
+    <add key="MessageRetentionPeriod"                                            value="<%= configured.dlq_message_retention_period                  || '345600'                                             %>"/>
+    <add key="MaximumDeliveries"                                                 value="<%= configured.maximum_message_deliveries                    || '5'                                                  %>"/>
     <add key="SubsystemName"                                                     value="<%= configured.subsystemName                                 || 'Coder.RegressionTests'                              %>"/>
 	  <add key="ArchonPollingTimeInterval"                                         value="<%= configured.polling_time_interval                         || '5000'                                               %>"/>
     </appSettings>

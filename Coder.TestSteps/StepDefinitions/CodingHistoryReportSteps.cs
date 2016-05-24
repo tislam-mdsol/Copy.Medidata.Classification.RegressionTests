@@ -17,25 +17,27 @@ namespace Coder.TestSteps.StepDefinitions
     [Binding]
     public class CodingHistoryReportSteps
     {
-        private readonly CoderDeclarativeBrowser           _Browser;
-        private readonly StepContext                       _StepContext;
+        private readonly CoderDeclarativeBrowser     _Browser;
+        private readonly StepContext                 _StepContext;
         private readonly CodingHistoryReportCriteria _SearchCriteria;
-        private const string                               DefaultFileName = "CodingHistoryReport";
+        private string                               _CodingHistoryReportDescription;
+        private const string                         DefaultFileName = "CodingHistoryReport";
 
         public CodingHistoryReportSteps(StepContext stepContext)
         {
-            if (ReferenceEquals(stepContext, null))         throw new ArgumentNullException("stepContext");
+            if (ReferenceEquals(stepContext, null))         throw new ArgumentNullException(nameof(stepContext));
             if (ReferenceEquals(stepContext.Browser, null)) throw new NullReferenceException("Browser");
 
             _StepContext    = stepContext;
             _Browser        = _StepContext.Browser;
             _SearchCriteria = new CodingHistoryReportCriteria();
+            _CodingHistoryReportDescription = "Coding History Report Description " + DateTime.UtcNow.ToLongDateString();
         }
 
         [When(@"searching for the verbatim ""(.*)"" in Coding History Report")]
         public void WhenSearchingForTheVerbatimInCodingHistoryReport(string verbatim)
         {
-            if (String.IsNullOrWhiteSpace(verbatim)) throw new ArgumentNullException("verbatim");
+            if (String.IsNullOrWhiteSpace(verbatim)) throw new ArgumentNullException(nameof(verbatim));
 
             _SearchCriteria.Verbatim = verbatim;
         }
@@ -43,7 +45,7 @@ namespace Coder.TestSteps.StepDefinitions
         [When(@"searching for the term ""(.*)"" in Coding History Report")]
         public void WhenSearchingForTheTermInCodingHistoryReport(string term)
         {
-            if (String.IsNullOrWhiteSpace(term)) throw new ArgumentNullException("term");
+            if (String.IsNullOrWhiteSpace(term)) throw new ArgumentNullException(nameof(term));
 
             _SearchCriteria.Term = term;
         }
@@ -51,7 +53,7 @@ namespace Coder.TestSteps.StepDefinitions
         [When(@"searching for the code ""(.*)"" in Coding History Report")]
         public void WhenSearchingForTheCodeInCodingHistoryReport(string code)
         {
-            if (String.IsNullOrWhiteSpace(code)) throw new ArgumentNullException("code");
+            if (String.IsNullOrWhiteSpace(code)) throw new ArgumentNullException(nameof(code));
 
             _SearchCriteria.Code = code;
         }
@@ -59,16 +61,16 @@ namespace Coder.TestSteps.StepDefinitions
         [When(@"searching for the status ""(.*)""")]
         public void WhenSearchingForTheStatus(string status)
         {
-            if (String.IsNullOrWhiteSpace(status)) throw new ArgumentNullException("status");
+            if (String.IsNullOrWhiteSpace(status)) throw new ArgumentNullException(nameof(status));
 
-            _SearchCriteria.CurrentStatus = status;
+                _SearchCriteria.StatusOptions = status.Split(',').ToList();
         }
 
         [When(@"searching for start date of ""(.*)"" and end date of ""(.*)"" in Coding History Report")]
         public void WhenSearchingForStartDateOfAndEndDateOfInCodingHistoryReport(string startDate, string endDate)
         {
-            if (String.IsNullOrWhiteSpace(startDate)) throw new ArgumentNullException("startDate");
-            if (String.IsNullOrWhiteSpace(endDate))   throw new ArgumentNullException("endDate"); 
+            if (String.IsNullOrWhiteSpace(startDate)) throw new ArgumentNullException(nameof(startDate));
+            if (String.IsNullOrWhiteSpace(endDate))   throw new ArgumentNullException(nameof(endDate)); 
 
             _SearchCriteria.StartDate = startDate;
             _SearchCriteria.EndDate   = endDate;
@@ -84,52 +86,56 @@ namespace Coder.TestSteps.StepDefinitions
         public void WhenExportingAllColumnsInTheCodingHistoryReport()
         {
             _SearchCriteria.Study      = _StepContext.GetStudyName();
-            _SearchCriteria.AllColumns = true;
 
-            _Browser.ExportCodingHistoryReport(_SearchCriteria);
+            _Browser.CreateCodingHistoryReport(_SearchCriteria, _CodingHistoryReportDescription);
         }
 
         [When(@"exporting the Coding History Report with export columns ""(.*)""")]
         public void WhenExportingTheCodingHistoryReportWithExportColumns(string exportColumnsValues)
         {
-            if (String.IsNullOrWhiteSpace(exportColumnsValues)) throw new ArgumentNullException("exportColumnsValues");
+            if (String.IsNullOrWhiteSpace(exportColumnsValues)) throw new ArgumentNullException(nameof(exportColumnsValues));
 
-            SelectReportColumnsAndExport(exportColumnsValues);
+            _SearchCriteria.IncludeAutoCodedItems = true;
+            _SearchCriteria.ExportColumns         = exportColumnsValues.Split(',').ToList();
+            _SearchCriteria.Study                 = _StepContext.GetStudyName();
+
+            _Browser.CreateCodingHistoryReport(_SearchCriteria, _CodingHistoryReportDescription);
         }
         
         [When(@"exporting the Coding History Report for term ""(.*)"" with export columns ""(.*)""")]
-        public void WhenExportingTheCodingHistoryReportForTermWithExportColumns(string verbatim, string exportColumnsValues)
+        public void WhenExportingTheCodingHistoryReportForTermWithExportColumns(string term, string exportColumnsValues)
         {
-            if (String.IsNullOrWhiteSpace(verbatim)) throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrWhiteSpace(exportColumnsValues)) throw new ArgumentNullException("exportColumnsValues");
-            
-            WhenSearchingForTheVerbatimInCodingHistoryReport(verbatim);
+            if (String.IsNullOrWhiteSpace(term))                throw new ArgumentNullException(nameof(term));
+            if (String.IsNullOrWhiteSpace(exportColumnsValues)) throw new ArgumentNullException(nameof(exportColumnsValues));
 
-            SelectReportColumnsAndExport(exportColumnsValues);
-        }
-
-        private void SelectReportColumnsAndExport(string exportColumnsValues)
-        {
-            if (String.IsNullOrWhiteSpace(exportColumnsValues)) throw new ArgumentNullException("exportColumnsValues");
-            
-            bool exportAllColumns = exportColumnsValues.ToUpper().Equals("ALL");
-
-            if (!exportColumnsValues.ToUpper().Equals("ALL") && !exportColumnsValues.ToUpper().Equals("NONE"))
-            {
-                _SearchCriteria.ExportColumns = exportColumnsValues.Split(',').ToList();
-            }
+            WhenSearchingForTheTermInCodingHistoryReport(term);
 
             _SearchCriteria.IncludeAutoCodedItems = true;
-            _SearchCriteria.AllColumns            = exportAllColumns;
+            _SearchCriteria.ExportColumns         = exportColumnsValues.Split(',').ToList();
             _SearchCriteria.Study                 = _StepContext.GetStudyName();
 
-            _Browser.ExportCodingHistoryReport(_SearchCriteria);
+            _Browser.CreateCodingHistoryReport(_SearchCriteria, _CodingHistoryReportDescription);
+        }
+
+        [When(@"exporting the Coding History Report for verbatim ""(.*)"" with export columns ""(.*)""")]
+        public void WhenExportingTheCodingHistoryReportForVerbatimWithExportColumns(string verbatim, string exportColumnsValues)
+        {
+            if (String.IsNullOrWhiteSpace(verbatim))            throw new ArgumentNullException(nameof(verbatim));
+            if (String.IsNullOrWhiteSpace(exportColumnsValues)) throw new ArgumentNullException(nameof(exportColumnsValues));
+
+            WhenSearchingForTheTermInCodingHistoryReport(verbatim);
+
+            _SearchCriteria.IncludeAutoCodedItems = true;
+            _SearchCriteria.ExportColumns         = exportColumnsValues.Split(',').ToList();
+            _SearchCriteria.Study                 = _StepContext.GetStudyName();
+
+            _Browser.CreateCodingHistoryReport(_SearchCriteria, _CodingHistoryReportDescription);
         }
 
         [Then(@"the Coding History Report should contain the following")]
         public void ThenTheCodingHistoryReportShouldContainTheFollowing(Table table)
         {
-            if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
+            if (ReferenceEquals(table, null)) throw new ArgumentNullException(nameof(table));
 
             var expectedResults = table
                 .TransformFeatureTableStrings(_StepContext)

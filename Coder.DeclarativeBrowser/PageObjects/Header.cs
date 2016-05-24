@@ -260,5 +260,13 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             logoutLink.Click();
         }
+
+        internal void OpenReportHeader()
+        {
+            var mainReportLink = _Browser.FindSessionElementByLink("Reports");
+
+            mainReportLink.Click();
+        }
+
     }
 }
