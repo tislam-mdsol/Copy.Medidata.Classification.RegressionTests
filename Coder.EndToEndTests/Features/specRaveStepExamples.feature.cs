@@ -27,7 +27,7 @@ namespace Coder.EndToEndTests.Features
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "specRaveModulesIntegration.feature"
+#line 1 "specRaveStepExamples.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]

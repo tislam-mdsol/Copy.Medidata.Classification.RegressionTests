@@ -7,8 +7,10 @@ Feature: Handles the CRF versioning for different project environment scenarios,
 @ETE_RaveCoderCore
 @PBMCC42698_001
 @Release2016.1.0
+@EndToEndDynamicSegment
+
 Scenario: When pushing a CRF version that contains Coder settings and environment selected is not linked to iMedidata, produce an error message.
-	
+
     Given a Rave project registration with dictionary "MedDRA ENG 12.0"
     And Rave Modules App Segment is loaded
 	And a Rave Coder setup with the following options

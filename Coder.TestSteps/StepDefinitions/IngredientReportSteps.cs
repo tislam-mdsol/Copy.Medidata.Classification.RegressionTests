@@ -16,6 +16,7 @@ namespace Coder.TestSteps.StepDefinitions
     {
         private readonly CoderDeclarativeBrowser _Browser;
         private readonly StepContext             _StepContext;
+        private readonly string                  _IngredientReportDescription;
 
         public IngredientReportSteps(StepContext stepContext)
         {
@@ -24,17 +25,17 @@ namespace Coder.TestSteps.StepDefinitions
 
             _StepContext = stepContext;
             _Browser     = _StepContext.Browser;
-        }
 
-        [When(@"an Ingredient Report is requested")]
-        public void WhenAnIngredientReportIsRequested()
-        {
-            _Browser.GenerateIngredientReport(_StepContext.GetStudyName(), _StepContext.Dictionary);
+            _IngredientReportDescription = "Ingredient Report Description " + DateTime.UtcNow.ToLongDateString();
         }
 
         [Then(@"the appropriate ingredient report is generated")]
         public void ThenTheAppropriateIngredientReportIsGenerated()
         {
+            _Browser.CreateIngredientReport(_StepContext.GetStudyName(), _StepContext.Dictionary, _IngredientReportDescription);
+
+            _Browser.IngredientExportReport(_IngredientReportDescription);
+
             var expectedResults = GetIngredientReportContentByFileName("Ingredient_Report.json");
 
             expectedResults.SetOptionalIngredientReportRowColumns(_StepContext.SegmentUnderTest.ProdStudy.StudyName);

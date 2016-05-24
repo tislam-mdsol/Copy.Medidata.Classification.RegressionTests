@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Coder.DeclarativeBrowser;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coder.DeclarativeBrowser.ExtensionMethods.Assertions;
@@ -16,14 +17,16 @@ namespace Coder.TestSteps.StepDefinitions
     {
         private readonly CoderDeclarativeBrowser    _Browser;
         private readonly StepContext                _StepContext;
+        private readonly string                     _StudyReportDescription;
 
         public AdminStudyMigrationSteps(StepContext stepContext)
         {
-            if (ReferenceEquals(stepContext, null))         throw new ArgumentNullException("stepContext");
+            if (ReferenceEquals(stepContext, null))         throw new ArgumentNullException(nameof(stepContext));
             if (ReferenceEquals(stepContext.Browser, null)) throw new NullReferenceException("Browser");
 
             _StepContext    = stepContext;
             _Browser        = _StepContext.Browser;
+            _StudyReportDescription = "Study Report Description " + DateTime.UtcNow.ToLongDateString();
         }
 
         [When(@"coding the tasks")]
@@ -171,21 +174,48 @@ namespace Coder.TestSteps.StepDefinitions
                 targetSynonymList: _StepContext.TargetSynonymList);
         }
 
-        [Then(@"the following study report information exists")]
+        [Then(@"the following study report study upversioning information exists")]
         public void ThenTheFollowingStudyReportInformationExists(Table studyReport)
         {
             if (ReferenceEquals(studyReport, null)) throw new ArgumentNullException("studyReport");
 
-            foreach (var row in studyReport.Rows)
+            _Browser.WaitForAutoCodingToComplete();
+            _Browser.CreateStudyReport(_StepContext.GetStudyName(), _StepContext.Dictionary, _StudyReportDescription);
+
+            var actualStudyReportDataSet   = _Browser.GetStudyReportDataSet(_StudyReportDescription);
+            var actualStudyReportUpVerData = actualStudyReportDataSet.UpversionHistories;
+            var actualStudyReportUpVer     = actualStudyReportUpVerData.FirstOrDefault
+                (
+                   x => x.StudyName .Equals(_StepContext.GetStudyName(), StringComparison.OrdinalIgnoreCase)
+                     && x.Dictionary.Equals(_StepContext.Dictionary,     StringComparison.OrdinalIgnoreCase)
+                );
+
+            actualStudyReportUpVer = actualStudyReportUpVerData.FirstOrDefault();
+
+            if (ReferenceEquals(actualStudyReportUpVer, null))
             {
-                _Browser.AssertThatVerbatimTermExistsWithCorrectCategoryAndStatus(
-                    study        : _StepContext.GetStudyName(),
-                    verbatimTerm : row["Verbatim"],
-                    categoryName : row["Category"],
-                    dictionary   : CreateDictionaryLocaleValue(_StepContext.Dictionary, _StepContext.Locale),
-                    targetVersion: _StepContext.TargetSynonymList.Version,
-                    status       : row["Workflow Status"]);
+                throw new ArgumentException($"Could not find actual study report stats with study name of {_StepContext.GetStudyName()} and dictionary of {_StepContext.Dictionary}");
             }
+
+            var expectedStudyUpVerDataSet = studyReport.CreateInstance<StudyReportUpVersion>();
+            var expectedStudyUpVerData    = expectedStudyUpVerDataSet.UpversioningDetails;
+            var expectedReportUpVer       = expectedStudyUpVerData.FirstOrDefault();
+
+            if (ReferenceEquals(expectedReportUpVer, null))
+            {
+                throw new ArgumentException($"Could not find expected study report stats with study name of {_StepContext.GetStudyName()} and dictionary of {_StepContext.Dictionary}");
+            }
+
+            expectedReportUpVer.FromVersion                 .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().FromVersion);
+            expectedReportUpVer.ToVersion                   .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().ToVersion);
+            expectedReportUpVer.User                        .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().User);
+            expectedReportUpVer.NotAffected                 .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().NotAffected);
+            expectedReportUpVer.CodedToNewVersionSynonym    .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().CodedToNewVersionSynonym);
+            expectedReportUpVer.CodedToNewVersionBetterMatch.ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().CodedToNewVersionBetterMatch);
+            expectedReportUpVer.PathChanged                 .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().PathChanged);
+            expectedReportUpVer.CasingChangeOnly            .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().CasingChangeOnly);
+            expectedReportUpVer.Obsolete                    .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().Obsolete);
+            expectedReportUpVer.TermNotFound                .ShouldBeEquivalentTo(actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().TermNotFound);
         }
 
         [Then(@"I verify the following Coding Tasks are displayed")]
@@ -202,11 +232,15 @@ namespace Coder.TestSteps.StepDefinitions
         [Then(@"study migration is complete for the latest version")]
         public void ThenStudyMigrationIsCompleteForTheLatestVersion()
         {
-            _Browser.AssertThatStudyMigrationIsCompleteForTheLatestVersion( 
-                study            : _StepContext.GetStudyName(),
-                dictionary       : CreateDictionaryLocaleValue(_StepContext.Dictionary, _StepContext.Locale),
-                sourceVersion    : _StepContext.SourceSynonymList.Version,
-                targetVersion    : _StepContext.TargetSynonymList.Version);
+            _Browser.WaitForAutoCodingToComplete();
+            _Browser.CreateStudyReport(_StepContext.GetStudyName(), _StepContext.Dictionary, _StudyReportDescription);
+
+            var actualStudyReportDataSet   = _Browser.GetStudyReportDataSet(_StudyReportDescription);
+
+            var actualStudyReportUpVerData = actualStudyReportDataSet.UpversionHistories;
+            var actualStudyReportUpVer     = actualStudyReportUpVerData.FirstOrDefault();
+
+            actualStudyReportUpVer.UpversioningDetails.FirstOrDefault().ToVersion.ShouldBeEquivalentTo(_StepContext.TargetSynonymList.Version);
         }
 
         [Then(@"the study has ""(.*)"" task\(s\) that is not affected")]

@@ -79,6 +79,7 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.CategoryAttribute("ETE_RaveCoderCore")]
         [NUnit.Framework.CategoryAttribute("PBMCC42698_001")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
         public virtual void WhenPushingACRFVersionThatContainsCoderSettingsAndEnvironmentSelectedIsNotLinkedToIMedidataProduceAnErrorMessage_()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When pushing a CRF version that contains Coder settings and environment selected " +
@@ -86,12 +87,13 @@ namespace Coder.EndToEndTests.Features
                         "DFT",
                         "ETE_RaveCoderCore",
                         "PBMCC42698_001",
-                        "Release2016.1.0"});
-#line 10
-this.ScenarioSetup(scenarioInfo);
+                        "Release2016.1.0",
+                        "EndToEndDynamicSegment"});
 #line 12
+this.ScenarioSetup(scenarioInfo);
+#line 14
     testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 13
+#line 15
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -112,14 +114,14 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "true",
                         "true"});
-#line 14
+#line 16
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
-#line 17
+#line 19
  testRunner.When("a Rave study environment \"UAT_ENV\" is created for project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 18
+#line 20
  testRunner.And("a Rave Draft is published and has pushed disabled using draft \"<DraftName>\" for P" +
                     "roject \"<StudyName>\" to environment \"UAT_ENV\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
+#line 21
  testRunner.Then("pushing a CRF should be disabled with the following failed message \"Push disabled" +
                     ". CRF Version contains coding dictionary linked to Coder, but study/environment " +
                     "not linked to iMedidata. Please link study/environment with iMedidata.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -142,11 +144,11 @@ this.ScenarioSetup(scenarioInfo);
                         "ETE_RaveCoderCore",
                         "PBMCC42698_002",
                         "Release2016.1.0"});
-#line 26
-this.ScenarioSetup(scenarioInfo);
 #line 28
+this.ScenarioSetup(scenarioInfo);
+#line 30
     testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 29
+#line 31
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -167,12 +169,12 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "true",
                         "true"});
-#line 30
+#line 32
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table2, "And ");
-#line 33
+#line 35
     testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"UAT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 34
+#line 36
     testRunner.Then("CRF was published and pushed with the following message \"successfully pushed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

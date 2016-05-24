@@ -67,5 +67,5 @@
   <add key="MessageRetentionPeriod"                   value="<%= configured.messageRetentionPeriod   || '345600'                                             %>"/>
   <add key="MaximumDeliveries"                        value="<%= configured.maximumDeliveries        || '3'                                                  %>"/>
   <add key="SubsystemName"                            value="<%= configured.subsystemName            || 'Coder.RegressionTests'                              %>"/>
-  <add key="PollingTimeInterval"                      value="<%= configured.pollingTimeInterval      || '5000'                                               %>"/>
+  <add key="ArchonPollingTimeInterval"                value="<%= configured.polling_time_interval    || '5000'                                               %>"/>
 </appSettings>

@@ -91,10 +91,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"WhoDrugDDEB2 " +
                     "ENG 201503\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
- testRunner.And("coding task \"blood\" for dictionary level \"PRODUCTSYNONYM\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("coding task \"blood\" for dictionary level \"PRODUCTSYNONYM\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.When("an Ingredient Report is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
  testRunner.Then("the appropriate ingredient report is generated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

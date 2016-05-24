@@ -16,19 +16,21 @@ namespace Coder.TestSteps.StepDefinitions
     [Binding]
     public class CodingDecisionsReportSteps
     {
-        private readonly CoderDeclarativeBrowser             _Browser;
-        private readonly StepContext                         _StepContext;
+        private readonly CoderDeclarativeBrowser       _Browser;
+        private readonly StepContext                   _StepContext;
         private readonly CodingDecisionsReportCriteria _SearchCriteria;
-        private const string                                 DefaultFileName = "CodingDecisionsReport";
+        private string                                 _CodingDecisionsReportDescription;
+        private const string                           DefaultFileName = "CodingDecisionsReport";
 
         public CodingDecisionsReportSteps(StepContext stepContext)
         {
             if (ReferenceEquals(stepContext, null))         throw new ArgumentNullException("stepContext");
             if (ReferenceEquals(stepContext.Browser, null)) throw new NullReferenceException("Browser");
 
-            _StepContext    = stepContext;
-            _Browser        = _StepContext.Browser;
-            _SearchCriteria = new CodingDecisionsReportCriteria();
+            _StepContext                      = stepContext;
+            _Browser                          = _StepContext.Browser;
+            _SearchCriteria                   = new CodingDecisionsReportCriteria();
+            _CodingDecisionsReportDescription = "Decision Report Description " + DateTime.UtcNow.ToLongDateString();
         }
 
         [When(@"searching for the verbatim ""(.*)"" in Coding Decisions Report")]
@@ -44,7 +46,7 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (String.IsNullOrWhiteSpace(status)) throw new ArgumentNullException("status");
 
-            _SearchCriteria.CurrentStatus = status;
+            _SearchCriteria.StatusOptions = status.Split(',').ToList();
         }
 
         [When(@"searching for start date of ""(.*)"" and end date of ""(.*)"" in Coding Decisions Report")]
@@ -67,9 +69,9 @@ namespace Coder.TestSteps.StepDefinitions
         public void WhenExportingAllColumnsInTheReport()
         {
             _SearchCriteria.Study      = _StepContext.GetStudyName();
-            _SearchCriteria.AllColumns = true;
 
-            _Browser.ExportCodingDecisionsReport(_SearchCriteria);
+            _Browser.CreateCodingDecisionsReport(_SearchCriteria, _CodingDecisionsReportDescription);
+            _Browser.CodingDecisionsExportReport(_CodingDecisionsReportDescription);
         }
 
         [Then(@"the Coding Decisions Report should contain the following")]
