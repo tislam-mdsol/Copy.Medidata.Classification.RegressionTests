@@ -165,28 +165,6 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("A consumer of the iMedidata API will be able to create new studies and users")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
-        [NUnit.Framework.CategoryAttribute("Release2015.3.3")]
-        [NUnit.Framework.CategoryAttribute("PBMCC_211001_001")]
-        public virtual void AConsumerOfTheIMedidataAPIWillBeAbleToCreateNewStudiesAndUsers()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A consumer of the iMedidata API will be able to create new studies and users", new string[] {
-                        "DFT",
-                        "Release2015.3.3",
-                        "PBMCC_211001_001"});
-#line 33
-this.ScenarioSetup(scenarioInfo);
-#line 34
- testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
-                    ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 35
- testRunner.And("a new study is created in the current study group", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
     }
 }
 #pragma warning restore

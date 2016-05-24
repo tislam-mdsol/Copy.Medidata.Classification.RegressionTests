@@ -25,11 +25,3 @@ Scenario: Changes to a study name in iMedidata should be reflected in existing t
 	Then task "Adverse Event 4" should contain the following source term information
        | Study              | Dictionary    | Locale | Term            | Level          | Priority |
        | <StudyDisplayName> | MedDRA - 15.0 | ENG    | Adverse Event 4 | Low Level Term | 1        |
-
-
-@DFT
-@Release2015.3.3
-@PBMCC_211001_001
-Scenario: A consumer of the iMedidata API will be able to create new studies and users
-	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And a new study is created in the current study group
