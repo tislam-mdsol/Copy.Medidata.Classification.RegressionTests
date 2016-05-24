@@ -189,6 +189,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             RetryPolicy.RefreshAndFindHtml.Execute(
                 () =>
                 {
+                    _Browser.Refresh();
                     var attempt = FindAdminLink(adminPage);
 
                     if (attempt.Outcome == OutcomeType.Failure)

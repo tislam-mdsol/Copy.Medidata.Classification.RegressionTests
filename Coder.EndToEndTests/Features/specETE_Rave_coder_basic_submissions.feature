@@ -5,9 +5,9 @@
 Feature: Test full round trip integration from Rave to Coder.  New features converted from ETE_ENGRaveCoder_BasicSubmissions.feature from task MCC-208901
 
 
-  @DFT
+  @VAL
   @ETE_ENG_Rave_coder_basic_Sub
-  #@PB1.1.2-001
+  @PB1.1.2.001
   @Release2016.1.0
   Scenario: Basic Rave Coder Submission
     Given a Rave project registration with dictionary "MedDRA ENG 12.0"
@@ -29,9 +29,9 @@ Feature: Test full round trip integration from Rave to Coder.  New features conv
       | LLT   | 10019211 | Headache                 |
 
 
-  @DFT
+  @VAL
   @ETE_ENG_Rave_coder_basic_Sub_change_term
-  #@PB1.1.2-002
+  @PB1.1.2.002
   @Release2016.1.0
   Scenario:Basic Rave Coder Submission and change verbatim
     Given a Rave project registration with dictionary "MedDRA ENG 12.0"
@@ -46,21 +46,25 @@ Feature: Test full round trip integration from Rave to Coder.  New features conv
       | Coding Field | terrible head pain | LongText    |
     And Coder App Segment is loaded
 	And a coding task "terrible head pain" returns to "Waiting Manual Code" status
+	And Rave Modules App Segment is loaded
     And modifying a verbatim term of the log line containing "terrible head pain" on form "ETE1"
 	  | Field        | Value                 | ControlType |
 	  | Coding Field | foot pain in left leg | LongText    |	
+	And Coder App Segment is loaded
+    And task "foot pain in left leg" is coded to term "Head pain" at search level "Low Level Term" with code "10019198" at level "LLT" and a synonym is created
+    And Rave Modules App Segment is loaded
 	Then the coding decision for verbatim "foot pain in left leg" on form "ETE1" for field "Coding Field" contains the following data
-      | Level | Code     | Term Path                                            |
-      | SOC   | 10018065 | General disorders and administration site conditions |
-      | HLGT  | 10018073 | General system disorders NEC                         |
-      | HLT   | 10008479 | Pain and discomfort NEC                              |
-      | PT    | 10008479 | Chest pain                                           |
-      | LLT   | 10019198 | Head pain                                            |
+      | Level | Code     | Term Path                |
+      | SOC   | 10029205 | Nervous system disorders |
+      | HLGT  | 10019231 | Headaches                |
+      | HLT   | 10019233 | Headaches NEC            |
+      | PT    | 10019211 | Headache                 |
+      | LLT   | 10019198 | Head pain                |
 
 
-  @DFT
+  @VAL
   @ETE_ENG_Rave_coder_basic_Sub_autocode
-  #@PB1.1.2-003
+  @PB1.1.2.003
   @Release2016.1.0
   Scenario:Basic Rave Coder Submission and submit same verbatim and autocode
     Given a Rave project registration with dictionary "MedDRA ENG 12.0"
@@ -96,10 +100,9 @@ Feature: Test full round trip integration from Rave to Coder.  New features conv
       |PT           |10019211 | Headache                   |
       |LLT          |10019198 | Head pain                  |
 
-  @DFT
-  #@PB1.1.2-004
+  @VAL
+  @PB1.1.2.004
   @ETE_ENG_Rave_coder_basic_Sub_recon
-  #@PB1.1.2-003
   @Release2016.1.0
   Scenario:Basic Rave Coder Submission and reconsider term and recode
     Given a Rave project registration with dictionary "MedDRA ENG 12.0"
@@ -136,9 +139,10 @@ Feature: Test full round trip integration from Rave to Coder.  New features conv
       | LLT   | 10004873 | Biopsy skin                    |
 
 
-  @DFT
-  #@PB1.1.2-005
-  @MCC-207807
+  @VAL
+  @PB1.1.2.005
+  @MCC207807
+  @IncreaseTimeout_1800000
   @ETE_ENG_Rave_coder_basic_Sub_code_group
   Scenario:Basic Rave Coder Submission 2 terms that are in the same group
     Given a Rave project registration with dictionary "MedDRA ENG 11.0"
@@ -162,14 +166,14 @@ Feature: Test full round trip integration from Rave to Coder.  New features conv
       |raving head pain |  2    |  1       |
     When task "raving head pain" is coded to term "Head pain" at search level "Low Level Term" with code "10019198" at level "LLT" and a synonym is created
     And Rave Modules App Segment is loaded
-	Then the coding decision on form "ETE2" for field "Coding Field" with row text "ALPHA" for verbatim "terrible head pain" contains the following data
+	Then the coding decision on form "ETE2" for field "Coding Field" with row text "ALPHA" for verbatim "raving head pain" contains the following data
       | Level | Code     | Term Path                |
       |SOC          |10029205 | Nervous system disorders   |
       |HLGT         |10019231 | Headaches                  |
       |HLT          |10019233 | Headaches NEC              |
       |PT           |10019211 | Headache                   |
       |LLT          |10019198 | Head pain                  |
-	Then the coding decision on form "ETE2" for field "Coding Field" with row text "BRAVO" for verbatim "terrible head pain" contains the following data
+	Then the coding decision on form "ETE2" for field "Coding Field" with row text "BRAVO" for verbatim "raving head pain" contains the following data
       | Level | Code     | Term Path                |
       |SOC          |10029205 | Nervous system disorders   |
       |HLGT         |10019231 | Headaches                  |

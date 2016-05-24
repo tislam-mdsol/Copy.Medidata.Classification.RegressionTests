@@ -95,13 +95,15 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
                 throw new MissingHtmlException(String.Format("Form, {0}, was not found.", formName));
             }
 
-            RetryPolicy.FindElement.Execute(() => 
+            _Session.MaximiseWindow();
+            RetryPolicy.FindElement.Execute(() =>
                 _Session.TryUntil(
-                    ()=> formLink.Click(),
-                    ()=> _Session.GetRaveArchitectFormPage().GetFormLabel().Exists(),
+                    () => formLink.Click(),
+                    () => _Session.GetRaveArchitectFormPage().GetFormLabel().Exists(),
                     Config.ExistsOptions.RetryInterval,
                     Config.ExistsOptions)
             );
+            _Session.ResizeTo(Config.ScreenWidth, Config.ScreenHeight);
         }
         
         private SessionElementScope SearchForFormLink(string formName)
