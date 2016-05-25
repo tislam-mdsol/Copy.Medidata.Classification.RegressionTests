@@ -1,300 +1,564 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
+using Castle.Core.Internal;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coder.DeclarativeBrowser.Models;
 using Coypu;
+using NUnit.Framework;
 
 namespace Coder.DeclarativeBrowser.PageObjects.Reports
 {
-    public enum WorkflowState
-    {
-        AllWorkflowStates,
-        NotCoded,
-        CodedButNotComplete,
-        OpenQuery,
-        Completed,
-        NotCompleted
-    }
     
     internal sealed class StudyReportPage
     {
-        private const string PageName                       = "Study Report";
-        private const string StudyReportXPath               = "//tr[contains(@id, 'ctl00_Content_studyList_DXDataRow') and ./td[contains(text(),'{0}')]]/{1}";
-        private const string CodingElementsXPath            = "//tr[contains(@id, 'ctl00_Content_gridCodingElements_DXDataRow') and ./td[contains(text(),'{0}')]]/{1}";
-        private const string TaskCountXPath                 = "//td[contains(@id, 'ctl00_Content_studyList_tccell')]";
-        private const string VariableTaskCountXPath         = "//td[contains(@id, 'ctl00_Content_studyList_tccell') and contains(@id, '_{0}')]";
-        
-        private const int StudyIndex                   = 1;
-        private const int CurrentVersionIndex          = 2;
-        private const int InitialVersionIndex          = 3;
-        private const int NumberOfMigrationsIndex      = 4;
-        private const int NotCodedIndex                = 5;
-        private const int CodedButNotYetCompletedIndex = 6;
-        private const int OpenQueryIndex               = 7;
-        private const int CompletedIndex               = 8;
-        private const int DictionaryIndex              = 9;
+        private const string PageName                      = "Study Report";
+   
+        //Verbatim Stats  
+        private const int _StudyReportStatStudy            = 0;
+        private const int _StudyReportStatDictionary       = 1;
+        private const int _NotCodedCount                   = 2;
+        private const int _CodedNotCompletedCount          = 3;
+        private const int _WithOpenQueryCount              = 4;
+        private const int _CompletedCount                  = 5;
+
+        //Verbatim Stat Details
+        private const int _StudyReportStatDetailStudy      = 0;
+        private const int _StudyReportStatVerbatim         = 1;
+        private const int _StudyReportStatDetailDictionary = 2;
+        private const int _StudyReportStatDictionaryLevel  = 3;
+        private const int _StudyReportStatCode             = 4;
+        private const int _StudyReportStatTerm             = 5;
+        private const int _StudyReportStatStatus           = 6;
+        private const int _StudyReportStatPath             = 7;
+        private const int _StudyReportStatBatch            = 8;
+
+        //Upversioning History
+        private const int _UpStudyName                     = 0;
+        private const int _UpDictionary                    = 1;
+        private const int _NumberOfUpversions              = 2;
+        private const int _InitialVersion                  = 3;
+        private const int _CurrentVersion                  = 4;
+        private const int _UpversioningHistory             = 5;
+            
+        //Upversioning Details
+        private const int _FromVersion                      = 0;
+        private const int _ToVersion                        = 1;
+        private const int _User                             = 2;
+        private const int _StartedOn                        = 3;
+        private const int _NotAffected                      = 4;
+        private const int _CodedtoNewVersionSynonymList     = 5;
+        private const int _CodedtoNewVersionDictionaryMatch = 6;
+        private const int _PathChanged                      = 7;
+        private const int _CasingChangedOnly                = 8;
+        private const int _Obsolete                         = 9;
+        private const int _TermNotFound                     = 10;
 
         private readonly BrowserSession _Session;
 
         internal StudyReportPage(BrowserSession session)
         {
-            if (ReferenceEquals(session, null))  throw new ArgumentNullException("session"); 
-            
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
             _Session = session;
-        }
+        } 
 
         internal void GoTo()
         {
             _Session.GoToReportPage(PageName);
+        } 
+
+        private SessionElementScope GetStudyOptionDropDown()
+        {
+            var studyNameOption = _Session.FindSessionElementById("study");
+
+            return studyNameOption;
         }
 
-        internal SessionElementScope GetDictionaryTypeDropDownList()
+        internal void SelectStudyOption(string studyName)
         {
-            var dictionaryTypeDropDownList = _Session
-                .FindSessionElementById("ctl00_Content_ddlDictionary");
+            if (String.IsNullOrWhiteSpace(studyName)) throw new ArgumentNullException(nameof(studyName));
 
-            return dictionaryTypeDropDownList;
+            var studyDropDown= GetStudyOptionDropDown();
+
+            studyDropDown.SelectOptionAlphanumericOnly(studyName);
         }
 
-        internal SessionElementScope GetStudyDropDownList()
+        private SessionElementScope GetDictionaryTypeDropDown()
         {
-            var studyDropDownList = _Session
-                .FindSessionElementById("ctl00_Content_DdlStudies");
+            var dTNameOption = _Session.FindSessionElementById("dictionaryType");
 
-            return studyDropDownList;
+            return dTNameOption;
         }
 
-        internal SessionElementScope GetGenerateReportButton()
+        internal void SelectDictionaryType(string dictType)
         {
-            var generateReportButton = _Session
-                .FindSessionElementById("ctl00_Content_btnSearch");
+            if (String.IsNullOrWhiteSpace(dictType)) throw new ArgumentNullException(nameof(dictType));
 
-            return generateReportButton;
+            var dTNameOption = GetDictionaryTypeDropDown();
+
+            dTNameOption.SelectOptionAlphanumericOnly(dictType);
         }
 
-        internal bool IsStudyReportGridEmpty()
+        private SessionElementScope GetStudyReportDescription(string descriptionText)
         {
-            return _Session.FindAllSessionElementsByXPath( "//*[@id=\"ctl00_Content_studyList_DXMainTable\"]/tbody/tr[2]/td[2]/div").Count > 0;
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
+
+            var enterDescriptionTextbox = _Session.FindSessionElementById("reportDescription");
+
+            return enterDescriptionTextbox;
         }
 
-        internal SessionElementScope GetNotCodedButtonByStudyName(string study)
+        internal void EnterStudyReportDescription(string descriptionText)
         {
-            if (String.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(descriptionText);
 
-            var notCodedButton = _Session
-                .FindSessionElementByXPath(String.Format(StudyReportXPath, study, "/td[6]/a"));
+            var enterDescriptionTextbox = GetStudyReportDescription(descriptionText);
 
-            return notCodedButton;
+            enterDescriptionTextbox.FillInWith(descriptionText);
         }
 
-        internal SessionElementScope GetCompletedButtonByStudyName(string study)
+        private SessionElementScope GetCreateNewStudyReportButton()
         {
-            if (String.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
+            var createButton = _Session.FindSessionElementById("createNew");
 
-            var notCodedButton = _Session
-                .FindSessionElementByXPath(String.Format(StudyReportXPath, study, "/td[9]/a"));
-
-            return notCodedButton;
+            return createButton;
         }
 
-        internal SessionElementScope GetCodedButNotCompletedButtonByStudyName(string study)
+        internal void NewStudyReportButton()
         {
-            if (String.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
+            var createNewReportButton = GetCreateNewStudyReportButton();
 
-            var notCodedButton = _Session
-                .FindSessionElementByXPath(String.Format(StudyReportXPath, study, "/td[7]/a"));
-
-            return notCodedButton;
+            createNewReportButton.Click();
         }
 
-        internal StudyReport GetStudyReportValuesByStudy(string study)
+        
+        private SessionElementScope GetVerbatimStatsTable()
         {
-            var studyReportGridRows = _Session.FindAllSessionElementsByXPath("//tr[contains(@id, 'ctl00_Content_studyList_DXDataRow')]");
+            var verbatimStatsTable = _Session.FindSessionElementById("masterVerbatimStats");
+
+            return verbatimStatsTable;
+        }
+
+        private IEnumerable<SessionElementScope> GetVerbatimStatsTableRows()
+        {
+            var verbatimStatsTable     = GetVerbatimStatsTable();
+            var verbatimStatsTableRows = _Session.FindAllSessionElementsByXPath("//tbody//tr");
+
+            return verbatimStatsTableRows;
+        }
+
+        private SessionElementScope GetVerbatimStatsDetailsTable()
+        {
+            var verbatimStatsTable = _Session.FindSessionElementById("verbatimStatsDetails");
+
+            return verbatimStatsTable;
+        }
+
+        private IEnumerable<SessionElementScope> GetVerbatimStatsDetailsTableRows()
+        {
+            var verbatimStatsTable     = GetVerbatimStatsDetailsTable();
+            var verbatimStatsTableRows = _Session.FindAllSessionElementsByXPath("//tbody//tr");
+
+            return verbatimStatsTableRows;
+        }
+
+        private SessionElementScope GetStudyUpVersioningTable()
+        {
+            var verbatimStatsTable = _Session.FindSessionElementById("masterStudyUpVersioning");
+
+            return verbatimStatsTable;
+        }
+
+        private IEnumerable<SessionElementScope> GetStudyUpVersioningTableRows()
+        {
+            var studyUpTable     = GetStudyUpVersioningTable();
+            var studyUpTableRows = _Session.FindAllSessionElementsByXPath("//tbody//tr");
+
+            return studyUpTableRows;
+        }
+
+        private SessionElementScope GetMigrationStatsDetailsTable()
+        {
+            var migrationStatsDetailsTable = _Session.FindSessionElementById("migrationStatsDetails");
+
+            return migrationStatsDetailsTable;
+        }
+
+        private IEnumerable<SessionElementScope> GetMigrationStatsDetailsTableRows()
+        {
+            var migrationStatsDetailsTable = GetStudyUpVersioningTable();
+            var studyUpTableRows           = _Session.FindAllSessionElementsByXPath("//tbody//tr");
+
+            return studyUpTableRows;
+        }
+
+        private SessionElementScope GetNotCodedButton(string studyName, string dictionaryName)
+        {
+            if (String.IsNullOrEmpty(studyName))      throw new ArgumentNullException(nameof(studyName));
+            if (String.IsNullOrEmpty(dictionaryName)) throw new ArgumentNullException(nameof(dictionaryName));
+
+            var statsDetailRows                      = GetVerbatimStatsTableRows();
+
+            var statsDetailRowViaStudyDictionaryName = from   row in statsDetailRows
+                                                       where  row.InnerHTML.Contains(studyName) && row.InnerHTML.Contains(dictionaryName)
+                                                       select row;
+
+            var statLink = statsDetailRowViaStudyDictionaryName.FirstOrDefault().FindSessionElementByXPath("//a[contains(@id, 'notCoded-')]");
+
+            return statLink;
+        }
+
+        private SessionElementScope GetCodedNotCompletedButton(string studyName, string dictionaryName)
+        {
+            if (String.IsNullOrEmpty(studyName))      throw new ArgumentNullException(nameof(studyName));
+            if (String.IsNullOrEmpty(dictionaryName)) throw new ArgumentNullException(nameof(dictionaryName));
+
+            var statsDetailRows                      = GetVerbatimStatsTableRows();
+
+            var statsDetailRowViaStudyDictionaryName = from row in statsDetailRows
+                                                       where row.InnerHTML.Contains(studyName) && row.InnerHTML.Contains(dictionaryName)
+                                                       select row;
+
+            var statLink = statsDetailRowViaStudyDictionaryName.FirstOrDefault().FindSessionElementByXPath("//a[contains(@id, 'codedNotCompleted-')]");
+
+            return statLink;
+        }
+
+        private SessionElementScope GetWithOpenQueryButton(string studyName, string dictionaryName)
+        {
+            if (String.IsNullOrEmpty(studyName))      throw new ArgumentNullException(nameof(studyName));
+            if (String.IsNullOrEmpty(dictionaryName)) throw new ArgumentNullException(nameof(dictionaryName));
+
+            var statsDetailRows                      = GetVerbatimStatsTableRows();
+
+            var statsDetailRowViaStudyDictionaryName = from row in statsDetailRows
+                                                       where row.InnerHTML.Contains(studyName) && row.InnerHTML.Contains(dictionaryName)
+                                                       select row;
+
+            var statLink = statsDetailRowViaStudyDictionaryName.FirstOrDefault().FindSessionElementByXPath("//a[contains(@id, 'withOpenQuery-')]");
+
+            return statLink;
+        }
+
+        private SessionElementScope GetCompletedButton(string studyName, string dictionaryName)
+        {
+            if (String.IsNullOrEmpty(studyName))      throw new ArgumentNullException(nameof(studyName));
+            if (String.IsNullOrEmpty(dictionaryName)) throw new ArgumentNullException(nameof(dictionaryName));
+
+            var statsDetailRows                      = GetVerbatimStatsTableRows();
+
+            var statsDetailRowViaStudyDictionaryName = from row in statsDetailRows
+                                                       where row.InnerHTML.Contains(studyName) && row.InnerHTML.Contains(dictionaryName)
+                                                       select row;
+
+            var statLink = statsDetailRowViaStudyDictionaryName.FirstOrDefault().FindSessionElementByXPath("//a[contains(@id, 'completed-')]");
+
+            return statLink;
+        }
+
+        private SessionElementScope GetDetailsButton(string studyName, string dictionaryName)
+        {
+            if (String.IsNullOrEmpty(studyName))      throw new ArgumentNullException(nameof(studyName));
+            if (String.IsNullOrEmpty(dictionaryName)) throw new ArgumentNullException(nameof(dictionaryName));
+
+            var detailRows                      = GetVerbatimStatsTableRows();
+
+            var detailRowViaStudyDictionaryName = from row in detailRows
+                                                  where row.InnerHTML.Contains(studyName) && row.InnerHTML.Contains(dictionaryName)
+                                                  select row;
+
+            var statLink = detailRowViaStudyDictionaryName.FirstOrDefault().FindSessionElementByXPath("//a[contains(@id, 'migrationDetails-')]");
+
+            return statLink;
+        }
+
+        private SessionElementScope GetStatExportLink(string studyName, string dictionaryName)
+        {
+            if (String.IsNullOrEmpty(studyName))      throw new ArgumentNullException(nameof(studyName));
+            if (String.IsNullOrEmpty(dictionaryName)) throw new ArgumentNullException(nameof(dictionaryName));
+
+            var statsDetailRows                      = GetVerbatimStatsTableRows();
+
+            var statsDetailRowViaStudyDictionaryName = from row in statsDetailRows
+                                                       where row.InnerHTML.Contains(studyName) && row.InnerHTML.Contains(dictionaryName)
+                                                       select row;
+
+            var statLink = statsDetailRowViaStudyDictionaryName.FirstOrDefault().FindSessionElementByLink("Export");
+
+            return statLink;
+        }
+
+        private SessionElementScope GetExportSummaryLink()
+        {
+            var statLink = _Session.FindSessionElementByLink("Export Summary");
+
+            return statLink;
+        }
+
+        private SessionElementScope GetStudyUpversioningTab()
+        {
+            var statLink = _Session.FindSessionElementByLink("Study Upversioning");
+
+            return statLink;
+        }
+
+        private SessionElementScope GetVerbatomStatsTab()
+        {
+            var statLink = _Session.FindSessionElementByLink("Verbatim Statistics");
+
+            return statLink;
+        }
+
+        private SessionElementScope SelectTermPathExpandButton(SessionElementScope rowElements)
+        {
+            if (ReferenceEquals(rowElements, null)) throw new ArgumentNullException(nameof(rowElements));
+
+            var searchResultsElement     = rowElements.FindSessionElementByXPath(".//div[@class='term']");
+            var searchResultExpandButton = searchResultsElement.FindSessionElementByXPath("span[@class='term-expander']/i");
+
+            return searchResultExpandButton;
+        }
+
+        internal void ExpandTermPath(SessionElementScope columnPath)
+        {
+            if (ReferenceEquals(columnPath, null)) throw new ArgumentNullException(nameof(columnPath));
+
+            var expandPathButton = SelectTermPathExpandButton(columnPath);
+            expandPathButton.Click();
+
+            RetryPolicy
+                .FindElementShort
+                .Execute(() => WaitForResultExpansion(columnPath));
+        }
+
+        private void WaitForResultExpansion(SessionElementScope columnPath)
+        {
+            if (ReferenceEquals(columnPath, null)) throw new ArgumentNullException(nameof(columnPath));
+
+            var termPaths = columnPath.FindAllSessionElementsByXPath(".//div[@class='term']");
             
-            var studyReportValues = (
-                from studyReportGridRow in studyReportGridRows
-                select studyReportGridRow.FindAllSessionElementsByXPath("td")
-                into studyReportColumns
-                select new StudyReport
-                {
-                    Study                   = studyReportColumns[StudyIndex].Text.Trim(),
-                    CurrentVersion          = studyReportColumns[CurrentVersionIndex].Text.Trim(),
-                    InitialVersion          = studyReportColumns[InitialVersionIndex].Text.Trim(),
-                    NumberOfMigrations      = studyReportColumns[NumberOfMigrationsIndex].Text.Trim(),
-                    NotCoded                = studyReportColumns[NotCodedIndex].Text.Trim(),
-                    CodedButNotYetCompleted = studyReportColumns[CodedButNotYetCompletedIndex].Text.Trim(),
-                    OpenQuery               = studyReportColumns[OpenQueryIndex].Text.Trim(),
-                    Completed               = studyReportColumns[CompletedIndex].Text.Trim(),
-                    Dictionary              = studyReportColumns[DictionaryIndex].Text.Trim()
-                })
-                .ToList();
-
-            return studyReportValues.FirstOrDefault(studyReportValueX => studyReportValueX.Study.Equals(study));
+            if(termPaths.Count < 2) throw new MissingHtmlException("Results not yet expanded");
         }
 
-        internal StudyReportCodingElements GetStudyReportCodingElementsByVerbatimTerm(string verbatimTerm)
+        private IEnumerable<TermPathRow> GetTermPathRowsFromStatsDetailsPath(SessionElementScope columnPath)
         {
-            if (String.IsNullOrEmpty(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");
+            if (ReferenceEquals(columnPath, null)) throw new ArgumentNullException(nameof(columnPath));
 
-            var studyReportCodingElements = new StudyReportCodingElements
-            {
-                Study           = _Session.FindSessionElementByXPath(String.Format(CodingElementsXPath, verbatimTerm, "td[1]")).Text,
-                VerbatimTerm    = _Session.FindSessionElementByXPath(String.Format(CodingElementsXPath, verbatimTerm, "td[2]")).Text,
-                Dictionary      = _Session.FindSessionElementByXPath(String.Format(CodingElementsXPath, verbatimTerm, "td[3]")).Text,
-                DictionaryLevel = _Session.FindSessionElementByXPath(String.Format(CodingElementsXPath, verbatimTerm, "td[4]")).Text,
-                Code            = _Session.FindSessionElementByXPath(String.Format(CodingElementsXPath, verbatimTerm, "td[5]")).Text,
-                Term            = _Session.FindSessionElementByXPath(String.Format(CodingElementsXPath, verbatimTerm, "td[6]")).Text,
-                Path            = _Session.FindSessionElementByXPath(String.Format(CodingElementsXPath, verbatimTerm, "td[7]")).Text,
-                Batch           = _Session.FindSessionElementByXPath(String.Format(CodingElementsXPath, verbatimTerm, "td[8]")).Text,
-                WorkflowStatus  = _Session.FindSessionElementByXPath(String.Format(CodingElementsXPath, verbatimTerm, "td[9]")).Text
-            };
+            ExpandTermPath(columnPath);
 
-            return studyReportCodingElements;
+            var collectionOfTermPaths = columnPath.FindAllSessionElementsByXPath(".//div[@class='term']");
+
+            var collectionTermPathRows = (from termPath in collectionOfTermPaths
+                let pathTerm = termPath.FindSessionElementByXPath("span[@class='.//term-text']/i").Text.Trim()
+                let pathLevel = termPath.FindSessionElementByXPath("span[@class='.//term-level']/i").Text.Trim()
+                let pathCode = termPath.FindSessionElementByXPath("span[@class='.//term-code']/i").Text.Trim()
+                select new TermPathRow
+                {
+                    TermPath = pathTerm,
+                    Level    = pathLevel,
+                    Code     = pathCode
+                }).ToArray();
+
+            return collectionTermPathRows;
         }
 
-        internal int TotalTaskCounts(WorkflowState workflowState)
+        internal IEnumerable<StudyReportStatsDetails> GetStudyReportStatsDetailsByStatus(SessionElementScope statusButton)
         {
-            int taskCount = 0;
+            statusButton.Click();
 
-            string taskCountElementXPath = "";
+            var verbatimStatDetailsRows             = GetVerbatimStatsDetailsTableRows();
 
-            switch (workflowState)
+            var collectionOfStudyReportStatsDetails = new List<StudyReportStatsDetails>();
+
+            foreach (var rowSD in verbatimStatDetailsRows)
             {
-                case WorkflowState.AllWorkflowStates:
+                var sdColumns = rowSD.FindAllSessionElementsByXPath("td");
+                SelectTermPathExpandButton(rowSD).Click();
+
+                var verbatimStatDetailValues = new StudyReportStatsDetails
                 {
-                    taskCountElementXPath = TaskCountXPath;
-                    break;
-                }
-                case WorkflowState.NotCoded:
-                {
-                    taskCountElementXPath = string.Format(VariableTaskCountXPath, NotCodedIndex);
-                    break;
-                }
-                case WorkflowState.CodedButNotComplete:
-                {
-                    taskCountElementXPath = string.Format(VariableTaskCountXPath, CodedButNotYetCompletedIndex);
-                    break;
-                }
-                case WorkflowState.OpenQuery:
-                {
-                    taskCountElementXPath = string.Format(VariableTaskCountXPath, OpenQueryIndex);
-                    break;
-                }
-                case WorkflowState.Completed:
-                {
-                    taskCountElementXPath = string.Format(VariableTaskCountXPath, CompletedIndex);
-                    break;
-                }
-                default:
-                {
-                    throw new ArgumentException("The workflowState is not valid or has not yet been mapped to a page object." +
-                        "\nExpected \"All\", \"Not coded\", \"Coded but not Completed\", \"Open Query\", or \"Completed\"");
-                }
+                    Study        = sdColumns[_StudyReportStatStudy].Text.Trim(),
+                    Verbatim     = sdColumns[_StudyReportStatVerbatim].Text.Trim(),
+                    Dictionary   = sdColumns[_StudyReportStatDictionary].Text.Trim(),
+                    Status       = sdColumns[_StudyReportStatStatus].Text.Trim(),
+                    Batch        = sdColumns[_StudyReportStatBatch].Text.Trim(),
+
+                    SelectedTerm = new TermPathRow
+                    {
+                        Level    = sdColumns[_StudyReportStatDictionaryLevel].Text.Trim(),
+                        Code     = sdColumns[_StudyReportStatCode].Text.Trim(),
+                        TermPath = sdColumns[_StudyReportStatTerm].Text.Trim(),
+                    },
+
+                    SelectedTermpath = GetTermPathRowsFromStatsDetailsPath(sdColumns[_StudyReportStatPath])
+                };
+
+                collectionOfStudyReportStatsDetails.Add(verbatimStatDetailValues);
             }
 
-            IList<SessionElementScope> taskCountElements = _Session.FindAllSessionElementsByXPath(taskCountElementXPath);
+            return collectionOfStudyReportStatsDetails;
+        }
+    
 
-            foreach (SessionElementScope taskCountElement in taskCountElements)
+        internal StudyReportStats GetStudyReportStatsDetails(StudyReportStats statsValues)
+        {
+            if (ReferenceEquals(statsValues, null)) throw new ArgumentNullException(nameof(statsValues));
+
+            var notCodedStatsDetailsButton          = GetNotCodedButton(statsValues.StudyStatName, statsValues.DictionaryName);
+            var codedNotCompletedStatsDetailsButton = GetCodedNotCompletedButton(statsValues.StudyStatName, statsValues.DictionaryName);
+            var withOpenQueryStatsDetailsButton     = GetWithOpenQueryButton(statsValues.StudyStatName, statsValues.DictionaryName);
+            var completedCountStatsDetailsButton    = GetCompletedButton(statsValues.StudyStatName, statsValues.DictionaryName);
+
+            if (statsValues.NotCodedCount > 0)
             {
-                taskCount += taskCountElement.Text.ToInteger();
+                statsValues.NotCodedTasks          = GetStudyReportStatsDetailsByStatus(notCodedStatsDetailsButton);
+            }
+
+            if (statsValues.CodedNotCompletedCount > 0)
+            {
+                statsValues.CodedNotCompletedTasks = GetStudyReportStatsDetailsByStatus(codedNotCompletedStatsDetailsButton);
+            }
+
+            if (statsValues.WithOpenQueryCount > 0)
+            {
+                statsValues.WithOpenQueryTasks     = GetStudyReportStatsDetailsByStatus(withOpenQueryStatsDetailsButton);
+            }
+
+            if (statsValues.CompletedCount > 0)
+            {
+                statsValues.CompletedTasks         = GetStudyReportStatsDetailsByStatus(completedCountStatsDetailsButton);
+            }
+
+            return statsValues;
+        }
+
+        internal IEnumerable<StudyReportStats> GetStudyReportStatsDataSet()
+        {
+            var verbatimStatsTableRows = GetVerbatimStatsTableRows();
+
+            var collectionOfStudyReportStatsWithDetails =
+                (
+                    from row in verbatimStatsTableRows
+                    select row.FindAllSessionElementsByXPath("td")
+                    into verbatimStatsColumns
+                    select new StudyReportStats
+                    {
+                        StudyStatName          = verbatimStatsColumns[_StudyReportStatStudy].Text.Trim(),
+                        DictionaryName         = verbatimStatsColumns[_StudyReportStatDictionary].Text.Trim(),
+
+                        NotCodedCount          = Convert.ToInt32(verbatimStatsColumns[_NotCodedCount].Text.Trim()),
+                        CodedNotCompletedCount = Convert.ToInt32(verbatimStatsColumns[_CodedNotCompletedCount].Text.Trim()),
+                        WithOpenQueryCount     = Convert.ToInt32(verbatimStatsColumns[_WithOpenQueryCount].Text.Trim()),
+                        CompletedCount         = Convert.ToInt32(verbatimStatsColumns[_CompletedCount].Text.Trim()),
+                    }
+                    into statsValues
+                    select GetStudyReportStatsDetails(statsValues)
+                ).ToArray();
+
+            return collectionOfStudyReportStatsWithDetails;
+        }
+
+        internal IEnumerable<StudyReportUpversionHistoryDetails> GetStudyUpversioningDetails()
+        {
+            var upVersioningHistoryDetailsRows   = GetMigrationStatsDetailsTableRows();
+
+            var upVerHistoryDetailsCollection    = upVersioningHistoryDetailsRows
+                                                  .Select(row            => row.FindAllSessionElementsByXPath("td"))
+                                                  .Select(historyColumns => new StudyReportUpversionHistoryDetails
+                                                  {
+                                                      FromVersion                  = historyColumns[_FromVersion].Text.Trim(),
+                                                      ToVersion                    = historyColumns[_ToVersion].Text.Trim(),
+                                                      User                         = historyColumns[_User].Text.Trim(),
+                                                      StartedOn                    = historyColumns[_StartedOn].Text.Trim(),
+                                                      NotAffected                  = historyColumns[_NotAffected].Text.Trim(),
+                                                      CodedToNewVersionSynonym     = historyColumns[_CodedtoNewVersionSynonymList].Text.Trim(),
+                                                      CodedToNewVersionBetterMatch = historyColumns[_CodedtoNewVersionDictionaryMatch].Text.Trim(),
+                                                      PathChanged                  = historyColumns[_PathChanged].Text.Trim(),
+                                                      CasingChangeOnly             = historyColumns[_CasingChangedOnly].Text.Trim(),
+                                                      Obsolete                     = historyColumns[_Obsolete].Text.Trim(),
+                                                      TermNotFound                 = historyColumns[_TermNotFound].Text.Trim()
+                                                  })
+                                                  .ToArray();
+            return upVerHistoryDetailsCollection;
+        }
+
+        internal IEnumerable<StudyReportUpVersion> GetStudyReportUpversionDataSet()
+        {
+            var upversioningButton = GetStudyUpversioningTab();
+            upversioningButton.Click();
+
+            var studyUpVerTableRows = GetStudyUpVersioningTableRows();
+
+            var collectionOfStudyReportVersions = new List<StudyReportUpVersion>();
+
+            foreach (var mainRow in studyUpVerTableRows)
+            {
+                var mainRowColumns = mainRow.FindAllSessionElementsByXPath(".//td");
+
+                var studyName      = mainRowColumns[_UpStudyName].Text.Trim();
+                var dictionaryName = mainRowColumns[_UpDictionary].Text.Trim();
+
+                var upVersioningHistoryDetailsButton = GetDetailsButton(studyName,dictionaryName);
+                upVersioningHistoryDetailsButton.Click();
+
+                collectionOfStudyReportVersions = studyUpVerTableRows
+                    .Select(row => row.FindAllSessionElementsByXPath(".//td"))                    
+                    .Select(columns => new StudyReportUpVersion
+                    {
+                        StudyName           = studyName,
+                        Dictionary          = dictionaryName,
+                        NumberOfUpversions  = columns[_NumberOfUpversions].Text.Trim(),
+                        InitialVersion      = columns[_InitialVersion].Text.Trim(),
+                        CurrentVersion      = columns[_CurrentVersion].Text.Trim(),
+
+                        UpversioningDetails = GetStudyUpversioningDetails()
+                    })
+                    .ToList();
+            }
+
+            return collectionOfStudyReportVersions;
+        }
+
+        internal StudyReport GetStudyReportDataSet()
+        {
+            var studyReportSet = new StudyReport
+            {
+                    StudyStats         = GetStudyReportStatsDataSet(),
+                    UpversionHistories = GetStudyReportUpversionDataSet()
+            };
+
+            return studyReportSet;
+        }
+
+        internal int GetTotalStudyReportTaskCounts(string studyName, string dictionaryType)
+        {
+
+            var notCodedValue           = Convert.ToInt32(GetNotCodedButton(studyName, dictionaryType).Text.Trim());
+            var codedNotCompletedValue  = Convert.ToInt32(GetCodedNotCompletedButton(studyName, dictionaryType).Text.Trim());
+            var completedValue          = Convert.ToInt32(GetCompletedButton(studyName, dictionaryType).Text.Trim());
+
+            var totalTaskCount          = notCodedValue + codedNotCompletedValue + completedValue;
+
+            return totalTaskCount;
+        }
+
+        internal int GetStudyReportTotalTaskCount()
+        {
+            var studyDataSetCollection = GetStudyReportDataSet();
+
+            var statStudyData          = studyDataSetCollection.StudyStats;
+
+            var taskCount              = 0;
+
+            foreach (var studyData in statStudyData)
+            {
+                taskCount = studyData.CodedNotCompletedCount + studyData.NotCodedCount + studyData.CompletedCount;
             }
 
             return taskCount;
         }
 
-        private string GetNotCodedXPath(string rowXPath, string study)
-        {
-            if (String.IsNullOrEmpty(rowXPath)) throw new ArgumentNullException("rowXPath");
-            if (String.IsNullOrEmpty(study))    throw new ArgumentNullException("study");
-
-            if (_Session.FindSessionElementByXPath(String.Format(rowXPath, study, "/td[6]//u")).Exists())
-            {
-                return String.Format(rowXPath, study, "/td[6]//u");
-            }
-
-            return String.Format(rowXPath, study, "/td[6]");
-        }
-
-        private string GetCodedButNotCompletedXPath(string rowXPath, string study)
-        {
-            if (String.IsNullOrEmpty(rowXPath)) throw new ArgumentNullException("rowXPath");
-            if (String.IsNullOrEmpty(study))    throw new ArgumentNullException("study");
-
-            if (_Session.FindSessionElementByXPath(String.Format(rowXPath, study, "/td[7]//u")).Exists())
-            {
-                return String.Format(rowXPath, study, "/td[7]//u");
-            }
-
-            return String.Format(rowXPath, study, "/td[7]");
-        }
-
-        private string GetOpenQueryXPath(string rowXPath, string study)
-        {
-            if (String.IsNullOrEmpty(rowXPath)) throw new ArgumentNullException("rowXPath");
-            if (String.IsNullOrEmpty(study))    throw new ArgumentNullException("study");
-
-            if (_Session.FindSessionElementByXPath(String.Format(rowXPath, study, "/td[8]//u")).Exists())
-            {
-                return String.Format(rowXPath, study, "/td[8]//u");
-            }
-
-            return String.Format(rowXPath, study, "/td[8]");
-        }
-
-        private string GetCompletedXPath(string rowXPath, string study)
-        {
-            if (String.IsNullOrEmpty(rowXPath)) throw new ArgumentNullException("rowXPath");
-            if (String.IsNullOrEmpty(study))    throw new ArgumentNullException("study");
-
-            if (_Session.FindSessionElementByXPath(String.Format(rowXPath, study, "/td[9]//u")).Exists())
-            {
-                return String.Format(rowXPath, study, "/td[9]//u");
-            }
-
-            return String.Format(rowXPath, study, "/td[9]");
-        }
-        
-        internal SessionElementScope GetStudyReportCategoryButtonByStudyAndCategoryName(string study, string categoryName)
-        {
-            if (String.IsNullOrEmpty(study))        throw new ArgumentNullException("study");
-            if (String.IsNullOrEmpty(categoryName)) throw new ArgumentNullException("categoryName");
-
-            if (categoryName.Equals("Not Coded", StringComparison.OrdinalIgnoreCase))
-            {
-                return GetNotCodedButtonByStudyName(study);
-            }
-
-            if (categoryName.Equals("Coded but not Completed", StringComparison.OrdinalIgnoreCase))
-            {
-                return GetCodedButNotCompletedButtonByStudyName(study);
-            }
-
-            if (categoryName.Equals("Completed", StringComparison.OrdinalIgnoreCase))
-            {
-                return GetCompletedButtonByStudyName(study);
-            }
-
-            throw new NullReferenceException("Unable to find category");
-        }
-
-        //TODO: GB move options into config class
-        internal void WaitForStudyMigrationToComplete(string study, string currentVersion)
-        {
-            if (String.IsNullOrEmpty(study))          throw new ArgumentNullException("study");
-            if (String.IsNullOrEmpty(currentVersion)) throw new ArgumentNullException("currentVersion");
-
-            var options = new Options
-            {
-                RetryInterval = TimeSpan.FromSeconds(1),
-                Timeout       = TimeSpan.FromSeconds(480)
-            };
-
-            _Session.TryUntil(
-                GetGenerateReportButton().Click,
-                () => !_Session.FindSessionElementByXPath(String.Format(StudyReportXPath, study, "/td[6]")).Text.Equals("In Migration", StringComparison.OrdinalIgnoreCase),
-                options.WaitBeforeClick,
-                options);
-        }
     }
 }

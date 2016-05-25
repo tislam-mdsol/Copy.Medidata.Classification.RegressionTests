@@ -15,7 +15,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal IngredientReportPage(BrowserSession browser) 
         { 
-            if (ReferenceEquals(browser, null)) throw new ArgumentNullException("browser"); 
+            if (ReferenceEquals(browser, null)) throw new ArgumentNullException(nameof(browser)); 
             _Browser = browser; 
         }
 
@@ -27,53 +27,62 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return onPage;
         }
 
-        internal void GoTo()
+        private SessionElementScope GetCreateNewIngredientReportButton()
         {
-            var onPage = BrowserOnPage();
+            var createButton = _Browser.FindSessionElementById("createNew");
 
-            if (!onPage)
-            {
-                _Browser.GoToReportPage(_PageName);
-            }
-        }
-
-        private SessionElementScope GetExportButton()
-        {
-            var exportButton = _Browser.FindSessionElementById("ctl00_Content_btnExportReport");
-
-            return exportButton;
+            return createButton;
         }
 
         private SessionElementScope GetStudySelectList()
         {
-            var studyDropdown = _Browser.FindSessionElementById("ctl00_Content_controlACG_DdlStudies");
+            var studyDropdown = _Browser.FindSessionElementById("study");
 
             return studyDropdown;
         }
 
         private SessionElementScope GetDictionarySelectList()
         {
-            var dictionaryDropdown = _Browser.FindSessionElementById("ctl00_Content_controlACG_DdlDictionaries");
+            var dictionaryDropdown = _Browser.FindSessionElementById("dictionary");
 
             return dictionaryDropdown;
         }
 
+        private SessionElementScope IngredientReportDescription(string descriptionText)
+        {
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
+
+            var enterDescriptionTextbox = _Browser.FindSessionElementById("reportDescription");
+
+            return enterDescriptionTextbox;
+        }
+
         internal void SetReportParameters(string study, string dictionary)
         {
-            if (String.IsNullOrWhiteSpace(study))      throw new ArgumentNullException("study");
-            if (String.IsNullOrWhiteSpace(dictionary)) throw new ArgumentNullException("dictionary");
-
-            GoTo();
+            if (String.IsNullOrWhiteSpace(study))      throw new ArgumentNullException(nameof(study));
+            if (String.IsNullOrWhiteSpace(dictionary)) throw new ArgumentNullException(nameof(dictionary));
 
             GetStudySelectList()     .SelectOptionAlphanumericOnly(study);
             GetDictionarySelectList().SelectOptionAlphanumericOnly(dictionary);
         }
 
-        internal void ExportReport()
+        internal void NewIngredientReportButton()
         {
-            var exportButton = GetExportButton();
+            var createNewIngReportButton = GetCreateNewIngredientReportButton();
 
-            exportButton.Click();
+            createNewIngReportButton.Click();
         }
+
+        internal void EnterIngredientReportDescription(string descriptionText)
+        {
+            if (String.IsNullOrWhiteSpace(descriptionText)) throw new ArgumentNullException(nameof(descriptionText));
+
+            var enterDescriptionTextbox = IngredientReportDescription(descriptionText);
+
+            enterDescriptionTextbox.FillInWith(descriptionText);
+        }
+
+
+
     }
 }

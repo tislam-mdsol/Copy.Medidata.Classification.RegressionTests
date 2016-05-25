@@ -74,10 +74,6 @@
       <HintPath>..\packages\Medidata.Specrun.Reporting.0.0.5\lib\net45\Medidata.Specrun.Reporting.exe</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
       <Private>True</Private>
@@ -218,10 +214,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>specRaveCoderFormConfigurations.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\specRaveModulesIntegration.feature.cs">
+    <Compile Include="Features\specRaveStepExamples.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>specRaveModulesIntegration.feature</DependentUpon>
+      <DependentUpon>specRaveStepExamples.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -330,9 +326,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>specETE_SpecifyTermsDropdown.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\specRaveModulesIntegration.feature">
+    <None Include="Features\specRaveStepExamples.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>specRaveModulesIntegration.feature.cs</LastGenOutput>
+      <LastGenOutput>specRaveStepExamples.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\specImedidataIntegration.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -344,6 +340,7 @@
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="StaticContent\ErrorGeneratingCRFDraft.xls" />
     <None Include="StaticContent\RaveCoreConfig_eng.xls">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

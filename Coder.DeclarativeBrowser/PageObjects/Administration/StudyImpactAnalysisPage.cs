@@ -289,6 +289,11 @@ namespace Coder.DeclarativeBrowser.PageObjects.Administration
             WaitForMigrationReportToLoad();
         }
 
+        internal void ViewReport()
+        {
+            GetCompletedReportLink().Click(); 
+        }
+
         internal StudyImpactAnalysisActions GetAvailableActions()
         {
             var availableActions = new StudyImpactAnalysisActions
@@ -381,21 +386,98 @@ namespace Coder.DeclarativeBrowser.PageObjects.Administration
 
             _Session.TryUntil(
               () => GetCompletedReportLink(),
-              GetCompletedReportLink,
+              () => GetCompletedReportLink().Exists(),
               options.RetryInterval,
               options);
         }
 
-        private bool GetCompletedReportLink()
+        // TODO: from here and below, need to verify
+
+        private SessionElementScope GetCompletedReportLink()
         {
-            var table = _Session.FindSessionElementById("tableAllReports");
-            if (ReferenceEquals(table, null)) { return false; }
-            var link = table.FindAllSessionElementsByXPath("//input[contains(@id, 'viewReport-')]");
-            var completed = !ReferenceEquals(link, null);
-            return completed;
+            const string xpath = "//*[@id='tableAllReports']/tbody/tr[1]/td[6]/a[contains(@id, 'viewReport-')]";
+            var link = _Session.FindSessionElementById(xpath);
+            return link;
         }
-        
+
+        // Get table  ImpactAnalysisAllReportRow.cs
 
 
+        //======== details page
+        private SessionElementScope GetCodingToNewVersionSynonymButton()
+        {
+            var button = _Session.FindSessionElementById("toNewVersionSynonym-0");
+            return button;
+        }
+        private SessionElementScope GetCodingToNewVersionDirectMatchButton()
+        {
+            var button = _Session.FindSessionElementById("toNewVersionDirectMatch-0");
+            return button;
+        }
+        private SessionElementScope GetPathChangedButton()
+        {
+            var button = _Session.FindSessionElementById("pathChanged-0");
+            return button;
+        }
+        private SessionElementScope GetCasingChangedOnlyButton()
+        {
+            var button = _Session.FindSessionElementById("casingChangedOnly-0");
+            return button;
+        }
+        private SessionElementScope GetObsoleteButton()
+        {
+            var button = _Session.FindSessionElementById("obsolete-0");
+            return button;
+        }
+        private SessionElementScope GetTermNotFoundButton()
+        {
+            var button = _Session.FindSessionElementById("termNotFound-0");
+            return button;
+        }
+
+        private SessionElementScope GetCodingToNewVersionSynonymExportLink()
+        {
+            var link = _Session.FindSessionElementById("exportToNewVersionSynonym-0");
+            return link;
+        }
+        private SessionElementScope GetCodingToNewVersionDirectMatchExportLink()
+        {
+            var link = _Session.FindSessionElementById("exportToNewVersionDirectMatch-0");
+            return link;
+        }
+        private SessionElementScope GetPathChangedExportLink()
+        {
+            var link = _Session.FindSessionElementById("exportPathChanged-0");
+            return link;
+        }
+        private SessionElementScope GetCasingChangedOnlyExportLink()
+        {
+            var link = _Session.FindSessionElementById("exportCasingChangedOnly-0");
+            return link;
+        }
+        private SessionElementScope GetObsoleteExportLink()
+        {
+            var link = _Session.FindSessionElementById("exportObsolete-0");
+            return link;
+        }
+        private SessionElementScope GetTermNotFoundExportLink()
+        {
+            var link = _Session.FindSessionElementById("exportTermNotFound-0");
+            return link;
+        }
+
+        private SessionElementScope GetUpVersionStudyButton()
+        {
+            var button = _Session.FindSessionElementById("UpVersionStudy");
+            return button;
+        }
+        private SessionElementScope GetExportSummaryButton()
+        {
+            var button = _Session.FindSessionElementById("ExportSummary");
+            return button;
+        }
+
+        // Get table rows ImpactAnalysisReportRow.cs
+        // Get table rows ImpactAnalysisReportDetailRow.cs
     }
 }
