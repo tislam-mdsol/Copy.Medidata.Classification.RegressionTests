@@ -74,19 +74,19 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.DescriptionAttribute("A coding decision will be accepted by EDC for a verbatim that has supplemental da" +
             "ta that is not part of the SearchList dropdown values.")]
         [NUnit.Framework.CategoryAttribute("VAL")]
-        [NUnit.Framework.CategoryAttribute("PBMCC57210-001b")]
+        [NUnit.Framework.CategoryAttribute("PBMCC57210.001b")]
         [NUnit.Framework.CategoryAttribute("ReleaseRave2013.2.0")]
         public virtual void ACodingDecisionWillBeAcceptedByEDCForAVerbatimThatHasSupplementalDataThatIsNotPartOfTheSearchListDropdownValues_()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision will be accepted by EDC for a verbatim that has supplemental da" +
                     "ta that is not part of the SearchList dropdown values.", new string[] {
                         "VAL",
-                        "PBMCC57210-001b",
+                        "PBMCC57210.001b",
                         "ReleaseRave2013.2.0"});
 #line 9
 this.ScenarioSetup(scenarioInfo);
 #line 10
- testRunner.Given("a Rave project registration with dictionary \"WhoDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("a Rave project registration with dictionary \"WhoDrug-DDE-B2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -101,7 +101,7 @@ this.ScenarioSetup(scenarioInfo);
                         "IsAutoApproval"});
             table1.AddRow(new string[] {
                         "ETE17",
-                        "Log Search List Supplemental Field",
+                        "Log Search List Supp",
                         "<Dictionary>",
                         "<Locale>",
                         "LLT",
@@ -146,7 +146,7 @@ this.ScenarioSetup(scenarioInfo);
             table3.AddRow(new string[] {
                         "<SourceSystem>",
                         "<SourceSystemStudyDisplayName>",
-                        "WhoDrugDDEB2 - 200703",
+                        "WhoDrug-DDE-B2 - 200703",
                         "ENG",
                         "child advil cold extreme",
                         "Trade Name",

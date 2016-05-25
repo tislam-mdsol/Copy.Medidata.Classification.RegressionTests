@@ -4,10 +4,10 @@
 Feature: Verify using the search list by entering a value not in the options is fully supported and the around trip integration works successfully.
 
 @VAL
-@PBMCC57210-001b
+@PBMCC57210.001b
 @ReleaseRave2013.2.0
 Scenario: A coding decision will be accepted by EDC for a verbatim that has supplemental data that is not part of the SearchList dropdown values.
-	Given a Rave project registration with dictionary "WhoDrugDDEB2 ENG 200703"
+	Given a Rave project registration with dictionary "WhoDrug-DDE-B2 ENG 200703"
 	And Rave Modules App Segment is loaded
  	  And a Rave Coder setup with the following options
       | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
@@ -22,7 +22,7 @@ Scenario: A coding decision will be accepted by EDC for a verbatim that has supp
 	#Then Rave Adverse Events form "ETE17" should not display "child advil cold extreme"
 	Then I verify the following Source Term information is displayed
        | Source System  | Study                          | Dictionary            | Locale | Term                     | Level      | Priority |
-       | <SourceSystem> | <SourceSystemStudyDisplayName> | WhoDrugDDEB2 - 200703 | ENG    | child advil cold extreme | Trade Name | 1        |
+       | <SourceSystem> | <SourceSystemStudyDisplayName> | WhoDrug-DDE-B2 - 200703 | ENG    | child advil cold extreme | Trade Name | 1        |
 	
 @DFT
 @PBMCC57210-001d

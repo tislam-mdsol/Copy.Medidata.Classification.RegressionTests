@@ -1468,7 +1468,8 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
             if (ReferenceEquals(selectListOption, null))
             {
-                selectListOption = selectListOptions.FirstOrDefault(x => x.Text.Contains(targetOptionText, StringComparison.OrdinalIgnoreCase));
+                var nonAlphaNumericOption =targetOptionText.RemoveNonAlphanumeric();
+                selectListOption = selectListOptions.FirstOrDefault(x => x.Text.Contains(nonAlphaNumericOption, StringComparison.OrdinalIgnoreCase));
             }
 
             if (ReferenceEquals(selectListOption, null))
