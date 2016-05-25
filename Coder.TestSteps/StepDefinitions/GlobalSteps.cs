@@ -270,7 +270,16 @@ namespace Coder.TestSteps.StepDefinitions
 
             UploadTemplateRaveArchitectDraft();
         }
-        
+
+        [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "DebugEndToEndDynamicSegment")]
+        public void GivenARaveProjectRegistrationWithDictionaryParallelExecutionDebug(string dictionaryLocaleVersion)
+        {
+            if (String.IsNullOrWhiteSpace(dictionaryLocaleVersion)) throw new ArgumentNullException("dictionaryLocaleVersion");
+
+            SetProjectContext(dictionaryLocaleVersion);
+
+         }
+
         [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndStaticSegment")]
         public void GivenARaveProjectRegistrationWithDictionarySerialExecution(string dictionaryLocaleVersion)
         {

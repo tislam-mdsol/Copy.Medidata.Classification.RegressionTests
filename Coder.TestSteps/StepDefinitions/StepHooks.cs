@@ -69,7 +69,50 @@ namespace Coder.TestSteps.StepDefinitions
 
             WriteSetupDetails(_StepContext.CoderTestUser, newStudyGroup);
         }
-        
+
+        [BeforeScenario("DebugEndToEndDynamicSegment")]
+        public void BeforeDebugEndToEndScenarioDynamicSegment()
+        {
+            var generatedSuffix = SetBrowsingContext();
+
+            var browser = _StepContext.Browser;
+
+            var adminUser = new MedidataUser
+            {
+                Username = Config.AdminLogin,
+                Password = Config.AdminPassword
+            };
+            _StepContext.CoderAdminUser = adminUser;
+
+            //LoginAsAdministrator();
+
+            var newStudyGroup = CreateSegmentSetupData("e01ff725");
+            _StepContext.SegmentUnderTest = newStudyGroup;
+
+            SetSegmentContext(newStudyGroup);
+            MedidataUser newUser = new MedidataUser
+            {
+                Username = "medidatacoder+Mediflexe01ff725@gmail.com",
+                Password = "Password1",
+                Email = "medidatacoder+Mediflexe01ff725@gmail.com",
+                MedidataId = "e01ff725",
+                FirstName = "Coder"
+            };
+            _StepContext.CoderTestUser = newUser;
+            // CreateTestUserContext("58fe2060", newStudyGroup, createNewSegment: false);
+
+            // browser.EnrollSegment(Config.SetupSegment, _StepContext.GetSegment());
+
+            // browser.LogoutOfCoderAndImedidata();
+            //browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
+            // browser.LogoutOfCoderAndImedidata();
+            //CompleteUserRegistration(_StepContext.CoderTestUser, newStudyGroup);
+
+            WriteSetupDetails(_StepContext.CoderTestUser, newStudyGroup);
+            browser.LoginToiMedidata(_StepContext.CoderTestUser.Username, _StepContext.CoderTestUser.Password);
+            _StepContext.DraftName = "RaveCoderDraft";
+        }
+
         [BeforeScenario("EndToEndDynamicStudy")]
         public void BeforeEndToEndScenarioDynamicStudy()
         {

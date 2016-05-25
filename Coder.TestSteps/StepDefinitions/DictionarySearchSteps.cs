@@ -268,6 +268,7 @@ namespace Coder.TestSteps.StepDefinitions
         }
 
         [When(@"task ""(.*)"" is coded to term ""(.*)"" at search level ""(.*)"" with code ""(.*)"" at level ""(.*)"" and a synonym is created")]
+        [Then(@"task ""(.*)"" is coded to term ""(.*)"" at search level ""(.*)"" with code ""(.*)"" at level ""(.*)"" and a synonym is created")]
         public void WhenTaskIsCodedToTermAtSearchLevelWithCodeAtLevelAndASynonymIsCreated(
             string verbatim, string searchText, string searchLevel, string targetCode, string targetLevel)
         {

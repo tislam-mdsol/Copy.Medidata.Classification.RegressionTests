@@ -74,7 +74,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
                     from fieldsGridRow in fieldsGridRows
                     select fieldsGridRow.FindAllSessionElementsByXPath("td")
                     into field
-                    where field[_FieldLabelIndex].Text.Contains(fieldLabel)
+                    where field[_FieldLabelIndex].Text.EqualsIgnoreCase(fieldLabel)
                     select field[_FieldLinkIndex]
                 ).FirstOrDefault();
 
