@@ -320,7 +320,8 @@ namespace Coder.TestSteps.StepDefinitions
                                 SiteName   = siteName,
                                 SiteNumber = siteNumber
                             }
-                        }
+                        },
+                        ProtocolNumber = studyName.Replace("_", "")
                     },
                     new StudySetupData()
                     {
@@ -334,7 +335,8 @@ namespace Coder.TestSteps.StepDefinitions
                                 SiteName   = String.Concat(siteName, " ", userAcceptanceStudySuffix),
                                 SiteNumber = String.Concat(siteNumber, userAcceptanceStudySuffix).RemoveNonAlphanumeric()
                             }
-                        }
+                        },
+                        ProtocolNumber = studyName.Replace("_", "")
                     },
                     new StudySetupData()
                     {
@@ -348,7 +350,8 @@ namespace Coder.TestSteps.StepDefinitions
                                 SiteName   = String.Concat(siteName, " ", developmentStudySuffix),
                                 SiteNumber = String.Concat(siteNumber, developmentStudySuffix).RemoveNonAlphanumeric()
                             }
-                        }
+                        },
+                        ProtocolNumber = studyName.Replace("_", "")
                     }
                 }
             };

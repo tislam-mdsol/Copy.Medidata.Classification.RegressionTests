@@ -101,7 +101,7 @@ this.ScenarioSetup(scenarioInfo);
                         "IsAutoApproval"});
             table1.AddRow(new string[] {
                         "ETE2",
-                        "CoderField2",
+                        "Coding Field",
                         "<Dictionary>",
                         "<Locale>",
                         "LLT",
@@ -114,20 +114,23 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
- testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("adding a new subject \"SUB\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value",
                         "ControlType"});
             table2.AddRow(new string[] {
-                        "Coder Field 2",
+                        "Coding Field",
                         "Adverse Event 4",
                         "LongText"});
 #line 18
  testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table2, "And ");
+#line 21
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Source System",
                         "Study",
                         "Dictionary",
                         "Locale",
@@ -135,16 +138,19 @@ this.ScenarioSetup(scenarioInfo);
                         "Level",
                         "Priority"});
             table3.AddRow(new string[] {
+                        "Rave EDC",
                         "<StudyDisplayName>",
                         "MedDRA - 15.0",
                         "ENG",
                         "Adverse Event 4",
                         "Low Level Term",
                         "1"});
-#line 21
+#line 22
  testRunner.Then("task \"Adverse Event 4\" should contain the following source term information", ((string)(null)), table3, "Then ");
-#line 24
+#line 25
  testRunner.When("the study name is changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Study",
@@ -160,7 +166,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Adverse Event 4",
                         "Low Level Term",
                         "1"});
-#line 25
+#line 27
  testRunner.Then("task \"Adverse Event 4\" should contain the following source term information", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
