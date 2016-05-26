@@ -30,7 +30,7 @@ Scenario: A coding decision will be accepted by EDC for a verbatim that has supp
       | PRODUCT        | 010502 01 001 | CO-ADVIL                                          |
       | PRODUCTSYNONYM | 010502 01 015 | CHILDRENS ADVIL COLD                              |
 
-@DFT
+@VAL
 @PBMCC57210.001d
 @ReleaseRave2013.2.0
 Scenario: A coding decision will be accepted by EDC for a verbatim that is not part of the SearchList dropdown values and has no supplemental term.

@@ -179,14 +179,14 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A coding decision will be accepted by EDC for a verbatim that is not part of the " +
             "SearchList dropdown values and has no supplemental term.")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC57210.001d")]
         [NUnit.Framework.CategoryAttribute("ReleaseRave2013.2.0")]
         public virtual void ACodingDecisionWillBeAcceptedByEDCForAVerbatimThatIsNotPartOfTheSearchListDropdownValuesAndHasNoSupplementalTerm_()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision will be accepted by EDC for a verbatim that is not part of the " +
                     "SearchList dropdown values and has no supplemental term.", new string[] {
-                        "DFT",
+                        "VAL",
                         "PBMCC57210.001d",
                         "ReleaseRave2013.2.0"});
 #line 36

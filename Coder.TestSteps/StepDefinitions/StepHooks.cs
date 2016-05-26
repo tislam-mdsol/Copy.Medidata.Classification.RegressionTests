@@ -73,20 +73,18 @@ namespace Coder.TestSteps.StepDefinitions
         [BeforeScenario("DebugEndToEndDynamicSegment")]
         public void BeforeDebugEndToEndScenarioDynamicSegment()
         {
-            var generatedSuffix = SetBrowsingContext();
+            var generatedSuffix           = SetBrowsingContext();
 
-            var browser = _StepContext.Browser;
+            var browser                   = _StepContext.Browser;
 
-            var adminUser = new MedidataUser
+            var adminUser                 = new MedidataUser
             {
-                Username = Config.AdminLogin,
-                Password = Config.AdminPassword
+                Username                  = Config.AdminLogin,
+                Password                  = Config.AdminPassword
             };
-            _StepContext.CoderAdminUser = adminUser;
+            _StepContext.CoderAdminUser   = adminUser;
 
-            //LoginAsAdministrator();
-
-            var newStudyGroup = CreateSegmentSetupData("e01ff725");
+            var newStudyGroup             = CreateSegmentSetupData("e01ff725");
             _StepContext.SegmentUnderTest = newStudyGroup;
 
             SetSegmentContext(newStudyGroup);
@@ -99,18 +97,10 @@ namespace Coder.TestSteps.StepDefinitions
                 FirstName = "Coder"
             };
             _StepContext.CoderTestUser = newUser;
-            // CreateTestUserContext("58fe2060", newStudyGroup, createNewSegment: false);
-
-            // browser.EnrollSegment(Config.SetupSegment, _StepContext.GetSegment());
-
-            // browser.LogoutOfCoderAndImedidata();
-            //browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
-            // browser.LogoutOfCoderAndImedidata();
-            //CompleteUserRegistration(_StepContext.CoderTestUser, newStudyGroup);
-
+     
             WriteSetupDetails(_StepContext.CoderTestUser, newStudyGroup);
             browser.LoginToiMedidata(_StepContext.CoderTestUser.Username, _StepContext.CoderTestUser.Password);
-            _StepContext.DraftName = "RaveCoderDraft";
+            _StepContext.DraftName     = "RaveCoderDraft";
         }
 
         [BeforeScenario("EndToEndDynamicStudy")]
@@ -461,7 +451,7 @@ namespace Coder.TestSteps.StepDefinitions
                     Console.WriteLine("Error: "+ error.Message);
                 }
 
-                //browser.Dispose();
+                browser.Dispose();
             }
 
             ScenarioContext.Current.Clear();
