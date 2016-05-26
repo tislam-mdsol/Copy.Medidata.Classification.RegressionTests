@@ -25,5 +25,5 @@ Scenario: Changes to a study name in iMedidata should be reflected in existing t
 	When the study name is changed
 	And Coder App Segment is loaded
 	Then task "Adverse Event 4" should contain the following source term information
-       | Study              | Dictionary    | Locale | Term            | Level          | Priority |
-       | <StudyDisplayName> | MedDRA - 15.0 | ENG    | Adverse Event 4 | Low Level Term | 1        |
+       | Source System | Study              | Dictionary    | Locale | Term            | Level          | Priority |
+       | Rave EDC      | <StudyDisplayName> | MedDRA - 15.0 | ENG    | Adverse Event 4 | Low Level Term | 1        |

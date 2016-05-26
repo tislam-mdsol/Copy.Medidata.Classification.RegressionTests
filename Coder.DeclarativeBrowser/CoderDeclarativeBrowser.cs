@@ -1369,12 +1369,14 @@ namespace Coder.DeclarativeBrowser
         public void LogoutOfCoderAndImedidata()
         {
             GoToTaskPage();
-            
-            var pageHeader = Session.GetPageHeader();
-
-            pageHeader.LogoutFromCoder();
-
+            LogoutFromOfCoder();
             Logout();
+        }
+
+        public void LogoutFromOfCoder()
+        {
+            var pageHeader = Session.GetPageHeader();
+            pageHeader.LogoutFromCoder();
         }
 
         //TODO: moved to page object for coding task page, remove this method during refactor story since its still being used

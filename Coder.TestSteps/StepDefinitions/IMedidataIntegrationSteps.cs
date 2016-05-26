@@ -26,9 +26,6 @@ namespace Coder.TestSteps.StepDefinitions
 
             _StepContext    = stepContext;
             _Browser        = _StepContext.Browser;
-
-            var studyName = String.Concat(_StepContext.GetSegment(), DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString());
-
         }
 
         [Given(@"a new study is created in the current study group")]
@@ -40,12 +37,12 @@ namespace Coder.TestSteps.StepDefinitions
         [When(@"the study name is changed")]
         public void WhenTheStudyNameIsChanged()
         {
-            var newName = String.Concat(_StepContext.GetSegment(), DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString());
+            var newName = String.Concat(_StepContext.GetSegment(), "Blake");
 
             var currentStudy = _StepContext.SegmentUnderTest.ProdStudy;
 
             _Browser.UpdateStudyName(currentStudy, newName);
-
+            _Browser.LogoutFromOfCoder();
             _StepContext.SegmentUnderTest.ProdStudy.StudyName = newName;
         }
 

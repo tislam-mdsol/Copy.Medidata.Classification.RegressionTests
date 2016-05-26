@@ -153,6 +153,7 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Source System",
                         "Study",
                         "Dictionary",
                         "Locale",
@@ -160,6 +161,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Level",
                         "Priority"});
             table4.AddRow(new string[] {
+                        "Rave EDC",
                         "<StudyDisplayName>",
                         "MedDRA - 15.0",
                         "ENG",

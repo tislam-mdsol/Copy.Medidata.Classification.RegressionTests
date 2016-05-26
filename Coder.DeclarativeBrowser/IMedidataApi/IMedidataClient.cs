@@ -85,7 +85,7 @@ namespace Coder.DeclarativeBrowser.IMedidataApi
                 var responseStudy = GetResponseObject(
                     () => _HttpClient.PostAsync(requestUri, postContent),GetStudyFromJson);
 
-                study.StudyUuid = responseStudy.uuid;
+                study.StudyUuid = responseStudy.UUID;
             }
         }
 
@@ -203,7 +203,7 @@ namespace Coder.DeclarativeBrowser.IMedidataApi
             var postContent   = new StringContent(postData, Encoding.UTF8, "application/json");
 
             var responseStudy = GetResponseObject(
-                ()            => _HttpClient.PostAsync(requestUri, postContent), GetStudyFromJson);
+                ()            => _HttpClient.PutAsync(requestUri, postContent), GetStudyFromJson);
         }
 
         private string GetNewStudyPostBody(StudySetupData studyInput)
@@ -214,8 +214,10 @@ namespace Coder.DeclarativeBrowser.IMedidataApi
             {
                 name          = studyInput.StudyName,
                 oid           = studyInput.ExternalOid,
+                UUID =  studyInput.StudyUuid,
+                status = "active",
                 is_production = studyInput.IsProduction,
-                phase         = "0",
+                phase         = "None",
                 indication    = "001.9: Cholera, Unspecified"
             };
 
