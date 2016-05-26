@@ -118,7 +118,9 @@ namespace Coder.TestSteps.StepDefinitions
 
         private string SetBrowsingContext()
         {
-            var generatedSuffix            = Guid.NewGuid().GetFirstSection();
+            Random rnd = new Random();
+            var randomSuffix = rnd.Next(1000,10000).ToString();
+            var generatedSuffix            = Guid.NewGuid().GetFirstSection().ToString() + randomSuffix;
 
             _StepContext.DownloadDirectory = CreateUserDirectory(Config.ParentDownloadDirectory, generatedSuffix);
             _StepContext.DumpDirectory     = CreateUserDirectory(Config.ParentDumpDirectory, generatedSuffix);
@@ -418,7 +420,7 @@ namespace Coder.TestSteps.StepDefinitions
                     Console.WriteLine("Error: "+ error.Message);
                 }
 
-                browser.Dispose();
+               // browser.Dispose();
             }
 
             ScenarioContext.Current.Clear();
