@@ -16,7 +16,7 @@
   <add key="RaveAdminPassword"                        value="password"/>
   <add key="SetupSegment"                             value="<%= configured.setup_segment                 || 'MedidataReserved1' %>"/>
   <add key="ETESetupSuffix"                           value="<%= configured.ete_setup_suffix              || '0001' %>"/>
-  <add key="Segment"                                  value="<%= configured.segment                       || 'MDF' %>"/>
+  <add key="Segment"                                  value="<%= configured.segment                       || 'Mediflex' %>"/>
   <add key="Site"                                     value="<%= configured.site                          || 'Active Site' %>"/>
   <add key="LicenseCode"                              value="lc123"/>
   <add key="NewGeneratedSegment"                      value="ProjectStudy1" />

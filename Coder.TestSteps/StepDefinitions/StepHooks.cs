@@ -420,7 +420,7 @@ namespace Coder.TestSteps.StepDefinitions
                     Console.WriteLine("Error: "+ error.Message);
                 }
 
-               // browser.Dispose();
+                browser.Dispose();
             }
 
             ScenarioContext.Current.Clear();
