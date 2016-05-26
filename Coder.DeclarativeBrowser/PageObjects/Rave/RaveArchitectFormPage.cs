@@ -9,9 +9,10 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
     internal sealed class RaveArchitectFormPage
     {
         private readonly BrowserSession _Session;
-        
+
         private const int _FieldLabelIndex = 3;
-        private const int _FieldLinkIndex  = 6;
+        private const int _FieldNameIndex = 2;
+        private const int _FieldLinkIndex = 6;
 
         private const string _RaveDictionaryCoderPrefix = "CODER";
 
@@ -59,9 +60,9 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             return fieldsGridRows.ToList();
         }
 
-        private SessionElementScope GetFieldLink(string fieldLabel)
+        private SessionElementScope GetFieldLink(string fieldLabelOrName)
         {
-            if (String.IsNullOrWhiteSpace(fieldLabel)) throw new ArgumentNullException("fieldLabel");
+            if (String.IsNullOrWhiteSpace(fieldLabelOrName)) throw new ArgumentNullException("fieldLabel");
 
             var fieldsGridRows = GetFieldsGridRows();
             if (!fieldsGridRows.Any())
@@ -74,7 +75,8 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
                     from fieldsGridRow in fieldsGridRows
                     select fieldsGridRow.FindAllSessionElementsByXPath("td")
                     into field
-                    where field[_FieldLabelIndex].Text.EqualsIgnoreCase(fieldLabel)
+                    where (field[_FieldLabelIndex].Text.EqualsIgnoreCase(fieldLabelOrName))
+                    || (field[_FieldNameIndex].Text.EqualsIgnoreCase(fieldLabelOrName))
                     select field[_FieldLinkIndex]
                 ).FirstOrDefault();
 
@@ -95,41 +97,41 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             return formLabel;
         }
 
-        private void SelectField(string fieldLabel)
+        private void SelectField(string fieldLabelOrName)
         {
-            if (String.IsNullOrWhiteSpace(fieldLabel)) throw new ArgumentNullException("fieldLabel");
+            if (String.IsNullOrWhiteSpace(fieldLabelOrName)) throw new ArgumentNullException("fieldLabelOrName");
 
-            var fieldLink = GetFieldLink(fieldLabel);
+            var fieldLink = GetFieldLink(fieldLabelOrName);
 
             if (ReferenceEquals(fieldLink, null))
             {
-                throw new MissingHtmlException(String.Format("Field, {0}, was not found.", fieldLabel));
+                throw new MissingHtmlException(String.Format("Field, {0}, was not found. You ma need to use truncated field label or correct field name for the given form", fieldLabelOrName));
             }
 
             fieldLink.Click();
         }
 
-        internal void SetCoderCodingDictionary(string fieldLabel, string coderDictionary)
+        internal void SetCoderCodingDictionary(string fieldLabelOrName, string coderDictionary)
         {
-            if (String.IsNullOrWhiteSpace(fieldLabel))       throw new ArgumentNullException("fieldLabel");
-            if (String.IsNullOrWhiteSpace(coderDictionary))  throw new ArgumentNullException("coderDictionary");
+            if (String.IsNullOrWhiteSpace(fieldLabelOrName)) throw new ArgumentNullException("fieldLabelOrName");
+            if (String.IsNullOrWhiteSpace(coderDictionary)) throw new ArgumentNullException("coderDictionary");
 
             string raveDictionary = _RaveDictionaryCoderPrefix + coderDictionary;
 
-            SetCodingDictionary(fieldLabel, raveDictionary);
+            SetCodingDictionary(fieldLabelOrName, raveDictionary);
         }
 
-        internal void SetCodingDictionary(string fieldLabel, string dictionaryName)
+        internal void SetCodingDictionary(string fieldLabelOrName, string dictionaryName)
         {
-            if (String.IsNullOrWhiteSpace(fieldLabel))      throw new ArgumentNullException("fieldLabel");
-            if (String.IsNullOrWhiteSpace(dictionaryName))  throw new ArgumentNullException("dictionaryName");
+            if (String.IsNullOrWhiteSpace(fieldLabelOrName)) throw new ArgumentNullException("fieldLabelOrName");
+            if (String.IsNullOrWhiteSpace(dictionaryName)) throw new ArgumentNullException("dictionaryName");
 
-            SelectField(fieldLabel);
+            SelectField(fieldLabelOrName);
 
             var codingDictionarySelectList = GetCodingDictionarySelectList();
 
             codingDictionarySelectList.SelectClosestOption(dictionaryName);
-            
+
             GetSaveButton().Click();
         }
 
@@ -141,9 +143,9 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
 
             var codingDictionarySelectList = GetCodingDictionarySelectList();
 
-            var raveDictionary     = codingDictionarySelectList.SelectedOption;
+            var raveDictionary = codingDictionarySelectList.SelectedOption;
             var coderDictionaryRaw = raveDictionary.Replace(_RaveDictionaryCoderPrefix, String.Empty);
-            var coderDictionary    = coderDictionaryRaw.RemoveNonAlphanumeric();
+            var coderDictionary = coderDictionaryRaw.RemoveNonAlphanumeric();
 
             return coderDictionary;
         }
