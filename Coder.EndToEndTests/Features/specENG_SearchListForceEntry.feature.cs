@@ -111,7 +111,7 @@ this.ScenarioSetup(scenarioInfo);
                         "false",
                         "SEARCHLIST"});
 #line 12
-    testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
+  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
 #line 15
  testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -126,15 +126,19 @@ this.ScenarioSetup(scenarioInfo);
                         "Coding Field",
                         "child advil cold extreme",
                         ""});
+            table2.AddRow(new string[] {
+                        "Log Search List Supplemental Field",
+                        "Extra Strength",
+                        "SearchList"});
 #line 17
  testRunner.And("adding a new verbatim term to form \"ETE17\"", ((string)(null)), table2, "And ");
-#line 20
- testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
   testRunner.And("task \"child advil cold extreme\" is coded to term \"CHILDRENS ADVIL COLD\" at search" +
                     " level \"Trade Name\" with code \"010502 01 015\" at level \"TN\" and a synonym is cre" +
                     "ated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 22
+#line 23
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -165,7 +169,7 @@ this.ScenarioSetup(scenarioInfo);
                         "PRODUCTSYNONYM",
                         "010502 01 015",
                         "CHILDRENS ADVIL COLD"});
-#line 23
+#line 24
     testRunner.Then("the coding decision for verbatim \"child advil cold extreme\" on form \"ETE17\" for f" +
                     "ield \"Coding Field\" contains the following data", ((string)(null)), table3, "Then ");
 #line hidden
@@ -174,22 +178,22 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A coding decision will be accepted by EDC for a verbatim that is not part of the " +
-            "SearchList dropdown values.")]
+            "SearchList dropdown values and has no supplemental term.")]
         [NUnit.Framework.CategoryAttribute("DFT")]
-        [NUnit.Framework.CategoryAttribute("PBMCC57210-001d")]
+        [NUnit.Framework.CategoryAttribute("PBMCC57210.001d")]
         [NUnit.Framework.CategoryAttribute("ReleaseRave2013.2.0")]
-        public virtual void ACodingDecisionWillBeAcceptedByEDCForAVerbatimThatIsNotPartOfTheSearchListDropdownValues_()
+        public virtual void ACodingDecisionWillBeAcceptedByEDCForAVerbatimThatIsNotPartOfTheSearchListDropdownValuesAndHasNoSupplementalTerm_()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision will be accepted by EDC for a verbatim that is not part of the " +
-                    "SearchList dropdown values.", new string[] {
+                    "SearchList dropdown values and has no supplemental term.", new string[] {
                         "DFT",
-                        "PBMCC57210-001d",
+                        "PBMCC57210.001d",
                         "ReleaseRave2013.2.0"});
-#line 35
-this.ScenarioSetup(scenarioInfo);
 #line 36
- testRunner.Given("a Rave project registration with dictionary \"WhoDrug-DDE-B2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 37
+ testRunner.Given("a Rave project registration with dictionary \"WhoDrug-DDE-B2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 38
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -200,24 +204,22 @@ this.ScenarioSetup(scenarioInfo);
                         "CodingLevel",
                         "Priority",
                         "IsApprovalRequired",
-                        "IsAutoApproval",
-                        "SupplementalTerms"});
+                        "IsAutoApproval"});
             table4.AddRow(new string[] {
                         "ETE17",
-                        "Log Search List Supplemental Field",
+                        "Log Search List Supp...",
                         "<Dictionary>",
                         "",
                         "PRODUCTSYNONYM",
                         "1",
                         "false",
-                        "false",
-                        "SEARCHLIST"});
-#line 38
-    testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table4, "And ");
-#line 41
+                        "false"});
+#line 39
+  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table4, "And ");
+#line 42
  testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 42
+#line 43
  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -228,14 +230,14 @@ this.ScenarioSetup(scenarioInfo);
                         "Log Search List Supplemental Field",
                         "child advil cold extreme",
                         "SearchList"});
-#line 43
+#line 44
  testRunner.And("adding a new verbatim term to form \"ETE17\"", ((string)(null)), table5, "And ");
-#line 46
- testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
   testRunner.And("task \"child advil cold extreme\" is coded to term \"CO-ADVIL\" at search level \"Pref" +
                     "erred Name\" with code \"010502 01 001\" at level \"PN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
+#line 49
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -262,9 +264,9 @@ this.ScenarioSetup(scenarioInfo);
                         "PRODUCT",
                         "010502 01 001",
                         "CO-ADVIL"});
-#line 49
+#line 50
     testRunner.Then("the coding decision for verbatim \"child advil cold extreme\" on form \"ETE17\" for f" +
-                    "ield \"Coding Field\" contains the following data", ((string)(null)), table6, "Then ");
+                    "ield \"Log Search List Supplemental Field\" contains the following data", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
