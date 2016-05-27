@@ -152,7 +152,7 @@ namespace Coder.DeclarativeBrowser
             if (String.IsNullOrWhiteSpace(segmentNamePrefix)) throw new ArgumentNullException("segmentNamePrefix");
 
             var iMedidataString = iMedidataIdGuid.ToString();
-            var segmentSuffix   = iMedidataIdGuid.GetFirstSection();
+            var segmentSuffix   = iMedidataIdGuid.GetFirstSectionAppendedWithRandomNumbers();
             var segmentName     = String.Concat(segmentNamePrefix, segmentSuffix);
             int segmentId       = 0;
 
@@ -222,7 +222,7 @@ namespace Coder.DeclarativeBrowser
         {
             if (ReferenceEquals(db, null)) throw new ArgumentNullException("db");
 
-            var segmentSuffix   = iMedidataSegmentGuid.GetFirstSection();
+            var segmentSuffix   = iMedidataSegmentGuid.GetFirstSectionAppendedWithRandomNumbers();
             var imedidataUserId = iMedidataUserGuid.ToString();
             var lastName        = segmentSuffix;
             var login           = String.Concat(_FirstName, lastName);

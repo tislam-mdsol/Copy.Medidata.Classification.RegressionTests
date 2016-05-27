@@ -718,7 +718,7 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.DescriptionAttribute("Setup Rave study, enter verbatim in Rave, code verbatim in Coder, verify results " +
             "in Rave, reconsider verbatim in Coder and recode it to different term, verify up" +
             "dated results in Rave")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("ETE_JPN_Rave_coder_reconsider_verbatim")]
         [NUnit.Framework.CategoryAttribute("PB1.1.2.006J")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
@@ -727,7 +727,7 @@ namespace Coder.EndToEndTests.Features
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Setup Rave study, enter verbatim in Rave, code verbatim in Coder, verify results " +
                     "in Rave, reconsider verbatim in Coder and recode it to different term, verify up" +
                     "dated results in Rave", new string[] {
-                        "DFT",
+                        "VAL",
                         "ETE_JPN_Rave_coder_reconsider_verbatim",
                         "PB1.1.2.006J",
                         "Release2016.1.0"});

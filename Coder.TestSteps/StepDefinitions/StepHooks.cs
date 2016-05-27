@@ -151,7 +151,7 @@ namespace Coder.TestSteps.StepDefinitions
 
         private string SetBrowsingContext()
         {
-            var generatedSuffix            = Guid.NewGuid().GetFirstSection();
+            var generatedSuffix            = Guid.NewGuid().GetFirstSectionAppendedWithRandomNumbers();
 
             _StepContext.DownloadDirectory = CreateUserDirectory(Config.ParentDownloadDirectory, generatedSuffix);
             _StepContext.DumpDirectory     = CreateUserDirectory(Config.ParentDumpDirectory, generatedSuffix);
