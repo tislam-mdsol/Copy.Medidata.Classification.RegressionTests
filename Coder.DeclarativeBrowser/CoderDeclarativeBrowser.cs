@@ -599,26 +599,30 @@ namespace Coder.DeclarativeBrowser
             bool coderActive = coderHeader.IMedidataLinkExists();
             bool raveActive = raveHeader.IMedidataLinkExists();
             bool imedidataActive = imedidataPage.IMedidataLinkExists();
-            
-            if (!coderActive && !raveActive && !imedidataActive)
-            {
-                throw new InvalidOperationException("IMedidata Link could not be found.");
-            }
 
-            if (coderActive)
-            {
-                coderHeader.GoToIMedidata();
-            }
+            var attempt = RetryPolicy.ValidateOperation.ExecuteAndCapture(
+              () =>
+              {
+                  if (!coderActive && !raveActive && !imedidataActive)
+                  {
+                      throw new InvalidOperationException("IMedidata Link could not be found.");
+                  }
 
-            if (raveActive)
-            {
-                raveHeader.GoToIMedidata();
-            }
+                  if (coderActive)
+                  {
+                      coderHeader.GoToIMedidata();
+                  }
 
-            if (imedidataActive)
-            {
-                imedidataPage.GoToIMedidata();
-            }
+                  if (raveActive)
+                  {
+                      raveHeader.GoToIMedidata();
+                  }
+
+                  if (imedidataActive)
+                  {
+                      imedidataPage.GoToIMedidata();
+                  }
+              });
         }
         
         public void LoginToRave(MedidataUser user)
