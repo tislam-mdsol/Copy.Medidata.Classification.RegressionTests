@@ -230,7 +230,7 @@ namespace Coder.DeclarativeBrowser.IMedidataApi
 
             var postObject = new IMedidataAPIUser
             {
-                login             = Guid.NewGuid().GetFirstSection(),
+                login             = Guid.NewGuid().GetFirstSectionAppendedWithRandomNumbers(),
                 email             = userName.CreateUserEmail(),
                 password          = Config.NewUserPassword,
                 locale            = Config.NewUserLocale,
