@@ -21,14 +21,14 @@ namespace Coder.EndToEndTests.Features
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Test full round trip integration from Rave to Coder.  New features converted from" +
         " ETE_ENGRaveCoder_BasicSubmissions.feature from task MCC-208901")]
-    [NUnit.Framework.CategoryAttribute("specETE_Rave_coder_basic_submissions.feature")]
+    [NUnit.Framework.CategoryAttribute("specETE_ENG_Rave_coder_basic_submissions.feature")]
     [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
     public partial class TestFullRoundTripIntegrationFromRaveToCoder_NewFeaturesConvertedFromETE_ENGRaveCoder_BasicSubmissions_FeatureFromTaskMCC_208901Feature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "specETE_Rave_coder_basic_submissions.feature"
+#line 1 "specETE_ENGRave_coder_basic_submissions.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
@@ -37,7 +37,7 @@ namespace Coder.EndToEndTests.Features
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Test full round trip integration from Rave to Coder.  New features converted from" +
                     " ETE_ENGRaveCoder_BasicSubmissions.feature from task MCC-208901", "", ProgrammingLanguage.CSharp, new string[] {
-                        "specETE_Rave_coder_basic_submissions.feature",
+                        "specETE_ENG_Rave_coder_basic_submissions.feature",
                         "EndToEndDynamicSegment"});
             testRunner.OnFeatureStart(featureInfo);
         }
