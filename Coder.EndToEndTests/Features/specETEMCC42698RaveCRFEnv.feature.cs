@@ -75,7 +75,7 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("When pushing a CRF version that contains Coder settings and environment selected " +
             "is not linked to iMedidata, produce an error message.")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("ETE_RaveCoderCore")]
         [NUnit.Framework.CategoryAttribute("PBMCC42698_001")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
@@ -84,7 +84,7 @@ namespace Coder.EndToEndTests.Features
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When pushing a CRF version that contains Coder settings and environment selected " +
                     "is not linked to iMedidata, produce an error message.", new string[] {
-                        "DFT",
+                        "VAL",
                         "ETE_RaveCoderCore",
                         "PBMCC42698_001",
                         "Release2016.1.0",
@@ -136,6 +136,7 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.CategoryAttribute("ETE_RaveCoderCore")]
         [NUnit.Framework.CategoryAttribute("PBMCC42698_002")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
         public virtual void WhenPushingACRFVersionThatContainsCoderSettingsAndEnvironmentSelectedIsLinkedToIMedidataAllowPushToComplete()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When pushing a CRF version that contains Coder settings and environment selected " +
@@ -143,12 +144,13 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "ETE_RaveCoderCore",
                         "PBMCC42698_002",
-                        "Release2016.1.0"});
-#line 28
+                        "Release2016.1.0",
+                        "EndToEndDynamicSegment"});
+#line 29
 this.ScenarioSetup(scenarioInfo);
-#line 30
-    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 31
+    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 32
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -169,12 +171,12 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "true",
                         "true"});
-#line 32
+#line 33
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table2, "And ");
-#line 35
+#line 36
     testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"UAT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 36
+#line 37
     testRunner.Then("CRF was published and pushed with the following message \"successfully pushed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

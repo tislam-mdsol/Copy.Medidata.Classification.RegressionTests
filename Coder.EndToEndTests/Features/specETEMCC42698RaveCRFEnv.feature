@@ -3,7 +3,7 @@
 Feature: Handles the CRF versioning for different project environment scenarios, such as a user should not be able to push a CRF version that contains Coder settings to a study environment that is not linked to iMedidata.
 	
 
-@DFT
+@VAL
 @ETE_RaveCoderCore
 @PBMCC42698_001
 @Release2016.1.0
@@ -25,6 +25,7 @@ Scenario: When pushing a CRF version that contains Coder settings and environmen
 @ETE_RaveCoderCore
 @PBMCC42698_002
 @Release2016.1.0
+@EndToEndDynamicSegment
 Scenario: When pushing a CRF version that contains Coder settings and environment selected is linked to iMedidata, allow push to complete
 
     Given a Rave project registration with dictionary "MedDRA ENG 12.0"
