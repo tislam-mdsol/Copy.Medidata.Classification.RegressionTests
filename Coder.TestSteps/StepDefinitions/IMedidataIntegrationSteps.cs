@@ -15,9 +15,10 @@ namespace Coder.TestSteps.StepDefinitions
     [Binding]
     public class IMedidataIntegrationSteps
     {
-        private readonly CoderDeclarativeBrowser    _Browser;
-        private readonly StepContext                _StepContext;
-        private StudySetupData _MedidataStudy;
+        private readonly CoderDeclarativeBrowser _Browser;
+        private readonly StepContext             _StepContext;
+        private StudySetupData                   _MedidataStudy;
+        private const string                     NewStudySuffix = "12345";
 
         public IMedidataIntegrationSteps(StepContext stepContext)
         {
@@ -37,7 +38,7 @@ namespace Coder.TestSteps.StepDefinitions
         [When(@"the study name is changed")]
         public void WhenTheStudyNameIsChanged()
         {
-            var newName = String.Concat(_StepContext.GetSegment(), "Blake");
+            var newName = String.Concat(_StepContext.GetSegment(), NewStudySuffix);
 
             var currentStudy = _StepContext.SegmentUnderTest.ProdStudy;
 
