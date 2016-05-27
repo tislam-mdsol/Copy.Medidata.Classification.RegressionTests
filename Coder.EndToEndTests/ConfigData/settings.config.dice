@@ -68,4 +68,5 @@
   <add key="MaximumDeliveries"                        value="<%= configured.maximum_message_deliveries      || '3'                                                  %>"/>
   <add key="SubsystemName"                            value="<%= configured.subsystemName                   || 'Coder.RegressionTests'                              %>"/>
   <add key="ArchonPollingTimeInterval"                value="<%= configured.polling_time_interval           || '5000'                                               %>"/>
-</appSettings>
+  <add key="RaveDictionaryCoderPrefix"                value="<%= configured.rave_dictionary_coder_prefix    || 'CODER'                                              %>"/>
+  </appSettings>

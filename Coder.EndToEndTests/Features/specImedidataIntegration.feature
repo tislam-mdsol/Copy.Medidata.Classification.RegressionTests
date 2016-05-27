@@ -63,10 +63,9 @@ Scenario: Changes to a study name in iMedidata should allow proejcts to be regis
 	Given a Rave project registration with dictionary "MedDRA ENG 15.0"
 	When Coder App Segment is loaded
 	And the study name is changed
-	When a Rave project registration with dictionary "WhoDrug-DDE-B2 ENG 15.0"
+	When a Rave project registration with dictionary "WhoDrug-DDE-B2 ENG 201503"
 	And Rave Modules App Segment is loaded
 	And a Rave Coder setup is configured with the following options
-	| Form | Field       | Dictionary              | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
-	| ETE3 | Coder Field | WhoDrug-DDE-B2 ENG 15.0 | <Locale> | PRODUCT     | 1        | true               | true           |
-	Then verify dictionary "WhoDrug-DDE-B2 ENG 15.0" is an option for new study
-	#make a step where it bools to check if the following failed or just use that step in coding dictionary on forms architect
+	| Form | Field        | Dictionary     | Locale | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
+	| ETE3 | Coding Field | WhoDrug-DDE-B2 |        | PRODUCT     | 1        | true               | true           |
+	Then verify coding dictionary "WHODrug-DDE-B2" is an option on Rave form "ETE3"

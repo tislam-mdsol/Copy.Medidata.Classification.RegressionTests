@@ -14,8 +14,6 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
         private const int _FieldNameIndex = 2;
         private const int _FieldLinkIndex = 6;
 
-        private const string _RaveDictionaryCoderPrefix = "CODER";
-
         internal RaveArchitectFormPage(BrowserSession session)
         {
             if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
@@ -116,7 +114,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             if (String.IsNullOrWhiteSpace(fieldLabelOrName)) throw new ArgumentNullException("fieldLabelOrName");
             if (String.IsNullOrWhiteSpace(coderDictionary)) throw new ArgumentNullException("coderDictionary");
 
-            string raveDictionary = _RaveDictionaryCoderPrefix + coderDictionary;
+            string raveDictionary = Config.RaveDictionaryCoderPrefix + coderDictionary;
 
             SetCodingDictionary(fieldLabelOrName, raveDictionary);
         }
@@ -144,7 +142,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             var codingDictionarySelectList = GetCodingDictionarySelectList();
 
             var raveDictionary = codingDictionarySelectList.SelectedOption;
-            var coderDictionaryRaw = raveDictionary.Replace(_RaveDictionaryCoderPrefix, String.Empty);
+            var coderDictionaryRaw = raveDictionary.Replace(Config.RaveDictionaryCoderPrefix, String.Empty);
             var coderDictionary = coderDictionaryRaw.RemoveNonAlphanumeric();
 
             return coderDictionary;
@@ -161,5 +159,11 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             GetCoderConfigurationButton().Click();
         }
 
+        internal IEnumerable<string> GetAvailableCodingDictionaries()
+        {
+            var availableCodingDictionaries = GetCodingDictionarySelectList().GetSelectListOptions();
+
+            return availableCodingDictionaries;
+        }
     }
 }

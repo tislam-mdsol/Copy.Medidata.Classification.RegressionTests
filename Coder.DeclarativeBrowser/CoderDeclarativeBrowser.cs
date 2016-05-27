@@ -1207,7 +1207,19 @@ namespace Coder.DeclarativeBrowser
                 raveCoderConfigurationPage.SetCoderConfiguration(coderConfiguration);
             }
         }
-        
+
+        public IEnumerable<string> GetAvailableCodingDictionariesFromArchitect(RaveArchitectRecordTarget target, string formName)
+        {
+            if (ReferenceEquals(target, null))       throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(formName)) throw new ArgumentNullException(formName);
+
+            target.FormName                 = formName;
+            var raveFormPage                = Session.OpenRaveArchitectFormPage(target);
+            var availableCodingDictionaries = raveFormPage.GetAvailableCodingDictionaries();
+
+            return availableCodingDictionaries;
+        }
+
         public IList<RaveCoderFieldConfiguration> GetCoderConfigurationForRaveFields(RaveArchitectRecordTarget target, IList<RaveCoderFieldConfiguration> expectedCoderConfigurations)
         {
             if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");

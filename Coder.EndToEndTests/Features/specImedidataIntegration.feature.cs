@@ -287,7 +287,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 65
  testRunner.And("the study name is changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 66
- testRunner.When("a Rave project registration with dictionary \"WhoDrug-DDE-B2 ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("a Rave project registration with dictionary \"WhoDrug-DDE-B2 ENG 201503\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 67
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -302,9 +302,9 @@ this.ScenarioSetup(scenarioInfo);
                         "IsAutoApproval"});
             table8.AddRow(new string[] {
                         "ETE3",
-                        "Coder Field",
-                        "WhoDrug-DDE-B2 ENG 15.0",
-                        "<Locale>",
+                        "Coding Field",
+                        "WhoDrug-DDE-B2",
+                        "",
                         "PRODUCT",
                         "1",
                         "true",
@@ -312,7 +312,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 68
  testRunner.And("a Rave Coder setup is configured with the following options", ((string)(null)), table8, "And ");
 #line 71
- testRunner.Then("verify dictionary \"WhoDrug-DDE-B2 ENG 15.0\" is an option for new study", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("verify coding dictionary \"WHODrug-DDE-B2\" is an option on Rave form \"ETE3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
