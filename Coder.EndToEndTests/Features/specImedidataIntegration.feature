@@ -48,7 +48,7 @@ Scenario: Changes to a study name in iMedidata should allow queries to still be 
 	 | ETE1 | Coding Field | <Dictionary> | <Locale> | LLT         | 1        | true               | true           |
 	When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "SUB"
-	And adding a new verbatim term to form "ETE2"
+	And adding a new verbatim term to form "ETE1"
 	| Field        | Value           | ControlType |
 	| Coding Field | Adverse Event 1 | LongText    |
 	And Coder App Segment is loaded
@@ -56,8 +56,7 @@ Scenario: Changes to a study name in iMedidata should allow queries to still be 
 	And Coder App Segment is loaded
 	And I open a query for task "Adverse Event 1" with comment "Open query due to bad term"
 	And Rave Modules App Segment is loaded
-	Then verify a query is open for form "ETE1" field "Coder Field" term "Adverse Event 1"
-	#check the audit trail or text
+	Then the coder query "Open query due to bad term" is available to the Rave form "ETE1" field "Coding Field" with verbatim term "Adverse Event 1"
 
 
 Scenario: Changes to a study name in iMedidata should allow proejcts to be registered
