@@ -41,7 +41,7 @@
   <add key="BuildAgentScreenWidth"                    value="1024" />
   <add key="BuildAgentScreenHeight"                   value="768" />
   <add key="DefaultSynonymListName"                   value="Primary List" />
-  <add key="StudyNamePrefix"                          value="<%= configured.study_name_prefix               || 'Mediflex' %>" />
+  <add key="StudyNamePrefix"                          value="<%= configured.study_name_prefix               || 'MDF' %>" />
   <add key="TestSegmentCustomer"                      value="<%= configured.ete_segment_customer            || 'Medidata Testing'%>" />
   <add key="StudyName"                                value="<%= configured.study_name                      || 'Mediflex' %>" />
   <add key="EdcAppName"                               value="<%= configured.ete_edc_app_name %>" />
@@ -51,7 +51,6 @@
   <add key="ArchitectRolesAppName"                    value="<%= configured.ete_architect_roles_app_name %>" />
   <add key="SafetyGatewayMappingAppName"              value="<%= configured.ete_safety_gateway_mapping_app_name %>" />
   <add key="SafetyGatewayManagementAppName"           value="<%= configured.ete_safety_gateway_mgmt_app_name %>" />
-  <add key="StudyNamePrefix"                          value="<%= configured.study_name_prefix               || 'Mediflex' %>" />
   <add key="IMedidataAppId"                           value="<%= configured.app_uuid  %>" />
   <add key="EdcAppRole"                               value="<%= configured.ete_edc_app_name_role           || 'Power User' %>" />
   <add key="EdcModulesAppRole"                        value="<%= configured.ete_modules_app_role            || 'All Modules' %>" />

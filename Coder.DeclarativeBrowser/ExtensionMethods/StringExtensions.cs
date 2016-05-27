@@ -359,10 +359,13 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             return adverseEventText;
         }
 
-        public static string GetFirstSection(this Guid guid)
+        public static string GetFirstSectionAppendedWithRandomNumbers(this Guid guid)
         {
+            Random rnd = new Random();
+            var randomSuffix = rnd.Next(1000, 10000).ToString();
+
             var guidString = guid.ToString();
-            var suffix = guidString.Substring(0, guidString.IndexOf('-'));
+            var suffix = guidString.Substring(0, guidString.IndexOf('-')) + randomSuffix;
 
             return suffix;
         }

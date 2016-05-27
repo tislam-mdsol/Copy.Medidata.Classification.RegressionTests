@@ -185,7 +185,7 @@ Feature: Test the full round trip integration from Rave to Coder back to Rave fo
       | LLT   | 10019211 | 頭痛        |
 
 
-  @DFT
+  @VAL
   @ETE_JPN_Rave_coder_reconsider_verbatim
   @PB1.1.2.006J
   @Release2016.1.0

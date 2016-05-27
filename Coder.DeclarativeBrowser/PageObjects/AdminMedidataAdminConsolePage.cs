@@ -51,7 +51,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             GetDictionaryDDL().SelectOptionAlphanumericOnly(dictionary);
             GetSegmentsDDL().SelectOptionAlphanumericOnly(segment);
             GetNewDictionaryLicensePlusButton().Click();
-            GetLicenseCodeTextBox().FillInWith(Guid.NewGuid().GetFirstSection());
+            GetLicenseCodeTextBox().FillInWith(Guid.NewGuid().GetFirstSectionAppendedWithRandomNumbers());
             GetLicenseStartDDL().FillInWith(DateTime.Today.Date.AddYears(-10).ToShortDateString());
             GetLicenseEndDDL().FillInWith(DateTime.Today.Date.AddYears(10).ToShortDateString());
             GetEdittingRowCheckMarkButton().Click();
