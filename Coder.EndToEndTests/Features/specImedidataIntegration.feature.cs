@@ -73,14 +73,14 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Changes to a study name in iMedidata should be reflected in existing tasks in the" +
             " coding system")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
         [NUnit.Framework.CategoryAttribute("PBMCC_182173_001")]
         public virtual void ChangesToAStudyNameInIMedidataShouldBeReflectedInExistingTasksInTheCodingSystem()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changes to a study name in iMedidata should be reflected in existing tasks in the" +
                     " coding system", new string[] {
-                        "DFT",
+                        "VAL",
                         "Release2016.1.0",
                         "PBMCC_182173_001"});
 #line 9
@@ -209,14 +209,20 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Changes to a study name in iMedidata should allow queries to still be opened")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_182173_002")]
         public virtual void ChangesToAStudyNameInIMedidataShouldAllowQueriesToStillBeOpened()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changes to a study name in iMedidata should allow queries to still be opened", ((string[])(null)));
-#line 42
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changes to a study name in iMedidata should allow queries to still be opened", new string[] {
+                        "VAL",
+                        "Release2016.1.0",
+                        "PBMCC_182173_002"});
 #line 44
+this.ScenarioSetup(scenarioInfo);
+#line 46
  testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 45
+#line 47
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -237,12 +243,12 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "true",
                         "true"});
-#line 46
+#line 48
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table6, "And ");
-#line 49
+#line 51
  testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 50
+#line 52
  testRunner.And("adding a new subject \"SUB\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -253,20 +259,20 @@ this.ScenarioSetup(scenarioInfo);
                         "Coding Field",
                         "Adverse Event 1",
                         "LongText"});
-#line 51
+#line 53
  testRunner.And("adding a new verbatim term to form \"ETE1\"", ((string)(null)), table7, "And ");
-#line 54
- testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
- testRunner.And("the study name is changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
  testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 57
+ testRunner.And("the study name is changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 59
  testRunner.And("I open a query for task \"Adverse Event 1\" with comment \"Open query due to bad ter" +
                     "m\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
+#line 60
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
+#line 61
  testRunner.Then("the coder query \"Open query due to bad term\" is available to the Rave form \"ETE1\"" +
                     " field \"Coding Field\" with verbatim term \"Adverse Event 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -275,20 +281,26 @@ this.ScenarioSetup(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Changes to a study name in iMedidata should allow proejcts to be registered")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_182173_003")]
         public virtual void ChangesToAStudyNameInIMedidataShouldAllowProejctsToBeRegistered()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changes to a study name in iMedidata should allow proejcts to be registered", ((string[])(null)));
-#line 62
-this.ScenarioSetup(scenarioInfo);
-#line 63
- testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 64
- testRunner.When("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 65
- testRunner.And("the study name is changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
- testRunner.When("a Rave project registration with dictionary \"WhoDrug-DDE-B2 ENG 201503\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Changes to a study name in iMedidata should allow proejcts to be registered", new string[] {
+                        "VAL",
+                        "Release2016.1.0",
+                        "PBMCC_182173_003"});
 #line 67
+this.ScenarioSetup(scenarioInfo);
+#line 69
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 70
+ testRunner.When("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 71
+ testRunner.And("the study name is changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+ testRunner.When("a Rave project registration with dictionary \"WhoDrug-DDE-B2 ENG 201503\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 73
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -309,9 +321,9 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "true",
                         "true"});
-#line 68
+#line 74
  testRunner.And("a Rave Coder setup is configured with the following options", ((string)(null)), table8, "And ");
-#line 71
+#line 77
  testRunner.Then("verify coding dictionary \"WHODrug-DDE-B2\" is an option on Rave form \"ETE3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

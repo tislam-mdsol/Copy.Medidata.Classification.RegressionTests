@@ -3,7 +3,7 @@
 
 Feature: The following scenarios will validate the behavior of the integration between the coding system and iMedidata
 
-@DFT
+@VAL
 @Release2016.1.0
 @PBMCC_182173_001
 Scenario: Changes to a study name in iMedidata should be reflected in existing tasks in the coding system
@@ -38,7 +38,9 @@ Scenario: Changes to a study name in iMedidata should be reflected in existing t
       | LLT   | 10019198 | Head pain                |
 
 
-
+@VAL
+@Release2016.1.0
+@PBMCC_182173_002
 Scenario: Changes to a study name in iMedidata should allow queries to still be opened
 
 	Given a Rave project registration with dictionary "MedDRA ENG 15.0"
@@ -59,7 +61,11 @@ Scenario: Changes to a study name in iMedidata should allow queries to still be 
 	Then the coder query "Open query due to bad term" is available to the Rave form "ETE1" field "Coding Field" with verbatim term "Adverse Event 1"
 
 
+@VAL
+@Release2016.1.0
+@PBMCC_182173_003
 Scenario: Changes to a study name in iMedidata should allow proejcts to be registered
+
 	Given a Rave project registration with dictionary "MedDRA ENG 15.0"
 	When Coder App Segment is loaded
 	And the study name is changed
