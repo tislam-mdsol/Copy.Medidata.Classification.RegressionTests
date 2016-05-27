@@ -145,7 +145,14 @@ namespace Coder.DeclarativeBrowser
                     .Where(row => row.dictionaryOid.Equals(dictionary, StringComparison.OrdinalIgnoreCase)
                         && row.versionOid.Equals(dictionaryVersion, StringComparison.OrdinalIgnoreCase))
                     .ToList();
-
+                if (responseData.Count().Equals(0))
+                {
+                    responseData = commandResponse
+                    .Data
+                    .Where(row => row.dictionaryKey.Equals(dictionary, StringComparison.OrdinalIgnoreCase)
+                        && row.versionOid.Equals(dictionaryVersion, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+                }
                 Debug.Assert(responseData.Count().Equals(1), "Multiple dictionary keys exist for this dictionary version, should be only one");
 
                 var dictionaryKey = responseData.First().dictionaryKey;
