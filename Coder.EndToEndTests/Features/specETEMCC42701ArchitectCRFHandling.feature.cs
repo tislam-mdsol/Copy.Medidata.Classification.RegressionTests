@@ -22,7 +22,7 @@ namespace Coder.EndToEndTests.Features
     [NUnit.Framework.DescriptionAttribute("Architect CRF download will contain Coder settings and Architect upload will save" +
         " Coder settings")]
     [NUnit.Framework.CategoryAttribute("specETEMCC42701ArchitectCRFHandling.feature")]
-    [NUnit.Framework.CategoryAttribute("DebugEndToEndDynamicSegment")]
+    [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
     public partial class ArchitectCRFDownloadWillContainCoderSettingsAndArchitectUploadWillSaveCoderSettingsFeature
     {
         
@@ -38,7 +38,7 @@ namespace Coder.EndToEndTests.Features
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Architect CRF download will contain Coder settings and Architect upload will save" +
                     " Coder settings", "", ProgrammingLanguage.CSharp, new string[] {
                         "specETEMCC42701ArchitectCRFHandling.feature",
-                        "DebugEndToEndDynamicSegment"});
+                        "EndToEndDynamicSegment"});
             testRunner.OnFeatureStart(featureInfo);
         }
         

@@ -1,9 +1,9 @@
 @specETEMCC42701ArchitectCRFHandling.feature
 
-#@EndToEndDynamicSegment
+@EndToEndDynamicSegment
 #@EndToEndDynamicStudy
 #@EndToEndStaticSegment
-@DebugEndToEndDynamicSegment
+#@DebugEndToEndDynamicSegment
 
 Feature: Architect CRF download will contain Coder settings and Architect upload will save Coder settings
 
