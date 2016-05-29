@@ -140,7 +140,9 @@ namespace Coder.DeclarativeBrowser
 
             bool uploadCompletedSuccesfully = UploadOdm(filePath, haltOnFailure);
 
-            GoToTaskPage();
+            var codingTaskPage = Session.GetCodingTaskPage();
+
+            codingTaskPage.ClearFilters();
 
             return uploadCompletedSuccesfully;
         }
@@ -497,12 +499,6 @@ namespace Coder.DeclarativeBrowser
             loginPage.GetUserNameTextBox().FillInWith(Config.AdminLogin);
             loginPage.GetPasswordTextBox().FillInWith(Config.AdminLoginPassword);
             loginPage.GetLoginButton().Click();
-        }
-
-        //TODO: move to page objects during refactor story
-        public void GoToTaskPage()
-        {
-            Session.ClickLink("Tasks");
         }
 
         public void SelectCodingTask(string verbatim)
@@ -1372,8 +1368,10 @@ namespace Coder.DeclarativeBrowser
 
         public void LogoutOfCoderAndImedidata()
         {
-            GoToTaskPage();
-            
+            var codingTaskPage = Session.GetCodingTaskPage();
+
+            codingTaskPage.ClearFilters();
+
             var pageHeader = Session.GetPageHeader();
 
             pageHeader.LogoutFromCoder();
@@ -2499,8 +2497,6 @@ namespace Coder.DeclarativeBrowser
 
             int taskCount = 0;
 
-            GoToTaskPage();
-
             var codingTaskPage = Session.GetCodingTaskPage();
 
             codingTaskPage.GetTrackablesDropdown().SelectOption(trackableState);
@@ -3095,28 +3091,37 @@ namespace Coder.DeclarativeBrowser
             return verifyRaveCoderGlobalConfiguration;
         }
 
-        public bool IsRaveCRFCoderConfigurationXLSFileCorrect(string zippedFileName, string zipDownloadDirectory, List<RaveCoderFieldConfiguration> expectedSheetDataValues)
+        public bool IsRaveCRFCoderConfigurationXLSFileCorrect(string zippedFileName, string zipDownloadDirectory, List<RaveArchitectCRFCoderFieldWorkSheet> expectedSheetDataValues)
         {
-            if (string.IsNullOrEmpty(zipDownloadDirectory))     throw new ArgumentNullException("zipDownloadDirectory");
-            if (string.IsNullOrEmpty(zippedFileName))           throw new ArgumentNullException("zippedFileName");
-            if (ReferenceEquals(expectedSheetDataValues, null)) throw new NullReferenceException("expectedSheetDataValues");
+            if (string.IsNullOrEmpty(zipDownloadDirectory))     throw new ArgumentNullException(nameof(zipDownloadDirectory));
+            if (string.IsNullOrEmpty(zippedFileName))           throw new ArgumentNullException(nameof(zippedFileName));
+            if (ReferenceEquals(expectedSheetDataValues, null)) throw new NullReferenceException(nameof(expectedSheetDataValues));
 
             List<string> convertedExpectedSheetDataValues = new List<string>();
             foreach (var dataRow in expectedSheetDataValues)
             {
                 convertedExpectedSheetDataValues.Add(dataRow.Form);
                 convertedExpectedSheetDataValues.Add(dataRow.Field);
-                convertedExpectedSheetDataValues.Add(dataRow.Dictionary);
-                convertedExpectedSheetDataValues.Add(dataRow.Locale);
                 convertedExpectedSheetDataValues.Add(dataRow.CodingLevel);
                 convertedExpectedSheetDataValues.Add(dataRow.Priority);
+                convertedExpectedSheetDataValues.Add(dataRow.Locale);
                 convertedExpectedSheetDataValues.Add(dataRow.IsApprovalRequired);
                 convertedExpectedSheetDataValues.Add(dataRow.IsAutoApproval);
             }
 
-            var actualUnzippedPath = GenericFileHelper.UnzipFile(zipDownloadDirectory, zippedFileName, zipDownloadDirectory);
+            var actualUnzippedPath               = GenericFileHelper.UnzipFile
+                                                                    (
+                                                                     zipDownloadDirectory, 
+                                                                     zippedFileName, 
+                                                                     zipDownloadDirectory
+                                                                    );
 
-            bool correctCRFCoderConfigComparison = GenericFileHelper.IsRaveXLSWorkSheetRowDataComparison(actualUnzippedPath, RaveArchitectCRFCoderWorkSheets.CoderConfigurationWorkSheetName, RaveArchitectCRFCoderWorkSheets.StartCoderConfigurationIndex, convertedExpectedSheetDataValues);
+            bool correctCRFCoderConfigComparison = GenericFileHelper.IsRaveXLSWorkSheetRowDataComparison
+                                                                    (
+                                                                     actualUnzippedPath, 
+                                                                     RaveArchitectCRFCoderWorkSheets.CoderConfigurationWorkSheetName,
+                                                                     convertedExpectedSheetDataValues
+                                                                    );
 
             return correctCRFCoderConfigComparison;
         }
@@ -3144,9 +3149,9 @@ namespace Coder.DeclarativeBrowser
 
         public bool IsRaveCRFCoderSupplementalTermsXLSFileCorrect(string zippedFileName, string zipDownloadDirectory, List<RaveCoderSupplementalConfiguration> expectedSheetDataValues)
         {
-            if (string.IsNullOrEmpty(zipDownloadDirectory))     throw new ArgumentNullException("zipDownloadDirectory");
-            if (string.IsNullOrEmpty(zippedFileName))           throw new ArgumentNullException("zippedFileName");
-            if (ReferenceEquals(expectedSheetDataValues, null)) throw new NullReferenceException("expectedSheetDataValues");
+            if (string.IsNullOrEmpty(zipDownloadDirectory))     throw new ArgumentNullException(nameof(zipDownloadDirectory));
+            if (string.IsNullOrEmpty(zippedFileName))           throw new ArgumentNullException(nameof(zippedFileName));
+            if (ReferenceEquals(expectedSheetDataValues, null)) throw new NullReferenceException(nameof(expectedSheetDataValues));
 
             List<string> convertedExpectedSheetDataValues = new List<string>();
             foreach (var dataRow in expectedSheetDataValues)
@@ -3156,25 +3161,40 @@ namespace Coder.DeclarativeBrowser
                 convertedExpectedSheetDataValues.Add(dataRow.SupplementalTerm);
             }
 
-            var actualUnzippedPath = GenericFileHelper.UnzipFile(zipDownloadDirectory, zippedFileName, zipDownloadDirectory);
+            var actualUnzippedPath            = GenericFileHelper.UnzipFile
+                                                                 (
+                                                                  zipDownloadDirectory, 
+                                                                  zippedFileName, 
+                                                                  zipDownloadDirectory
+                                                                 );
 
-            bool correctCRFCoderSupComparison = GenericFileHelper.IsRaveXLSWorkSheetRowDataComparison(actualUnzippedPath, RaveArchitectCRFCoderWorkSheets.CoderSupplementalTermsWorkSheetName, RaveArchitectCRFCoderWorkSheets.StartCoderSupplementIndex, convertedExpectedSheetDataValues);
+            bool correctCRFCoderSupComparison = GenericFileHelper.IsRaveXLSWorkSheetRowDataComparison
+                                                                 (
+                                                                  actualUnzippedPath, 
+                                                                  RaveArchitectCRFCoderWorkSheets.CoderSupplementalTermsWorkSheetName,
+                                                                  convertedExpectedSheetDataValues
+                                                                 );
 
             return correctCRFCoderSupComparison;
         }
 
-        public void DownloadRaveArchitectDraft(string studyName, string draftName, string fileName, string filePath)
+        public void DownloadRaveArchitectDraft(string studyName, string draftName)
         {
             if (string.IsNullOrWhiteSpace(studyName)) throw new ArgumentNullException(studyName);
             if (string.IsNullOrWhiteSpace(draftName)) throw new ArgumentNullException(draftName);
-            if (string.IsNullOrWhiteSpace(fileName))  throw new ArgumentNullException(fileName);
-            if (string.IsNullOrWhiteSpace(filePath))  throw new ArgumentNullException(filePath);
+
+            var fileName = studyName + "_" + draftName + ".zip";
 
             var raveArchitectProjectPage = Session.OpenRaveArchitectProjectPage(studyName);
 
             raveArchitectProjectPage.OpenDraft(draftName);
 
-            GenericFileHelper.DownloadVerifiedFile(filePath, fileName, raveArchitectProjectPage.DownloadDraft);
+            GenericFileHelper.DownloadVerifiedFile
+                              (
+                                _DownloadDirectory,
+                                fileName,
+                                () => raveArchitectProjectPage.DownloadDraft()
+                              );
         }
 
         public string GetFieldReportErrMsg(string filePath)

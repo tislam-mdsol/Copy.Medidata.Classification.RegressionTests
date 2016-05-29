@@ -71,8 +71,6 @@ namespace Coder.TestSteps.StepDefinitions
                 throw new ArgumentException("Filter columns incorrectly named");
             }
 
-            _Browser.GoToTaskPage();
-
             string sourceSystemFilterCriteria = "";
             string studiesFilterCriteria = "";
             string trackablesFilterCriteria = "";
@@ -408,8 +406,6 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (unexpectedTaskCount < 0) throw new ArgumentOutOfRangeException("unexpectedTaskCount");
 
-            _Browser.GoToTaskPage();
-
             unexpectedTaskCount.Should().NotBe(_Browser.GetHeaderTaskCount());
 
             _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
@@ -444,8 +440,6 @@ namespace Coder.TestSteps.StepDefinitions
 
             var codingTasks = table.TransformFeatureTableStrings(_StepContext).CreateSet<CodingTask>().ToArray();
 
-            _Browser.GoToTaskPage();
-
             WhenAllTaskFiltersAreCleared();
 
             _Browser.FilterTasksByColumn("Status", "Waiting Approval");
@@ -463,8 +457,6 @@ namespace Coder.TestSteps.StepDefinitions
             if (ReferenceEquals(table, null)) { throw new ArgumentNullException("table"); }
 
             var codingTasks = table.TransformFeatureTableStrings(_StepContext).CreateSet<CodingTask>().ToArray();
-
-            _Browser.GoToTaskPage();
 
             WhenAllTaskFiltersAreCleared();
 

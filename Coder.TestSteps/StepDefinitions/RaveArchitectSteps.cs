@@ -331,37 +331,38 @@ namespace Coder.TestSteps.StepDefinitions
             configurationCorrect.Should().BeTrue();
         }
 
-        [When(@"downloading Rave Architect CRF named ""(.*)"" located to ""(.*)""")]
-        public void WhenDownloadingRaveArchitectCRF(string fileName, string filePath)
+        [When(@"downloading Rave Architect CRF")]
+        public void WhenDownloadingRaveArchitectCRF()
         {
-            if (String.IsNullOrWhiteSpace(fileName)) throw new ArgumentNullException(fileName);
-            if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException(filePath);
-
-            _Browser.DownloadRaveArchitectDraft(_StepContext.GetStudyName(), _StepContext.DraftName, fileName, filePath);            
+            _Browser.DownloadRaveArchitectDraft(_StepContext.GetStudyName(), _StepContext.DraftName);            
         }
 
-        [Then(@"verify file ""(.*)"" located in ""(.*)"" has the following Rave Architect CRF Coder Configuration information")]
-        public void ThenVerifyFileHasTheFollowingRaveArchitectCRFCoderConfigurationInformation(string fileName, string filePath, Table crfCoderConfigurationTable)
+        [Then(@"verify the following Rave Architect CRF Download Coder Configuration information")]
+        public void ThenVerifyFileHasTheFollowingRaveArchitectCRFCoderConfigurationInformation(Table crfCoderConfigurationTable)
         {
-            if (String.IsNullOrWhiteSpace(fileName)) throw new ArgumentNullException(fileName);
-            if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException(filePath);
             if (ReferenceEquals(crfCoderConfigurationTable, null)) throw new NullReferenceException("crfCoderConfigurationTable");
 
-            var crfCoderConfigurations = crfCoderConfigurationTable.TransformFeatureTableStrings(_StepContext).CreateSet<RaveCoderFieldConfiguration>().ToList();
- 
+            var crfCoderConfigurations = crfCoderConfigurationTable.TransformFeatureTableStrings(_StepContext).CreateSet<RaveArchitectCRFCoderFieldWorkSheet>().ToList();
+
+            var fileName = _StepContext.GetStudyName() + "_" + _StepContext.DraftName + ".zip";
+
+            var filePath = _StepContext.DownloadDirectory;
+
             var configurationCorrect = _Browser.IsRaveCRFCoderConfigurationXLSFileCorrect(fileName, filePath, crfCoderConfigurations);
 
             configurationCorrect.Should().BeTrue();
         }
 
-        [Then(@"verify file ""(.*)"" located in ""(.*)"" has the following Rave Architect CRF Coder Supplemental Terms information")]
-        public void ThenVerifyFileHasTheFollowingRaveArchitectCRFCoderSupplementalTermsInformation(string fileName, string filePath, Table crfCoderSupplementalTable)
+        [Then(@"verify the following Rave Architect CRF Download Coder Supplemental Terms information")]
+        public void ThenVerifyFileHasTheFollowingRaveArchitectCRFCoderSupplementalTermsInformation(Table crfCoderSupplementalTable)
         {
-            if (String.IsNullOrWhiteSpace(fileName)) throw new ArgumentNullException(fileName);
-            if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException(filePath);
             if (ReferenceEquals(crfCoderSupplementalTable, null)) throw new NullReferenceException("crfCoderSupplementalTable");
 
             var crfCoderSups = crfCoderSupplementalTable.TransformFeatureTableStrings(_StepContext).CreateSet<RaveCoderSupplementalConfiguration>().ToList();
+
+            var fileName = _StepContext.GetStudyName() + "_" + _StepContext.DraftName + ".zip";
+
+            var filePath = _StepContext.DownloadDirectory;
 
             var configurationCorrect = _Browser.IsRaveCRFCoderSupplementalTermsXLSFileCorrect(fileName, filePath, crfCoderSups);
 
