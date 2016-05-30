@@ -69,7 +69,13 @@ namespace Coder.DeclarativeBrowser.FileHelpers
             var zippedFilePath = Path.Combine(zippedPath, zippedFileName);
             var unZippedPath   = zippedFilePath.Replace(".zip", "");
 
-            ZipFile.ExtractToDirectory(zippedFilePath, downloadDirectory);
+            using (ZipArchive archive = ZipFile.OpenRead(zippedFilePath))
+            {
+                foreach (ZipArchiveEntry entry in archive.Entries)
+                {
+                  entry.ExtractToFile(Path.Combine(downloadDirectory, entry.FullName),true);
+                }
+            }
 
             return unZippedPath;
         }

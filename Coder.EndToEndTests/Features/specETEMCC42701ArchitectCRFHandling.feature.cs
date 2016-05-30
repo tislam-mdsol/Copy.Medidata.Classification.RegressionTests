@@ -90,7 +90,7 @@ namespace Coder.EndToEndTests.Features
 #line 14
 this.ScenarioSetup(scenarioInfo);
 #line 16
- testRunner.Given("a Rave project registration with dictionary \"WHODrug-DDE-B2 ENG 201509\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 17
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -109,7 +109,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Coding Field",
                         "<Dictionary>",
                         "<Locale>",
-                        "PRODUCTSYNONYM",
+                        "LLT",
                         "1",
                         "true",
                         "true",
@@ -130,7 +130,7 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "ETE2",
                         "CoderField2",
-                        "PRODUCTSYNONYM",
+                        "LLT",
                         "1",
                         "eng",
                         "true",
@@ -141,14 +141,14 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Form",
                         "Field",
-                        "Supplemental Field"});
+                        "Supplemental Term"});
             table3.AddRow(new string[] {
                         "ETE2",
-                        "Coding Field",
+                        "CODERFIELD2",
                         "LOGSUPPFIELD2"});
             table3.AddRow(new string[] {
                         "ETE2",
-                        "Coding Field",
+                        "CODERFIELD2",
                         "LOGSUPPFIELD4"});
 #line 25
  testRunner.And("verify the following Rave Architect CRF Download Coder Supplemental Terms informa" +

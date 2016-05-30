@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Xml.Linq;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coypu;
+using System.Windows.Forms;
 
 namespace Coder.DeclarativeBrowser.PageObjects.Rave
 {
@@ -186,6 +188,10 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             var crfDownloadLink = _Session.FindSessionElementByLink("Download");
 
             crfDownloadLink.Click();
+            SendKeys.SendWait(@"{DOWN}");
+            Thread.Sleep(5000);
+            SendKeys.SendWait(@"{Enter}");
+            Thread.Sleep(5000);
         }
     }
 }
