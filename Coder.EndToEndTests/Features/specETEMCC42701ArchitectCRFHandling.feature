@@ -7,7 +7,7 @@
 
 Feature: Architect CRF download will contain Coder settings and Architect upload will save Coder settings
 
-@DFT
+@VAL
 @PBMCC42701_10
 @ETE_RaveCoderCore
 @Release2016.1.0
@@ -28,7 +28,7 @@ Scenario: When downloading an architect CRF spreadsheet containing Coder informa
 		| ETE2    | CODERFIELD2  | LOGSUPPFIELD4      |
 
 	
-@DFT
+@VAL
 @PBMCC42701_40
 @ETE_RaveCoderCore
 @Release2016.1.0

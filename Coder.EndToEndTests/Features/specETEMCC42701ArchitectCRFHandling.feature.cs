@@ -74,7 +74,7 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.DescriptionAttribute("When downloading an architect CRF spreadsheet containing Coder information on a p" +
             "roject that has registered to a Coding Dictionary, Coding configuration data wil" +
             "l be present upon selection")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC42701_10")]
         [NUnit.Framework.CategoryAttribute("ETE_RaveCoderCore")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
@@ -83,7 +83,7 @@ namespace Coder.EndToEndTests.Features
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When downloading an architect CRF spreadsheet containing Coder information on a p" +
                     "roject that has registered to a Coding Dictionary, Coding configuration data wil" +
                     "l be present upon selection", new string[] {
-                        "DFT",
+                        "VAL",
                         "PBMCC42701_10",
                         "ETE_RaveCoderCore",
                         "Release2016.1.0"});
@@ -160,7 +160,7 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("When uploading an architect spreadsheet to a project that is not registered to a " +
             "Coding Dictionary, then the upload should fail.")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC42701_40")]
         [NUnit.Framework.CategoryAttribute("ETE_RaveCoderCore")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
@@ -168,7 +168,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When uploading an architect spreadsheet to a project that is not registered to a " +
                     "Coding Dictionary, then the upload should fail.", new string[] {
-                        "DFT",
+                        "VAL",
                         "PBMCC42701_40",
                         "ETE_RaveCoderCore",
                         "Release2016.1.0"});
