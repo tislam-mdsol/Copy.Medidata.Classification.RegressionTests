@@ -16,6 +16,7 @@ set ete_architect_roles_app_name=Rave Architect Roles - conlabtesting56.mdsol.co
 set ete_edc_app_name_role=Power User
 set ete_modules_app_role=All Modules
 set ete_architect_roles_role=Project Admin Default
+set rave_dictionary_coder_prefix=CODER
 
 set SSL_CERT_FILE=c:\\Ruby193\\cacert.pem
 set hipchat_token=
