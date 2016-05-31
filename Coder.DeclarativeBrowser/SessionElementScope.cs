@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Threading;
+using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coypu;
 using FluentAssertions.Common;
@@ -177,7 +178,8 @@ namespace Coder.DeclarativeBrowser
 
         internal void SelectOption(string option, int index)
         {
-            if (String.IsNullOrEmpty(option)) throw new ArgumentNullException("option");
+            if (String.IsNullOrEmpty(option))           throw new ArgumentNullException(nameof(option));
+            if (String.IsNullOrEmpty(index.ToString())) throw new ArgumentNullException(nameof(option));
 
             var normalizePath   = String.Format("//option[normalize-space(text())='{0}']", option);
 
