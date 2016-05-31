@@ -1224,7 +1224,19 @@ namespace Coder.DeclarativeBrowser
                 raveCoderConfigurationPage.SetCoderConfiguration(coderConfiguration);
             }
         }
-        
+
+        public IEnumerable<string> GetAvailableCodingDictionariesFromArchitect(RaveArchitectRecordTarget target, string formName)
+        {
+            if (ReferenceEquals(target, null))       throw new ArgumentNullException("target");
+            if (String.IsNullOrWhiteSpace(formName)) throw new ArgumentNullException(formName);
+
+            target.FormName                 = formName;
+            var raveFormPage                = Session.OpenRaveArchitectFormPage(target);
+            var availableCodingDictionaries = raveFormPage.GetAvailableCodingDictionaries();
+
+            return availableCodingDictionaries;
+        }
+
         public IList<RaveCoderFieldConfiguration> GetCoderConfigurationForRaveFields(RaveArchitectRecordTarget target, IList<RaveCoderFieldConfiguration> expectedCoderConfigurations)
         {
             if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");
@@ -1389,15 +1401,17 @@ namespace Coder.DeclarativeBrowser
 
         public void LogoutOfCoderAndImedidata()
         {
-            var codingTaskPage = Session.GetCodingTaskPage();
+            GoToTaskPage();
 
-            codingTaskPage.ClearFilters();
-
-            var pageHeader = Session.GetPageHeader();
-
-            pageHeader.LogoutFromCoder();
+            LogoutOfCoder();
 
             Logout();
+        }
+
+        public void LogoutOfCoder()
+        {
+            var pageHeader = Session.GetPageHeader();
+            pageHeader.LogoutFromCoder();
         }
 
         //TODO: moved to page object for coding task page, remove this method during refactor story since its still being used

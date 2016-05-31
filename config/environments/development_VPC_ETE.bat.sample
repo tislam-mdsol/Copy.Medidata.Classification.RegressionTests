@@ -14,6 +14,7 @@ set regression_test_user_password=
 set setup_segment=MedidataReserved1
 set configured.ete_setup_suffix=0001
 set segment=Mediflex8e2342c6
+set rave_dictionary_coder_prefix=CODER
 
 SET mauth_service_url=http://mauth-sandbox.imedidata.net
 SET imedidata_login_url=https://login-sandbox.imedidata.net
