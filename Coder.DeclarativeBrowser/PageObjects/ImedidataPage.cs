@@ -50,7 +50,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         private SessionElementScope GetiMedidataLink()
         {
-            var iMedidataLink = _Browser.FindSessionElementByXPath("//a[@class='mcc-logo']");
+            var iMedidataLink = _Browser.FindSessionElementByXPath("//span[@class='mcc-logo']");
 
             return iMedidataLink;
         }
