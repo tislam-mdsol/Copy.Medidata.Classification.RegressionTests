@@ -52,18 +52,15 @@ namespace Coder.TestSteps.StepDefinitions
         [Then(@"I verify the following Source Term information is displayed")]
         public void ThenIVerifyTheFollowingSourceTermInformationIsDisplayed(Table table)
         {
-            if (ReferenceEquals(table, null)) throw new ArgumentNullException("featureData");
-
-            _StepContext.SetCurrentCodingElementContext();
+            if (ReferenceEquals(table, null)) throw new ArgumentNullException("featureData"); 
 
             _Browser.SelectSourceTermTab();
 
             var expectedResult = table.TransformFeatureTableStrings(_StepContext).CreateInstance<SourceTerm>();
-            var expectedResultStudy = expectedResult.Study + expectedResult.Study.ToString().RemoveNonAlphanumeric();
             var actualResult = _Browser.GetSourceTermTableValues();
 
             actualResult.SourceSystem.Should().BeEquivalentTo(expectedResult.SourceSystem);
-            actualResult.Study.Should()       .BeEquivalentTo(expectedResultStudy);
+            actualResult.Study.Should()       .BeEquivalentTo(expectedResult.Study);
             actualResult.Dictionary.Should()  .BeEquivalentTo(expectedResult.Dictionary);
             actualResult.Locale.Should()      .BeEquivalentTo(expectedResult.Locale);
             actualResult.Term.Should()        .BeEquivalentTo(expectedResult.Term);
