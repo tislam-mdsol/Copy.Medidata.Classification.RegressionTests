@@ -43,7 +43,7 @@ namespace Coder.TestSteps.StepDefinitions
             var currentStudy = _StepContext.SegmentUnderTest.ProdStudy;
 
             _Browser.UpdateStudyName(currentStudy, newName);
-            _Browser.LogoutFromOfCoder();
+            _Browser.LogoutOfCoder();
             _StepContext.SegmentUnderTest.ProdStudy.StudyName = newName;
         }
 

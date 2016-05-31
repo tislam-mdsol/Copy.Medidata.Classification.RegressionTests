@@ -1385,11 +1385,11 @@ namespace Coder.DeclarativeBrowser
         public void LogoutOfCoderAndImedidata()
         {
             GoToTaskPage();
-            LogoutFromOfCoder();
+            LogoutOfCoder();
             Logout();
         }
 
-        public void LogoutFromOfCoder()
+        public void LogoutOfCoder()
         {
             var pageHeader = Session.GetPageHeader();
             pageHeader.LogoutFromCoder();
