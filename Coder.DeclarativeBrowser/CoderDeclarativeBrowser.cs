@@ -1052,17 +1052,38 @@ namespace Coder.DeclarativeBrowser
         
         public void UploadRaveArchitectDraft(string study, string draftName, string draftFilePath)
         {
-            if (string.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
-            if (string.IsNullOrEmpty(draftName)) throw new ArgumentNullException("draftName");
-            if (string.IsNullOrEmpty(draftFilePath)) throw new ArgumentNullException("draftFilePath");
-            
-            DeleteRaveArchitectDraft(study, draftName);    
+            if (string.IsNullOrEmpty(study))         throw new ArgumentNullException(nameof(study));
+            if (string.IsNullOrEmpty(draftName))     throw new ArgumentNullException(nameof(draftName));
+            if (string.IsNullOrEmpty(draftFilePath)) throw new ArgumentNullException(nameof(draftFilePath));
+
+            DeleteRaveArchitectDraft(study, draftName);
+
+            var raveNavigation = Session.GetRaveNavigation();
+
+            raveNavigation.OpenArchitectPage();
+
+            raveNavigation.OpenArchitectUploadDraftPage();
 
             var raveArchitectUploadDraftPage = Session.GetRaveArchitectUploadDraftPage();
             
             raveArchitectUploadDraftPage.UploadDraftFile(draftFilePath);
         }
-        
+
+        public void UploadRaveArchitectErrorDraft(string draftFilePath)
+        {
+            if (string.IsNullOrEmpty(draftFilePath)) throw new ArgumentNullException(nameof(draftFilePath));
+
+            var raveNavigation = Session.GetRaveNavigation();
+
+            raveNavigation.OpenArchitectPage();
+
+            raveNavigation.OpenArchitectUploadDraftPage();
+
+            var raveArchitectUploadDraftPage = Session.GetRaveArchitectUploadDraftPage();
+
+            raveArchitectUploadDraftPage.UploadDraftErrorFile(draftFilePath);
+        }
+
         public string PublishAndPushRaveArchitectDraft (string study, string draftName, string environment) 
         {
             if (string.IsNullOrEmpty(study))         throw new ArgumentNullException("study");
@@ -2133,10 +2154,20 @@ namespace Coder.DeclarativeBrowser
             {
                 projectRegisterationPage.GetAddNewGridSegmentButton().Click();
 
+                if (synonym.Dictionary.Equals("JDrug", StringComparison.OrdinalIgnoreCase))
+                {
+                    synonym.Dictionary = "J-Drug";
+                }                        
                 projectRegisterationPage.SelectDictionaryType(synonym.Dictionary);
+
                 projectRegisterationPage.SelectVersion(synonym.Version);
                 projectRegisterationPage.SelectLocale(synonym.Locale);
                 projectRegisterationPage.SelectSynonymList(synonym.SynonymListName);
+
+                if (synonym.RegistrationName.Equals("J-Drug", StringComparison.OrdinalIgnoreCase))
+                {
+                    synonym.Dictionary = "JDrug";
+                }
                 projectRegisterationPage.SelectDictionary(synonym.RegistrationName);
 
                 projectRegisterationPage.GetUpdateButton().Click();
@@ -2321,6 +2352,20 @@ namespace Coder.DeclarativeBrowser
                             secondsSinceLastModified: 5,
                             newFilename: synonymFileName)
                         );
+        }
+
+        public bool IsSynonymFileContentMatching(string synonymFileName, Array synonymEntries, string downloadDirectory)
+        {
+            if (string.IsNullOrWhiteSpace(synonymFileName)) throw new ArgumentNullException(nameof(synonymFileName));
+            if (ReferenceEquals(synonymFileName, null))     throw new ArgumentNullException("synonymFileName");
+
+            var synonymFilePath = Path.Combine(downloadDirectory,synonymFileName);
+
+            var fileContent     = File.ReadAllText(synonymFilePath);
+
+            var resultMatch     = synonymEntries.Cast<string>().Aggregate(true, (current, synonymEntry) => current && fileContent.Contains(synonymEntry));
+
+            return resultMatch;
         }
 
         public void ValidateSynonymUpload(string synonymFileName, SynonymSearch synonymSearch)
@@ -3109,21 +3154,21 @@ namespace Coder.DeclarativeBrowser
                 convertedExpectedSheetDataValues.Add(dataRow.IsAutoApproval);
             }
 
-            var actualUnzippedPath               = GenericFileHelper.UnzipFile
+            var actualUnzippedPath = GenericFileHelper.UnzipFile
                                                                     (
                                                                      zipDownloadDirectory, 
                                                                      zippedFileName, 
                                                                      zipDownloadDirectory
                                                                     );
 
-            bool correctCRFCoderConfigComparison = GenericFileHelper.IsRaveXLSWorkSheetRowDataComparison
+            var isXlsFileCorrect   = GenericFileHelper.IsRaveXLSWorkSheetRowDataComparison
                                                                     (
                                                                      actualUnzippedPath, 
                                                                      RaveArchitectCRFCoderWorkSheets.CoderConfigurationWorkSheetName,
                                                                      convertedExpectedSheetDataValues
                                                                     );
 
-            return correctCRFCoderConfigComparison;
+            return isXlsFileCorrect;
         }
         
         public void WaitUntilAdminLinkExists(string adminPage)
@@ -3183,7 +3228,7 @@ namespace Coder.DeclarativeBrowser
             if (string.IsNullOrWhiteSpace(studyName)) throw new ArgumentNullException(studyName);
             if (string.IsNullOrWhiteSpace(draftName)) throw new ArgumentNullException(draftName);
 
-            var fileName = studyName + "_" + draftName + ".zip";
+            var fileName = String.Format("{0}_{1}.zip", studyName, draftName);
 
             var raveArchitectProjectPage = Session.OpenRaveArchitectProjectPage(studyName);
 
@@ -3197,15 +3242,11 @@ namespace Coder.DeclarativeBrowser
                               );
         }
 
-        public string GetFieldReportErrMsg(string filePath)
+        public string GetFieldReportErrMsg()
         {
-            if (string.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException(filePath);
+            var raveArchitectUploadDraftPage = Session.GetRaveArchitectUploadDraftPage();
 
-            var raveArchitectUploadDraftPage = Session.OpenRaveArchitectUploadDraftPage();
-
-            raveArchitectUploadDraftPage.UploadDraftFile(filePath);
-
-            var actualErrorMessage = raveArchitectUploadDraftPage.GetFieldReportActualErrorMsg();
+            var actualErrorMessage           = raveArchitectUploadDraftPage.GetFieldReportActualErrorMsg();
 
             return actualErrorMessage;
         }

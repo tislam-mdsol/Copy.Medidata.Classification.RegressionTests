@@ -182,7 +182,30 @@ namespace Coder.TestSteps.StepDefinitions
 
             _Browser.DownloadSynonymFileFromSynonymListPage(synonymSearch, synonymFileName);
         }
-        
+
+        [When(@"downloading the Synonym List to ""(.*)""")]
+        public void WhenDownloadingTheSynonymListTo(string synonymFileName)
+        {
+            if (String.IsNullOrWhiteSpace(synonymFileName)) throw new ArgumentNullException(nameof(synonymFileName));
+
+            var synonymSearch = GetCurrentContextSynonymSearch();
+
+            _Browser.DownloadSynonymFileFromSynonymListPage(synonymSearch, synonymFileName);
+        }
+
+        [Then(@"synonym list ""(.*)"" should contain the following information")]
+        public void ThenInShouldContainTheFollowingSynonymInformation(string synonymFileName, Table synoymTable)
+        {
+            if (ReferenceEquals(synoymTable, null))         throw new ArgumentNullException("synoymTable");
+            if (String.IsNullOrWhiteSpace(synonymFileName)) throw new ArgumentNullException(nameof(synonymFileName));
+
+            var listOfSynonymEntries = synoymTable.Rows.ToArray();
+
+            var contentMatched       = _Browser.IsSynonymFileContentMatching(synonymFileName, listOfSynonymEntries, _StepContext.DownloadDirectory);
+
+            contentMatched.Should().BeTrue();
+        }
+
         [When(@"starting synonym list migration")]
         public void WhenStartingSynonymListMigration()
         {

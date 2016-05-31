@@ -34,6 +34,7 @@ Scenario: When downloading an architect CRF spreadsheet containing Coder informa
 @Release2016.1.0
 Scenario: When uploading an architect spreadsheet to a project that is not registered to a Coding Dictionary, then the upload should fail.
 
-	Given Rave Modules App Segment is loaded
-	When uploading a rave architect draft template "MCC42701_40.xls" to "Draft 1" for study "<Study>"
-	Then I verify the following CRF upload message "Error while reading row 5. Field OID 'CODERTERM1' in form OID 'ETE1' : Coding dictionary 'MedDRAMedHistory (Coder)' not found in the target database."
+	Given a Rave project registration with dictionary "MedDRA ENG 15.0"
+    And Rave Modules App Segment is loaded
+	When uploading a rave architect draft error template
+	Then verify the following CRF upload error message "Error while reading row 5. Field OID 'CODERTERM1' in form OID 'ETE1' : Coding dictionary 'MedDRAMedHistory (Coder)' not found in the target database."

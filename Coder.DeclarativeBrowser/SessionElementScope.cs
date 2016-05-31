@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Threading;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coypu;
+using FluentAssertions.Common;
 using HtmlAgilityPack;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
@@ -171,6 +173,17 @@ namespace Coder.DeclarativeBrowser
             if (String.IsNullOrEmpty(option)) throw new ArgumentNullException("option");
 
             _ElementScope.SelectOption(option, _Options);
+        }
+
+        internal void SelectOption(string option, int index)
+        {
+            if (String.IsNullOrEmpty(option)) throw new ArgumentNullException("option");
+
+            var normalizePath   = String.Format("//option[normalize-space(text())='{0}']", option);
+
+            var optionsToSelect = _ElementScope.FindAllSessionElementsByXPath(normalizePath);
+
+            optionsToSelect[index].Click();
         }
 
         internal void SendKeys(string keys)

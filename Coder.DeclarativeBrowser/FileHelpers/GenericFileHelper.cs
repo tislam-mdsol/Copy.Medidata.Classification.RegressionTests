@@ -95,9 +95,10 @@ namespace Coder.DeclarativeBrowser.FileHelpers
 
             foreach (XElement worksheet in workSheets.Descendants(ss + "Worksheet"))
             {
-                if (worksheet.Attribute(ss + "Name").Value == workSheetName)
+                if (worksheet.Attribute(ss + "Name").Value.Equals(workSheetName, StringComparison.OrdinalIgnoreCase))
                 {
                     var skipFirstRow = worksheet.Descendants(ss + "Row").Skip(1);
+
                     foreach (XElement row in skipFirstRow)
                     {
                        foreach (XElement cell in row.Descendants(ss + "Data"))

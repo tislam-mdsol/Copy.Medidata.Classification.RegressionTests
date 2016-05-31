@@ -175,14 +175,15 @@ this.ScenarioSetup(scenarioInfo);
 #line 35
 this.ScenarioSetup(scenarioInfo);
 #line 37
- testRunner.Given("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 38
- testRunner.When("uploading a rave architect draft template \"MCC42701_40.xls\" to \"Draft 1\" for stud" +
-                    "y \"<Study>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
- testRunner.Then("I verify the following CRF upload message \"Error while reading row 5. Field OID \'" +
-                    "CODERTERM1\' in form OID \'ETE1\' : Coding dictionary \'MedDRAMedHistory (Coder)\' no" +
-                    "t found in the target database.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("uploading a rave architect draft error template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+ testRunner.Then("verify the following CRF upload error message \"Error while reading row 5. Field O" +
+                    "ID \'CODERTERM1\' in form OID \'ETE1\' : Coding dictionary \'MedDRAMedHistory (Coder)" +
+                    "\' not found in the target database.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -55,19 +55,12 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser.DeleteRaveArchitectDraft(study, draftName);
         }
         
-        [When(@"uploading a rave architect draft template ""(.*)"" to ""(.*)"" for study ""(.*)""")]
-        public void WhenUploadingARaveArchitectDraftTemplate(string draftTemplateFileName, string draftNameFeature, string studyFeature)
-        {
-            if (String.IsNullOrWhiteSpace(draftTemplateFileName))        throw new ArgumentNullException("draftTemplateFileName");
-            if (String.IsNullOrWhiteSpace(draftNameFeature))             throw new ArgumentNullException("draftNameFeature");
-            if (String.IsNullOrWhiteSpace(studyFeature))                 throw new ArgumentNullException("studyFeature");
-
-            var draftName = StepArgumentTransformations.TransformFeatureString(draftNameFeature, _StepContext);
-            var study     = StepArgumentTransformations.TransformFeatureString(studyFeature, _StepContext);
+        [When(@"uploading a rave architect draft error template")]
+        public void WhenUploadingARaveArchitectDraftTemplate()
+        {     
+            var draftTemplateFilePath = Path.Combine(Config.StaticContentFolder, "ErrorGeneratingCRFDraft.xls");
             
-            var draftTemplateFilePath = Path.Combine(Config.StaticContentFolder, draftTemplateFileName);
-            
-            _Browser.UploadRaveArchitectDraftTemplate(study, draftName, draftTemplateFilePath, _StepContext.DumpDirectory);
+            _Browser.UploadRaveArchitectErrorDraft(draftTemplateFilePath);
         }
 
         [Then(@"CRF was published and pushed with the following message ""(.*)""")]
@@ -369,14 +362,12 @@ namespace Coder.TestSteps.StepDefinitions
             configurationCorrect.Should().BeTrue();
         }
 
-        [Then(@"I verify the following CRF upload message ""(.*)""")]
-        public void ThenIVerifyTheFollowingCRFUploadMessage(string expectedErrorMessage)
+        [Then(@"verify the following CRF upload error message ""(.*)""")]
+        public void ThenVerifyTheFollowingCRFUploadErrorMessage(string expectedErrorMessage)
         {
             if (String.IsNullOrWhiteSpace(expectedErrorMessage)) throw new ArgumentNullException(expectedErrorMessage);
 
-            var draftErrCRFFilePath = Path.Combine(Config.StaticContentFolder, "ErrorGeneratingCRFDraft.xls");
-
-            var actualFailedMessage = _Browser.GetFieldReportErrMsg(draftErrCRFFilePath);
+            var actualFailedMessage = _Browser.GetFieldReportErrMsg();
 
             actualFailedMessage.Should().BeEquivalentTo(expectedErrorMessage);
         }
