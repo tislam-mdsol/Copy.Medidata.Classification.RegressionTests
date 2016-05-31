@@ -337,7 +337,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             var crfCoderConfigurations = crfCoderConfigurationTable.TransformFeatureTableStrings(_StepContext).CreateSet<RaveArchitectCRFCoderFieldWorkSheet>().ToList();
 
-            var fileName = _StepContext.GetStudyName() + "_" + _StepContext.DraftName + ".zip";
+            var fileName = String.Format("{0}_{1}.zip", _StepContext.GetStudyName(), _StepContext.DraftName); 
 
             var filePath = _StepContext.DownloadDirectory;
 
@@ -353,7 +353,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             var crfCoderSups = crfCoderSupplementalTable.TransformFeatureTableStrings(_StepContext).CreateSet<RaveCoderSupplementalConfiguration>().ToList();
 
-            var fileName = _StepContext.GetStudyName() + "_" + _StepContext.DraftName + ".zip";
+            var fileName = String.Format("{0}_{1}.zip", _StepContext.GetStudyName(), _StepContext.DraftName);
 
             var filePath = _StepContext.DownloadDirectory;
 

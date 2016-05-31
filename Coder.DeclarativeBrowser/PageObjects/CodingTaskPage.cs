@@ -84,9 +84,16 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal SessionElementScope GetTasksTab()
         {
-            var tasksTab = _Session.FindSessionElementByXPath("//a[@id = 'ctl00_taskLink']");
+            var tasksTab = _Session.FindSessionElementByLink("Tasks");
 
             return tasksTab;
+        }
+
+        internal void SelectTasksTab()
+        {
+            var taskTab = GetTasksTab();
+
+            taskTab.Click();
         }
 
         internal SessionElementScope GetBrowserTab()

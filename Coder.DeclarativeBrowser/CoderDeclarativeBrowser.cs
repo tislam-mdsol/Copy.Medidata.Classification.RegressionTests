@@ -1408,6 +1408,9 @@ namespace Coder.DeclarativeBrowser
 
         public void LogoutOfCoder()
         {
+            var taskPage = Session.GetCodingTaskPage();
+            taskPage.SelectTasksTab();
+
             var pageHeader = Session.GetPageHeader();
             pageHeader.LogoutFromCoder();
         }
