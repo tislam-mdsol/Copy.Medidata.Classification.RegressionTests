@@ -1401,8 +1401,6 @@ namespace Coder.DeclarativeBrowser
 
         public void LogoutOfCoderAndImedidata()
         {
-            GoToTaskPage();
-
             LogoutOfCoder();
 
             Logout();
