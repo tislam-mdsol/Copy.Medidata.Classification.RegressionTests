@@ -466,7 +466,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
                 throw new MissingHtmlException(String.Format("Could not find the header for study group {0}", studyGroupName));
             }
 
-            string[] splitHeaderText = header.Text.Split(new string[] { studyGroupName, "(uuid: ", ")" }, StringSplitOptions.RemoveEmptyEntries);
+            string[] splitHeaderText = header.Text.Split(new string[] { studyGroupName, "(UUID: ", ")" }, StringSplitOptions.RemoveEmptyEntries);
             
             var uuid = splitHeaderText.FirstOrDefault(x=>!String.IsNullOrWhiteSpace(x)).Trim();
 

@@ -325,5 +325,16 @@ namespace Coder.TestSteps
             }
         }
 
+        internal static string RaveDictionaryCoderPrefix
+        {
+            get
+            {
+                var raveDictionaryCoderPrefix = ConfigurationManager.AppSettings["RaveDictionaryCoderPrefix"];
+
+                if (String.IsNullOrEmpty(raveDictionaryCoderPrefix)) throw new ConfigurationErrorsException("RaveDictionaryCoderPrefix");
+
+                return raveDictionaryCoderPrefix;
+            }
+        }
     }
 }

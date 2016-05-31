@@ -359,5 +359,19 @@ namespace Coder.TestSteps.StepDefinitions
 
             _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }
+
+        [Then(@"verify coding dictionary ""(.*)"" is an option on Rave form ""(.*)""")]
+        public void ThenVerifyCodingDictionaryIsAnOptionOnRaveForm(string dictionaryName, string formName)
+        {
+            if (String.IsNullOrWhiteSpace(dictionaryName)) throw new ArgumentNullException(dictionaryName);
+            if (String.IsNullOrWhiteSpace(formName))       throw new ArgumentNullException(formName);
+
+            var target                      = _StepContext.GetRaveArchitectRecordTarget();
+            var availableCodingDictionaries =_Browser.GetAvailableCodingDictionariesFromArchitect(target, formName);
+
+            availableCodingDictionaries.Should().Contain(String.Format("{0}- {1}", Config.RaveDictionaryCoderPrefix, dictionaryName));
+
+            _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
+        }
     }
 }
