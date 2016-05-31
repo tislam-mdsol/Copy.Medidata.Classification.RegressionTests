@@ -23,7 +23,7 @@ namespace Coder.EndToEndTests.Features
         " list, etc. for coding fields & supplement and component values is fully support" +
         "ed and the around trip integration works successfully.")]
     [NUnit.Framework.CategoryAttribute("specETE_SearchListSUP")]
-    [NUnit.Framework.CategoryAttribute("DebugEndToEndDynamicSegment")]
+    [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
     public partial class VerifyUsingSearchListCombinationsOfStandardFieldsLogLineFieldsSearchListEtc_ForCodingFieldsSupplementAndComponentValuesIsFullySupportedAndTheAroundTripIntegrationWorksSuccessfully_Feature
     {
         
@@ -40,7 +40,7 @@ namespace Coder.EndToEndTests.Features
                     " list, etc. for coding fields & supplement and component values is fully support" +
                     "ed and the around trip integration works successfully.", "", ProgrammingLanguage.CSharp, new string[] {
                         "specETE_SearchListSUP",
-                        "DebugEndToEndDynamicSegment"});
+                        "EndToEndDynamicSegment"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,14 +75,14 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Log line verbatim fields using a control type of Search List will be successfully" +
             " coded 1")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PB92926SL.001")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
         public virtual void LogLineVerbatimFieldsUsingAControlTypeOfSearchListWillBeSuccessfullyCoded1()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Log line verbatim fields using a control type of Search List will be successfully" +
                     " coded 1", new string[] {
-                        "DFT",
+                        "VAL",
                         "PB92926SL.001",
                         "Release2016.1.0"});
 #line 10
@@ -148,7 +148,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Trade Name",
                         "1"});
 #line 22
- testRunner.Then("I verify the following Source Term information is displayed", ((string)(null)), table3, "Then ");
+ testRunner.Then("task \"child advil cold extreme\" should contain the following source term informat" +
+                    "ion", ((string)(null)), table3, "Then ");
 #line 25
     testRunner.When("task \"child advil cold extreme\" is coded to term \"CHILDRENS ADVIL COLD\" at search" +
                     " level \"Trade Name\" with code \"010502 01 015\" at level \"TN\" and a synonym is cre" +

@@ -1,10 +1,10 @@
 @specETE_SearchListSUP
 
-@DebugEndToEndDynamicSegment
+@EndToEndDynamicSegment
 
 Feature: Verify using Search List combinations of standard fields, log line fields, search list, etc. for coding fields & supplement and component values is fully supported and the around trip integration works successfully.
 
-@DFT
+@VAL
 @PB92926SL.001
 @Release2016.1.0
 Scenario: Log line verbatim fields using a control type of Search List will be successfully coded 1
@@ -19,8 +19,8 @@ Scenario: Log line verbatim fields using a control type of Search List will be s
  	| Field                        | Value                    | ControlType |
  	| Log Search List Coding Field | child advil cold extreme | SEARCHLIST  |
 	And Coder App Segment is loaded
-	Then I verify the following Source Term information is displayed
-       | Source System | Study              | Dictionary            | Locale | Term                 | Level      | Priority |
+	Then task "child advil cold extreme" should contain the following source term information
+       | Source System | Study              | Dictionary            | Locale | Term                     | Level      | Priority |
        | Rave EDC      | <StudyDisplayName> | WhoDrugDDEB2 - 200703 | ENG    | child advil cold extreme | Trade Name | 1        |
     When task "child advil cold extreme" is coded to term "CHILDRENS ADVIL COLD" at search level "Trade Name" with code "010502 01 015" at level "TN" and a synonym is created	
 	And Rave Modules App Segment is loaded
