@@ -207,7 +207,7 @@ this.ScenarioSetup(scenarioInfo);
                         "IsAutoApproval"});
             table4.AddRow(new string[] {
                         "ETE17",
-                        "Log Search List Supp...",
+                        "Specify Search List",
                         "<Dictionary>",
                         "",
                         "PRODUCTSYNONYM",

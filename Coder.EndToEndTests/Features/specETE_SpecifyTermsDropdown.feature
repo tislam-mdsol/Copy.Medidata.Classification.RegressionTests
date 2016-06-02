@@ -1,6 +1,5 @@
+@specETE_SpecifyTermsDropdown
 
-#@EndToEndDynamicSegment
-#@EndToEndDynamicStudy
 @EndToEndStaticSegment
 
 Feature: Verify using the Other Specify for drop-downs and search-lists is supported and the around trip integration works successfully.
@@ -11,12 +10,12 @@ Feature: Verify using the Other Specify for drop-downs and search-lists is suppo
 @DTMCC68955
 Scenario: A coding decision will be accepted by EDC for a verbatim that has data submitted via the Other Specify dropdown option on the supplemental field
 
-	Given a Rave project registration with dictionary "WhoDrugDDEB2 ENG 200703"
+	Given a Rave project registration with dictionary "WhoDrug-DDE-B2 ENG 200703"
 	And Rave Modules App Segment is loaded
  	And a Rave Coder setup with the following options
   	 | Form  | Field        | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
   	 | ETE17 | Coding Field | <Dictionary> | <Locale> | PRODUCTSYNONYM | 1        | true               | true           | Specify Dropdown  |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
+	When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE17"
  	| Field                             | Value                    | ControlType  |
@@ -25,18 +24,18 @@ Scenario: A coding decision will be accepted by EDC for a verbatim that has data
  	| Log Dropdown Supplemental Field A | terrible head pain       |              |
 	And Coder App Segment is loaded
 	Then the "child advil cold extreme" task has the following supplemental information
-	| Term                              | Value              |
-	| Log Dropdown Supplemental Field A | terrible head pain |
-	When task "child advil cold extreme" is coded to term "CHILDRENS ADVIL COLD" at search level "Preferred Name" with code "010502 01 015 9" at level "PN" and a synonym is created
+	| Term                  | Value              |
+	| ETE17.SPECIFYDROPDOWN | terrible head pain |
+	When task "child advil cold extreme" is coded to term "CHILDRENS ADVIL COLD" at search level "Trade Name" with code "010502 01 015" at level "TN" and a synonym is created
 	And Rave Modules App Segment is loaded
-	# the coding path needs to be updated in the table below
-	Then the coding decision for verbatim "child advil cold extreme" on form "ETE17" for field "Coding Field" contains the following data
-      | Level | Code     | Term Path                |
-      | SOC   | 10029205 | Nervous system disorders |
-      | HLGT  | 10019231 | Headaches                |
-      | HLT   | 10019233 | Headaches NEC            |
-      | PT    | 10019211 | Headache                 |
-      | LLT   | 10019198 | Head pain                |
+    Then the coding decision for verbatim "child advil cold extreme" on form "ETE17" for field "Coding Field" contains the following data
+      | Level          | Code          | Term Path                                         |
+      | ATC            | M             | MUSCULO-SKELETAL SYSTEM                           |
+      | ATC            | M01           | ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS       |
+      | ATC            | M01A          | ANTIINFLAMMATORY/ANTIRHEUMATIC PROD.,NON-STEROIDS |
+      | ATC            | M01AE         | PROPIONIC ACID DERIVATIVES                        |
+      | PRODUCT        | 010502 01 001 | CO-ADVIL                                          |
+      | PRODUCTSYNONYM | 010502 01 015 | CHILDRENS ADVIL COLD                              |
 
 
 @DFT
