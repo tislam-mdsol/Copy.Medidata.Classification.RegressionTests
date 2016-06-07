@@ -73,7 +73,7 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A coding decision will be accepted by EDC for a verbatim that has data submitted " +
             "via the Other Specify dropdown option on the supplemental field")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC40159_001b")]
         [NUnit.Framework.CategoryAttribute("ReleaseRave2013.2.0")]
         [NUnit.Framework.CategoryAttribute("DTMCC68955")]
@@ -81,7 +81,7 @@ namespace Coder.EndToEndTests.Features
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision will be accepted by EDC for a verbatim that has data submitted " +
                     "via the Other Specify dropdown option on the supplemental field", new string[] {
-                        "DFT",
+                        "VAL",
                         "PBMCC40159_001b",
                         "ReleaseRave2013.2.0",
                         "DTMCC68955"});
@@ -194,7 +194,7 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A coding decision will be accepted by EDC for a verbatim that has data submitted " +
             "via the Other Specify dropdown option")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC40159_001d")]
         [NUnit.Framework.CategoryAttribute("ReleaseRave2013.2.0")]
         [NUnit.Framework.CategoryAttribute("DTMCC68955")]
@@ -202,7 +202,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision will be accepted by EDC for a verbatim that has data submitted " +
                     "via the Other Specify dropdown option", new string[] {
-                        "DFT",
+                        "VAL",
                         "PBMCC40159_001d",
                         "ReleaseRave2013.2.0",
                         "DTMCC68955"});

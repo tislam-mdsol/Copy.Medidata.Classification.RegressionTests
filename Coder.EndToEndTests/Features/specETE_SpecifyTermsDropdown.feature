@@ -4,7 +4,7 @@
 
 Feature: Verify using the Other Specify for drop-downs and search-lists is supported and the around trip integration works successfully.
 
-@DFT
+@VAL
 @PBMCC40159_001b
 @ReleaseRave2013.2.0
 @DTMCC68955
@@ -38,7 +38,7 @@ Scenario: A coding decision will be accepted by EDC for a verbatim that has data
       | PRODUCTSYNONYM | 010502 01 015 | CHILDRENS ADVIL COLD                              |
 
 
-@DFT
+@VAL
 @PBMCC40159_001d
 @ReleaseRave2013.2.0
 @DTMCC68955
