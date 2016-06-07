@@ -22,7 +22,7 @@ namespace Coder.EndToEndTests.Features
     [NUnit.Framework.DescriptionAttribute("Verify using the Other Specify for drop-downs and search-lists is supported and t" +
         "he around trip integration works successfully.")]
     [NUnit.Framework.CategoryAttribute("specETE_SpecifyTermsDropdown")]
-    [NUnit.Framework.CategoryAttribute("EndToEndStaticSegment")]
+    [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
     public partial class VerifyUsingTheOtherSpecifyForDrop_DownsAndSearch_ListsIsSupportedAndTheAroundTripIntegrationWorksSuccessfully_Feature
     {
         
@@ -38,7 +38,7 @@ namespace Coder.EndToEndTests.Features
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Verify using the Other Specify for drop-downs and search-lists is supported and t" +
                     "he around trip integration works successfully.", "", ProgrammingLanguage.CSharp, new string[] {
                         "specETE_SpecifyTermsDropdown",
-                        "EndToEndStaticSegment"});
+                        "EndToEndDynamicSegment"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -106,12 +106,12 @@ this.ScenarioSetup(scenarioInfo);
                         "ETE17",
                         "Coding Field",
                         "<Dictionary>",
-                        "<Locale>",
+                        "",
                         "PRODUCTSYNONYM",
                         "1",
                         "true",
                         "true",
-                        "Specify Dropdown"});
+                        "ETEMCC40159DROPDOWN"});
 #line 15
   testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
 #line 18
@@ -127,7 +127,7 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "Coding Field",
                         "child advil cold extreme",
-                        "LongText"});
+                        ""});
             table2.AddRow(new string[] {
                         "Log Dropdown Supplemental Field A",
                         "Other Option",
@@ -145,7 +145,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Term",
                         "Value"});
             table3.AddRow(new string[] {
-                        "ETE17.SPECIFYDROPDOWN",
+                        "ETEMCC40159.ETEMCC40159DROPDOWN",
                         "terrible head pain"});
 #line 26
  testRunner.Then("the \"child advil cold extreme\" task has the following supplemental information", ((string)(null)), table3, "Then ");
@@ -224,7 +224,7 @@ this.ScenarioSetup(scenarioInfo);
                         "IsAutoApproval"});
             table5.AddRow(new string[] {
                         "ETE17",
-                        "Log Dropdown Supplemental Field A",
+                        "Specify Dropdown",
                         "<Dictionary>",
                         "<Locale>",
                         "LLT",
@@ -234,8 +234,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 48
   testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table5, "And ");
 #line 51
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
-                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 52
  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -254,12 +254,12 @@ this.ScenarioSetup(scenarioInfo);
 #line 53
  testRunner.And("adding a new verbatim term to form \"ETE17\"", ((string)(null)), table6, "And ");
 #line 57
-  testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
- testRunner.When("task \"terrible head pain\" is coded to term \"headache\" at search level \"Lower Leve" +
-                    "l Term\" with code \"10019211\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("task \"terrible head pain\" is coded to term \"Head pain\" at search level \"Low Level" +
+                    " Term\" with code \"10019198\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 59
- testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level",
@@ -285,7 +285,7 @@ this.ScenarioSetup(scenarioInfo);
                         "LLT",
                         "10019198",
                         "Head pain"});
-#line 61
+#line 60
  testRunner.Then("the coding decision for verbatim \"terrible head pain\" on form \"ETE17\" for field \"" +
                     "Log Dropdown Supplemental Field A\" contains the following data", ((string)(null)), table7, "Then ");
 #line hidden
