@@ -1294,8 +1294,10 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             if (String.IsNullOrEmpty(adminLink)) throw new ArgumentNullException("adminLink");
 
             var header = session.GetPageHeader();
-
-            header.GoToAdminPage(adminLink);
+            if (!header.IsBrowserOnAdminPage(adminLink))
+            {
+                header.GoToAdminPage(adminLink);
+            }
         }
 
         internal static void FollowReportLink(

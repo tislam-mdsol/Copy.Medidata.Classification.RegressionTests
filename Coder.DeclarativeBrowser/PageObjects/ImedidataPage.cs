@@ -385,9 +385,20 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return invitationAcceptLinks;
         }
 
+        internal bool invitationAcceptLinksPresent()
+        {
+            var count = GetInvitationAcceptLinks().Count();
+
+            if (count < 1) { return false; }
+            return true;
+        }
         internal void AcceptAllStudyGroupInvitations()
         {
             var invitationAcceptLinks = GetInvitationAcceptLinks();
+
+            if (invitationAcceptLinks.Count()==0) {
+                throw new MissingHtmlException("No Invitations Found");
+            }
 
             foreach (var invitationAcceptLink in invitationAcceptLinks)
             {

@@ -72,7 +72,10 @@ namespace Coder.TestSteps.StepDefinitions
         public void WhenReclassifyingAndRetiringSynonymTaskWithIncludeAutocodedItemsSetTo(string verbatim, string includeAutoCodedItems)
         {
             if (String.IsNullOrWhiteSpace(verbatim))              throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrWhiteSpace(includeAutoCodedItems)) throw new ArgumentNullException("includeAutoCodedItems"); 
+            if (String.IsNullOrWhiteSpace(includeAutoCodedItems)) throw new ArgumentNullException("includeAutoCodedItems");
+
+            _Browser.ReAssignCoderRoles(_StepContext);
+            _Browser.WaitUntilAdminLinkExists("Reclassification");
 
             _Browser.ReclassifyTask(
                  verbatim             : verbatim,

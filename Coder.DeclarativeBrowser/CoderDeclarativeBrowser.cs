@@ -478,6 +478,16 @@ namespace Coder.DeclarativeBrowser
                 securityModule: securityModule,
                 actionName: actionName);
         }
+        public void ReAssignCoderRoles(StepContext stepContext)
+        {
+            var assignWorkflowRolePage = Session.GetAssignWorkFlowRolesPage();
+            assignWorkflowRolePage.GetAssignRoleEditButton("WorkflowRole", "All", stepContext.GetUser()).Click();
+            assignWorkflowRolePage.GetAssignRoleUpdateButton().Click();
+
+            var assignGeneralRolePage = Session.GetAssignGeneralRolesPage();
+            assignGeneralRolePage.GetAssignRoleEditButton("StudyAdmin", "All", stepContext.GetUser()).Click();
+            assignGeneralRolePage.GetAssignRoleUpdateButton().Click();
+        }
 
         public void LoginToELearningPage()
         {
@@ -1361,7 +1371,7 @@ namespace Coder.DeclarativeBrowser
             loginPage.LoginAs(userName);
         }
 
-        public void Logout()
+        public void LogoutOfiMedidata()
         {
             GoToiMedidataHome();
 
@@ -1386,7 +1396,7 @@ namespace Coder.DeclarativeBrowser
         {
             GoToTaskPage();
             LogoutOfCoder();
-            Logout();
+            LogoutOfiMedidata();
         }
 
         public void LogoutOfCoder()
@@ -2143,7 +2153,10 @@ namespace Coder.DeclarativeBrowser
             var projectRegisterationPage = Session.GetProjectRegistrationPage();
 
             projectRegisterationPage.GetProjectDropdownList().SelectOptionAlphanumericOnly(project);
-            projectRegisterationPage.GetEditProjectButton().Click();
+            if (projectRegisterationPage.GetEditProjectButton().Exists())
+            {
+                projectRegisterationPage.GetEditProjectButton().Click();
+            }
 
             foreach (var synonym in synonymLists)
             {
@@ -3047,7 +3060,15 @@ namespace Coder.DeclarativeBrowser
 
         public void AcceptStudyInvitation()
         {
-            Session.GetImedidataPage().AcceptAllStudyGroupInvitations();
+            var imedidataPage = Session.GetImedidataPage();
+            var options = Config.GetDefaultCoypuOptions();
+
+            Session.TryUntil(
+                        () => Session.Refresh(),
+                        () => imedidataPage.invitationAcceptLinksPresent(),
+                        options.RetryInterval,
+                        options);
+            imedidataPage.AcceptAllStudyGroupInvitations();
         }
         
         public void PublishAndIncompletePushRaveArchitectDraft(string study, string draftName, string studyEnvironment)
@@ -3144,7 +3165,7 @@ namespace Coder.DeclarativeBrowser
             var options = Config.GetDefaultCoypuOptions();
 
             Session.TryUntil(
-                        () => Session.Refresh(),
+                        () => Session.Refresh(), 
                         () => headerPage.AdminLinkAvailable(adminPage),
                         options.RetryInterval,
                         options);

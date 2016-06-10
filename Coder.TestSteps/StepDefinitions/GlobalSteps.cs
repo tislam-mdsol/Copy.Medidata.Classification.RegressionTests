@@ -252,6 +252,7 @@ namespace Coder.TestSteps.StepDefinitions
         
         [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicSegment")]
         [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicStudy")]
+        [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndMultipleProdStudy")]
         public void GivenARaveProjectRegistrationWithDictionaryParallelExecution(string dictionaryLocaleVersion)
         {
             if (String.IsNullOrWhiteSpace(dictionaryLocaleVersion)) throw new ArgumentNullException("dictionaryLocaleVersion");
@@ -276,7 +277,7 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (String.IsNullOrWhiteSpace(dictionaryLocaleVersion)) throw new ArgumentNullException("dictionaryLocaleVersion");
 
-            _Browser.Logout();
+            _Browser.LogoutOfiMedidata();
             GivenARaveProjectRegistrationWithDictionaryParallelExecution(dictionaryLocaleVersion);
         }
 
@@ -358,16 +359,19 @@ namespace Coder.TestSteps.StepDefinitions
             
             var productionStudies = _StepContext.SegmentUnderTest.Studies.Select(x => x).Where(x => x.IsProduction);
 
+            //JPTODO:: The syncs are taking too long in parallel
+            // The project registration may not be immidiately available to the user on the first login due to the time it takes for Coder to sync with iMedidata.
+            // WaitUntilAdminLinkExists() and WaitForIMedidataSync() do not appear to improve the situation. Jose suggested refreshing the page, but I believe 
+            // WaitForIMedidataSync() is doing this already.
+            // Explicitly wait here, so as not to affect the CoderCore tests.
+
+            _Browser.WaitUntilAdminLinkExists("Project Registration");
+            //_Browser.WaitForIMedidataSync();
+
             foreach (var study in productionStudies)
             {
-                //JPTODO:: The syncs are taking too long in parallel
-                // The project registration may not be immidiately available to the user on the first login due to the time it takes for Coder to sync with iMedidata.
-                // WaitUntilAdminLinkExists() and WaitForIMedidataSync() do not appear to improve the situation. Jose suggested refreshing the page, but I believe 
-                // WaitForIMedidataSync() is doing this already.
-                // Explicitly wait here, so as not to affect the CoderCore tests.
-                _Browser.WaitUntilAdminLinkExists("Project Registration");
-                //_Browser.WaitForIMedidataSync();
-                _Browser.RegisterProjects(study.StudyName, new List<SynonymList> { _StepContext.SourceSynonymList });
+               // _Browser.GoToAdminPage("CodingCleanup");
+                 _Browser.RegisterProjects(study.StudyName, new List<SynonymList> { _StepContext.SourceSynonymList });
             }
         }
 
