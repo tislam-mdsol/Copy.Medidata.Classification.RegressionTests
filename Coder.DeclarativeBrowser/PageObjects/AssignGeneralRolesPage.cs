@@ -114,10 +114,10 @@ namespace Coder.DeclarativeBrowser.PageObjects
         {
             if (String.IsNullOrWhiteSpace(roleName)) throw new ArgumentNullException("roleName");
             if (String.IsNullOrWhiteSpace(segment))  throw new ArgumentNullException("segment");
-            if (String.IsNullOrWhiteSpace(loginId))  throw new ArgumentNullException("loginId"); 
-            
-            var assignRoleEditButton = _Browser.FindSessionElementByXPath(String.Format("//tr[contains(@id, 'ctl00_Content_gridUsrObjWflRole_DXDataRow') and td[text()= 'TEST'] and td[text()= 'All']  and td[contains(text(), 'coder15')]]/td/a/b/i[contains(@style, 'edit')]", roleName, segment, loginId));
-            
+            if (String.IsNullOrWhiteSpace(loginId))  throw new ArgumentNullException("loginId");
+
+            var assignRoleEditButton = _Browser.FindSessionElementByXPath(String.Format("//tr[contains(@id, 'ctl00_Content_gridUsrObjRole_DXDataRow') and td[text()= '{0}'] and td[text()= '{1}']  and td[contains(text(), '{2}')]]/td/a/b/i[contains(@style, 'edit')]", roleName, segment, loginId));
+           
             return assignRoleEditButton;
         }
 

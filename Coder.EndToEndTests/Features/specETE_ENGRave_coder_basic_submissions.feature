@@ -103,6 +103,7 @@ Feature: Test full round trip integration from Rave to Coder.  New features conv
   @VAL
   @PB1.1.2.004
   @ETE_ENG_Rave_coder_basic_Sub_recon
+  @IncreaseTimeout_1800000
   @Release2016.1.0
   Scenario:Basic Rave Coder Submission and reconsider term and recode
     Given a Rave project registration with dictionary "MedDRA ENG 12.0"

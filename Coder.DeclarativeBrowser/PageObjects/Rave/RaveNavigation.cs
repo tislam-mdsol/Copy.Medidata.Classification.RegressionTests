@@ -107,7 +107,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         private SessionElementScope GetHorizontalTabsTable()
         {
-            var tabsTable = _Session.FindSessionElementById("_ctl0_PgHeader_TabTable");
+            var tabsTable = _Session.FindSessionElementByXPath("//table[contains(@id, 'TabTable')]");
 
             return tabsTable;
         }
