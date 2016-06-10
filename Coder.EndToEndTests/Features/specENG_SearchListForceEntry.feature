@@ -37,8 +37,8 @@ Scenario: A coding decision will be accepted by EDC for a verbatim that is not p
 	Given a Rave project registration with dictionary "WhoDrug-DDE-B2 ENG 200703"
 	And Rave Modules App Segment is loaded
  	And a Rave Coder setup with the following options
-      | Form  | Field                   | Dictionary   | Locale | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval |
-      | ETE17 | Log Search List Supp... | <Dictionary> |        | PRODUCTSYNONYM | 1        | false              | false          |  
+      | Form  | Field               | Dictionary   | Locale | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval |
+      | ETE17 | Specify Search List | <Dictionary> |        | PRODUCTSYNONYM | 1        | false              | false          |  
 	When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE17"
