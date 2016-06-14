@@ -21,7 +21,7 @@
   <add key="LicenseCode"                              value="lc123"/>
   <add key="NewGeneratedSegment"                      value="ProjectStudy1" />
   <add key="AdminLogin"                               value="<%= configured.coder_admin_user_id           || 'CoderSuperUser' %>"/>
-  <add key="AdminLoginPassword"                       value="<%= configured.coder_admin_user_password     || 'Password1' %>"/>
+  <add key="AdminLoginPassword"                       value="<%= configured.coder_admin_user_password     || 'Password2' %>"/>
   <add key="RaveAdminLogin"                           value="<%= configured.rave_admin_user_id            || 'defuser' %>"/>
   <add key="RaveAdminPassword"                        value="<%= configured.rave_admin_user_password      || 'password' %>"/>
   <add key="ApplicationName"                          value="<%= configured.application_name %>" />
