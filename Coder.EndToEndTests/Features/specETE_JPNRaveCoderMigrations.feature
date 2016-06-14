@@ -9,7 +9,7 @@ Feature: UPDATED Verify JPN Rave Coder Migrations
 Scenario: Setup Rave study with all non coding fields, enter data in EDC, migrate study in Rave from non-coding to Medidata Coder, Verify terms appear in Coder after migration
 	Given a Rave project registration with dictionary "MedDRA JPN 11.0"
     And Rave Modules App Segment is loaded
-   	When a Rave Draft is published using draft "<DraftName>" for Project "<StudyName>"
+   	When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
 	Given a Rave Coder setup with the following options
       | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
       | ETE2 | Coding Field | <Dictionary> | <Locale> | PT         | 1        | false              | false          |
