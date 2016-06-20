@@ -137,7 +137,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             LoginAsAdministrator();
 
-            var newStudyGroup = CreateSegmentSetupData(generatedSuffix, true);
+            var newStudyGroup = CreateSegmentSetupData(generatedSuffix, false);
 
             SetSegmentContext(newStudyGroup);
 
