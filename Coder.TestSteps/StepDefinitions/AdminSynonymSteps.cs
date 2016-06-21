@@ -97,6 +97,7 @@ namespace Coder.TestSteps.StepDefinitions
         }
 
         [Given(@"a populated activated synonym list ""(.*)"" containing entry ""(.*)""")]
+        [When(@"activating a new populated synonym list ""(.*)"" containing entry ""(.*)""")]
         public void GivenAPopulatedActivatedSynonymListContainingEntry(
             string dictionaryLocaleVersionSynonymListName,
             string delimitedSynonym)

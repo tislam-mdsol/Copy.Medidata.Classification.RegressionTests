@@ -188,10 +188,8 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             var crfDownloadLink = _Session.FindSessionElementByLink("Download");
 
             crfDownloadLink.Click();
-            SendKeys.SendWait(@"{DOWN}");
-            Thread.Sleep(5000);
-            SendKeys.SendWait(@"{Enter}");
-            Thread.Sleep(5000);
+
+            //Todo Find a way for fire fox to automatically download zip files
         }
     }
 }

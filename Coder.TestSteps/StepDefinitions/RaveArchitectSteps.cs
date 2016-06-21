@@ -2,6 +2,7 @@
 using Coder.DeclarativeBrowser.Models;
 using Coder.TestSteps.Transformations;
 using System;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using Coder.DeclarativeBrowser.Helpers;
@@ -58,7 +59,7 @@ namespace Coder.TestSteps.StepDefinitions
         [When(@"uploading a rave architect draft error template")]
         public void WhenUploadingARaveArchitectDraftTemplate()
         {     
-            var draftTemplateFilePath = Path.Combine(Config.StaticContentFolder, "ErrorGeneratingCRFDraft.xls");
+            var draftTemplateFilePath = Path.Combine(Config.StaticContentFolder, Config.CRFDraftDownloadFailureFileName);
             
             _Browser.UploadRaveArchitectErrorDraft(draftTemplateFilePath);
         }
@@ -311,15 +312,14 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser.ARaveStudyEnvironmentIsCreatedForProject(studyEnvironment, studyName);
         }
 
-        [Then(@"Verify Rave Coder Global Configuration download located ""(.*)"" worksheet ""(.*)"" Review Marking Group ""(.*)"" Requires Response ""(.*)""")]
-        public void ThenVerifyRaveCoderGlobalConfigurationDownloadLocatedWorksheetReviewMarkingGroupRequiresResponse(string downloadDirectory, string workSheetName, string reviewMarkingGroup, string isRequiresResponse)
+        [Then(@"verify Rave Coder Global Configuration download worksheet with Review Marking Group ""(.*)"" Requires Response ""(.*)""")]
+        public void ThenVerifyRaveCoderGlobalConfigurationDownloadWorksheetWithReviewMarkingGroupRequiresResponse(string reviewMarkingGroup, bool isRequiresResponse)
         {
-            if (String.IsNullOrWhiteSpace(downloadDirectory)) throw new ArgumentNullException(downloadDirectory);
-            if (String.IsNullOrWhiteSpace(workSheetName)) throw new ArgumentNullException(workSheetName);
             if (String.IsNullOrWhiteSpace(reviewMarkingGroup)) throw new ArgumentNullException(reviewMarkingGroup);
-            if (String.IsNullOrWhiteSpace(isRequiresResponse)) throw new ArgumentNullException(isRequiresResponse);
+ 
+            var downloadDirectory = _StepContext.DownloadDirectory;
 
-            var configurationCorrect = _Browser.IsRaveCoderGlobalConfigurationXLSFileCorrect(downloadDirectory, workSheetName, reviewMarkingGroup, isRequiresResponse);
+            var configurationCorrect = _Browser.IsRaveCoderGlobalConfigurationXLSFileCorrect(downloadDirectory, reviewMarkingGroup, isRequiresResponse);
 
             configurationCorrect.Should().BeTrue();
         }

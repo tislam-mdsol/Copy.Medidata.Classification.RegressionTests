@@ -5,21 +5,24 @@ using System.IO;
 using System.IO.Compression;
 using Coder.DeclarativeBrowser.FileHelpers;
 using System.Linq;
-using System.Text; 
-using System.Xml; 
+using System.Text;
+using System.Xml;
 using System.Xml.Linq;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 using Coder.DeclarativeBrowser.Models.ETEModels;
+using System.Windows.Forms;
+using System.Threading;
 
 namespace Coder.DeclarativeBrowser.PageObjects
 {
     internal sealed class RaveConfigurationLoaderPage
     {
         private readonly BrowserSession _Browser;
-        private readonly String _SuccessMessage = "Save Successful";
-        private const string _PageName          = "Configuration Loader";
-        private const int _ReviewMarkingGroupIndex   = 6;
-        private const int _IsRequiresResponseIndex   = 11; 
+        private readonly String _SuccessMessage                 = "Save Successful";
+        private const string _PageName                          = "Configuration Loader";
+        private const int _GlobalConfigReviewMGRowIndex         = 1;
+        private const int _GlobalConfigRequiresResponseRowIndex = 2;
+        private const int _GlobalConfigValueColumnIndex         = 1;
 
         internal RaveConfigurationLoaderPage(BrowserSession browser)
         {
@@ -132,57 +135,66 @@ namespace Coder.DeclarativeBrowser.PageObjects
         {
             if (String.IsNullOrWhiteSpace(downloadDirectory)) throw new ArgumentNullException("downloadDirectory");
 
-            var zippedFileName   = "RaveGlobalConfiguration" + DateTime.Today.ToString() + ".zip";
+            GetConfigDownloadFile();
 
-            var unZippedFileName = zippedFileName.Replace(".zip", ".xls");
+            //ToDO Find better way for windows download modal
+            SendKeys.SendWait(@"{DOWN}");
+            Thread  .Sleep(5000);
+            SendKeys.SendWait(@"{Enter}");
+            Thread  .Sleep(5000);
 
-            GenericFileHelper.DownloadVerifiedFile(downloadDirectory, zippedFileName, GetConfigDownloadFile);
+            string[] filePaths     = Directory.GetFiles(@downloadDirectory, "RaveCoreConfig_eng_*.zip");
+
+            if (filePaths.Length > 1)
+            {
+                throw new Exception("More than one zip global configuration file exists!");
+            }
+
+            var zippedFileName     = filePaths[0].Substring(filePaths[0].IndexOf('/') + 1); ;
 
             var actualUnzippedPath = GenericFileHelper.UnzipFile(downloadDirectory, zippedFileName, downloadDirectory);
 
             return actualUnzippedPath;
         }
 
-        internal static RaveCoderGlobalConfiguration GetRaveCoderGlobalConfigXmltoModel(string filePath, string sheetName)
+        internal static RaveCoderGlobalConfiguration GetRaveCoderGlobalConfigXmltoModel(string filePath)
         {
             if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException(filePath);
-            if (String.IsNullOrWhiteSpace(sheetName)) throw new ArgumentNullException(sheetName);
 
-            string reviewMarkingGroup = null;
-            bool isRequiresResponse   = false;
+            var newConfigurationModel = new RaveCoderGlobalConfiguration();
 
-            XElement xelement = XElement.Load(filePath);
-            var xmlItemWorkSheet = from xmlTag in xelement.Elements("Worksheet")
-                                   where (string)xmlTag.Element("Worksheet").Value == sheetName
-                                   select xmlTag;
+            newConfigurationModel.ReviewMarkingGroup = GenericFileHelper
+               .GetValueinSpreadSheetByRowAndColumnIndex(
+                                                          filePath,
+                                                          newConfigurationModel.GlobalConfigWorksheetName, 
+                                                          _GlobalConfigReviewMGRowIndex,
+                                                          _GlobalConfigValueColumnIndex
+                                                        );
 
-            var reviewDataValues = xmlItemWorkSheet.Descendants("Data").ToList();
-             
-            reviewMarkingGroup = reviewDataValues[_ReviewMarkingGroupIndex].Value;
-            isRequiresResponse = reviewDataValues[_IsRequiresResponseIndex].Value.ToBoolean();
-
-            var newConfigurationModel = new RaveCoderGlobalConfiguration
-            {
-                ReviewMarkingGroup = reviewMarkingGroup,
-                IsRequiresResponse = isRequiresResponse
-            };
-
+            newConfigurationModel.IsRequiresResponse = GenericFileHelper
+               .GetValueinSpreadSheetByRowAndColumnIndex(
+                                                          filePath,
+                                                          newConfigurationModel.GlobalConfigWorksheetName,
+                                                          _GlobalConfigRequiresResponseRowIndex,
+                                                          _GlobalConfigValueColumnIndex
+                                                        ).ToBoolean();
             return newConfigurationModel;
         }
 
-        internal bool IsRaveCoderGlobalConfigurationDownloadXLSFileCorrect(string downloadDirectory, string workSheetName, string reviewMarkingGroup, string isRequiresResponse)
+        internal bool IsRaveCoderGlobalConfigurationDownloadXLSFileCorrect(string downloadDirectory, string reviewMarkingGroup, bool requiresResponse)
         {
-            if (String.IsNullOrWhiteSpace(downloadDirectory)) throw new ArgumentNullException(downloadDirectory);
-            if (String.IsNullOrWhiteSpace(workSheetName)) throw new ArgumentNullException(workSheetName);
-            if (String.IsNullOrWhiteSpace(reviewMarkingGroup)) throw new ArgumentNullException(reviewMarkingGroup);
-            if (String.IsNullOrWhiteSpace(isRequiresResponse)) throw new ArgumentNullException(isRequiresResponse);
+            if (string.IsNullOrEmpty(downloadDirectory))  throw new ArgumentNullException("downloadDirectory");
+            if (string.IsNullOrEmpty(reviewMarkingGroup)) throw new ArgumentNullException("reviewMarkingGroup");
+         
+            var filePath                          = GetConfigurationDownloadFile(downloadDirectory);
+            
+            var raveCoderGlobalConfigurationModel = GetRaveCoderGlobalConfigXmltoModel(filePath);
 
-            string filePath                       = GetConfigurationDownloadFile(downloadDirectory);
-            var raveCoderGlobalConfigurationModel = GetRaveCoderGlobalConfigXmltoModel(filePath,workSheetName);
-
-            bool doConfigurationMatch = raveCoderGlobalConfigurationModel.ReviewMarkingGroup.EqualsIgnoreCase(reviewMarkingGroup)
+            var doConfigurationMatch =  raveCoderGlobalConfigurationModel
+                                        .ReviewMarkingGroup.EqualsIgnoreCase(reviewMarkingGroup)
                                         &&
-                                        raveCoderGlobalConfigurationModel.IsRequiresResponse.Equals(isRequiresResponse.ToBoolean());
+                                        raveCoderGlobalConfigurationModel
+                                        .IsRequiresResponse.Equals(requiresResponse);
             
             return doConfigurationMatch;
         }

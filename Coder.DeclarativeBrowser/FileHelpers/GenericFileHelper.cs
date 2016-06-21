@@ -120,5 +120,32 @@ namespace Coder.DeclarativeBrowser.FileHelpers
             return true;
         }
 
+        internal static string GetValueinSpreadSheetByRowAndColumnIndex(string filePath, string workSheetName, int rowIndex, int columnIndex)
+        {
+            if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException(nameof(filePath));
+            if (String.IsNullOrWhiteSpace(workSheetName)) throw new ArgumentNullException(nameof(workSheetName));
+
+            XDocument workSheets = XDocument.Load(filePath + ".xls");
+
+            XNamespace ss = "urn:schemas-microsoft-com:office:spreadsheet";
+            XNamespace o = "urn:schemas-microsoft-com:office:office";
+            XNamespace x = "urn:schemas-microsoft-com:office:excel";
+
+            var valueContent = "";
+
+            foreach (XElement worksheet in workSheets.Descendants(ss + "Worksheet"))
+            {
+                if (worksheet.Attribute(ss + "Name").Value.Equals(workSheetName, StringComparison.OrdinalIgnoreCase))
+                {
+                    var workSheetRows    = worksheet.Descendants(ss + "Row").ToArray();
+
+                    var workSheetColumns = workSheetRows[rowIndex].Descendants(ss + "Data").ToArray();
+
+                    valueContent         = workSheetColumns[columnIndex].Value;
+                }
+            }
+
+            return valueContent;
+        }
     }
 }

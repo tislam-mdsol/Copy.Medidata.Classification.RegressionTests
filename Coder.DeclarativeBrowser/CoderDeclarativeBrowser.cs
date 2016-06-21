@@ -141,7 +141,7 @@ namespace Coder.DeclarativeBrowser
             bool uploadCompletedSuccesfully = UploadOdm(filePath, haltOnFailure);
 
             var codingTaskPage = Session.GetCodingTaskPage();
-
+            codingTaskPage.SelectTasksTab();
             codingTaskPage.ClearFilters();
 
             return uploadCompletedSuccesfully;
@@ -1050,25 +1050,6 @@ namespace Coder.DeclarativeBrowser
             raveArchitectUploadDraftPage.UploadDraftFile(draftFilePath);
         }
         
-        public void UploadRaveArchitectDraft(string study, string draftName, string draftFilePath)
-        {
-            if (string.IsNullOrEmpty(study))         throw new ArgumentNullException(nameof(study));
-            if (string.IsNullOrEmpty(draftName))     throw new ArgumentNullException(nameof(draftName));
-            if (string.IsNullOrEmpty(draftFilePath)) throw new ArgumentNullException(nameof(draftFilePath));
-
-            DeleteRaveArchitectDraft(study, draftName);
-
-            var raveNavigation = Session.GetRaveNavigation();
-
-            raveNavigation.OpenArchitectPage();
-
-            raveNavigation.OpenArchitectUploadDraftPage();
-
-            var raveArchitectUploadDraftPage = Session.GetRaveArchitectUploadDraftPage();
-            
-            raveArchitectUploadDraftPage.UploadDraftFile(draftFilePath);
-        }
-
         public void UploadRaveArchitectErrorDraft(string draftFilePath)
         {
             if (string.IsNullOrEmpty(draftFilePath)) throw new ArgumentNullException(nameof(draftFilePath));
@@ -3137,16 +3118,14 @@ namespace Coder.DeclarativeBrowser
             raveArchitectEnvironmentSetupPage.SetNewEnvironmentProperties(studyEnvironment);
         }
 
-        public bool IsRaveCoderGlobalConfigurationXLSFileCorrect(string downloadDirectory, string workSheetName, string reviewMarkingGroup, string isRequiresResponse)
+        public bool IsRaveCoderGlobalConfigurationXLSFileCorrect(string downloadDirectory, string reviewMarkingGroup, bool requiresResponse)
         {
-            if (string.IsNullOrEmpty(downloadDirectory))  throw new ArgumentNullException("downloadDirectory");
-            if (string.IsNullOrEmpty(workSheetName))      throw new ArgumentNullException("workSheetName");
-            if (string.IsNullOrEmpty(reviewMarkingGroup)) throw new ArgumentNullException("reviewMarkingGroup");
-            if (string.IsNullOrEmpty(isRequiresResponse)) throw new ArgumentNullException("isRequiresResponse");
+            if (string.IsNullOrEmpty(downloadDirectory))   throw new ArgumentNullException("downloadDirectory");
+            if (string.IsNullOrEmpty(reviewMarkingGroup))  throw new ArgumentNullException("reviewMarkingGroup");
+          
+            var raveRaveConfigurationLoaderPage    = Session.OpenRaveConfigurationLoaderPage();
 
-            var raveRaveConfigurationLoaderPage    = Session.GetRaveConfigurationLoaderPage();
-
-            var verifyRaveCoderGlobalConfiguration = raveRaveConfigurationLoaderPage.IsRaveCoderGlobalConfigurationDownloadXLSFileCorrect(downloadDirectory, workSheetName, reviewMarkingGroup, isRequiresResponse);
+            var verifyRaveCoderGlobalConfiguration = raveRaveConfigurationLoaderPage.IsRaveCoderGlobalConfigurationDownloadXLSFileCorrect(downloadDirectory, reviewMarkingGroup, requiresResponse);
 
             return verifyRaveCoderGlobalConfiguration;
         }

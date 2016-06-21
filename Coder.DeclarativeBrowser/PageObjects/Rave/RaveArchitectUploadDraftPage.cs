@@ -59,6 +59,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             if (ReferenceEquals(draftFilePath, null)) throw new ArgumentNullException("draftFilePath");
             
             AttachDraftFile(draftFilePath);
+
             GetUploadButton().Click();
 
             WaitForUploadToComplete();

@@ -93,16 +93,14 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("global Rave-Coder Configuration settings with Review Marking Group are set to \"Da" +
                     "ta Management\" and Requires Response are set to \"false\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
-    testRunner.Then("Verify Rave Coder Global Configuration download located \"c:\\Temp\" worksheet \"Code" +
-                    "r Configuration\" Review Marking Group \"Data Management\" Requires Response \"false" +
-                    "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("verify Rave Coder Global Configuration download worksheet with Review Marking Gro" +
+                    "up \"Data Management\" Requires Response \"false\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 18
  testRunner.When("global Rave-Coder Configuration settings with Review Marking Group are set to \"si" +
                     "te from system\" and Requires Response are set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
-    testRunner.Then("Verify Rave Coder Global Configuration download located \"c:\\Temp\" worksheet \"Code" +
-                    "r Configuration\" Review Marking Group \"site from system\" Requires Response \"true" +
-                    "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("verify Rave Coder Global Configuration download worksheet with Review Marking Gro" +
+                    "up \"site from system\" Requires Response \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
