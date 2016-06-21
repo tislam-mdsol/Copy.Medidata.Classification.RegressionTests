@@ -6,7 +6,6 @@ using System.Xml.Linq;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coypu;
-using System.Windows.Forms;
 
 namespace Coder.DeclarativeBrowser.PageObjects.Rave
 {
