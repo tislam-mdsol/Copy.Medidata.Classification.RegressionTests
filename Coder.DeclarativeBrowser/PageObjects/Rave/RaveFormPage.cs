@@ -333,7 +333,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             }
             else
             {
-                formRow = formRows.FirstOrDefault(x => x.Text.Contains(label, StringComparison.OrdinalIgnoreCase));
+                formRow = formRows.FirstOrDefault(x => x.Text.StartsWith(label, StringComparison.OrdinalIgnoreCase));
             }
 
             if (ReferenceEquals(formRow, null))

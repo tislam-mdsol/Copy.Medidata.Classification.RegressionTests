@@ -127,6 +127,13 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return pageTitle;
         }
 
+        private SessionElementScope GetPageTitleOfAdminPageWithNewUI()
+        {
+            var pageTitle = _Browser.FindSessionElementByXPath("//*[contains(@class,'page - title')]");
+
+            return pageTitle;
+        }
+
         internal bool IsBrowserOnTasksPage()
         {
             var pageTitle = GetPageTitle();
@@ -134,6 +141,26 @@ namespace Coder.DeclarativeBrowser.PageObjects
             if (pageTitle.IndexOf("tasks", StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 return true;
+            }
+
+            return false;
+        }
+
+        internal bool IsBrowserOnAdminPage(String pageName)
+        {
+            var pageTitle = GetPageTitle();
+
+            if (pageTitle.Equals(pageName,StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+            else if (GetPageTitleOfAdminPageWithNewUI().Exists())
+            {
+                var newAdminPageTitle = GetPageTitleOfAdminPageWithNewUI();
+                if(newAdminPageTitle.Text.Equals(pageName, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
             }
 
             return false;

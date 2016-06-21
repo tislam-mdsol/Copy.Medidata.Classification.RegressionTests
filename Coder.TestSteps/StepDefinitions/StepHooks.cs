@@ -60,7 +60,7 @@ namespace Coder.TestSteps.StepDefinitions
             SetSegmentContext(newStudyGroup);
 
             CreateTestUserContext(generatedSuffix, newStudyGroup, createNewSegment: true);
-            
+
             browser.EnrollSegment(Config.SetupSegment, _StepContext.GetSegment());
 
             browser.LogoutOfCoderAndImedidata();
@@ -121,11 +121,36 @@ namespace Coder.TestSteps.StepDefinitions
             
             CreateTestUserContext(generatedSuffix, newStudyGroup, createNewSegment: false);
 
-            browser.Logout();
+            browser.LogoutOfiMedidata();
 
             CompleteUserRegistration(_StepContext.CoderTestUser, newStudyGroup);
 
             WriteSetupDetails(_StepContext.CoderTestUser, newStudyGroup);
+        }
+
+        [BeforeScenario("EndToEndMultipleProdStudy")]
+        public void BeforeEndToEndScenarioMultipleProdStudy()
+        {
+            var generatedSuffix = SetBrowsingContext();
+
+            var browser = _StepContext.Browser;
+
+            LoginAsAdministrator();
+
+            var newStudyGroup = CreateSegmentSetupData(generatedSuffix, true);
+
+            SetSegmentContext(newStudyGroup);
+
+            CreateTestUserContext(generatedSuffix, newStudyGroup, createNewSegment: true);
+
+            browser.EnrollSegment(Config.SetupSegment, _StepContext.GetSegment());
+
+            browser.LogoutOfCoderAndImedidata();
+
+            CompleteUserRegistration(_StepContext.CoderTestUser, newStudyGroup);
+
+            WriteSetupDetails(_StepContext.CoderTestUser, newStudyGroup);
+          
         }
 
         [BeforeScenario("EndToEndStaticSegment")]
@@ -218,10 +243,8 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 browser.AssignUserToStudy("coderimport", "Coder Import Role", study: study.StudyName);
             }
-
-            browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
             
-            browser.LogoutOfCoderAndImedidata();
+            browser.LogoutOfiMedidata();
         }
         
         private void WriteSetupDetails(MedidataUser user, SegmentSetupData studyGroup)
@@ -322,7 +345,7 @@ namespace Coder.TestSteps.StepDefinitions
             stepContext.Browser           = CoderDeclarativeBrowser.StartBrowsing(_StepContext.DownloadDirectory);
         }
 
-        private SegmentSetupData CreateSegmentSetupData(string nameSuffix)
+        private SegmentSetupData CreateSegmentSetupData(string nameSuffix, bool allProduction = false)
         {
             const string userAcceptanceStudySuffix = "(UAT)";
             const string developmentStudySuffix    = "(Dev)";
@@ -334,7 +357,13 @@ namespace Coder.TestSteps.StepDefinitions
 
             var siteName = String.Concat(Config.StudyNamePrefix, nameSuffix, "_Site");
             var siteNumber = String.Concat(nameSuffix, "_Site").RemoveNonAlphanumeric();
-            
+
+            bool isProductionValue = false;
+            if (allProduction)
+            {
+                isProductionValue = true;
+            }
+
             var newStudyGroup = new SegmentSetupData
             {
                 NameSuffix = nameSuffix,
@@ -360,7 +389,7 @@ namespace Coder.TestSteps.StepDefinitions
                     {
                         StudyName    = String.Concat(studyName, " ",userAcceptanceStudySuffix),
                         ExternalOid  = String.Concat(studyExternalOid, userAcceptanceStudySuffix).RemoveNonAlphanumeric(),
-                        IsProduction = false,
+                        IsProduction = isProductionValue,
                         Sites        = new SiteSetupData[]
                         {
                             new SiteSetupData
@@ -375,7 +404,7 @@ namespace Coder.TestSteps.StepDefinitions
                     {
                         StudyName    = String.Concat(studyName, " ", developmentStudySuffix),
                         ExternalOid  = String.Concat(studyExternalOid, developmentStudySuffix).RemoveNonAlphanumeric(),
-                        IsProduction = false,
+                        IsProduction = isProductionValue,
                         Sites        = new SiteSetupData[]
                         {
                             new SiteSetupData

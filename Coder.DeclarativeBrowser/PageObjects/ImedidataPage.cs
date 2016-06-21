@@ -50,7 +50,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         private SessionElementScope GetiMedidataLink()
         {
-            var iMedidataLink = _Browser.FindSessionElementByXPath("//a[@class='mcc-logo']");
+            var iMedidataLink = _Browser.FindSessionElementByXPath("//span[@class='mcc-logo']");
 
             return iMedidataLink;
         }
@@ -385,9 +385,20 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return invitationAcceptLinks;
         }
 
+        internal bool invitationAcceptLinksPresent()
+        {
+            var count = GetInvitationAcceptLinks().Count();
+
+            if (count < 1) { return false; }
+            return true;
+        }
         internal void AcceptAllStudyGroupInvitations()
         {
             var invitationAcceptLinks = GetInvitationAcceptLinks();
+
+            if (invitationAcceptLinks.Count()==0) {
+                throw new MissingHtmlException("No Invitations Found");
+            }
 
             foreach (var invitationAcceptLink in invitationAcceptLinks)
             {
