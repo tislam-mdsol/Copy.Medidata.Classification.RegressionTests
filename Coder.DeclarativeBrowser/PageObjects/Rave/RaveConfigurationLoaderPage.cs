@@ -10,7 +10,6 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Collections.Generic;
 using Coder.DeclarativeBrowser.Models.ETEModels;
-using System.Windows.Forms;
 using System.Threading;
 
 namespace Coder.DeclarativeBrowser.PageObjects
@@ -137,20 +136,14 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             GetConfigDownloadFile();
 
-            //ToDO Find better way for windows download modal
-            SendKeys.SendWait(@"{DOWN}");
-            Thread  .Sleep(5000);
-            SendKeys.SendWait(@"{Enter}");
-            Thread  .Sleep(5000);
-
-            string[] filePaths     = Directory.GetFiles(@downloadDirectory, "RaveCoreConfig_eng_*.zip");
+            string[] filePaths = GenericFileHelper.GetDirectoryPaths(@downloadDirectory, "RaveCoreConfig_eng_*.zip");
 
             if (filePaths.Length > 1)
             {
-                throw new Exception("More than one zip global configuration file exists!");
+                throw new ArgumentOutOfRangeException("More than one zip global configuration file exists");
             }
 
-            var zippedFileName     = filePaths[0].Substring(filePaths[0].IndexOf('/') + 1); ;
+            var zippedFileName = Path.GetFileName(filePaths[0]);
 
             var actualUnzippedPath = GenericFileHelper.UnzipFile(downloadDirectory, zippedFileName, downloadDirectory);
 

@@ -23,7 +23,6 @@ using Coder.DeclarativeBrowser.IMedidataApi;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.PageObjects;
 using DocumentFormat.OpenXml.Drawing.Diagrams;
-using FluentAssertions.Common;
 using Medidata;
 using Medidata.Classification;
 

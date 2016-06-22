@@ -13,6 +13,10 @@ namespace Coder.DeclarativeBrowser.FileHelpers
 {
     public static class GenericFileHelper
     {
+        private static XNamespace _Css_Ss_Class = "urn:schemas-microsoft-com:office:spreadsheet";
+        private static XNamespace _Css_O_Class  = "urn:schemas-microsoft-com:office:office";
+        private static XNamespace _Css_X_Class  = "urn:schemas-microsoft-com:office:excel";
+
         public static int GetFileRowCount(string filePath)
         {
             if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException(nameof(filePath));
@@ -88,20 +92,17 @@ namespace Coder.DeclarativeBrowser.FileHelpers
 
             XDocument workSheets = XDocument.Load(filePath + ".xls");
 
-            XNamespace ss = "urn:schemas-microsoft-com:office:spreadsheet";
-            XNamespace o  = "urn:schemas-microsoft-com:office:office";
-            XNamespace x  = "urn:schemas-microsoft-com:office:excel";
             var i = 0;
 
-            foreach (XElement worksheet in workSheets.Descendants(ss + "Worksheet"))
+            foreach (XElement worksheet in workSheets.Descendants(_Css_Ss_Class + "Worksheet"))
             {
-                if (worksheet.Attribute(ss + "Name").Value.Equals(workSheetName, StringComparison.OrdinalIgnoreCase))
+                if (worksheet.Attribute(_Css_Ss_Class + "Name").Value.Equals(workSheetName, StringComparison.OrdinalIgnoreCase))
                 {
-                    var skipFirstRow = worksheet.Descendants(ss + "Row").Skip(1);
+                    var skipFirstRow = worksheet.Descendants(_Css_Ss_Class + "Row").Skip(1);
 
                     foreach (XElement row in skipFirstRow)
                     {
-                       foreach (XElement cell in row.Descendants(ss + "Data"))
+                       foreach (XElement cell in row.Descendants(_Css_Ss_Class + "Data"))
                        {
                          var expectedValue = expectedSheetDataValues[i];
                          var actualValue   = cell.Value;
@@ -127,19 +128,15 @@ namespace Coder.DeclarativeBrowser.FileHelpers
 
             XDocument workSheets = XDocument.Load(filePath + ".xls");
 
-            XNamespace ss = "urn:schemas-microsoft-com:office:spreadsheet";
-            XNamespace o = "urn:schemas-microsoft-com:office:office";
-            XNamespace x = "urn:schemas-microsoft-com:office:excel";
-
             var valueContent = "";
 
-            foreach (XElement worksheet in workSheets.Descendants(ss + "Worksheet"))
+            foreach (XElement worksheet in workSheets.Descendants(_Css_Ss_Class + "Worksheet"))
             {
-                if (worksheet.Attribute(ss + "Name").Value.Equals(workSheetName, StringComparison.OrdinalIgnoreCase))
+                if (worksheet.Attribute(_Css_Ss_Class + "Name").Value.Equals(workSheetName, StringComparison.OrdinalIgnoreCase))
                 {
-                    var workSheetRows    = worksheet.Descendants(ss + "Row").ToArray();
+                    var workSheetRows    = worksheet.Descendants(_Css_Ss_Class + "Row").ToArray();
 
-                    var workSheetColumns = workSheetRows[rowIndex].Descendants(ss + "Data").ToArray();
+                    var workSheetColumns = workSheetRows[rowIndex].Descendants(_Css_Ss_Class + "Data").ToArray();
 
                     valueContent         = workSheetColumns[columnIndex].Value;
                 }
@@ -147,5 +144,14 @@ namespace Coder.DeclarativeBrowser.FileHelpers
 
             return valueContent;
         }
+
+        internal static string[] GetDirectoryPaths(string downloadDirectory, string filePath)
+        {
+            string[] filePaths = Directory.GetFiles(@downloadDirectory, filePath);
+
+            return filePaths;
+        }
+
+
     }
 }

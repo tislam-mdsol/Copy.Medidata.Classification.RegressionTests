@@ -317,9 +317,7 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (String.IsNullOrWhiteSpace(reviewMarkingGroup)) throw new ArgumentNullException(reviewMarkingGroup);
  
-            var downloadDirectory = _StepContext.DownloadDirectory;
-
-            var configurationCorrect = _Browser.IsRaveCoderGlobalConfigurationXLSFileCorrect(downloadDirectory, reviewMarkingGroup, isRequiresResponse);
+            var configurationCorrect = _Browser.IsRaveCoderGlobalConfigurationXLSFileCorrect(_StepContext.DownloadDirectory, reviewMarkingGroup, isRequiresResponse);
 
             configurationCorrect.Should().BeTrue();
         }
@@ -339,9 +337,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             var fileName = String.Format("{0}_{1}.zip", _StepContext.GetStudyName(), _StepContext.DraftName); 
 
-            var filePath = _StepContext.DownloadDirectory;
-
-            var configurationCorrect = _Browser.IsRaveCRFCoderConfigurationXLSFileCorrect(fileName, filePath, crfCoderConfigurations);
+            var configurationCorrect = _Browser.IsRaveCRFCoderConfigurationXLSFileCorrect(fileName, _StepContext.DownloadDirectory, crfCoderConfigurations);
 
             configurationCorrect.Should().BeTrue();
         }
@@ -355,9 +351,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             var fileName = String.Format("{0}_{1}.zip", _StepContext.GetStudyName(), _StepContext.DraftName);
 
-            var filePath = _StepContext.DownloadDirectory;
-
-            var configurationCorrect = _Browser.IsRaveCRFCoderSupplementalTermsXLSFileCorrect(fileName, filePath, crfCoderSups);
+            var configurationCorrect = _Browser.IsRaveCRFCoderSupplementalTermsXLSFileCorrect(fileName, _StepContext.DownloadDirectory, crfCoderSups);
 
             configurationCorrect.Should().BeTrue();
         }

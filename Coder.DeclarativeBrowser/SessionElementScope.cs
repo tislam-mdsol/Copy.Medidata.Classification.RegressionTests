@@ -7,7 +7,6 @@ using System.Threading;
 using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coypu;
-using FluentAssertions.Common;
 using HtmlAgilityPack;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
