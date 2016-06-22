@@ -8,15 +8,10 @@ using System.Xml.Linq;
 using System.Collections.Generic;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 
-
 namespace Coder.DeclarativeBrowser.FileHelpers
 {
     public static class GenericFileHelper
     {
-        private static XNamespace _Css_Ss_Class = "urn:schemas-microsoft-com:office:spreadsheet";
-        private static XNamespace _Css_O_Class  = "urn:schemas-microsoft-com:office:office";
-        private static XNamespace _Css_X_Class  = "urn:schemas-microsoft-com:office:excel";
-
         public static int GetFileRowCount(string filePath)
         {
             if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException(nameof(filePath));
@@ -84,74 +79,34 @@ namespace Coder.DeclarativeBrowser.FileHelpers
             return unZippedPath;
         }
 
-        internal static bool IsRaveXLSWorkSheetRowDataComparison(string filePath, string workSheetName, List<string> expectedSheetDataValues)
-        {
-            if (String.IsNullOrWhiteSpace(filePath))                   throw new ArgumentNullException(nameof(filePath));
-            if (String.IsNullOrWhiteSpace(workSheetName))              throw new ArgumentNullException(nameof(workSheetName));
-            if (!expectedSheetDataValues.Any())                        throw new ArgumentNullException("No expected values from table");
-
-            XDocument workSheets = XDocument.Load(filePath + ".xls");
-
-            var i = 0;
-
-            foreach (XElement worksheet in workSheets.Descendants(_Css_Ss_Class + "Worksheet"))
-            {
-                if (worksheet.Attribute(_Css_Ss_Class + "Name").Value.Equals(workSheetName, StringComparison.OrdinalIgnoreCase))
-                {
-                    var skipFirstRow = worksheet.Descendants(_Css_Ss_Class + "Row").Skip(1);
-
-                    foreach (XElement row in skipFirstRow)
-                    {
-                       foreach (XElement cell in row.Descendants(_Css_Ss_Class + "Data"))
-                       {
-                         var expectedValue = expectedSheetDataValues[i];
-                         var actualValue   = cell.Value;
-
-                         if (!expectedValue.Equals(actualValue, StringComparison.OrdinalIgnoreCase))
-                         {
-                            return false;
-                         }
-
-                         i++;
-                       }
-                    }
-                 }
-            }
-            
-            return true;
-        }
-
-        internal static string GetValueinSpreadSheetByRowAndColumnIndex(string filePath, string workSheetName, int rowIndex, int columnIndex)
-        {
-            if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException(nameof(filePath));
-            if (String.IsNullOrWhiteSpace(workSheetName)) throw new ArgumentNullException(nameof(workSheetName));
-
-            XDocument workSheets = XDocument.Load(filePath + ".xls");
-
-            var valueContent = "";
-
-            foreach (XElement worksheet in workSheets.Descendants(_Css_Ss_Class + "Worksheet"))
-            {
-                if (worksheet.Attribute(_Css_Ss_Class + "Name").Value.Equals(workSheetName, StringComparison.OrdinalIgnoreCase))
-                {
-                    var workSheetRows    = worksheet.Descendants(_Css_Ss_Class + "Row").ToArray();
-
-                    var workSheetColumns = workSheetRows[rowIndex].Descendants(_Css_Ss_Class + "Data").ToArray();
-
-                    valueContent         = workSheetColumns[columnIndex].Value;
-                }
-            }
-
-            return valueContent;
-        }
-
         internal static string[] GetDirectoryPaths(string downloadDirectory, string filePath)
         {
             string[] filePaths = Directory.GetFiles(@downloadDirectory, filePath);
-
+           
             return filePaths;
         }
 
+        internal static string GetFilePathByPartialName(string downloadDirectory, string partialName)
+        {
+            if (String.IsNullOrWhiteSpace(partialName))       throw new ArgumentNullException(nameof(partialName));
+            if (String.IsNullOrWhiteSpace(downloadDirectory)) throw new ArgumentNullException(nameof(downloadDirectory));
+
+            string[] filePaths = Directory.GetFiles(downloadDirectory);
+
+            if (!filePaths.Any())
+            {
+                throw new FileNotFoundException("No files in download directory");
+            }      
+            
+            var filePath = filePaths.SingleOrDefault(x => Path.GetFileName(x).Contains(partialName));
+
+            if (ReferenceEquals(filePath, null))
+            {
+                throw new FileNotFoundException($"No partial file name with {partialName}");
+            }
+
+            return filePath;
+        }
 
     }
 }

@@ -156,7 +156,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             var newConfigurationModel = new RaveCoderGlobalConfiguration();
 
-            newConfigurationModel.ReviewMarkingGroup = GenericFileHelper
+            newConfigurationModel.ReviewMarkingGroup = RaveXLSFileSsCSSFileHelper
                .GetValueinSpreadSheetByRowAndColumnIndex(
                                                           filePath,
                                                           newConfigurationModel.GlobalConfigWorksheetName, 
@@ -164,7 +164,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
                                                           _GlobalConfigValueColumnIndex
                                                         );
 
-            newConfigurationModel.IsRequiresResponse = GenericFileHelper
+            newConfigurationModel.IsRequiresResponse = RaveXLSFileSsCSSFileHelper
                .GetValueinSpreadSheetByRowAndColumnIndex(
                                                           filePath,
                                                           newConfigurationModel.GlobalConfigWorksheetName,

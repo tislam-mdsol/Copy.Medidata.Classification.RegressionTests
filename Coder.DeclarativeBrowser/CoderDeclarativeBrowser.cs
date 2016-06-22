@@ -22,9 +22,11 @@ using Coder.DeclarativeBrowser.Helpers;
 using Coder.DeclarativeBrowser.IMedidataApi;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.PageObjects;
+using DocumentFormat.OpenXml.Drawing;
 using DocumentFormat.OpenXml.Drawing.Diagrams;
 using Medidata;
 using Medidata.Classification;
+using Path = System.IO.Path;
 
 namespace Coder.DeclarativeBrowser
 {
@@ -140,7 +142,7 @@ namespace Coder.DeclarativeBrowser
             bool uploadCompletedSuccesfully = UploadOdm(filePath, haltOnFailure);
 
             var codingTaskPage = Session.GetCodingTaskPage();
-            codingTaskPage.SelectTasksTab();
+
             codingTaskPage.ClearFilters();
 
             return uploadCompletedSuccesfully;
@@ -1396,10 +1398,8 @@ namespace Coder.DeclarativeBrowser
 
         public void LogoutOfCoder()
         {
-            var taskPage = Session.GetCodingTaskPage();
-            taskPage.SelectTasksTab();
-
             var pageHeader = Session.GetPageHeader();
+
             pageHeader.LogoutFromCoder();
         }
 
@@ -2360,20 +2360,6 @@ namespace Coder.DeclarativeBrowser
                         );
         }
 
-        public bool IsSynonymFileContentMatching(string synonymFileName, Array synonymEntries, string downloadDirectory)
-        {
-            if (string.IsNullOrWhiteSpace(synonymFileName)) throw new ArgumentNullException(nameof(synonymFileName));
-            if (ReferenceEquals(synonymFileName, null))     throw new ArgumentNullException("synonymFileName");
-
-            var synonymFilePath = Path.Combine(downloadDirectory,synonymFileName);
-
-            var fileContent     = File.ReadAllText(synonymFilePath);
-
-            var resultMatch     = synonymEntries.Cast<string>().Aggregate(true, (current, synonymEntry) => current && fileContent.Contains(synonymEntry));
-
-            return resultMatch;
-        }
-
         public void ValidateSynonymUpload(string synonymFileName, SynonymSearch synonymSearch)
         {
             if (ReferenceEquals(synonymFileName, null)) throw new ArgumentNullException("synonymFileName");
@@ -2986,6 +2972,15 @@ namespace Coder.DeclarativeBrowser
             Session.GoToAdminPage(adminPage);
         }
 
+        public SynonymUploadRow[] GetSynonymListFileRows(string segmentName)
+        {
+            var filePath   = GenericFileHelper.GetFilePathByPartialName(_DownloadDirectory, segmentName);
+                
+            var reportRows = GenericCsvHelper.GetReportRows<SynonymUploadRow>(filePath).ToArray();
+
+            return reportRows;
+        }
+
         public CodingDecisionsReportRow[] GetCodingDecisionReportRows()
         {
             var filePath = Path.Combine(_DownloadDirectory, Config.CodingDecisionsReportFileName);
@@ -3173,7 +3168,7 @@ namespace Coder.DeclarativeBrowser
                                                                      zipDownloadDirectory
                                                                     );
 
-            var isXlsFileCorrect   = GenericFileHelper.IsRaveXLSWorkSheetRowDataComparison
+            var isXlsFileCorrect   = RaveXLSFileSsCSSFileHelper.IsRaveXLSWorkSheetRowDataComparison
                                                                     (
                                                                      actualUnzippedPath, 
                                                                      RaveArchitectCRFCoderWorkSheets.CoderConfigurationWorkSheetName,
@@ -3225,7 +3220,7 @@ namespace Coder.DeclarativeBrowser
                                                                   zipDownloadDirectory
                                                                  );
 
-            bool correctCRFCoderSupComparison = GenericFileHelper.IsRaveXLSWorkSheetRowDataComparison
+            bool correctCRFCoderSupComparison = RaveXLSFileSsCSSFileHelper.IsRaveXLSWorkSheetRowDataComparison
                                                                  (
                                                                   actualUnzippedPath, 
                                                                   RaveArchitectCRFCoderWorkSheets.CoderSupplementalTermsWorkSheetName,

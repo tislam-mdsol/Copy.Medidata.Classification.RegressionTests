@@ -194,17 +194,22 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser.DownloadSynonymFileFromSynonymListPage(synonymSearch, synonymFileName);
         }
 
-        [Then(@"synonym list ""(.*)"" should contain the following information")]
+        [Then(@"synonym list should contain the following information")]
         public void ThenInShouldContainTheFollowingSynonymInformation(string synonymFileName, Table synoymTable)
         {
             if (ReferenceEquals(synoymTable, null))         throw new ArgumentNullException("synoymTable");
             if (String.IsNullOrWhiteSpace(synonymFileName)) throw new ArgumentNullException(nameof(synonymFileName));
 
-            var listOfSynonymEntries = synoymTable.Rows.ToArray();
+            var expectedSynonymEntries = synoymTable.CreateSet<SynonymUploadRow>().ToArray();
 
-            var contentMatched       = _Browser.IsSynonymFileContentMatching(synonymFileName, listOfSynonymEntries, _StepContext.DownloadDirectory);
+            var actualSynonymEntries = _Browser.GetSynonymListFileRows(_StepContext.SegmentUnderTest.SegmentName);
 
-            contentMatched.Should().BeTrue();
+            foreach (var expectedSynonymEntry in expectedSynonymEntries)
+            {
+                var actualMatch = actualSynonymEntries.Any(x => x.Equals(expectedSynonymEntry));
+
+                actualMatch.Should().BeTrue($"Expected result for the following {expectedSynonymEntry.Verbatim}");
+            }
         }
 
         [When(@"starting synonym list migration")]
