@@ -115,6 +115,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("a Rave Coder setup with the following options", ((string)(null)), table1, "Given ");
 #line 16
  testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+ testRunner.And("a Rave Draft is published using draft \"<DraftName>\" for Project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -124,10 +126,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Coding Field",
                         "左脚の足の痛み",
                         "LongText"});
-#line 17
+#line 18
  testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table2, "And ");
-#line 20
- testRunner.And("a Rave Draft is published using draft \"<DraftName>\" for Project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
  testRunner.When("an Amendment Manager migration is started for Project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22

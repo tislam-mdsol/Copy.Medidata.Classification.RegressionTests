@@ -14,10 +14,10 @@ Scenario: Setup Rave study with all non coding fields, enter data in EDC, migrat
       | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
       | ETE2 | Coding Field | <Dictionary> | <Locale> | PT         | 1        | false              | false          |
 	When adding a new subject "TST"
+	And a Rave Draft is published using draft "<DraftName>" for Project "<StudyName>"
 	And adding a new verbatim term to form "ETE2"
 	| Field                    | Value   | ControlType |
 	| Coding Field             | 左脚の足の痛み | LongText    |
-	And a Rave Draft is published using draft "<DraftName>" for Project "<StudyName>"
 	When an Amendment Manager migration is started for Project "<StudyName>" 
 	And Coder App Segment is loaded
     And task "左脚の足の痛み" is coded to term "片側頭痛" at search level "Preferred Term" with code "10067040" at level "PT" and a synonym is created
