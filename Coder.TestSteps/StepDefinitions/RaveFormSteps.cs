@@ -324,6 +324,24 @@ namespace Coder.TestSteps.StepDefinitions
             ThenTheCodingDecisionForVerbatimContainsTheFollowingData(formName, fieldName, verbatimTerm, verbatimTerm, verifyCodingTaskTable);
         }
 
+        [Then(@"the coding decision for verbatim ""(.*)"" on form ""(.*)"" for field ""(.*)"" should not display ""(.*)""")]
+        public void ThenTheCodingDecisionForFormForFieldWithTextContainsTheFollowingData(string verbatimTerm, string formName, string fieldName, string expectedCodingTask)
+        {
+            if (String.IsNullOrWhiteSpace(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");
+            if (String.IsNullOrWhiteSpace(formName)) throw new ArgumentNullException("formName");
+            if (String.IsNullOrWhiteSpace(fieldName)) throw new ArgumentNullException("fieldName");
+            if (String.IsNullOrWhiteSpace(expectedCodingTask)) throw new ArgumentNullException("expectedCodingTask");
+            var target = _StepContext.GetRaveNavigationTarget();
+
+            target.FormName = formName;
+           
+            var codingTask = _Browser.GetCodingTaskFromRaveForm(target, fieldName, verbatimTerm);
+
+            expectedCodingTask.Should().NotBe(codingTask);
+
+            _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
+        }
+
         [Then(@"the coding decision on form ""(.*)"" for field ""(.*)"" with row text ""(.*)"" for verbatim ""(.*)"" contains the following data")]
         public void ThenTheCodingDecisionForVerbatimContainsTheFollowingData(string formName, string fieldName, string rowContents, string verbatimTerm, Table verifyCodingTaskTable)
         {

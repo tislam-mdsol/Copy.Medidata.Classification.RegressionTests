@@ -874,6 +874,36 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             return termPath;
         }
 
+        internal String GetCodingTask(string fieldName, string verbatimTerm)
+        {
+            if (String.IsNullOrWhiteSpace(fieldName)) throw new ArgumentNullException("fieldName");
+            if (String.IsNullOrWhiteSpace(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");
+
+            var termPath = new List<TermPathRow>();
+
+            GetFormRowModifyLink(verbatimTerm).Click();
+
+            var formRow = GetFormRowByContents(verbatimTerm);
+
+            var formRowLines = formRow.FindAllSessionElementsByXPath(".//tr");
+
+            var formRowLinesText = formRowLines.First().Text;
+
+            String codingTask = "";
+
+           
+                var formLineTextSplit = formRowLinesText.RemoveAllWhiteSpace().Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                foreach (var split in formLineTextSplit)
+                { 
+                    if (split.RemoveAllWhiteSpace() != fieldName.RemoveAllWhiteSpace())
+                    {
+                        codingTask = split;
+                    }
+                }
+            
+            return codingTask;
+        }
+
         internal void InactivateLogLine(string rowContents)
         {
             if (String.IsNullOrWhiteSpace(rowContents)) throw new ArgumentNullException("rowContents");
