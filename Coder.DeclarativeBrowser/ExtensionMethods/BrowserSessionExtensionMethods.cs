@@ -1432,7 +1432,25 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                 options.RetryInterval,
                 options);
         }
-        
+
+        internal static void RefreshUntilElementDisappears(this BrowserSession session,
+            Func<SessionElementScope> getElement, Options options = null)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+            if (ReferenceEquals(getElement, null)) throw new ArgumentNullException("getElement");
+
+            if (ReferenceEquals(options, null))
+            {
+                options = Config.GetDefaultCoypuOptions();
+            }
+
+            session.TryUntil(
+                () => session.Refresh(),
+                () => !getElement().Exists(),
+                options.RetryInterval,
+                options);
+        }
+
         internal static void WaitForRaveNavigationLink(this BrowserSession session, string linkText)
         {
             if (ReferenceEquals(session, null))      throw new ArgumentNullException("session");
