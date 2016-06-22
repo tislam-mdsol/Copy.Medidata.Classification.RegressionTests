@@ -77,6 +77,7 @@ namespace Coder.TestSteps.StepDefinitions
         }
 
         [When(@"registering a project with the following options")]
+        [Given(@"registering a project with the following options")]
         public void WhenRegisteringAProjectWithTheFollowingOptions(Table table)
         {
             if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");

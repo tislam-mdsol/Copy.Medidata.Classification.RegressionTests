@@ -51,6 +51,8 @@ namespace Coder.DeclarativeBrowser.Models
         public MedidataUser CoderAdminUser          { get; set; }
         public MedidataUser CoderTestUser           { get; set; }
         public MedidataUser CoderSystemuser         { get; set; }
+        public SegmentSetupData SegmentUnderTest2 { get; set; }
+        public MedidataUser CoderTestUser2 { get; set; }
 
         public string GetUser()
         {

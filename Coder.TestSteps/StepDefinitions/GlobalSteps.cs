@@ -32,6 +32,22 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser       = _StepContext.Browser;
         }
 
+        [Given(@"iMedidata App Segment is loaded")]
+        [When(@"iMedidata App Segment is loaded")]
+        public void GivenIMedidataAppSegmentIsLoaded()
+        {
+            _Browser.LoginToiMedidata(Config.AdminLogin, Config.AdminPassword);
+        }
+
+        [Given(@"a project with the following options is registered")]
+        public void GivenAProjectWithTheFollowingOptionsIsRegistered(Table table)
+        {
+            if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
+
+            var list = table.TransformFeatureTableStrings(_StepContext).CreateSet<SynonymList>().ToArray();
+            _Browser.RegisterProjects(_StepContext.GetStudyName(), list);
+        }
+
         [Given(@"a ""(.*)"" Coder setup with no tasks and no synonyms and dictionary ""(.*)""")]
         public void GivenACoderSetupWithNoTasksAndNoSynonymsAndDictionary(string setupType, string dictionaryLocaleVersion)
         {
@@ -263,7 +279,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             LoadCoderAsTestUser(clearTasks: false);
 
-            RegisterProjects();
+            RegisterProjects(); // overload studynames 
 
             _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
 
@@ -271,6 +287,21 @@ namespace Coder.TestSteps.StepDefinitions
 
             UploadTemplateRaveArchitectDraft();
         }
+
+        [Given(@"a project registration with dictionary ""(.*)"" for Project ""(.*)""")]
+        public void GivenAProjectRegistrationWithDictionaryForProject(string dictionaryLocaleVersion, string projectName)
+        {
+            if (String.IsNullOrWhiteSpace(dictionaryLocaleVersion)) throw new ArgumentNullException("dictionaryLocaleVersion");
+
+            SetProjectContext(dictionaryLocaleVersion);
+
+            RolloutDictionary();
+
+            LoadCoderAsTestUser(clearTasks: false);
+
+            //RegisterProjects(projectName); 
+        }
+
 
         [When(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicSegment")]
         public void WhenARaveProjectRegistrationWithDictionaryParallelExecution(string dictionaryLocaleVersion)

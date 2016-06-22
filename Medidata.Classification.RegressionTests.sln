@@ -13,6 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9D21F1
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coder.EndToEndTests", "Coder.EndToEndTests\Coder.EndToEndTests.csproj", "{57B8FA7D-8B1F-4BAF-ABB4-2B6E4BEF20F1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F78BDA11-98EB-45BC-AD23-120E600A6A19} = {F78BDA11-98EB-45BC-AD23-120E600A6A19}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coder.TestSteps", "Coder.TestSteps\Coder.TestSteps.csproj", "{F78BDA11-98EB-45BC-AD23-120E600A6A19}"
 EndProject

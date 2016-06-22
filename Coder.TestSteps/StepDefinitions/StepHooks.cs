@@ -55,7 +55,7 @@ namespace Coder.TestSteps.StepDefinitions
             
             LoginAsAdministrator();
 
-            var newStudyGroup = CreateSegmentSetupData(generatedSuffix);
+            var newStudyGroup = CreateSegmentSetupData(generatedSuffix); // creates the necessary study groups object
             
             SetSegmentContext(newStudyGroup);
 
