@@ -866,19 +866,6 @@ namespace Coder.DeclarativeBrowser
             return codingDecisions;
         }
 
-        public String GetCodingTaskFromRaveForm(RaveNavigationTarget target, string fieldName, string verbatimTerm)
-        {
-            if (ReferenceEquals(target, null)) throw new ArgumentNullException("target");
-            if (string.IsNullOrWhiteSpace(fieldName)) throw new ArgumentNullException("fieldName");
-            if (string.IsNullOrWhiteSpace(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");
-
-            var raveFormPage = Session.OpenRaveForm(target);
-
-            String codingTask = raveFormPage.GetCodingTask(fieldName, verbatimTerm);
-
-            return codingTask;
-        }
-
         public string GetQueryCommentFromRaveAuditRecords(RaveNavigationTarget target, string fieldName, string verbatimTerm)
         {
             if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");

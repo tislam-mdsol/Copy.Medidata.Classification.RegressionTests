@@ -67,14 +67,12 @@ namespace Coder.DeclarativeBrowser.PageObjects
         {
             if (String.IsNullOrWhiteSpace(study)) throw new ArgumentNullException("study");
 
-            _Browser.MaximiseWindow();
             GetAssignToStudyLink().Click();
 
             GetRoleDDLOption().SelectOption(role);
             GetProjectDDLOption().SelectOption(study);
 
             GetAssignUserLink().Click();
-            _Browser.ResizeTo(Config.ScreenWidth, Config.ScreenHeight);
         }
 
         private SessionElementScope GetUserNameTextBox()
