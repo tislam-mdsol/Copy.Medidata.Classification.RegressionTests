@@ -67,7 +67,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
         {
             if (String.IsNullOrWhiteSpace(study)) throw new ArgumentNullException("study");
 
-
             _Browser.MaximiseWindow();
             GetAssignToStudyLink().Click();
             
