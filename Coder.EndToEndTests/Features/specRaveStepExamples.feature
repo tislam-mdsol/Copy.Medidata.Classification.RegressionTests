@@ -695,7 +695,3 @@ Scenario: Rave ETE Example editting global Rave-Coder Configuration settings
 
 And Rave Modules App Segment is loaded
 And edit global Rave-Coder Configuration settings with Review Marking Group set to "Data Management" and Requires Response set to "false" 
-
- # @Deployment
- #Scenario: assign coder import role
-	#  Given a new user "coderimport" that needs to be assigned a role "Coder Import Role"

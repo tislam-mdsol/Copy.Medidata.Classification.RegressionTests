@@ -63,23 +63,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
             AssignStudyToUser(roleName, study, projectEnvironment);
         }
 
-        //private void AssignStudyToUserNew(String role, String study)
-
-        //{
-        //    if (String.IsNullOrWhiteSpace(study)) throw new ArgumentNullException("study");
-        //    if (String.IsNullOrEmpty(role))       throw new ArgumentNullException("role");
-
-        //    _Browser.MaximiseWindow();
-        //    GetAssignToStudyLink().Click();
-            
-        //    GetRoleDDLOption().SelectOption(role);
-        //    GetProjectDDLOption().Click();
-
-        //    GetProjectDDLOptionList().FirstOrDefault(x => x.Text.Contains(study)).Click();
-
-        //    GetAssignUserLink().Click();
-        //    _Browser.ResizeTo(Config.ScreenWidth, Config.ScreenHeight);
-        //}
         private void AssignStudyToUser(String role, String study, String projectEnvironment)
 
         {
@@ -98,7 +81,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             _Browser.ResizeTo(Config.ScreenWidth, Config.ScreenHeight);
           }
 
-private SessionElementScope GetUserNameTextBox()
+        private SessionElementScope GetUserNameTextBox()
         {
             var userNameTextBox = _Browser.FindSessionElementById("_ctl0_Content_LoginBox");
 
@@ -199,13 +182,6 @@ private SessionElementScope GetUserNameTextBox()
 
             return projectEnvironmentDDL;
         }
-
-        //private IList<SessionElementScope> GetProjectDDLOptionList()
-        //{
-        //    var projectDDLList = GetProjectDDLOption().FindAllSessionElementsByXPath(".//option"); 
-            
-        //    return projectDDLList;
-        //}
 
         private SessionElementScope GetAssignUserLink()
         {
