@@ -66,8 +66,26 @@ namespace Coder.TestSteps.StepDefinitions
         public void GivenANewUserThatNeedsToBeAssignedARole(String userName, String roleName)
         {
             if (ReferenceEquals(userName, null)) throw new ArgumentNullException("userName");
-     
-            _Browser.AssignUserToStudy(userName, roleName, _StepContext.GetStudyName());
+
+            var studyGroup          = _StepContext.SegmentUnderTest;
+            var productionStudyName = studyGroup.Studies.FirstOrDefault(x => x.IsProduction).StudyName;
+            var environmentPrefix   = "Live: ";
+            var studies             = studyGroup.Studies;
+
+            foreach (var study in studies)
+            {
+                environmentPrefix = "Aux: ";
+
+                if (study.IsProduction)
+                {
+                    productionStudyName = study.StudyName;
+                    environmentPrefix   = "Live: ";
+                }
+
+                var projectEnvironment = String.Concat(environmentPrefix, study.StudyType.ToString());
+
+                _Browser.AssignUserToStudy(userName, roleName, study: productionStudyName, projectEnvironment: projectEnvironment);
+            }
 
         }
 

@@ -1020,13 +1020,14 @@ namespace Coder.DeclarativeBrowser
 
         }
         
-        public void AssignUserToStudy(String userName, String roleName, String study)
+        public void AssignUserToStudy(String userName, String roleName, String study, String projectEnvironment)
         {
-            if (String.IsNullOrEmpty(userName)) throw new ArgumentNullException("userName");
-            if (String.IsNullOrEmpty(roleName)) throw new ArgumentNullException("roleName");
-            if (String.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
+            if (String.IsNullOrEmpty(userName))           throw new ArgumentNullException("userName");
+            if (String.IsNullOrEmpty(roleName))           throw new ArgumentNullException("roleName");
+            if (String.IsNullOrEmpty(study))              throw new ArgumentNullException("study");
+            if (String.IsNullOrEmpty(projectEnvironment)) throw new ArgumentNullException("projectEnvironment");
 
-            Session.OpenRaveUserAdministrationPage().AssignUserToStudy(userName, roleName, study);
+            Session.OpenRaveUserAdministrationPage().AssignUserToStudy(userName, roleName, study, projectEnvironment);
         }
 
         public bool UploadConfigurationFileInRaveModules(string csvFileName)
@@ -1040,7 +1041,7 @@ namespace Coder.DeclarativeBrowser
 
         public void AddRaveArchitectDraft(string study, string draftName)
         {
-            if (string.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
+            if (string.IsNullOrEmpty(study))     throw new ArgumentNullException("study");
             if (string.IsNullOrEmpty(draftName)) throw new ArgumentNullException("draftName");
 
             var addNewDraftPage = Session.OpenRaveArchitectAddNewDraftPage(study);
@@ -1050,7 +1051,7 @@ namespace Coder.DeclarativeBrowser
 
         public void DeleteRaveArchitectDraft(string study, string draftName)
         {
-            if (string.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
+            if (string.IsNullOrEmpty(study))     throw new ArgumentNullException("study");
             if (string.IsNullOrEmpty(draftName)) throw new ArgumentNullException("draftName");
             
             var raveArchitectProjectPage = Session.OpenRaveArchitectProjectPage(study);
@@ -1079,8 +1080,8 @@ namespace Coder.DeclarativeBrowser
         
         public void UploadRaveArchitectDraft(string study, string draftName, string draftFilePath)
         {
-            if (string.IsNullOrEmpty(study)) throw new ArgumentNullException("study");
-            if (string.IsNullOrEmpty(draftName)) throw new ArgumentNullException("draftName");
+            if (string.IsNullOrEmpty(study))         throw new ArgumentNullException("study");
+            if (string.IsNullOrEmpty(draftName))     throw new ArgumentNullException("draftName");
             if (string.IsNullOrEmpty(draftFilePath)) throw new ArgumentNullException("draftFilePath");
             
             DeleteRaveArchitectDraft(study, draftName);    

@@ -3,10 +3,11 @@ using System.Linq;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coder.DeclarativeBrowser.OdmBuilder;
+using Coder.DeclarativeBrowser.ExtensionMethods;
 
 namespace Coder.DeclarativeBrowser.Models
 {
-    public enum StudyType { Production, Development, UserAcceptanceTesting }
+    public enum StudyType { Prod, Dev, UAT }
 
     public class StepContext
     {
@@ -92,17 +93,17 @@ namespace Coder.DeclarativeBrowser.Models
 
             switch (ActiveStudyType)
             {
-                case StudyType.Production:
+                case StudyType.Prod:
                 {
                     study = SegmentUnderTest.ProdStudy;
                     break;
                 }
-                case StudyType.Development:
+                case StudyType.Dev:
                 {
                     study = SegmentUnderTest.DevStudy;
                     break;
                 }
-                case StudyType.UserAcceptanceTesting:
+                case StudyType.UAT:
                 {
                     study = SegmentUnderTest.UatStudy;
                     break;
@@ -118,6 +119,69 @@ namespace Coder.DeclarativeBrowser.Models
             return study;
         }
 
+        //public SiteSetupData GetActiveSite()
+        //{
+        //    SiteSetupData site;
+
+        //    switch (ActiveStudyType)
+        //    {
+        //        case StudyType.Production:
+        //            {
+        //                site = GetFirstSite();
+        //                break;
+        //            }
+        //        case StudyType.Development:
+        //            {
+        //                site = GetSiteWithPrefix("DEV");
+        //                break;
+        //            }
+        //        case StudyType.UserAcceptanceTesting:
+        //            {
+        //                site = GetSiteWithPrefix("UAT");
+        //                break;
+        //            }
+        //        default:
+        //            {
+        //                throw new InvalidOperationException("ActiveStudyType is not a valid study type.");
+        //            }
+        //    }
+
+        //    if (ReferenceEquals(site, null)) throw new InvalidOperationException("site property not set");
+
+        //    return site;
+        //}
+
+        //public StudySetupData GetActiveSubject()
+        //{
+        //    StudySetupData study;
+
+        //    switch (ActiveStudyType)
+        //    {
+        //        case StudyType.Production:
+        //            {
+        //                study = SegmentUnderTest.ProdStudy;
+        //                break;
+        //            }
+        //        case StudyType.Development:
+        //            {
+        //                study = SegmentUnderTest.DevStudy;
+        //                break;
+        //            }
+        //        case StudyType.UserAcceptanceTesting:
+        //            {
+        //                study = SegmentUnderTest.UatStudy;
+        //                break;
+        //            }
+        //        default:
+        //            {
+        //                throw new InvalidOperationException("ActiveStudyType is not a valid study type.");
+        //            }
+        //    }
+
+        //    if (ReferenceEquals(study, null)) throw new InvalidOperationException("study property not set");
+
+        //    return study;
+        //}
         public string GetStudyUuid()
         {
             if (ReferenceEquals(SegmentUnderTest, null))             throw new InvalidOperationException("SegmentUnderTest property not set");
@@ -202,6 +266,32 @@ namespace Coder.DeclarativeBrowser.Models
 
             return site;
         }
+
+        //public SiteSetupData GetSiteWithPrefix(String projectEnvironment)
+        //{
+        //    if (ReferenceEquals(SegmentUnderTest, null))            throw new InvalidOperationException("SegmentUnderTest property not set");
+        //    if (String.IsNullOrWhiteSpace(projectEnvironment))                  throw new ArgumentNullException("projectEnvironment");
+
+        //    var study = GetActiveStudy();
+        //    var sites = study.Sites;
+
+        //    if (ReferenceEquals(sites, null) || !sites.Any())
+        //    {
+        //        throw new InvalidOperationException(String.Format("No sites for segment {0} study {1}", SegmentUnderTest.SegmentName, study.StudyName));
+        //    }
+
+        //    var targetSite = sites.First();
+
+        //    foreach (var site in sites)
+        //    {
+        //        if (site.SiteName.Contains(projectEnvironment, StringComparison.OrdinalIgnoreCase))
+        //        {
+        //            targetSite = site;
+        //        }
+        //    }
+          
+        //    return targetSite;
+        //}
 
         public string GetSite()
         {

@@ -48,7 +48,7 @@ namespace Coder.TestSteps.StepDefinitions
             site.AddSubject(initials: subjectInitials, id: subjectId);
         }
 
-        [When(@"adding a new subject ""(.*)"" for Project environment ""(.*)"""), Scope(Tag = "EndToEndMultipleProdStudy")]
+        [When(@"adding new subject ""(.*)"" for Project environment ""(.*)""")]
         public void WhenAddingANewSubjectForProject(string subjectInitials, string projectEnvironment)
         {
             if (String.IsNullOrWhiteSpace(subjectInitials)) throw new ArgumentNullException("subjectInitials");
@@ -61,28 +61,37 @@ namespace Coder.TestSteps.StepDefinitions
 
             if (String.IsNullOrWhiteSpace(projectEnvironment) || projectEnvironment.Equals("PROD", StringComparison.OrdinalIgnoreCase))
             {
-                target = new RaveNavigationTarget
+                _StepContext.ActiveStudyType = StudyType.Prod;
+                target                       = new RaveNavigationTarget
                 {
                     StudyName = _StepContext.GetStudyName(),
-                    SiteName = _StepContext.GetSite()
+                    SiteName  = _StepContext.GetSite(),
+                    SubjectId = subjectId
                 };
             }
-            else if (projectEnvironment.Equals("UAT",StringComparison.OrdinalIgnoreCase)) {
+            else if (projectEnvironment.Equals("UAT",StringComparison.OrdinalIgnoreCase))
+            {
+                _StepContext.ActiveStudyType = StudyType.UAT;
+
                 target = new RaveNavigationTarget
                 {
                     StudyName = _StepContext.GetUatStudyName(),
-                    SiteName = _StepContext.GetSite()
+                    SiteName  = _StepContext.GetSite(),
+                    SubjectId = subjectId
                 };
             }
            else if (projectEnvironment.Equals("DEV", StringComparison.OrdinalIgnoreCase))
             {
-                target = new RaveNavigationTarget
+                _StepContext.ActiveStudyType = StudyType.Dev;
+
+                target                       = new RaveNavigationTarget
                 {
                     StudyName = _StepContext.GetDevStudyName(),
-                    SiteName = _StepContext.GetSite()
+                    SiteName  = _StepContext.GetSite(),
+                    SubjectId = subjectId
                 };
             }
-            else if (projectEnvironment.Equals("DEV", StringComparison.OrdinalIgnoreCase))
+            else 
             {
                 throw new InvalidOperationException(String.Format("Invalid Project environement = {0}", projectEnvironment));
             }

@@ -22,7 +22,7 @@ namespace Coder.EndToEndTests.Features
     [NUnit.Framework.DescriptionAttribute("Test the full round trip integration from Rave to Coder back to Rave using Multip" +
         "le Studies")]
     [NUnit.Framework.CategoryAttribute("specENG_RaveCoderMultipleStudies.feature")]
-    [NUnit.Framework.CategoryAttribute("EndToEndMultipleProdStudy")]
+    [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
     public partial class TestTheFullRoundTripIntegrationFromRaveToCoderBackToRaveUsingMultipleStudiesFeature
     {
         
@@ -38,7 +38,7 @@ namespace Coder.EndToEndTests.Features
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Test the full round trip integration from Rave to Coder back to Rave using Multip" +
                     "le Studies", "", ProgrammingLanguage.CSharp, new string[] {
                         "specENG_RaveCoderMultipleStudies.feature",
-                        "EndToEndMultipleProdStudy"});
+                        "EndToEndDynamicSegment"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -107,7 +107,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "PRODUCTSYNONYM",
                         "1",
-                        "true",
+                        "false",
                         "true",
                         "DSearchlist Std Sup"});
 #line 13
@@ -116,7 +116,7 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
- testRunner.And("adding a new subject \"TST\" for Project environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("adding new subject \"TST\" for Project environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -181,11 +181,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 28
  testRunner.Then("the coding decision for verbatim \"child advil cold extreme\" on form \"ETE19\" for f" +
                     "ield \"Coding Field\" contains the following data", ((string)(null)), table4, "Then ");
-#line 37
+#line 36
  testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"UAT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 38
- testRunner.And("adding a new subject \"TST\" for Project environment \"UAT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+ testRunner.And("adding new subject \"TST\" for Project environment \"UAT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -199,57 +199,40 @@ this.ScenarioSetup(scenarioInfo);
                         "Dynamic Search List Supplemental Field B",
                         "Sup1",
                         "DynamicSearchList"});
-#line 39
+#line 38
  testRunner.And("adding a new verbatim term to form \"ETE19\"", ((string)(null)), table5, "And ");
-#line 43
- testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Term",
-                        "Value"});
-            table6.AddRow(new string[] {
-                        "ETE19.DSEARCHLISTSTDSUP",
-                        "Sup1"});
-#line 44
- testRunner.Then("the \"child advil cold extreme\" task has the following supplemental information", ((string)(null)), table6, "Then ");
-#line 47
- testRunner.When("task \"child advil cold extreme\" is coded to term \"CHILDRENS ADVIL COLD\" at search" +
-                    " level \"Trade Name\" with code \"010502 01 015\" at level \"TN\" and a synonym is cre" +
-                    "ated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 48
- testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level",
                         "Code",
                         "Term Path"});
-            table7.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "ATC",
                         "M",
                         "MUSCULO-SKELETAL SYSTEM"});
-            table7.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "ATC",
                         "M01",
                         "ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS"});
-            table7.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "ATC",
                         "M01A",
                         "ANTIINFLAMMATORY/ANTIRHEUMATIC PROD.,NON-STEROIDS"});
-            table7.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "ATC",
                         "M01AE",
                         "PROPIONIC ACID DERIVATIVES"});
-            table7.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "PRODUCT",
                         "010502 01 001",
                         "CO-ADVIL"});
-            table7.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "PRODUCTSYNONYM",
                         "010502 01 015",
                         "CHILDRENS ADVIL COLD"});
-#line 49
+#line 42
  testRunner.Then("the coding decision for verbatim \"child advil cold extreme\" on form \"ETE19\" for f" +
-                    "ield \"Coding Field\" contains the following data", ((string)(null)), table7, "Then ");
+                    "ield \"Coding Field\" contains the following data", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
