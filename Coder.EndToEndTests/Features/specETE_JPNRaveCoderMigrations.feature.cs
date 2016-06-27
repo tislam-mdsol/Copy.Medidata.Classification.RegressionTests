@@ -112,9 +112,9 @@ this.ScenarioSetup(scenarioInfo);
                         "false",
                         "false"});
 #line 13
- testRunner.Given("a Rave Coder setup with the following options", ((string)(null)), table1, "Given ");
+ testRunner.And("a Rave Coder setup is configured with the following options", ((string)(null)), table1, "And ");
 #line 16
- testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
  testRunner.And("a Rave Draft is published using draft \"<DraftName>\" for Project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -129,7 +129,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 18
  testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table2, "And ");
 #line 21
- testRunner.When("an Amendment Manager migration is started for Project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("an Amendment Manager migration is started for Project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
  testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23

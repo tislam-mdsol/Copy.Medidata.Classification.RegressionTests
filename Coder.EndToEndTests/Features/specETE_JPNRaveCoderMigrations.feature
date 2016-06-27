@@ -10,15 +10,15 @@ Scenario: Setup Rave study with all non coding fields, enter data in EDC, migrat
 	Given a Rave project registration with dictionary "MedDRA JPN 11.0"
     And Rave Modules App Segment is loaded
    	When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
-	Given a Rave Coder setup with the following options
+	And a Rave Coder setup is configured with the following options
       | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
       | ETE2 | Coding Field | <Dictionary> | <Locale> | PT         | 1        | false              | false          |
-	When adding a new subject "TST"
+	And adding a new subject "TST"
 	And a Rave Draft is published using draft "<DraftName>" for Project "<StudyName>"
 	And adding a new verbatim term to form "ETE2"
 	| Field                    | Value   | ControlType |
 	| Coding Field             | 左脚の足の痛み | LongText    |
-	When an Amendment Manager migration is started for Project "<StudyName>" 
+	And an Amendment Manager migration is started for Project "<StudyName>" 
 	And Coder App Segment is loaded
     And task "左脚の足の痛み" is coded to term "片側頭痛" at search level "Preferred Term" with code "10067040" at level "PT" and a synonym is created
 	And Rave Modules App Segment is loaded
