@@ -27,8 +27,7 @@ Scenario: Enter project registration in Coder, setup Rave study with Coder Codin
 	 | ATC     | N02B          | OTHER ANALGESICS AND ANTIPYRETICS |
 	 | ATC     | N02BA         | SALICYLIC ACID AND DERIVATIVES    |
 	 | PRODUCT | 005581 01 001 | BAYER CHILDREN'S COLD             |
-	
-	Given a Rave Coder setup with the following options
+	When a Rave Coder setup is configured with the following options
 	| Form | Field        | Dictionary   | Locale | Coding Level   | Priority | IsApprovalRequired | IsAutoApproval |
 	| ETE2 | Coding Field | <Dictionary> |        | PRODUCTSYNONYM | 1        | true               | true           |
 	When a Rave Draft is published using draft "<DraftName>" for Project "<StudyName>"
