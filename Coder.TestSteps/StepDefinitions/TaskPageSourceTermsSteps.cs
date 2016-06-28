@@ -149,8 +149,8 @@ namespace Coder.TestSteps.StepDefinitions
 
             for (var i = 0; i < actualResult.Count; i++)
             {
-                actualResult[i].Term.Should().BeEquivalentTo(featureData[i].SupplementalTerm);
-                actualResult[i].Value.Should().BeEquivalentTo(featureData[i].SupplementalValue);
+                actualResult[i].Term.Should() .BeEquivalentTo(featureData[i].SupplementalTerm.ToString());
+                actualResult[i].Value.Should().BeEquivalentTo(featureData[i].SupplementalValue.ToString());
             }
 
             _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);

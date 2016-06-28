@@ -264,6 +264,14 @@ namespace Coder.TestSteps
             }
         }
 
+        internal static string CRFDraftDownloadFailureFileName
+        {
+            get
+            {
+                return "ErrorGeneratingCRFDraft.xls";
+            }
+        }
+
         internal static string StaticContentFolder
         {
             get

@@ -228,6 +228,7 @@
     <Compile Include="Drivers\CustomDriverFactory.cs" />
     <Compile Include="ExtensionMethods\BrowserWindowExtensionMethods.cs" />
     <Compile Include="ExtensionMethods\ListExtensionMethods.cs" />
+    <Compile Include="FileHelpers\RaveXLSFileSsCSSFileHelper.cs" />
     <Compile Include="IMedidataApi\IMedidataClient.cs" />
     <Compile Include="IMedidataApi\Models\IMedidataAPIApp.cs" />
     <Compile Include="IMedidataApi\Models\IMedidataAPIInvite.cs" />
@@ -242,6 +243,7 @@
     <Compile Include="Mocks\MockStudyEdcService.cs" />
     <Compile Include="Models\AssignedGeneralRole.cs" />
     <Compile Include="Models\AssignedWorkflowRole.cs" />
+    <Compile Include="Models\ETEModels\RaveArchitectCRFCoderFieldWorkSheet.cs" />
     <Compile Include="Models\StudyReportUpVersion.cs" />
     <Compile Include="Models\StudyReportStatsDetails.cs" />
     <Compile Include="Models\StudyReportStats.cs" />

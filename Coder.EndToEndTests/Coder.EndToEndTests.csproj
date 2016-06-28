@@ -340,7 +340,9 @@
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="StaticContent\ErrorGeneratingCRFDraft.xls" />
+    <None Include="StaticContent\ErrorGeneratingCRFDraft.xls">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="StaticContent\RaveCoreConfig_eng.xls">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -70,7 +70,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             GetAssignToStudyLink().Click();
 
             GetRoleDDLOption().SelectOption(role);
-            GetProjectDDLOption().SelectOption(study);
+            GetProjectDDLOption().SelectOption(study,0);
 
             GetAssignUserLink().Click();
         }

@@ -20,7 +20,7 @@
   <add key="HoursOffsetFromEst"                       value="-8" />
   <add key="DateTimeFormat"                           value="dd MMM yyyy HH:mm:ss tt" />
   <add key="AcceptableSecondsDiff"                    value="60" />
-  <add key="BrowserAutoSaveFileTypes"                 value="application/msword, application/csv, application/ris, text/csv, application/pdf, text/html, text/plain, application/download, application/octet-stream" />
+  <add key="BrowserAutoSaveFileTypes"                 value="application/msword, application/csv, application/ris, text/csv, application/pdf, text/html, text/plain, application/download, application/octet-stream, application/zip" />
   <add key="ClientSettingsProvider.ServiceUri"        value="" />
   <add key="DefaultCoypuOptionsTimeOut"               value="60"/>
   <add key="DefaultCoypuOptionsRetryInternval"        value="1"/>
