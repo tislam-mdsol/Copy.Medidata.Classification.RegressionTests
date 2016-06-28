@@ -88,17 +88,31 @@ namespace Coder.DeclarativeBrowser.FileHelpers
 
         internal static string GetFilePathByPartialName(string downloadDirectory, string partialName)
         {
-            if (String.IsNullOrWhiteSpace(partialName))       throw new ArgumentNullException(nameof(partialName));
-            if (String.IsNullOrWhiteSpace(downloadDirectory)) throw new ArgumentNullException(nameof(downloadDirectory));
-
+            if (String.IsNullOrWhiteSpace(partialName)) throw new ArgumentNullException(nameof(partialName));
+            if (String.IsNullOrWhiteSpace(downloadDirectory))
+                throw new ArgumentNullException(nameof(downloadDirectory));
+            
             string[] filePaths = Directory.GetFiles(downloadDirectory);
 
             if (!filePaths.Any())
             {
                 throw new FileNotFoundException("No files in download directory");
-            }      
-            
-            var filePath = filePaths.SingleOrDefault(x => Path.GetFileName(x).Contains(partialName));
+            }
+
+            var filePath = RetryPolicy.ValidateOperation.Execute
+            (
+                () =>
+                {
+                    filePaths = null;
+
+                    filePaths = Directory.GetFiles(downloadDirectory);
+
+                    var matchingFile = filePaths.
+                                       SingleOrDefault(x => Path.GetFileName(x).Contains(partialName));
+
+                    return matchingFile;
+                }
+            );
 
             if (ReferenceEquals(filePath, null))
             {
@@ -106,6 +120,26 @@ namespace Coder.DeclarativeBrowser.FileHelpers
             }
 
             return filePath;
+        }
+
+        internal static void DeleteFilesInDirectory(string downloadDirectory)
+        {
+            if (String.IsNullOrWhiteSpace(downloadDirectory)) throw new ArgumentNullException(nameof(downloadDirectory));
+
+            string[] filePaths = Directory.GetFiles(downloadDirectory);
+
+            if (!filePaths.Any())
+            {
+                throw new FileNotFoundException("No files in download directory");
+            }
+
+            foreach (var filePath in filePaths)
+            {
+                if (!filePath.Equals(null))
+                {
+                    File.Delete(filePath);                    
+                }
+            }
         }
 
     }

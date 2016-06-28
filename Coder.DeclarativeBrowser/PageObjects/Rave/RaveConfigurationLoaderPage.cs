@@ -136,14 +136,11 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             GetConfigDownloadFile();
 
-            string[] filePaths = GenericFileHelper.GetDirectoryPaths(@downloadDirectory, "RaveCoreConfig_eng_*.zip");
+            string filePath = GenericFileHelper.GetFilePathByPartialName(@downloadDirectory, "RaveCoreConfig_eng_");
 
-            if (filePaths.Length > 1)
-            {
-                throw new ArgumentOutOfRangeException("More than one zip global configuration file exists");
-            }
+            if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException(filePath);
 
-            var zippedFileName = Path.GetFileName(filePaths[0]);
+            var zippedFileName = Path.GetFileName(filePath);
 
             var actualUnzippedPath = GenericFileHelper.UnzipFile(downloadDirectory, zippedFileName, downloadDirectory);
 
@@ -174,7 +171,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return newConfigurationModel;
         }
 
-        internal bool IsRaveCoderGlobalConfigurationDownloadXLSFileCorrect(string downloadDirectory, string reviewMarkingGroup, bool requiresResponse)
+        internal RaveCoderGlobalConfiguration GetRaveCoderGlobalConfigurationDownloadXLSFileCorrect(string downloadDirectory, string reviewMarkingGroup, bool requiresResponse)
         {
             if (string.IsNullOrEmpty(downloadDirectory))  throw new ArgumentNullException("downloadDirectory");
             if (string.IsNullOrEmpty(reviewMarkingGroup)) throw new ArgumentNullException("reviewMarkingGroup");
@@ -182,14 +179,8 @@ namespace Coder.DeclarativeBrowser.PageObjects
             var filePath                          = GetConfigurationDownloadFile(downloadDirectory);
             
             var raveCoderGlobalConfigurationModel = GetRaveCoderGlobalConfigXmltoModel(filePath);
-
-            var doConfigurationMatch =  raveCoderGlobalConfigurationModel
-                                        .ReviewMarkingGroup.EqualsIgnoreCase(reviewMarkingGroup)
-                                        &&
-                                        raveCoderGlobalConfigurationModel
-                                        .IsRequiresResponse.Equals(requiresResponse);
-            
-            return doConfigurationMatch;
+          
+            return raveCoderGlobalConfigurationModel;
         }
 
     }

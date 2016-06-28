@@ -3131,35 +3131,24 @@ namespace Coder.DeclarativeBrowser
             raveArchitectEnvironmentSetupPage.SetNewEnvironmentProperties(studyEnvironment);
         }
 
-        public bool IsRaveCoderGlobalConfigurationXLSFileCorrect(string downloadDirectory, string reviewMarkingGroup, bool requiresResponse)
+        public RaveCoderGlobalConfiguration GetRaveCoderGlobalConfigurationXLSFileCorrect(string downloadDirectory, string reviewMarkingGroup, bool requiresResponse)
         {
             if (string.IsNullOrEmpty(downloadDirectory))   throw new ArgumentNullException("downloadDirectory");
             if (string.IsNullOrEmpty(reviewMarkingGroup))  throw new ArgumentNullException("reviewMarkingGroup");
           
-            var raveRaveConfigurationLoaderPage    = Session.OpenRaveConfigurationLoaderPage();
+            var raveRaveConfigurationLoaderPage   = Session.OpenRaveConfigurationLoaderPage();
 
-            var verifyRaveCoderGlobalConfiguration = raveRaveConfigurationLoaderPage.IsRaveCoderGlobalConfigurationDownloadXLSFileCorrect(downloadDirectory, reviewMarkingGroup, requiresResponse);
+            var raveCoderGlobalConfigurationModel = raveRaveConfigurationLoaderPage.GetRaveCoderGlobalConfigurationDownloadXLSFileCorrect(downloadDirectory, reviewMarkingGroup, requiresResponse);
 
-            return verifyRaveCoderGlobalConfiguration;
+            GenericFileHelper.DeleteFilesInDirectory(downloadDirectory);
+
+            return raveCoderGlobalConfigurationModel;
         }
 
-        public bool IsRaveCRFCoderConfigurationXLSFileCorrect(string zippedFileName, string zipDownloadDirectory, List<RaveArchitectCRFCoderFieldWorkSheet> expectedSheetDataValues)
+        public RaveArchitectCRFCoderFieldWorkSheet GetRaveCRFCoderConfigurationXLSFileCorrect(string zippedFileName, string zipDownloadDirectory)
         {
             if (string.IsNullOrEmpty(zipDownloadDirectory))     throw new ArgumentNullException(nameof(zipDownloadDirectory));
             if (string.IsNullOrEmpty(zippedFileName))           throw new ArgumentNullException(nameof(zippedFileName));
-            if (ReferenceEquals(expectedSheetDataValues, null)) throw new NullReferenceException(nameof(expectedSheetDataValues));
-
-            List<string> convertedExpectedSheetDataValues = new List<string>();
-            foreach (var dataRow in expectedSheetDataValues)
-            {
-                convertedExpectedSheetDataValues.Add(dataRow.Form);
-                convertedExpectedSheetDataValues.Add(dataRow.Field);
-                convertedExpectedSheetDataValues.Add(dataRow.CodingLevel);
-                convertedExpectedSheetDataValues.Add(dataRow.Priority);
-                convertedExpectedSheetDataValues.Add(dataRow.Locale);
-                convertedExpectedSheetDataValues.Add(dataRow.IsApprovalRequired);
-                convertedExpectedSheetDataValues.Add(dataRow.IsAutoApproval);
-            }
 
             var actualUnzippedPath = GenericFileHelper.UnzipFile
                                                                     (
@@ -3168,14 +3157,25 @@ namespace Coder.DeclarativeBrowser
                                                                      zipDownloadDirectory
                                                                     );
 
-            var isXlsFileCorrect   = RaveXLSFileSsCSSFileHelper.IsRaveXLSWorkSheetRowDataComparison
+            var actualValues       = RaveXLSFileSsCSSFileHelper.GetRaveXLSWorkSheetRowDataComparison  
                                                                     (
                                                                      actualUnzippedPath, 
-                                                                     RaveArchitectCRFCoderWorkSheets.CoderConfigurationWorkSheetName,
-                                                                     convertedExpectedSheetDataValues
+                                                                     RaveArchitectCRFCoderWorkSheets.CoderConfigurationWorkSheetName
                                                                     );
 
-            return isXlsFileCorrect;
+            var actualValuesModel = new RaveArchitectCRFCoderFieldWorkSheet
+            {
+                Form               = actualValues[0],
+                Field              = actualValues[1],
+                CodingLevel        = actualValues[2],
+                Priority           = actualValues[3],
+                Locale             = actualValues[4],
+                IsApprovalRequired = actualValues[5],
+                IsAutoApproval     = actualValues[6]
+            };
+
+
+            return actualValuesModel;
         }
         
         public void WaitUntilAdminLinkExists(string adminPage)
@@ -3199,35 +3199,31 @@ namespace Coder.DeclarativeBrowser
             header.WaitForSync();
         }
 
-        public bool IsRaveCRFCoderSupplementalTermsXLSFileCorrect(string zippedFileName, string zipDownloadDirectory, List<RaveCoderSupplementalConfiguration> expectedSheetDataValues)
+        public RaveCoderSupplementalConfiguration GetRaveCRFCoderSupplementalTermsXLSFileCorrect(string zippedFileName, string zipDownloadDirectory)
         {
             if (string.IsNullOrEmpty(zipDownloadDirectory))     throw new ArgumentNullException(nameof(zipDownloadDirectory));
             if (string.IsNullOrEmpty(zippedFileName))           throw new ArgumentNullException(nameof(zippedFileName));
-            if (ReferenceEquals(expectedSheetDataValues, null)) throw new NullReferenceException(nameof(expectedSheetDataValues));
 
-            List<string> convertedExpectedSheetDataValues = new List<string>();
-            foreach (var dataRow in expectedSheetDataValues)
-            {
-                convertedExpectedSheetDataValues.Add(dataRow.Form);
-                convertedExpectedSheetDataValues.Add(dataRow.Field);
-                convertedExpectedSheetDataValues.Add(dataRow.SupplementalTerm);
-            }
-
-            var actualUnzippedPath            = GenericFileHelper.UnzipFile
+            var actualUnzippedPath          = GenericFileHelper.UnzipFile
                                                                  (
                                                                   zipDownloadDirectory, 
                                                                   zippedFileName, 
                                                                   zipDownloadDirectory
                                                                  );
 
-            bool correctCRFCoderSupComparison = RaveXLSFileSsCSSFileHelper.IsRaveXLSWorkSheetRowDataComparison
+            var actualCRFCoderSupComparison = RaveXLSFileSsCSSFileHelper.GetRaveXLSWorkSheetRowDataComparison
                                                                  (
                                                                   actualUnzippedPath, 
-                                                                  RaveArchitectCRFCoderWorkSheets.CoderSupplementalTermsWorkSheetName,
-                                                                  convertedExpectedSheetDataValues
+                                                                  RaveArchitectCRFCoderWorkSheets.CoderSupplementalTermsWorkSheetName
                                                                  );
+            var newSupConfig = new RaveCoderSupplementalConfiguration
+            {
+               Form             = actualCRFCoderSupComparison[0],
+               Field            = actualCRFCoderSupComparison[1],
+               SupplementalTerm = actualCRFCoderSupComparison[2]
+            };
 
-            return correctCRFCoderSupComparison;
+            return newSupConfig;
         }
 
         public void DownloadRaveArchitectDraft(string studyName, string draftName)

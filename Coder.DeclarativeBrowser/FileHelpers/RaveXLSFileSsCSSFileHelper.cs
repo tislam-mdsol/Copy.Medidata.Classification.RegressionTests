@@ -16,13 +16,14 @@ namespace Coder.DeclarativeBrowser.FileHelpers
         private static XNamespace _Css_O_Class = "urn:schemas-microsoft-com:office:office";
         private static XNamespace _Css_X_Class = "urn:schemas-microsoft-com:office:excel";
 
-        internal static bool IsRaveXLSWorkSheetRowDataComparison(string filePath, string workSheetName, List<string> expectedSheetDataValues)
+        internal static List<string> GetRaveXLSWorkSheetRowDataComparison(string filePath, string workSheetName)
         {
             if (String.IsNullOrWhiteSpace(filePath)) throw new ArgumentNullException(nameof(filePath));
             if (String.IsNullOrWhiteSpace(workSheetName)) throw new ArgumentNullException(nameof(workSheetName));
-            if (!expectedSheetDataValues.Any()) throw new ArgumentNullException("No expected values from table");
 
             XDocument workSheets = XDocument.Load(filePath + ".xls");
+
+            List<string> listOfActualValues = null;
 
             var i = 0;
 
@@ -35,14 +36,10 @@ namespace Coder.DeclarativeBrowser.FileHelpers
                     foreach (XElement row in skipFirstRow)
                     {
                         foreach (XElement cell in row.Descendants(_Css_Ss_Class + "Data"))
-                        {
-                            var expectedValue = expectedSheetDataValues[i];
+                        {                            
                             var actualValue = cell.Value;
 
-                            if (!expectedValue.Equals(actualValue, StringComparison.OrdinalIgnoreCase))
-                            {
-                                return false;
-                            }
+                            listOfActualValues.Add(actualValue);
 
                             i++;
                         }
@@ -50,7 +47,7 @@ namespace Coder.DeclarativeBrowser.FileHelpers
                 }
             }
 
-            return true;
+            return listOfActualValues;
         }
 
         internal static string GetValueinSpreadSheetByRowAndColumnIndex(string filePath, string workSheetName, int rowIndex, int columnIndex)

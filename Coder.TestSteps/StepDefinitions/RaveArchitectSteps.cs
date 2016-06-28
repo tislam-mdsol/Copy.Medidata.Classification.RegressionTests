@@ -317,9 +317,15 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (String.IsNullOrWhiteSpace(reviewMarkingGroup)) throw new ArgumentNullException(reviewMarkingGroup);
  
-            var configurationCorrect = _Browser.IsRaveCoderGlobalConfigurationXLSFileCorrect(_StepContext.DownloadDirectory, reviewMarkingGroup, isRequiresResponse);
+            var raveCoderGlobalConfigurationModel = _Browser.GetRaveCoderGlobalConfigurationXLSFileCorrect(_StepContext.DownloadDirectory, reviewMarkingGroup, isRequiresResponse);
 
-            configurationCorrect.Should().BeTrue();
+            var doConfigurationMatch = raveCoderGlobalConfigurationModel
+                                       .ReviewMarkingGroup.Equals(reviewMarkingGroup, StringComparison.OrdinalIgnoreCase)
+                                       &&
+                                       raveCoderGlobalConfigurationModel
+                                       .IsRequiresResponse.Equals(isRequiresResponse);
+
+            doConfigurationMatch.Should().BeTrue();
         }
 
         [When(@"downloading Rave Architect CRF")]
@@ -333,27 +339,53 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (ReferenceEquals(crfCoderConfigurationTable, null)) throw new NullReferenceException("crfCoderConfigurationTable");
 
-            var crfCoderConfigurations = crfCoderConfigurationTable.TransformFeatureTableStrings(_StepContext).CreateSet<RaveArchitectCRFCoderFieldWorkSheet>().ToList();
+            var fileName = String.Format("{0}_{1}.zip", _StepContext.GetStudyName(), _StepContext.DraftName);
 
-            var fileName = String.Format("{0}_{1}.zip", _StepContext.GetStudyName(), _StepContext.DraftName); 
+            var crfCoderConfigurations  = crfCoderConfigurationTable.TransformFeatureTableStrings(_StepContext).CreateSet<RaveArchitectCRFCoderFieldWorkSheet>();
 
-            var configurationCorrect = _Browser.IsRaveCRFCoderConfigurationXLSFileCorrect(fileName, _StepContext.DownloadDirectory, crfCoderConfigurations);
+            if (ReferenceEquals(crfCoderConfigurations.FirstOrDefault(), null))
+            {
+                throw new NullReferenceException("No values for the CRF Coder Configurations detected.");
+            }
 
-            configurationCorrect.Should().BeTrue();
+            var crfConfigExpectedValues = crfCoderConfigurations.FirstOrDefault();
+
+            var crfConfigActualValues   = _Browser.GetRaveCRFCoderConfigurationXLSFileCorrect(fileName, _StepContext.DownloadDirectory);
+
+            var crfConfigurationCorrect = crfConfigExpectedValues.Form               .Equals(crfConfigActualValues.Form,               StringComparison.OrdinalIgnoreCase)
+                                        && crfConfigExpectedValues.Field             .Equals(crfConfigActualValues.Field,              StringComparison.OrdinalIgnoreCase)
+                                        && crfConfigExpectedValues.CodingLevel       .Equals(crfConfigActualValues.CodingLevel,        StringComparison.OrdinalIgnoreCase)
+                                        && crfConfigExpectedValues.Priority          .Equals(crfConfigActualValues.Priority,           StringComparison.OrdinalIgnoreCase)
+                                        && crfConfigExpectedValues.Locale            .Equals(crfConfigActualValues.Locale,             StringComparison.OrdinalIgnoreCase)
+                                        && crfConfigExpectedValues.IsApprovalRequired.Equals(crfConfigActualValues.IsApprovalRequired, StringComparison.OrdinalIgnoreCase)
+                                        && crfConfigExpectedValues.IsAutoApproval    .Equals(crfConfigActualValues.IsAutoApproval,     StringComparison.OrdinalIgnoreCase);
+
+            crfConfigurationCorrect.Should().BeTrue();
         }
 
-        [Then(@"verify the following Rave Architect CRF Download Coder Supplemental Terms information")]
-        public void ThenVerifyFileHasTheFollowingRaveArchitectCRFCoderSupplementalTermsInformation(Table crfCoderSupplementalTable)
+        [Then(@"verify the following Rave Architect CRF Download Coder Supplemental Term information")]
+        public void ThenVerifyFileHasTheFollowingRaveArchitectCRFCoderSupplementalTermInformation(Table crfCoderSupplementalTable)
         {
             if (ReferenceEquals(crfCoderSupplementalTable, null)) throw new NullReferenceException("crfCoderSupplementalTable");
 
-            var crfCoderSups = crfCoderSupplementalTable.TransformFeatureTableStrings(_StepContext).CreateSet<RaveCoderSupplementalConfiguration>().ToList();
-
             var fileName = String.Format("{0}_{1}.zip", _StepContext.GetStudyName(), _StepContext.DraftName);
 
-            var configurationCorrect = _Browser.IsRaveCRFCoderSupplementalTermsXLSFileCorrect(fileName, _StepContext.DownloadDirectory, crfCoderSups);
+            var crfCoderSups       = crfCoderSupplementalTable.TransformFeatureTableStrings(_StepContext).CreateSet<RaveCoderSupplementalConfiguration>();
 
-            configurationCorrect.Should().BeTrue();
+            if (ReferenceEquals(crfCoderSups.FirstOrDefault(), null))
+            {
+                throw new NullReferenceException("No values for the CRF Coder Configurations detected.");
+            }
+   
+            var crfSupsConfigExpectedValues = crfCoderSups.FirstOrDefault();
+
+            var crfSupsConfigActualValues   = _Browser.GetRaveCRFCoderSupplementalTermsXLSFileCorrect(fileName, _StepContext.DownloadDirectory);
+
+            var crfConfigurationCorrect     =  crfSupsConfigExpectedValues.Form            .Equals(crfSupsConfigActualValues.Form,             StringComparison.OrdinalIgnoreCase)
+                                            && crfSupsConfigExpectedValues.Field           .Equals(crfSupsConfigActualValues.Field,            StringComparison.OrdinalIgnoreCase)
+                                            && crfSupsConfigExpectedValues.SupplementalTerm.Equals(crfSupsConfigActualValues.SupplementalTerm, StringComparison.OrdinalIgnoreCase);
+ 
+            crfConfigurationCorrect.Should().BeTrue();
         }
 
         [Then(@"verify the following CRF upload error message ""(.*)""")]

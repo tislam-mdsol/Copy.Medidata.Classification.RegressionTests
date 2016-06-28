@@ -16,16 +16,15 @@ Scenario: When downloading an architect CRF spreadsheet containing Coder informa
 	Given a Rave project registration with dictionary "MedDRA ENG 15.0"
     And Rave Modules App Segment is loaded
 	And a Rave Coder setup with the following options
-		| Form | Field          | Dictionary   | Locale   | Coding Level  | Priority | IsApprovalRequired | IsAutoApproval |SupplementalTerms            |
-		| ETE2 | Coding Field   | <Dictionary> | <Locale> | LLT           | 1        | true               | true           |LOGSUPPFIELD2, LOGSUPPFIELD4 |	
+		| Form | Field        | Dictionary   | Locale   | Coding Level | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
+		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | true               | true           | LOGSUPPFIELD2     |	
 	When downloading Rave Architect CRF
 	Then verify the following Rave Architect CRF Download Coder Configuration information
         | Form    | Field        | Coding Level   | Priority | Locale | IsApprovalRequired | IsAutoApproval |
         | ETE2    | CoderField2  | LLT            | 1        | eng    | true               | true           |
-	And verify the following Rave Architect CRF Download Coder Supplemental Terms information
+	And verify the following Rave Architect CRF Download Coder Supplemental Term information
 		| Form    | Field        | Supplemental Term  |
 		| ETE2    | CODERFIELD2  | LOGSUPPFIELD2      |
-		| ETE2    | CODERFIELD2  | LOGSUPPFIELD4      |
 
 	
 @VAL

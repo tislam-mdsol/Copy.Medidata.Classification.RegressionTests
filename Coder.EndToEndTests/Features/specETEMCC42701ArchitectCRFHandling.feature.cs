@@ -113,7 +113,7 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "true",
                         "true",
-                        "LOGSUPPFIELD2, LOGSUPPFIELD4"});
+                        "LOGSUPPFIELD2"});
 #line 18
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
 #line 21
@@ -146,13 +146,9 @@ this.ScenarioSetup(scenarioInfo);
                         "ETE2",
                         "CODERFIELD2",
                         "LOGSUPPFIELD2"});
-            table3.AddRow(new string[] {
-                        "ETE2",
-                        "CODERFIELD2",
-                        "LOGSUPPFIELD4"});
 #line 25
- testRunner.And("verify the following Rave Architect CRF Download Coder Supplemental Terms informa" +
-                    "tion", ((string)(null)), table3, "And ");
+ testRunner.And("verify the following Rave Architect CRF Download Coder Supplemental Term informat" +
+                    "ion", ((string)(null)), table3, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -172,15 +168,15 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC42701_40",
                         "ETE_RaveCoderCore",
                         "Release2016.1.0"});
-#line 35
+#line 34
 this.ScenarioSetup(scenarioInfo);
-#line 37
+#line 36
  testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 38
+#line 37
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 39
+#line 38
  testRunner.When("uploading a rave architect draft error template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 40
+#line 39
  testRunner.Then("verify the following CRF upload error message \"Error while reading row 5. Field O" +
                     "ID \'CODERTERM1\' in form OID \'ETE1\' : Coding dictionary \'MedDRAMedHistory (Coder)" +
                     "\' not found in the target database.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
