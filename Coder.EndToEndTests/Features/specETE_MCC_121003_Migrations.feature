@@ -30,9 +30,11 @@ Scenario: Enter project registration in Coder, setup Rave study with Coder Codin
 	When a Rave Coder setup is configured with the following options
 	| Form | Field        | Dictionary   | Locale | Coding Level   | Priority | IsApprovalRequired | IsAutoApproval |
 	| ETE2 | Coding Field | <Dictionary> |        | PRODUCTSYNONYM | 1        | true               | true           |
-	When a Rave Draft is published using draft "<DraftName>" for Project "<StudyName>"
+	And a Rave Draft is published using draft "<DraftName>" for Project "<StudyName>"
 	And an Amendment Manager migration is started for Project "<StudyName>" 
-	Then the coding decision for verbatim "Drug Verbatim 1" on form "ETE2" for field "Coding Field" should not display "BAYER CHILDREN'S COLD" 
+	Then the coding decision for verbatim "Drug Verbatim 1" on form "ETE2" for field "Coding Field" should not display
+		 | Level   | Code          | Term Path                         |
+		 | PRODUCT | 005581 01 001 | BAYER CHILDREN'S COLD             |
 	When Coder App Segment is loaded
 	Then task "Drug Verbatim 1" should contain the following source term information
        | Source System | Study              | Dictionary            | Locale | Term            | Level      | Priority |
@@ -67,7 +69,9 @@ Scenario: Enter project registration in Coder, setup Rave study with Coder Codin
  	| Coding Field             | Drug Verbatim 1 | LongText    |
  	| Log Supplemental Field B | Top             |             |
 	And an Amendment Manager migration is started for Project "<StudyName>" 
-	Then the coding decision for verbatim "Drug Verbatim 1" on form "ETE2" for field "Coding Field" should not display "BAYER CHILDREN'S COLD" 
+	Then the coding decision for verbatim "Drug Verbatim 1" on form "ETE2" for field "Coding Field" should not display
+		 | Level   | Code          | Term Path                         |
+		 | PRODUCT | 005581 01 001 | BAYER CHILDREN'S COLD             |
 	When Coder App Segment is loaded
 	Then the "Drug Verbatim 1" task has the following supplemental information
 	   | Term               | Value |

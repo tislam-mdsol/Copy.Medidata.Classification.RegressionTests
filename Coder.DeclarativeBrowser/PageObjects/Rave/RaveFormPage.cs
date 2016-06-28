@@ -874,7 +874,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             return termPath;
         }
 
-        internal String GetCodingTask(string fieldName, string verbatimTerm)
+        internal TermPathRow GetCodingRequestVerbatim(string fieldName, string verbatimTerm)
         {
             if (String.IsNullOrWhiteSpace(fieldName)) throw new ArgumentNullException("fieldName");
             if (String.IsNullOrWhiteSpace(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");
@@ -887,21 +887,32 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
 
             var formRowLines = formRow.FindAllSessionElementsByXPath(".//tr");
 
-            var formRowLinesText = formRowLines.First().Text;
+            var formRowLastLineText = formRowLines.Select(x => x.Text).Where(x => !String.IsNullOrWhiteSpace(x)).Last();
 
-            String codingTask = "";
+            var termPathLevel = new TermPathRow();
 
-           
-                var formLineTextSplit = formRowLinesText.RemoveAllWhiteSpace().Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                foreach (var split in formLineTextSplit)
-                { 
-                    if (split.RemoveAllWhiteSpace() != fieldName.RemoveAllWhiteSpace())
+                var formLineTextSplit = formRowLastLineText.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                foreach (var splitRow in formLineTextSplit)
+                {
+                   if (formLineTextSplit.Count == _TermPathLevelElements)
+                {
+                    termPathLevel = new TermPathRow
                     {
-                        codingTask = split;
-                    }
+                        Level = formLineTextSplit[_TermPathLevelIndex],
+                        Code = formLineTextSplit[_TermPathCodeIndex],
+                        TermPath = formLineTextSplit[_TermPathTermIndex]
+                    };
+                }
+                else if (splitRow.RemoveAllWhiteSpace() != fieldName.RemoveAllWhiteSpace())
+                    {
+                    termPathLevel = new TermPathRow
+                    {
+                        TermPath = formLineTextSplit[_TermPathLevelIndex]
+                    };
+                }
                 }
             
-            return codingTask;
+            return termPathLevel;
         }
 
         internal void InactivateLogLine(string rowContents)
