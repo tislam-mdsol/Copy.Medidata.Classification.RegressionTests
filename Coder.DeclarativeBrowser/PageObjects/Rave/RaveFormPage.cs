@@ -874,7 +874,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             return termPath;
         }
 
-        internal TermPathRow GetCodingRequestVerbatim(string fieldName, string verbatimTerm)
+        internal TermPathRow GetCodingDecisionVerbatim(string fieldName, string verbatimTerm)
         {
             if (String.IsNullOrWhiteSpace(fieldName))    throw new ArgumentNullException("fieldName");
             if (String.IsNullOrWhiteSpace(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");

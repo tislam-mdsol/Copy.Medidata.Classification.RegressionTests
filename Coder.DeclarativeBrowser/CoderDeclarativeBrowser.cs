@@ -863,7 +863,7 @@ namespace Coder.DeclarativeBrowser
             return codingDecisions;
         }
 
-        public TermPathRow GetCodingRequestVerbatim(RaveNavigationTarget target, string fieldName, string verbatimTerm)
+        public TermPathRow GetCodingDecisionVerbatim(RaveNavigationTarget target, string fieldName, string verbatimTerm)
         {
             if (ReferenceEquals(target, null))           throw new ArgumentNullException("target");
             if (string.IsNullOrWhiteSpace(fieldName))    throw new ArgumentNullException("fieldName");
@@ -871,7 +871,7 @@ namespace Coder.DeclarativeBrowser
 
             var raveFormPage                  = Session.OpenRaveForm(target);
 
-            TermPathRow codingRequestVerbatim = raveFormPage.GetCodingRequestVerbatim(fieldName, verbatimTerm);
+            TermPathRow codingRequestVerbatim = raveFormPage.GetCodingDecisionVerbatim(fieldName, verbatimTerm);
 
             return codingRequestVerbatim;
         }

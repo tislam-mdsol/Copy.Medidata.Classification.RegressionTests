@@ -339,9 +339,9 @@ namespace Coder.TestSteps.StepDefinitions
 
             target.FormName             = formName;
 
-            var codingRequestVerbatim   = _Browser.GetCodingRequestVerbatim(target, fieldName, verbatimTerm);
+            var codingDecisionVerbatim   = _Browser.GetCodingDecisionVerbatim(target, fieldName, verbatimTerm);
 
-            expectedCodingDecisions.ShouldNotBeEquivalentTo(codingRequestVerbatim);
+            expectedCodingDecisions.ShouldNotBeEquivalentTo(codingDecisionVerbatim);
 
             _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }
