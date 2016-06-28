@@ -21,6 +21,8 @@ namespace Coder.EndToEndTests.Features
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Architect CRF download will contain Coder settings and Architect upload will save" +
         " Coder settings")]
+    [NUnit.Framework.CategoryAttribute("specETEMCC42701ArchitectCRFHandling.feature")]
+    [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
     public partial class ArchitectCRFDownloadWillContainCoderSettingsAndArchitectUploadWillSaveCoderSettingsFeature
     {
         
@@ -34,7 +36,9 @@ namespace Coder.EndToEndTests.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Architect CRF download will contain Coder settings and Architect upload will save" +
-                    " Coder settings", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    " Coder settings", "", ProgrammingLanguage.CSharp, new string[] {
+                        "specETEMCC42701ArchitectCRFHandling.feature",
+                        "EndToEndDynamicSegment"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,7 +74,7 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.DescriptionAttribute("When downloading an architect CRF spreadsheet containing Coder information on a p" +
             "roject that has registered to a Coding Dictionary, Coding configuration data wil" +
             "l be present upon selection")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC42701_10")]
         [NUnit.Framework.CategoryAttribute("ETE_RaveCoderCore")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
@@ -79,15 +83,15 @@ namespace Coder.EndToEndTests.Features
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When downloading an architect CRF spreadsheet containing Coder information on a p" +
                     "roject that has registered to a Coding Dictionary, Coding configuration data wil" +
                     "l be present upon selection", new string[] {
-                        "DFT",
+                        "VAL",
                         "PBMCC42701_10",
                         "ETE_RaveCoderCore",
                         "Release2016.1.0"});
-#line 7
+#line 14
 this.ScenarioSetup(scenarioInfo);
-#line 9
-    testRunner.Given("a Rave project registration with dictionary \"WhoDrug_DDE_B2 ENG 201509\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 10
+#line 16
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 17
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -98,73 +102,53 @@ this.ScenarioSetup(scenarioInfo);
                         "Coding Level",
                         "Priority",
                         "IsApprovalRequired",
-                        "IsAutoApproval"});
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
             table1.AddRow(new string[] {
                         "ETE2",
                         "Coding Field",
                         "<Dictionary>",
                         "<Locale>",
-                        "PRODUCTSYNONYM",
+                        "LLT",
                         "1",
                         "true",
-                        "true"});
-#line 11
+                        "true",
+                        "LOGSUPPFIELD2"});
+#line 18
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
+#line 21
+ testRunner.When("downloading Rave Architect CRF", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Form",
                         "Field",
-                        "Supplemental Field"});
+                        "Coding Level",
+                        "Priority",
+                        "Locale",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
             table2.AddRow(new string[] {
                         "ETE2",
-                        "Log Supp Field1",
-                        "LOGSUPPFIELD1"});
-            table2.AddRow(new string[] {
-                        "ETE2",
-                        "Std Supp Field 4",
-                        "LOGSUPPFIELD2"});
-#line 14
- testRunner.And("supplemental terms for the following fields", ((string)(null)), table2, "And ");
-#line 18
- testRunner.When("downloading Rave Architect CRF named \"ETE_Study_Draft.zip\" located to \"C:\\Temp\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "CoderField2",
+                        "LLT",
+                        "1",
+                        "eng",
+                        "true",
+                        "true"});
+#line 22
+ testRunner.Then("verify the following Rave Architect CRF Download Coder Configuration information", ((string)(null)), table2, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Form",
                         "Field",
-                        "Dictionary",
-                        "Locale",
-                        "Coding Level",
-                        "Priority",
-                        "IsApprovalRequired",
-                        "IsAutoApproval"});
+                        "Supplemental Term"});
             table3.AddRow(new string[] {
                         "ETE2",
-                        "Coding Field",
-                        "<Dictionary>",
-                        "<Locale>",
-                        "PRODUCTSYNONYM",
-                        "1",
-                        "true",
-                        "true"});
-#line 19
- testRunner.Then("verify file \"ETE_Study_Draft.zip\" located in \"C:\\Temp\" has the following Rave Arc" +
-                    "hitect CRF Coder Configuration information", ((string)(null)), table3, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Form",
-                        "Field",
-                        "Supplemental Field"});
-            table4.AddRow(new string[] {
-                        "ETE2",
-                        "Coding Field",
+                        "CODERFIELD2",
                         "LOGSUPPFIELD2"});
-            table4.AddRow(new string[] {
-                        "ETE2",
-                        "Coding Field",
-                        "LOGSUPPFIELD4"});
-#line 22
- testRunner.And("verify file \"ETE_Study_Draft.zip\" located in \"C:\\Temp\" has the following Rave Arc" +
-                    "hitect CRF Coder Supplemental Terms information", ((string)(null)), table4, "And ");
+#line 25
+ testRunner.And("verify the following Rave Architect CRF Download Coder Supplemental Term informat" +
+                    "ion", ((string)(null)), table3, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -172,7 +156,7 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("When uploading an architect spreadsheet to a project that is not registered to a " +
             "Coding Dictionary, then the upload should fail.")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC42701_40")]
         [NUnit.Framework.CategoryAttribute("ETE_RaveCoderCore")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
@@ -180,21 +164,22 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When uploading an architect spreadsheet to a project that is not registered to a " +
                     "Coding Dictionary, then the upload should fail.", new string[] {
-                        "DFT",
+                        "VAL",
                         "PBMCC42701_40",
                         "ETE_RaveCoderCore",
                         "Release2016.1.0"});
-#line 32
-this.ScenarioSetup(scenarioInfo);
 #line 34
- testRunner.Given("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 35
- testRunner.When("uploading a rave architect draft template \"MCC42701_40.xls\" to \"Draft 1\" for stud" +
-                    "y \"<Study>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 36
- testRunner.Then("I verify the following CRF upload message \"Error while reading row 5. Field OID \'" +
-                    "CODERTERM1\' in form OID \'ETE1\' : Coding dictionary \'MedDRAMedHistory (Coder)\' no" +
-                    "t found in the target database.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 37
+    testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+ testRunner.When("uploading a rave architect draft error template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 39
+ testRunner.Then("verify the following CRF upload error message \"Error while reading row 5. Field O" +
+                    "ID \'CODERTERM1\' in form OID \'ETE1\' : Coding dictionary \'MedDRAMedHistory (Coder)" +
+                    "\' not found in the target database.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

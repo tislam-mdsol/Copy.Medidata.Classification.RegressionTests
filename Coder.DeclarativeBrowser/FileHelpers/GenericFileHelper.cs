@@ -5,8 +5,8 @@ using System.Linq;
 using System.Text; 
 using System.Xml; 
 using System.Xml.Linq;
-using System.Collections.Generic; 
-
+using System.Collections.Generic;
+using Coder.DeclarativeBrowser.ExtensionMethods;
 
 namespace Coder.DeclarativeBrowser.FileHelpers
 {
@@ -61,40 +61,85 @@ namespace Coder.DeclarativeBrowser.FileHelpers
 
         internal static string UnzipFile(string zippedPath, string zippedFileName, string downloadDirectory)
         {
-            if (String.IsNullOrWhiteSpace(zippedPath)) throw new ArgumentNullException(nameof(zippedPath));
-            if (String.IsNullOrWhiteSpace(zippedFileName)) throw new ArgumentNullException(nameof(zippedFileName));
+            if (String.IsNullOrWhiteSpace(zippedPath))        throw new ArgumentNullException(nameof(zippedPath));
+            if (String.IsNullOrWhiteSpace(zippedFileName))    throw new ArgumentNullException(nameof(zippedFileName));
             if (String.IsNullOrWhiteSpace(downloadDirectory)) throw new ArgumentNullException(nameof(downloadDirectory));
 
             var zippedFilePath = Path.Combine(zippedPath, zippedFileName);
+            var unZippedPath   = zippedFilePath.Replace(".zip", "");
 
-            ZipFile.ExtractToDirectory(zippedFilePath, downloadDirectory);
+            using (ZipArchive archive = ZipFile.OpenRead(zippedFilePath))
+            {
+                foreach (ZipArchiveEntry entry in archive.Entries)
+                {
+                  entry.ExtractToFile(Path.Combine(downloadDirectory, entry.FullName),true);
+                }
+            }
 
-            return zippedFilePath;
+            return unZippedPath;
         }
 
-        internal static bool IsRaveXLSWorkSheetRowDataComparison(string filePath, string workSheetName, int startValueIndex, List<string> expectedSheetDataValues)
+        internal static string[] GetDirectoryPaths(string downloadDirectory, string filePath)
         {
-            if (String.IsNullOrWhiteSpace(filePath))                   throw new ArgumentNullException(nameof(filePath));
-            if (String.IsNullOrWhiteSpace(workSheetName))              throw new ArgumentNullException(nameof(workSheetName));
-            if (String.IsNullOrWhiteSpace(startValueIndex.ToString())) throw new ArgumentNullException("startIndex");
-            if (!expectedSheetDataValues.Any())                        throw new ArgumentNullException("No expected values from table");
+            string[] filePaths = Directory.GetFiles(@downloadDirectory, filePath);
+           
+            return filePaths;
+        }
 
-            XElement xelement = XElement.Load(filePath);
-            var xmlItemWorkSheet = from xmlTag in xelement.Elements("Worksheet")
-                                   where (string)xmlTag.Element("Worksheet").Value == workSheetName
-                                   select xmlTag;
+        internal static string GetFilePathByPartialName(string downloadDirectory, string partialName)
+        {
+            if (String.IsNullOrWhiteSpace(partialName)) throw new ArgumentNullException(nameof(partialName));
+            if (String.IsNullOrWhiteSpace(downloadDirectory))
+                throw new ArgumentNullException(nameof(downloadDirectory));
+            
+            string[] filePaths = Directory.GetFiles(downloadDirectory);
 
-            var actualSheetDataValues = xmlItemWorkSheet.Descendants("Data").ToList();
-
-            for (int i = 0; i < expectedSheetDataValues.Count; i++)
+            if (!filePaths.Any())
             {
-                if (!(expectedSheetDataValues[i] == actualSheetDataValues[startValueIndex].Value))
-                {
-                    return false;
-                }
-                startValueIndex++;
+                throw new FileNotFoundException("No files in download directory");
             }
-            return true;
+
+            var filePath = RetryPolicy.ValidateOperation.Execute
+            (
+                () =>
+                {
+                    filePaths = null;
+
+                    filePaths = Directory.GetFiles(downloadDirectory);
+
+                    var matchingFile = filePaths.
+                                       SingleOrDefault(x => Path.GetFileName(x).Contains(partialName));
+
+                    return matchingFile;
+                }
+            );
+
+            if (ReferenceEquals(filePath, null))
+            {
+                throw new FileNotFoundException($"No partial file name with {partialName}");
+            }
+
+            return filePath;
+        }
+
+        internal static void DeleteFilesInDirectory(string downloadDirectory)
+        {
+            if (String.IsNullOrWhiteSpace(downloadDirectory)) throw new ArgumentNullException(nameof(downloadDirectory));
+
+            string[] filePaths = Directory.GetFiles(downloadDirectory);
+
+            if (!filePaths.Any())
+            {
+                throw new FileNotFoundException("No files in download directory");
+            }
+
+            foreach (var filePath in filePaths)
+            {
+                if (!filePath.Equals(null))
+                {
+                    File.Delete(filePath);                    
+                }
+            }
         }
 
     }

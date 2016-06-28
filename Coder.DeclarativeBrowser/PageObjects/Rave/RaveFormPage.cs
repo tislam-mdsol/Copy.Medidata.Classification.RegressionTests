@@ -914,7 +914,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             
             return termPathLevel;
         }
-
+        
         internal void InactivateLogLine(string rowContents)
         {
             if (String.IsNullOrWhiteSpace(rowContents)) throw new ArgumentNullException("rowContents");

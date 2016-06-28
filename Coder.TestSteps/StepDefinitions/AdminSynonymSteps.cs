@@ -97,6 +97,7 @@ namespace Coder.TestSteps.StepDefinitions
         }
 
         [Given(@"a populated activated synonym list ""(.*)"" containing entry ""(.*)""")]
+        [When(@"activating a new populated synonym list ""(.*)"" containing entry ""(.*)""")]
         public void GivenAPopulatedActivatedSynonymListContainingEntry(
             string dictionaryLocaleVersionSynonymListName,
             string delimitedSynonym)
@@ -182,7 +183,35 @@ namespace Coder.TestSteps.StepDefinitions
 
             _Browser.DownloadSynonymFileFromSynonymListPage(synonymSearch, synonymFileName);
         }
-        
+
+        [When(@"downloading the Synonym List to ""(.*)""")]
+        public void WhenDownloadingTheSynonymListTo(string synonymFileName)
+        {
+            if (String.IsNullOrWhiteSpace(synonymFileName)) throw new ArgumentNullException(nameof(synonymFileName));
+
+            var synonymSearch = GetCurrentContextSynonymSearch();
+
+            _Browser.DownloadSynonymFileFromSynonymListPage(synonymSearch, synonymFileName);
+        }
+
+        [Then(@"synonym list should contain the following information")]
+        public void ThenInShouldContainTheFollowingSynonymInformation(string synonymFileName, Table synoymTable)
+        {
+            if (ReferenceEquals(synoymTable, null))         throw new ArgumentNullException("synoymTable");
+            if (String.IsNullOrWhiteSpace(synonymFileName)) throw new ArgumentNullException(nameof(synonymFileName));
+
+            var expectedSynonymEntries = synoymTable.CreateSet<SynonymUploadRow>().ToArray();
+
+            var actualSynonymEntries = _Browser.GetSynonymListFileRows(_StepContext.SegmentUnderTest.SegmentName);
+
+            foreach (var expectedSynonymEntry in expectedSynonymEntries)
+            {
+                var actualMatch = actualSynonymEntries.Any(x => x.Equals(expectedSynonymEntry));
+
+                actualMatch.Should().BeTrue($"Expected result for the following {expectedSynonymEntry.Verbatim}");
+            }
+        }
+
         [When(@"starting synonym list migration")]
         public void WhenStartingSynonymListMigration()
         {

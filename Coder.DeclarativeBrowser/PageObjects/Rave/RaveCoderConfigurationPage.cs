@@ -172,7 +172,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
         {
             if (ReferenceEquals(coderConfiguration, null)) throw new ArgumentNullException("coderConfiguration");
 
-            if (!String.IsNullOrWhiteSpace(coderConfiguration.Locale))
+            if (!String.IsNullOrWhiteSpace(coderConfiguration.Locale) && coderConfiguration.Dictionary.Contains("MedDRA", StringComparison.OrdinalIgnoreCase))
             {
                 if (!GetLocaleSelectList().Exists())
                 {

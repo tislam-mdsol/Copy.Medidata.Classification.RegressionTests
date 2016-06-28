@@ -1450,7 +1450,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                 options.RetryInterval,
                 options);
         }
-
+        
         internal static void WaitForRaveNavigationLink(this BrowserSession session, string linkText)
         {
             if (ReferenceEquals(session, null))      throw new ArgumentNullException("session");
