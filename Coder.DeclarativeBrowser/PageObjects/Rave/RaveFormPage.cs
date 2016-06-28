@@ -891,10 +891,10 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
 
             var termPathLevel       = new TermPathRow();
 
-                var formLineTextSplit = formRowLastLineText.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                foreach (var splitRow in formLineTextSplit)
-                {
-                   if (formLineTextSplit.Count == _TermPathLevelElements)
+            var formLineTextSplit = formRowLastLineText.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            foreach (var splitRow in formLineTextSplit)
+            {
+                if (formLineTextSplit.Count == _TermPathLevelElements)
                 {
                     termPathLevel = new TermPathRow
                     {
@@ -904,14 +904,13 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
                     };
                 }
                 else if (splitRow.RemoveAllWhiteSpace() != fieldName.RemoveAllWhiteSpace())
-                    {
+                {
                     termPathLevel = new TermPathRow
                     {
                         TermPath  = formLineTextSplit[_TermPathLevelIndex]
                     };
                 }
-                }
-            
+            }            
             return termPathLevel;
         }
         
