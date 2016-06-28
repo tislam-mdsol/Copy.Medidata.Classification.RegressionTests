@@ -363,6 +363,7 @@
     <Content Include="ConfigData\mauth_private_key_validation.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+	<None Include="ConfigData\mauth_private_key_validation.txt.dice" />
     <Content Include="Medidata.Specrun.Reporting.Readme.txt" />
     <Content Include="StaticContent\RaveDraft_Template.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
