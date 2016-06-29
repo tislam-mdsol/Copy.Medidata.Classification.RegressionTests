@@ -871,9 +871,9 @@ namespace Coder.DeclarativeBrowser
 
             var raveFormPage                  = Session.OpenRaveForm(target);
 
-            TermPathRow codingRequestVerbatim = raveFormPage.GetCodingDecisionVerbatim(fieldName, verbatimTerm);
+            TermPathRow codingDecisionVerbatim = raveFormPage.GetCodingDecisionVerbatim(fieldName, verbatimTerm);
 
-            return codingRequestVerbatim;
+            return codingDecisionVerbatim;
         }
         
         public string GetQueryCommentFromRaveAuditRecords(RaveNavigationTarget target, string fieldName, string verbatimTerm)

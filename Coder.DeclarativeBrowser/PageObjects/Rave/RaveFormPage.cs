@@ -891,7 +891,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
 
             var termPathLevel       = new TermPathRow();
 
-            var formLineTextSplit = formRowLastLineText.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            var formLineTextSplit   = formRowLastLineText.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
             foreach (var splitRow in formLineTextSplit)
             {
                 if (formLineTextSplit.Count == _TermPathLevelElements)
