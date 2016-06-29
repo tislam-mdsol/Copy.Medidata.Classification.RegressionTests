@@ -340,7 +340,9 @@
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="StaticContent\ErrorGeneratingCRFDraft.xls" />
+    <None Include="StaticContent\ErrorGeneratingCRFDraft.xls">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="StaticContent\RaveCoreConfig_eng.xls">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -360,9 +362,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="ConfigData\mauth_private_key.txt.dice" />
-    <Content Include="ConfigData\mauth_private_key_validation.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Medidata.Specrun.Reporting.Readme.txt" />
     <Content Include="StaticContent\RaveDraft_Template.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

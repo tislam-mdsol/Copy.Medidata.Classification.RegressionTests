@@ -30,57 +30,56 @@ Feature: Test the full round trip integration from Rave to Coder back to Rave fo
 
   @DFT
   @ETE_JPN_Rave_coder_basic_sub_with_supp
-  @PB1.1.2-002J
+  @PB1.1.2.002J
   @Release2016.1.0
   Scenario: Setup Rave study with supplemental fields, enter verbatims in Rave, reject 1 verbatim and code the other in Coder, verify supplemental data appears in Coder, and Query and Coding results in Rave
 
-    Given a Rave project registration with dictionary "J-Drug JPN 2011H2"
+    Given a Rave project registration with dictionary "JDrug JPN 2011H2"
     And Rave Modules App Segment is loaded
     And a Rave Coder setup with the following options
-      | Form | Field   | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms            |
-      | ETE2 | ETE2    | <Dictionary> | <Locale> | LLT            | 1        | true               | True          | LOGSUPPFIELD2, LOGSUPPFIELD4 |
+      | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms            |
+      | ETE2 | Coding Field | <Dictionary> | <Locale> | DrugName    | 1        | true               | True           | LOGSUPPFIELD2, LOGCOMPFIELD1 |
     When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
     And adding a new subject "TEST"
     And adding a new verbatim term to form "ETE2"
-      | Field         | Value            | ControlType |
-      | ETE2          | 足の下に鋭い痛み   |             |
-      | supplemental1 | 33               |other           |
-      | Supplemental2 | ニュージャージー州 | radio            |
+      | Field                    | Value             | ControlType |
+      | Coding Field             | 足の下に鋭い痛み   | LongText    |
+      | Log Supplemental Field A | 33                |             |
+      | Log Supplemental Field B | ニュージャージー州 |             |
     And adding a new verbatim term to form "ETE2"
-      | Field         | Value           | ControlType |
-      | ETE2          | 神経の鋭い痛み    |             |
-      | supplemental1 | 22              |other           |
-      | Supplemental2 | ニューヨーク      | radio            |
+      | Field                    | Value         | ControlType |
+      | Coding Field             | 神経の鋭い痛み | LongText    |
+      | Log Supplemental Field A | 22            |             |
+      | Log Supplemental Field B | ニューヨーク   |             |
     And Coder App Segment is loaded
     When I view task "足の下に鋭い痛み"
-    Then I verify the following Component information is displayed
-      | Supplemental Term    | Supplemental Value  |
-      | ETE2.LOGSUPPFIELD2   | ニュージャージー州    |
-      | ETE2.LOGSUPPFIELD4   | 翻訳で失わ           |
-    When I view task "足の下に鋭い痛み"
-    Then I verify the following Component information is displayed
-    And in Coder I verify the Supplemental data for "足の下に鋭い痛み"
-      | Supplemental Term    | Supplemental Value  |
-      |ETE2.LOGSUPPFIELD2    |ニューヨーク           |
-      |ETE2.LOGSUPPFIELD4    |翻訳で失わ  |
-    And I open a query for new task "神経の鋭い痛み" with comment "悪い言葉による拒絶決定"
-    And I browse and code task "足の下に鋭い痛み" entering value "抗Ｄグロブリン" and selecting "抗Ｄグロブリン" located in Dictionary Tree Table
-    And I download the synonym list for "J-Drug 2011H2 JPN" and name it "SynonymListj2.txt"
-    Then in "SynonymListj2.txt" I should the following
-      | Verbatim | Code      | Level    | Path                                                                                                                                 | Primary Flag | Supplemental Info                 | Status                                      |
+    Then I verify the following Supplemental information is displayed
+      | Supplemental Term  | Supplemental Value |
+      | ETE2.LOGSUPPFIELD2 | ニュージャージー州  |
+      | ETE2.LOGCOMPFIELD1 | 33                 |
+    When I open a query for task "神経の鋭い痛み" with comment "悪い言葉による拒絶決定"
+    And I view task "神経の鋭い痛み"
+    Then I verify the following Supplemental information is displayed
+      | Supplemental Term  | Supplemental Value |
+      | ETE2.LOGSUPPFIELD2 | ニューヨーク        |
+      | ETE2.LOGCOMPFIELD1 | 22                 |
+    When task "足の下に鋭い痛み" is coded to term "抗Ｄグロブリン" at search level "Drug Name" with code "634340701" at level "Drug Name" and a synonym is created
+	And downloading the Synonym List to "DownloadedSynonymListFile.txt"
+    Then synonym list "DownloadedSynonymListFile.txt" should contain the following information
+      | Verbatim        | Code      | Level    | Path                                                                                                                                  | Primary Flag | Supplemental Info                       | Status                                                  |
       | 足の下に鋭い痛み | 634340701 | DrugName | DrugName:634340701;Category:6343407 注 4;PreferredName:6343407;DetailedClass:6343;LowLevelClass:634;MidLevelClass:63;HighLevelClass:6 | False        | Classification:33;Reserve:コンポーネント | LOGSUPPFIELD2:ニュージャージー州;LOGSUPPFIELD4:翻訳で失わ |
-    And I navigate to Rave App form
-    Then the field on form "ETE2" for study "<Study>" site "<Site>" subject "TEST" I should see the rave query icon for term "神経の鋭い痛み"
-    Then the field "ETE2" on form "ETE2" for study "<Study>" site "<Site>" subject "TEST" contains the following coding decision data
-      |Coding Level              |  Code     | Term                            |
-      |Category                  | 4         |注                                |
-      |English Name              | 634340701 |ANTI-D GLOBULIN                   |
-      |High-Level Classification |   6       | 病原生物に対する医薬品              |
-      |Mid-Level Classification  |   63      |生物学的製剤                        |
-      |Low-Level Classification  |634        | 血液製剤類                         |
-      |Detailed Classification   |6463       |    血漿分画製剤                    |
-      |Preferred Name            |6343407    | 乾燥抗Ｄ（Ｒｈｏ）人免疫グロブリン     |
-      |Drug Name                 |634340701  | 抗Ｄグロブリン                      |
+    When Rave Modules App Segment is loaded
+    Then the coder query "悪い言葉による拒絶決定" is available to the Rave form "ETE2" field "Coding Field" with verbatim term "神経の鋭い痛み"
+	And the coding decision on form "ETE2" for field "Coding Field" with row text "足の下に鋭い痛み" for verbatim "足の下に鋭い痛み" contains the following data
+      | Level                     | Code      | Term Path                        |
+      | Category                  | 4         | 注                               |
+      | English Name              | 634340701 | ANTI-D GLOBULIN                  |
+      | High-Level Classification | 6         | 病原生物に対する医薬品             |
+      | Mid-Level Classification  | 63        | 生物学的製剤                      |
+      | Low-Level Classification  | 634       | 血液製剤類                        |
+      | Detailed Classification   | 6463      | 血漿分画製剤                      |
+      | Preferred Name            | 6343407   | 乾燥抗Ｄ（Ｒｈｏ）人免疫グロブリン |
+      | Drug Name                 | 634340701 | 抗Ｄグロブリン                    |
 
 
 

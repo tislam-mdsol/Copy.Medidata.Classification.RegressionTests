@@ -20,6 +20,8 @@ namespace Coder.EndToEndTests.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("UPDATED Verify JPN Rave Coder Migrations")]
+    [NUnit.Framework.CategoryAttribute("specETE_JPNRaveCoderMigrations.feature")]
+    [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
     public partial class UPDATEDVerifyJPNRaveCoderMigrationsFeature
     {
         
@@ -32,7 +34,9 @@ namespace Coder.EndToEndTests.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "UPDATED Verify JPN Rave Coder Migrations", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "UPDATED Verify JPN Rave Coder Migrations", "", ProgrammingLanguage.CSharp, new string[] {
+                        "specETE_JPNRaveCoderMigrations.feature",
+                        "EndToEndDynamicSegment"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -68,7 +72,7 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.DescriptionAttribute("Setup Rave study with all non coding fields, enter data in EDC, migrate study in " +
             "Rave from non-coding to Medidata Coder, Verify terms appear in Coder after migra" +
             "tion")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PB1.1.2_005J")]
         [NUnit.Framework.CategoryAttribute("Release2012.1.0")]
         public virtual void SetupRaveStudyWithAllNonCodingFieldsEnterDataInEDCMigrateStudyInRaveFromNon_CodingToMedidataCoderVerifyTermsAppearInCoderAfterMigration()
@@ -76,15 +80,18 @@ namespace Coder.EndToEndTests.Features
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Setup Rave study with all non coding fields, enter data in EDC, migrate study in " +
                     "Rave from non-coding to Medidata Coder, Verify terms appear in Coder after migra" +
                     "tion", new string[] {
-                        "DFT",
+                        "VAL",
                         "PB1.1.2_005J",
                         "Release2012.1.0"});
-#line 6
+#line 9
 this.ScenarioSetup(scenarioInfo);
-#line 7
- testRunner.Given("a Rave project registration with dictionary \"WhoDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
- testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA JPN 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 11
+    testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+    testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Form",
@@ -94,44 +101,66 @@ this.ScenarioSetup(scenarioInfo);
                         "CodingLevel",
                         "Priority",
                         "IsApprovalRequired",
-                        "IsAutoApproval",
-                        "SupplementalTerms"});
+                        "IsAutoApproval"});
             table1.AddRow(new string[] {
-                        "ETE5",
-                        "CoderFieldETE5",
+                        "ETE2",
+                        "Coding Field",
                         "<Dictionary>",
                         "<Locale>",
-                        "PRODUCTSYNONYM",
+                        "PT",
                         "1",
                         "false",
-                        "true",
-                        ""});
-#line 9
-  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
-#line 12
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
-                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "false"});
 #line 13
+ testRunner.And("a Rave Coder setup is configured with the following options", ((string)(null)), table1, "And ");
+#line 16
  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And("a Rave Draft is published using draft \"<DraftName>\" for Project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value",
                         "ControlType"});
             table2.AddRow(new string[] {
-                        "Coder  Field ETE 5",
+                        "Coding Field",
                         "左脚の足の痛み",
-                        ""});
-#line 14
- testRunner.And("adding a new verbatim term to form \"ETE5\"", ((string)(null)), table2, "And ");
-#line 17
- testRunner.And("an Amendment Manager migration is started with \"SETE5<CoderRaveStudy>\" in \"AM Sub" +
-                    "ject Search\" and \"SETE5<CoderRaveStudy>\" in \"Rave Migration Subject Seletion Dro" +
-                    "pdown\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        "LongText"});
 #line 18
- testRunner.Then("Rave Adverse Events form should display \"左脚の足の痛み\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 19
- testRunner.And("Coder tasks should display \"左脚の足の痛み\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table2, "And ");
+#line 21
+ testRunner.And("an Amendment Manager migration is started for Project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+    testRunner.And("task \"左脚の足の痛み\" is coded to term \"片側頭痛\" at search level \"Preferred Term\" with code" +
+                    " \"10067040\" at level \"PT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 24
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Level",
+                        "Code",
+                        "Term Path"});
+            table3.AddRow(new string[] {
+                        "SOC",
+                        "10029205",
+                        "神経系障害"});
+            table3.AddRow(new string[] {
+                        "HLGT",
+                        "10019231",
+                        "頭痛"});
+            table3.AddRow(new string[] {
+                        "HLT",
+                        "10019233",
+                        "頭痛ＮＥＣ"});
+            table3.AddRow(new string[] {
+                        "PT",
+                        "10067040",
+                        "片側頭痛"});
+#line 25
+ testRunner.Then("the coding decision for verbatim \"左脚の足の痛み\" on form \"ETE2\" for field \"Coding Field" +
+                    "\" contains the following data", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -59,14 +59,40 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             if (ReferenceEquals(draftFilePath, null)) throw new ArgumentNullException("draftFilePath");
             
             AttachDraftFile(draftFilePath);
+
             GetUploadButton().Click();
 
-            WaitForUploadToCompelte();
+            WaitForUploadToComplete();
 
             var currentStatus = GetCurrentStatusIndicator();
 
             currentStatus.Text.Should().BeEquivalentTo("Save successful");
         }
+
+        internal void UploadDraftErrorFile(String draftFilePath)
+        {
+            if (ReferenceEquals(draftFilePath, null)) throw new ArgumentNullException("draftFilePath");
+
+            AttachDraftFile(draftFilePath);
+            GetUploadButton().Click();
+
+            WaitForUploadErrorToComplete();
+        }
+
+        internal void WaitForUploadErrorToComplete()
+        {
+            var options           = Config.GetDefaultCoypuOptions();
+
+            options.RetryInterval = TimeSpan.FromSeconds(10);
+            options.Timeout       = TimeSpan.FromMinutes(3);
+
+            _Session.TryUntil(
+            () => GetCurrentStatusIndicator(),
+            () => GetCurrentStatusIndicator().Text.Equals("Transaction rolled back."),
+            options.RetryInterval,
+            options);
+        }
+
 
         private void AttachDraftFile(string draftFilePath)
         {
@@ -76,7 +102,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             chooseFileButton.SendKeys(draftFilePath);
         }
 
-        private void WaitForUploadToCompelte()
+        private void WaitForUploadToComplete()
         {
             _Session.WaitUntilElementIsActive  (GetAbortButton);
             _Session.WaitUntilElementIsDisabled(GetBackButton);

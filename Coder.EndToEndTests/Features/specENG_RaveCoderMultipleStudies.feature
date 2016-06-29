@@ -3,7 +3,7 @@
 @EndToEndDynamicSegment
 Feature: Test the full round trip integration from Rave to Coder back to Rave using Multiple Studies
 
-@DFT
+@VAL
 @PB1.1.2.016
 @ReleasePatch08
 #@DT13652,DT13787,DT13793

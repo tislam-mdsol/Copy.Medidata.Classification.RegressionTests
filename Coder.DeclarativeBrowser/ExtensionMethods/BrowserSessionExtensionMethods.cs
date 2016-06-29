@@ -1436,7 +1436,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
         internal static void RefreshUntilElementDisappears(this BrowserSession session,
             Func<SessionElementScope> getElement, Options options = null)
         {
-            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+            if (ReferenceEquals(session, null))    throw new ArgumentNullException("session");
             if (ReferenceEquals(getElement, null)) throw new ArgumentNullException("getElement");
 
             if (ReferenceEquals(options, null))
@@ -1450,7 +1450,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                 options.RetryInterval,
                 options);
         }
-
+        
         internal static void WaitForRaveNavigationLink(this BrowserSession session, string linkText)
         {
             if (ReferenceEquals(session, null))      throw new ArgumentNullException("session");

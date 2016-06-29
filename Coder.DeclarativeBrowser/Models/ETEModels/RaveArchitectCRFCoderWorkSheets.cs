@@ -9,11 +9,9 @@ namespace Coder.DeclarativeBrowser.Models.ETEModels
     public class RaveArchitectCRFCoderWorkSheets
     {
         //Coder Configuration Worksheet Properties
-        internal static string CoderConfigurationWorkSheetName => "CoderConfiguration";
-        internal static int StartCoderConfigurationIndex       => 8 ;
+        internal static string CoderConfigurationWorkSheetName     => "CoderConfiguration";
 
         //Coder Supplemental Terms Worksheet Properties
         internal static string CoderSupplementalTermsWorkSheetName => "CoderSupplementalTerms";
-        internal static int StartCoderSupplementIndex              => 4;
     }
 }
