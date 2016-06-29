@@ -72,19 +72,19 @@ namespace Coder.EndToEndTests.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A coding decision will still be processed even if the data point has been frozen")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("MCC_207752_001")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
         public virtual void ACodingDecisionWillStillBeProcessedEvenIfTheDataPointHasBeenFrozen()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision will still be processed even if the data point has been frozen", new string[] {
-                        "DFT",
+                        "VAL",
                         "MCC_207752_001",
                         "Release2016.1.0"});
 #line 9
 this.ScenarioSetup(scenarioInfo);
 #line 11
- testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("a Rave project registration with dictionary \"WhoDrug-DDE-B2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -101,8 +101,8 @@ this.ScenarioSetup(scenarioInfo);
                         "ETE2",
                         "Coding Field",
                         "<Dictionary>",
-                        "<Locale>",
-                        "LLT",
+                        "",
+                        "PRODUCTSYNONYM",
                         "1",
                         "true",
                         "true"});
@@ -120,47 +120,48 @@ this.ScenarioSetup(scenarioInfo);
                         "ControlType"});
             table2.AddRow(new string[] {
                         "Coding Field",
-                        "terrible head pain",
+                        "child advil cold extreme",
                         "LongText"});
 #line 18
  testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table2, "And ");
 #line 21
- testRunner.And("the Rave row on form \"ETE2\" with verbatim term \"terrible head pain\" is frozen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the Rave row on form \"ETE2\" with verbatim term \"child advil cold extreme\" is froz" +
+                    "en", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
  testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
- testRunner.And("task \"terrible head pain\" is coded to term \"Head pain\" at search level \"Low Level" +
-                    " Term\" with code \"10019198\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("task \"child advil cold extreme\" is coded to term \"CO-ADVIL\" at search level \"Pref" +
+                    "erred Name\" with code \"010502 01 001\" at level \"PN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 24
-    testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level",
                         "Code",
                         "Term Path"});
             table3.AddRow(new string[] {
-                        "SOC",
-                        "10029205",
-                        "Nervous system disorders"});
+                        "ATC",
+                        "M",
+                        "MUSCULO-SKELETAL SYSTEM"});
             table3.AddRow(new string[] {
-                        "HLGT",
-                        "10019231",
-                        "Headaches"});
+                        "ATC",
+                        "M01",
+                        "ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS"});
             table3.AddRow(new string[] {
-                        "HLT",
-                        "10019233",
-                        "Headaches NEC"});
+                        "ATC",
+                        "M01A",
+                        "ANTIINFLAMMATORY/ANTIRHEUMATIC PROD.,NON-STEROIDS"});
             table3.AddRow(new string[] {
-                        "PT",
-                        "10019211",
-                        "Headache"});
+                        "ATC",
+                        "M01AE",
+                        "PROPIONIC ACID DERIVATIVES"});
             table3.AddRow(new string[] {
-                        "LLT",
-                        "10019198",
-                        "Head pain"});
+                        "PRODUCT",
+                        "010502 01 001",
+                        "CO-ADVIL"});
 #line 25
- testRunner.Then("the coding decision for verbatim \"terrible head pain\" on form \"ETE2\" for field \"C" +
-                    "oding Field\" contains the following data", ((string)(null)), table3, "Then ");
+    testRunner.Then("the coding decision for verbatim \"child advil cold extreme\" on form \"ETE2\" for fi" +
+                    "eld \"Coding Field\" contains the following data", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

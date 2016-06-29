@@ -3,32 +3,32 @@
 @EndToEndDynamicSegment
 Feature: EDC will still be able to receive coding decisions even when the field has been locked or frozen.
 
-@DFT
+@VAL
 @MCC_207752_001
 @Release2016.1.0
 Scenario: A coding decision will still be processed even if the data point has been frozen
 
-	Given a Rave project registration with dictionary "MedDRA ENG 12.0"
+	Given a Rave project registration with dictionary "WhoDrug-DDE-B2 ENG 200703"
 	And Rave Modules App Segment is loaded
  	And a Rave Coder setup with the following options
-  	 | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
-  	 | ETE2 | Coding Field | <Dictionary> | <Locale> | LLT         | 1        | true               | true           | 
+      | Form | Field        | Dictionary   | Locale | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval |
+      | ETE2 | Coding Field | <Dictionary> |        | PRODUCTSYNONYM | 1        | true               | true           |
 	When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE2"
-	| Field        | Value              | ControlType |
-	| Coding Field | terrible head pain | LongText    |
-	And the Rave row on form "ETE2" with verbatim term "terrible head pain" is frozen
+	| Field        | Value                    | ControlType |
+	| Coding Field | child advil cold extreme | LongText    |
+	And the Rave row on form "ETE2" with verbatim term "child advil cold extreme" is frozen
 	And Coder App Segment is loaded
-	And task "terrible head pain" is coded to term "Head pain" at search level "Low Level Term" with code "10019198" at level "LLT" and a synonym is created
-    And Rave Modules App Segment is loaded
-	Then the coding decision for verbatim "terrible head pain" on form "ETE2" for field "Coding Field" contains the following data
-      | Level | Code     | Term Path                |
-      | SOC   | 10029205 | Nervous system disorders |
-      | HLGT  | 10019231 | Headaches                |
-      | HLT   | 10019233 | Headaches NEC            |
-      | PT    | 10019211 | Headache                 |
-      | LLT   | 10019198 | Head pain                |
+ 	And task "child advil cold extreme" is coded to term "CO-ADVIL" at search level "Preferred Name" with code "010502 01 001" at level "PN" and a synonym is created
+	And Rave Modules App Segment is loaded
+    Then the coding decision for verbatim "child advil cold extreme" on form "ETE2" for field "Coding Field" contains the following data
+      | Level          | Code          | Term Path                                         |
+      | ATC            | M             | MUSCULO-SKELETAL SYSTEM                           |
+      | ATC            | M01           | ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS       |
+      | ATC            | M01A          | ANTIINFLAMMATORY/ANTIRHEUMATIC PROD.,NON-STEROIDS |
+      | ATC            | M01AE         | PROPIONIC ACID DERIVATIVES                        |
+      | PRODUCT        | 010502 01 001 | CO-ADVIL                                          |
 
 @DFT
 @MCC-207752-002
