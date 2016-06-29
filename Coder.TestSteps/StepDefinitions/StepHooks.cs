@@ -482,6 +482,7 @@ namespace Coder.TestSteps.StepDefinitions
                     Console.WriteLine("An error occurred with user: " + _StepContext.GetUser());
                     Console.WriteLine("Error: "+ error.Message);
                 }
+
                 browser.Dispose();
             }
 
