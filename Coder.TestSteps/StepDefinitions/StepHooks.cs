@@ -220,7 +220,8 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 environmentPrefix = "Aux: ";               
 
-                if (study.IsProduction) {
+                if (study.IsProduction)
+                {
                     productionStudyName = study.StudyName;
                     environmentPrefix   = "Live: ";
                 }
@@ -296,14 +297,14 @@ namespace Coder.TestSteps.StepDefinitions
         {
             var raveAdminUser = new MedidataUser
             {
-                Username = Config.RaveAdminLogin,
-                Password = Config.RaveAdminPassword
+                Username      = Config.RaveAdminLogin,
+                Password      = Config.RaveAdminPassword
             };
 
-            _StepContext.RaveAdminUser = raveAdminUser;
+            _StepContext.RaveAdminUser     = raveAdminUser;
 
-            var newStudyGroup             = CreateSegmentSetupData("c56d2b4d6267");
-            _StepContext.SegmentUnderTest = newStudyGroup;
+            var newStudyGroup              = CreateSegmentSetupData("c56d2b4d6267");
+            _StepContext.SegmentUnderTest  = newStudyGroup;
             
             _StepContext.DownloadDirectory = CreateUserDirectory(Config.ParentDownloadDirectory, raveAdminUser.Username);
             _StepContext.DumpDirectory     = CreateUserDirectory(Config.ParentDumpDirectory, raveAdminUser.Username);
@@ -468,8 +469,7 @@ namespace Coder.TestSteps.StepDefinitions
                     Console.WriteLine("An error occurred with user: " + _StepContext.GetUser());
                     Console.WriteLine("Error: "+ error.Message);
                 }
-
-               browser.Dispose();
+                browser.Dispose();
             }
 
             ScenarioContext.Current.Clear();

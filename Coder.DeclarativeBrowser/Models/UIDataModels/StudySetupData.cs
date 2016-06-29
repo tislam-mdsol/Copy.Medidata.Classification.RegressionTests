@@ -1,7 +1,7 @@
 ﻿
 namespace Coder.DeclarativeBrowser.Models.UIDataModels
 {
-      public class StudySetupData
+    public class StudySetupData
     {
         public StudyType StudyType   { get; set; }
         public long   StudyId        { get; set; }

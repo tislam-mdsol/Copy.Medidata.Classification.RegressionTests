@@ -38,7 +38,7 @@ namespace Coder.TestSteps.StepDefinitions
             var target = new RaveNavigationTarget
             {
                 StudyName = _StepContext.GetStudyName(),
-                SiteName = _StepContext.GetSite()
+                SiteName  = _StepContext.GetSite()
             };
 
             _Browser.AddSubjectToRaveStudy(target, subjectInitials, subjectId);
@@ -73,7 +73,7 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 _StepContext.ActiveStudyType = StudyType.UAT;
 
-                target = new RaveNavigationTarget
+                target                       = new RaveNavigationTarget
                 {
                     StudyName = _StepContext.GetUatStudyName(),
                     SiteName  = _StepContext.GetSite(),

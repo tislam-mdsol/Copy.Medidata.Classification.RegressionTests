@@ -681,8 +681,8 @@ Scenario: Rave ETE Example Verifying Coding Decision within the Clincial Views
 	And adding a new verbatim term to form "ETE2"
 	| Field        | Value      | ControlType |
 	| Coding Field | Headachery | LongText    |
-	And configure Clinical Views for Project "<StudyName>" with mode "Full Then Incremental"
-	And generate report "Data Listing" for Project "<StudyName>", Data Source "Clinical Views" and Form "ETE2"
+	And Clinical Views for Project "<StudyName>" with mode "Full Then Incremental" is configured
+	And report "Data Listing" for Project "<StudyName>", Data Source "Clinical Views" and Form "ETE2" is generated
 	Then In report generated, I should see the data below
 	| project                 | subject | CODERFIELD2_PS    | CODERFIELD2_PS_C |
 	| <SourceSystemStudyName> | AA1     | SLOW RELEASE IRON | 000235 01 027 9  |
@@ -693,5 +693,5 @@ Scenario: Rave ETE Example Verifying Coding Decision within the Clincial Views
 @PBMCC_223226_001
 Scenario: Rave ETE Example editting global Rave-Coder Configuration settings
 
-And Rave Modules App Segment is loaded
-And edit global Rave-Coder Configuration settings with Review Marking Group set to "Data Management" and Requires Response set to "false" 
+Given Rave Modules App Segment is loaded
+And global Rave-Coder Configuration settings with Review Marking Group set to "Data Management" and Requires Response set to "false" 
