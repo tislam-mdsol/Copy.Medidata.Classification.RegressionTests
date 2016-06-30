@@ -29,12 +29,13 @@ Scenario: Verify a coding decision is visible for a submitted log line verbatim 
       | ATC            | M01AE         | PROPIONIC ACID DERIVATIVES                        |
       | PRODUCT        | 010502 01 001 | CO-ADVIL                                          |
 
-@DFT
+@VAL
 @MCC_207752_002
 @Release2016.1.0
+@IncreaseTimeout
 Scenario: Verify a coding decisions is visible for multi-log line submissions in a landscape form in EDC
 
-		Given a Rave project registration with dictionary "WhoDrug-DDE-B2 ENG 200703"
+	Given a Rave project registration with dictionary "WhoDrug-DDE-B2 ENG 200703"
 	And Rave Modules App Segment is loaded
  	And a Rave Coder setup with the following options
       | Form  | Field        | Dictionary   | Locale | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval |
@@ -44,6 +45,8 @@ Scenario: Verify a coding decisions is visible for multi-log line submissions in
 	And adding a new verbatim term to form "ETE12"
 	| Field | Value                    | ControlType |
 	| 1     | child advil cold extreme | LongText    |
+	And adding a new verbatim term to form "ETE12"
+	| Field | Value                    | ControlType |
 	| 2     | Drug Verbatim 1          | LongText    |
 	And Coder App Segment is loaded
  	And task "child advil cold extreme" is coded to term "CO-ADVIL" at search level "Preferred Name" with code "010502 01 001" at level "PN" and a synonym is created
