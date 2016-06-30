@@ -273,6 +273,7 @@
     <None Include="Features\specETE_ENG_LandscapeView.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>specETE_ENG_LandscapeView.feature.cs</LastGenOutput>
+	</None>
     <None Include="Features\ETE_ENG_CoderConfigQuerySettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ETE_ENG_CoderConfigQuerySettings.feature.cs</LastGenOutput>
