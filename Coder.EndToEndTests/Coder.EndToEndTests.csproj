@@ -113,6 +113,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\specETE_ENG_LandscapeView.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>specETE_ENG_LandscapeView.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\specCoderSetup.feature.cs">
       <DependentUpon>specCoderSetup.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -249,6 +254,10 @@
     <None Include="ConfigData\settings.config.dice">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Features\specETE_ENG_LandscapeView.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specETE_ENG_LandscapeView.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\specCoderSetup.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
