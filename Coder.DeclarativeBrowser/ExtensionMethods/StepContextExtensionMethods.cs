@@ -3,6 +3,7 @@ using System.Linq;
 using Coder.DeclarativeBrowser.Models;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coypu;
+using System.Collections.Generic;
 
 namespace Coder.DeclarativeBrowser.ExtensionMethods
 {
@@ -223,7 +224,13 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             segmentSetupData.Customer = Config.TestSegmentCustomer;
             segmentSetupData.UseRaveX = stepContext.UseRaveX;
 
-            segmentSetupData.StudyGroupApps = new []
+            segmentSetupData.StudyGroupApps = stepContext.SetStudyGroupAppData();
+        }
+
+        public static List<MedidataApp> SetStudyGroupAppData(this StepContext stepContext)
+        {
+            if (ReferenceEquals(stepContext, null)) throw new ArgumentNullException("stepContext");
+            List<MedidataApp> medidataAppList= new List<MedidataApp>
             {
                 new MedidataApp
                 {
@@ -254,10 +261,12 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                 },
 
                 new MedidataApp
-            {
+                {
                     Name = Config.SafetyGatewayMappingAppName
-                },
+                }
             };
+
+            return medidataAppList;
         }
     }
 }

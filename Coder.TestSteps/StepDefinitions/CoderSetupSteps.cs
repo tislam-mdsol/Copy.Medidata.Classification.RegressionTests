@@ -6,6 +6,7 @@ using TechTalk.SpecFlow;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coder.DeclarativeBrowser.Models.ETEModels;
+using Coder.DeclarativeBrowser.IMedidataApi;
 using System.Linq;
 
 namespace Coder.TestSteps.StepDefinitions
@@ -51,48 +52,23 @@ namespace Coder.TestSteps.StepDefinitions
         {
             var generatedSuffix = Guid.NewGuid().GetFirstSectionAppendedWithRandomNumbers();
 
-            var newStudyGroup = CreateSegmentSetupData(studyName, siteName, true);
+            var newStudyName = String.Concat(studyName, generatedSuffix);
 
-            //newStudyGroup.SegmentName = String.Concat(studyName, Config.ETESetupSuffix);
-            //newStudyGroup.SegmentUuid = _Browser.GetStudyGroupUUID(newStudyGroup.SegmentName);
-
-            SetSegmentContext(newStudyGroup);
-
-            CreateTestUserContext(generatedSuffix, newStudyGroup, createNewSegment: false);
-
-            _Browser.LogoutOfiMedidata();
-
-            CompleteUserRegistration(_StepContext.CoderTestUser, newStudyGroup);
-
-            //WriteSetupDetails(_StepContext.CoderTestUser, newStudyGroup);
-        }
-
-        private SegmentSetupData CreateSegmentSetupData(string studyName, string siteName, bool allProduction)
-        {
-            const string userAcceptanceStudySuffix = "(UAT)";
-            const string developmentStudySuffix = "(Dev)";
-
-            if (String.IsNullOrWhiteSpace(studyName)) throw new ArgumentNullException("studyName");
-            if (String.IsNullOrWhiteSpace(siteName)) throw new ArgumentNullException("siteName");
+            _StepContext.ProjectName = newStudyName;
 
             var studyExternalOid = studyName.RemoveNonAlphanumeric();
 
             var siteNumber = String.Concat(siteName, "_Site").RemoveNonAlphanumeric();
 
-            bool isProductionValue = false;
-            if (allProduction)
+            var singleStudyToAddToSegmentUnderTest = new SegmentSetupData
             {
-                isProductionValue = true;
-            }
-
-            var newStudyGroup = new SegmentSetupData
-            {
-                SegmentName = studyName,
+                SegmentName = _StepContext.SegmentUnderTest.SegmentName, //newStudyName
+                SegmentUuid = _StepContext.SegmentUnderTest.SegmentUuid,
                 Studies = new StudySetupData[]
                 {
                     new StudySetupData()
                     {
-                        StudyName    = studyName,
+                        StudyName    = newStudyName,
                         ExternalOid  = studyExternalOid,
                         IsProduction = true,
                         Sites        = new SiteSetupData[]
@@ -104,86 +80,17 @@ namespace Coder.TestSteps.StepDefinitions
                             }
                         },
                         ProtocolNumber = studyName.Replace("_", "")
-                    },
-                    new StudySetupData()
-                    {
-                        StudyName    = String.Concat(studyName, " ",userAcceptanceStudySuffix),
-                        ExternalOid  = String.Concat(studyExternalOid, userAcceptanceStudySuffix).RemoveNonAlphanumeric(),
-                        IsProduction = isProductionValue,
-                        Sites        = new SiteSetupData[]
-                        {
-                            new SiteSetupData
-                            {
-                                SiteName   = String.Concat(siteName, " ", userAcceptanceStudySuffix),
-                                SiteNumber = String.Concat(siteNumber, userAcceptanceStudySuffix).RemoveNonAlphanumeric()
-                            }
-                        },
-                        ProtocolNumber = studyName.Replace("_", "")
-                    },
-                    new StudySetupData()
-                    {
-                        StudyName    = String.Concat(studyName, " ", developmentStudySuffix),
-                        ExternalOid  = String.Concat(studyExternalOid, developmentStudySuffix).RemoveNonAlphanumeric(),
-                        IsProduction = isProductionValue,
-                        Sites        = new SiteSetupData[]
-                        {
-                            new SiteSetupData
-                            {
-                                SiteName   = String.Concat(siteName, " ", developmentStudySuffix),
-                                SiteNumber = String.Concat(siteNumber, developmentStudySuffix).RemoveNonAlphanumeric()
-                            }
-                        },
-                        ProtocolNumber = studyName.Replace("_", "")
                     }
-                }
+                },
+                StudyGroupApps = _StepContext.SetStudyGroupAppData()
             };
 
-            return newStudyGroup;
-        }
+            _Browser.CreateNewStudyWithSite(singleStudyToAddToSegmentUnderTest);
 
-        private void SetSegmentContext(SegmentSetupData newStudyGroup)
-        {
-            if (ReferenceEquals(newStudyGroup, null)) throw new ArgumentNullException("newStudyGroup");
+            //InviteUserAndAssignAppPermissionAppRoles(String studyUuid, MedidataUser newUser, String studyGroupUuid, IEnumerable<MedidataApp> StudyGroupApps )
 
-            _StepContext.SegmentUnderTest2 = newStudyGroup;
+            _Browser.UpdateUserInvitationAppPermissionAppRoles(singleStudyToAddToSegmentUnderTest.Studies[0].StudyUuid, _StepContext.CoderTestUser, _StepContext.SegmentUnderTest.SegmentUuid, singleStudyToAddToSegmentUnderTest.StudyGroupApps);
 
-            _StepContext.SetStudyGroupSetupData(newStudyGroup);
-        }
-
-        private void CreateTestUserContext(string nameSuffix, SegmentSetupData newStudyGroup, bool createNewSegment)
-        {
-            if (String.IsNullOrWhiteSpace(nameSuffix)) throw new ArgumentNullException("nameSuffix");
-            if (ReferenceEquals(newStudyGroup, null)) throw new ArgumentNullException("newStudyGroup");
-
-            var userName = String.Concat(Config.StudyNamePrefix, nameSuffix);
-
-            var newUser = _StepContext.Browser.CreateTestUserContext(newStudyGroup, userName, createNewSegment);
-
-            _StepContext.CoderTestUser2 = newUser;
-        }
-
-        private void CompleteUserRegistration(MedidataUser user, SegmentSetupData studyGroup)
-        {
-            if (ReferenceEquals(user, null)) throw new ArgumentNullException("user");
-            if (ReferenceEquals(studyGroup, null)) throw new ArgumentNullException("studyGroup");
-
-            var browser = _StepContext.Browser;
-
-            browser.LoginToiMedidata(user.Username, user.Password);
-
-            browser.AcceptStudyInvitation();
-
-            browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
-
-            var productionStudies = studyGroup.Studies.Select(x => x).Where(x => x.IsProduction);
-
-            foreach (var study in productionStudies)
-            {
-                browser.AssignUserToStudy("coderimport", "Coder Import Role", study: study.StudyName);
-            }
-
-            browser.LogoutOfiMedidata();
-        }
-
+        }       
     }
 }

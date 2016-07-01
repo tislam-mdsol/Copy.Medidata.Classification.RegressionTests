@@ -573,13 +573,13 @@ namespace Coder.DeclarativeBrowser
             Session.GetIMedidataLoginPage().Login(username, password);
         }
 
-        public void LoadiMedidataCoderAppSegment(string segmentName)
+        public void LoadiMedidataCoderAppSegment(string projectName)
         {
-            if (string.IsNullOrEmpty(segmentName)) throw new ArgumentNullException("segmentName");
+            if (string.IsNullOrEmpty(projectName)) throw new ArgumentNullException("projectName");
             
             GoToiMedidataHome();
 
-            Session.GetImedidataPage().LoadSegmentForApp(Config.ApplicationName, segmentName);
+            Session.GetImedidataPage().LoadSegmentForApp(Config.ApplicationName, projectName);
         }
 
         public void LoadiMedidataRaveModulesAppSegment(string segmentName)
@@ -3009,15 +3009,17 @@ namespace Coder.DeclarativeBrowser
             return newUser;
         }
 
-        public void CreateNewStudyWithSite(SegmentSetupData studyGroup)
+        public SegmentSetupData CreateNewStudyWithSite(SegmentSetupData studyGroup)
         {
             if (ReferenceEquals(studyGroup, null)) throw new ArgumentNullException("studyGroup");
 
             using (var iMedidataClient = new IMedidataClient())
             {
-                iMedidataClient.AddStudiesToIMedidata(studyGroup);
+                var SegmentUpdatedWithAddedStudies = iMedidataClient.AddStudiesToIMedidata(studyGroup);
                 iMedidataClient.CreateStudySite(studyGroup);
+                return SegmentUpdatedWithAddedStudies;
             }
+          
         }
 
         public MedidataUser CreateNewStudyUser(SegmentSetupData studyGroup, string userName, bool inviteNewUserWhenCreated = true)
@@ -3045,6 +3047,24 @@ namespace Coder.DeclarativeBrowser
             Session.GetImedidataPage().OpenStudyGroupPage();
 
             Session.GetImedidataStudyGroupPage().InviteUser(studyGroup.SegmentName, Config.ApplicationName, user);
+        }
+
+        //internal void InviteUserAndAssignAppPermissionAppRoles(String studyUuid, MedidataUser newUser, String studyGroupUuid, IEnumerable<MedidataApp> StudyGroupApps )
+
+        public void InviteUserToStudyAndGiveAppPermission(String studyUuid, MedidataUser newUser, String studyGroupUuid, IEnumerable<MedidataApp> StudyGroupApps)
+        {
+            using (var iMedidataClient = new IMedidataClient())
+            {
+               iMedidataClient.InviteUserAndAssignAppPermissionAppRoles(studyUuid, newUser.Email, studyGroupUuid, StudyGroupApps);
+            }
+        }
+
+        public void UpdateUserInvitationAppPermissionAppRoles(String studyUuid, MedidataUser newUser, String studyGroupUuid, IEnumerable<MedidataApp> StudyGroupApps)
+        {
+            using (var iMedidataClient = new IMedidataClient())
+            {
+                iMedidataClient.UpdateUserInvitationAppPermissionAppRoles(studyUuid, newUser.Email, studyGroupUuid, StudyGroupApps);
+            }
         }
 
         public string GetStudyGroupUUID(string segmentName)

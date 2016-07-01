@@ -22,16 +22,17 @@ namespace Coder.DeclarativeBrowser.IMedidataApi
         private readonly HttpClient _HttpClient;
         private readonly JsonSerializerSettings _JsonSerializerSettings;
 
-        private const string _ApiPathRoot           = @"/api/v2/";
-        private const string _UsersPath             = @"users.json";
-        private const string _StudiesPath           = @"studies/{0}.json";
-        private const string _StudyGroupStudiesPath = @"study_groups/{0}/studies.json";
-        private const string _StudyGroupPath        = @"study_groups/{0}.json";
-        private const string _StudySitesPath        = @"studies/{0}/study_sites.json";
-        private const string _ActivateUserPath      = @"created_users/{0}/activate.json";
-        private const string _InviteUserPath        = @"studies/{0}/assign_or_invite.json";
-        private const string _StudyGroupAppsPath    = @"study_groups/{0}/apps.json";
-        private const string _RolesPath             = @"study_groups/{0}/apps/{1}/roles.json";
+        private const string _ApiPathRoot               = @"/api/v2/";
+        private const string _UsersPath                 = @"users.json";
+        private const string _StudiesPath               = @"studies/{0}.json";
+        private const string _StudyGroupStudiesPath     = @"study_groups/{0}/studies.json";
+        private const string _StudyGroupPath            = @"study_groups/{0}.json";
+        private const string _StudySitesPath            = @"studies/{0}/study_sites.json";
+        private const string _ActivateUserPath          = @"created_users/{0}/activate.json";
+        private const string _InviteUserPath            = @"studies/{0}/assign_or_invite.json";
+        private const string _UpdateUserInvitationPath  = @"studies/{0}/update_invitation_assignments.json";
+        private const string _StudyGroupAppsPath        = @"study_groups/{0}/apps.json";
+        private const string _RolesPath                 = @"study_groups/{0}/apps/{1}/roles.json";
 
         internal IMedidataClient()
         {
@@ -65,7 +66,7 @@ namespace Coder.DeclarativeBrowser.IMedidataApi
                 JsonConvert.DeserializeObject<dynamic>);
         }
 
-        internal void AddStudiesToIMedidata(SegmentSetupData segmentInput)
+        internal SegmentSetupData AddStudiesToIMedidata(SegmentSetupData segmentInput)
         {
             if (ReferenceEquals(segmentInput, null)) throw new ArgumentNullException("segmentInput");
 
@@ -85,8 +86,10 @@ namespace Coder.DeclarativeBrowser.IMedidataApi
                 var responseStudy = GetResponseObject(
                     () => _HttpClient.PostAsync(requestUri, postContent),GetStudyFromJson);
 
-                study.StudyUuid = responseStudy.UUID;
+                study.StudyUuid = responseStudy.UUID; // new studyId and correct value
             }
+
+            return segmentInput;
         }
 
         internal void CreateStudySite(SegmentSetupData segmentInput)
@@ -168,24 +171,45 @@ namespace Coder.DeclarativeBrowser.IMedidataApi
             {
                 foreach (var studyInput in studyInputs)
                 {
-                    var studyUuid = studyInput.StudyUuid;
-                    if (String.IsNullOrWhiteSpace(studyUuid))
-                    {
-                        throw new ArgumentNullException("segmentInput.ProdStudy.StudyUuid");
-                    }
-
-                    var inviteUserPath     = String.Format(String.Concat(_ApiPathRoot, _InviteUserPath), studyUuid);
-                    var inviteUserUri      = new Uri(_IMedidataHost, inviteUserPath);
-                    var inviteUserData     = GetInviteUserPostBody(newUser.Email, studyGroupUuid, segmentInput.StudyGroupApps);
-                    var inviteUserContent  = new StringContent(inviteUserData, Encoding.UTF8, "application/json");
-
-                    var inviteUserResponse = GetResponseObject(
-                        ()                 => _HttpClient.PostAsync(inviteUserUri, inviteUserContent),
-                        GetInviteFromJson);
+                    InviteUserAndAssignAppPermissionAppRoles(studyInput.StudyUuid, newUser.Email, studyGroupUuid, segmentInput.StudyGroupApps );
                 }
             }
 
             return newUser;
+        }
+
+        internal void InviteUserAndAssignAppPermissionAppRoles(String studyUuid, String userEmail, String studyGroupUuid, IEnumerable<MedidataApp> StudyGroupApps )
+        {
+            if (String.IsNullOrWhiteSpace(studyUuid))
+            {
+                throw new ArgumentNullException("segmentInput.ProdStudy.StudyUuid");
+            }
+
+            var inviteUserPath = String.Format(String.Concat(_ApiPathRoot, _InviteUserPath), studyUuid);
+            var inviteUserUri = new Uri(_IMedidataHost, inviteUserPath);
+            var inviteUserData = GetInviteUserPostBody(userEmail, studyGroupUuid, StudyGroupApps);
+            var inviteUserContent = new StringContent(inviteUserData, Encoding.UTF8, "application/json");
+
+            var inviteUserResponse = GetResponseObject(
+                () => _HttpClient.PostAsync(inviteUserUri, inviteUserContent),
+                GetInviteFromJson);
+        }
+
+        internal void UpdateUserInvitationAppPermissionAppRoles(String studyUuid, String userEmail, String studyGroupUuid, IEnumerable<MedidataApp> StudyGroupApps)
+        {
+            if (String.IsNullOrWhiteSpace(studyUuid))
+            {
+                throw new ArgumentNullException("segmentInput.ProdStudy.StudyUuid");
+            }
+
+            var updateUserInvitePath = String.Format(String.Concat(_ApiPathRoot, _UpdateUserInvitationPath), studyUuid);
+            var updateUserInviteUri = new Uri(_IMedidataHost, updateUserInvitePath);
+            var inviteUserData = GetInviteUserPostBody(userEmail, studyGroupUuid, StudyGroupApps);
+            var inviteUserContent = new StringContent(inviteUserData, Encoding.UTF8, "application/json");
+
+            var inviteUserResponse = GetResponseObject(
+                () => _HttpClient.PutAsync(updateUserInviteUri, inviteUserContent),
+                GetInviteFromJson);
         }
 
         internal void UpdateStudyName(StudySetupData currentStudy, string newName)

@@ -36,7 +36,7 @@ namespace Coder.TestSteps.StepDefinitions
         [When(@"iMedidata App Segment is loaded")]
         public void GivenIMedidataAppSegmentIsLoaded()
         {
-            _Browser.LoginToiMedidata(Config.AdminLogin, Config.AdminPassword);
+            _Browser.GoToiMedidataHome();
         }
 
         [Given(@"a project with the following options is registered")]
@@ -45,7 +45,8 @@ namespace Coder.TestSteps.StepDefinitions
             if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
 
             var list = table.TransformFeatureTableStrings(_StepContext).CreateSet<SynonymList>().ToArray();
-            _Browser.RegisterProjects(_StepContext.GetStudyName(), list);
+            _Browser.LoadiMedidataCoderAppSegment(_StepContext.ProjectName);
+            _Browser.RegisterProjects(_StepContext.ProjectName, list);
         }
 
         [Given(@"a ""(.*)"" Coder setup with no tasks and no synonyms and dictionary ""(.*)""")]

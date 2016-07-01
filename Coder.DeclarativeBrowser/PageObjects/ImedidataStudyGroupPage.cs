@@ -274,7 +274,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             
             _Browser.GoToHomePage();
         }
-
+     
         private void SaveNewStudyGroupForm(SegmentSetupData newStudyGroup)
         {
             if (ReferenceEquals(newStudyGroup, null)) throw new ArgumentNullException("newStudyGroup");
