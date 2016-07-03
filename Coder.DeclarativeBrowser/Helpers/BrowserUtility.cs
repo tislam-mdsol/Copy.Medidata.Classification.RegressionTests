@@ -34,7 +34,7 @@ namespace Coder.DeclarativeBrowser.Helpers
             bool waitForAutoCodingComplete = true)
         {
             if (ReferenceEquals(stepContext, null)) throw new ArgumentNullException("stepContext");
-            if (String.IsNullOrEmpty(verbatim)) throw new ArgumentNullException("verbatim");
+            if (String.IsNullOrEmpty(verbatim))     throw new ArgumentNullException("verbatim");
 
             var initialData      = new AutomatedCodingRequestSection();
 

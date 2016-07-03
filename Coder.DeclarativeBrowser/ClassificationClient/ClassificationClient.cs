@@ -4,12 +4,11 @@ using Medidata.Classification;
 
 namespace Coder.DeclarativeBrowser.ClassificationClient
 {
-    class ClassificationClient
+    internal class ClassificationClient
     {
-
-        public void BroadcastingAutomatedCodingRequestSection(AutomatedCodingRequestSection data)
+        internal void BroadcastingAutomatedCodingRequestSection(AutomatedCodingRequestSection data)
         {
-            data.Broadcast();
+            data.Broadcast(this);
         }
     }
 }
