@@ -874,6 +874,46 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             return termPath;
         }
 
+        internal TermPathRow GetCodingDecisionVerbatim(string fieldName, string verbatimTerm)
+        {
+            if (String.IsNullOrWhiteSpace(fieldName))    throw new ArgumentNullException("fieldName");
+            if (String.IsNullOrWhiteSpace(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");
+
+            var termPath            = new List<TermPathRow>();
+
+            GetFormRowModifyLink(verbatimTerm).Click();
+
+            var formRow             = GetFormRowByContents(verbatimTerm);
+
+            var formRowLines        = formRow.FindAllSessionElementsByXPath(".//tr");
+
+            var formRowLastLineText = formRowLines.Select(x => x.Text).Where(x => !String.IsNullOrWhiteSpace(x)).Last();
+
+            var termPathLevel       = new TermPathRow();
+
+            var formLineTextSplit   = formRowLastLineText.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            foreach (var splitRow in formLineTextSplit)
+            {
+                if (formLineTextSplit.Count == _TermPathLevelElements)
+                {
+                    termPathLevel = new TermPathRow
+                    {
+                        Level     = formLineTextSplit[_TermPathLevelIndex],
+                        Code      = formLineTextSplit[_TermPathCodeIndex],
+                        TermPath  = formLineTextSplit[_TermPathTermIndex]
+                    };
+                }
+                else if (splitRow.RemoveAllWhiteSpace() != fieldName.RemoveAllWhiteSpace())
+                {
+                    termPathLevel = new TermPathRow
+                    {
+                        TermPath  = formLineTextSplit[_TermPathLevelIndex]
+                    };
+                }
+            }            
+            return termPathLevel;
+        }
+        
         internal void InactivateLogLine(string rowContents)
         {
             if (String.IsNullOrWhiteSpace(rowContents)) throw new ArgumentNullException("rowContents");

@@ -9,6 +9,7 @@ using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using System.Reflection;
 using System.Linq;
+using Coder.DeclarativeBrowser.ExtensionMethods.Assertions;
 
 namespace Coder.TestSteps.StepDefinitions
 {
@@ -322,6 +323,27 @@ namespace Coder.TestSteps.StepDefinitions
             if (ReferenceEquals(verifyCodingTaskTable, null)) throw new NullReferenceException("verifyCodingTaskTable");
 
             ThenTheCodingDecisionForVerbatimContainsTheFollowingData(formName, fieldName, verbatimTerm, verbatimTerm, verifyCodingTaskTable);
+        }
+
+        [Then(@"the coding decision for verbatim ""(.*)"" on form ""(.*)"" for field ""(.*)"" should not display")]
+        public void ThenTheCodingDecisionForVerbatimOnFormForFieldShouldNotDisplay(string verbatimTerm, string formName, string fieldName, Table verifyCodingTaskTable)
+        {
+            if (String.IsNullOrWhiteSpace(verbatimTerm))      throw new ArgumentNullException("verbatimTerm");
+            if (String.IsNullOrWhiteSpace(formName))          throw new ArgumentNullException("formName");
+            if (String.IsNullOrWhiteSpace(fieldName))         throw new ArgumentNullException("fieldName");
+            if (ReferenceEquals(verifyCodingTaskTable, null)) throw new NullReferenceException("verifyCodingTaskTable");
+
+            var expectedCodingDecisions = verifyCodingTaskTable.TransformFeatureTableStrings(_StepContext).CreateInstance<TermPathRow>();
+
+            var target                  = _StepContext.GetRaveNavigationTarget();
+
+            target.FormName             = formName;
+
+            var codingDecisionVerbatim   = _Browser.GetCodingDecisionVerbatim(target, fieldName, verbatimTerm);
+
+            expectedCodingDecisions.ShouldNotBeEquivalentTo(codingDecisionVerbatim);
+
+            _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }
 
         [Then(@"the coding decision on form ""(.*)"" for field ""(.*)"" with row text ""(.*)"" for verbatim ""(.*)"" contains the following data")]

@@ -222,6 +222,7 @@
   <ItemGroup>
     <Compile Include="ClassificationClient\ClassificationClient.cs" />
     <Compile Include="CoderUserGenerator.cs" />
+    <Compile Include="ExtensionMethods\Assertions\FluentAssertionsExtensionMethods.cs" />
     <Compile Include="FileHelpers\CsvColumnNameAttribute.cs" />
     <Compile Include="CoderConfiguration\CoderConfiguration.cs" />
     <Compile Include="CoderConfiguration\CoderConfigurationFactory.cs" />
