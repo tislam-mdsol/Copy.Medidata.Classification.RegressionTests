@@ -9,6 +9,7 @@ using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using FluentAssertions;
+using NUnit.Framework;
 
 namespace Coder.TestSteps.StepDefinitions
 {
@@ -144,7 +145,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             var actualCoderConfiguration = _Browser.GetCoderConfigurationForRaveField(target);
             
-            actualCoderConfiguration.Should().Be(expectedCoderConfigurations);
+            Assert.IsTrue(actualCoderConfiguration.Equals(expectedCoderConfigurations));
         }
 
         [Given(@"supplemental terms for the following fields")]
@@ -259,9 +260,12 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrWhiteSpace(sourceDraftName)) throw new ArgumentNullException("sourceDraftName");
             if (String.IsNullOrWhiteSpace(targetStudyName)) throw new ArgumentNullException("targetStudyName");
 
+            var sourceStudy = StepArgumentTransformations.TransformFeatureString(sourceStudyName, _StepContext);
+            var sourceDraft = StepArgumentTransformations.TransformFeatureString(sourceDraftName, _StepContext);
+
             var copySourceType = "Project - Drafts";
 
-            _Browser.AddRaveCRFCopySource(targetStudyName, copySourceType, sourceStudyName, sourceDraftName);
+            _Browser.AddRaveCRFCopySource(targetStudyName, copySourceType, sourceStudy, sourceDraft);
         }
         
         [When(@"a new Draft ""(.*)"" is created through copy wizard")]

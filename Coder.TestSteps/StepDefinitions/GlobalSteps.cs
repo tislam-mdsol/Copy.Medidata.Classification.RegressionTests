@@ -21,15 +21,15 @@ namespace Coder.TestSteps.StepDefinitions
         private const int MaximumODMTasks = 1500; 
 
         private readonly CoderDeclarativeBrowser _Browser;
-        private readonly StepContext             _StepContext;
+        private readonly StepContext             StepContext;
 
         public GlobalSteps(StepContext stepContext)
         {
             if (ReferenceEquals(stepContext, null))             throw new ArgumentNullException("stepContext");
             if (ReferenceEquals(stepContext.Browser, null))     throw new NullReferenceException("Browser");
 
-            _StepContext   = stepContext;
-            _Browser       = _StepContext.Browser;
+            StepContext   = stepContext;
+            _Browser       = StepContext.Browser;
         }
 
         [Given(@"iMedidata App Segment is loaded")]
@@ -44,10 +44,17 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
 
-            var list = table.TransformFeatureTableStrings(_StepContext).CreateSet<SynonymList>().ToArray();
-            _Browser.LoadiMedidataCoderAppSegment(_StepContext.ProjectName);
-            _Browser.RegisterProjects(_StepContext.ProjectName, list);
+            var list = table.TransformFeatureTableStrings(StepContext).CreateSet<SynonymList>().ToArray();
+            _Browser.LoadiMedidataCoderAppSegment(StepContext.ProjectName);
+            _Browser.RegisterProjects(StepContext.ProjectName, new List<SynonymList> { StepContext.SourceSynonymList });
         }
+
+        [Given(@"app permissions are given for the ""(.*)"" for ""(.*)""")]
+        public void GivenAppPermissionsAreGivenForTheFor(string p0, string p1)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
 
         [Given(@"a ""(.*)"" Coder setup with no tasks and no synonyms and dictionary ""(.*)""")]
         public void GivenACoderSetupWithNoTasksAndNoSynonymsAndDictionary(string setupType, string dictionaryLocaleVersion)
@@ -55,12 +62,12 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrEmpty(setupType))                 throw new ArgumentNullException("setupType");                 
             if (String.IsNullOrEmpty(dictionaryLocaleVersion))   throw new ArgumentNullException("dictionaryLocaleVersion");
 
-            _StepContext.SetProjectRegistrationContext(dictionaryLocaleVersion);
-            _StepContext.SetSourceSystemApplicationContext();
+            StepContext.SetProjectRegistrationContext(dictionaryLocaleVersion);
+            StepContext.SetSourceSystemApplicationContext();
 
-            _Browser.SetupCoderConfiguration(_StepContext, setupType);
+            _Browser.SetupCoderConfiguration(StepContext, setupType);
             
-            _StepContext.CleanUpAndRegisterProject();
+            StepContext.CleanUpAndRegisterProject();
         }
 
         [Given(@"a ""(.*)"" Coder setup for a non-production study with no tasks and no synonyms and dictionary ""(.*)""")]
@@ -69,7 +76,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrEmpty(setupType))                throw new ArgumentNullException("setupType");
             if (String.IsNullOrEmpty(dictionaryLocaleVersion))  throw new ArgumentNullException("dictionaryLocaleVersion");
 
-            _StepContext.ActiveStudyType = StudyType.Development;
+            StepContext.ActiveStudyType = StudyType.Development;
 
             GivenACoderSetupWithNoTasksAndNoSynonymsAndDictionary(setupType, dictionaryLocaleVersion);
         }
@@ -82,7 +89,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrEmpty(dictionaryLevel))   throw new ArgumentNullException("dictionaryLevel");
 
             //BrowserUtility.CreateNewTask(_StepContext, verbatim, dictionaryLevel);
-            BrowserUtility.CreateAutomatedCodingRequestSection(_StepContext, verbatim, dictionaryLevel);
+            BrowserUtility.CreateAutomatedCodingRequestSection(StepContext, verbatim, dictionaryLevel);
         }
 
         [When(@"coding tasks ""(.*)""")]
@@ -95,7 +102,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             foreach (var verbatim in verbatims)
             {
-                BrowserUtility.CreateNewTask(_StepContext, verbatim.Trim(), waitForAutoCodingComplete:false);
+                BrowserUtility.CreateNewTask(StepContext, verbatim.Trim(), waitForAutoCodingComplete:false);
             }
 
             _Browser.WaitForAutoCodingToComplete();
@@ -104,8 +111,8 @@ namespace Coder.TestSteps.StepDefinitions
         [Given(@"new coding task ""(.*)"" with isAutoApproval ""(.*)"" and isApprovalRequired ""(.*)""")]
         public void GivenNewCodingTaskWithIsAutoApprovalAndIsApprovalRequired(string verbatim, string isAutoApproval, string isApprovalRequired)
         {
-            _StepContext.SetOdmTermApprovalContext(isAutoApproval,isApprovalRequired);
-            BrowserUtility.CreateNewTask(_StepContext, verbatim);
+            StepContext.SetOdmTermApprovalContext(isAutoApproval,isApprovalRequired);
+            BrowserUtility.CreateNewTask(StepContext, verbatim);
         }
 
        
@@ -133,7 +140,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             string csvFilePath                     = BrowserUtility.GetDynamicCsvFilePath(csvFilename, Config.ApplicationCsvFolder);
             
-            Tuple<string, int> odmPathAndTaskCount = BrowserUtility.BuildOdmFile(csvFilePath, _StepContext);
+            Tuple<string, int> odmPathAndTaskCount = BrowserUtility.BuildOdmFile(csvFilePath, StepContext);
             string odmFilePath                     = odmPathAndTaskCount.Item1;
             int expectedTaskCount                  = odmPathAndTaskCount.Item2;
 
@@ -159,7 +166,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrEmpty(dictionaryLevel)) throw new ArgumentNullException("dictionaryLevel");
             if (String.IsNullOrEmpty(formName)) throw new ArgumentNullException("formName");
 
-            BrowserUtility.CreateNewTask(_StepContext, verbatim, dictionaryLevel, formName);
+            BrowserUtility.CreateNewTask(StepContext, verbatim, dictionaryLevel, formName);
         }
 
         [Given(@"""(.*)"" coding tasks of ""(.*)"" for dictionary level ""(.*)""")]
@@ -168,7 +175,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrWhiteSpace(verbatim)) throw new ArgumentNullException("verbatim");
             if (String.IsNullOrWhiteSpace(dictionaryLevel)) throw new ArgumentNullException("dictionaryLevel");
 
-            _Browser.SetupCodingTaskGroup(_StepContext, verbatim, dictionaryLevel, numberOfTasks);
+            _Browser.SetupCodingTaskGroup(StepContext, verbatim, dictionaryLevel, numberOfTasks);
         }
 
         [When(@"I view task ""(.*)""")]
@@ -178,7 +185,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             _Browser.SelectCodingTask(verbatim);
 
-            _StepContext.SetCurrentCodingElementContext();
+            StepContext.SetCurrentCodingElementContext();
         }
 
         [When(@"approving task ""(.*)""")]
@@ -194,10 +201,10 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (ReferenceEquals(verbatimFeature, null)) throw new ArgumentNullException("verbatimFeature");
 
-            var verbatim = StepArgumentTransformations.TransformFeatureString(verbatimFeature, _StepContext);
+            var verbatim = StepArgumentTransformations.TransformFeatureString(verbatimFeature, StepContext);
 
-            if (_StepContext.IsAutoApproval.EqualsIgnoreCase("false") &&
-                _StepContext.IsApprovalRequired.EqualsIgnoreCase("true"))
+            if (StepContext.IsAutoApproval.EqualsIgnoreCase("false") &&
+                StepContext.IsApprovalRequired.EqualsIgnoreCase("true"))
             {
                 _Browser.AssertThatTheTaskHasExpectedStatus(verbatim, "Waiting Approval");
                 
@@ -232,19 +239,19 @@ namespace Coder.TestSteps.StepDefinitions
             var first = featureData.FirstOrDefault();
             string dictionaryLocaleVersion = first.Dictionary + first.Locale + first.Version;
 
-            _StepContext.SetProjectRegistrationContext(dictionaryLocaleVersion);
+            StepContext.SetProjectRegistrationContext(dictionaryLocaleVersion);
 
-            _StepContext.SetSourceSystemApplicationContext();
+            StepContext.SetSourceSystemApplicationContext();
 
-            _Browser.SetupCoderConfiguration(_StepContext, setupType);
+            _Browser.SetupCoderConfiguration(StepContext, setupType);
             
             _Browser.CleanUpCodingTasks();
 
             foreach (var expected in featureData)
             {
                 CoderDatabaseAccess.RegisterProject(
-                    protocolNumber   : _StepContext.GetProtocolNumber(),
-                    segment          : _StepContext.GetSegment(),
+                    protocolNumber   : StepContext.GetProtocolNumber(),
+                    segment          : StepContext.GetSegment(),
                     dictionary       : expected.Dictionary.Trim(),
                     dictionaryVersion: expected.Version.Trim(),
                     locale           : expected.Locale.Trim(),
@@ -257,16 +264,37 @@ namespace Coder.TestSteps.StepDefinitions
         [When(@"Rave Modules App Segment is loaded")]
         public void RaveModulesAppSegmentIsLoaded()
         {
-            _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
+            _Browser.LoadiMedidataRaveModulesAppSegment(StepContext.GetSegment());
         }
 
         [Given(@"Coder App Segment is loaded")]
         [When(@"Coder App Segment is loaded")]
         public void CoderAppSegmentIsLoaded()
         {
-            _Browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
+            _Browser.LoadiMedidataCoderAppSegment(StepContext.GetSegment());
         }
-        
+
+        [Given(@"Coder App Segment is loaded and refreshed")]
+        public void GivenCoderAppSegmentIsLoadedAndRefreshed()
+        {
+            _Browser.LoadiMedidataCoderAppSegment(StepContext.GetSegment());
+            _Browser.LogoutOfCoder();
+            _Browser.LoadiMedidataCoderAppSegment(StepContext.GetSegment());
+        }
+
+
+        [Given(@"I logout of iMedidata")]
+        public void GivenILogoutOfIMedidata()
+        {
+            _Browser.LogoutOfiMedidata();
+        }
+
+        [Given(@"I login to iMedidata as test user")]
+        public void GivenILoginToIMedidataAsTestUser()
+        {
+            _Browser.LoginToiMedidata(StepContext.CoderTestUser.Email, Config.AdminPassword);
+        }
+
         [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicSegment")]
         [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicStudy")]
         [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndMultipleProdStudy")]
@@ -280,29 +308,14 @@ namespace Coder.TestSteps.StepDefinitions
 
             LoadCoderAsTestUser(clearTasks: false);
 
-            RegisterProjects(); // overload studynames 
+            RegisterProjects(); 
 
-            _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
+            _Browser.LoadiMedidataRaveModulesAppSegment(StepContext.GetSegment());
 
             CreateEmptyRaveArchitectDrafts();
 
             UploadTemplateRaveArchitectDraft();
         }
-
-        [Given(@"a project registration with dictionary ""(.*)"" for Project ""(.*)""")]
-        public void GivenAProjectRegistrationWithDictionaryForProject(string dictionaryLocaleVersion, string projectName)
-        {
-            if (String.IsNullOrWhiteSpace(dictionaryLocaleVersion)) throw new ArgumentNullException("dictionaryLocaleVersion");
-
-            SetProjectContext(dictionaryLocaleVersion);
-
-            RolloutDictionary();
-
-            LoadCoderAsTestUser(clearTasks: false);
-
-            //RegisterProjects(projectName); 
-        }
-
 
         [When(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicSegment")]
         public void WhenARaveProjectRegistrationWithDictionaryParallelExecution(string dictionaryLocaleVersion)
@@ -331,7 +344,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             LoadCoderAsTestUser(clearTasks: true);
 
-            _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
+            _Browser.LoadiMedidataRaveModulesAppSegment(StepContext.GetSegment());
 
             UploadTemplateRaveArchitectDraft();
         }
@@ -339,38 +352,38 @@ namespace Coder.TestSteps.StepDefinitions
         private void SetProjectContext(string dictionaryLocaleVersion)
         {
             if (String.IsNullOrWhiteSpace(dictionaryLocaleVersion))                  throw new ArgumentNullException("dictionaryLocaleVersion");
-            if (ReferenceEquals(_StepContext.SegmentUnderTest, null))                throw new ArgumentNullException("_StepContext.SegmentUnderTest");
-            if (String.IsNullOrWhiteSpace(_StepContext.SegmentUnderTest.NameSuffix)) throw new ArgumentNullException("_StepContext.SegmentUnderTest.NameSuffix");
+            if (ReferenceEquals(StepContext.SegmentUnderTest, null))                throw new ArgumentNullException("_StepContext.SegmentUnderTest");
+            if (String.IsNullOrWhiteSpace(StepContext.SegmentUnderTest.NameSuffix)) throw new ArgumentNullException("_StepContext.SegmentUnderTest.NameSuffix");
 
-            _StepContext.SetProjectRegistrationContext(dictionaryLocaleVersion);
+            StepContext.SetProjectRegistrationContext(dictionaryLocaleVersion);
 
-            var synonymListName = Config.DefaultSynonymListName + _StepContext.SegmentUnderTest.NameSuffix;
+            var synonymListName = Config.DefaultSynonymListName + StepContext.SegmentUnderTest.NameSuffix;
 
-            _StepContext.SetSynonymContext(synonymListName);
+            StepContext.SetSynonymContext(synonymListName);
         }
 
         private void RolloutDictionary()
         {
-            var browser = _StepContext.Browser;
+            var browser = StepContext.Browser;
 
-            browser.LoginToiMedidata(_StepContext.CoderAdminUser.Username, _StepContext.CoderAdminUser.Password);
+            browser.LoginToiMedidata(StepContext.CoderAdminUser.Username, StepContext.CoderAdminUser.Password);
 
             browser.LoadiMedidataCoderAppSegment(Config.SetupSegment);
 
-            var dictionaryLocale = String.Format("{0} ({1})", _StepContext.Dictionary, _StepContext.Locale);
+            var dictionaryLocale = String.Format("{0} ({1})", StepContext.Dictionary, StepContext.Locale);
 
-            browser.RolloutDictionary(_StepContext.GetSegment(), dictionaryLocale);
+            browser.RolloutDictionary(StepContext.GetSegment(), dictionaryLocale);
 
             browser.LogoutOfCoderAndImedidata();
         }
 
         private void LoadCoderAsTestUser(bool clearTasks = false)
         {
-            var browser = _StepContext.Browser;
+            var browser = StepContext.Browser;
 
-            browser.LoginToiMedidata(_StepContext.CoderTestUser.Username, _StepContext.CoderTestUser.Password);
+            browser.LoginToiMedidata(StepContext.CoderTestUser.Username, StepContext.CoderTestUser.Password);
 
-            browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
+            browser.LoadiMedidataCoderAppSegment(StepContext.GetSegment());
             
             if (clearTasks)
             {
@@ -380,16 +393,16 @@ namespace Coder.TestSteps.StepDefinitions
 
         private void RegisterProjects()
         {
-            CoderUserGenerator.AssignCoderRolesByIMedidataId(_StepContext.SegmentUnderTest.SegmentUuid, _StepContext.CoderTestUser.MedidataId);
+            CoderUserGenerator.AssignCoderRolesByIMedidataId(StepContext.SegmentUnderTest.SegmentUuid, StepContext.CoderTestUser.MedidataId);
 
             CoderDatabaseAccess.CreateAndActivateSynonymList(
-                segment          : _StepContext.GetSegment(),
-                dictionary       : _StepContext.SourceSynonymList.Dictionary,
-                dictionaryVersion: _StepContext.SourceSynonymList.Version,
-                locale           : _StepContext.SourceSynonymList.Locale,
-                synonymListName  : _StepContext.SourceSynonymList.SynonymListName);
+                segment          : StepContext.GetSegment(),
+                dictionary       : StepContext.SourceSynonymList.Dictionary,
+                dictionaryVersion: StepContext.SourceSynonymList.Version,
+                locale           : StepContext.SourceSynonymList.Locale,
+                synonymListName  : StepContext.SourceSynonymList.SynonymListName);
             
-            var productionStudies = _StepContext.SegmentUnderTest.Studies.Select(x => x).Where(x => x.IsProduction);
+            var productionStudies = StepContext.SegmentUnderTest.Studies.Select(x => x).Where(x => x.IsProduction);
 
             //JPTODO:: The syncs are taking too long in parallel
             // The project registration may not be immidiately available to the user on the first login due to the time it takes for Coder to sync with iMedidata.
@@ -403,13 +416,13 @@ namespace Coder.TestSteps.StepDefinitions
             foreach (var study in productionStudies)
             {
                // _Browser.GoToAdminPage("CodingCleanup");
-                 _Browser.RegisterProjects(study.StudyName, new List<SynonymList> { _StepContext.SourceSynonymList });
+                 _Browser.RegisterProjects(study.StudyName, new List<SynonymList> { StepContext.SourceSynonymList });
             }
         }
 
         private void CreateEmptyRaveArchitectDrafts()
         {
-            var productionStudies = _StepContext.SegmentUnderTest.Studies.Select(x => x).Where(x => x.IsProduction);
+            var productionStudies = StepContext.SegmentUnderTest.Studies.Select(x => x).Where(x => x.IsProduction);
 
             foreach (var study in productionStudies)
             {
@@ -422,46 +435,46 @@ namespace Coder.TestSteps.StepDefinitions
             const string defaultDraftTemplateFileName = "RaveDraft_Template.xml";
             const string defaultDraftName             = "RaveCoderDraft";
 
-            var productionStudies = _StepContext.SegmentUnderTest.Studies.Select(x => x).Where(x => x.IsProduction);
+            var productionStudies = StepContext.SegmentUnderTest.Studies.Select(x => x).Where(x => x.IsProduction);
 
             var draftTemplateFilePath = Path.Combine(Config.StaticContentFolder, defaultDraftTemplateFileName);
 
             foreach (var study in productionStudies)
             {
-                _Browser.UploadRaveArchitectDraftTemplate(study.StudyName, defaultDraftName, draftTemplateFilePath, _StepContext.DumpDirectory);
+                _Browser.UploadRaveArchitectDraftTemplate(study.StudyName, defaultDraftName, draftTemplateFilePath, StepContext.DumpDirectory);
             }
 
-            _StepContext.DraftName = defaultDraftName;
+            StepContext.DraftName = defaultDraftName;
         }
         
         private void CreateNewProjectCoderRoles()
         {
-            _StepContext.Browser.CreateAndActivateWorkFlowRole("WorkflowAdmin");
+            StepContext.Browser.CreateAndActivateWorkFlowRole("WorkflowAdmin");
 
-            _StepContext.Browser.AssignWorkflowRole(
+            StepContext.Browser.AssignWorkflowRole(
                 roleName: "WorkflowAdmin",
-                study: _StepContext.GetStudyName(),
-                loginId: _StepContext.GetUser());
+                study: StepContext.GetStudyName(),
+                loginId: StepContext.GetUser());
 
-            _StepContext.Browser.CreateAndActivateGeneralRole(
+            StepContext.Browser.CreateAndActivateGeneralRole(
                 roleName: "StudyAdmin",
                 securityModule: "Page Study Security");
 
-            _StepContext.Browser.AssignGeneralRole(
+            StepContext.Browser.AssignGeneralRole(
                  roleName: "StudyAdmin",
                  securityModule: "Page Study Security",
                  type: "All",
-                 loginId: _StepContext.GetUser());
+                 loginId: StepContext.GetUser());
 
-            _StepContext.Browser.CreateAndActivateGeneralRole(
+            StepContext.Browser.CreateAndActivateGeneralRole(
                 roleName: "DictAdmin",
                 securityModule: "Page Dictionary Security");
 
-            _StepContext.Browser.AssignGeneralRole(
+            StepContext.Browser.AssignGeneralRole(
                  roleName: "DictAdmin",
                  securityModule: "Page Dictionary Security",
                  type: "All",
-                 loginId: _StepContext.GetUser());
+                 loginId: StepContext.GetUser());
         }
     }
 }

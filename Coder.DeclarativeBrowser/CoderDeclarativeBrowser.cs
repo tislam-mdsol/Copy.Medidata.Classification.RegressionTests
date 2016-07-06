@@ -3049,8 +3049,15 @@ namespace Coder.DeclarativeBrowser
             Session.GetImedidataStudyGroupPage().InviteUser(studyGroup.SegmentName, Config.ApplicationName, user);
         }
 
-        //internal void InviteUserAndAssignAppPermissionAppRoles(String studyUuid, MedidataUser newUser, String studyGroupUuid, IEnumerable<MedidataApp> StudyGroupApps )
+        public void UpdateUserAppPermissionForStudyGroup(SegmentSetupData studyGroup, Dictionary<string, string> appsAndRoles, MedidataUser user)
+        {
+            if (ReferenceEquals(studyGroup, null)) throw new ArgumentNullException("studyGroup");
+            if (ReferenceEquals(user, null)) throw new ArgumentNullException("user");
 
+            Session.GetImedidataPage().OpenStudyGroupPage();
+            Session.GetImedidataStudyGroupPage().UpdateUserAppPermission(studyGroup.SegmentName, appsAndRoles, user);         
+        }
+        
         public void InviteUserToStudyAndGiveAppPermission(String studyUuid, MedidataUser newUser, String studyGroupUuid, IEnumerable<MedidataApp> StudyGroupApps)
         {
             using (var iMedidataClient = new IMedidataClient())

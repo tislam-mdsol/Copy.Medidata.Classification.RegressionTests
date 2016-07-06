@@ -8,6 +8,7 @@ using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.IMedidataApi;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Coder.TestSteps.StepDefinitions
 {
@@ -50,9 +51,9 @@ namespace Coder.TestSteps.StepDefinitions
         [Given(@"a coder study is created named ""(.*)"" for environment ""(.*)"" with site ""(.*)""")]
         public void GivenACoderStudyIsCreatedNamedForEnvironmentWithSite(string studyName, string environmentName, string siteName)
         {
-            var generatedSuffix = Guid.NewGuid().GetFirstSectionAppendedWithRandomNumbers();
+            //var generatedSuffix = Guid.NewGuid().GetFirstSectionAppendedWithRandomNumbers();
 
-            var newStudyName = String.Concat(studyName, generatedSuffix);
+            var newStudyName = studyName;//String.Concat(studyName, generatedSuffix);
 
             _StepContext.ProjectName = newStudyName;
 
@@ -85,11 +86,20 @@ namespace Coder.TestSteps.StepDefinitions
                 StudyGroupApps = _StepContext.SetStudyGroupAppData()
             };
 
+            Dictionary<string, string> appsAndRoles = new Dictionary<string, string>() ;
+            appsAndRoles.Add("Coder EU Sandbox", "None");
+            appsAndRoles.Add("Rave EDC", "Power User");
+            appsAndRoles.Add("Rave Modules", "All Modules");
+            appsAndRoles.Add("Rave Architect Roles", "Project Admin Default");
+
             _Browser.CreateNewStudyWithSite(singleStudyToAddToSegmentUnderTest);
 
-            //InviteUserAndAssignAppPermissionAppRoles(String studyUuid, MedidataUser newUser, String studyGroupUuid, IEnumerable<MedidataApp> StudyGroupApps )
-
-            _Browser.UpdateUserInvitationAppPermissionAppRoles(singleStudyToAddToSegmentUnderTest.Studies[0].StudyUuid, _StepContext.CoderTestUser, _StepContext.SegmentUnderTest.SegmentUuid, singleStudyToAddToSegmentUnderTest.StudyGroupApps);
+            //Go to Imedidata and logout
+            _Browser.LogoutOfiMedidata();
+            //logback in as supercoderuser
+            _Browser.LoginToiMedidata(Config.AdminLogin, Config.AdminPassword);
+            //invite user to studygroup
+            _Browser.UpdateUserAppPermissionForStudyGroup(_StepContext.SegmentUnderTest, appsAndRoles, _StepContext.CoderTestUser); 
 
         }       
     }
