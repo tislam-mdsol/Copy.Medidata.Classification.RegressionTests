@@ -154,8 +154,6 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 _Browser.WaitForAutoCodingToComplete();
             }
-
-            _Browser.GoToTaskPage();
         }
 
 

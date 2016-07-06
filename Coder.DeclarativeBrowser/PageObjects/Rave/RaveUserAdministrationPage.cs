@@ -66,11 +66,12 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         {
             if (String.IsNullOrWhiteSpace(study)) throw new ArgumentNullException("study");
+            if (String.IsNullOrWhiteSpace(role))  throw new ArgumentNullException("role");
 
             GetAssignToStudyLink().Click();
 
             GetRoleDDLOption().SelectOption(role);
-            GetProjectDDLOption().SelectOption(study);
+            GetProjectDDLOption().SelectOption(study,0);
 
             GetAssignUserLink().Click();
         }

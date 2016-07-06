@@ -28,9 +28,6 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods.Assertions
             if (String.IsNullOrWhiteSpace(status))               throw new ArgumentNullException("status");
             if (String.IsNullOrWhiteSpace(codingHistoryComment)) throw new ArgumentNullException("codingHistoryComment");
 
-            //TODO: replace this globally during refactor story should be in GoTo for Coding task page
-            browser.GoToTaskPage();
-
             var session               = browser.Session;
             var codingTaskPage        = session.GetCodingTaskPage();
 

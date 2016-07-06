@@ -283,6 +283,8 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal void LogoutFromCoder()
         {
+            GetTasksTab().Click();
+
             var logoutLink = GetLogOutLink();
 
             logoutLink.Click();
