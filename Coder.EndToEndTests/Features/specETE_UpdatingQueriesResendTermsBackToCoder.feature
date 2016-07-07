@@ -109,17 +109,17 @@ Feature: When a Coder query is answered or cancelled, the verbatim will be resen
       |PT           |10019211 | Headache                   |
       |LLT          |10019198 | Head pain                  |
 
-  @DFT
+  @VAL
   @ETE_ENG_updated_query_change_term
-  @PB3.3.3-006
+  @PB3.3.3_006
   @Release2016.1.0
   Scenario: When a Coder query is cancelled and the verbatim is updated, the updated verbatim is resent to Coder
 
-  	Given a Rave project registration with dictionary "MedDRA ENG 12.0"
+  	Given a Rave project registration with dictionary "MedDRA ENG 11.0"
     And Rave Modules App Segment is loaded
     And a Rave Coder setup with the following options
       | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
-      | ETE1 | Coding Field | <Dictionary> | <Locale> | LLT         | 1        | true               | false          |
+      | ETE1 | Coding Field | <Dictionary> | <Locale> | LLT         | 1        | false              | false          |
     When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
     And adding a new subject "TEST"
     And adding a new verbatim term to form "ETE1"
@@ -134,7 +134,7 @@ Feature: When a Coder query is answered or cancelled, the verbatim will be resen
 	| Field        | Value         | ControlType |
 	| Coding Field | bad head pain | LongText    |
     And Coder App Segment is loaded
-	And a coding task "bad head pain" returns to "Closed" query status
+	And a coding task "bad head pain" returns to "Cancelled" query status
 	Then the coding task table has the following ordered information
       | Verbatim Term | Queries |
-      | bad head pain | Closed  |
+      | bad head pain | Cancelled  |

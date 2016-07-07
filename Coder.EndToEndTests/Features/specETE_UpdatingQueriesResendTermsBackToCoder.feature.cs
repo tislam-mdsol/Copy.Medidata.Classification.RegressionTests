@@ -407,22 +407,22 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("When a Coder query is cancelled and the verbatim is updated, the updated verbatim" +
             " is resent to Coder")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("ETE_ENG_updated_query_change_term")]
-        [NUnit.Framework.CategoryAttribute("PB3.3.3-006")]
+        [NUnit.Framework.CategoryAttribute("PB3.3.3_006")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
         public virtual void WhenACoderQueryIsCancelledAndTheVerbatimIsUpdatedTheUpdatedVerbatimIsResentToCoder()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When a Coder query is cancelled and the verbatim is updated, the updated verbatim" +
                     " is resent to Coder", new string[] {
-                        "DFT",
+                        "VAL",
                         "ETE_ENG_updated_query_change_term",
-                        "PB3.3.3-006",
+                        "PB3.3.3_006",
                         "Release2016.1.0"});
 #line 116
   this.ScenarioSetup(scenarioInfo);
 #line 118
-   testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+   testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 119
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -442,7 +442,7 @@ namespace Coder.EndToEndTests.Features
                         "<Locale>",
                         "LLT",
                         "1",
-                        "true",
+                        "false",
                         "false"});
 #line 120
     testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table10, "And ");
@@ -489,14 +489,14 @@ namespace Coder.EndToEndTests.Features
 #line 136
     testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 137
- testRunner.And("a coding task \"bad head pain\" returns to \"Closed\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("a coding task \"bad head pain\" returns to \"Cancelled\" query status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Queries"});
             table13.AddRow(new string[] {
                         "bad head pain",
-                        "Closed"});
+                        "Cancelled"});
 #line 138
  testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table13, "Then ");
 #line hidden
