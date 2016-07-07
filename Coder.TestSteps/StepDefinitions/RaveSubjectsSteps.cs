@@ -93,7 +93,7 @@ namespace Coder.TestSteps.StepDefinitions
             }
             else 
             {
-                throw new InvalidOperationException(String.Format("Invalid Project environement = {0}", projectEnvironment));
+                throw new InvalidOperationException(String.Format("Invalid Project environment = {0}", projectEnvironment));
             }
 
             _Browser.AddSubjectToRaveStudy(target, subjectInitials, subjectId);
