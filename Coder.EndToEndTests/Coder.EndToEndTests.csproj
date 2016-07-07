@@ -113,6 +113,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\specETE_ENG_LandscapeView.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>specETE_ENG_LandscapeView.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\ETE_ENG_CoderConfigQuerySettings.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -122,11 +127,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ETE_ENG_FrozenLockedDP.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\ETE_ENG_LandscapeView.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ETE_ENG_LandscapeView.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\specCoderSetup.feature.cs">
       <DependentUpon>specCoderSetup.feature</DependentUpon>
@@ -265,6 +265,10 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Features\specETE_ENG_LandscapeView.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>specETE_ENG_LandscapeView.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\ETE_ENG_CoderConfigQuerySettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ETE_ENG_CoderConfigQuerySettings.feature.cs</LastGenOutput>
@@ -272,10 +276,6 @@
     <None Include="Features\ETE_ENG_FrozenLockedDP.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ETE_ENG_FrozenLockedDP.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\ETE_ENG_LandscapeView.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ETE_ENG_LandscapeView.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\specCoderSetup.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
