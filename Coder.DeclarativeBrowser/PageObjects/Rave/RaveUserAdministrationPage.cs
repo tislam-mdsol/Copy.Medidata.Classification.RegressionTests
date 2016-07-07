@@ -72,8 +72,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             _Browser.MaximiseWindow();
             GetAssignToStudyLink().Click();
-            GetAssignToStudyLink().Click();                     
-
+           
             GetRoleDDLOption().SelectOption(role);                     
             GetProjectDDLOption().SelectOption(study);
             GetProjectEnvironmentDDL().SelectOption(projectEnvironment);
