@@ -90,7 +90,7 @@ namespace Coder.TestSteps.StepDefinitions
             SetSegmentContext(newStudyGroup);
             MedidataUser newUser = new MedidataUser
             {
-                Username = "medidatacoder+MDF5ea9441a6227@gmail.com",
+                Username = "medidatacoder+Mediflexe01ff725@gmail.com",
                 Password = "Password1",
                 Email = "medidatacoder+Mediflexe01ff725@gmail.com",
                 MedidataId = "e01ff725",

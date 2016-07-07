@@ -570,13 +570,13 @@ namespace Coder.DeclarativeBrowser
             Session.GetIMedidataLoginPage().Login(username, password);
         }
 
-        public void LoadiMedidataCoderAppSegment(string projectName)
+        public void LoadiMedidataCoderAppSegment(string segmentName)
         {
-            if (string.IsNullOrEmpty(projectName)) throw new ArgumentNullException("projectName");
+            if (string.IsNullOrEmpty(segmentName)) throw new ArgumentNullException("projectName");
             
             GoToiMedidataHome();
 
-            Session.GetImedidataPage().LoadSegmentForApp(Config.ApplicationName, projectName);
+            Session.GetImedidataPage().LoadSegmentForApp(Config.ApplicationName, segmentName);
         }
 
         public void LoadiMedidataRaveModulesAppSegment(string segmentName)
