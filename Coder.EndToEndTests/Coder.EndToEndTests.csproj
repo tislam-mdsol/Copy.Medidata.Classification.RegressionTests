@@ -113,7 +113,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\specETE_ENG_FrozenLockedDP.feature.cs">
     <Compile Include="Features\specETE_ENG_LandscapeView.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -128,6 +127,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ETE_ENG_CoderConfigQuerySettings.feature</DependentUpon>
+	</Compile>
     <Compile Include="Features\ETE_ENG_FrozenLockedDP.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -270,7 +270,6 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Features\specETE_ENG_FrozenLockedDP.feature">
     <None Include="Features\specETE_ENG_LandscapeView.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>specETE_ENG_LandscapeView.feature.cs</LastGenOutput>
