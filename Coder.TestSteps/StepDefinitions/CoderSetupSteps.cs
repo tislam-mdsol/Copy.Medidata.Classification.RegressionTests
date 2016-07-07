@@ -55,7 +55,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             var newStudyName = studyName;//String.Concat(studyName, generatedSuffix);
 
-            _StepContext.ProjectName = newStudyName;
+            _StepContext.SecondStudyName = newStudyName;
 
             var studyExternalOid = studyName.RemoveNonAlphanumeric();
 

@@ -36,7 +36,7 @@ namespace Coder.DeclarativeBrowser.Models
         public string DraftName                     { get; set; }
         public string SourceDraftVersionName        { get; set; }
         public string TargetDraftVersionName        { get; set; }
-        public string ProjectName                   { get; set; }
+        public string SecondStudyName               { get; set; }
         public bool UseRaveX                        { get; set; }
         public SegmentSetupData SegmentUnderTest    { get; set; }
         public StudyType ActiveStudyType            { get; set; }
@@ -52,8 +52,6 @@ namespace Coder.DeclarativeBrowser.Models
         public MedidataUser CoderAdminUser          { get; set; }
         public MedidataUser CoderTestUser           { get; set; }
         public MedidataUser CoderSystemuser         { get; set; }
-        public SegmentSetupData SegmentUnderTest2 { get; set; }
-        public MedidataUser CoderTestUser2 { get; set; }
 
         public string GetUser()
         {

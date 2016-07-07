@@ -13,7 +13,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
     internal class ImedidataStudyGroupPage
     {
         private readonly BrowserSession _Browser;
-        private readonly StepContext _StepContext;
 
         internal ImedidataStudyGroupPage(BrowserSession browser)
         {
@@ -370,7 +369,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
             var applicationsSelectList = _Browser.FindSessionElementById("invitation_detail_invitation_app_details_attributes_0_app_id");
 
             return applicationsSelectList;
-
         }
 
         private SessionElementScope GetRoleSelectList()
@@ -378,7 +376,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
             var applicationsSelectList = _Browser.FindSessionElementById("invitation_detail_invitation_app_details_attributes_0_role_ids_");
 
             return applicationsSelectList;
-
         }
 
         private SessionElementScope GetInviteEmailTextbox()
@@ -386,7 +383,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
             var inviteEmailTextbox = _Browser.FindSessionElementById("invitation_detail_invitees");
 
             return inviteEmailTextbox;
-
         }
 
         private SessionElementScope GetInviteOwnerCheckBox()

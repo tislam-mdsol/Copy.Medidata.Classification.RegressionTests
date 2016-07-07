@@ -55,7 +55,7 @@ namespace Coder.TestSteps.StepDefinitions
             
             LoginAsAdministrator();
 
-            var newStudyGroup = CreateSegmentSetupData(generatedSuffix); // creates the necessary study groups object
+            var newStudyGroup = CreateSegmentSetupData(generatedSuffix); 
             
             SetSegmentContext(newStudyGroup);
 
@@ -84,7 +84,7 @@ namespace Coder.TestSteps.StepDefinitions
             };
             _StepContext.CoderAdminUser   = adminUser;
 
-            var newStudyGroup             = CreateSegmentSetupData("5ea9441a6227");
+            var newStudyGroup             = CreateSegmentSetupData("e01ff725");
             _StepContext.SegmentUnderTest = newStudyGroup;
 
             SetSegmentContext(newStudyGroup);
@@ -92,8 +92,8 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 Username = "medidatacoder+MDF5ea9441a6227@gmail.com",
                 Password = "Password1",
-                Email = "medidatacoder+MDF5ea9441a6227@gmail.com",
-                MedidataId = "5ea9441a6227",
+                Email = "medidatacoder+Mediflexe01ff725@gmail.com",
+                MedidataId = "e01ff725",
                 FirstName = "Coder"
             };
             _StepContext.CoderTestUser = newUser;
