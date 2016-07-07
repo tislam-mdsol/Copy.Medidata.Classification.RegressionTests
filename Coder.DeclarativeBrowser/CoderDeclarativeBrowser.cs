@@ -3017,8 +3017,7 @@ namespace Coder.DeclarativeBrowser
             {
                 iMedidataClient.AddStudiesToIMedidata(studyGroup);
                 iMedidataClient.CreateStudySite(studyGroup);
-            }
-          
+            }          
         }
 
         public MedidataUser CreateNewStudyUser(SegmentSetupData studyGroup, string userName, bool inviteNewUserWhenCreated = true)

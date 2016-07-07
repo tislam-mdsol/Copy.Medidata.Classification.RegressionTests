@@ -30,7 +30,6 @@ namespace Coder.DeclarativeBrowser.IMedidataApi
         private const string _StudySitesPath            = @"studies/{0}/study_sites.json";
         private const string _ActivateUserPath          = @"created_users/{0}/activate.json";
         private const string _InviteUserPath            = @"studies/{0}/assign_or_invite.json";
-        private const string _UpdateUserInvitationPath  = @"studies/{0}/update_invitation_assignments.json";
         private const string _StudyGroupAppsPath        = @"study_groups/{0}/apps.json";
         private const string _RolesPath                 = @"study_groups/{0}/apps/{1}/roles.json";
 
@@ -66,7 +65,7 @@ namespace Coder.DeclarativeBrowser.IMedidataApi
                 JsonConvert.DeserializeObject<dynamic>);
         }
 
-        internal SegmentSetupData AddStudiesToIMedidata(SegmentSetupData segmentInput)
+        internal void AddStudiesToIMedidata(SegmentSetupData segmentInput)
         {
             if (ReferenceEquals(segmentInput, null)) throw new ArgumentNullException("segmentInput");
 
@@ -86,10 +85,8 @@ namespace Coder.DeclarativeBrowser.IMedidataApi
                 var responseStudy = GetResponseObject(
                     () => _HttpClient.PostAsync(requestUri, postContent),GetStudyFromJson);
 
-                study.StudyUuid = responseStudy.UUID; // new studyId and correct value
+                study.StudyUuid = responseStudy.UUID;
             }
-
-            return segmentInput;
         }
 
         internal void CreateStudySite(SegmentSetupData segmentInput)
