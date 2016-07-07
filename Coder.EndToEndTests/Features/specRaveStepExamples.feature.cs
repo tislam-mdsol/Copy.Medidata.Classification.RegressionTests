@@ -2582,11 +2582,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 681
  testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table87, "And ");
 #line 684
- testRunner.And("configure Clinical Views for Project \"<StudyName>\" with mode \"Full Then Increment" +
-                    "al\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Clinical Views for Project \"<StudyName>\" with mode \"Full Then Incremental\" is con" +
+                    "figured", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 685
- testRunner.And("generate report \"Data Listing\" for Project \"<StudyName>\", Data Source \"Clinical V" +
-                    "iews\" and Form \"ETE2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("report \"Data Listing\" for Project \"<StudyName>\", Data Source \"Clinical Views\" and" +
+                    " Form \"ETE2\" is generated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table88 = new TechTalk.SpecFlow.Table(new string[] {
                         "project",
@@ -2616,10 +2616,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 694
 this.ScenarioSetup(scenarioInfo);
 #line 696
-testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 697
-testRunner.And("edit global Rave-Coder Configuration settings with Review Marking Group set to \"D" +
-                    "ata Management\" and Requires Response set to \"false\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("global Rave-Coder Configuration settings with Review Marking Group set to \"Data M" +
+                    "anagement\" and Requires Response set to \"false\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

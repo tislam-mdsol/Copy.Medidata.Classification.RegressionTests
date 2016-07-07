@@ -22,6 +22,8 @@ namespace Coder.EndToEndTests.Features
     [NUnit.Framework.DescriptionAttribute("When selecting a requires response option for Coder configuration, when a Coder q" +
         "uery is open they will respect the configuration settings. Remove requires manua" +
         "l close and option for Coder configuration")]
+    [NUnit.Framework.CategoryAttribute("specETE_ENG_CoderConfigQuerySettings.feature")]
+    [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
     public partial class WhenSelectingARequiresResponseOptionForCoderConfigurationWhenACoderQueryIsOpenTheyWillRespectTheConfigurationSettings_RemoveRequiresManualCloseAndOptionForCoderConfigurationFeature
     {
         
@@ -36,7 +38,9 @@ namespace Coder.EndToEndTests.Features
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "When selecting a requires response option for Coder configuration, when a Coder q" +
                     "uery is open they will respect the configuration settings. Remove requires manua" +
-                    "l close and option for Coder configuration", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "l close and option for Coder configuration", "", ProgrammingLanguage.CSharp, new string[] {
+                        "specETE_ENG_CoderConfigQuerySettings.feature",
+                        "EndToEndDynamicSegment"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -83,11 +87,11 @@ namespace Coder.EndToEndTests.Features
                         "VAL",
                         "MCC-207751-005",
                         "Release2016.1.0"});
-#line 6
-this.ScenarioSetup(scenarioInfo);
-#line 8
-testRunner.Given("a Rave project registration with dictionary \"WHODRUGB2 200703 ENG\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
+this.ScenarioSetup(scenarioInfo);
+#line 11
+testRunner.Given("a Rave project registration with dictionary \"WHODRUGB2 200703 ENG\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 12
 testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -110,15 +114,15 @@ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTal
                         "true",
                         "true",
                         "LOGSUPPFIELD2,LOGSUPPFIELD4,LOGCOMPFIELD1,COMPANY,LOGCOMPFIELD3,SOURCE"});
-#line 10
-testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
 #line 13
+testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
+#line 16
 testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 14
+#line 17
 testRunner.And("edit global Rave-Coder Configuration settings with Review Marking Group set to \"S" +
                     "ite from system\" and Requires Response set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
+#line 18
 testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -145,7 +149,7 @@ testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.Spe
                         "Log Supplemental Field A",
                         "Lost in Translation",
                         ""});
-#line 16
+#line 19
 testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -164,27 +168,27 @@ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), 
                         "Std Supplemental Field B",
                         "New York",
                         ""});
-#line 23
+#line 26
 testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table3, "And ");
-#line 28
+#line 31
 testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
+#line 32
 testRunner.And("task \"sharp pain down leg\" is coded to term \"ACHES-N-PAIN\" at search level \"Low L" +
                     "evel Term\" with code \"??????????????\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
+#line 33
 testRunner.And("reclassifying task \"sharp pain down leg\" with Include Autocoded Items set to \"Tru" +
                     "e\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
+#line 34
 testRunner.And("rejecting coding decision for the task \"sharp pain down leg\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
+#line 35
 testRunner.And("I open a query for task \"sharp pain down leg\" with comment \"Open query due to bad" +
                     " term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
+#line 36
 testRunner.And("task \"sharp pain in nerves\" is coded to term \"ACHES-N-PAIN\" at search level \"Low " +
                     "Level Term\" with code \"??????????????\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
+#line 37
 testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
+#line 38
 testRunner.Then("the coder query \"Open query due to bad term\" is available to the Rave form \"ETE1\"" +
                     " field \"Coding Field\" with verbatim term \"Adverse Event 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -212,7 +216,7 @@ testRunner.Then("the coder query \"Open query due to bad term\" is available to 
                         "LLT",
                         "10003658",
                         "Atrial fibrillation"});
-#line 36
+#line 39
 testRunner.Then("the coding decision for verbatim \"Headachery\" on form \"ETE2\" for field \"Coding Fi" +
                     "eld\" contains the following data", ((string)(null)), table4, "Then ");
 #line hidden
@@ -246,7 +250,7 @@ testRunner.Then("the coding decision for verbatim \"Headachery\" on form \"ETE2\
                         "001092 01 110 3"});
             table5.AddRow(new string[] {
                         "ACHES-N-PAIN"});
-#line 43
+#line 46
 testRunner.Then("when I view task \"Sharp pain down leg\" on form \"ETE2\" for \"Subject\" I should see " +
                     "the following data", ((string)(null)), table5, "Then ");
 #line hidden
@@ -266,11 +270,11 @@ testRunner.Then("when I view task \"Sharp pain down leg\" on form \"ETE2\" for \
                         "VAL",
                         "MCC-207751-006",
                         "Release2016.1.0"});
-#line 64
+#line 67
 this.ScenarioSetup(scenarioInfo);
-#line 65
+#line 68
 testRunner.Given("a Rave project registration with dictionary \"WHODRUGB2 200703 ENG\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 66
+#line 69
 testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -293,15 +297,15 @@ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTal
                         "true",
                         "true",
                         "LOGSUPPFIELD2,LOGSUPPFIELD4,LOGCOMPFIELD1,COMPANY,LOGCOMPFIELD3,SOURCE"});
-#line 67
-testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table6, "And ");
 #line 70
+testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table6, "And ");
+#line 73
 testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 71
+#line 74
 testRunner.And("edit global Rave-Coder Configuration settings with Review Marking Group set to \"S" +
                     "ite from system\" and Requires Response set to \"false\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
+#line 75
 testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -328,7 +332,7 @@ testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.Spe
                         "Log Supplemental Field A",
                         "Lost in Translation",
                         ""});
-#line 73
+#line 76
 testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table7, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -347,27 +351,27 @@ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), 
                         "Std Supplemental Field B",
                         "New York",
                         ""});
-#line 80
+#line 83
 testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table8, "And ");
-#line 85
+#line 88
 testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
+#line 89
 testRunner.And("task \"sharp pain down leg\" is coded to term \"ACHES-N-PAIN\" at search level \"Low L" +
                     "evel Term\" with code \"??????????????\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
+#line 90
 testRunner.And("reclassifying task \"sharp pain down leg\" with Include Autocoded Items set to \"Tru" +
                     "e\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
+#line 91
 testRunner.And("rejecting coding decision for the task \"sharp pain down leg\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
+#line 92
 testRunner.And("I open a query for task \"sharp pain down leg\" with comment \"Open query due to bad" +
                     " term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
+#line 93
 testRunner.And("task \"sharp pain in nerves\" is coded to term \"ACHES-N-PAIN\" at search level \"Low " +
                     "Level Term\" with code \"??????????????\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 94
 testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
+#line 95
 testRunner.Then("the coder query \"Open query due to bad term\" is available to the Rave form \"ETE1\"" +
                     " field \"Coding Field\" with verbatim term \"Adverse Event 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -395,7 +399,7 @@ testRunner.Then("the coder query \"Open query due to bad term\" is available to 
                         "LLT",
                         "10003658",
                         "Atrial fibrillation"});
-#line 93
+#line 96
 testRunner.Then("the coding decision for verbatim \"Headachery\" on form \"ETE2\" for field \"Coding Fi" +
                     "eld\" contains the following data", ((string)(null)), table9, "Then ");
 #line hidden
@@ -429,7 +433,7 @@ testRunner.Then("the coding decision for verbatim \"Headachery\" on form \"ETE2\
                         "001092 01 110 3"});
             table10.AddRow(new string[] {
                         "ACHES-N-PAIN"});
-#line 100
+#line 103
 testRunner.Then("when I view task \"Sharp pain down leg\" on form \"ETE2\" for \"Subject\" I should see " +
                     "the following data", ((string)(null)), table10, "Then ");
 #line hidden

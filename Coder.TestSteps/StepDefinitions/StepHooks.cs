@@ -128,31 +128,6 @@ namespace Coder.TestSteps.StepDefinitions
             WriteSetupDetails(_StepContext.CoderTestUser, newStudyGroup);
         }
 
-        [BeforeScenario("EndToEndMultipleProdStudy")]
-        public void BeforeEndToEndScenarioMultipleProdStudy()
-        {
-            var generatedSuffix = SetBrowsingContext();
-
-            var browser = _StepContext.Browser;
-
-            LoginAsAdministrator();
-
-            var newStudyGroup = CreateSegmentSetupData(generatedSuffix, true);
-
-            SetSegmentContext(newStudyGroup);
-
-            CreateTestUserContext(generatedSuffix, newStudyGroup, createNewSegment: true);
-
-            browser.EnrollSegment(Config.SetupSegment, _StepContext.GetSegment());
-
-            browser.LogoutOfCoderAndImedidata();
-
-            CompleteUserRegistration(_StepContext.CoderTestUser, newStudyGroup);
-
-            WriteSetupDetails(_StepContext.CoderTestUser, newStudyGroup);
-          
-        }
-
         [BeforeScenario("EndToEndStaticSegment")]
         public void BeforeEndToEndScenarioSerialExecution()
         {
@@ -237,11 +212,23 @@ namespace Coder.TestSteps.StepDefinitions
 
             browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
 
-            var productionStudies = studyGroup.Studies.Select(x => x).Where(x => x.IsProduction);
+            var productionStudyName = studyGroup.Studies.FirstOrDefault(x => x.IsProduction).StudyName;
+            var environmentPrefix   = "Live: ";
+            var studies             = studyGroup.Studies;
 
-            foreach (var study in productionStudies)
+            foreach (var study in studies)
             {
-                browser.AssignUserToStudy("coderimport", "Coder Import Role", study: study.StudyName);
+                environmentPrefix = "Aux: ";               
+
+                if (study.IsProduction)
+                {
+                    productionStudyName = study.StudyName;
+                    environmentPrefix   = "Live: ";
+                }
+
+                var projectEnvironment = String.Concat(environmentPrefix, study.StudyType.ToString());
+
+                browser.AssignUserToStudy("coderimport", "Coder Import Role", study: productionStudyName, projectEnvironment: projectEnvironment );
             }
             
             browser.LogoutOfiMedidata();
@@ -310,17 +297,20 @@ namespace Coder.TestSteps.StepDefinitions
         {
             var raveAdminUser = new MedidataUser
             {
-                Username = Config.RaveAdminLogin,
-                Password = Config.RaveAdminPassword
+                Username      = Config.RaveAdminLogin,
+                Password      = Config.RaveAdminPassword
             };
 
-            _StepContext.RaveAdminUser = raveAdminUser;
+            _StepContext.RaveAdminUser     = raveAdminUser;
 
+            var newStudyGroup              = CreateSegmentSetupData("c56d2b4d6267");
+            _StepContext.SegmentUnderTest  = newStudyGroup;
+            
             _StepContext.DownloadDirectory = CreateUserDirectory(Config.ParentDownloadDirectory, raveAdminUser.Username);
             _StepContext.DumpDirectory     = CreateUserDirectory(Config.ParentDumpDirectory, raveAdminUser.Username);
             _StepContext.Browser           = CoderDeclarativeBrowser.StartBrowsing(_StepContext.DownloadDirectory);
 
-             _StepContext.Browser.LoginToRave(raveAdminUser);
+            _StepContext.Browser.LoginToRave(raveAdminUser);
 
         }
 
@@ -345,7 +335,7 @@ namespace Coder.TestSteps.StepDefinitions
             stepContext.Browser           = CoderDeclarativeBrowser.StartBrowsing(_StepContext.DownloadDirectory);
         }
 
-        private SegmentSetupData CreateSegmentSetupData(string nameSuffix, bool allProduction = false)
+        private SegmentSetupData CreateSegmentSetupData(string nameSuffix)
         {
             const string userAcceptanceStudySuffix = "(UAT)";
             const string developmentStudySuffix    = "(Dev)";
@@ -358,12 +348,6 @@ namespace Coder.TestSteps.StepDefinitions
             var siteName = String.Concat(Config.StudyNamePrefix, nameSuffix, "_Site");
             var siteNumber = String.Concat(nameSuffix, "_Site").RemoveNonAlphanumeric();
 
-            bool isProductionValue = false;
-            if (allProduction)
-            {
-                isProductionValue = true;
-            }
-
             var newStudyGroup = new SegmentSetupData
             {
                 NameSuffix = nameSuffix,
@@ -372,6 +356,7 @@ namespace Coder.TestSteps.StepDefinitions
                 {
                     new StudySetupData()
                     {
+                        StudyType    = StudyType.Prod,
                         StudyName    = studyName,
                         ExternalOid  = studyExternalOid,
                         IsProduction = true,
@@ -387,9 +372,10 @@ namespace Coder.TestSteps.StepDefinitions
                     },
                     new StudySetupData()
                     {
+                        StudyType    = StudyType.UAT,
                         StudyName    = String.Concat(studyName, " ",userAcceptanceStudySuffix),
                         ExternalOid  = String.Concat(studyExternalOid, userAcceptanceStudySuffix).RemoveNonAlphanumeric(),
-                        IsProduction = isProductionValue,
+                        IsProduction = false,
                         Sites        = new SiteSetupData[]
                         {
                             new SiteSetupData
@@ -402,9 +388,10 @@ namespace Coder.TestSteps.StepDefinitions
                     },
                     new StudySetupData()
                     {
+                        StudyType    = StudyType.Dev,
                         StudyName    = String.Concat(studyName, " ", developmentStudySuffix),
                         ExternalOid  = String.Concat(studyExternalOid, developmentStudySuffix).RemoveNonAlphanumeric(),
-                        IsProduction = isProductionValue,
+                        IsProduction = false,
                         Sites        = new SiteSetupData[]
                         {
                             new SiteSetupData
@@ -482,7 +469,6 @@ namespace Coder.TestSteps.StepDefinitions
                     Console.WriteLine("An error occurred with user: " + _StepContext.GetUser());
                     Console.WriteLine("Error: "+ error.Message);
                 }
-
                 browser.Dispose();
             }
 
