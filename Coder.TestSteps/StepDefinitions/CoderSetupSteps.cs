@@ -94,11 +94,9 @@ namespace Coder.TestSteps.StepDefinitions
 
             _Browser.CreateNewStudyWithSite(singleStudyToAddToSegmentUnderTest);
 
-            //Go to Imedidata and logout
             _Browser.LogoutOfiMedidata();
-            //logback in as supercoderuser
             _Browser.LoginToiMedidata(Config.AdminLogin, Config.AdminPassword);
-            //invite user to studygroup
+
             _Browser.UpdateUserAppPermissionForStudyGroup(_StepContext.SegmentUnderTest, appsAndRoles, _StepContext.CoderTestUser); 
 
         }       

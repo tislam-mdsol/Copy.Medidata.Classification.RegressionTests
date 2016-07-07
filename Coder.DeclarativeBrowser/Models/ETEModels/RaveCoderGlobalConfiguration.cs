@@ -11,5 +11,7 @@ namespace Coder.DeclarativeBrowser.Models.ETEModels
         public string ReviewMarkingGroup      { get; set; }
 
         public bool IsRequiresResponse        { get; set; }
+
+        public string GlobalConfigWorksheetName = "Coder Configuration";
     }
 }

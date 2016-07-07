@@ -45,6 +45,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
 
             var list = table.TransformFeatureTableStrings(_StepContext).CreateSet<SynonymList>().ToArray();
+
             _Browser.LoadiMedidataCoderAppSegment(_StepContext.SecondStudyName);
             _Browser.RegisterProjects(_StepContext.SecondStudyName, new List<SynonymList> { _StepContext.SourceSynonymList });
         }
@@ -154,8 +155,6 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 _Browser.WaitForAutoCodingToComplete();
             }
-
-            _Browser.GoToTaskPage();
         }
 
 

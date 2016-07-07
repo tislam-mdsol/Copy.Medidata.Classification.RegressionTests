@@ -82,9 +82,9 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return contextHelpButton;
         }
 
-        internal SessionElementScope GetTasksTab()
+        private SessionElementScope GetTasksTab()
         {
-            var tasksTab = _Session.FindSessionElementByXPath("//a[@id = 'ctl00_taskLink']");
+            var tasksTab = _Session.FindSessionElementByLink("Tasks");
 
             return tasksTab;
         }
@@ -1026,7 +1026,10 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal void ClearFilters()
         {
+            GetTasksTab().Click();
+
             GetClearFilterLink().Click();
+
             WaitForTaskPageToFinishLoading();
 
             RetryPolicy.SyncStaleElement.Execute(VerifyTaskFiltersReset);

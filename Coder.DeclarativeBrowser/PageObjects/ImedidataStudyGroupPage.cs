@@ -499,6 +499,11 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal void UpdateUserAppPermission(string segmentName, Dictionary<string, string> appsAndRoles, MedidataUser user)
         {
+
+            if (ReferenceEquals(segmentName, null)) throw new ArgumentNullException("segmentName");
+            if (ReferenceEquals(appsAndRoles, null)) throw new ArgumentNullException("appsAndRoles");
+            if (ReferenceEquals(user, null)) throw new ArgumentNullException("user");
+
             OpenStudyGroup(segmentName);
 
             foreach (KeyValuePair<string, string> pair in appsAndRoles)

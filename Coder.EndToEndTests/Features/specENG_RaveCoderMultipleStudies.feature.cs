@@ -73,14 +73,14 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Test that Rave is able to send coding terms to Coder even when more than 1 study " +
             "is on the same Rave URL")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PB1.1.2.016")]
         [NUnit.Framework.CategoryAttribute("ReleasePatch08")]
         public virtual void TestThatRaveIsAbleToSendCodingTermsToCoderEvenWhenMoreThan1StudyIsOnTheSameRaveURL()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test that Rave is able to send coding terms to Coder even when more than 1 study " +
                     "is on the same Rave URL", new string[] {
-                        "DFT",
+                        "VAL",
                         "PB1.1.2.016",
                         "ReleasePatch08"});
 #line 10

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Xml.Linq;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coder.DeclarativeBrowser.Models.ETEModels;
@@ -186,6 +187,8 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             var crfDownloadLink = _Session.FindSessionElementByLink("Download");
 
             crfDownloadLink.Click();
+
+            //Todo Find a way for fire fox to automatically download zip files
         }
     }
 }
