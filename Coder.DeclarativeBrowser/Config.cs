@@ -13,6 +13,7 @@ using CsvHelper;
 using CsvHelper.Configuration;
 using Polly;
 using NUnit.Framework;
+using Coder.DeclarativeBrowser.Models;
 
 namespace Coder.DeclarativeBrowser
 {
@@ -1013,5 +1014,47 @@ namespace Coder.DeclarativeBrowser
                 return raveDictionaryCoderPrefix;
             }
         }
+
+        internal static IEnumerable<MedidataApp> GetStudyGroupApps()
+        {
+            var configuredStudyGroupApps = new[]
+            {
+                new MedidataApp
+                {
+                    Name = Config.ApplicationName
+                },
+
+                new MedidataApp
+                {
+                    Name = Config.EdcAppName,
+                    Roles = new string[] { Config.EdcAppRole }
+                },
+
+                new MedidataApp
+                {
+                    Name = Config.EdcModulesAppName,
+                    Roles = new string[] { Config.EdcModulesAppRole }
+                },
+
+                new MedidataApp
+                {
+                    Name = Config.ArchitectRolesAppName,
+                    Roles = new string[] { Config.ArchitectRolesAppRole }
+                },
+
+                new MedidataApp
+                {
+                    Name = Config.SafetyGatewayManagementAppName
+                },
+
+                new MedidataApp
+            {
+                    Name = Config.SafetyGatewayMappingAppName
+                },
+            };
+
+            return configuredStudyGroupApps;
+        }
+
     }
 }

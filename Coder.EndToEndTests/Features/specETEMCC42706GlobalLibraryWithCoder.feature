@@ -69,7 +69,6 @@ Scenario: Verify Coder settings are not copied from a form that contains Coder s
 		| SecondRaveCoderStudy | MedDRA     | 18.0    | eng    | MedDRA           |
 	And Rave Modules App Segment is loaded
 	When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"	
-	# The above is done for the first study
 	And a Rave CRF copy source from project "<StudyName>" draft "<DraftName>" is added for project "SecondRaveCoderStudy"
 	And a new Draft "NewCopiedDraft" is created through copy wizard for project "SecondRaveCoderStudy"
 	Then the project "SecondRaveCoderStudy" draft "NewCopiedDraft" form "ETE2" field "Coding Field" has no Rave Coder setup options configured

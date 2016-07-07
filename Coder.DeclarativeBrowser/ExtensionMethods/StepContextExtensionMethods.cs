@@ -217,56 +217,14 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
         public static void SetStudyGroupSetupData(this StepContext stepContext, SegmentSetupData segmentSetupData)
         {
-            if (ReferenceEquals(stepContext, null))                      throw new ArgumentNullException("stepContext");
-            if (ReferenceEquals(segmentSetupData, null))                 throw new ArgumentNullException("segmentSetupData");
+            if (ReferenceEquals(stepContext, null)) throw new ArgumentNullException("stepContext");
+            if (ReferenceEquals(segmentSetupData, null)) throw new ArgumentNullException("segmentSetupData");
             if (String.IsNullOrWhiteSpace(segmentSetupData.SegmentName)) throw new ArgumentNullException("segmentSetupData.SegmentName");
 
             segmentSetupData.Customer = Config.TestSegmentCustomer;
             segmentSetupData.UseRaveX = stepContext.UseRaveX;
 
-            segmentSetupData.StudyGroupApps = stepContext.SetStudyGroupAppData();
-        }
-
-        public static List<MedidataApp> SetStudyGroupAppData(this StepContext stepContext)
-        {
-            if (ReferenceEquals(stepContext, null)) throw new ArgumentNullException("stepContext");
-            List<MedidataApp> medidataAppList= new List<MedidataApp>
-            {
-                new MedidataApp
-                {
-                    Name = Config.ApplicationName
-                },
-
-                new MedidataApp
-                {
-                    Name = Config.EdcAppName,
-                    Roles = new string[] { Config.EdcAppRole }
-                },
-
-                new MedidataApp
-                {
-                    Name = Config.EdcModulesAppName,
-                    Roles = new string[] { Config.EdcModulesAppRole }
-                },
-
-                new MedidataApp
-                {
-                    Name = Config.ArchitectRolesAppName,
-                    Roles = new string[] { Config.ArchitectRolesAppRole }
-                },
-
-                new MedidataApp
-                {
-                    Name = Config.SafetyGatewayManagementAppName
-                },
-
-                new MedidataApp
-                {
-                    Name = Config.SafetyGatewayMappingAppName
-                }
-            };
-
-            return medidataAppList;
+            segmentSetupData.StudyGroupApps = Coder.DeclarativeBrowser.Config.GetStudyGroupApps();           
         }
     }
 }

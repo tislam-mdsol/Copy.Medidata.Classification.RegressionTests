@@ -51,11 +51,11 @@ namespace Coder.TestSteps.StepDefinitions
         [Given(@"a coder study is created named ""(.*)"" for environment ""(.*)"" with site ""(.*)""")]
         public void GivenACoderStudyIsCreatedNamedForEnvironmentWithSite(string studyName, string environmentName, string siteName)
         {
-            //var generatedSuffix = Guid.NewGuid().GetFirstSectionAppendedWithRandomNumbers();
+            if (ReferenceEquals(studyName, null)) throw new ArgumentNullException("stepContext");
+            if (ReferenceEquals(environmentName, null)) throw new ArgumentNullException("segmentSetupData");
+            if (String.IsNullOrWhiteSpace(siteName)) throw new ArgumentNullException("segmentSetupData.SegmentName");
 
-            var newStudyName = studyName;//String.Concat(studyName, generatedSuffix);
-
-            _StepContext.SecondStudyName = newStudyName;
+            _StepContext.SecondStudyName = studyName;
 
             var studyExternalOid = studyName.RemoveNonAlphanumeric();
 
@@ -69,7 +69,7 @@ namespace Coder.TestSteps.StepDefinitions
                 {
                     new StudySetupData()
                     {
-                        StudyName    = newStudyName,
+                        StudyName    = studyName,
                         ExternalOid  = studyExternalOid,
                         IsProduction = true,
                         Sites        = new SiteSetupData[]
@@ -83,7 +83,7 @@ namespace Coder.TestSteps.StepDefinitions
                         ProtocolNumber = studyName.Replace("_", "")
                     }
                 },
-                StudyGroupApps = _StepContext.SetStudyGroupAppData()
+                StudyGroupApps = _Browser.GetStudyGroupAppsList()
             };
 
             Dictionary<string, string> appsAndRoles = new Dictionary<string, string>() ;

@@ -6,7 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coder.DeclarativeBrowser", "Coder.DeclarativeBrowser\Coder.DeclarativeBrowser.csproj", "{02EAE425-8FF4-4726-951F-7155EE9BC11D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F78BDA11-98EB-45BC-AD23-120E600A6A19} = {F78BDA11-98EB-45BC-AD23-120E600A6A19}
-		{AB6BB2C2-36AF-474A-9558-571F3134F088} = {AB6BB2C2-36AF-474A-9558-571F3134F088}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coder.RegressionTests", "Coder.RegressionTests\Coder.RegressionTests.csproj", "{AB6BB2C2-36AF-474A-9558-571F3134F088}"

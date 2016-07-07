@@ -182,14 +182,13 @@ namespace Coder.DeclarativeBrowser.IMedidataApi
                 throw new ArgumentNullException("segmentInput.ProdStudy.StudyUuid");
             }
 
-            var inviteUserPath = String.Format(String.Concat(_ApiPathRoot, _InviteUserPath), studyUuid);
-            var inviteUserUri = new Uri(_IMedidataHost, inviteUserPath);
-            var inviteUserData = GetInviteUserPostBody(userEmail, studyGroupUuid, StudyGroupApps);
-            var inviteUserContent = new StringContent(inviteUserData, Encoding.UTF8, "application/json");
+            var inviteUserPath     = String.Format(String.Concat(_ApiPathRoot, _InviteUserPath), studyUuid);
+            var inviteUserUri      = new Uri(_IMedidataHost, inviteUserPath);
+            var inviteUserData     = GetInviteUserPostBody(userEmail, studyGroupUuid, StudyGroupApps);
+            var inviteUserContent  = new StringContent(inviteUserData, Encoding.UTF8, "application/json");
 
             var inviteUserResponse = GetResponseObject(
-                () => _HttpClient.PostAsync(inviteUserUri, inviteUserContent),
-                GetInviteFromJson);
+                                () => _HttpClient.PostAsync(inviteUserUri, inviteUserContent), GetInviteFromJson);
         }
 
         internal void UpdateStudyName(StudySetupData currentStudy, string newName)

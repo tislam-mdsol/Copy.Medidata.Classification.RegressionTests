@@ -572,7 +572,7 @@ namespace Coder.DeclarativeBrowser
 
         public void LoadiMedidataCoderAppSegment(string segmentName)
         {
-            if (string.IsNullOrEmpty(segmentName)) throw new ArgumentNullException("projectName");
+            if (string.IsNullOrEmpty(segmentName)) throw new ArgumentNullException("segmentName");
             
             GoToiMedidataHome();
 
@@ -3018,6 +3018,13 @@ namespace Coder.DeclarativeBrowser
             return reportRows;
         }
 
+        public IEnumerable<MedidataApp> GetStudyGroupAppsList()
+        {
+            var studyGroupAppList = Config.GetStudyGroupApps();
+
+            return studyGroupAppList;
+        }
+
         public MedidataUser CreateTestUserContext(SegmentSetupData newStudyGroup, string userName, bool createNewSegment = false)
         {
             if (ReferenceEquals(newStudyGroup, null)) throw new ArgumentNullException("newStudyGroup");
@@ -3075,20 +3082,13 @@ namespace Coder.DeclarativeBrowser
             Session.GetImedidataStudyGroupPage().InviteUser(studyGroup.SegmentName, Config.ApplicationName, user);
         }
 
-        public void UpdateUserAppPermissionForStudyGroup(SegmentSetupData studyGroup, Dictionary<string, string> appsAndRoles, MedidataUser user)
+        public void UpdateUserAppPermissionForStudyGroup(SegmentSetupData studyGroup, IDictionary<string, string> appsAndRoles, MedidataUser user)
         {
             if (ReferenceEquals(studyGroup, null)) throw new ArgumentNullException("studyGroup");
-
-            if (ReferenceEquals(user, null)) throw new ArgumentNullException("user");
+            if (ReferenceEquals(user, null))       throw new ArgumentNullException("user");
 
             Session.GetImedidataPage().OpenStudyGroupPage();
             Session.GetImedidataStudyGroupPage().UpdateUserAppPermission(studyGroup.SegmentName, appsAndRoles, user);
-
-            if (ReferenceEquals(user, null)) throw new ArgumentNullException("appsAndRoles");
-            if (ReferenceEquals(user, null)) throw new ArgumentNullException("user");
-
-            Session.GetImedidataPage().OpenStudyGroupPage();
-            Session.GetImedidataStudyGroupPage().UpdateUserAppPermission(studyGroup.SegmentName, appsAndRoles, user);         
         }
 
         public string GetStudyGroupUUID(string segmentName)
