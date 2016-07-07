@@ -52,29 +52,34 @@ namespace Coder.DeclarativeBrowser.PageObjects
             GetUpdateLink().Click();
         }
 
-        internal void AssignUserToStudy(String userName, String roleName, String study)
+        internal void AssignUserToStudy(String userName, String roleName, String study, String projectEnvironment)
         {
-            if (String.IsNullOrEmpty(userName))   throw new ArgumentNullException("userName");
-            if (String.IsNullOrEmpty(roleName))   throw new ArgumentNullException("roleName");
-            if (String.IsNullOrEmpty(study))      throw new ArgumentNullException("study");
+            if (String.IsNullOrEmpty(userName))           throw new ArgumentNullException("userName");
+            if (String.IsNullOrEmpty(roleName))           throw new ArgumentNullException("roleName");
+            if (String.IsNullOrEmpty(study))              throw new ArgumentNullException("study");
+            if (String.IsNullOrEmpty(projectEnvironment)) throw new ArgumentNullException("projectEnvironment");
 
             SearchforLogInUser(userName);
-            AssignStudyToUser(roleName, study);
+            AssignStudyToUser(roleName, study, projectEnvironment);
         }
 
-        private void AssignStudyToUser(String role, String study)
+        private void AssignStudyToUser(String role, String study, String projectEnvironment)
 
         {
-            if (String.IsNullOrWhiteSpace(study)) throw new ArgumentNullException("study");
-            if (String.IsNullOrWhiteSpace(role))  throw new ArgumentNullException("role");
+            if (String.IsNullOrWhiteSpace(study))         throw new ArgumentNullException("study");
+            if (String.IsNullOrEmpty(projectEnvironment)) throw new ArgumentNullException("projectEnvironment");
+            if (String.IsNullOrEmpty(role))               throw new ArgumentNullException("role");
 
-            GetAssignToStudyLink().Click();
+            _Browser.MaximiseWindow();
+            GetAssignToStudyLink().Click();                     
 
-            GetRoleDDLOption().SelectOption(role);
-            GetProjectDDLOption().SelectOption(study,0);
+            GetRoleDDLOption().SelectOption(role);                     
+            GetProjectDDLOption().SelectOption(study);
+            GetProjectEnvironmentDDL().SelectOption(projectEnvironment);
 
-            GetAssignUserLink().Click();
-        }
+            GetAssignUserLink().Click();                  
+            _Browser.ResizeTo(Config.ScreenWidth, Config.ScreenHeight);
+          }
 
         private SessionElementScope GetUserNameTextBox()
         {
@@ -169,6 +174,13 @@ namespace Coder.DeclarativeBrowser.PageObjects
             var projectDDL = _Browser.FindSessionElementById("_ctl0_Content_UserSiteWizard1_ProjectDDL");
 
             return projectDDL;
+        }
+
+        private SessionElementScope GetProjectEnvironmentDDL()
+        {
+            var projectEnvironmentDDL = _Browser.FindSessionElementById("_ctl0_Content_UserSiteWizard1_AuxStudiesDDL");
+
+            return projectEnvironmentDDL;
         }
 
         private SessionElementScope GetAssignUserLink()
