@@ -69,7 +69,7 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify coping a form that contains Coder settings within a Project that the Coder" +
             " settings get copied to the new form.")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC42706_10")]
         [NUnit.Framework.CategoryAttribute("ETE_RaveCoderCore")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
@@ -78,7 +78,7 @@ namespace Coder.EndToEndTests.Features
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify coping a form that contains Coder settings within a Project that the Coder" +
                     " settings get copied to the new form.", new string[] {
-                        "DFT",
+                        "VAL",
                         "PBMCC42706_10",
                         "ETE_RaveCoderCore",
                         "Release2016.1.0",
@@ -150,7 +150,7 @@ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify Coder settings get copied from a form that contains Coder settings to a fo" +
             "rm from another Project that has Coder registered")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC42706_20")]
         [NUnit.Framework.CategoryAttribute("ETE_RaveCoderCore")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
@@ -159,7 +159,7 @@ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Coder settings get copied from a form that contains Coder settings to a fo" +
                     "rm from another Project that has Coder registered", new string[] {
-                        "DFT",
+                        "VAL",
                         "PBMCC42706_20",
                         "ETE_RaveCoderCore",
                         "Release2016.1.0",
@@ -222,10 +222,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 45
  testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 47
+#line 46
  testRunner.And("a Rave CRF copy source from project \"<StudyName>\" draft \"<DraftName>\" is added fo" +
                     "r project \"SecondRaveCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
+#line 47
  testRunner.And("a new Draft \"NewCopiedDraft\" is created through copy wizard for project \"SecondRa" +
                     "veCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -249,7 +249,7 @@ this.ScenarioSetup(scenarioInfo);
                         "true",
                         "true",
                         "SUPPDD"});
-#line 49
+#line 48
  testRunner.Then("the Rave Coder setup for draft \"NewCopiedDraft\" has the following options configu" +
                     "red", ((string)(null)), table5, "Then ");
 #line hidden
@@ -273,20 +273,20 @@ this.ScenarioSetup(scenarioInfo);
                         "ETE_RaveCoderCore",
                         "Release2016.1.0",
                         "EndToEndDynamicSegment"});
-#line 60
+#line 59
 this.ScenarioSetup(scenarioInfo);
-#line 62
+#line 61
  testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 63
+#line 62
  testRunner.And("iMedidata App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
+#line 63
  testRunner.And("a coder study is created named \"SecondRaveCoderStudy\" for environment \"Prod\" with" +
                     " site \"Active Site 2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
+#line 64
  testRunner.And("I logout of iMedidata", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
+#line 65
  testRunner.And("I login to iMedidata as test user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
+#line 66
  testRunner.And("Coder App Segment is loaded and refreshed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -301,20 +301,20 @@ this.ScenarioSetup(scenarioInfo);
                         "18.0",
                         "eng",
                         "MedDRA"});
-#line 68
+#line 67
  testRunner.And("a project with the following options is registered", ((string)(null)), table6, "And ");
-#line 71
+#line 70
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
+#line 71
  testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 74
+#line 73
  testRunner.And("a Rave CRF copy source from project \"<StudyName>\" draft \"<DraftName>\" is added fo" +
                     "r project \"SecondRaveCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
+#line 74
  testRunner.And("a new Draft \"NewCopiedDraft\" is created through copy wizard for project \"SecondRa" +
                     "veCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
+#line 75
  testRunner.Then("the project \"SecondRaveCoderStudy\" draft \"NewCopiedDraft\" form \"ETE2\" field \"Codi" +
                     "ng Field\" has no Rave Coder setup options configured", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

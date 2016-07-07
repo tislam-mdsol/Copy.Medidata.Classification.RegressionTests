@@ -1,6 +1,6 @@
 Feature: Global library will support Coder settings.  This will allow forms that contain Coder settings to be copied.
 
-@DFT
+@VAL
 @PBMCC42706_10
 @ETE_RaveCoderCore
 @Release2016.1.0
@@ -21,7 +21,7 @@ Given a Rave project registration with dictionary "MedDRA ENG 18.0"
 		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | true               | true           | LogSuppField2     |
 
 
-@DFT
+@VAL
 @PBMCC42706_20
 @ETE_RaveCoderCore
 @Release2016.1.0
@@ -43,7 +43,6 @@ Scenario: Verify Coder settings get copied from a form that contains Coder setti
 		| SecondRaveCoderStudy | MedDRA     | 18.0    | eng    | MedDRA           |
 	And Rave Modules App Segment is loaded
 	When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"	
-	# The above is done for the first study
 	And a Rave CRF copy source from project "<StudyName>" draft "<DraftName>" is added for project "SecondRaveCoderStudy"
 	And a new Draft "NewCopiedDraft" is created through copy wizard for project "SecondRaveCoderStudy"
 	Then the Rave Coder setup for draft "NewCopiedDraft" has the following options configured
