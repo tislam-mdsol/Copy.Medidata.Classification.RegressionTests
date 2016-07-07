@@ -9,7 +9,7 @@ Feature: When a Coder query is answered or cancelled, the verbatim will be resen
   @Release2016.1.0
   Scenario: When a Coder query is answered and the verbatim is not updated, the verbatim is resent to Coder
    
-   Given a Rave project registration with dictionary "MedDRA ENG 11.0"
+    Given a Rave project registration with dictionary "MedDRA ENG 11.0"
     And Rave Modules App Segment is loaded
     And a Rave Coder setup with the following options
       | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
@@ -37,17 +37,17 @@ Feature: When a Coder query is answered or cancelled, the verbatim will be resen
       | LLT   | 10019198 | Head pain                |
 
 
-  @DFT
+  @VAL
   @ETE_ENG_updated_query_cancel_query
-  @PB3.3.3-004
+  @PB3.3.3_004
   @Release2016.1.0
   Scenario: When a Coder query is cancelled and the verbatim is not updated, the verbatim is resent to Coder
     
-	Given a Rave project registration with dictionary "MedDRA ENG 12.0"
+	Given a Rave project registration with dictionary "MedDRA ENG 11.0"
     And Rave Modules App Segment is loaded
     And a Rave Coder setup with the following options
       | Form | Field        | Dictionary   | Locale   | CodingLevel | Priority | IsApprovalRequired | IsAutoApproval |
-      | ETE1 | Coding Field | <Dictionary> | <Locale> | LLT         | 1        | true               | false          |
+      | ETE1 | Coding Field | <Dictionary> | <Locale> | LLT         | 1        | false              | false          |
     When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
     And adding a new subject "TEST"
     And adding a new verbatim term to form "ETE1"
@@ -57,7 +57,7 @@ Feature: When a Coder query is answered or cancelled, the verbatim will be resen
 	And I open a query for task "terrible head pain" with comment "Rejecting Decision due to bad term"
 	And a coding task "terrible head pain" returns to "Open" query status
 	And Rave Modules App Segment is loaded
-	And the coder query to the Rave form "ETE1" field "Coding Field" with verbatim term ""terrible head pain" is canceled
+	And the coder query to the Rave form "ETE1" field "Coding Field" with verbatim term "terrible head pain" is canceled
     And Coder App Segment is loaded
 	And a coding task "terrible head pain" returns to "Cancelled" query status
 	And task "terrible head pain" is coded to term "Head pain" at search level "Low Level Term" with code "10019198" at level "LLT" and a synonym is created

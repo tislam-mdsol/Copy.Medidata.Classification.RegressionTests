@@ -88,7 +88,7 @@ namespace Coder.EndToEndTests.Features
 #line 10
   this.ScenarioSetup(scenarioInfo);
 #line 12
-   testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -184,22 +184,22 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("When a Coder query is cancelled and the verbatim is not updated, the verbatim is " +
             "resent to Coder")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("ETE_ENG_updated_query_cancel_query")]
-        [NUnit.Framework.CategoryAttribute("PB3.3.3-004")]
+        [NUnit.Framework.CategoryAttribute("PB3.3.3_004")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
         public virtual void WhenACoderQueryIsCancelledAndTheVerbatimIsNotUpdatedTheVerbatimIsResentToCoder()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When a Coder query is cancelled and the verbatim is not updated, the verbatim is " +
                     "resent to Coder", new string[] {
-                        "DFT",
+                        "VAL",
                         "ETE_ENG_updated_query_cancel_query",
-                        "PB3.3.3-004",
+                        "PB3.3.3_004",
                         "Release2016.1.0"});
 #line 44
   this.ScenarioSetup(scenarioInfo);
 #line 46
- testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 12.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 47
     testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -219,7 +219,7 @@ namespace Coder.EndToEndTests.Features
                         "<Locale>",
                         "LLT",
                         "1",
-                        "true",
+                        "false",
                         "false"});
 #line 48
     testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table4, "And ");
@@ -250,7 +250,7 @@ namespace Coder.EndToEndTests.Features
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
  testRunner.And("the coder query to the Rave form \"ETE1\" field \"Coding Field\" with verbatim term \"" +
-                    "\"terrible head pain\" is canceled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "terrible head pain\" is canceled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
     testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 62
