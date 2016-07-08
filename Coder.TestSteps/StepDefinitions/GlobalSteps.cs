@@ -39,17 +39,6 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser.GoToiMedidataHome();
         }
 
-        [Given(@"a second project with the following options is registered")]
-        public void GivenASecondProjectWithTheFollowingOptionsIsRegistered(Table table)
-        {
-            if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
-
-            var list = table.TransformFeatureTableStrings(_StepContext).CreateSet<SynonymList>().ToArray();
-
-            _Browser.LoadiMedidataCoderAppSegment(_StepContext.SecondStudyName);
-            _Browser.RegisterProjects(_StepContext.SecondStudyName, new List<SynonymList> { _StepContext.SourceSynonymList });
-        }
-
         [Given(@"a ""(.*)"" Coder setup with no tasks and no synonyms and dictionary ""(.*)""")]
         public void GivenACoderSetupWithNoTasksAndNoSynonymsAndDictionary(string setupType, string dictionaryLocaleVersion)
         {

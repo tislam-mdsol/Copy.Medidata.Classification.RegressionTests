@@ -290,7 +290,7 @@ this.ScenarioSetup(scenarioInfo);
                         "eng",
                         "MedDRA"});
 #line 61
- testRunner.And("a project with the following options is registered", ((string)(null)), table6, "And ");
+ testRunner.And("a second project with the following options is registered", ((string)(null)), table6, "And ");
 #line 64
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65

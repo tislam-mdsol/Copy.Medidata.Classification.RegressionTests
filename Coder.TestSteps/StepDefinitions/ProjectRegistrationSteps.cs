@@ -86,6 +86,17 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser.RegisterProjects(_StepContext.GetStudyName(), list);
         }
 
+
+        [Given(@"a second project with the following options is registered")]
+        public void GivenASecondProjectWithTheFollowingOptionsIsRegistered(Table table)
+        {
+            if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
+
+            _Browser.LoadiMedidataCoderAppSegment(_StepContext.SecondStudyName);
+            var list = table.TransformFeatureTableStrings(_StepContext).CreateSet<SynonymList>().ToArray();
+            _Browser.RegisterProjects(_StepContext.SecondStudyName, list);
+        }
+
         [Then(@"the following content should be registered")]
         public void ThenTheFollowingContentShouldBeRegistered(Table table)
         {
