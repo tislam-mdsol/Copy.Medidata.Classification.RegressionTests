@@ -5,9 +5,6 @@ using Coder.DeclarativeBrowser.Models;
 using TechTalk.SpecFlow;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
-using Coder.DeclarativeBrowser.Models.ETEModels;
-using Coder.DeclarativeBrowser.IMedidataApi;
-using System.Linq;
 using System.Collections.Generic;
 
 namespace Coder.TestSteps.StepDefinitions

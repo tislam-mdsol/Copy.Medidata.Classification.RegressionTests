@@ -47,7 +47,7 @@ Scenario: Verify Coder settings get copied from a form that contains Coder setti
 		| ETE2 | Coding Field | <Dictionary> | <Locale> | PRODUCTSYNONYM | 1        | true               | true           | SUPPDD            |
 
 
-@DFT
+@VAL
 @PBMCC42706_20
 @ETE_RaveCoderCore
 @Release2016.1.0

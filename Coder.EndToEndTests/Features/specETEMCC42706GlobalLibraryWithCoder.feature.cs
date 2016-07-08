@@ -253,7 +253,7 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify Coder settings are not copied from a form that contains Coder settings to " +
             "a from from another Project that does not have Coder registered")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC42706_20")]
         [NUnit.Framework.CategoryAttribute("ETE_RaveCoderCore")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
@@ -262,7 +262,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Coder settings are not copied from a form that contains Coder settings to " +
                     "a from from another Project that does not have Coder registered", new string[] {
-                        "DFT",
+                        "VAL",
                         "PBMCC42706_20",
                         "ETE_RaveCoderCore",
                         "Release2016.1.0",
