@@ -10,7 +10,6 @@ using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using FluentAssertions;
-using NUnit.Framework;
 
 namespace Coder.TestSteps.StepDefinitions
 {
@@ -139,7 +138,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             var actualCoderConfiguration = _Browser.GetCoderConfigurationForRaveField(target);
             
-            Assert.IsTrue(actualCoderConfiguration.Equals(expectedCoderConfigurations));
+            (actualCoderConfiguration.Equals(expectedCoderConfigurations)).Should().BeTrue();
         }
 
         [Given(@"supplemental terms for the following fields")]

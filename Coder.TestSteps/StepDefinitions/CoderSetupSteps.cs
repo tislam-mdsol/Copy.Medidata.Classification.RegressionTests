@@ -51,9 +51,9 @@ namespace Coder.TestSteps.StepDefinitions
         [Given(@"a coder study is created named ""(.*)"" for environment ""(.*)"" with site ""(.*)""")]
         public void GivenACoderStudyIsCreatedNamedForEnvironmentWithSite(string studyName, string environmentName, string siteName)
         {
-            if (ReferenceEquals(studyName, null)) throw new ArgumentNullException("stepContext");
-            if (ReferenceEquals(environmentName, null)) throw new ArgumentNullException("segmentSetupData");
-            if (String.IsNullOrWhiteSpace(siteName)) throw new ArgumentNullException("segmentSetupData.SegmentName");
+            if (ReferenceEquals(studyName, null))       throw new ArgumentNullException("stepContext");
+            if (ReferenceEquals(environmentName, null)) throw new ArgumentNullException("environmentName");
+            if (String.IsNullOrWhiteSpace(siteName))    throw new ArgumentNullException("siteName");
 
             _StepContext.SecondStudyName = studyName;
 
@@ -63,7 +63,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             var singleStudyToAddToSegmentUnderTest = new SegmentSetupData
             {
-                SegmentName = _StepContext.SegmentUnderTest.SegmentName, //newStudyName
+                SegmentName = _StepContext.SegmentUnderTest.SegmentName, 
                 SegmentUuid = _StepContext.SegmentUnderTest.SegmentUuid,
                 Studies = new StudySetupData[]
                 {
@@ -86,19 +86,20 @@ namespace Coder.TestSteps.StepDefinitions
                 StudyGroupApps = _Browser.GetStudyGroupAppsList()
             };
 
-            Dictionary<string, string> appsAndRoles = new Dictionary<string, string>() ;
-            appsAndRoles.Add("Coder EU Sandbox", "None");
-            appsAndRoles.Add("Rave EDC", "Power User");
-            appsAndRoles.Add("Rave Modules", "All Modules");
-            appsAndRoles.Add("Rave Architect Roles", "Project Admin Default");
+            var appsAndRoles = new Dictionary<string, string>()
+                                {
+                                    { Config.ApplicationName,    Config.CoderRole                 },
+                                    { Config.RaveEDC,            Config.RaveEDCAppRole            },
+                                    { Config.RaveModules,        Config.RaveModulesAppRole        },
+                                    { Config.RaveArchitectRoles, Config.RaveArchitectRolesAppRole } 
+                                };
 
             _Browser.CreateNewStudyWithSite(singleStudyToAddToSegmentUnderTest);
 
             _Browser.LogoutOfiMedidata();
             _Browser.LoginToiMedidata(Config.AdminLogin, Config.AdminPassword);
 
-            _Browser.UpdateUserAppPermissionForStudyGroup(_StepContext.SegmentUnderTest, appsAndRoles, _StepContext.CoderTestUser); 
-
+            _Browser.UpdateUserAppPermissionForStudyGroup(_StepContext.SegmentUnderTest, appsAndRoles, _StepContext.CoderTestUser);
         }       
     }
 }

@@ -1425,7 +1425,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                 options = Config.GetDefaultCoypuOptions();
             }
             session.TryUntil(
-                () => getElement(),
+                () => session.Refresh(),
                 () => !getElement().Exists(),
                 options.RetryInterval,
                 options);

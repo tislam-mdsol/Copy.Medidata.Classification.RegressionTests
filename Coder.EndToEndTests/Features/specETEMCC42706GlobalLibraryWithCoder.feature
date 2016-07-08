@@ -35,10 +35,7 @@ Scenario: Verify Coder settings get copied from a form that contains Coder setti
 		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | true               | true           |                   |
 	And iMedidata App Segment is loaded
 	And a coder study is created named "SecondRaveCoderStudy" for environment "Prod" with site "Active Site 2"
-	And I logout of iMedidata 
-	And I login to iMedidata as test user
-	And Coder App Segment is loaded and refreshed
-	And a project with the following options is registered
+	And a second project with the following options is registered
 		| Project              | Dictionary | Version | Locale | RegistrationName |
 		| SecondRaveCoderStudy | MedDRA     | 18.0    | eng    | MedDRA           |
 	And Rave Modules App Segment is loaded
@@ -61,9 +58,6 @@ Scenario: Verify Coder settings are not copied from a form that contains Coder s
 	Given a Rave project registration with dictionary "MedDRA ENG 18.0"
 	And iMedidata App Segment is loaded
 	And a coder study is created named "SecondRaveCoderStudy" for environment "Prod" with site "Active Site 2"
-	And I logout of iMedidata 
-	And I login to iMedidata as test user
-	And Coder App Segment is loaded and refreshed
 	And a project with the following options is registered
 		| Project              | Dictionary | Version | Locale | RegistrationName |
 		| SecondRaveCoderStudy | MedDRA     | 18.0    | eng    | MedDRA           |

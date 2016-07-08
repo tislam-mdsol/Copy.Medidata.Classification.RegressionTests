@@ -3089,6 +3089,12 @@ namespace Coder.DeclarativeBrowser
 
             Session.GetImedidataPage().OpenStudyGroupPage();
             Session.GetImedidataStudyGroupPage().UpdateUserAppPermission(studyGroup.SegmentName, appsAndRoles, user);
+
+            LogoutOfiMedidata();
+            LoginToiMedidata(user.Email, Config.AdminLoginPassword);
+            LoadiMedidataCoderAppSegment(studyGroup.SegmentName);
+            LogoutOfCoder();
+            LoadiMedidataCoderAppSegment(studyGroup.SegmentName);
         }
 
         public string GetStudyGroupUUID(string segmentName)
