@@ -46,7 +46,7 @@ And the coding decision for verbatim "extremely cold children medicine" on form 
  | PRODUCTSYNONYM | 010502 01 015 | CHILDRENS ADVIL COLD                              |
 
 
-@DFT
+@VAL
 @EditGlobalRaveConfiguration
 @MCC_207751_006
 @Release2016.1.0

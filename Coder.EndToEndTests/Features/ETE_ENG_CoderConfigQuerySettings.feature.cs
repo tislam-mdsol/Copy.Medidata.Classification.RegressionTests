@@ -230,7 +230,7 @@ testRunner.And("the coding decision for verbatim \"extremely cold children medic
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify when the requires response option is unchecked in Coder Configuration, Cod" +
             "er Configuration will be respected when a Coder query is opened.")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("EditGlobalRaveConfiguration")]
         [NUnit.Framework.CategoryAttribute("MCC_207751_006")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
@@ -238,7 +238,7 @@ testRunner.And("the coding decision for verbatim \"extremely cold children medic
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify when the requires response option is unchecked in Coder Configuration, Cod" +
                     "er Configuration will be respected when a Coder query is opened.", new string[] {
-                        "DFT",
+                        "VAL",
                         "EditGlobalRaveConfiguration",
                         "MCC_207751_006",
                         "Release2016.1.0"});
