@@ -29,7 +29,7 @@ namespace Coder.TestSteps.StepDefinitions
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            MessagingSystem.Initialize();
+            MessagingSystem.Start();
             CreateScreenshotDirectory();
         }
 

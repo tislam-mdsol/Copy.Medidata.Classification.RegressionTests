@@ -65,7 +65,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrEmpty(dictionaryLevel))   throw new ArgumentNullException("dictionaryLevel");
 
             //BrowserUtility.CreateNewTask(_StepContext, verbatim, dictionaryLevel);
-            BrowserUtility.CreateAutomatedCodingRequestSection(_StepContext, verbatim, dictionaryLevel);
+            _Browser.BroadcastCodingRequest(_StepContext, verbatim, dictionaryLevel);
         }
 
         [When(@"coding tasks ""(.*)""")]
