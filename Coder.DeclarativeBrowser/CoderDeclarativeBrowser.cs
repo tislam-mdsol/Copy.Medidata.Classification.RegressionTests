@@ -810,6 +810,17 @@ namespace Coder.DeclarativeBrowser
             raveFormPage.RespondToQueryComment(fieldName, verbatimTerm, queryResponse);
         }
 
+        public bool IsQueryResponsePossibleInRave(RaveNavigationTarget target, string fieldName, string verbatimTerm)
+        {
+            if (ReferenceEquals(target, null))           throw new ArgumentNullException("target");
+            if (string.IsNullOrWhiteSpace(fieldName))    throw new ArgumentNullException("fieldName");
+            if (string.IsNullOrWhiteSpace(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");
+
+            var raveFormPage = Session.OpenRaveForm(target);
+
+           return  raveFormPage.IsQueryResponsePossible(fieldName, verbatimTerm);
+        }
+
         public void CancelQueryCommentInRave(RaveNavigationTarget target, string fieldName, string verbatimTerm, string queryResponse=null)
         {
             if (ReferenceEquals(target, null))                      throw new ArgumentNullException("target");

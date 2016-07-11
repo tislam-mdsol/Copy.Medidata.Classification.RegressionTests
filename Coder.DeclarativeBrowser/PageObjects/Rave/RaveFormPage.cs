@@ -791,6 +791,25 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             SaveForm();
         }
 
+        internal bool IsQueryResponsePossible(string fieldName, string logLineContents)
+        {
+            if (String.IsNullOrWhiteSpace(fieldName)) throw new ArgumentNullException("fieldName");
+            if (String.IsNullOrWhiteSpace(logLineContents)) throw new ArgumentNullException("logLineContents");
+
+            GetFormRowModifyLink(logLineContents).Click();
+
+            try
+            {
+                var queryResponseTextBox = GetTextBoxByLabel(fieldName);
+            }
+            catch (IndexOutOfRangeException)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         internal void CancelQueryComment(string fieldName, string logLineContents, string queryResponse=null)
         {
             if (String.IsNullOrWhiteSpace(fieldName))       throw new ArgumentNullException("fieldName");

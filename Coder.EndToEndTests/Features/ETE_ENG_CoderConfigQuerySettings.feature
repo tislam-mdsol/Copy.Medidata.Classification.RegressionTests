@@ -36,7 +36,8 @@ And I open a query for task "child advil cold extreme" with comment "Open query 
 And task "extremely cold children medicine" is coded to term "CHILDRENS ADVIL COLD" at search level "Trade Name" with code "010502 01 015" at level "TN" and a synonym is created
 And Rave Modules App Segment is loaded
 Then the coder query "Open query due to bad term" is available to the Rave form "ETE2" field "Coding Field" with verbatim term "child advil cold extreme"
-And the coding decision for verbatim "extremely cold children medicine" on form "ETE2" for field "Coding Field" contains the following data
+And the coder query to the Rave form "ETE2" field "Coding Field" with verbatim term "child advil cold extreme" is responded to with "Answered Response"
+Then the coding decision for verbatim "extremely cold children medicine" on form "ETE2" for field "Coding Field" contains the following data
  | Level          | Code          | Term Path                                         |
  | ATC            | M             | MUSCULO-SKELETAL SYSTEM                           |
  | ATC            | M01           | ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS       |
@@ -79,6 +80,7 @@ And I open a query for task "child advil cold extreme" with comment "Open query 
 And task "extremely cold children medicine" is coded to term "CHILDRENS ADVIL COLD" at search level "Trade Name" with code "010502 01 015" at level "TN" and a synonym is created
 And Rave Modules App Segment is loaded
 Then the coder query "Open query due to bad term" is available to the Rave form "ETE2" field "Coding Field" with verbatim term "child advil cold extreme"
+And the coder query to the Rave form "ETE2" field "Coding Field" with verbatim term "child advil cold extreme" can not be responded to
 And the coding decision for verbatim "extremely cold children medicine" on form "ETE2" for field "Coding Field" contains the following data
  | Level          | Code          | Term Path                                         |
  | ATC            | M             | MUSCULO-SKELETAL SYSTEM                           |
