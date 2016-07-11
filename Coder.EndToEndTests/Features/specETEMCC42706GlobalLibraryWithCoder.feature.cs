@@ -188,7 +188,7 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "true",
                         "true",
-                        ""});
+                        "SUPPDD"});
 #line 33
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table3, "And ");
 #line 36
@@ -238,7 +238,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Coding Field",
                         "<Dictionary>",
                         "<Locale>",
-                        "PRODUCTSYNONYM",
+                        "LLT",
                         "1",
                         "true",
                         "true",

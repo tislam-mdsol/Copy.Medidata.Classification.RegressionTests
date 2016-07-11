@@ -32,19 +32,19 @@ Scenario: Verify Coder settings get copied from a form that contains Coder setti
 	Given a Rave project registration with dictionary "MedDRA ENG 18.0"
 	And a Rave Coder setup with the following options
 		| Form | Field        | Dictionary   | Locale   | Coding Level | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
-		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | true               | true           |                   |
+		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | true               | true           | SUPPDD            |
 	And iMedidata App Segment is loaded
 	And a coder study is created named "SecondRaveCoderStudy" for environment "Prod" with site "Active Site 2"
 	And a second project with the following options is registered
-		| Project              | Dictionary | Version | Locale | RegistrationName |
-		| SecondRaveCoderStudy | MedDRA     | 18.0    | eng    | MedDRA           |
+		| Project              | Dictionary | Version | Locale | RegistrationName | 
+		| SecondRaveCoderStudy | MedDRA     | 18.0    | eng    | MedDRA           | 
 	And Rave Modules App Segment is loaded
 	When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"	
 	And a Rave CRF copy source from project "<StudyName>" draft "<DraftName>" is added for project "SecondRaveCoderStudy"
 	And a new Draft "NewCopiedDraft" is created through copy wizard for project "SecondRaveCoderStudy"
 	Then the Rave Coder setup for draft "NewCopiedDraft" has the following options configured
-		| Form | Field        | Dictionary   | Locale   | Coding Level   | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
-		| ETE2 | Coding Field | <Dictionary> | <Locale> | PRODUCTSYNONYM | 1        | true               | true           | SUPPDD            |
+		| Form | Field        | Dictionary   | Locale   | Coding Level | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
+		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | true               | true           | SUPPDD            |
 
 
 @VAL

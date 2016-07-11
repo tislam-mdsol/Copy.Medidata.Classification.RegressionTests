@@ -8,6 +8,7 @@ using Coder.DeclarativeBrowser.Models.GridModels;
 using Coder.TestSteps.Transformations;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using System.Collections.Generic;
 
 namespace Coder.TestSteps.StepDefinitions
 {
@@ -94,7 +95,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             _Browser.LoadiMedidataCoderAppSegment(_StepContext.SecondStudyName);
             var list = table.TransformFeatureTableStrings(_StepContext).CreateSet<SynonymList>().ToArray();
-            _Browser.RegisterProjects(_StepContext.SecondStudyName, list);
+            _Browser.RegisterProjects(_StepContext.SecondStudyName, new List<SynonymList> { _StepContext.SourceSynonymList });
         }
 
         [Then(@"the following content should be registered")]
