@@ -73,9 +73,17 @@ namespace Coder.DeclarativeBrowser.PageObjects
             _Browser.MaximiseWindow();
             GetAssignToStudyLink().Click();                     
 
-            GetRoleDDLOption().SelectOption(role);                     
-            GetProjectDDLOption().SelectOption(study);
-            GetProjectEnvironmentDDL().SelectOption(projectEnvironment);
+            GetRoleDDLOption().SelectOption(role);
+            try
+            {
+                GetProjectDDLOption().SelectOption(study, 0);
+                GetProjectEnvironmentDDL().SelectOption(projectEnvironment);
+            }
+            catch (MissingHtmlException)
+            {
+                GetProjectDDLOption().SelectOption(study, 1);
+                GetProjectEnvironmentDDL().SelectOption(projectEnvironment);
+            }
 
             GetAssignUserLink().Click();                  
             _Browser.ResizeTo(Config.ScreenWidth, Config.ScreenHeight);
