@@ -20,6 +20,7 @@ SET mauth_service_url=http://mauth-sandbox.imedidata.net
 SET imedidata_login_url=https://login-sandbox.imedidata.net
 SET imedidata_base_url=https://sandbox.imedidata.net
 SET rave_login_url=https://rave564conlabtesting6.mdsol.com/
+SET uitest_login_url=https://coder-vpc-sandbox.imedidata.net
 SET imedidata_auth_enabled=true
 
 SET codermauthprivatepemkey=
@@ -45,9 +46,12 @@ set hipchat_room=Coder
 set hipchat_username=deploy_verifier
 set hipchat_color=yellow
 
-set S3_ACCESS_KEY_ID=
-set S3_SECRET_ACCESS_KEY=
-set S3_BUCKET=aws-mdsol-dev-software-installation-coder
+set aws_access_key=
+set aws_secret_key=
+set aws_region=us-east-1
+set go_environment_name=Sandbox
+set subsystem_name=Medidata.Classification.RegressionTests
+set message_polling_interval_ms=5000
 
 set MEDISTRANO_USERNAME=
 set MEDISTRANO_PASSWORD=

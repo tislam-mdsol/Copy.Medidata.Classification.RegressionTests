@@ -118,17 +118,49 @@ namespace Coder.DeclarativeBrowser
 
             Session.Dispose();
         }
+        
+        public bool BroadcastCodingRequest(
+            StepContext stepContext,
+            string verbatim,
+            string dictionaryLevel = null,
+            string formName = null,
+            string components = null,
+            string supplements = null,
+            string markingGroup = null,
+            bool haltOnFailure = true,
+            bool waitForAutoCodingComplete = true)
+        {
+            if (ReferenceEquals(stepContext, null)) throw new ArgumentNullException("stepContext");
+            if (String.IsNullOrEmpty(verbatim)) throw new ArgumentNullException("verbatim");
 
-        public bool InitiateCodingRequests(AutomatedCodingRequestSection data)
-        {                                                                                                    
+            var codingRequestMessage = new AutomatedCodingRequestSection
+            {
+                Request = new StartAutomatedCodingRequest
+                {
+                    StudyUuid = stepContext.GetStudyUuid(),
+                    UserId = stepContext.CoderTestUser.MedidataId
+                },
+
+                Items = new[]
+                {
+                    new CodingRequest
+                    {
+                        AppUuid                   = stepContext.GetStudyUuid(),
+                        BatchOid                  = stepContext.FileOid,
+                        CodingContextUri          = stepContext.ConnectionUri,
+                        CreationDateTime          = stepContext.AutoCodeDate,
+                        VerbatimTerm              = verbatim,
+                        MedicalDictionaryLevelKey = dictionaryLevel,
+                        SourceForm                = formName,
+                        MarkingGroup              = markingGroup
+                    }
+                }
+            };
+
             var client = new ClassificationClient.ClassificationClient();
-
-            client.BroadcastingAutomatedCodingRequestSection(data);
-
-            //ToDo: update broadcastingSuccesfully to actually values
-            bool broadcastingSuccesfully = 5 > new Random().Next(10);
-
-            return broadcastingSuccesfully;
+            client.BroadcastingAutomatedCodingRequestSection(codingRequestMessage);
+            
+            return true;
         }
 
         public bool BuildAndUploadOdm(OdmParameters odmParameters, string dumpDirectory, bool haltOnFailure = true)
