@@ -71,15 +71,15 @@ namespace Coder.DeclarativeBrowser.PageObjects
             if (String.IsNullOrEmpty(role))               throw new ArgumentNullException("role");
 
             _Browser.MaximiseWindow();
-            GetAssignToStudyLink().Click();                     
-
+            GetAssignToStudyLink().Click();
+           
             GetRoleDDLOption().SelectOption(role);                     
             GetProjectDDLOption().SelectOption(study);
             GetProjectEnvironmentDDL().SelectOption(projectEnvironment);
 
-            GetAssignUserLink().Click();                  
+            GetAssignUserLink().Click();
             _Browser.ResizeTo(Config.ScreenWidth, Config.ScreenHeight);
-          }
+        }
 
         private SessionElementScope GetUserNameTextBox()
         {
