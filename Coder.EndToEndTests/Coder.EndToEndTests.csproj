@@ -113,10 +113,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\ETE_ENG_CoderConfigQuerySettings.feature.cs">
+    <Compile Include="Features\specETE_ENG_LandscapeView.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ETE_ENG_CoderConfigQuerySettings.feature</DependentUpon>
+      <DependentUpon>specETE_ENG_LandscapeView.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\ETE_ENG_DuplicateSubjectNameSupport.feature.cs">
       <AutoGen>True</AutoGen>
@@ -124,14 +124,15 @@
       <DependentUpon>ETE_ENG_DuplicateSubjectNameSupport.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\ETE_ENG_FrozenLockedDP.feature.cs">
+    <Compile Include="Features\ETE_ENG_CoderConfigQuerySettings.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ETE_ENG_FrozenLockedDP.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\ETE_ENG_LandscapeView.feature.cs">
+      <DependentUpon>ETE_ENG_CoderConfigQuerySettings.feature</DependentUpon>
+	</Compile>
+    <Compile Include="Features\specETE_ENG_FrozenLockedDP.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ETE_ENG_LandscapeView.feature</DependentUpon>
+      <DependentUpon>specETE_ENG_FrozenLockedDP.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\ETE_ENG_Update_Sup.feature.cs">
       <AutoGen>True</AutoGen>
@@ -275,21 +276,22 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Features\ETE_ENG_CoderConfigQuerySettings.feature">
+    <None Include="Features\specETE_ENG_LandscapeView.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ETE_ENG_CoderConfigQuerySettings.feature.cs</LastGenOutput>
+      <LastGenOutput>specETE_ENG_LandscapeView.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\ETE_ENG_DuplicateSubjectNameSupport.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ETE_ENG_DuplicateSubjectNameSupport.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\ETE_ENG_FrozenLockedDP.feature">
+    <None Include="Features\ETE_ENG_CoderConfigQuerySettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ETE_ENG_FrozenLockedDP.feature.cs</LastGenOutput>
+      <LastGenOutput>ETE_ENG_CoderConfigQuerySettings.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\ETE_ENG_LandscapeView.feature">
+    <None Include="Features\specETE_ENG_FrozenLockedDP.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ETE_ENG_LandscapeView.feature.cs</LastGenOutput>
+      <LastGenOutput>specETE_ENG_FrozenLockedDP.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\ETE_ENG_Update_Sup.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

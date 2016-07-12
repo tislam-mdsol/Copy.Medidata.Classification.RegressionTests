@@ -52,7 +52,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrEmpty(setupType))                throw new ArgumentNullException("setupType");
             if (String.IsNullOrEmpty(dictionaryLocaleVersion))  throw new ArgumentNullException("dictionaryLocaleVersion");
 
-            _StepContext.ActiveStudyType = StudyType.Development;
+            _StepContext.ActiveStudyType = StudyType.Dev;
 
             GivenACoderSetupWithNoTasksAndNoSynonymsAndDictionary(setupType, dictionaryLocaleVersion);
         }
@@ -65,7 +65,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrEmpty(dictionaryLevel))   throw new ArgumentNullException("dictionaryLevel");
 
             //BrowserUtility.CreateNewTask(_StepContext, verbatim, dictionaryLevel);
-            BrowserUtility.CreateAutomatedCodingRequestSection(_StepContext, verbatim, dictionaryLevel);
+            _Browser.BroadcastCodingRequest(_StepContext, verbatim, dictionaryLevel);
         }
 
         [When(@"coding tasks ""(.*)""")]
@@ -250,7 +250,6 @@ namespace Coder.TestSteps.StepDefinitions
         
         [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicSegment")]
         [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicStudy")]
-        [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndMultipleProdStudy")]
         public void GivenARaveProjectRegistrationWithDictionaryParallelExecution(string dictionaryLocaleVersion)
         {
             if (String.IsNullOrWhiteSpace(dictionaryLocaleVersion)) throw new ArgumentNullException("dictionaryLocaleVersion");

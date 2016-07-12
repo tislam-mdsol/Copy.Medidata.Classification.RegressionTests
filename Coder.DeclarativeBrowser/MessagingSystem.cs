@@ -1,37 +1,18 @@
 using System;
 using Medidata;
-using Medidata.Messaging.Archon;
+using Medidata.Hosting;
+using Medidata.Messaging.AWS;
 using Medidata.MessagingBridge;
 
 namespace Coder.DeclarativeBrowser
 {
-    public static class MessagingSystem
+    public class MessagingSystem
     {
-        private static Boolean _IsInitialized;
-        private static Object _Sync = new Object();
-
-        public static void Initialize()
+        public static void Start()
         {
-            if (_IsInitialized)
-            {
-                return;
-            }
-
-            lock (_Sync)
-            {
-                if (_IsInitialized)
-                {
-                    return;
-                    
-                }
-
-                _IsInitialized = true;
-
-                Factory.Register<IMessagePublisher>(() => new ArchonCommunicationHubAdapter());
-                var adapter = new ArchonCommunicationHubAdapter();
-                adapter.Init();
-            }
-
+            FactoryInitializationHelper.SetEntryAssemblyFromType<CoderDeclarativeBrowser>();
+            var messageHostInitializer = Factory.Build<IMessageHostingInitializer>();
+            messageHostInitializer.Initialize();
         }
     }
 }
