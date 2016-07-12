@@ -52,10 +52,12 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
         private const string _MarkingTypeQuery              = "Open Query";
         private const string _MarkingTypeSticky             = "Place Sticky";
         private const string _MarkingTypeProtocolDeviation  = "Protocol Deviation";
+        private const string _RowContentsInEveryOpenMarking = "require response";
 
-        private const int _MarkingSelectListTypeIndex           = 0;
-        private const int _MarkingSelectListProtocolTypeIndex   = 1;
-        private const int _MarkingSelectListProtocolReasonIndex = 2;
+        private const int _MarkingSelectListTypeIndex                = 0;
+        private const int _MarkingSelectListProtocolTypeIndex        = 1;
+        private const int _MarkingSelectListProtocolReasonIndex      = 2;
+        private const int _MarkingSelectListTypeIndexInLandscapeView = 1;
 
         private const int _TermPathLevelIndex                   = 0;
         private const int _TermPathCodeIndex                    = 1;
@@ -1031,11 +1033,16 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
 
             GetFormRowMarkLink(rowContents).Click();
 
-            var markingTypeSelectList = GetFormRowSelectList(rowContents, selectListIndex:_MarkingSelectListTypeIndex);
+            var markingTypeSelectList = GetFormRowSelectList(_RowContentsInEveryOpenMarking, selectListIndex:_MarkingSelectListTypeIndex);
+
+            if (IsFormOrientationLandscape())
+            {
+                markingTypeSelectList = GetFormRowSelectList(_RowContentsInEveryOpenMarking, selectListIndex: _MarkingSelectListTypeIndexInLandscapeView);
+            }
 
             markingTypeSelectList.SelectOptionAlphanumericOnly(markingType);
 
-            var markingContentTextBox = GetMarkingContentTextBox(rowContents);
+            var markingContentTextBox = GetMarkingContentTextBox(_RowContentsInEveryOpenMarking);
 
             markingContentTextBox.FillInWith(BrowserUtility.RandomString());
         }
@@ -1046,7 +1053,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
 
             var markingContentTextBoxes = GetFormRowInputsByContents(rowContents, _LongTextTypeXpath);
 
-            var markingContentTextBox = markingContentTextBoxes.First();
+            var markingContentTextBox   = markingContentTextBoxes.First();
 
             return markingContentTextBox;
         }
