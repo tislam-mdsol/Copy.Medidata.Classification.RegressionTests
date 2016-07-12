@@ -32,7 +32,7 @@ Scenario: Verify Coder settings get copied from a form that contains Coder setti
 	Given a Rave project registration with dictionary "MedDRA ENG 18.0"
 	And a Rave Coder setup with the following options
 		| Form | Field        | Dictionary   | Locale   | Coding Level | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
-		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | true               | true           | SUPPDD            |
+		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | true               | true           | LOGCOMPFIELD      |
 	And iMedidata App Segment is loaded
 	And a coder study is created named "SecondRaveCoderStudy" for environment "Prod" with site "Active Site 2"
 	And a second project with the following options is registered
@@ -44,7 +44,7 @@ Scenario: Verify Coder settings get copied from a form that contains Coder setti
 	And a new Draft "NewCopiedDraft" is created through copy wizard for project "SecondRaveCoderStudy"
 	Then the Rave Coder setup for draft "NewCopiedDraft" has the following options configured
 		| Form | Field        | Dictionary   | Locale   | Coding Level | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
-		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | true               | true           | SUPPDD            |
+		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | true               | true           | LOGCOMPFIELD      |
 
 
 @VAL

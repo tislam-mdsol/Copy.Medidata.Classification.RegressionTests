@@ -217,14 +217,14 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
         public static void SetStudyGroupSetupData(this StepContext stepContext, SegmentSetupData segmentSetupData)
         {
-            if (ReferenceEquals(stepContext, null)) throw new ArgumentNullException("stepContext");
-            if (ReferenceEquals(segmentSetupData, null)) throw new ArgumentNullException("segmentSetupData");
+            if (ReferenceEquals(stepContext, null))                      throw new ArgumentNullException("stepContext");
+            if (ReferenceEquals(segmentSetupData, null))                 throw new ArgumentNullException("segmentSetupData");
             if (String.IsNullOrWhiteSpace(segmentSetupData.SegmentName)) throw new ArgumentNullException("segmentSetupData.SegmentName");
 
             segmentSetupData.Customer = Config.TestSegmentCustomer;
             segmentSetupData.UseRaveX = stepContext.UseRaveX;
 
-            segmentSetupData.StudyGroupApps = Coder.DeclarativeBrowser.Config.GetStudyGroupApps();           
+            segmentSetupData.StudyGroupApps = Config.GetStudyGroupApps();           
         }
     }
 }

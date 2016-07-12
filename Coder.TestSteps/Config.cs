@@ -405,27 +405,27 @@ namespace Coder.TestSteps
             }
         }
 
-        internal static string RaveArchitectRoles
+        internal static string RaveArchitectRole
         {
             get
             {
-                var raveArchitectRoles = ConfigurationManager.AppSettings["RaveArchitectRoles"];
+                var raveArchitectRole = ConfigurationManager.AppSettings["RaveArchitectRole"];
 
-                if (String.IsNullOrEmpty(raveArchitectRoles)) throw new ConfigurationErrorsException("RaveArchitectRoles");
+                if (String.IsNullOrEmpty(raveArchitectRole)) throw new ConfigurationErrorsException("RaveArchitectRole");
 
-                return raveArchitectRoles;
+                return raveArchitectRole;
             }
         }
 
-        internal static string RaveArchitectRolesAppRole
+        internal static string RaveArchitectRoleAppRole
         {
             get
             {
-                var raveArchitectRoles = ConfigurationManager.AppSettings["ArchitectRolesAppRole"];
+                var raveArchitectRole = ConfigurationManager.AppSettings["ArchitectRoleAppRole"];
 
-                if (String.IsNullOrEmpty(raveArchitectRoles)) throw new ConfigurationErrorsException("RaveArchitectRoles");
+                if (String.IsNullOrEmpty(raveArchitectRole)) throw new ConfigurationErrorsException("RaveArchitectRole");
 
-                return raveArchitectRoles;
+                return raveArchitectRole;
             }
         }
     }

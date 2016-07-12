@@ -88,7 +88,7 @@ namespace Coder.TestSteps.StepDefinitions
                                     { Config.ApplicationName,    Config.CoderRole                 },
                                     { Config.RaveEDC,            Config.RaveEDCAppRole            },
                                     { Config.RaveModules,        Config.RaveModulesAppRole        },
-                                    { Config.RaveArchitectRoles, Config.RaveArchitectRolesAppRole } 
+                                    { Config.RaveArchitectRole,  Config.RaveArchitectRoleAppRole  } 
                                 };
 
             _Browser.CreateNewStudyWithSite(singleStudyToAddToSegmentUnderTest);

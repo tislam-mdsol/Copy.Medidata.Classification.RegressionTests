@@ -188,7 +188,7 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "true",
                         "true",
-                        "SUPPDD"});
+                        "LOGCOMPFIELD"});
 #line 33
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table3, "And ");
 #line 36
@@ -242,7 +242,7 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "true",
                         "true",
-                        "SUPPDD"});
+                        "LOGCOMPFIELD"});
 #line 45
  testRunner.Then("the Rave Coder setup for draft \"NewCopiedDraft\" has the following options configu" +
                     "red", ((string)(null)), table5, "Then ");

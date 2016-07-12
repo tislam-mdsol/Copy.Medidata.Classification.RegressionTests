@@ -1048,7 +1048,7 @@ namespace Coder.DeclarativeBrowser
                 },
 
                 new MedidataApp
-            {
+                {
                     Name = Config.SafetyGatewayMappingAppName
                 },
             };
