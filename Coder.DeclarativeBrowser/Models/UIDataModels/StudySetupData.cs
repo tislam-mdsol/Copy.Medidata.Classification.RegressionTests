@@ -3,6 +3,7 @@ namespace Coder.DeclarativeBrowser.Models.UIDataModels
 {
     public class StudySetupData
     {
+        public StudyType StudyType   { get; set; }
         public long   StudyId        { get; set; }
         public string StudyName      { get; set; }
         public string StudyUuid      { get; set; }

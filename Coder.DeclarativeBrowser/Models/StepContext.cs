@@ -3,10 +3,11 @@ using System.Linq;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coder.DeclarativeBrowser.OdmBuilder;
+using Coder.DeclarativeBrowser.ExtensionMethods;
 
 namespace Coder.DeclarativeBrowser.Models
 {
-    public enum StudyType { Production, Development, UserAcceptanceTesting }
+    public enum StudyType { Prod, Dev, UAT }
 
     public class StepContext
     {
@@ -92,17 +93,17 @@ namespace Coder.DeclarativeBrowser.Models
 
             switch (ActiveStudyType)
             {
-                case StudyType.Production:
+                case StudyType.Prod:
                 {
                     study = SegmentUnderTest.ProdStudy;
                     break;
                 }
-                case StudyType.Development:
+                case StudyType.Dev:
                 {
                     study = SegmentUnderTest.DevStudy;
                     break;
                 }
-                case StudyType.UserAcceptanceTesting:
+                case StudyType.UAT:
                 {
                     study = SegmentUnderTest.UatStudy;
                     break;
