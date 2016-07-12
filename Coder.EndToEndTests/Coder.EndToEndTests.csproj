@@ -283,7 +283,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ETE_ENG_DuplicateSubjectNameSupport.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\ETE_ENG_FrozenLockedDP.feature">
     <None Include="Features\ETE_ENG_CoderConfigQuerySettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ETE_ENG_CoderConfigQuerySettings.feature.cs</LastGenOutput>
