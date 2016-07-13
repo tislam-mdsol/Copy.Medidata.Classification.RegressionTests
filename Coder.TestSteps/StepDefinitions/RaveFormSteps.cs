@@ -395,5 +395,12 @@ namespace Coder.TestSteps.StepDefinitions
 
             _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }
+
+        [Then(@"Rave form ""(.*)"" should display")]
+        public void ThenRaveFormShouldDisplay(string p0, Table table)
+        {
+            ScenarioContext.Current.Pending();
+        }
+
     }
 }

@@ -1,8 +1,8 @@
 Feature: Verify coded decisions are affected properly with markings and other EDC functionality for Coder supplemental and component values. Only a change in supplement, component or the coding term will cause the coding decision to break.
 
 @DFT
-@PBMCC62552-001
-@ReleaseRave2013.1.0.1
+
+@EndToEndDynamicSegment
 Scenario: A coding decision remains on the verbatim when a query is opened against a supplemental  field.
 	Given a Rave project registration with dictionary "WhoDrugDDEB2 ENG 200703"
 	And Rave Modules App Segment is loaded
@@ -23,6 +23,7 @@ Scenario: A coding decision remains on the verbatim when a query is opened again
 		| ATC     	| N02BA 			| SALICYLIC ACID AND DERIVATIVES	|
 		| PRODUCT 	| 005581 01 001	| BAYER CHILDREN'S COLD			|
 	When value "Open Query" is set to "Manual Marking Group Log Dropdown"
+	#And row on form "ETE2" containing "Headachery" is marked with a query
 	And value "Testing Marking" is set to "Manual Marking Group Log Text Field"
     And EDC form is saved
 	Then Rave form "ETEMCC62552" link "Drug Verbatim 1" should contain the following
@@ -32,6 +33,7 @@ Scenario: A coding decision remains on the verbatim when a query is opened again
 @DFT
 @PBMCC62552-001b
 @ReleaseRave2013.1.0.1
+@EndToEndDynamicSegment
 Scenario: A coding decision remains on the verbatim when a sticky is opened against a supplemental field.
 	Given a Rave project registration with dictionary "WhoDrugDDEB2 ENG 200703"
 	And Rave Modules App Segment is loaded
@@ -61,7 +63,7 @@ Scenario: A coding decision remains on the verbatim when a sticky is opened agai
 		
 @DFT
 @PBMCC62552-001d
-@ReleaseRave2013.1.0.1
+@ReleaseRave2013.1.0.1@EndToEndDynamicSegment
 Scenario: A coding decision remains on the verbatim when a comment is opened against a supplemental field.
 	Given a Rave project registration with dictionary "WhoDrugDDEB2 ENG 200703"
 	And Rave Modules App Segment is loaded
