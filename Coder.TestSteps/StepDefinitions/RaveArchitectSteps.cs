@@ -138,7 +138,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             var actualCoderConfiguration = _Browser.GetCoderConfigurationForRaveField(target);
             
-            (actualCoderConfiguration.Equals(expectedCoderConfigurations)).Should().BeTrue();
+            actualCoderConfiguration.ShouldBeEquivalentTo(expectedCoderConfigurations);
         }
 
         [Given(@"supplemental terms for the following fields")]
@@ -257,6 +257,8 @@ namespace Coder.TestSteps.StepDefinitions
             var sourceDraft = StepArgumentTransformations.TransformFeatureString(sourceDraftName, _StepContext);
 
             var copySourceType = "Project - Drafts";
+
+            _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
 
             _Browser.AddRaveCRFCopySource(targetStudyName, copySourceType, sourceStudy, sourceDraft);
         }

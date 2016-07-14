@@ -92,7 +92,7 @@ namespace Coder.TestSteps.StepDefinitions
                                 };
 
             _Browser.CreateNewStudyWithSite(singleStudyToAddToSegmentUnderTest);
-
+            _Browser.GoToiMedidataHome();
             _Browser.LogoutOfiMedidata();
             _Browser.LoginToiMedidata(Config.AdminLogin, Config.AdminPassword);
 

@@ -9,7 +9,7 @@ Feature: Global library will support Coder settings.  This will allow forms that
 Scenario: Verify coping a form that contains Coder settings within a Project that the Coder settings get copied to the new form.
 
 Given a Rave project registration with dictionary "MedDRA ENG 18.0"
-	And Rave Modules App Segment is loaded
+	#And Rave Modules App Segment is loaded
 	And a Rave CRF copy source is added for the project 
 	And a Rave Coder setup with the following options
 		| Form | Field        | Dictionary   | Locale   | Coding Level | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
@@ -33,7 +33,7 @@ Scenario: Verify Coder settings get copied from a form that contains Coder setti
 	And a Rave Coder setup with the following options
 		| Form | Field        | Dictionary   | Locale   | Coding Level | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
 		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | true               | true           | LOGCOMPFIELD      |
-	And iMedidata App Segment is loaded
+	#And iMedidata App Segment is loaded
 	And a coder study is created named "SecondRaveCoderStudy" for environment "Prod" with site "Active Site 2"
 	And a second project with the following options is registered
 		| Project              | Dictionary | Version | Locale | RegistrationName | 
@@ -56,7 +56,7 @@ Scenario: Verify Coder settings get copied from a form that contains Coder setti
 Scenario: Verify Coder settings are not copied from a form that contains Coder settings to a from from another Project that does not have Coder registered 
 
 	Given a Rave project registration with dictionary "MedDRA ENG 18.0"
-	And iMedidata App Segment is loaded
+	#And iMedidata App Segment is loaded
 	And a coder study is created named "SecondRaveCoderStudy" for environment "Prod" with site "Active Site 2"
 	And a second project with the following options is registered
 		| Project              | Dictionary | Version | Locale | RegistrationName |

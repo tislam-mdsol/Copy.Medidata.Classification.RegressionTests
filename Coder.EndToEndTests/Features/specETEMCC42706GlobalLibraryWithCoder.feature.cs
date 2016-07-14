@@ -87,8 +87,6 @@ namespace Coder.EndToEndTests.Features
 this.ScenarioSetup(scenarioInfo);
 #line 11
 testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 12
- testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
  testRunner.And("a Rave CRF copy source is added for the project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -191,8 +189,6 @@ this.ScenarioSetup(scenarioInfo);
                         "LOGCOMPFIELD"});
 #line 33
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table3, "And ");
-#line 36
- testRunner.And("iMedidata App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
  testRunner.And("a coder study is created named \"SecondRaveCoderStudy\" for environment \"Prod\" with" +
                     " site \"Active Site 2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -271,8 +267,6 @@ this.ScenarioSetup(scenarioInfo);
 this.ScenarioSetup(scenarioInfo);
 #line 58
  testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 59
- testRunner.And("iMedidata App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
  testRunner.And("a coder study is created named \"SecondRaveCoderStudy\" for environment \"Prod\" with" +
                     " site \"Active Site 2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
