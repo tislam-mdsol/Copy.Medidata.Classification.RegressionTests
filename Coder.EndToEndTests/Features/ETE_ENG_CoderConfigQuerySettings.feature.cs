@@ -22,6 +22,8 @@ namespace Coder.EndToEndTests.Features
     [NUnit.Framework.DescriptionAttribute("When selecting a requires response option for Coder configuration, when a Coder q" +
         "uery is open they will respect the configuration settings. Remove requires manua" +
         "l close and option for Coder configuration")]
+    [NUnit.Framework.CategoryAttribute("ETE_ENG_CoderConfigQuerySettings.feature")]
+    [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
     public partial class WhenSelectingARequiresResponseOptionForCoderConfigurationWhenACoderQueryIsOpenTheyWillRespectTheConfigurationSettings_RemoveRequiresManualCloseAndOptionForCoderConfigurationFeature
     {
         
@@ -36,7 +38,9 @@ namespace Coder.EndToEndTests.Features
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "When selecting a requires response option for Coder configuration, when a Coder q" +
                     "uery is open they will respect the configuration settings. Remove requires manua" +
-                    "l close and option for Coder configuration", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "l close and option for Coder configuration", "", ProgrammingLanguage.CSharp, new string[] {
+                        "ETE_ENG_CoderConfigQuerySettings.feature",
+                        "EndToEndDynamicSegment"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -69,25 +73,23 @@ namespace Coder.EndToEndTests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify the requires manual close option is not available on Coder Configuration S" +
-            "ettings page and when the requires response option is checked  in Coder Configur" +
-            "ation, Coder Configuration will be respected when a Coder query is opened.")]
+        [NUnit.Framework.DescriptionAttribute("Verify when the requires response option is checked in Coder Configuration, Coder" +
+            " Configuration will be respected when a Coder query is opened.")]
         [NUnit.Framework.CategoryAttribute("VAL")]
-        [NUnit.Framework.CategoryAttribute("MCC-207751-005")]
+        [NUnit.Framework.CategoryAttribute("MCC_207751_005")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
-        public virtual void VerifyTheRequiresManualCloseOptionIsNotAvailableOnCoderConfigurationSettingsPageAndWhenTheRequiresResponseOptionIsCheckedInCoderConfigurationCoderConfigurationWillBeRespectedWhenACoderQueryIsOpened_()
+        public virtual void VerifyWhenTheRequiresResponseOptionIsCheckedInCoderConfigurationCoderConfigurationWillBeRespectedWhenACoderQueryIsOpened_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify the requires manual close option is not available on Coder Configuration S" +
-                    "ettings page and when the requires response option is checked  in Coder Configur" +
-                    "ation, Coder Configuration will be respected when a Coder query is opened.", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify when the requires response option is checked in Coder Configuration, Coder" +
+                    " Configuration will be respected when a Coder query is opened.", new string[] {
                         "VAL",
-                        "MCC-207751-005",
+                        "MCC_207751_005",
                         "Release2016.1.0"});
-#line 6
-this.ScenarioSetup(scenarioInfo);
-#line 8
-testRunner.Given("a Rave project registration with dictionary \"WHODRUGB2 200703 ENG\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
+this.ScenarioSetup(scenarioInfo);
+#line 11
+testRunner.Given("a Rave project registration with dictionary \"WhoDrug-DDE-B2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 12
 testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -105,20 +107,20 @@ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTal
                         "Coding Field",
                         "<Dictionary>",
                         "",
-                        "LLT",
+                        "PRODUCTSYNONYM",
                         "1",
                         "true",
                         "true",
-                        "LOGSUPPFIELD2,LOGSUPPFIELD4,LOGCOMPFIELD1,COMPANY,LOGCOMPFIELD3,SOURCE"});
-#line 10
-testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
+                        "LOGSUPPFIELD2,LOGSUPPFIELD4,LOGCOMPFIELD1,LOGCOMPFIELD3"});
 #line 13
+testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
+#line 16
 testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 14
-testRunner.And("edit global Rave-Coder Configuration settings with Review Marking Group set to \"S" +
-                    "ite from system\" and Requires Response set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
+#line 17
+testRunner.And("global Rave-Coder Configuration settings with Review Marking Group are set to \"si" +
+                    "te from system\" and Requires Response are set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 18
 testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -127,25 +129,25 @@ testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.Spe
                         "ControlType"});
             table2.AddRow(new string[] {
                         "Coding Field",
-                        "Sharp pain down leg",
+                        "child advil cold extreme",
                         "LongText"});
             table2.AddRow(new string[] {
                         "Log Supplemental Field A",
                         "33",
                         ""});
             table2.AddRow(new string[] {
-                        "Std Supplemental Field B",
+                        "Std Supplemental Field A",
                         "New Jersey",
                         ""});
             table2.AddRow(new string[] {
-                        "Log Supplemental Field A",
+                        "Log Supplemental Field B",
                         "United States",
                         ""});
             table2.AddRow(new string[] {
-                        "Log Supplemental Field A",
+                        "Std Supplemental Field B",
                         "Lost in Translation",
                         ""});
-#line 16
+#line 19
 testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -154,101 +156,76 @@ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), 
                         "ControlType"});
             table3.AddRow(new string[] {
                         "Coding Field",
-                        "Sharp pain down nerves",
+                        "extremely cold children medicine",
                         "LongText"});
             table3.AddRow(new string[] {
                         "Log Supplemental Field A",
                         "22",
                         ""});
             table3.AddRow(new string[] {
-                        "Std Supplemental Field B",
+                        "Log Supplemental Field B",
                         "New York",
                         ""});
-#line 23
+#line 26
 testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table3, "And ");
-#line 28
-testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
-testRunner.And("task \"sharp pain down leg\" is coded to term \"ACHES-N-PAIN\" at search level \"Low L" +
-                    "evel Term\" with code \"??????????????\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
-testRunner.And("reclassifying task \"sharp pain down leg\" with Include Autocoded Items set to \"Tru" +
-                    "e\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
-testRunner.And("rejecting coding decision for the task \"sharp pain down leg\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
-testRunner.And("I open a query for task \"sharp pain down leg\" with comment \"Open query due to bad" +
-                    " term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("task \"child advil cold extreme\" is coded to term \"CHILDRENS ADVIL COLD\" at search" +
+                    " level \"Trade Name\" with code \"010502 01 015\" at level \"TN\" and a synonym is cre" +
+                    "ated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 33
-testRunner.And("task \"sharp pain in nerves\" is coded to term \"ACHES-N-PAIN\" at search level \"Low " +
-                    "Level Term\" with code \"??????????????\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("reclassifying task \"child advil cold extreme\" with Include Autocoded Items set to" +
+                    " \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
-testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("rejecting coding decision for the task \"child advil cold extreme\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
-testRunner.Then("the coder query \"Open query due to bad term\" is available to the Rave form \"ETE1\"" +
-                    " field \"Coding Field\" with verbatim term \"Adverse Event 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.And("I open a query for task \"child advil cold extreme\" with comment \"Open query due t" +
+                    "o bad term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+testRunner.And("task \"extremely cold children medicine\" is coded to term \"CHILDRENS ADVIL COLD\" a" +
+                    "t search level \"Trade Name\" with code \"010502 01 015\" at level \"TN\" and a synony" +
+                    "m is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+testRunner.Then("the coder query \"Open query due to bad term\" is available to the Rave form \"ETE2\"" +
+                    " field \"Coding Field\" with verbatim term \"child advil cold extreme\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 39
+testRunner.And("the coder query to the Rave form \"ETE2\" field \"Coding Field\" with verbatim term \"" +
+                    "child advil cold extreme\" is responded to with \"Answered Response\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level",
                         "Code",
                         "Term Path"});
             table4.AddRow(new string[] {
-                        "SOC",
-                        "10007541",
-                        "Cardiac disorders"});
-            table4.AddRow(new string[] {
-                        "HLGT",
-                        "10007521",
-                        "Cardiac arrhythmias"});
-            table4.AddRow(new string[] {
-                        "HLT",
-                        "10042600",
-                        "Supraventricular arrhythmias"});
-            table4.AddRow(new string[] {
-                        "PT",
-                        "10003658",
-                        "Atrial fibrillation"});
-            table4.AddRow(new string[] {
-                        "LLT",
-                        "10003658",
-                        "Atrial fibrillation"});
-#line 36
-testRunner.Then("the coding decision for verbatim \"Headachery\" on form \"ETE2\" for field \"Coding Fi" +
-                    "eld\" contains the following data", ((string)(null)), table4, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "data"});
-            table5.AddRow(new string[] {
-                        "ATC"});
-            table5.AddRow(new string[] {
-                        "M"});
-            table5.AddRow(new string[] {
+                        "ATC",
+                        "M",
                         "MUSCULO-SKELETAL SYSTEM"});
-            table5.AddRow(new string[] {
-                        "M02"});
-            table5.AddRow(new string[] {
-                        "TOPICAL PRODUCTS FOR JOINT AND MUSCULAR PAIN"});
-            table5.AddRow(new string[] {
-                        "M02A"});
-            table5.AddRow(new string[] {
-                        "M02AA"});
-            table5.AddRow(new string[] {
-                        "ANTIINFL. PREP., NON-STEROIDS FOR TOPICAL USE"});
-            table5.AddRow(new string[] {
-                        "PRODUCT"});
-            table5.AddRow(new string[] {
-                        "001092 01 001 4"});
-            table5.AddRow(new string[] {
-                        "IBUPROFEN"});
-            table5.AddRow(new string[] {
-                        "PRODUCTSYNONYM"});
-            table5.AddRow(new string[] {
-                        "001092 01 110 3"});
-            table5.AddRow(new string[] {
-                        "ACHES-N-PAIN"});
-#line 43
-testRunner.Then("when I view task \"Sharp pain down leg\" on form \"ETE2\" for \"Subject\" I should see " +
-                    "the following data", ((string)(null)), table5, "Then ");
+            table4.AddRow(new string[] {
+                        "ATC",
+                        "M01",
+                        "ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS"});
+            table4.AddRow(new string[] {
+                        "ATC",
+                        "M01A",
+                        "ANTIINFLAMMATORY/ANTIRHEUMATIC PROD.,NON-STEROIDS"});
+            table4.AddRow(new string[] {
+                        "ATC",
+                        "M01AE",
+                        "PROPIONIC ACID DERIVATIVES"});
+            table4.AddRow(new string[] {
+                        "PRODUCT",
+                        "010502 01 001",
+                        "CO-ADVIL"});
+            table4.AddRow(new string[] {
+                        "PRODUCTSYNONYM",
+                        "010502 01 015",
+                        "CHILDRENS ADVIL COLD"});
+#line 40
+testRunner.Then("the coding decision for verbatim \"extremely cold children medicine\" on form \"ETE2" +
+                    "\" for field \"Coding Field\" contains the following data", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -257,23 +234,25 @@ testRunner.Then("when I view task \"Sharp pain down leg\" on form \"ETE2\" for \
         [NUnit.Framework.DescriptionAttribute("Verify when the requires response option is unchecked in Coder Configuration, Cod" +
             "er Configuration will be respected when a Coder query is opened.")]
         [NUnit.Framework.CategoryAttribute("VAL")]
-        [NUnit.Framework.CategoryAttribute("MCC-207751-006")]
+        [NUnit.Framework.CategoryAttribute("EditGlobalRaveConfiguration")]
+        [NUnit.Framework.CategoryAttribute("MCC_207751_006")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
         public virtual void VerifyWhenTheRequiresResponseOptionIsUncheckedInCoderConfigurationCoderConfigurationWillBeRespectedWhenACoderQueryIsOpened_()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify when the requires response option is unchecked in Coder Configuration, Cod" +
                     "er Configuration will be respected when a Coder query is opened.", new string[] {
                         "VAL",
-                        "MCC-207751-006",
+                        "EditGlobalRaveConfiguration",
+                        "MCC_207751_006",
                         "Release2016.1.0"});
-#line 64
+#line 54
 this.ScenarioSetup(scenarioInfo);
-#line 65
-testRunner.Given("a Rave project registration with dictionary \"WHODRUGB2 200703 ENG\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 66
+#line 55
+testRunner.Given("a Rave project registration with dictionary \"WhoDrug-DDE-B2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 56
 testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Form",
                         "Field",
                         "Dictionary",
@@ -283,26 +262,53 @@ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTal
                         "IsApprovalRequired",
                         "IsAutoApproval",
                         "SupplementalTerms"});
-            table6.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "ETE2",
                         "Coding Field",
                         "<Dictionary>",
                         "",
-                        "LLT",
+                        "PRODUCTSYNONYM",
                         "1",
                         "true",
                         "true",
-                        "LOGSUPPFIELD2,LOGSUPPFIELD4,LOGCOMPFIELD1,COMPANY,LOGCOMPFIELD3,SOURCE"});
-#line 67
-testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table6, "And ");
-#line 70
+                        "LOGSUPPFIELD2,LOGSUPPFIELD4,LOGCOMPFIELD1,LOGCOMPFIELD3"});
+#line 57
+testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table5, "And ");
+#line 60
 testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 71
-testRunner.And("edit global Rave-Coder Configuration settings with Review Marking Group set to \"S" +
-                    "ite from system\" and Requires Response set to \"false\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
+#line 61
+testRunner.And("global Rave-Coder Configuration settings with Review Marking Group are set to \"si" +
+                    "te from system\" and Requires Response are set to \"false\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
 testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType"});
+            table6.AddRow(new string[] {
+                        "Coding Field",
+                        "child advil cold extreme",
+                        "LongText"});
+            table6.AddRow(new string[] {
+                        "Log Supplemental Field A",
+                        "33",
+                        ""});
+            table6.AddRow(new string[] {
+                        "Std Supplemental Field A",
+                        "New Jersey",
+                        ""});
+            table6.AddRow(new string[] {
+                        "Log Supplemental Field B",
+                        "United States",
+                        ""});
+            table6.AddRow(new string[] {
+                        "Std Supplemental Field B",
+                        "Lost in Translation",
+                        ""});
+#line 63
+testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table6, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
@@ -310,128 +316,76 @@ testRunner.When("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.Spe
                         "ControlType"});
             table7.AddRow(new string[] {
                         "Coding Field",
-                        "Sharp pain down leg",
+                        "extremely cold children medicine",
                         "LongText"});
             table7.AddRow(new string[] {
-                        "Log Supplemental Field A",
-                        "33",
-                        ""});
-            table7.AddRow(new string[] {
-                        "Std Supplemental Field B",
-                        "New Jersey",
-                        ""});
-            table7.AddRow(new string[] {
-                        "Log Supplemental Field A",
-                        "United States",
-                        ""});
-            table7.AddRow(new string[] {
-                        "Log Supplemental Field A",
-                        "Lost in Translation",
-                        ""});
-#line 73
-testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table7, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field",
-                        "Value",
-                        "ControlType"});
-            table8.AddRow(new string[] {
-                        "Coding Field",
-                        "Sharp pain down nerves",
-                        "LongText"});
-            table8.AddRow(new string[] {
                         "Log Supplemental Field A",
                         "22",
                         ""});
-            table8.AddRow(new string[] {
-                        "Std Supplemental Field B",
+            table7.AddRow(new string[] {
+                        "Log Supplemental Field B",
                         "New York",
                         ""});
-#line 80
-testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table8, "And ");
-#line 85
+#line 70
+testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table7, "And ");
+#line 75
 testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
-testRunner.And("task \"sharp pain down leg\" is coded to term \"ACHES-N-PAIN\" at search level \"Low L" +
-                    "evel Term\" with code \"??????????????\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
-testRunner.And("reclassifying task \"sharp pain down leg\" with Include Autocoded Items set to \"Tru" +
-                    "e\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
-testRunner.And("rejecting coding decision for the task \"sharp pain down leg\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
-testRunner.And("I open a query for task \"sharp pain down leg\" with comment \"Open query due to bad" +
-                    " term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
-testRunner.And("task \"sharp pain in nerves\" is coded to term \"ACHES-N-PAIN\" at search level \"Low " +
-                    "Level Term\" with code \"??????????????\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 76
+testRunner.And("task \"child advil cold extreme\" is coded to term \"CHILDRENS ADVIL COLD\" at search" +
+                    " level \"Trade Name\" with code \"010502 01 015\" at level \"TN\" and a synonym is cre" +
+                    "ated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+testRunner.And("reclassifying task \"child advil cold extreme\" with Include Autocoded Items set to" +
+                    " \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+testRunner.And("rejecting coding decision for the task \"child advil cold extreme\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+testRunner.And("I open a query for task \"child advil cold extreme\" with comment \"Open query due t" +
+                    "o bad term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+testRunner.And("task \"extremely cold children medicine\" is coded to term \"CHILDRENS ADVIL COLD\" a" +
+                    "t search level \"Trade Name\" with code \"010502 01 015\" at level \"TN\" and a synony" +
+                    "m is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
 testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
-testRunner.Then("the coder query \"Open query due to bad term\" is available to the Rave form \"ETE1\"" +
-                    " field \"Coding Field\" with verbatim term \"Adverse Event 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 82
+testRunner.Then("the coder query \"Open query due to bad term\" is available to the Rave form \"ETE2\"" +
+                    " field \"Coding Field\" with verbatim term \"child advil cold extreme\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 83
+testRunner.And("the coder query to the Rave form \"ETE2\" field \"Coding Field\" with verbatim term \"" +
+                    "child advil cold extreme\" can not be responded to", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level",
                         "Code",
                         "Term Path"});
-            table9.AddRow(new string[] {
-                        "SOC",
-                        "10007541",
-                        "Cardiac disorders"});
-            table9.AddRow(new string[] {
-                        "HLGT",
-                        "10007521",
-                        "Cardiac arrhythmias"});
-            table9.AddRow(new string[] {
-                        "HLT",
-                        "10042600",
-                        "Supraventricular arrhythmias"});
-            table9.AddRow(new string[] {
-                        "PT",
-                        "10003658",
-                        "Atrial fibrillation"});
-            table9.AddRow(new string[] {
-                        "LLT",
-                        "10003658",
-                        "Atrial fibrillation"});
-#line 93
-testRunner.Then("the coding decision for verbatim \"Headachery\" on form \"ETE2\" for field \"Coding Fi" +
-                    "eld\" contains the following data", ((string)(null)), table9, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "data"});
-            table10.AddRow(new string[] {
-                        "ATC"});
-            table10.AddRow(new string[] {
-                        "M"});
-            table10.AddRow(new string[] {
+            table8.AddRow(new string[] {
+                        "ATC",
+                        "M",
                         "MUSCULO-SKELETAL SYSTEM"});
-            table10.AddRow(new string[] {
-                        "M02"});
-            table10.AddRow(new string[] {
-                        "TOPICAL PRODUCTS FOR JOINT AND MUSCULAR PAIN"});
-            table10.AddRow(new string[] {
-                        "M02A"});
-            table10.AddRow(new string[] {
-                        "M02AA"});
-            table10.AddRow(new string[] {
-                        "ANTIINFL. PREP., NON-STEROIDS FOR TOPICAL USE"});
-            table10.AddRow(new string[] {
-                        "PRODUCT"});
-            table10.AddRow(new string[] {
-                        "001092 01 001 4"});
-            table10.AddRow(new string[] {
-                        "IBUPROFEN"});
-            table10.AddRow(new string[] {
-                        "PRODUCTSYNONYM"});
-            table10.AddRow(new string[] {
-                        "001092 01 110 3"});
-            table10.AddRow(new string[] {
-                        "ACHES-N-PAIN"});
-#line 100
-testRunner.Then("when I view task \"Sharp pain down leg\" on form \"ETE2\" for \"Subject\" I should see " +
-                    "the following data", ((string)(null)), table10, "Then ");
+            table8.AddRow(new string[] {
+                        "ATC",
+                        "M01",
+                        "ANTIINFLAMMATORY AND ANTIRHEUMATIC PRODUCTS"});
+            table8.AddRow(new string[] {
+                        "ATC",
+                        "M01A",
+                        "ANTIINFLAMMATORY/ANTIRHEUMATIC PROD.,NON-STEROIDS"});
+            table8.AddRow(new string[] {
+                        "ATC",
+                        "M01AE",
+                        "PROPIONIC ACID DERIVATIVES"});
+            table8.AddRow(new string[] {
+                        "PRODUCT",
+                        "010502 01 001",
+                        "CO-ADVIL"});
+            table8.AddRow(new string[] {
+                        "PRODUCTSYNONYM",
+                        "010502 01 015",
+                        "CHILDRENS ADVIL COLD"});
+#line 84
+testRunner.And("the coding decision for verbatim \"extremely cold children medicine\" on form \"ETE2" +
+                    "\" for field \"Coding Field\" contains the following data", ((string)(null)), table8, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

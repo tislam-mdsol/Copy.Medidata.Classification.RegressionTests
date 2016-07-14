@@ -746,7 +746,9 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
             var raveFormPage = session.GetRaveFormPage();
 
+            session.MaximiseWindow();
             raveFormPage.CancelCurrentEdit();
+            session.ResizeTo(Config.ScreenWidth, Config.ScreenHeight);
 
             return raveFormPage;
         }

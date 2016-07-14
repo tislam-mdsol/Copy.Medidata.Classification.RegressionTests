@@ -182,6 +182,26 @@ namespace Coder.TestSteps
             }
         }
 
+        internal static string DefaultReviewMarkingGroupValue
+        {
+            get
+            {
+                var defaultReviewMarkingGroupValue = ConfigurationManager.AppSettings["DefaultReviewMarkingGroupValue"];
+
+                if (String.IsNullOrWhiteSpace(defaultReviewMarkingGroupValue)) throw new ConfigurationErrorsException("DefaultReviewMarkingGroupValue");
+
+                return defaultReviewMarkingGroupValue;
+            }
+        }
+
+        internal static bool DefaultRequiresResponseValue
+        {
+            get
+            {               
+                return true;
+            }
+        }
+
         internal static string StudyNamePrefix 
         {
             get
