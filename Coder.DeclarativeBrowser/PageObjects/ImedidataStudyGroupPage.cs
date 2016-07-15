@@ -183,6 +183,13 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return appInputPanel;
         }
 
+        private SessionElementScope GetAddAppLink()
+        {
+            var appInputPanel = _Browser.FindSessionElementById("add_another_app_link");
+
+            return appInputPanel;
+        }
+
         private IList<SessionElementScope> GetAppOptions()
         {
             var appInputPanel = GetAppInputPanel();
@@ -274,7 +281,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
             
             _Browser.GoToHomePage();
         }
-
+     
         private void SaveNewStudyGroupForm(SegmentSetupData newStudyGroup)
         {
             if (ReferenceEquals(newStudyGroup, null)) throw new ArgumentNullException("newStudyGroup");
@@ -365,6 +372,14 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         }
 
+        private SessionElementScope GetRoleSelectList()
+        {
+            var applicationsSelectList = _Browser.FindSessionElementById("invitation_detail_invitation_app_details_attributes_0_role_ids_");
+
+            return applicationsSelectList;
+
+        }
+
         private SessionElementScope GetInviteEmailTextbox()
         {
             var inviteEmailTextbox = _Browser.FindSessionElementById("invitation_detail_invitees");
@@ -444,11 +459,16 @@ namespace Coder.DeclarativeBrowser.PageObjects
             OpenStudyGroup(studyGroupName);
 
             GetInviteApplicationsSelectList().SelectOption(application);
-            GetInviteEmailTextbox().FillInWith(user.Email);
+            SendEmailToStudyGroupOwner(user.Email);
+        }
+
+        internal void SendEmailToStudyGroupOwner(string Email)
+        {
+            GetInviteEmailTextbox().FillInWith(Email);
             GetInviteOwnerCheckBox().SetCheckBoxState(true);
             GetInviteButton().Click();
 
-            WaitForUserToReceiveInvite(user.Email);
+            WaitForUserToReceiveInvite(Email);
 
             CLoseAllInvitationNotifications();
         }
@@ -478,6 +498,24 @@ namespace Coder.DeclarativeBrowser.PageObjects
             }
 
             return uuid;
+        }
+
+        internal void UpdateUserAppPermission(string segmentName, Dictionary<string, string> appsAndRoles, MedidataUser user)
+        {
+            if (ReferenceEquals(segmentName, null)) throw new ArgumentNullException("segmentName");
+            if (ReferenceEquals(appsAndRoles, null)) throw new ArgumentNullException("appsAndRoles");
+            if (ReferenceEquals(user, null)) throw new ArgumentNullException("user");
+
+            OpenStudyGroup(segmentName);
+
+            foreach (KeyValuePair<string, string> pair in appsAndRoles)
+            {
+                GetInviteApplicationsSelectList().SelectOption(pair.Key);
+                GetRoleSelectList().SelectOption(pair.Value);
+                GetAddAppLink().Click();
+            }
+
+            SendEmailToStudyGroupOwner(user.Email);                       
         }
     }
 }

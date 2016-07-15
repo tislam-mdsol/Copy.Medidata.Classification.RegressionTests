@@ -3,6 +3,12 @@ using System;
 using Coder.DeclarativeBrowser;
 using Coder.DeclarativeBrowser.Models;
 using TechTalk.SpecFlow;
+using Coder.DeclarativeBrowser.ExtensionMethods;
+using Coder.DeclarativeBrowser.Models.UIDataModels;
+using Coder.DeclarativeBrowser.Models.ETEModels;
+using Coder.DeclarativeBrowser.IMedidataApi;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Coder.TestSteps.StepDefinitions
 {
@@ -41,5 +47,56 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
         }
 
+
+        [Given(@"a coder study is created named ""(.*)"" for environment ""(.*)"" with site ""(.*)""")]
+        public void GivenACoderStudyIsCreatedNamedForEnvironmentWithSite(string studyName, string environmentName, string siteName)
+        {
+            //var generatedSuffix = Guid.NewGuid().GetFirstSectionAppendedWithRandomNumbers();
+
+            var newStudyName = studyName;//String.Concat(studyName, generatedSuffix);
+
+            _StepContext.ProjectName = newStudyName;
+
+            var studyExternalOid = studyName.RemoveNonAlphanumeric();
+
+            var siteNumber = String.Concat(siteName, "_Site").RemoveNonAlphanumeric();
+
+            var singleStudyToAddToSegmentUnderTest = new SegmentSetupData
+            {
+                SegmentName = _StepContext.SegmentUnderTest.SegmentName, //newStudyName
+                SegmentUuid = _StepContext.SegmentUnderTest.SegmentUuid,
+                Studies = new StudySetupData[]
+                {
+                    new StudySetupData()
+                    {
+                        StudyName    = newStudyName,
+                        ExternalOid  = studyExternalOid,
+                        IsProduction = true,
+                        Sites        = new SiteSetupData[]
+                        {
+                            new SiteSetupData
+                            {
+                                SiteName   = siteName,
+                                SiteNumber = siteNumber
+                            }
+                        },
+                        ProtocolNumber = studyName.Replace("_", "")
+                    }
+                },
+                StudyGroupApps = _StepContext.SetStudyGroupAppData()
+            };
+
+            Dictionary<string, string> appsAndRoles = new Dictionary<string, string>() ;
+            appsAndRoles.Add("Coder EU Sandbox", "None");
+            appsAndRoles.Add("Rave EDC", "Power User");
+            appsAndRoles.Add("Rave Modules", "All Modules");
+            appsAndRoles.Add("Rave Architect Roles", "Project Admin Default");
+
+            _Browser.CreateNewStudyWithSite(singleStudyToAddToSegmentUnderTest);
+            _Browser.LogoutOfiMedidata();
+            _Browser.LoginToiMedidata(Config.AdminLogin, Config.AdminPassword);
+            _Browser.UpdateUserAppPermissionForStudyGroup(_StepContext.SegmentUnderTest, appsAndRoles, _StepContext.CoderTestUser); 
+
+        }       
     }
 }
