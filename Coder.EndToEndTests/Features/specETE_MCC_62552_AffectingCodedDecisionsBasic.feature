@@ -3,7 +3,7 @@ Feature: Verify coded decisions are affected properly with markings and other ED
 @DFT
 
 @EndToEndDynamicSegment
-Scenario: A coding decision remains on the verbatim when a query is opened against a supplemental  field.
+Scenario: A coding decision remains on the verbatim when a query is opened against a verbatim field.
 	Given a Rave project registration with dictionary "WhoDrugDDEB2 ENG 200703"
 	And Rave Modules App Segment is loaded
  	And a Rave Coder setup with the following options
@@ -17,22 +17,24 @@ Scenario: A coding decision remains on the verbatim when a query is opened again
  	| SUP1AGE | Twenty          | SelectList  | Other         |
 	And Coder App Segment is loaded
 	When task "Drug Verbatim 1" is coded to term "BAYER CHILDREN'S COLD" at search level "Preferred Name" with code "005581 01 001" at level "PN" and a synonym is created
+	Then the coding decision for verbatim "Drug Verbatim 1" on form "ETEMCC62552" for field "AETerm" contains the following data
+		| ATC     | N             | NERVOUS SYSTEM                    |
+		| ATC     | N02           | ANALGESICS                        |
+		| ATC     | N02B          | OTHER ANALGESICS AND ANTIPYRETICS |
+		| ATC     | N02BA         | SALICYLIC ACID AND DERIVATIVES    |
+		| PRODUCT | 005581 01 001 | BAYER CHILDREN'S COLD             | 
+	When Rave Modules App Segment is loaded
+	#When value "Open Query" is set to "Manual Marking Group Log Dropdown" // this is done inside the next step	
+	#And value "Testing Marking" is set to "Manual Marking Group Log Text Field"
+ #   And EDC form is saved
+	And row on form "ETEMCC62552" containing "Drug Verbatim 1" is marked with a query 
+	# change containing to field value may be, also add one scenario for opening a query on verbatim and one for supplemental for verbatim and another set for stickies
 	Then the coding decision for verbatim "child advil cold extreme" on form "ETE2" for field "Coding Field" contains the following data
 		| ATC     | N             | NERVOUS SYSTEM                    |
 		| ATC     | N02           | ANALGESICS                        |
 		| ATC     | N02B          | OTHER ANALGESICS AND ANTIPYRETICS |
 		| ATC     | N02BA         | SALICYLIC ACID AND DERIVATIVES    |
-		| PRODUCT | 005581 01 001 | BAYER CHILDREN'S COLD             |
-
-#	Then Rave form "ETEMCC62552" should display  
-
-	When value "Open Query" is set to "Manual Marking Group Log Dropdown"
-	And row on form "ETE2" containing "Headachery" is marked with a query
-	And value "Testing Marking" is set to "Manual Marking Group Log Text Field"
-    And EDC form is saved
-	Then Rave form "ETEMCC62552" link "Drug Verbatim 1" should contain the following
-		|BAYER CHILDREN'S COLD                              |
-		|005581 01 001 3                                    |
+		| PRODUCT | 005581 01 001 | BAYER CHILDREN'S COLD             | 
 		
 @DFT
 @PBMCC62552-001b
@@ -50,21 +52,25 @@ Scenario: A coding decision remains on the verbatim when a sticky is opened agai
  	| Field          | Value           | ControlType | Control Value |
  	| Coding Field A | Drug Verbatim 1 |             |               |
  	| SUP1AGE        | Twenty          | SelectList  | Other         |
+	And Coder App Segment is loaded
 	When task "Drug Verbatim 1" is coded to term "BAYER CHILDREN'S COLD" at search level "Preferred Name" with code "005581 01 001" at level "PN" and a synonym is created
-#	Then Rave form "ETEMCC62552" should display 
+    And Rave Modules App Segment is loaded
     Then the coding decision for verbatim "child advil cold extreme" on form "ETE2" for field "Coding Field" contains the following data
 		| ATC     | N             | NERVOUS SYSTEM                    |
 		| ATC     | N02           | ANALGESICS                        |
 		| ATC     | N02B          | OTHER ANALGESICS AND ANTIPYRETICS |
 		| ATC     | N02BA         | SALICYLIC ACID AND DERIVATIVES    |
 		| PRODUCT | 005581 01 001 | BAYER CHILDREN'S COLD             |
-	When value "Place Sticky" is set to "Manual Marking Group Log Dropdown"
-	And value "Testing Marking" is set to "Manual Marking Group Log Text Field"
-    And EDC form is saved
-    And I select Link "Drug Verbatim 1" 
-	Then Rave form "ETEMCC62552" link "Drug Verbatim 1" should contain the following
-		|BAYER CHILDREN'S COLD                              |
-		|005581 01 001 3         							|
+	#When value "Place Sticky" is set to "Manual Marking Group Log Dropdown"
+	#And value "Testing Marking" is set to "Manual Marking Group Log Text Field"
+ #   And EDC form is saved
+	When row on form "ETEMCC62552" containing "Drug Verbatim 1" is marked with a sticky
+Then the coding decision for verbatim "child advil cold extreme" on form "ETE2" for field "Coding Field" contains the following data
+		| ATC     | N             | NERVOUS SYSTEM                    |
+		| ATC     | N02           | ANALGESICS                        |
+		| ATC     | N02B          | OTHER ANALGESICS AND ANTIPYRETICS |
+		| ATC     | N02BA         | SALICYLIC ACID AND DERIVATIVES    |
+		| PRODUCT | 005581 01 001 | BAYER CHILDREN'S COLD             | 
 		
 @DFT
 @PBMCC62552-001d
@@ -81,7 +87,7 @@ Scenario: A coding decision remains on the verbatim when a comment is opened aga
  	| Field          | Value           | ControlType | Control Value |
  	| Coding Field A | Drug Verbatim 1 |             |               |
  	| SUP1AGE        | Twenty          | SelectList  | Other         |
-	Then Rave form "ETEMCC62552" should display
+	#Then Rave form "ETEMCC62552" should display
 	Then the coding decision for verbatim "child advil cold extreme" on form "ETE2" for field "Coding Field" contains the following data
 		| ATC	  | N 				| NERVOUS SYSTEM					|
 		| ATC 	  | N02	  			| ANALGESICS						|
