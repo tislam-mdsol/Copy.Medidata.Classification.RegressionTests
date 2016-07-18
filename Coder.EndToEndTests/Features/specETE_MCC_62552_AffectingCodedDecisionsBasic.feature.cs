@@ -82,7 +82,7 @@ namespace Coder.EndToEndTests.Features
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
- testRunner.Given("a Rave project registration with dictionary \"WhoDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -101,7 +101,7 @@ this.ScenarioSetup(scenarioInfo);
                         "AETerm",
                         "<Dictionary>",
                         "<Locale>",
-                        "PRODUCTSYNONYM",
+                        "LLT",
                         "1",
                         "true",
                         "true",
@@ -109,8 +109,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
   testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
 #line 12
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
-                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -120,7 +120,7 @@ this.ScenarioSetup(scenarioInfo);
                         "ControlType",
                         "Control Value"});
             table2.AddRow(new string[] {
-                        "AETerm",
+                        "Coding Field A",
                         "Drug Verbatim 1",
                         "",
                         ""});

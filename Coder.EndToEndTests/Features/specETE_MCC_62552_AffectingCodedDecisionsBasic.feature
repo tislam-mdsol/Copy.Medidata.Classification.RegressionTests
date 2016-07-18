@@ -4,16 +4,16 @@ Feature: Verify coded decisions are affected properly with markings and other ED
 
 @EndToEndDynamicSegment
 Scenario: A coding decision remains on the verbatim when a query is opened against a verbatim field.
-	Given a Rave project registration with dictionary "WhoDrugDDEB2 ENG 200703"
+	Given a Rave project registration with dictionary "MedDRA ENG 18.0"
 	And Rave Modules App Segment is loaded
  	And a Rave Coder setup with the following options
-	| Form        | Field  | Dictionary   | Locale   | Coding Level   | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
-	| ETEMCC62552 | AETerm | <Dictionary> | <Locale> | PRODUCTSYNONYM | 1        | true               | true           | SUP1AGE           |
-	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
+	| Form        | Field  | Dictionary   | Locale   | Coding Level | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
+	| ETEMCC62552 | AETerm | <Dictionary> | <Locale> | LLT          | 1        | true               | true           | SUP1AGE           |
+	When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETEMCC62552"
  	| Field   | Value           | ControlType | Control Value |
- 	| AETerm  | Drug Verbatim 1 |             |               |
+ 	| Coding Field A  | Drug Verbatim 1 |             |               |
  	| SUP1AGE | Twenty          | SelectList  | Other         |
 	And Coder App Segment is loaded
 	When task "Drug Verbatim 1" is coded to term "BAYER CHILDREN'S COLD" at search level "Preferred Name" with code "005581 01 001" at level "PN" and a synonym is created
