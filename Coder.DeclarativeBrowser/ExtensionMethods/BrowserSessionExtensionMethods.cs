@@ -1418,14 +1418,16 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
         internal static void WaitUntilElementDisappears(this BrowserSession session,
             Func<SessionElementScope> getElement, Options options = null)
         {
-            if (ReferenceEquals(session, null))    throw new ArgumentNullException("session");
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
             if (ReferenceEquals(getElement, null)) throw new ArgumentNullException("getElement");
+
             if (ReferenceEquals(options, null))
             {
                 options = Config.GetDefaultCoypuOptions();
             }
+
             session.TryUntil(
-                () => session.Refresh(),
+                () => getElement(),
                 () => !getElement().Exists(),
                 options.RetryInterval,
                 options);

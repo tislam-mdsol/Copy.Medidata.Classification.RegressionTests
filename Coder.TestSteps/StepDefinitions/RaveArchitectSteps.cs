@@ -211,6 +211,24 @@ namespace Coder.TestSteps.StepDefinitions
             _StepContext.SourceDraftVersionName = draftVersion;
         }
 
+        [When(@"a Rave Draft is published and pushed using draft ""(.*)"" for Project ""(.*)"" to environment ""(.*)""\tin Rave app")]
+        public void WhenARaveDraftIsPublishedAndPushedUsingDraftForProjectToEnvironmentInRaveApp(string draftNameFeature, string studyFeature, string environment)
+        {
+            if (String.IsNullOrWhiteSpace(draftNameFeature)) throw new ArgumentNullException("draftNameFeature");
+            if (String.IsNullOrWhiteSpace(studyFeature)) throw new ArgumentNullException("studyFeature");
+            if (String.IsNullOrWhiteSpace(environment)) throw new ArgumentNullException("environment");
+
+            var draftName = StepArgumentTransformations.TransformFeatureString(draftNameFeature, _StepContext);
+            var study = StepArgumentTransformations.TransformFeatureString(studyFeature, _StepContext);
+
+            _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
+
+            var draftVersion = _Browser.PublishAndPushRaveArchitectDraft(study, draftName, environment);
+
+            _StepContext.SourceDraftVersionName = draftVersion;
+        }
+
+
         [When(@"a Rave Draft is published using draft ""(.*)"" for Project ""(.*)""")]
         public void WhenARaveDraftIsPublishedUsingDraftForProject(string draftNameFeature, string studyFeature)
         {
