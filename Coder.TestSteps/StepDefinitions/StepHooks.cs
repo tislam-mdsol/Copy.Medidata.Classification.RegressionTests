@@ -29,13 +29,14 @@ namespace Coder.TestSteps.StepDefinitions
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            MessagingSystem.Start();
             CreateScreenshotDirectory();
         }
 
         [BeforeScenario("CoderCore")]
         public void BeforeCoreScenario()
         {
+            MessagingSystem.Start();
+
             var generatedUser = CoderUserGenerator.GenerateUser(Config.StudyNamePrefix);
 
             _StepContext.CoderTestUser    = generatedUser.User;

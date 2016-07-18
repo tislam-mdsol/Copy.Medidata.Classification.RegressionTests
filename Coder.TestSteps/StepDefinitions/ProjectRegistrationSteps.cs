@@ -93,7 +93,7 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
 
-            _Browser.LoadiMedidataCoderAppSegment(_StepContext.SecondStudyName);
+            _Browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
             var list = table.TransformFeatureTableStrings(_StepContext).CreateSet<SynonymList>().ToArray();
             _Browser.RegisterProjects(_StepContext.SecondStudyName, new List<SynonymList> { _StepContext.SourceSynonymList });
         }

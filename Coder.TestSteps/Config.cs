@@ -409,9 +409,9 @@ namespace Coder.TestSteps
         {
             get
             {
-                var raveArchitectRole = ConfigurationManager.AppSettings["RaveArchitectRole"];
+                var raveArchitectRole = ConfigurationManager.AppSettings["RaveArchitectRoleApp"];
 
-                if (String.IsNullOrEmpty(raveArchitectRole)) throw new ConfigurationErrorsException("RaveArchitectRole");
+                if (String.IsNullOrEmpty(raveArchitectRole)) throw new ConfigurationErrorsException("RaveArchitectRoleApp");
 
                 return raveArchitectRole;
             }
@@ -421,11 +421,11 @@ namespace Coder.TestSteps
         {
             get
             {
-                var raveArchitectRole = ConfigurationManager.AppSettings["ArchitectRoleAppRole"];
+                var raveArchitectRoleAppRole = ConfigurationManager.AppSettings["ArchitectRoleAppRole"];
 
-                if (String.IsNullOrEmpty(raveArchitectRole)) throw new ConfigurationErrorsException("RaveArchitectRole");
+                if (String.IsNullOrEmpty(raveArchitectRoleAppRole)) throw new ConfigurationErrorsException("RaveArchitectRoleAppRole");
 
-                return raveArchitectRole;
+                return raveArchitectRoleAppRole;
             }
         }
     }

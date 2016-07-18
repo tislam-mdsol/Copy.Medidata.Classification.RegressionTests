@@ -913,15 +913,15 @@ namespace Coder.DeclarativeBrowser
             }
         }
 
-        internal static string ArchitectRolesAppName
+        internal static string ArchitectRoleAppName
         {
             get
             {
-                var appName = ConfigurationManager.AppSettings["ArchitectRolesAppName"];
+                var appName = ConfigurationManager.AppSettings["ArchitectRoleAppName"];
 
                 if (String.IsNullOrWhiteSpace(appName))
                 {
-                    throw new ConfigurationErrorsException("ArchitectRolesAppName");
+                    throw new ConfigurationErrorsException("ArchitectRoleAppName");
                 }
 
                 return appName;
@@ -988,15 +988,15 @@ namespace Coder.DeclarativeBrowser
             }
         }
 
-        internal static string ArchitectRolesAppRole
+        internal static string ArchitectRoleAppRole
         {
             get
             {
-                var roleName = ConfigurationManager.AppSettings["ArchitectRolesAppRole"];
+                var roleName = ConfigurationManager.AppSettings["ArchitectRoleAppRole"];
 
                 if (String.IsNullOrWhiteSpace(roleName))
                 {
-                    throw new ConfigurationErrorsException("ArchitectRolesAppRole");
+                    throw new ConfigurationErrorsException("ArchitectRoleAppRole");
                 }
 
                 return roleName;
@@ -1038,8 +1038,8 @@ namespace Coder.DeclarativeBrowser
 
                 new MedidataApp
                 {
-                    Name = Config.ArchitectRolesAppName,
-                    Roles = new string[] { Config.ArchitectRolesAppRole }
+                    Name = Config.ArchitectRoleAppName,
+                    Roles = new string[] { Config.ArchitectRoleAppRole }
                 },
 
                 new MedidataApp
