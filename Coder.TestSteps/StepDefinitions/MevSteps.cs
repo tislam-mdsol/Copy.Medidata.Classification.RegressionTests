@@ -59,15 +59,9 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
 
-            var externalVerbatimRows = table
-                .TransformFeatureTableStrings(_StepContext)
-                .CreateSet<ExternalVerbatim>()
-                .ToArray()
-                .ValidateMevRequiredColumns()
-                .SetStudyIdColumn(_StepContext)
-                .SetNonRequiredMevColumnsToDefaultValues(
-                    defaultStudyOid: _StepContext.GetStudyUuid(),
-                    defaultLocale  : _StepContext.Locale);
+            var externalVerbatimRows = table.TransformFeatureTableStrings(_StepContext).CreateSet<ExternalVerbatim>().ToArray();
+
+            externalVerbatimRows.SetNonRequiredMevColumnsToDefaultValues(_StepContext);
 
             _UploadedMevFile = Path.Combine(_StepContext.DumpDirectory, DefaultFileName.AppendRandomString() + ".csv");
 
@@ -113,11 +107,9 @@ namespace Coder.TestSteps.StepDefinitions
         [When(@"uploading incorrect MEV content")]
         public void WhenUploadingIncorrectMEVContent()
         {
-            var mevContent = GetMevContentByFileName(Config.MevDownloadFailuresFileName);
+            var externalVerbatims = GetMevContentByFileName(Config.MevDownloadFailuresFileName);
 
-            var externalVerbatims = mevContent
-                .ToArray()
-                .SetStudyIdColumn(_StepContext);
+            externalVerbatims.SetContextStudyId(_StepContext);
 
             _UploadedMevFile = Path.Combine(_StepContext.DumpDirectory, "IncorrectMEVContent.csv");
 
@@ -337,12 +329,12 @@ namespace Coder.TestSteps.StepDefinitions
             return externalVerbatims;
         }
 
-        private ExternalVerbatim[] BuildExternalVerbatimsFromTerms(int numberOfTermsToUpload, IList<DirectDictionaryMatch> terms)
+        private IEnumerable<ExternalVerbatim> BuildExternalVerbatimsFromTerms(int numberOfTermsToUpload, IList<DirectDictionaryMatch> terms)
         {
             if (numberOfTermsToUpload <= 0)   throw new ArgumentOutOfRangeException("numberOfTermsToUpload");
             if (ReferenceEquals(terms, null)) throw new ArgumentNullException("terms");
 
-            var externalVerbatimList   = new List<ExternalVerbatim>();
+            var externalVerbatims = new List<ExternalVerbatim>();
 
             for (var i = 0; i < numberOfTermsToUpload; i++)
             {
@@ -355,15 +347,10 @@ namespace Coder.TestSteps.StepDefinitions
                     IsAutoApproval     = _StepContext.IsAutoApproval
                 };
 
-                externalVerbatimList.Add(mev);
+                externalVerbatims.Add(mev);
             }
 
-            var externalVerbatims = externalVerbatimList
-                .ToArray()
-                .ValidateMevRequiredColumns()
-                .SetNonRequiredMevColumnsToDefaultValues(
-                    defaultStudyOid: _StepContext.GetStudyUuid(),
-                    defaultLocale  : _StepContext.Locale);
+            externalVerbatims.SetNonRequiredMevColumnsToDefaultValues(_StepContext);
 
             return externalVerbatims;
         }

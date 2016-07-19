@@ -2,8 +2,6 @@
 using System.Linq;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
-using Coder.DeclarativeBrowser.OdmBuilder;
-using Coder.DeclarativeBrowser.ExtensionMethods;
 
 namespace Coder.DeclarativeBrowser.Models
 {
@@ -45,7 +43,6 @@ namespace Coder.DeclarativeBrowser.Models
         public string DownloadDirectory             { get; set; }
         public string DumpDirectory                 { get; set; }
         public CoderDeclarativeBrowser Browser      { get; set; }
-        public OdmManager OdmManager                { get; set; }
         
         // Users
         public MedidataUser RaveAdminUser           { get; set; }

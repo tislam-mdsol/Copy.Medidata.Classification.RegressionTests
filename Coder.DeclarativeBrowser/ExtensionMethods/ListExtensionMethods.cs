@@ -6,82 +6,74 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 {
     public static class ListExtensionMethods
     {
-        public static ExternalVerbatim[] ValidateMevRequiredColumns(
-            this ExternalVerbatim[] externalVerbatims)
-        {
-            if (ReferenceEquals(externalVerbatims, null))   throw new ArgumentNullException("externalVerbatims");
-
-            foreach (var externalVerbatim in externalVerbatims)
-            {
-                if (String.IsNullOrWhiteSpace(externalVerbatim.VerbatimTerm))       throw new NullReferenceException("Verbatim");
-                if (String.IsNullOrWhiteSpace(externalVerbatim.Dictionary))         throw new NullReferenceException("Dictionary");
-                if (String.IsNullOrWhiteSpace(externalVerbatim.DictionaryLevel))    throw new NullReferenceException("DictionaryLevel");
-                if (String.IsNullOrWhiteSpace(externalVerbatim.IsApprovalRequired)) throw new NullReferenceException("IsApprovalRequired");
-                if (String.IsNullOrWhiteSpace(externalVerbatim.IsAutoApproval))     throw new NullReferenceException("IsAutoApproval");
-            }
-
-            return externalVerbatims;
-        }
-
-        public static ExternalVerbatim[] SetStudyIdColumn(
-            this ExternalVerbatim[] externalVerbatims,
-            StepContext stepContext)
+        public static void SetNonRequiredMevColumnsToDefaultValues(this IEnumerable<ExternalVerbatim> externalVerbatims, StepContext stepContext)
         {
             if (ReferenceEquals(externalVerbatims, null)) throw new ArgumentNullException("externalVerbatims");
             if (ReferenceEquals(stepContext, null))       throw new ArgumentNullException("stepContext");
 
-           foreach (var externalVerbatim in externalVerbatims)
-           {
-                switch (externalVerbatim.StudyID)
-                {
-                    case "Development":
-                        externalVerbatim.StudyID = stepContext.GetDevStudyUuid();
-                        break;
-                    case "UAT":
-                    case "User Acceptance":
-                    case "UserAcceptanceTesting":
-                        externalVerbatim.StudyID = stepContext.GetUatStudyUuid();
-                        break;
-                    case "Production":
-                    case "":
-                        externalVerbatim.StudyID = stepContext.GetStudyUuid();
-                        break;
-                }
-           }
-
-            return externalVerbatims;
-        }
-
-        public static ExternalVerbatim[] SetNonRequiredMevColumnsToDefaultValues(
-            this ExternalVerbatim[] externalVerbatims,
-            string defaultStudyOid,
-            string defaultLocale)
-        {
-            if (ReferenceEquals(externalVerbatims, null))   throw new ArgumentNullException("externalVerbatims");
-            if (String.IsNullOrWhiteSpace(defaultStudyOid)) throw new ArgumentNullException("defaultStudyOid");
-            if (String.IsNullOrWhiteSpace(defaultLocale))   throw new ArgumentNullException("defaultLocale");
-
             foreach (var externalVerbatim in externalVerbatims)
             {
                 if (String.IsNullOrWhiteSpace(externalVerbatim.VerbatimTerm))       throw new NullReferenceException("Verbatim");
-                if (String.IsNullOrWhiteSpace(externalVerbatim.Dictionary))         throw new NullReferenceException("Dictionary");
                 if (String.IsNullOrWhiteSpace(externalVerbatim.DictionaryLevel))    throw new NullReferenceException("DictionaryLevel");
+
+                SetContextStudyId(externalVerbatim, stepContext);
+                
+                if (String.IsNullOrWhiteSpace(externalVerbatim.Dictionary))         { externalVerbatim.Dictionary         = stepContext.Dictionary;         }
+                if (String.IsNullOrWhiteSpace(externalVerbatim.IsApprovalRequired)) { externalVerbatim.IsApprovalRequired = stepContext.IsApprovalRequired; }
+                if (String.IsNullOrWhiteSpace(externalVerbatim.IsAutoApproval))     { externalVerbatim.IsAutoApproval     = stepContext.IsAutoApproval;     }
+                if (String.IsNullOrWhiteSpace(externalVerbatim.Locale))             { externalVerbatim.Locale             = stepContext.Locale.ToLower();   }
+                if (String.IsNullOrWhiteSpace(externalVerbatim.Subject))            { externalVerbatim.Subject            = Config.DefaultSubjectKey;       }
+                if (String.IsNullOrWhiteSpace(externalVerbatim.Site))               { externalVerbatim.Site               = Config.DefaultSiteKey;          }
+                if (String.IsNullOrWhiteSpace(externalVerbatim.Event))              { externalVerbatim.Event              = Config.DefaultEventKey;         }
+                if (String.IsNullOrWhiteSpace(externalVerbatim.Form))               { externalVerbatim.Form               = Config.DefaultFormKey;          }
+                if (String.IsNullOrWhiteSpace(externalVerbatim.Line))               { externalVerbatim.Line               = Config.DefaultLineKey;          }
+                if (String.IsNullOrWhiteSpace(externalVerbatim.Field))              { externalVerbatim.Field              = Config.DefaultFieldKey;         }
+                if (String.IsNullOrWhiteSpace(externalVerbatim.Priority))           { externalVerbatim.Priority           = Config.DefaultPriority;         }
+                if (String.IsNullOrWhiteSpace(externalVerbatim.BatchIdentifier))    { externalVerbatim.BatchIdentifier    = Config.DefaultBatchIdentifier;  }
+
+                if (String.IsNullOrWhiteSpace(externalVerbatim.VerbatimTerm))       throw new NullReferenceException("Verbatim");
+                if (String.IsNullOrWhiteSpace(externalVerbatim.Dictionary))         throw new NullReferenceException("Dictionary");
                 if (String.IsNullOrWhiteSpace(externalVerbatim.IsApprovalRequired)) throw new NullReferenceException("IsApprovalRequired");
                 if (String.IsNullOrWhiteSpace(externalVerbatim.IsAutoApproval))     throw new NullReferenceException("IsAutoApproval");
+            }
+        }
 
-                if (String.IsNullOrWhiteSpace(externalVerbatim.StudyID))         { externalVerbatim.StudyID         = defaultStudyOid; }
-                if (String.IsNullOrWhiteSpace(externalVerbatim.Subject))         { externalVerbatim.Subject         = Config.DefaultSubjectKey; }
-                if (String.IsNullOrWhiteSpace(externalVerbatim.Site))            { externalVerbatim.Site            = Config.DefaultSiteKey; }  
-                if (String.IsNullOrWhiteSpace(externalVerbatim.Event))           { externalVerbatim.Event           = Config.DefaultEventKey; }  
-                if (String.IsNullOrWhiteSpace(externalVerbatim.Form))            { externalVerbatim.Form            = Config.DefaultFormKey; }  
-                if (String.IsNullOrWhiteSpace(externalVerbatim.Line))            { externalVerbatim.Line            = Config.DefaultLineKey; }  
-                if (String.IsNullOrWhiteSpace(externalVerbatim.Field))           { externalVerbatim.Field           = Config.DefaultFieldKey; }
-                if (String.IsNullOrWhiteSpace(externalVerbatim.Priority))        { externalVerbatim.Priority        = Config.DefaultPriority; }
-                if (String.IsNullOrWhiteSpace(externalVerbatim.Locale))          { externalVerbatim.Locale          = defaultLocale.ToLower(); }
-                if (String.IsNullOrWhiteSpace(externalVerbatim.BatchIdentifier)) { externalVerbatim.BatchIdentifier = Config.DefaultBatchIdentifier; }
+        public static void SetContextStudyId(this IEnumerable<ExternalVerbatim> externalVerbatims, StepContext stepContext)
+        {
+            if (ReferenceEquals(externalVerbatims, null)) throw new ArgumentNullException(nameof(externalVerbatims));
+            if (ReferenceEquals(stepContext, null))       throw new ArgumentNullException(nameof(stepContext));
+
+            foreach (var externalVerbatim in externalVerbatims)
+            {
+                SetContextStudyId(externalVerbatim, stepContext);
+            }
+        }
+
+        private static void SetContextStudyId(ExternalVerbatim externalVerbatim, StepContext stepContext)
+        {
+            if (ReferenceEquals(externalVerbatim, null)) throw new ArgumentNullException(nameof(externalVerbatim));
+            if (ReferenceEquals(stepContext, null))      throw new ArgumentNullException(nameof(stepContext));
+
+            if (ReferenceEquals(externalVerbatim.StudyID, null))
+            {
+                externalVerbatim.StudyID = String.Empty;
             }
 
-            return externalVerbatims;
+            switch (externalVerbatim.StudyID)
+            {
+                case "Development":
+                    externalVerbatim.StudyID = stepContext.GetDevStudyUuid();
+                    break;
+                case "UAT":
+                case "User Acceptance":
+                case "UserAcceptanceTesting":
+                    externalVerbatim.StudyID = stepContext.GetUatStudyUuid();
+                    break;
+                case "Production":
+                case "":
+                    externalVerbatim.StudyID = stepContext.GetStudyUuid();
+                    break;
+            }
         }
 
         public static CodingHistoryReportRow[] SetNonRequiredCodingHistoryReportColumnsToDefaultValues(

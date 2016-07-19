@@ -67,9 +67,9 @@ Scenario: Verify multiple csv files can be uploaded
 Scenario: Verbatim Term supplemental information will be captured from the uploaded file
 	
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionaries
-	| SynonymListName | Dictionary   | Version | Locale |
-	| Primary         | MedDRA       | 11.0    | ENG    |
-	| Primary         | WhoDrugDDEB2 | 201506  | ENG    |
+		| SynonymListName | Dictionary   | Version | Locale |
+		| Primary         | MedDRA       | 11.0    | ENG    |
+		| Primary         | WhoDrugDDEB2 | 201506  | ENG    |
 	When uploading MEV content
 		| Verbatim Term                                                                   | Supplemental Field 1 | Supplemental Value 1  | Supplemental Field 2 | Supplemental Value 2 | Supplemental Field 3 | Supplemental Value 3 | Supplemental Field 4 | Supplemental Value 4 | Supplemental Field 5 | Supplemental Value 5 | Dictionary | Dictionary Level | Is Approval Required | Is Auto Approval |
 		| Headache                                                                        |                      |                       |                      |                      |                      |                      |                      |                      |                      |                      | MedDRA     | LLT              | TRUE                 | FALSE            |

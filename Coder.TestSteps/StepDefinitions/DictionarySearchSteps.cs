@@ -244,8 +244,8 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrEmpty(searchLevel)) throw new ArgumentNullException("searchLevel");
             if (String.IsNullOrEmpty(targetCode))  throw new ArgumentNullException("targetCode");
             if (String.IsNullOrEmpty(targetLevel)) throw new ArgumentNullException("targetLevel");
-            
-            BrowserUtility.CreateNewTask(_StepContext, verbatim);
+
+            throw new NotImplementedException();
 
             WhenTaskIsCodedToTermAtSearchLevelWithCodeAtLevelAndASynonymIsCreatedAndTheCodingDecisionIsManuallyApproved(verbatim, searchText, searchLevel,
                 targetCode, targetLevel);
@@ -293,7 +293,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrEmpty(targetCode))  throw new ArgumentNullException("targetCode");
             if (String.IsNullOrEmpty(targetLevel)) throw new ArgumentNullException("targetLevel");
 
-            BrowserUtility.CreateNewTask(_StepContext, verbatim);
+            throw new NotImplementedException();
 
             WhenTaskIsCodedToTermAtSearchLevelWithCodeAtLevelAndTheCodingDecisionIsManuallyApproved(verbatim, searchText, searchLevel,
                 targetCode, targetLevel);

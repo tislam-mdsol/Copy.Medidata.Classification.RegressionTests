@@ -34,9 +34,9 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (String.IsNullOrEmpty(verbatim))                 throw new ArgumentNullException("verbatim");          
             if (String.IsNullOrEmpty(dictionaryLevel))          throw new ArgumentNullException("dictionaryLevel");   
-            if (String.IsNullOrEmpty(featureComponents))        throw new ArgumentNullException("featureComponents"); 
+            if (String.IsNullOrEmpty(featureComponents))        throw new ArgumentNullException("featureComponents");
 
-            BrowserUtility.CreateNewTask(_StepContext, verbatim, dictionaryLevel, components: featureComponents);
+            throw new NotImplementedException();
         }
 
         [Given(@"coding task ""(.*)"" for dictionary level ""(.*)"" with a supplemental value of ""(.*)"" defined")]
@@ -46,7 +46,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrEmpty(dictionaryLevel))              throw new ArgumentNullException("dictionaryLevel");   
             if (String.IsNullOrEmpty(featureSupplements))           throw new ArgumentNullException("featureSupplements");
 
-            BrowserUtility.CreateNewTask(_StepContext, verbatim, dictionaryLevel, supplements: featureSupplements);
+            throw new NotImplementedException();
         }
 
         [Then(@"I verify the following Source Term information is displayed")]

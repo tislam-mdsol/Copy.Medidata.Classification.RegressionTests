@@ -142,7 +142,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                 dictionary           : stepContext.Dictionary,
                 version              : stepContext.Version);
 
-            stepContext.SetOdmTermApprovalContext(
+            stepContext.SetCodingRequestApprovalContext(
                 isAutoApproval    : coderConfiguration.IsTermAutoApproval,
                 isApprovalRequired: coderConfiguration.IsTermApprovalRequired);
         }
@@ -164,7 +164,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
             for (var i = 0; i < numberOfTasks; i++)
             {
-                BrowserUtility.CreateNewTask(stepContext, verbatim, dictionaryLevel);
+                throw new NotImplementedException();
             }
 
             var taskPage = browser.Session.GetCodingTaskPage();

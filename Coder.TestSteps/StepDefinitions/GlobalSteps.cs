@@ -18,8 +18,6 @@ namespace Coder.TestSteps.StepDefinitions
     [Binding]
     public class GlobalSteps
     {
-        private const int MaximumODMTasks = 1500; 
-
         private readonly CoderDeclarativeBrowser _Browser;
         private readonly StepContext             _StepContext;
 
@@ -78,7 +76,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             foreach (var verbatim in verbatims)
             {
-                BrowserUtility.CreateNewTask(_StepContext, verbatim.Trim(), waitForAutoCodingComplete:false);
+                throw new NotImplementedException();
             }
 
             _Browser.WaitForAutoCodingToComplete();
@@ -87,8 +85,8 @@ namespace Coder.TestSteps.StepDefinitions
         [Given(@"new coding task ""(.*)"" with isAutoApproval ""(.*)"" and isApprovalRequired ""(.*)""")]
         public void GivenNewCodingTaskWithIsAutoApprovalAndIsApprovalRequired(string verbatim, string isAutoApproval, string isApprovalRequired)
         {
-            _StepContext.SetOdmTermApprovalContext(isAutoApproval,isApprovalRequired);
-            BrowserUtility.CreateNewTask(_StepContext, verbatim);
+            _StepContext.SetCodingRequestApprovalContext(isAutoApproval,isApprovalRequired);
+            throw new NotImplementedException();
         }
 
        
@@ -98,7 +96,7 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (ReferenceEquals(csvFilename, null)) throw new ArgumentNullException("csvFilename");
 
-            CreateCodingTasksFromCSVFile(csvFilename, waitForAutoCodingComplete: true);
+            throw new NotImplementedException();
         }
 
         [When(@"coding tasks are loaded from CSV file ""(.*)"" and auto-coding in progress")]
@@ -107,29 +105,7 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (ReferenceEquals(csvFilename, null)) throw new ArgumentNullException("csvFilename");
 
-            CreateCodingTasksFromCSVFile(csvFilename, waitForAutoCodingComplete:false);
-        }
-
-        private void CreateCodingTasksFromCSVFile(string csvFilename, bool waitForAutoCodingComplete)
-        {
-            if (ReferenceEquals(csvFilename, null)) throw new ArgumentNullException("csvFilename");
-
-            string csvFilePath                     = BrowserUtility.GetDynamicCsvFilePath(csvFilename, Config.ApplicationCsvFolder);
-            
-            Tuple<string, int> odmPathAndTaskCount = BrowserUtility.BuildOdmFile(csvFilePath, _StepContext);
-            string odmFilePath                     = odmPathAndTaskCount.Item1;
-            int expectedTaskCount                  = odmPathAndTaskCount.Item2;
-
-            expectedTaskCount.Should().BeLessOrEqualTo(MaximumODMTasks, "There are too many tasks in the ODM to load. Split your CSV file into multiple files.");
-            
-            _Browser.GoToAdminPage("CodingCleanup");
-
-            _Browser.UploadOdm(odmFilePath);
-            
-            if (waitForAutoCodingComplete)
-            {
-                _Browser.WaitForAutoCodingToComplete();
-            }
+            throw new NotImplementedException();
         }
 
 
@@ -140,7 +116,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrEmpty(dictionaryLevel)) throw new ArgumentNullException("dictionaryLevel");
             if (String.IsNullOrEmpty(formName)) throw new ArgumentNullException("formName");
 
-            BrowserUtility.CreateNewTask(_StepContext, verbatim, dictionaryLevel, formName);
+            throw new NotImplementedException();
         }
 
         [Given(@"""(.*)"" coding tasks of ""(.*)"" for dictionary level ""(.*)""")]
