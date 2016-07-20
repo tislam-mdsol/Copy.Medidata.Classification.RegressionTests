@@ -82,7 +82,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
         
         internal void WaitUntilFinishLoading()
         {
-            _Browser.WaitUntilElementDisappears(GetLoadingIndicator);
+            _Browser.RefreshUntilElementDisappears(GetLoadingIndicator);
         }
 
         private SessionElementScope GetLoadingIndicator()

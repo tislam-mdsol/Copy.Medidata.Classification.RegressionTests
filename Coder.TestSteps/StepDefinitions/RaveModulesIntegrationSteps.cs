@@ -66,8 +66,27 @@ namespace Coder.TestSteps.StepDefinitions
         public void GivenANewUserThatNeedsToBeAssignedARole(String userName, String roleName)
         {
             if (ReferenceEquals(userName, null)) throw new ArgumentNullException("userName");
-     
-            _Browser.AssignUserToStudy(userName, roleName, _StepContext.GetStudyName());
+            if (ReferenceEquals(roleName, null)) throw new ArgumentNullException("roleName");
+
+            var studyGroup          = _StepContext.SegmentUnderTest;
+            var productionStudyName = studyGroup.Studies.FirstOrDefault(x => x.IsProduction).StudyName;
+            var environmentPrefix   = "Live: ";
+            var studies             = studyGroup.Studies;
+
+            foreach (var study in studies)
+            {
+                environmentPrefix = "Aux: ";
+
+                if (study.IsProduction)
+                {
+                    productionStudyName = study.StudyName;
+                    environmentPrefix   = "Live: ";
+                }
+
+                var projectEnvironment = String.Concat(environmentPrefix, study.StudyType.ToString());
+
+                _Browser.AssignUserToStudy(userName, roleName, study: productionStudyName, projectEnvironment: projectEnvironment);
+            }
 
         }
 
@@ -121,6 +140,7 @@ namespace Coder.TestSteps.StepDefinitions
         }
 
         [Given(@"setting the clinical view settings for dictionary ""(.*)"" with the following data")]
+        [When(@"setting the clinical view settings for dictionary ""(.*)"" with the following data")]
         public void GivenSettingTheClinicalViewSettingsForDictionaryWithTheFollowingData(string dictionary, Table codingSettingsTable)
         {
             if (String.IsNullOrWhiteSpace(dictionary)) throw new ArgumentNullException("dictionary");
@@ -135,6 +155,7 @@ namespace Coder.TestSteps.StepDefinitions
         }
 
         [Given(@"configure Clinical Views for Project ""(.*)"" with mode ""(.*)""")]
+        [When(@"Clinical Views for Project ""(.*)"" with mode ""(.*)"" is configured")]
         public void GivenConfigureClinicalViewsForProjectWithMode(string project, string mode)
         {
             if (String.IsNullOrWhiteSpace(project)) throw new ArgumentNullException("project");
@@ -147,6 +168,7 @@ namespace Coder.TestSteps.StepDefinitions
         }
 
         [Given(@"generate report ""(.*)"" for Project ""(.*)"", Data Source ""(.*)"" and Form ""(.*)""")]
+        [When(@"report ""(.*)"" for Project ""(.*)"", Data Source ""(.*)"" and Form ""(.*)"" is generated")]
         public void GivenGenerateReportForProjectDataSourceAndForm(string reportType, string projectName, string dataSourceName, string formName)
         {
             if (String.IsNullOrWhiteSpace(projectName)) throw new ArgumentNullException("projectName");
