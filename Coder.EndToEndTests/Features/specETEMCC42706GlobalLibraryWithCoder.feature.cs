@@ -162,9 +162,9 @@ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\
                         "ETE_RaveCoderCore",
                         "Release2016.1.0",
                         "EndToEndDynamicSegment"});
-#line 29
+#line 30
 this.ScenarioSetup(scenarioInfo);
-#line 31
+#line 32
  testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -186,10 +186,10 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "true",
                         "true",
-                        "LOGCOMPFIELD"});
-#line 32
+                        "LOGCOMPFIELD1"});
+#line 33
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table3, "And ");
-#line 35
+#line 36
  testRunner.And("a coder study is created named \"SecondRaveCoderStudy\" for environment \"Prod\" with" +
                     " site \"Active Site 2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -205,15 +205,15 @@ this.ScenarioSetup(scenarioInfo);
                         "18.0",
                         "eng",
                         "MedDRA"});
-#line 36
+#line 37
  testRunner.And("a second project with the following options is registered", ((string)(null)), table4, "And ");
-#line 39
+#line 40
  testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"\tin Rave app", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 40
+#line 41
  testRunner.And("a Rave CRF copy source from project \"<StudyName>\" draft \"<DraftName>\" is added fo" +
                     "r project \"SecondRaveCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 41
+#line 42
  testRunner.And("a new Draft \"NewCopiedDraft\" is created through copy wizard for project \"SecondRa" +
                     "veCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -236,8 +236,8 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "True",
                         "True",
-                        "LOGCOMPFIELD"});
-#line 42
+                        "LOGCOMPFIELD 1"});
+#line 43
  testRunner.Then("the Rave Coder setup for draft \"NewCopiedDraft\" has the following options configu" +
                     "red", ((string)(null)), table5, "Then ");
 #line hidden
@@ -261,11 +261,11 @@ this.ScenarioSetup(scenarioInfo);
                         "ETE_RaveCoderCore",
                         "Release2016.1.0",
                         "EndToEndDynamicSegment"});
-#line 53
-this.ScenarioSetup(scenarioInfo);
 #line 55
+this.ScenarioSetup(scenarioInfo);
+#line 57
  testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 56
+#line 58
  testRunner.And("a coder study is created named \"SecondRaveCoderStudy\" for environment \"Prod\" with" +
                     " site \"Active Site 2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -281,18 +281,18 @@ this.ScenarioSetup(scenarioInfo);
                         "18.0",
                         "eng",
                         "MedDRA"});
-#line 57
+#line 59
  testRunner.And("a second project with the following options is registered", ((string)(null)), table6, "And ");
-#line 60
+#line 62
  testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
                     "yName>\" to environment \"Prod\"\tin Rave app", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 61
+#line 63
  testRunner.And("a Rave CRF copy source from project \"<StudyName>\" draft \"<DraftName>\" is added fo" +
                     "r project \"SecondRaveCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
+#line 64
  testRunner.And("a new Draft \"NewCopiedDraft\" is created through copy wizard for project \"SecondRa" +
                     "veCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 63
+#line 65
  testRunner.Then("the project \"SecondRaveCoderStudy\" draft \"NewCopiedDraft\" form \"ETE2\" field \"Codi" +
                     "ng Field\" has no Rave Coder setup options configured", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

@@ -25,13 +25,14 @@ Given a Rave project registration with dictionary "MedDRA ENG 18.0"
 @ETE_RaveCoderCore
 @Release2016.1.0
 @EndToEndDynamicSegment
+#@DebugEndToEndDynamicSegment
 
 Scenario: Verify Coder settings get copied from a form that contains Coder settings to a form from another Project that has Coder registered 
 
 	Given a Rave project registration with dictionary "MedDRA ENG 18.0"
 	And a Rave Coder setup with the following options
 		| Form | Field        | Dictionary   | Locale   | Coding Level | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
-		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | true               | true           | LOGCOMPFIELD      |
+		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | true               | true           | LOGCOMPFIELD1     |
 	And a coder study is created named "SecondRaveCoderStudy" for environment "Prod" with site "Active Site 2"
 	And a second project with the following options is registered
 		| Project              | Dictionary | Version | Locale | RegistrationName | 
@@ -41,7 +42,7 @@ Scenario: Verify Coder settings get copied from a form that contains Coder setti
 	And a new Draft "NewCopiedDraft" is created through copy wizard for project "SecondRaveCoderStudy"
 	Then the Rave Coder setup for draft "NewCopiedDraft" has the following options configured
 		| Form | Field        | Dictionary   | Locale   | Coding Level | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms |
-		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | True               | True           | LOGCOMPFIELD      |
+		| ETE2 | Coding Field | <Dictionary> | <Locale> | LLT          | 1        | True               | True           | LOGCOMPFIELD 1    |
 
 
 @VAL
@@ -49,6 +50,7 @@ Scenario: Verify Coder settings get copied from a form that contains Coder setti
 @ETE_RaveCoderCore
 @Release2016.1.0
 @EndToEndDynamicSegment
+#@DebugEndToEndDynamicSegment
 
 Scenario: Verify Coder settings are not copied from a form that contains Coder settings to a from from another Project that does not have Coder registered 
 

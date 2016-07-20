@@ -1418,7 +1418,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
         internal static void WaitUntilElementDisappears(this BrowserSession session,
             Func<SessionElementScope> getElement, Options options = null)
         {
-            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+            if (ReferenceEquals(session, null))    throw new ArgumentNullException("session");
             if (ReferenceEquals(getElement, null)) throw new ArgumentNullException("getElement");
 
             if (ReferenceEquals(options, null))
