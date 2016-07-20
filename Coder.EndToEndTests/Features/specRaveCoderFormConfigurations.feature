@@ -1,92 +1,7 @@
+@specRaveCoderFormConfigurations.feature
+@EndToEndDynamicSegment
 Feature: Test full round trip integration from Rave to Coder
 
-  @DFT
-  @ETE_ENG_Form_config_register_dictionaries
-  @PB1.1.2-008
-  @Release2016.1.0
-  Scenario: Register 1 dictionary in Coder, verify Rave only shows 1 Coder dictionary, register another dictionary in Coder, verify there are now 2 dictionaries in Rave
-    Given a Rave project registration with dictionary "MedDRA ENG 12.0"
-    And Rave Modules App Segment is loaded
-    And a Rave Coder setup with the following options
-      | Form | Field           | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms            |
-      | ETE5 | coderFieldETE5  | <Dictionary> | <Locale> | LLT            | 1        | true               | false          |                              |
-    Then the Coding Dictionary Dropdown should "see" contain value "CODER-MEDRA"
-    And the Coding Dictionary Dropdown should "not see" contain value "CODER- WhoDrugDDEB2"
-    And Coder App Segment is loaded
-    And I preform a Coder project registraion for "WhoDrugDDEB2 ENG 200703"
-    And Rave Modules App Segment is loaded
-    Then the Coding Dictionary Dropdown should "see" contain value "CODER-MEDRA"
-    Then the Coding Dictionary Dropdown should "see" contain value "CODER- WhoDrugDDEB2"
-
-
-  @DFT
-  @ETE_ENG_Form_config_edit_checks_and_derivations
-  @PB1.1.2-017
-  @Release2016.1.0
-  Scenario: Test that Edit checks and derivations both fire when a coding response is sent back to Rave from Coder
-    Given a Rave project registration with dictionary "MedDRA ENG 12.0"
-    And Rave Modules App Segment is loaded
-    And a Rave Coder setup with the following options
-      | Form  | Field     | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms            |
-      | ETE11 | AETERM    | <Dictionary> | <Locale> | LLT            | 1        | true               | false          |                              |
-    When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
-    And adding a new subject "TEST"
-    When adding a new verbatim term to form "ETE11"
-      | Field         | Value      | ControlType |
-      | AdverseEvent1 | Headache   |             |
-    And I note down memo "NowTimeStampBeforeCoding" with data from "Rave Log Table" in column "NOW"
-    And I note down memo "TestTimeStampBeforeCoding" with data from "Rave Log Table" in column "Test"
-    When I wait for text "Headaches NEC" to show up, selecting Rave form "ETE11" and link "Headache"
-    And I note down memo "NowTimeStampAfterCoding" with data from "Rave Log Table" in column "NOW"
-    And I note down memo "TestTimeStampAfterCoding" with data from "Rave Log Table" in column "Test"
-    Then I verify datetime memo "<NowTimeStampAfterCoding>" is equal to memo "<NowTimeStampBeforeCoding>"
-    And I verify datetime memo "<TestTimeStampAfterCoding>" is greater than memo "<TestTimeStampBeforeCoding>"
-
-
-  @DFT
-  @ETE_ENG_Form_config_second_tag_processing
-  @PB1.1.2-018
-  @Release2016.1.0
-  Scenario: Verify setting up a second tag processing process does not affect Coder terms from being sent over and coded
-    Given a Rave project registration with dictionary "MedDRA ENG 12.0"
-    And Rave Modules App Segment is loaded
-    And a Rave Coder setup with the following options
-      | Form  | Field   | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms            |
-      | ETE13 | ETE131  | <Dictionary> | <Locale> | LLT            | 1        | true               | false          |                              |
-
-    And Create Study Group Configuration form "New SG Config" with the following data
-      |SG Mapping TextField  |SG Mapping Option |SG Mapping Form Dropdown |SG Mapping Folder Dropdown |SG Mappings CaseID Field Dropdown |SG Mappings TermHighlighted Field Dropdown|SG Dictinoary Mapping Dropdown 1|SG Dictinoary Mapping Dropdown 2                 |SG Dictinoary Mapping Dropdown 3            |
-      |senderorganization    |log Line form     |ETE13                    |SG1                        |ETE131                            |ETE132                                    |N/A                             |Yes, highlighted by the reporter, NOT Serious, 1 |Yes, highlighted by the reporter, SERIOUS, 3|
-
-    #And I enter value "SG Config <CoderRaveStudy>" in the "SG Configuration Name Textfield"
-    #And I select Button "Create"
-    #And I enter value "senderorganization" in the "SG Mapping Textfield"
-    #And I select Button "Save"
-    #And I select Tab "Reactions"
-    #And I select Button "Add Form"
-    #And I set value "log line in form" located in "SG Mapping Option Dropdown" and wait for "2"
-    #And I set value "ETE13" located in "SG Mapping Form Dropdown" and wait for "2"
-    #And I set value "SG1" located in "SG Mapping Folder Dropdown" and wait for "2"
-    #And I set value "ETE131" located in "SG Mappings CaseID Field Dropdown" and wait for "2"
-    #And I set value "ETE132" located in "SG Mappings TermHighlighted Field Dropdown" and wait for "2"
-    #And I select Link "/Dictionary mappings/"
-    #And I set value "N/A" located in "SG Dictinoary Mapping Dropdown 1" and wait for "2"
-    #And I set value "Yes, highlighted by the reporter, NOT Serious, 1" located in "SG Dictinoary Mapping Dropdown 2" and wait for "2"
-    #And I set value "Yes, highlighted by the reporter, SERIOUS, 3" located in "SG Dictinoary Mapping Dropdown 3" and wait for "2"
-    #And I select Button "Save"
-
-    When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
-    And adding a new subject "TEST"
-    When adding a new verbatim term to form "ETE13"
-      | Field         | Value      | ControlType |
-      | AdverseEvent1 | Headache   |             |
-    Then the field "CoderField1" on form "ETE13" for study "<Study>" site "<Site>" subject "TEST" contains the following coding decision data
-      |Coding Level  |  Code    | Term                       |
-      |SOC           | 10029205 | Nervous system disorders   |
-      |HLGT          | 10019231 | Headaches                  |
-      |HLT           | 10019233 | Headaches NEC              |
-      |PT            | 10019211 | Headache                   |
-      |LLT           | 10019198 | Head pain                  |
 
 
   @DFT
@@ -98,20 +13,22 @@ Feature: Test full round trip integration from Rave to Coder
     And Rave Modules App Segment is loaded
     And a Rave Coder setup with the following options
       | Form | Field           | Dictionary   | Locale   | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms            |
-      | ETE1 | Adverse Event 1 | <Dictionary> | <Locale> | LLT            | 1        | true               | false          |                              |
+      | ETE1 | Adverse Event 1 | <Dictionary> | <Locale> | LLT            | 1        | false              | false          |                              |
     When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
     And adding a new subject "TEST"
     When adding a new verbatim term to form "ETE1"
-      | Field         | Value      																																																																																																														   | ControlType |
-      | AdverseEvent1 | abcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghijabcdefghij   |             |
-    Then the field "CoderField1" on form "ETE1" for study "<Study>" site "<Site>" subject "TEST2" contains the following coding decision data
-      |Coding Level |  Code   | Term                       |
-      |SOC          |10029205 | Nervous system disorders   |
-      |HLGT         |10019231 | Headaches                  |
-      |HLT          |10019233 | Headaches NEC              |
-      |PT           |10019211 | Headache                   |
-      |LLT          |10019198 | Head pain                  |
-
+      | Field         | Value                                                                                                                                                                                                                                                                                                                                                                                                                                                             | ControlType |
+      | AdverseEvent1 | This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters........|             |
+	And Coder App Segment is loaded
+    And task "This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters. This string contains 450 characters........" is coded to term "Head Pain" at search level "Low Level Term" with code "10019198" at level "LLT" and a synonym is created
+    And Rave Modules App Segment is loaded
+	Then the coding decision for verbatim "Headache" on form "ETE1" for field "Coding Field" contains the following data
+      | Level | Code     | Term Path                |
+      | SOC   | 10029205 | Nervous system disorders |
+      | HLGT  | 10019231 | Headaches                |
+      | HLT   | 10019233 | Headaches NEC            |
+      | PT    | 10019211 | Headache                 |
+      | LLT   | 10019198 | Head pain                |
 
 
   @DFT
