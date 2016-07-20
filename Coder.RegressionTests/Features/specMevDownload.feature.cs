@@ -122,7 +122,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FALSE",
                         "TRUE"});
 #line 12
- testRunner.When("uploading MEV content", ((string)(null)), table1, "When ");
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
 #line 15
  testRunner.Then("task \"HEADACHE\" is available within reclassification", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 16
@@ -231,7 +231,7 @@ this.ScenarioSetup(scenarioInfo);
                         "TRUE",
                         "jpn"});
 #line 31
- testRunner.When("uploading MEV content", ((string)(null)), table4, "When ");
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table4, "When ");
 #line 34
  testRunner.Then("task \"アセチルコリン塩化物\" is available within reclassification for dictionary \"J-Drug\" ve" +
                     "rsion \"2013H1\" locale \"JPN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -288,7 +288,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FALSE",
                         "TRUE"});
 #line 48
- testRunner.When("uploading MEV content", ((string)(null)), table6, "When ");
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table6, "When ");
 #line 51
  testRunner.And("opening a query for task \"MAJOR BIG PAINFUL HEADACHE\" with comment \"Opening query" +
                     ", removing the invalid task.\" and not waiting for the task query status to updat" +
@@ -424,7 +424,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FALSE",
                         "TRUE"});
 #line 68
- testRunner.When("uploading MEV content", ((string)(null)), table9, "When ");
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table9, "When ");
 #line 80
  testRunner.And("downloading MEV file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

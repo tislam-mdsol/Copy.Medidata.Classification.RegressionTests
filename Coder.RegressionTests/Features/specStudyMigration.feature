@@ -9,7 +9,7 @@ Feature: Verify study migration up-versioning
 Scenario: Verify there are no incorrect categorizations for Reinstated instead of Node path changed for MedDRA ENG
 	Given a "Basic" Coder setup with registered synonym list "MedDRA ENG 15.0 Empty_List" containing entry ""
 	And an unactivated synonym list "MedDRA ENG 18.0 New_Primary_List"
-	When uploading MEV content
+	When the following externally managed verbatim requests are made
 		| Verbatim Term   | Dictionary | Dictionary Level | Is Approval Required | Is Auto Approval |
 		| Adverse Event 1 | MedDRA     | LLT              | TRUE                 | FALSE            |
 		| Tapas Rash      | MedDRA     | LLT              | TRUE                 | FALSE            |
@@ -43,7 +43,7 @@ Scenario: Verify there are no incorrect categorizations for Reinstated instead o
 Scenario: Any verbatim term with a direct dictionary match that has been re-coded to a non direct match term should auto code to a better match during up-versioning
 	Given a "Waiting Approval" Coder setup with registered synonym list "MedDRA ENG 15.0 Empty_List" containing entry ""
 	And an unactivated synonym list "MedDRA ENG 18.0 New_Primary_List"
-	When uploading MEV content
+	When the following externally managed verbatim requests are made
 		| Verbatim Term | Dictionary | Dictionary Level | Is Approval Required | Is Auto Approval |
 		| Headache      | MedDRA     | LLT              | TRUE                 | FALSE            |
     And re-coding the tasks 
@@ -69,7 +69,7 @@ Scenario: Any verbatim term with a direct dictionary match that has been re-code
 Scenario: Verify study up-versioning across all study impact analysis categories
 	Given a "Basic" Coder setup with registered synonym list "MedDRA ENG 9.0 Empty_List" containing entry ""
 	And an unactivated synonym list "MedDRA ENG 12.0 New_Primary_List"
-	When uploading MEV content
+	When the following externally managed verbatim requests are made
 		| Verbatim Term     | Dictionary | Dictionary Level | Is Approval Required | Is Auto Approval |
 		| Adverse Event 1   | MedDRA     | LLT              | TRUE                 | FALSE            |
 		| Tapas Rash        | MedDRA     | LLT              | TRUE                 | FALSE            |
@@ -131,7 +131,7 @@ Scenario: Verify study up-versioning across all study impact analysis categories
 Scenario: Verify case sensitiveness during study up-versioning 
 	Given a "Basic" Coder setup with registered synonym list "MedDRA ENG 9.0 Empty_List" containing entry ""
 	And an unactivated synonym list "MedDRA ENG 12.0 New_Primary_List"
-	When uploading MEV content
+	When the following externally managed verbatim requests are made
 		| Verbatim Term     | Dictionary | Dictionary Level | Is Approval Required | Is Auto Approval |
 		| Case Changed Term | MedDRA     | LLT              | TRUE                 | FALSE            |
 	And coding the tasks 

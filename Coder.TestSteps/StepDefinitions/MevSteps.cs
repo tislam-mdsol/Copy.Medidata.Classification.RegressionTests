@@ -54,6 +54,7 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser.WaitForAutoCodingToComplete();
         }
 
+        [When(@"the following externally managed verbatim requests are made")]
         [When(@"uploading MEV content")]
         public void WhenUploadingMevContent(Table table)
         {
@@ -65,14 +66,14 @@ namespace Coder.TestSteps.StepDefinitions
 
             _UploadedMevFile = Path.Combine(_StepContext.DumpDirectory, DefaultFileName.AppendRandomString() + ".csv");
 
-            GenericCsvHelper.WriteDelimitedFile(externalVerbatimRows, _UploadedMevFile, true);
-
             RegisterMevFile(_UploadedMevFile);
+
+            GenericCsvHelper.WriteDelimitedFile(externalVerbatimRows, _UploadedMevFile, true);
 
             _Browser.UploadMevFileAndWaitForCompletion(_UploadedMevFile);
         }
 
-        [When(@"uploading MEV content ""(.*)""")]
+        [When(@"the following externally managed verbatim requests are made ""(.*)""")]
         public void WhenUploadingMevContent(string file)
         {
             if (ReferenceEquals(file, null)) throw new ArgumentNullException("file");

@@ -136,7 +136,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Toxic effect of venom",
                         "LLT"});
 #line 58
-  testRunner.When("uploading MEV content", ((string)(null)), table1, "When ");
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
 #line 61
   testRunner.Then("the task \"Toxic effect of venom\" should have a status of \"Waiting Approval\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

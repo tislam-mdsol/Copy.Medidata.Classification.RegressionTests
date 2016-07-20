@@ -110,7 +110,7 @@ this.ScenarioSetup(scenarioInfo);
                         "TRUE",
                         "FALSE"});
 #line 12
- testRunner.When("uploading MEV content", ((string)(null)), table1, "When ");
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
@@ -229,7 +229,7 @@ this.ScenarioSetup(scenarioInfo);
                         "TRUE",
                         "FALSE"});
 #line 46
- testRunner.When("uploading MEV content", ((string)(null)), table5, "When ");
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table5, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
@@ -382,7 +382,7 @@ this.ScenarioSetup(scenarioInfo);
                         "TRUE",
                         "FALSE"});
 #line 72
- testRunner.When("uploading MEV content", ((string)(null)), table9, "When ");
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table9, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
@@ -609,7 +609,7 @@ this.ScenarioSetup(scenarioInfo);
                         "TRUE",
                         "FALSE"});
 #line 134
- testRunner.When("uploading MEV content", ((string)(null)), table13, "When ");
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table13, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",

@@ -88,7 +88,7 @@ Scenario: Verify the user is able to enter a start and end date for Coding Decis
 @IncreaseTimeout_3000000
 Scenario: Verify the user is able to export multiple terms for Coding Decisions Report
 	Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	When uploading MEV content
+	When the following externally managed verbatim requests are made
 		| Verbatim Term        | Dictionary | Dictionary Level | Is Approval Required | Is Auto Approval | Locale |
 		| Adverse Event Term 1 | MedDRA     | LLT              | TRUE                 | FALSE            | eng    |
 		| Adverse Event Term 1 | MedDRA     | LLT              | TRUE                 | FALSE            | eng    |
