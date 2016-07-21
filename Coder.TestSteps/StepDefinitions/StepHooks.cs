@@ -446,6 +446,21 @@ namespace Coder.TestSteps.StepDefinitions
             AssertTestWasConclusive(_StepContext);
         }
 
+        [AfterScenario("EditGlobalRaveConfiguration")]
+        public void AfterEditGlobalRaveConfigurationScenario()
+        {
+            var browser = _StepContext.Browser;
+            var configurationSetting = new RaveCoderGlobalConfiguration
+            {
+                ReviewMarkingGroup = Config.DefaultReviewMarkingGroupValue,
+                IsRequiresResponse = Config.DefaultRequiresResponseValue
+            };
+
+            browser.EditGlobalRaveConfiguration(configurationSetting);
+
+            CommonAfterScenario();
+        }
+
         [AfterScenario("EndToEndDynamicSegment")]
         [AfterScenario("EndToEndDynamicStudy")]
         [AfterScenario("EndToEndStaticSegment")]

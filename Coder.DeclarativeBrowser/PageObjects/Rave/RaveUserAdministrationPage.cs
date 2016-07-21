@@ -71,15 +71,23 @@ namespace Coder.DeclarativeBrowser.PageObjects
             if (String.IsNullOrEmpty(role))               throw new ArgumentNullException("role");
 
             _Browser.MaximiseWindow();
-            GetAssignToStudyLink().Click();
-           
-            GetRoleDDLOption().SelectOption(role);                     
-            GetProjectDDLOption().SelectOption(study);
-            GetProjectEnvironmentDDL().SelectOption(projectEnvironment);
+            GetAssignToStudyLink().Click();                     
 
-            GetAssignUserLink().Click();
+            GetRoleDDLOption().SelectOption(role);
+            try
+            {
+                GetProjectDDLOption().SelectOption(study, 0);
+                GetProjectEnvironmentDDL().SelectOption(projectEnvironment);
+            }
+            catch (MissingHtmlException)
+            {
+                GetProjectDDLOption().SelectOption(study, 1);
+                GetProjectEnvironmentDDL().SelectOption(projectEnvironment);
+            }
+
+            GetAssignUserLink().Click();                  
             _Browser.ResizeTo(Config.ScreenWidth, Config.ScreenHeight);
-        }
+          }
 
         private SessionElementScope GetUserNameTextBox()
         {
