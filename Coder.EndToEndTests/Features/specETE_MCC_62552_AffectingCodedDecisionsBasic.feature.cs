@@ -82,7 +82,7 @@ namespace Coder.EndToEndTests.Features
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
- testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("a Rave project registration with dictionary \"WhoDrug-DDE-B2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -101,7 +101,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Coding Field",
                         "<Dictionary>",
                         "<Locale>",
-                        "LLT",
+                        "TN",
                         "1",
                         "true",
                         "true",
@@ -120,7 +120,7 @@ this.ScenarioSetup(scenarioInfo);
                         "ControlType",
                         "Control Value"});
             table2.AddRow(new string[] {
-                        "Coding Field A",
+                        "Coding Field",
                         "Drug Verbatim 1",
                         "LongText",
                         ""});
@@ -154,12 +154,12 @@ this.ScenarioSetup(scenarioInfo);
                         "005581 01 001",
                         "BAYER CHILDREN\'S COLD"});
 #line 20
- testRunner.Then("the coding decision for verbatim \"Drug Verbatim 1\" on form \"ETEMCC62552\" for fiel" +
-                    "d \"AETerm\" contains the following data", ((string)(null)), table3, "Then ");
+ testRunner.Then("the coding decision for verbatim \"Drug Verbatim 1\" on form \"ETE2\" for field \"Codi" +
+                    "ng Field\" contains the following data", ((string)(null)), table3, "Then ");
 #line 26
  testRunner.When("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
- testRunner.And("row on form \"ETEMCC62552\" containing \"Drug Verbatim 1\" is marked with a query", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("row on form \"ETE2\" containing \"Drug Verbatim 1\" is marked with a query", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "ATC",
