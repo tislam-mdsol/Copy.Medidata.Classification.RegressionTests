@@ -119,13 +119,13 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 Form               = formName,
                 Field              = fieldName,
-                Dictionary         = String.Empty,
-                Locale             = String.Empty,
-                CodingLevel        = String.Empty,
-                Priority           = String.Empty,
-                IsApprovalRequired = String.Empty,
-                IsAutoApproval     = String.Empty,
-                SupplementalTerms  = String.Empty
+                Dictionary         = null,
+                Locale             = null,
+                CodingLevel        = null,
+                Priority           = null,
+                IsApprovalRequired = null,
+                IsAutoApproval     = null,
+                SupplementalTerms  = null
             };
 
             var target = new RaveArchitectRecordTarget
