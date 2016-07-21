@@ -1,1 +1,0 @@
-﻿#error Feature file already contains a scenario with name 'Enter project registration in Coder, setup Rave study, enter verbatim with the limit of 450 characters in Rave, code verbatim in Coder, and see results in Rave'

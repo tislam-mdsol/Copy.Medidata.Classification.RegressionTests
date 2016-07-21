@@ -8,7 +8,7 @@ Feature: Test full round trip integration from Rave to Coder
   @ETE_ENG_Form_config_char_limit
   @PB1.1.2-022
   @Release2016.1.0
-  Scenario: Enter project registration in Coder, setup Rave study, enter verbatim with the limit of 450 characters in Rave, code verbatim in Coder, and see results in Rave
+  Scenario: Enter project registration in Coder, setup Rave study, enter verbatim with a limit of 450 characters in Rave, code verbatim in Coder, and see results in Rave
     Given a Rave project registration with dictionary "MedDRA ENG 12.0"
     And Rave Modules App Segment is loaded
     And a Rave Coder setup with the following options

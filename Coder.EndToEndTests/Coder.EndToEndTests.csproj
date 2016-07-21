@@ -113,45 +113,45 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\scriptBetaPreviewSetup.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>scriptBetaPreviewSetup.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\specETE_ENG_CoderConfigQuerySettings.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>specETE_ENG_CoderConfigQuerySettings.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\specETE_ENG_LandscapeView.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>specETE_ENG_LandscapeView.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\ETE_ENG_CoderConfigQuerySettings.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ETE_ENG_CoderConfigQuerySettings.feature</DependentUpon>
-	</Compile>
     <Compile Include="Features\specETE_ENG_FrozenLockedDP.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>specETE_ENG_FrozenLockedDP.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\specCoderSetup.feature.cs">
-      <DependentUpon>specCoderSetup.feature</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Features\specETE_JPNRaveCoderBasicSubmissions.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>specETE_JPNRaveCoderBasicSubmissions.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\specENG_DynamicSearchList.feature.cs">
+    <Compile Include="Features\specETE_ENG_DynamicSearchList.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>specENG_DynamicSearchList.feature</DependentUpon>
+      <DependentUpon>specETE_ENG_DynamicSearchList.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\specENG_RaveCoderMultipleStudies.feature.cs">
+    <Compile Include="Features\specETE_ENG_RaveCoderMultipleStudies.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>specENG_RaveCoderMultipleStudies.feature</DependentUpon>
+      <DependentUpon>specETE_ENG_RaveCoderMultipleStudies.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\specENG_SearchListForceEntry.feature.cs">
+    <Compile Include="Features\specETE_ENG_SearchListForceEntry.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>specENG_SearchListForceEntry.feature</DependentUpon>
+      <DependentUpon>specETE_ENG_SearchListForceEntry.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\specETEMCC42698RaveCRFEnv.feature.cs">
       <AutoGen>True</AutoGen>
@@ -224,10 +224,10 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Features\specRaveCoderFormConfigurations.feature.cs">
+    <Compile Include="Features\specETE_RaveCoderFormConfigurations.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>specRaveCoderFormConfigurations.feature</DependentUpon>
+      <DependentUpon>specETE_RaveCoderFormConfigurations.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\specRaveStepExamples.feature.cs">
       <AutoGen>True</AutoGen>
@@ -265,37 +265,41 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Features\scriptBetaPreviewSetup.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>scriptBetaPreviewSetup.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\specETE_ENG_LandscapeView.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>specETE_ENG_LandscapeView.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\ETE_ENG_CoderConfigQuerySettings.feature">
+    <None Include="Features\specETE_ENG_CoderConfigQuerySettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ETE_ENG_CoderConfigQuerySettings.feature.cs</LastGenOutput>
+      <LastGenOutput>specETE_ENG_CoderConfigQuerySettings.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\specETE_ENG_FrozenLockedDP.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>specETE_ENG_FrozenLockedDP.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\specCoderSetup.feature">
+    <None Include="Features\scriptCoderSetup.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>specCoderSetup.feature.cs</LastGenOutput>
+      <LastGenOutput>scriptCoderSetup.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\specETE_JPNRaveCoderBasicSubmissions.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>specETE_JPNRaveCoderBasicSubmissions.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\specENG_DynamicSearchList.feature">
+    <None Include="Features\specETE_ENG_DynamicSearchList.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>specENG_DynamicSearchList.feature.cs</LastGenOutput>
+      <LastGenOutput>specETE_ENG_DynamicSearchList.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\specENG_RaveCoderMultipleStudies.feature">
+    <None Include="Features\specETE_ENG_RaveCoderMultipleStudies.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>specENG_RaveCoderMultipleStudies.feature.cs</LastGenOutput>
+      <LastGenOutput>specETE_ENG_RaveCoderMultipleStudies.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\specENG_SearchListForceEntry.feature">
+    <None Include="Features\specETE_ENG_SearchListForceEntry.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>specENG_SearchListForceEntry.feature.cs</LastGenOutput>
+      <LastGenOutput>specETE_ENG_SearchListForceEntry.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\specETEMCC42698RaveCRFEnv.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -321,9 +325,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>specETE_UpdatingQueriesResendTermsBackToCoder.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\specRaveCoderFormConfigurations.feature">
+    <None Include="Features\specETE_RaveCoderFormConfigurations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>specRaveCoderFormConfigurations.feature.cs</LastGenOutput>
+      <LastGenOutput>specETE_RaveCoderFormConfigurations.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\specETE_ENGRaveCoderMigrations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
