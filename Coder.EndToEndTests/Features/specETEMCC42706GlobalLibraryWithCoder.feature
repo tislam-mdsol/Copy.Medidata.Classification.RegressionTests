@@ -25,7 +25,6 @@ Given a Rave project registration with dictionary "MedDRA ENG 18.0"
 @ETE_RaveCoderCore
 @Release2016.1.0
 @EndToEndDynamicSegment
-#@DebugEndToEndDynamicSegment
 
 Scenario: Verify Coder settings get copied from a form that contains Coder settings to a form from another Project that has Coder registered 
 
@@ -50,7 +49,6 @@ Scenario: Verify Coder settings get copied from a form that contains Coder setti
 @ETE_RaveCoderCore
 @Release2016.1.0
 @EndToEndDynamicSegment
-#@DebugEndToEndDynamicSegment
 
 Scenario: Verify Coder settings are not copied from a form that contains Coder settings to a from from another Project that does not have Coder registered 
 
