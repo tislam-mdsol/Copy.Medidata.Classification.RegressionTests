@@ -8,6 +8,7 @@ using Coder.DeclarativeBrowser.Models.GridModels;
 using Coder.TestSteps.Transformations;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using System.Collections.Generic;
 
 namespace Coder.TestSteps.StepDefinitions
 {
@@ -77,12 +78,24 @@ namespace Coder.TestSteps.StepDefinitions
         }
 
         [When(@"registering a project with the following options")]
+        [Given(@"registering a project with the following options")]
         public void WhenRegisteringAProjectWithTheFollowingOptions(Table table)
         {
             if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
 
             var list = table.TransformFeatureTableStrings(_StepContext).CreateSet<SynonymList>().ToArray();
             _Browser.RegisterProjects(_StepContext.GetStudyName(), list);
+        }
+
+
+        [Given(@"a second project with the following options is registered")]
+        public void GivenASecondProjectWithTheFollowingOptionsIsRegistered(Table table)
+        {
+            if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
+
+            _Browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
+            var list = table.TransformFeatureTableStrings(_StepContext).CreateSet<SynonymList>().ToArray();
+            _Browser.RegisterProjects(_StepContext.SecondStudyName, new List<SynonymList> { _StepContext.SourceSynonymList });
         }
 
         [Then(@"the following content should be registered")]

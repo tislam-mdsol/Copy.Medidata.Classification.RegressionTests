@@ -119,13 +119,13 @@ namespace Coder.TestSteps.StepDefinitions
             {
                 Form               = formName,
                 Field              = fieldName,
-                Dictionary         = String.Empty,
-                Locale             = String.Empty,
-                CodingLevel        = String.Empty,
-                Priority           = String.Empty,
-                IsApprovalRequired = String.Empty,
-                IsAutoApproval     = String.Empty,
-                SupplementalTerms  = String.Empty
+                Dictionary         = null,
+                Locale             = null,
+                CodingLevel        = null,
+                Priority           = null,
+                IsApprovalRequired = null,
+                IsAutoApproval     = null,
+                SupplementalTerms  = null
             };
 
             var target = new RaveArchitectRecordTarget
@@ -138,7 +138,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             var actualCoderConfiguration = _Browser.GetCoderConfigurationForRaveField(target);
             
-            actualCoderConfiguration.Should().Be(expectedCoderConfigurations);
+            actualCoderConfiguration.ShouldBeEquivalentTo(expectedCoderConfigurations);
         }
 
         [Given(@"supplemental terms for the following fields")]
@@ -211,6 +211,24 @@ namespace Coder.TestSteps.StepDefinitions
             _StepContext.SourceDraftVersionName = draftVersion;
         }
 
+        [When(@"a Rave Draft is published and pushed using draft ""(.*)"" for Project ""(.*)"" to environment ""(.*)""\tin Rave app")]
+        public void WhenARaveDraftIsPublishedAndPushedUsingDraftForProjectToEnvironmentInRaveApp(string draftNameFeature, string studyFeature, string environment)
+        {
+            if (String.IsNullOrWhiteSpace(draftNameFeature)) throw new ArgumentNullException("draftNameFeature");
+            if (String.IsNullOrWhiteSpace(studyFeature)) throw new ArgumentNullException("studyFeature");
+            if (String.IsNullOrWhiteSpace(environment)) throw new ArgumentNullException("environment");
+
+            var draftName = StepArgumentTransformations.TransformFeatureString(draftNameFeature, _StepContext);
+            var study = StepArgumentTransformations.TransformFeatureString(studyFeature, _StepContext);
+
+            _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
+
+            var draftVersion = _Browser.PublishAndPushRaveArchitectDraft(study, draftName, environment);
+
+            _StepContext.SourceDraftVersionName = draftVersion;
+        }
+
+
         [When(@"a Rave Draft is published using draft ""(.*)"" for Project ""(.*)""")]
         public void WhenARaveDraftIsPublishedUsingDraftForProject(string draftNameFeature, string studyFeature)
         {
@@ -253,9 +271,14 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrWhiteSpace(sourceDraftName)) throw new ArgumentNullException("sourceDraftName");
             if (String.IsNullOrWhiteSpace(targetStudyName)) throw new ArgumentNullException("targetStudyName");
 
+            var sourceStudy = StepArgumentTransformations.TransformFeatureString(sourceStudyName, _StepContext);
+            var sourceDraft = StepArgumentTransformations.TransformFeatureString(sourceDraftName, _StepContext);
+
             var copySourceType = "Project - Drafts";
 
-            _Browser.AddRaveCRFCopySource(targetStudyName, copySourceType, sourceStudyName, sourceDraftName);
+            _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
+
+            _Browser.AddRaveCRFCopySource(targetStudyName, copySourceType, sourceStudy, sourceDraft);
         }
         
         [When(@"a new Draft ""(.*)"" is created through copy wizard")]

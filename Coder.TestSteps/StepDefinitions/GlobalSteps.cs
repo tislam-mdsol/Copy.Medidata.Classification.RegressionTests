@@ -39,23 +39,6 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser.GoToiMedidataHome();
         }
 
-        [Given(@"a project with the following options is registered")]
-        public void GivenAProjectWithTheFollowingOptionsIsRegistered(Table table)
-        {
-            if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
-
-            var list = table.TransformFeatureTableStrings(_StepContext).CreateSet<SynonymList>().ToArray();
-            _Browser.LoadiMedidataCoderAppSegment(_StepContext.ProjectName);
-            _Browser.RegisterProjects(_StepContext.ProjectName, new List<SynonymList> { _StepContext.SourceSynonymList });
-        }
-
-        [Given(@"app permissions are given for the ""(.*)"" for ""(.*)""")]
-        public void GivenAppPermissionsAreGivenForTheFor(string p0, string p1)
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-
         [Given(@"a ""(.*)"" Coder setup with no tasks and no synonyms and dictionary ""(.*)""")]
         public void GivenACoderSetupWithNoTasksAndNoSynonymsAndDictionary(string setupType, string dictionaryLocaleVersion)
         {
@@ -270,27 +253,6 @@ namespace Coder.TestSteps.StepDefinitions
         public void CoderAppSegmentIsLoaded()
         {
             _Browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
-        }
-
-        [Given(@"Coder App Segment is loaded and refreshed")]
-        public void GivenCoderAppSegmentIsLoadedAndRefreshed()
-        {
-            _Browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
-            _Browser.LogoutOfCoder();
-            _Browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
-        }
-
-
-        [Given(@"I logout of iMedidata")]
-        public void GivenILogoutOfIMedidata()
-        {
-            _Browser.LogoutOfiMedidata();
-        }
-
-        [Given(@"I login to iMedidata as test user")]
-        public void GivenILoginToIMedidataAsTestUser()
-        {
-            _Browser.LoginToiMedidata(_StepContext.CoderTestUser.Email, Config.AdminPassword);
         }
 
         [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicSegment")]

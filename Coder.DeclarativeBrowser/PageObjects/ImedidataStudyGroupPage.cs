@@ -369,7 +369,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
             var applicationsSelectList = _Browser.FindSessionElementById("invitation_detail_invitation_app_details_attributes_0_app_id");
 
             return applicationsSelectList;
-
         }
 
         private SessionElementScope GetRoleSelectList()
@@ -377,7 +376,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
             var applicationsSelectList = _Browser.FindSessionElementById("invitation_detail_invitation_app_details_attributes_0_role_ids_");
 
             return applicationsSelectList;
-
         }
 
         private SessionElementScope GetInviteEmailTextbox()
@@ -385,7 +383,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
             var inviteEmailTextbox = _Browser.FindSessionElementById("invitation_detail_invitees");
 
             return inviteEmailTextbox;
-
         }
 
         private SessionElementScope GetInviteOwnerCheckBox()
@@ -462,13 +459,13 @@ namespace Coder.DeclarativeBrowser.PageObjects
             SendEmailToStudyGroupOwner(user.Email);
         }
 
-        internal void SendEmailToStudyGroupOwner(string Email)
+        internal void SendEmailToStudyGroupOwner(string email)
         {
-            GetInviteEmailTextbox().FillInWith(Email);
+            GetInviteEmailTextbox().FillInWith(email);
             GetInviteOwnerCheckBox().SetCheckBoxState(true);
             GetInviteButton().Click();
 
-            WaitForUserToReceiveInvite(Email);
+            WaitForUserToReceiveInvite(email);
 
             CLoseAllInvitationNotifications();
         }
@@ -500,15 +497,16 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return uuid;
         }
 
-        internal void UpdateUserAppPermission(string segmentName, Dictionary<string, string> appsAndRoles, MedidataUser user)
+        internal void UpdateUserAppPermission(string segmentName, IDictionary<string, string> appsAndRoles, MedidataUser user)
         {
-            if (ReferenceEquals(segmentName, null)) throw new ArgumentNullException("segmentName");
+
+            if (ReferenceEquals(segmentName, null))  throw new ArgumentNullException("segmentName");
             if (ReferenceEquals(appsAndRoles, null)) throw new ArgumentNullException("appsAndRoles");
-            if (ReferenceEquals(user, null)) throw new ArgumentNullException("user");
+            if (ReferenceEquals(user, null))         throw new ArgumentNullException("user");
 
             OpenStudyGroup(segmentName);
 
-            foreach (KeyValuePair<string, string> pair in appsAndRoles)
+            foreach (var pair in appsAndRoles)
             {
                 GetInviteApplicationsSelectList().SelectOption(pair.Key);
                 GetRoleSelectList().SelectOption(pair.Value);
