@@ -72,5 +72,5 @@
   <add key="CoderRole"                                value="<%= configured.coderRole                       || 'None'                                               %>"/>
   <add key="RaveEDC"                                  value="<%= configured.raveEDC                         || 'Rave EDC'                                           %>"/>
   <add key="RaveModules"                              value="<%= configured.raveModules                     || 'Rave Modules'                                       %>"/>
-  <add key="RaveArchitectRoleApp"                     value="<%= configured.raveArchitectRoleApp            || 'Rave Architect Roles'                               %>"/>
+  <add key="RaveArchitectRolesApp"                    value="<%= configured.raveArchitectRolesApp           || 'Rave Architect Roles'                               %>"/>
   </appSettings>
