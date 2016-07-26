@@ -1,0 +1,128 @@
+[
+ {
+   "Study ID"     : "PROD",
+   "Form"         : "TPS",
+   "Verbatim Term": "ALPHA",
+   "Priority"     : "8"
+ },
+ {
+   "Study ID"     : "PROD",
+   "Form"         : "TPS",
+   "Verbatim Term": "ALPHA",
+   "Priority"     : "8"
+ },
+ {
+   "Study ID"     : "PROD",
+   "Form"         : "TPS",
+   "Verbatim Term": "ALPHA",
+   "Priority"     : "8"
+ },
+ {
+   "Study ID"     : "PROD",
+   "Form"         : "TPS",
+   "Verbatim Term": "ALPHA",
+   "Priority"     : "8"
+ },
+ {
+   "Study ID"     : "PROD",
+   "Form"         : "TPS",
+   "Verbatim Term": "BRAVO",
+   "Priority"     : "8"
+ },
+ {
+   "Study ID"     : "PROD",
+   "Form"         : "TPS",
+   "Verbatim Term": "BRAVO",
+   "Priority"     : "8"
+ },
+ {
+   "Study ID"     : "PROD",
+   "Form"         : "TPS",
+   "Verbatim Term": "BRAVO",
+   "Priority"     : "8"
+ },
+ {
+   "Study ID"     : "PROD",
+   "Form"         : "TPS",
+   "Verbatim Term": "CHARLIE",
+   "Priority"     : "8"
+ },
+ {
+   "Study ID"     : "PROD",
+   "Form"         : "TPS",
+   "Verbatim Term": "CHARLIE",
+   "Priority"     : "8"
+ },
+ {
+   "Study ID"     : "PROD",
+   "Form"         : "TPS",
+   "Verbatim Term": "DELTA",
+   "Priority"     : "8"
+ },
+ {
+   "Study ID"     : "PROD",
+   "Form"         : "TPS",
+   "Verbatim Term": "DELTA",
+   "Priority"     : "8"
+ },
+ {
+   "Study ID"     : "PROD",
+   "Form"         : "TPS",
+   "Verbatim Term": "ECHO",
+   "Priority"     : "8"
+ },
+ {
+   "Study ID"     : "PROD",
+   "Form"         : "TPS",
+   "Verbatim Term": "ECHO",
+   "Priority"     : "8"
+ },
+ {
+   "Study ID"     : "DEV",
+   "Form"         : "TPS",
+   "Verbatim Term": "ALPHA",
+   "Priority"     : "1"
+ },
+ {
+   "Study ID"     : "DEV",
+   "Form"         : "TPS",
+   "Verbatim Term": "ALPHA",
+   "Priority"     : "1"
+ },
+ {
+   "Study ID"     : "DEV",
+   "Form"         : "TPS",
+   "Verbatim Term": "BRAVO",
+   "Priority"     : "1"
+ },
+ {
+   "Study ID"     : "DEV",
+   "Form"         : "TPS",
+   "Verbatim Term": "BRAVO",
+   "Priority"     : "1"
+ },
+ {
+   "Study ID"     : "DEV",
+   "Form"         : "TPS",
+   "Verbatim Term": "CHARLIE",
+   "Priority"     : "1"
+ },
+ {
+   "Study ID"     : "DEV",
+   "Form"         : "TPS",
+   "Verbatim Term": "CHARLIE",
+   "Priority"     : "1"
+ },
+ {
+   "Study ID"     : "DEV",
+   "Form"         : "TPS",
+   "Verbatim Term": "DELTA",
+   "Priority"     : "1"
+ },
+ {
+   "Study ID"     : "DEV",
+   "Form"         : "TPS",
+   "Verbatim Term": "FOXTROT",
+   "Priority"     : "1"
+ }
+]

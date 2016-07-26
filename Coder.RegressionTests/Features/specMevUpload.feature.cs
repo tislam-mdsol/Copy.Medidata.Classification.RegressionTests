@@ -1133,8 +1133,7 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 11" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 176
- testRunner.When("the following externally managed verbatim requests are made \"CrammedFile_41mb.csv" +
-                    "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("uploading the external verbatim CSV file named \"CrammedFile_41mb.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 177
  testRunner.Then("the user should be notified with the following message \"CSV file CrammedFile_41mb" +
                     ".csv is too large to upload. The accepted file limit is 40MB.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

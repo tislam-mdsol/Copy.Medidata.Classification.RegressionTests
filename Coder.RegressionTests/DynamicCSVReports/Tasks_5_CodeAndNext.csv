@@ -1,6 +1,0 @@
-Test ID,Study ID,Form,Field Type,Field,Field Value,Dictionary Level,Dictionary,Priority,Locale,IsApprovalRequired,IsAutoApproval,Subject,Site ,Event,Batch Identifier
-1001,PROD,TPS,Main,Verbatim Term,Heart Burn,LLT,MedDRA,1,eng,TRUE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
-1002,PROD,TPS,Main,Verbatim Term,Reflux,LLT,MedDRA,1,eng,TRUE,FALSE,Subject: NY Visit,NY,Visit,MedDRA Batch 1
-1003,PROD,TPS,Main,Verbatim Term,Burning,LLT,MedDRA,1,eng,TRUE,FALSE,Subject: MD Reaction,MD,Reaction,MedDRA Batch 1
-1004,PROD,TPS,Main,Verbatim Term,Nasal Drip,LLT,MedDRA,1,eng,TRUE,FALSE,Subject: OK Checkup,OK,Checkup,MedDRA Batch 1
-1005,PROD,TPS,Main,Verbatim Term,Stiff Joints,LLT,MedDRA,1,eng,TRUE,FALSE,Subject: CT Post,CT,Post,MedDRA Batch 1

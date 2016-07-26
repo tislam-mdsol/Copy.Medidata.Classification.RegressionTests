@@ -44,6 +44,19 @@ Scenario: When Auto Approve option is "On", Synonym Creation Flag is "Always Act
 	  | SynonymListName            | Dictionary                  | Version                   | Locale |
 	  | MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
    When coding tasks are loaded from CSV file "AutoApproveSynonymApprovalMedDRA.csv"
+   When the following externally managed verbatim requests are made
+      | Verbatim Term     | Dictionary Level | Form                    | IsApprovalRequired | IsAutoApproval |
+      | Headache          | LLT              | AutoApprovalRequired    | TRUE               | TRUE           |
+      | Broken leg        | LLT              | AutoApprovalRequired    | TRUE               | TRUE           |
+      | lower body numb   | LLT              | AutoApprovalRequired    | TRUE               | TRUE           |
+      | left foot swollen | LLT              | AutoApprovalRequired    | TRUE               | TRUE           |
+      | trouble breathing | LLT              | AutoApprovalRequired    | TRUE               | TRUE           |
+      | coughing blood    | LLT              | ApprovalRequired        | TRUE               | FALSE          |
+      | coughing          | LLT              | ApprovalRequired        | TRUE               | FALSE          |
+      | cough             | LLT              | AutoApprovalNotRequired | FALSE              | TRUE           |
+      | migraine headache | LLT              | AutoApprovalNotRequired | FALSE              | TRUE           |
+      | Back pain         | LLT              | ApprovalNotRequired     | FALSE              | FALSE          |
+      | chest pain        | LLT              | ApprovalNotRequired     | FALSE              | FALSE          |
    Then the following coding decisions require approval 
       | Verbatim Term	       | Assigned Term      |
       | COUGHING               | Coughing           | 
@@ -262,7 +275,7 @@ Scenario: When Auto Approve option is "OFF", Synonym Creation Flag is "Never Act
    Given a "Synonyms Need Approval" Coder setup with no tasks and no synonyms and dictionaries
 	  | SynonymListName          | Dictionary                   | Version                   | Locale |
 	  | MedDRA_DDM               | MedDRA                       | 18.0                      | ENG    |
-   When coding tasks are loaded from CSV file "AutoApproveSynonymApprovalMedDRA.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalMedDRA.json"
    Then the following coding decisions require approval 
       | Verbatim Term	       | Assigned Term      |
       | BROKEN LEG             | Broken leg         | 

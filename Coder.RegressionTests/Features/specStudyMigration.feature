@@ -159,7 +159,9 @@ Scenario: Tasks in "Waiting Manual Code" status shall be affected and completed 
 
    Given a "Basic" Coder setup with registered synonym list "MedDRA ENG 16.0 Empty_List" containing entry ""
    And a populated activated synonym list "MedDRA ENG 16.1 New_Primary_List" containing entry "HEADACHES|10000396|LLT|LLT:10000396;PT:10073767;HLT:10028381;HLGT:10028396;SOC:10010331|True|||"
-   And coding tasks "HEADACHES"
+   When the following externally managed verbatim requests are made
+		| Verbatim Term | Dictionary Level |
+		| HEADACHES     | LLT              |
    When performing Study Impact Analysis
    Then the verbatim term "HEADACHES" exists under Path Changed
    When performing study migration
@@ -180,8 +182,10 @@ Scenario: Manually coded tasks in "Waiting Approval" status shall be affected an
 
    Given a "Basic" Coder setup with registered synonym list "MedDRA ENG 16.0 Empty_List" containing entry ""
    And a populated activated synonym list "MedDRA ENG 16.1 New_Primary_List" containing entry "HEADACHES|10000396|LLT|LLT:10000396;PT:10073767;HLT:10028381;HLGT:10028396;SOC:10010331|True|||"
-   And coding tasks "HEADACHES"
-   When task "HEADACHES" is coded to term "Acetabular dysplasia" at search level "Low Level Term" with code "10000396" at level "LLT"
+   When the following externally managed verbatim requests are made
+		| Verbatim Term | Dictionary Level |
+		| HEADACHES     | LLT              |
+   And task "HEADACHES" is coded to term "Acetabular dysplasia" at search level "Low Level Term" with code "10000396" at level "LLT"
    And performing Study Impact Analysis
    Then the verbatim term "HEADACHES" exists under Path Changed
    When performing study migration
@@ -204,8 +208,10 @@ Scenario: Manually coded tasks requiring approval in "Waiting Approval" status s
 
    Given a "Waiting Approval" Coder setup with registered synonym list "MedDRA ENG 16.0 Empty_List" containing entry ""
    And a populated activated synonym list "MedDRA ENG 16.1 New_Primary_List" containing entry "HEADACHES|10000396|LLT|LLT:10000396;PT:10073767;HLT:10028381;HLGT:10028396;SOC:10010331|True|||"
-   And coding tasks "HEADACHES"
-   When task "HEADACHES" is coded to term "Haemoglobinuria" at search level "Low Level Term" with code "10018906" at level "LLT"
+   When the following externally managed verbatim requests are made
+		| Verbatim Term | Dictionary Level |
+		| HEADACHES     | LLT              |
+   And task "HEADACHES" is coded to term "Haemoglobinuria" at search level "Low Level Term" with code "10018906" at level "LLT"
    And performing Study Impact Analysis
    Then the verbatim term "HEADACHES" exists under Path Changed
    When performing study migration
@@ -226,8 +232,10 @@ Scenario: Manually coded tasks in "Waiting Approval" status shall be affected an
 
    Given a "Basic" Coder setup with registered synonym list "MedDRA ENG 16.0 Empty_List" containing entry ""
    And a populated activated synonym list "MedDRA ENG 16.1 New_Primary_List" containing entry "HEADACHES|10000396|LLT|LLT:10000396;PT:10073767;HLT:10028381;HLGT:10028396;SOC:10010331|True|||"
-   And coding tasks "HEADACHES"
-   When task "HEADACHES" is coded to term "Haemoglobinuria" at search level "Low Level Term" with code "10018906" at level "LLT"
+   When the following externally managed verbatim requests are made
+		| Verbatim Term | Dictionary Level |
+		| HEADACHES     | LLT              |
+   And task "HEADACHES" is coded to term "Haemoglobinuria" at search level "Low Level Term" with code "10018906" at level "LLT"
    And performing Study Impact Analysis
    Then the verbatim term "HEADACHES" exists under Path Changed
    When performing study migration

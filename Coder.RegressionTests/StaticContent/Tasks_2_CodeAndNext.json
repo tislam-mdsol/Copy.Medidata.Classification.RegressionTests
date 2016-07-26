@@ -1,0 +1,32 @@
+[
+ {
+   "Study ID"          : "PROD",
+   "Form"              : "TPS",
+   "Verbatim Term"     : "Heart Burn",
+   "Dictionary Level"  : "LLT",
+   "Dictionary"        : "MedDRA",
+   "Priority"          : "1",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "FALSE",
+   "IsAutoApproval"    : "FALSE",
+   "Subject"           : "Subject: OK Checkup",
+   "Site"              : "OK",
+   "Event"             : "Checkup",
+   "Batch Identifier"  : "MedDRA Batch 1"
+ },
+ {
+   "Study ID"          : "PROD",
+   "Form"              : "TPS",
+   "Verbatim Term"     : "Reflux",
+   "Dictionary Level"  : "LLT",
+   "Dictionary"        : "MedDRA",
+   "Priority"          : "1",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "FALSE",
+   "IsAutoApproval"    : "FALSE",
+   "Subject"           : "Subject: NY Visit",
+   "Site"              : "NY",
+   "Event"             : "Visit",
+   "Batch Identifier"  : "MedDRA Batch 1"
+ }
+]

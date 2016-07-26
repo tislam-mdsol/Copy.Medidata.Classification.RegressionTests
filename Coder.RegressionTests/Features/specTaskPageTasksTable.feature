@@ -296,8 +296,15 @@ Scenario: FILTER HEADER The task table shall filter by Queries
 Scenario: FILTER HEADER The task table shall filter by Time Elapsed
   
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding tasks "ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT"
-  When the time elapsed since task "BRAVO" was created is "0" days and "15" hours
+  When the following externally managed verbatim requests are made
+		| Verbatim Term | Dictionary Level |
+		| ALPHA         | LLT              |
+		| BRAVO         | LLT              |
+		| CHARLIE       | LLT              |
+		| DELTA         | LLT              |
+		| ECHO          | LLT              |
+		| FOXTROT       | LLT              |
+  And the time elapsed since task "BRAVO" was created is "0" days and "15" hours
   And the time elapsed since task "CHARLIE" was created is "1" days and "1" hours
   And the time elapsed since task "DELTA" was created is "3" days and "0" hours
   And the time elapsed since task "ECHO" was created is "7" days and "0" hours

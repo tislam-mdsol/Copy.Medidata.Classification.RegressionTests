@@ -692,90 +692,22 @@ this.ScenarioSetup(scenarioInfo);
    testRunner.And("a populated activated synonym list \"MedDRA ENG 16.1 New_Primary_List\" containing " +
                     "entry \"HEADACHES|10000396|LLT|LLT:10000396;PT:10073767;HLT:10028381;HLGT:1002839" +
                     "6;SOC:10010331|True|||\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 162
-   testRunner.And("coding tasks \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 163
-   testRunner.When("performing Study Impact Analysis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 164
-   testRunner.Then("the verbatim term \"HEADACHES\" exists under Path Changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 165
-   testRunner.When("performing study migration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 166
-   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
-                        "User",
-                        "Action",
-                        "Status",
                         "Verbatim Term",
-                        "Comment",
-                        "Time Stamp"});
+                        "Dictionary Level"});
             table17.AddRow(new string[] {
-                        "<User>",
-                        "Reclassify",
-                        "Waiting Manual Code",
                         "HEADACHES",
-                        "Reconfirm",
-                        "<TimeStamp>"});
-            table17.AddRow(new string[] {
-                        "<User>",
-                        "",
-                        "Completed",
-                        "HEADACHES",
-                        "Version Change - From MedDRA-16_0-English To MedDRA-16_1-English. Recoded due to " +
-                            "synonym change across versions",
-                        "<TimeStamp>"});
-            table17.AddRow(new string[] {
-                        "<User>",
-                        "Open Query",
-                        "Waiting Manual Code",
-                        "HEADACHES",
-                        "",
-                        "<TimeStamp>"});
-#line 167
-   testRunner.Then("the Coding History contains following information", ((string)(null)), table17, "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Manually coded tasks in \"Waiting Approval\" status shall be affected and completed" +
-            " by a Study Migration with a same term synonym for the verbatim term.")]
-        [NUnit.Framework.IgnoreAttribute()]
-        [NUnit.Framework.CategoryAttribute("DFT")]
-        [NUnit.Framework.CategoryAttribute("PBMCC_205138_002")]
-        [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
-        [NUnit.Framework.Timeout(300000)]
-        public virtual void ManuallyCodedTasksInWaitingApprovalStatusShallBeAffectedAndCompletedByAStudyMigrationWithASameTermSynonymForTheVerbatimTerm_()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Manually coded tasks in \"Waiting Approval\" status shall be affected and completed" +
-                    " by a Study Migration with a same term synonym for the verbatim term.", new string[] {
-                        "DFT",
-                        "PBMCC_205138_002",
-                        "Release2015.3.0",
-                        "IncreaseTimeout_300000",
-                        "ignore"});
-#line 179
-this.ScenarioSetup(scenarioInfo);
-#line 181
-   testRunner.Given("a \"Basic\" Coder setup with registered synonym list \"MedDRA ENG 16.0 Empty_List\" c" +
-                    "ontaining entry \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 182
-   testRunner.And("a populated activated synonym list \"MedDRA ENG 16.1 New_Primary_List\" containing " +
-                    "entry \"HEADACHES|10000396|LLT|LLT:10000396;PT:10073767;HLT:10028381;HLGT:1002839" +
-                    "6;SOC:10010331|True|||\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 183
-   testRunner.And("coding tasks \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 184
-   testRunner.When("task \"HEADACHES\" is coded to term \"Acetabular dysplasia\" at search level \"Low Lev" +
-                    "el Term\" with code \"10000396\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 185
-   testRunner.And("performing Study Impact Analysis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 186
+                        "LLT"});
+#line 162
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table17, "When ");
+#line 165
+   testRunner.When("performing Study Impact Analysis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 166
    testRunner.Then("the verbatim term \"HEADACHES\" exists under Path Changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 187
+#line 167
    testRunner.When("performing study migration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 188
+#line 168
    testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -802,135 +734,62 @@ this.ScenarioSetup(scenarioInfo);
                         "<TimeStamp>"});
             table18.AddRow(new string[] {
                         "<User>",
-                        "Browse And Code",
-                        "Waiting Approval",
-                        "HEADACHES",
-                        "",
-                        "<TimeStamp>"});
-            table18.AddRow(new string[] {
-                        "<User>",
                         "Open Query",
                         "Waiting Manual Code",
                         "HEADACHES",
                         "",
                         "<TimeStamp>"});
-#line 189
+#line 169
    testRunner.Then("the Coding History contains following information", ((string)(null)), table18, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Manually coded tasks requiring approval in \"Waiting Approval\" status shall be aff" +
-            "ected by a Study Migration with a different term synonym for the verbatim term")]
-        [NUnit.Framework.IgnoreAttribute()]
-        [NUnit.Framework.CategoryAttribute("DFT")]
-        [NUnit.Framework.CategoryAttribute("PBMCC_205138_003")]
-        [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
-        [NUnit.Framework.Timeout(300000)]
-        public virtual void ManuallyCodedTasksRequiringApprovalInWaitingApprovalStatusShallBeAffectedByAStudyMigrationWithADifferentTermSynonymForTheVerbatimTerm()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Manually coded tasks requiring approval in \"Waiting Approval\" status shall be aff" +
-                    "ected by a Study Migration with a different term synonym for the verbatim term", new string[] {
-                        "DFT",
-                        "PBMCC_205138_003",
-                        "Release2015.3.0",
-                        "IncreaseTimeout_300000",
-                        "ignore"});
-#line 203
-this.ScenarioSetup(scenarioInfo);
-#line 205
-   testRunner.Given("a \"Waiting Approval\" Coder setup with registered synonym list \"MedDRA ENG 16.0 Em" +
-                    "pty_List\" containing entry \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 206
-   testRunner.And("a populated activated synonym list \"MedDRA ENG 16.1 New_Primary_List\" containing " +
-                    "entry \"HEADACHES|10000396|LLT|LLT:10000396;PT:10073767;HLT:10028381;HLGT:1002839" +
-                    "6;SOC:10010331|True|||\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 207
-   testRunner.And("coding tasks \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 208
-   testRunner.When("task \"HEADACHES\" is coded to term \"Haemoglobinuria\" at search level \"Low Level Te" +
-                    "rm\" with code \"10018906\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 209
-   testRunner.And("performing Study Impact Analysis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 210
-   testRunner.Then("the verbatim term \"HEADACHES\" exists under Path Changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 211
-   testRunner.When("performing study migration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
-                        "User",
-                        "Action",
-                        "Status",
-                        "Verbatim Term",
-                        "Comment",
-                        "Time Stamp"});
-            table19.AddRow(new string[] {
-                        "<User>",
-                        "",
-                        "Waiting Approval",
-                        "HEADACHES",
-                        "Version Change - From MedDRA-16_0-English To MedDRA-16_1-English. Recoded due to " +
-                            "synonym change across versions",
-                        "<TimeStamp>"});
-            table19.AddRow(new string[] {
-                        "<User>",
-                        "Browse And Code",
-                        "Waiting Approval",
-                        "HEADACHES",
-                        "",
-                        "<TimeStamp>"});
-            table19.AddRow(new string[] {
-                        "<User>",
-                        "Open Query",
-                        "Waiting Manual Code",
-                        "HEADACHES",
-                        "",
-                        "<TimeStamp>"});
-#line 212
-   testRunner.Then("the Coding History contains following information", ((string)(null)), table19, "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Manually coded tasks in \"Waiting Approval\" status shall be affected and completed" +
-            " by a Study Migration with a different term synonym for the verbatim term")]
+            " by a Study Migration with a same term synonym for the verbatim term.")]
         [NUnit.Framework.IgnoreAttribute()]
         [NUnit.Framework.CategoryAttribute("DFT")]
-        [NUnit.Framework.CategoryAttribute("PBMCC_205138_004")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_205138_002")]
         [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
         [NUnit.Framework.Timeout(300000)]
-        public virtual void ManuallyCodedTasksInWaitingApprovalStatusShallBeAffectedAndCompletedByAStudyMigrationWithADifferentTermSynonymForTheVerbatimTerm()
+        public virtual void ManuallyCodedTasksInWaitingApprovalStatusShallBeAffectedAndCompletedByAStudyMigrationWithASameTermSynonymForTheVerbatimTerm_()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Manually coded tasks in \"Waiting Approval\" status shall be affected and completed" +
-                    " by a Study Migration with a different term synonym for the verbatim term", new string[] {
+                    " by a Study Migration with a same term synonym for the verbatim term.", new string[] {
                         "DFT",
-                        "PBMCC_205138_004",
+                        "PBMCC_205138_002",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000",
                         "ignore"});
-#line 225
+#line 181
 this.ScenarioSetup(scenarioInfo);
-#line 227
+#line 183
    testRunner.Given("a \"Basic\" Coder setup with registered synonym list \"MedDRA ENG 16.0 Empty_List\" c" +
                     "ontaining entry \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 228
+#line 184
    testRunner.And("a populated activated synonym list \"MedDRA ENG 16.1 New_Primary_List\" containing " +
                     "entry \"HEADACHES|10000396|LLT|LLT:10000396;PT:10073767;HLT:10028381;HLGT:1002839" +
                     "6;SOC:10010331|True|||\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 229
-   testRunner.And("coding tasks \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 230
-   testRunner.When("task \"HEADACHES\" is coded to term \"Haemoglobinuria\" at search level \"Low Level Te" +
-                    "rm\" with code \"10018906\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 231
+#line hidden
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table19.AddRow(new string[] {
+                        "HEADACHES",
+                        "LLT"});
+#line 185
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table19, "When ");
+#line 188
+   testRunner.And("task \"HEADACHES\" is coded to term \"Acetabular dysplasia\" at search level \"Low Lev" +
+                    "el Term\" with code \"10000396\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 189
    testRunner.And("performing Study Impact Analysis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 232
+#line 190
    testRunner.Then("the verbatim term \"HEADACHES\" exists under Path Changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 233
+#line 191
    testRunner.When("performing study migration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 234
+#line 192
    testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -969,8 +828,177 @@ this.ScenarioSetup(scenarioInfo);
                         "HEADACHES",
                         "",
                         "<TimeStamp>"});
-#line 235
+#line 193
    testRunner.Then("the Coding History contains following information", ((string)(null)), table20, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Manually coded tasks requiring approval in \"Waiting Approval\" status shall be aff" +
+            "ected by a Study Migration with a different term synonym for the verbatim term")]
+        [NUnit.Framework.IgnoreAttribute()]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_205138_003")]
+        [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
+        [NUnit.Framework.Timeout(300000)]
+        public virtual void ManuallyCodedTasksRequiringApprovalInWaitingApprovalStatusShallBeAffectedByAStudyMigrationWithADifferentTermSynonymForTheVerbatimTerm()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Manually coded tasks requiring approval in \"Waiting Approval\" status shall be aff" +
+                    "ected by a Study Migration with a different term synonym for the verbatim term", new string[] {
+                        "DFT",
+                        "PBMCC_205138_003",
+                        "Release2015.3.0",
+                        "IncreaseTimeout_300000",
+                        "ignore"});
+#line 207
+this.ScenarioSetup(scenarioInfo);
+#line 209
+   testRunner.Given("a \"Waiting Approval\" Coder setup with registered synonym list \"MedDRA ENG 16.0 Em" +
+                    "pty_List\" containing entry \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 210
+   testRunner.And("a populated activated synonym list \"MedDRA ENG 16.1 New_Primary_List\" containing " +
+                    "entry \"HEADACHES|10000396|LLT|LLT:10000396;PT:10073767;HLT:10028381;HLGT:1002839" +
+                    "6;SOC:10010331|True|||\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table21.AddRow(new string[] {
+                        "HEADACHES",
+                        "LLT"});
+#line 211
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table21, "When ");
+#line 214
+   testRunner.And("task \"HEADACHES\" is coded to term \"Haemoglobinuria\" at search level \"Low Level Te" +
+                    "rm\" with code \"10018906\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 215
+   testRunner.And("performing Study Impact Analysis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 216
+   testRunner.Then("the verbatim term \"HEADACHES\" exists under Path Changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 217
+   testRunner.When("performing study migration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                        "User",
+                        "Action",
+                        "Status",
+                        "Verbatim Term",
+                        "Comment",
+                        "Time Stamp"});
+            table22.AddRow(new string[] {
+                        "<User>",
+                        "",
+                        "Waiting Approval",
+                        "HEADACHES",
+                        "Version Change - From MedDRA-16_0-English To MedDRA-16_1-English. Recoded due to " +
+                            "synonym change across versions",
+                        "<TimeStamp>"});
+            table22.AddRow(new string[] {
+                        "<User>",
+                        "Browse And Code",
+                        "Waiting Approval",
+                        "HEADACHES",
+                        "",
+                        "<TimeStamp>"});
+            table22.AddRow(new string[] {
+                        "<User>",
+                        "Open Query",
+                        "Waiting Manual Code",
+                        "HEADACHES",
+                        "",
+                        "<TimeStamp>"});
+#line 218
+   testRunner.Then("the Coding History contains following information", ((string)(null)), table22, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Manually coded tasks in \"Waiting Approval\" status shall be affected and completed" +
+            " by a Study Migration with a different term synonym for the verbatim term")]
+        [NUnit.Framework.IgnoreAttribute()]
+        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_205138_004")]
+        [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
+        [NUnit.Framework.Timeout(300000)]
+        public virtual void ManuallyCodedTasksInWaitingApprovalStatusShallBeAffectedAndCompletedByAStudyMigrationWithADifferentTermSynonymForTheVerbatimTerm()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Manually coded tasks in \"Waiting Approval\" status shall be affected and completed" +
+                    " by a Study Migration with a different term synonym for the verbatim term", new string[] {
+                        "DFT",
+                        "PBMCC_205138_004",
+                        "Release2015.3.0",
+                        "IncreaseTimeout_300000",
+                        "ignore"});
+#line 231
+this.ScenarioSetup(scenarioInfo);
+#line 233
+   testRunner.Given("a \"Basic\" Coder setup with registered synonym list \"MedDRA ENG 16.0 Empty_List\" c" +
+                    "ontaining entry \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 234
+   testRunner.And("a populated activated synonym list \"MedDRA ENG 16.1 New_Primary_List\" containing " +
+                    "entry \"HEADACHES|10000396|LLT|LLT:10000396;PT:10073767;HLT:10028381;HLGT:1002839" +
+                    "6;SOC:10010331|True|||\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table23.AddRow(new string[] {
+                        "HEADACHES",
+                        "LLT"});
+#line 235
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table23, "When ");
+#line 238
+   testRunner.And("task \"HEADACHES\" is coded to term \"Haemoglobinuria\" at search level \"Low Level Te" +
+                    "rm\" with code \"10018906\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 239
+   testRunner.And("performing Study Impact Analysis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 240
+   testRunner.Then("the verbatim term \"HEADACHES\" exists under Path Changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 241
+   testRunner.When("performing study migration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 242
+   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                        "User",
+                        "Action",
+                        "Status",
+                        "Verbatim Term",
+                        "Comment",
+                        "Time Stamp"});
+            table24.AddRow(new string[] {
+                        "<User>",
+                        "Reclassify",
+                        "Waiting Manual Code",
+                        "HEADACHES",
+                        "Reconfirm",
+                        "<TimeStamp>"});
+            table24.AddRow(new string[] {
+                        "<User>",
+                        "",
+                        "Completed",
+                        "HEADACHES",
+                        "Version Change - From MedDRA-16_0-English To MedDRA-16_1-English. Recoded due to " +
+                            "synonym change across versions",
+                        "<TimeStamp>"});
+            table24.AddRow(new string[] {
+                        "<User>",
+                        "Browse And Code",
+                        "Waiting Approval",
+                        "HEADACHES",
+                        "",
+                        "<TimeStamp>"});
+            table24.AddRow(new string[] {
+                        "<User>",
+                        "Open Query",
+                        "Waiting Manual Code",
+                        "HEADACHES",
+                        "",
+                        "<TimeStamp>"});
+#line 243
+   testRunner.Then("the Coding History contains following information", ((string)(null)), table24, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

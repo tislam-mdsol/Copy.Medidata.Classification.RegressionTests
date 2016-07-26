@@ -60,11 +60,15 @@ Scenario: The coding system should allow a synonym to be retired
 Scenario: A user shall be able to retire synonyms from the Synonym Approval page
 
     Given a "Auto Code Synonyms Need Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And coding tasks "ACHES"
-	When task "ACHES" is coded to term "HEADACHE" at search level "Low Level Term" with code "10019211" at level "LLT" and a synonym is created
+	When the following externally managed verbatim requests are made
+	    | Verbatim Term | Dictionary Level |
+	    | ACHES         | LLT              |
+	And task "ACHES" is coded to term "HEADACHE" at search level "Low Level Term" with code "10019211" at level "LLT" and a synonym is created
 	And the provisional synonym for verbatim term "ACHES" is retired from the Synonym Approval page
 	Then the synonym for verbatim "ACHES" and code "10019211" should not exist
-	When coding tasks "ACHES"
+	When the following externally managed verbatim requests are made
+	    | Verbatim Term | Dictionary Level |
+	    | ACHES         | LLT              |
 	Then the Coding History contains following information for task "ACHES" in status "Waiting Manual Code"
    		| User         | Action          | Status              | Verbatim Term | Comment | Time Stamp  |
    		| <SystemUser> | Start Auto Code | Waiting Manual Code | ACHES         |         | <TimeStamp> |
@@ -120,8 +124,10 @@ Scenario: Non Single Path DDM tasks with provisional synonyms shall return to ma
 Scenario: Single Path DDM tasks with provisional synonyms shall return to the manual code status when the synonyms are retired from the Synonym Details page and existing tasks are reconsidered
 
     Given a "Auto Code Synonyms Need Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And coding tasks "HEADACHE"
-	When the provisional synonym for verbatim term "HEADACHE" is retired from the Synonym Details page
+	When the following externally managed verbatim requests are made
+	    | Verbatim Term | Dictionary Level |
+	    | HEADACHE      | LLT              |
+	And the provisional synonym for verbatim term "HEADACHE" is retired from the Synonym Details page
 	And a coding task "HEADACHE" returns to "Waiting Manual Code" status 
 	Then the synonym for verbatim "HEADACHE" and code "10019211" should not exist
 	And the coding task table has the following ordered information

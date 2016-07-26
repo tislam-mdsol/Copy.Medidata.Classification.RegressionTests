@@ -1,0 +1,82 @@
+[
+ {
+   "Study ID"          : "PROD",
+   "Form"              : "AutoApprovalRequired",
+   "Verbatim Term"     : "TYLENOL COUGH",
+   "Dictionary Level"  : "PRODUCTSYNONYM",
+   "Dictionary"        : "WhoDrugDDEB2",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "TRUE",
+   "IsAutoApproval"    : "TRUE"
+ },
+ {
+   "Study ID"          : "PROD",
+   "Form"              : "AutoApprovalRequired",
+   "Verbatim Term"     : "PAIN",
+   "Dictionary Level"  : "PRODUCTSYNONYM",
+   "Dictionary"        : "WhoDrugDDEB2",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "TRUE",
+   "IsAutoApproval"    : "TRUE"
+ },
+ {
+   "Study ID"          : "PROD",
+   "Form"              : "ApprovalRequired",
+   "Verbatim Term"     : "TYLENOL INFANT",
+   "Dictionary Level"  : "PRODUCTSYNONYM",
+   "Dictionary"        : "WhoDrugDDEB2",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "TRUE",
+   "IsAutoApproval"    : "FALSE"
+ },
+ {
+   "Study ID"          : "PROD",
+   "Form"              : "ApprovalRequired",
+   "Verbatim Term"     : "Junior asprin",
+   "Dictionary Level"  : "PRODUCTSYNONYM",
+   "Dictionary"        : "WhoDrugDDEB2",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "TRUE",
+   "IsAutoApproval"    : "FALSE"
+ },
+ {
+   "Study ID"          : "PROD",
+   "Form"              : "AutoApprovalNotRequired",
+   "Verbatim Term"     : "PENICILLIN V BASIC",
+   "Dictionary Level"  : "PRODUCTSYNONYM",
+   "Dictionary"        : "WhoDrugDDEB2",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "FALSE",
+   "IsAutoApproval"    : "TRUE"
+ },
+ {
+   "Study ID"          : "PROD",
+   "Form"              : "AutoApprovalNotRequired",
+   "Verbatim Term"     : "VITAMIN-A",
+   "Dictionary Level"  : "PRODUCTSYNONYM",
+   "Dictionary"        : "WhoDrugDDEB2",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "FALSE",
+   "IsAutoApproval"    : "TRUE"
+ },
+ {
+   "Study ID"          : "PROD",
+   "Form"              : "ApprovalNotRequired",
+   "Verbatim Term"     : "ADVIL COLD",
+   "Dictionary Level"  : "PRODUCTSYNONYM",
+   "Dictionary"        : "WhoDrugDDEB2",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "FALSE",
+   "IsAutoApproval"    : "FALSE"
+ },
+ {
+   "Study ID"          : "PROD",
+   "Form"              : "ApprovalNotRequired",
+   "Verbatim Term"     : "VITAMIN-C",
+   "Dictionary Level"  : "PRODUCTSYNONYM",
+   "Dictionary"        : "WhoDrugDDEB2",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "FALSE",
+   "IsAutoApproval"    : "FALSE"
+ }
+]

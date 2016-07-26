@@ -878,62 +878,84 @@ this.ScenarioSetup(scenarioInfo);
 #line 298
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 299
-  testRunner.And("coding tasks \"ALPHA, BRAVO, CHARLIE, DELTA, ECHO, FOXTROT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 300
-  testRunner.When("the time elapsed since task \"BRAVO\" was created is \"0\" days and \"15\" hours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 301
-  testRunner.And("the time elapsed since task \"CHARLIE\" was created is \"1\" days and \"1\" hours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 302
-  testRunner.And("the time elapsed since task \"DELTA\" was created is \"3\" days and \"0\" hours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 303
-  testRunner.And("the time elapsed since task \"ECHO\" was created is \"7\" days and \"0\" hours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 304
-  testRunner.And("I filter for tasks with \"Time Elapsed\" of \"0.5 days\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 305
-  testRunner.Then("Only tasks with \"Time Elapsed\" of \"0.5 days\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 306
-  testRunner.When("I filter for tasks with \"Time Elapsed\" of \"0.5 to 1 day\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 307
-  testRunner.Then("Only tasks with \"Time Elapsed\" of \"0.5 to 1 day\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 308
-  testRunner.When("I filter for tasks with \"Time Elapsed\" of \"1 to 2 days\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 309
-  testRunner.Then("Only tasks with \"Time Elapsed\" of \"1 to 2 days\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 310
-  testRunner.When("I filter for tasks with \"Time Elapsed\" of \"2 to 5 days\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 311
-  testRunner.Then("Only tasks with \"Time Elapsed\" of \"2 to 5 days\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 312
-  testRunner.When("I filter for tasks with \"Time Elapsed\" of \"5 days or greater\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 313
-  testRunner.Then("Only tasks with \"Time Elapsed\" of \"5 days or greater\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 314
-  testRunner.When("I filter for tasks with \"Time Elapsed\" of \"All\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
-                        "Time Elapsed"});
+                        "Dictionary Level"});
             table20.AddRow(new string[] {
                         "ALPHA",
-                        "0.5 days"});
+                        "LLT"});
             table20.AddRow(new string[] {
                         "BRAVO",
-                        "0.5 to 1 day"});
+                        "LLT"});
             table20.AddRow(new string[] {
                         "CHARLIE",
-                        "1 to 2 days"});
+                        "LLT"});
             table20.AddRow(new string[] {
                         "DELTA",
-                        "2 to 5 days"});
+                        "LLT"});
             table20.AddRow(new string[] {
                         "ECHO",
-                        "5 days or greater"});
+                        "LLT"});
             table20.AddRow(new string[] {
                         "FOXTROT",
-                        "0.5 days"});
+                        "LLT"});
+#line 299
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table20, "When ");
+#line 307
+  testRunner.And("the time elapsed since task \"BRAVO\" was created is \"0\" days and \"15\" hours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 308
+  testRunner.And("the time elapsed since task \"CHARLIE\" was created is \"1\" days and \"1\" hours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 309
+  testRunner.And("the time elapsed since task \"DELTA\" was created is \"3\" days and \"0\" hours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 310
+  testRunner.And("the time elapsed since task \"ECHO\" was created is \"7\" days and \"0\" hours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 311
+  testRunner.And("I filter for tasks with \"Time Elapsed\" of \"0.5 days\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 312
+  testRunner.Then("Only tasks with \"Time Elapsed\" of \"0.5 days\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 313
+  testRunner.When("I filter for tasks with \"Time Elapsed\" of \"0.5 to 1 day\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 314
+  testRunner.Then("Only tasks with \"Time Elapsed\" of \"0.5 to 1 day\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 315
-  testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table20, "Then ");
+  testRunner.When("I filter for tasks with \"Time Elapsed\" of \"1 to 2 days\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 316
+  testRunner.Then("Only tasks with \"Time Elapsed\" of \"1 to 2 days\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 317
+  testRunner.When("I filter for tasks with \"Time Elapsed\" of \"2 to 5 days\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 318
+  testRunner.Then("Only tasks with \"Time Elapsed\" of \"2 to 5 days\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 319
+  testRunner.When("I filter for tasks with \"Time Elapsed\" of \"5 days or greater\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 320
+  testRunner.Then("Only tasks with \"Time Elapsed\" of \"5 days or greater\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 321
+  testRunner.When("I filter for tasks with \"Time Elapsed\" of \"All\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Time Elapsed"});
+            table21.AddRow(new string[] {
+                        "ALPHA",
+                        "0.5 days"});
+            table21.AddRow(new string[] {
+                        "BRAVO",
+                        "0.5 to 1 day"});
+            table21.AddRow(new string[] {
+                        "CHARLIE",
+                        "1 to 2 days"});
+            table21.AddRow(new string[] {
+                        "DELTA",
+                        "2 to 5 days"});
+            table21.AddRow(new string[] {
+                        "ECHO",
+                        "5 days or greater"});
+            table21.AddRow(new string[] {
+                        "FOXTROT",
+                        "0.5 days"});
+#line 322
+  testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table21, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -951,43 +973,43 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_159410_002",
                         "Release2015.3.0"});
-#line 327
+#line 334
 this.ScenarioSetup(scenarioInfo);
-#line 329
+#line 336
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 330
+#line 337
   testRunner.And("coding tasks from CSV file \"Tasks_21_GroupedVerbatimsOfVaryingPriority.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 331
+#line 338
   testRunner.When("I filter for tasks with \"Priority\" of \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Group",
                         "Priority"});
-            table21.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "ALPHA",
                         "2 of 6",
                         "1"});
-            table21.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "BRAVO",
                         "2 of 5",
                         "1"});
-            table21.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "CHARLIE",
                         "2 of 4",
                         "1"});
-            table21.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "DELTA",
                         "1 of 3",
                         "1"});
-            table21.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "FOXTROT",
                         "1",
                         "1"});
-#line 332
-  testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table21, "Then ");
 #line 339
+  testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table22, "Then ");
+#line 346
   testRunner.And("the group view of the coding task table for task \"ALPHA\" differentiates the tasks" +
                     " with \"Priority\" of \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1005,51 +1027,30 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_191152_016",
                         "Release2015.3.0"});
-#line 344
+#line 351
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "Primary List",
                         "MedDRA",
                         "15.0",
                         "ENG"});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "Primary List",
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 346
-  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table22, "Given ");
-#line 350
+#line 353
+  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table23, "Given ");
+#line 357
   testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 351
+#line 358
   testRunner.When("I sort the tasks by \"Verbatim Term\" \"descending\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Column Name",
-                        "Filter Criteria"});
-            table23.AddRow(new string[] {
-                        "Priority",
-                        "2"});
-            table23.AddRow(new string[] {
-                        "Status",
-                        "Waiting Manual Code"});
-            table23.AddRow(new string[] {
-                        "Dictionary",
-                        "All"});
-            table23.AddRow(new string[] {
-                        "Queries",
-                        "All"});
-            table23.AddRow(new string[] {
-                        "Time Elapsed",
-                        "0.5 days"});
-#line 352
-  testRunner.And("I filter the tasks by", ((string)(null)), table23, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Column Name",
@@ -1061,11 +1062,32 @@ this.ScenarioSetup(scenarioInfo);
                         "Status",
                         "Waiting Manual Code"});
             table24.AddRow(new string[] {
+                        "Dictionary",
+                        "All"});
+            table24.AddRow(new string[] {
+                        "Queries",
+                        "All"});
+            table24.AddRow(new string[] {
                         "Time Elapsed",
                         "0.5 days"});
 #line 359
-  testRunner.Then("the tasks will be filtered by", ((string)(null)), table24, "Then ");
-#line 364
+  testRunner.And("I filter the tasks by", ((string)(null)), table24, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Column Name",
+                        "Filter Criteria"});
+            table25.AddRow(new string[] {
+                        "Priority",
+                        "2"});
+            table25.AddRow(new string[] {
+                        "Status",
+                        "Waiting Manual Code"});
+            table25.AddRow(new string[] {
+                        "Time Elapsed",
+                        "0.5 days"});
+#line 366
+  testRunner.Then("the tasks will be filtered by", ((string)(null)), table25, "Then ");
+#line 371
   testRunner.And("the tasks will be sorted by \"Verbatim Term\" \"descending\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1082,51 +1104,28 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_191152_017",
                         "Release2015.3.0"});
-#line 369
+#line 376
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "Primary List",
                         "MedDRA",
                         "15.0",
                         "ENG"});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "Primary List",
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 371
-  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table25, "Given ");
-#line 375
+#line 378
+  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table26, "Given ");
+#line 382
   testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Column Name",
-                        "Filter Criteria"});
-            table26.AddRow(new string[] {
-                        "Priority",
-                        "2"});
-            table26.AddRow(new string[] {
-                        "Status",
-                        "Waiting Manual Code"});
-            table26.AddRow(new string[] {
-                        "Dictionary",
-                        "All"});
-            table26.AddRow(new string[] {
-                        "Queries",
-                        "All"});
-            table26.AddRow(new string[] {
-                        "Time Elapsed",
-                        "0.5 days"});
-#line 376
-  testRunner.When("I filter the tasks by", ((string)(null)), table26, "When ");
-#line 383
-  testRunner.And("I sort the tasks by \"Verbatim Term\" \"descending\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "Column Name",
@@ -1138,11 +1137,34 @@ this.ScenarioSetup(scenarioInfo);
                         "Status",
                         "Waiting Manual Code"});
             table27.AddRow(new string[] {
+                        "Dictionary",
+                        "All"});
+            table27.AddRow(new string[] {
+                        "Queries",
+                        "All"});
+            table27.AddRow(new string[] {
                         "Time Elapsed",
                         "0.5 days"});
-#line 384
-  testRunner.Then("the tasks will be filtered by", ((string)(null)), table27, "Then ");
-#line 389
+#line 383
+  testRunner.When("I filter the tasks by", ((string)(null)), table27, "When ");
+#line 390
+  testRunner.And("I sort the tasks by \"Verbatim Term\" \"descending\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Column Name",
+                        "Filter Criteria"});
+            table28.AddRow(new string[] {
+                        "Priority",
+                        "2"});
+            table28.AddRow(new string[] {
+                        "Status",
+                        "Waiting Manual Code"});
+            table28.AddRow(new string[] {
+                        "Time Elapsed",
+                        "0.5 days"});
+#line 391
+  testRunner.Then("the tasks will be filtered by", ((string)(null)), table28, "Then ");
+#line 396
   testRunner.And("the tasks will be sorted by \"Verbatim Term\" \"descending\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1159,52 +1181,7 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_191152_018",
                         "Release2015.3.0"});
-#line 394
-this.ScenarioSetup(scenarioInfo);
-#line hidden
-            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SynonymListName",
-                        "Dictionary",
-                        "Version",
-                        "Locale"});
-            table28.AddRow(new string[] {
-                        "Primary List",
-                        "MedDRA",
-                        "15.0",
-                        "ENG"});
-            table28.AddRow(new string[] {
-                        "Primary List",
-                        "WhoDrugDDEB2",
-                        "201503",
-                        "ENG"});
-#line 396
-  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table28, "Given ");
-#line 400
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 401
-  testRunner.When("I go to page \"Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 402
-  testRunner.Then("The current page is \"2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 403
-  testRunner.When("I go to page \"First\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 404
-  testRunner.Then("The current page is \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("PAGINATION The Previous page link shall go to the Previous page")]
-        [NUnit.Framework.CategoryAttribute("VAL")]
-        [NUnit.Framework.CategoryAttribute("PBMCC_191152_019")]
-        [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
-        public virtual void PAGINATIONThePreviousPageLinkShallGoToThePreviousPage()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("PAGINATION The Previous page link shall go to the Previous page", new string[] {
-                        "VAL",
-                        "PBMCC_191152_019",
-                        "Release2015.3.0"});
-#line 409
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1222,34 +1199,34 @@ this.ScenarioSetup(scenarioInfo);
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 411
+#line 403
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table29, "Given ");
-#line 415
+#line 407
   testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 416
-  testRunner.When("I go to page \"Last\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 417
-  testRunner.Then("The current page is \"3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 418
-  testRunner.When("I go to page \"Previous\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 419
+#line 408
+  testRunner.When("I go to page \"Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 409
   testRunner.Then("The current page is \"2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 410
+  testRunner.When("I go to page \"First\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 411
+  testRunner.Then("The current page is \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("PAGINATION The Next page link shall go to the next page")]
+        [NUnit.Framework.DescriptionAttribute("PAGINATION The Previous page link shall go to the Previous page")]
         [NUnit.Framework.CategoryAttribute("VAL")]
-        [NUnit.Framework.CategoryAttribute("PBMCC_191152_020")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_191152_019")]
         [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
-        public virtual void PAGINATIONTheNextPageLinkShallGoToTheNextPage()
+        public virtual void PAGINATIONThePreviousPageLinkShallGoToThePreviousPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("PAGINATION The Next page link shall go to the next page", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("PAGINATION The Previous page link shall go to the Previous page", new string[] {
                         "VAL",
-                        "PBMCC_191152_020",
+                        "PBMCC_191152_019",
                         "Release2015.3.0"});
-#line 424
+#line 416
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1267,30 +1244,34 @@ this.ScenarioSetup(scenarioInfo);
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 426
+#line 418
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table30, "Given ");
-#line 430
+#line 422
   testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 431
-  testRunner.When("I go to page \"Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 432
+#line 423
+  testRunner.When("I go to page \"Last\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 424
+  testRunner.Then("The current page is \"3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 425
+  testRunner.When("I go to page \"Previous\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 426
   testRunner.Then("The current page is \"2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("PAGINATION The Last page link shall go to the last page")]
+        [NUnit.Framework.DescriptionAttribute("PAGINATION The Next page link shall go to the next page")]
         [NUnit.Framework.CategoryAttribute("VAL")]
-        [NUnit.Framework.CategoryAttribute("PBMCC_191152_021")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_191152_020")]
         [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
-        public virtual void PAGINATIONTheLastPageLinkShallGoToTheLastPage()
+        public virtual void PAGINATIONTheNextPageLinkShallGoToTheNextPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("PAGINATION The Last page link shall go to the last page", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("PAGINATION The Next page link shall go to the next page", new string[] {
                         "VAL",
-                        "PBMCC_191152_021",
+                        "PBMCC_191152_020",
                         "Release2015.3.0"});
-#line 437
+#line 431
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1308,30 +1289,30 @@ this.ScenarioSetup(scenarioInfo);
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 439
+#line 433
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table31, "Given ");
-#line 443
+#line 437
   testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 444
-  testRunner.When("I go to page \"Last\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 445
-  testRunner.Then("The current page is \"3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 438
+  testRunner.When("I go to page \"Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 439
+  testRunner.Then("The current page is \"2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("PAGINATION The numeric page links shall go to the corresponding pages")]
+        [NUnit.Framework.DescriptionAttribute("PAGINATION The Last page link shall go to the last page")]
         [NUnit.Framework.CategoryAttribute("VAL")]
-        [NUnit.Framework.CategoryAttribute("PBMCC_191152_022")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_191152_021")]
         [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
-        public virtual void PAGINATIONTheNumericPageLinksShallGoToTheCorrespondingPages()
+        public virtual void PAGINATIONTheLastPageLinkShallGoToTheLastPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("PAGINATION The numeric page links shall go to the corresponding pages", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("PAGINATION The Last page link shall go to the last page", new string[] {
                         "VAL",
-                        "PBMCC_191152_022",
+                        "PBMCC_191152_021",
                         "Release2015.3.0"});
-#line 450
+#line 444
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1349,21 +1330,62 @@ this.ScenarioSetup(scenarioInfo);
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 452
+#line 446
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table32, "Given ");
-#line 456
+#line 450
   testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 457
-  testRunner.When("I go to page \"2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 458
-  testRunner.Then("The current page is \"2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 459
-  testRunner.When("I go to page \"3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 460
+#line 451
+  testRunner.When("I go to page \"Last\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 452
   testRunner.Then("The current page is \"3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 461
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("PAGINATION The numeric page links shall go to the corresponding pages")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_191152_022")]
+        [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
+        public virtual void PAGINATIONTheNumericPageLinksShallGoToTheCorrespondingPages()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("PAGINATION The numeric page links shall go to the corresponding pages", new string[] {
+                        "VAL",
+                        "PBMCC_191152_022",
+                        "Release2015.3.0"});
+#line 457
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SynonymListName",
+                        "Dictionary",
+                        "Version",
+                        "Locale"});
+            table33.AddRow(new string[] {
+                        "Primary List",
+                        "MedDRA",
+                        "15.0",
+                        "ENG"});
+            table33.AddRow(new string[] {
+                        "Primary List",
+                        "WhoDrugDDEB2",
+                        "201503",
+                        "ENG"});
+#line 459
+  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table33, "Given ");
+#line 463
+  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 464
+  testRunner.When("I go to page \"2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 465
+  testRunner.Then("The current page is \"2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 466
+  testRunner.When("I go to page \"3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 467
+  testRunner.Then("The current page is \"3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 468
   testRunner.When("I go to page \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 462
+#line 469
   testRunner.Then("The current page is \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1384,43 +1406,43 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_191152_023",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 468
+#line 475
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table33.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "Primary List",
                         "MedDRA",
                         "15.0",
                         "ENG"});
-            table33.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "Primary List",
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 470
-  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table33, "Given ");
-#line 474
-  testRunner.And("coding tasks from CSV file \"Tasks_520_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 475
-  testRunner.When("I go to page \"7\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 476
-  testRunner.Then("The current page is \"7\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 477
-  testRunner.When("I go to page \"9\t\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 478
-  testRunner.Then("The current page is \"9\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 479
-  testRunner.When("I go to page \"49\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 480
-  testRunner.Then("The current page is \"49\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table34, "Given ");
 #line 481
-  testRunner.When("I go to page \"44\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("coding tasks from CSV file \"Tasks_520_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 482
+  testRunner.When("I go to page \"7\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 483
+  testRunner.Then("The current page is \"7\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 484
+  testRunner.When("I go to page \"9\t\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 485
+  testRunner.Then("The current page is \"9\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 486
+  testRunner.When("I go to page \"49\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 487
+  testRunner.Then("The current page is \"49\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 488
+  testRunner.When("I go to page \"44\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 489
   testRunner.Then("The current page is \"44\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1441,29 +1463,29 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_191152_024",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 488
+#line 495
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table34.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "Primary List",
                         "MedDRA",
                         "15.0",
                         "ENG"});
-            table34.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "Primary List",
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 490
-  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table34, "Given ");
-#line 494
+#line 497
+  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table35, "Given ");
+#line 501
   testRunner.And("coding tasks from CSV file \"Tasks_520_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 495
+#line 502
   testRunner.Then("The task count is \"520\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1482,31 +1504,31 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_191152_025",
                         "Release2015.3.0"});
-#line 500
+#line 507
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table35.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "Primary List",
                         "MedDRA",
                         "15.0",
                         "ENG"});
-            table35.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "Primary List",
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 502
-  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table35, "Given ");
-#line 506
+#line 509
+  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table36, "Given ");
+#line 513
   testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 507
+#line 514
   testRunner.When("entering value \"50\" for Configuration \"Coding Task Page Size\" and save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 508
+#line 515
   testRunner.Then("The task count is \"30\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1527,39 +1549,39 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_191152_026",
                         "IncreaseTimeout_3000000",
                         "ignore"});
-#line 515
+#line 522
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table36.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "Primary List",
                         "MedDRA",
                         "15.0",
                         "ENG"});
-            table36.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "Primary List",
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 517
-  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table36, "Given ");
-#line 521
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 522
-  testRunner.And("coding tasks from CSV file \"Tasks_520_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 523
-  testRunner.And("coding tasks from CSV file \"Tasks_1000_MedDRA_Match_Upload.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 524
+  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table37, "Given ");
+#line 528
+  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 529
+  testRunner.And("coding tasks from CSV file \"Tasks_520_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 530
+  testRunner.And("coding tasks from CSV file \"Tasks_1000_MedDRA_Match_Upload.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 531
   testRunner.And("coding tasks from CSV file \"Tasks_1500_SingleStudy_NoSup_SingleDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 525
+#line 532
   testRunner.And("coding tasks from CSV file \"AutoApproveSynonymApprovalMedDRA.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 526
+#line 533
   testRunner.And("coding tasks from CSV file \"AutoApproveSynonymApprovalWhoDrugDDEB2.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 527
+#line 534
   testRunner.Then("The task count is not \"0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1578,19 +1600,19 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_193388_001",
                         "Release2015.3.0",
                         "IncreaseTimeout_600000"});
-#line 533
+#line 540
 this.ScenarioSetup(scenarioInfo);
-#line 535
+#line 542
   testRunner.Given("a \"Basic\" Coder setup with registered synonym list \"MedDRA ENG 14.0 Empty_List\" c" +
                     "ontaining entry \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 536
+#line 543
   testRunner.And("an activated synonym list \"MedDRA ENG 15.0 New_Primary_List\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 537
+#line 544
   testRunner.And("coding tasks from CSV file \"Tasks_1000_MedDRA_Match_Upload.csv\" and auto-coding i" +
                     "n progress", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 538
+#line 545
   testRunner.When("performing study migration without waiting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 539
+#line 546
   testRunner.Then("new coding task \"AARDWOLF\" is not be accepted until the study migration completes" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

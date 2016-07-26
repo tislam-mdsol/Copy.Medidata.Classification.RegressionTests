@@ -2617,70 +2617,77 @@ this.ScenarioSetup(scenarioInfo);
 #line 530
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 531
-   testRunner.And("coding task \"EMPTY\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 532
-   testRunner.When("I open a query for new task \"FLUS\" with comment \"Epidemic?\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 533
-   testRunner.And("the query for new task \"OPEN WOUNDED\" with comment \"Size?\" is \"Open\" with respons" +
-                    "e \"Small\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 534
-   testRunner.And("the query for new task \"PAINS\" with comment \"Many?\" is \"Answered\" with response \"" +
-                    "A lot\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 535
-   testRunner.And("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Cancelled\" with r" +
-                    "esponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 536
-   testRunner.And("the query for new task \"CLOTHES\" with comment \"Is this a typo?\" is \"Closed\" with " +
-                    "response \"Yes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 537
-   testRunner.And("all task filters are cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 538
-   testRunner.And("I filter for tasks with \"Queries\" of \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 539
-   testRunner.Then("Only tasks with \"Queries\" of \"Queued\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 540
-   testRunner.When("I filter for tasks with \"Queries\" of \"Open\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 541
-   testRunner.Then("Only tasks with \"Queries\" of \"Open\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 542
-   testRunner.When("I filter for tasks with \"Queries\" of \"Answered\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 543
-   testRunner.Then("Only tasks with \"Queries\" of \"Answered\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 544
-   testRunner.When("I filter for tasks with \"Queries\" of \"Cancelled\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 545
-   testRunner.Then("Only tasks with \"Queries\" of \"Cancelled\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 546
-   testRunner.When("I filter for tasks with \"Queries\" of \"Closed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 547
-   testRunner.Then("Only tasks with \"Queries\" of \"Closed\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 548
-   testRunner.When("I filter for tasks with \"Queries\" of \"All\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
-                        "Queries"});
+                        "Dictionary Level"});
             table35.AddRow(new string[] {
                         "EMPTY",
+                        "LLT"});
+#line 531
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table35, "When ");
+#line 534
+   testRunner.And("I open a query for new task \"FLUS\" with comment \"Epidemic?\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 535
+   testRunner.And("the query for new task \"OPEN WOUNDED\" with comment \"Size?\" is \"Open\" with respons" +
+                    "e \"Small\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 536
+   testRunner.And("the query for new task \"PAINS\" with comment \"Many?\" is \"Answered\" with response \"" +
+                    "A lot\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 537
+   testRunner.And("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Cancelled\" with r" +
+                    "esponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 538
+   testRunner.And("the query for new task \"CLOTHES\" with comment \"Is this a typo?\" is \"Closed\" with " +
+                    "response \"Yes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 539
+   testRunner.And("all task filters are cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 540
+   testRunner.And("I filter for tasks with \"Queries\" of \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 541
+   testRunner.Then("Only tasks with \"Queries\" of \"Queued\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 542
+   testRunner.When("I filter for tasks with \"Queries\" of \"Open\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 543
+   testRunner.Then("Only tasks with \"Queries\" of \"Open\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 544
+   testRunner.When("I filter for tasks with \"Queries\" of \"Answered\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 545
+   testRunner.Then("Only tasks with \"Queries\" of \"Answered\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 546
+   testRunner.When("I filter for tasks with \"Queries\" of \"Cancelled\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 547
+   testRunner.Then("Only tasks with \"Queries\" of \"Cancelled\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 548
+   testRunner.When("I filter for tasks with \"Queries\" of \"Closed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 549
+   testRunner.Then("Only tasks with \"Queries\" of \"Closed\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 550
+   testRunner.When("I filter for tasks with \"Queries\" of \"All\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Queries"});
+            table36.AddRow(new string[] {
+                        "EMPTY",
                         ""});
-            table35.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "FLUS",
                         "Queued"});
-            table35.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "OPEN WOUNDED",
                         "Open"});
-            table35.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "PAINS",
                         "Answered"});
-            table35.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "HEADACHES",
                         "Cancelled"});
-            table35.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "CLOTHES",
                         "Closed"});
-#line 549
-   testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table35, "Then ");
+#line 551
+   testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table36, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -2698,102 +2705,132 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_026",
                         "Release2015.3.0",
                         "IncreaseTimeout_420000"});
-#line 562
-this.ScenarioSetup(scenarioInfo);
 #line 564
+this.ScenarioSetup(scenarioInfo);
+#line 566
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 565
-   testRunner.And("coding tasks \"HEADACHES, HEADACHES, HEADACHES, PAINS, PAINS, CLOTHES, CLOTHES, CL" +
-                    "OTHES, CLOTHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 566
-   testRunner.When("the query for task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with response \"" +
-                    "Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table37.AddRow(new string[] {
+                        "HEADACHES",
+                        "LLT"});
+            table37.AddRow(new string[] {
+                        "HEADACHES",
+                        "LLT"});
+            table37.AddRow(new string[] {
+                        "HEADACHES",
+                        "LLT"});
+            table37.AddRow(new string[] {
+                        "PAINS",
+                        "LLT"});
+            table37.AddRow(new string[] {
+                        "PAINS",
+                        "LLT"});
+            table37.AddRow(new string[] {
+                        "CLOTHES",
+                        "LLT"});
+            table37.AddRow(new string[] {
+                        "CLOTHES",
+                        "LLT"});
+            table37.AddRow(new string[] {
+                        "CLOTHES",
+                        "LLT"});
+            table37.AddRow(new string[] {
+                        "CLOTHES",
+                        "LLT"});
 #line 567
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table37, "When ");
+#line 578
+   testRunner.And("the query for task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with response \"" +
+                    "Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 579
    testRunner.And("the query for task \"PAINS\" with comment \"Many?\" is \"Answered\" with response \"A lo" +
                     "t\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 568
+#line 580
    testRunner.And("the query for task \"CLOTHES\" with comment \"Is this a typo?\" is \"Closed\" with resp" +
                     "onse \"Yes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Group",
                         "Queries"});
-            table36.AddRow(new string[] {
+            table38.AddRow(new string[] {
                         "CLOTHES",
                         "3",
                         "Queued"});
-            table36.AddRow(new string[] {
+            table38.AddRow(new string[] {
                         "CLOTHES",
                         "1",
                         "Closed"});
-            table36.AddRow(new string[] {
+            table38.AddRow(new string[] {
                         "HEADACHES",
                         "2",
                         "Queued"});
-            table36.AddRow(new string[] {
+            table38.AddRow(new string[] {
                         "HEADACHES",
                         "1",
                         "Open"});
-            table36.AddRow(new string[] {
+            table38.AddRow(new string[] {
                         "PAINS",
                         "1",
                         "Queued"});
-            table36.AddRow(new string[] {
+            table38.AddRow(new string[] {
                         "PAINS",
                         "1",
                         "Answered"});
-#line 569
-   testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table36, "Then ");
-#line 577
+#line 581
+   testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table38, "Then ");
+#line 589
    testRunner.When("the first task \"CLOTHES\" in group \"3\" is coded to term \"Acute migraine\" at search" +
                     " level \"Low Level Term\" with code \"10066635\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 578
+#line 590
    testRunner.When("all task filters are cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Group",
                         "Status",
                         "Queries"});
-            table37.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "CLOTHES",
                         "2",
                         "Waiting Manual Code",
                         "Queued"});
-            table37.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "CLOTHES",
                         "1",
                         "Waiting Manual Code",
                         "Closed"});
-            table37.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "CLOTHES",
                         "1",
                         "Waiting Approval",
                         "Queued"});
-            table37.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "HEADACHES",
                         "2",
                         "Waiting Manual Code",
                         "Queued"});
-            table37.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "HEADACHES",
                         "1",
                         "Waiting Manual Code",
                         "Open"});
-            table37.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "PAINS",
                         "1",
                         "Waiting Manual Code",
                         "Queued"});
-            table37.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "PAINS",
                         "1",
                         "Waiting Manual Code",
                         "Answered"});
-#line 579
-   testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table37, "Then ");
+#line 591
+   testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table39, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

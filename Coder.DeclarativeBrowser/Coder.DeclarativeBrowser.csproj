@@ -180,7 +180,6 @@
     <Compile Include="Models\CodingDecisionsReportCriteria.cs" />
     <Compile Include="Models\CodingHistoryReportRow.cs" />
     <Compile Include="Models\CodingHistoryReportCriteria.cs" />
-    <Compile Include="Models\DirectDictionaryMatch.cs" />
     <Compile Include="Models\ETEModels\RaveArchitectCRFCoderWorkSheets.cs" />
     <Compile Include="Models\ETEModels\RaveCoderGlobalConfiguration.cs" />
     <Compile Include="Models\ETEModels\ReportDataModel.cs" />

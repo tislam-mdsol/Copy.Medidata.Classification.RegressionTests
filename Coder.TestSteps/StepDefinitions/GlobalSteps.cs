@@ -54,41 +54,6 @@ namespace Coder.TestSteps.StepDefinitions
 
             GivenACoderSetupWithNoTasksAndNoSynonymsAndDictionary(setupType, dictionaryLocaleVersion);
         }
-
-        [When(@"coding task ""(.*)"" for dictionary level ""(.*)""")]
-        [Given(@"coding task ""(.*)"" for dictionary level ""(.*)""")]
-        public void GivenCodingTaskForDictionaryLevel(string verbatim, string dictionaryLevel)
-        {
-            if (String.IsNullOrEmpty(verbatim))          throw new ArgumentNullException("verbatim");          
-            if (String.IsNullOrEmpty(dictionaryLevel))   throw new ArgumentNullException("dictionaryLevel");
-
-            //BrowserUtility.CreateNewTask(_StepContext, verbatim, dictionaryLevel);
-            _Browser.BroadcastCodingRequest(_StepContext, verbatim, dictionaryLevel);
-        }
-
-        [When(@"coding tasks ""(.*)""")]
-        [Given(@"coding tasks ""(.*)""")]
-        public void GivenCodingTasks(string combinedVerbatims)
-        {
-            if (String.IsNullOrEmpty(combinedVerbatims)) throw new ArgumentNullException("combinedVerbatims");
-
-            var verbatims = combinedVerbatims.Split(',');
-
-            foreach (var verbatim in verbatims)
-            {
-                throw new NotImplementedException();
-            }
-
-            _Browser.WaitForAutoCodingToComplete();
-        }
-
-        [Given(@"new coding task ""(.*)"" with isAutoApproval ""(.*)"" and isApprovalRequired ""(.*)""")]
-        public void GivenNewCodingTaskWithIsAutoApprovalAndIsApprovalRequired(string verbatim, string isAutoApproval, string isApprovalRequired)
-        {
-            _StepContext.SetCodingRequestApprovalContext(isAutoApproval,isApprovalRequired);
-            throw new NotImplementedException();
-        }
-
        
         [When(@"coding tasks are loaded from CSV file ""(.*)""")]
         [Given(@"coding tasks from CSV file ""(.*)""")]

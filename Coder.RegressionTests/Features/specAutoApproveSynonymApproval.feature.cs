@@ -150,72 +150,147 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
-                        "Assigned Term"});
+                        "Dictionary Level",
+                        "Form",
+                        "IsApprovalRequired",
+                        "IsAutoApproval"});
             table2.AddRow(new string[] {
-                        "COUGHING",
-                        "Coughing"});
+                        "Headache",
+                        "LLT",
+                        "AutoApprovalRequired",
+                        "TRUE",
+                        "TRUE"});
             table2.AddRow(new string[] {
-                        "COUGHING BLOOD",
-                        "Coughing blood"});
+                        "Broken leg",
+                        "LLT",
+                        "AutoApprovalRequired",
+                        "TRUE",
+                        "TRUE"});
+            table2.AddRow(new string[] {
+                        "lower body numb",
+                        "LLT",
+                        "AutoApprovalRequired",
+                        "TRUE",
+                        "TRUE"});
+            table2.AddRow(new string[] {
+                        "left foot swollen",
+                        "LLT",
+                        "AutoApprovalRequired",
+                        "TRUE",
+                        "TRUE"});
+            table2.AddRow(new string[] {
+                        "trouble breathing",
+                        "LLT",
+                        "AutoApprovalRequired",
+                        "TRUE",
+                        "TRUE"});
+            table2.AddRow(new string[] {
+                        "coughing blood",
+                        "LLT",
+                        "ApprovalRequired",
+                        "TRUE",
+                        "FALSE"});
+            table2.AddRow(new string[] {
+                        "coughing",
+                        "LLT",
+                        "ApprovalRequired",
+                        "TRUE",
+                        "FALSE"});
+            table2.AddRow(new string[] {
+                        "cough",
+                        "LLT",
+                        "AutoApprovalNotRequired",
+                        "FALSE",
+                        "TRUE"});
+            table2.AddRow(new string[] {
+                        "migraine headache",
+                        "LLT",
+                        "AutoApprovalNotRequired",
+                        "FALSE",
+                        "TRUE"});
+            table2.AddRow(new string[] {
+                        "Back pain",
+                        "LLT",
+                        "ApprovalNotRequired",
+                        "FALSE",
+                        "FALSE"});
+            table2.AddRow(new string[] {
+                        "chest pain",
+                        "LLT",
+                        "ApprovalNotRequired",
+                        "FALSE",
+                        "FALSE"});
 #line 47
-   testRunner.Then("the following coding decisions require approval", ((string)(null)), table2, "Then ");
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table2, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim",
-                        "Term"});
+                        "Verbatim Term",
+                        "Assigned Term"});
             table3.AddRow(new string[] {
-                        "HEADACHE",
-                        "Headache"});
+                        "COUGHING",
+                        "Coughing"});
             table3.AddRow(new string[] {
-                        "BROKEN LEG",
-                        "Broken leg"});
-            table3.AddRow(new string[] {
-                        "COUGH",
-                        "Cough"});
-            table3.AddRow(new string[] {
-                        "MIGRAINE HEADACHE",
-                        "Migraine headache"});
-            table3.AddRow(new string[] {
-                        "BACK PAIN",
-                        "Back pain"});
-            table3.AddRow(new string[] {
-                        "CHEST PAIN",
-                        "Chest pain"});
-#line 51
-   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table3, "And ");
-#line 59
-   testRunner.And("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        "COUGHING BLOOD",
+                        "Coughing blood"});
+#line 60
+   testRunner.Then("the following coding decisions require approval", ((string)(null)), table3, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim",
+                        "Term"});
+            table4.AddRow(new string[] {
+                        "HEADACHE",
+                        "Headache"});
+            table4.AddRow(new string[] {
+                        "BROKEN LEG",
+                        "Broken leg"});
+            table4.AddRow(new string[] {
+                        "COUGH",
+                        "Cough"});
+            table4.AddRow(new string[] {
+                        "MIGRAINE HEADACHE",
+                        "Migraine headache"});
+            table4.AddRow(new string[] {
+                        "BACK PAIN",
+                        "Back pain"});
+            table4.AddRow(new string[] {
+                        "CHEST PAIN",
+                        "Chest pain"});
+#line 64
+   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table4, "And ");
+#line 72
+   testRunner.And("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "verbatim",
                         "dictionaryLocaleVersionSynonymListName",
                         "exists"});
-            table4.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "HEADACHE",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-            table4.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "BROKEN LEG",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-            table4.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "COUGH",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-            table4.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "MIGRAINE HEADACHE",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-            table4.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "BACK PAIN",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-            table4.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "CHEST PAIN",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-#line 60
-   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table4, "And ");
+#line 73
+   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table5, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -235,70 +310,70 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197255_002",
                         "Release2015.3.0"});
-#line 72
+#line 85
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "WhoDrugDDEB2_DDM",
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 74
+#line 87
    testRunner.Given("a \"Completed Reconsider\" Coder setup with no tasks and no synonyms and dictionari" +
-                    "es", ((string)(null)), table5, "Given ");
-#line 77
+                    "es", ((string)(null)), table6, "Given ");
+#line 90
    testRunner.When("coding tasks are loaded from CSV file \"AutoApproveSynonymApprovalWhoDrugDDEB2.csv" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Assigned Term"});
-            table6.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "TYLENOL INFANT",
                         "Tylenol infant"});
-#line 78
-   testRunner.Then("the following coding decisions require approval", ((string)(null)), table6, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim",
-                        "Term"});
-            table7.AddRow(new string[] {
-                        "TYLENOL COUGH",
-                        "Tylenol cough"});
-            table7.AddRow(new string[] {
-                        "PENICILLIN V BASIC",
-                        "Penicillin v basic"});
-            table7.AddRow(new string[] {
-                        "ADVIL COLD",
-                        "Advil cold"});
-#line 81
-   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table7, "And ");
-#line 86
-   testRunner.And("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 91
+   testRunner.Then("the following coding decisions require approval", ((string)(null)), table7, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim",
+                        "Term"});
+            table8.AddRow(new string[] {
+                        "TYLENOL COUGH",
+                        "Tylenol cough"});
+            table8.AddRow(new string[] {
+                        "PENICILLIN V BASIC",
+                        "Penicillin v basic"});
+            table8.AddRow(new string[] {
+                        "ADVIL COLD",
+                        "Advil cold"});
+#line 94
+   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table8, "And ");
+#line 99
+   testRunner.And("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "verbatim",
                         "dictionaryLocaleVersionSynonymListName",
                         "exists"});
-            table8.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "TYLENOL COUGH",
                         "WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM",
                         "false"});
-            table8.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "PENICILLIN V BASIC",
                         "WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM",
                         "false"});
-            table8.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "ADVIL COLD",
                         "WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM",
                         "false"});
-#line 87
-   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table8, "And ");
+#line 100
+   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table9, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -320,66 +395,66 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_197255_003",
                         "Release2015.3.0",
                         "IncreaseTimeout_240000"});
-#line 97
+#line 110
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "WhoDrugDDEB2_DDM",
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 99
+#line 112
    testRunner.Given("a \"Completed Reconsider\" Coder setup with no tasks and no synonyms and dictionari" +
-                    "es", ((string)(null)), table9, "Given ");
-#line 102
+                    "es", ((string)(null)), table10, "Given ");
+#line 115
    testRunner.When("coding tasks are loaded from CSV file \"AutoApproveSynonymApprovalWhoDrugDDEB2.csv" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 103
+#line 116
    testRunner.And("task \"JUNIOR ASPRIN\" is coded to term \"JUNIOR ASPRIN\" at search level \"Trade Name" +
                     "\" with code \"000027 01 583\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
+#line 117
    testRunner.And("task \"PAIN\" is coded to term \"PAIN\" at search level \"Trade Name\" with code \"00027" +
                     "7 04 191\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
+#line 118
    testRunner.And("task \"VITAMIN-A\" is coded to term \"VITAMIN-A\" at search level \"Trade Name\" with c" +
                     "ode \"000560 01 078\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 119
    testRunner.And("task \"VITAMIN-C\" is coded to term \"VITAMIN-C\" at search level \"Trade Name\" with c" +
                     "ode \"000080 01 517\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Assigned Term"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "JUNIOR ASPRIN",
                         "Junior asprin"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "TYLENOL INFANT",
                         "Tylenol infant"});
-#line 107
-   testRunner.Then("the following coding decisions require approval", ((string)(null)), table10, "Then ");
-#line 111
+#line 120
+   testRunner.Then("the following coding decisions require approval", ((string)(null)), table11, "Then ");
+#line 124
    testRunner.And("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "verbatim",
                         "dictionaryLocaleVersionSynonymListName",
                         "exists"});
-            table11.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "VITAMIN-A",
                         "WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM",
                         "true"});
-            table11.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "VITAMIN-C",
                         "WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM",
                         "true"});
-#line 112
-   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table11, "And ");
+#line 125
+   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table12, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -401,95 +476,95 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_197255_004",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 121
+#line 134
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "MedDRA_DDM",
                         "MedDRA",
                         "16.0",
                         "ENG"});
-#line 123
+#line 136
    testRunner.Given("a \"Completed Reconsider\" Coder setup with no tasks and no synonyms and dictionari" +
-                    "es", ((string)(null)), table12, "Given ");
-#line 126
+                    "es", ((string)(null)), table13, "Given ");
+#line 139
    testRunner.When("I configure the Synonym Creation Policy Flag to \"Never Active\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 127
+#line 140
    testRunner.And("coding tasks are loaded from CSV file \"AutoApproveSynonymApprovalMedDRA.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Assigned Term"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "COUGHING",
                         "Coughing"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "COUGHING BLOOD",
                         "Coughing blood"});
-#line 128
-   testRunner.Then("the following coding decisions require approval", ((string)(null)), table13, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim",
-                        "Term"});
-            table14.AddRow(new string[] {
-                        "HEADACHE",
-                        "Headache"});
-            table14.AddRow(new string[] {
-                        "BROKEN LEG",
-                        "Broken leg"});
-            table14.AddRow(new string[] {
-                        "COUGH",
-                        "Cough"});
-            table14.AddRow(new string[] {
-                        "MIGRAINE HEADACHE",
-                        "Migraine headache"});
-            table14.AddRow(new string[] {
-                        "BACK PAIN",
-                        "Back pain"});
-            table14.AddRow(new string[] {
-                        "CHEST PAIN",
-                        "Chest pain"});
-#line 132
-   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table14, "And ");
-#line 140
-   testRunner.And("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 141
+   testRunner.Then("the following coding decisions require approval", ((string)(null)), table14, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim",
+                        "Term"});
+            table15.AddRow(new string[] {
+                        "HEADACHE",
+                        "Headache"});
+            table15.AddRow(new string[] {
+                        "BROKEN LEG",
+                        "Broken leg"});
+            table15.AddRow(new string[] {
+                        "COUGH",
+                        "Cough"});
+            table15.AddRow(new string[] {
+                        "MIGRAINE HEADACHE",
+                        "Migraine headache"});
+            table15.AddRow(new string[] {
+                        "BACK PAIN",
+                        "Back pain"});
+            table15.AddRow(new string[] {
+                        "CHEST PAIN",
+                        "Chest pain"});
+#line 145
+   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table15, "And ");
+#line 153
+   testRunner.And("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "verbatim",
                         "dictionaryLocaleVersionSynonymListName",
                         "exists"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "HEADACHE",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "BROKEN LEG",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "COUGH",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "MIGRAINE HEADACHE",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "BACK PAIN",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "CHEST PAIN",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-#line 141
-   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table15, "And ");
+#line 154
+   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table16, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -509,72 +584,72 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197255_005",
                         "Release2015.3.0"});
-#line 153
+#line 166
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table16.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "WhoDrugDDEB2_DDM",
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 155
+#line 168
    testRunner.Given("a \"Completed Reconsider\" Coder setup with no tasks and no synonyms and dictionari" +
-                    "es", ((string)(null)), table16, "Given ");
-#line 158
+                    "es", ((string)(null)), table17, "Given ");
+#line 171
    testRunner.When("I configure the Synonym Creation Policy Flag to \"Never Active\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 159
+#line 172
    testRunner.And("coding tasks are loaded from CSV file \"AutoApproveSynonymApprovalWhoDrugDDEB2.csv" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Assigned Term"});
-            table17.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "TYLENOL INFANT",
                         "Tylenol infant"});
-#line 160
-   testRunner.Then("the following coding decisions require approval", ((string)(null)), table17, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim",
-                        "Term"});
-            table18.AddRow(new string[] {
-                        "TYLENOL COUGH",
-                        "Tylenol cough"});
-            table18.AddRow(new string[] {
-                        "PENICILLIN V BASIC",
-                        "Penicillin v basic"});
-            table18.AddRow(new string[] {
-                        "ADVIL COLD",
-                        "Advil cold"});
-#line 163
-   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table18, "And ");
-#line 168
-   testRunner.And("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 173
+   testRunner.Then("the following coding decisions require approval", ((string)(null)), table18, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim",
+                        "Term"});
+            table19.AddRow(new string[] {
+                        "TYLENOL COUGH",
+                        "Tylenol cough"});
+            table19.AddRow(new string[] {
+                        "PENICILLIN V BASIC",
+                        "Penicillin v basic"});
+            table19.AddRow(new string[] {
+                        "ADVIL COLD",
+                        "Advil cold"});
+#line 176
+   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table19, "And ");
+#line 181
+   testRunner.And("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "verbatim",
                         "dictionaryLocaleVersionSynonymListName",
                         "exists"});
-            table19.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "TYLENOL COUGH",
                         "WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM",
                         "false"});
-            table19.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "PENICILLIN V BASIC",
                         "WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM",
                         "false"});
-            table19.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "ADVIL COLD",
                         "WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM",
                         "false"});
-#line 169
-   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table19, "And ");
+#line 182
+   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table20, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -596,67 +671,67 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_197255_006",
                         "Release2015.3.0",
                         "IncreaseTimeout_240000"});
-#line 179
+#line 192
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table20.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "WhoDrugDDEB2_DDM",
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 181
+#line 194
    testRunner.Given("a \"Completed Reconsider\" Coder setup with no tasks and no synonyms and dictionari" +
-                    "es", ((string)(null)), table20, "Given ");
-#line 184
+                    "es", ((string)(null)), table21, "Given ");
+#line 197
    testRunner.When("I configure the Synonym Creation Policy Flag to \"Never Active\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 185
+#line 198
    testRunner.And("coding tasks are loaded from CSV file \"AutoApproveSynonymApprovalWhoDrugDDEB2.csv" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 186
+#line 199
    testRunner.And("task \"JUNIOR ASPRIN\" is coded to term \"JUNIOR ASPRIN\" at search level \"Trade Name" +
                     "\" with code \"000027 01 583\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 187
+#line 200
    testRunner.And("task \"PAIN\" is coded to term \"PAIN\" at search level \"Trade Name\" with code \"00027" +
                     "7 04 191\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 188
+#line 201
    testRunner.And("task \"VITAMIN-A\" is coded to term \"VITAMIN-A\" at search level \"Trade Name\" with c" +
                     "ode \"000560 01 078\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 189
+#line 202
    testRunner.And("task \"VITAMIN-C\" is coded to term \"VITAMIN-C\" at search level \"Trade Name\" with c" +
                     "ode \"000080 01 517\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Assigned Term"});
-            table21.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "JUNIOR ASPRIN",
                         "Junior asprin"});
-            table21.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "PAIN",
                         "Pain"});
-            table21.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "TYLENOL INFANT",
                         "Tylenol infant"});
-#line 190
-   testRunner.Then("the following coding decisions require approval", ((string)(null)), table21, "Then ");
+#line 203
+   testRunner.Then("the following coding decisions require approval", ((string)(null)), table22, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim"});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "JUNIOR ASPRIN"});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "PAIN"});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "VITAMIN-A"});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "VITAMIN-C"});
-#line 195
-   testRunner.And("the following synonym terms require approval", ((string)(null)), table22, "And ");
+#line 208
+   testRunner.And("the following synonym terms require approval", ((string)(null)), table23, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -680,68 +755,68 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_197255_007",
                         "Release2015.3.0",
                         "IncreaseTimeout_240000"});
-#line 206
+#line 219
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table23.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "MedDRA_DDM",
                         "MedDRA",
                         "16.0",
                         "ENG"});
-#line 208
+#line 221
    testRunner.Given("a \"No Enforced Primary Path\" Coder setup with no tasks and no synonyms and dictio" +
-                    "naries", ((string)(null)), table23, "Given ");
-#line 211
+                    "naries", ((string)(null)), table24, "Given ");
+#line 224
    testRunner.When("I configure the Synonym Creation Policy Flag to \"Never Active\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 212
+#line 225
    testRunner.And("I configure dictionary \"MedDRA\" with \"Auto Approve\" set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 213
+#line 226
    testRunner.And("coding tasks are loaded from CSV file \"AutoApproveSynonymApprovalMedDRA.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 214
+#line 227
    testRunner.And("task \"BROKEN LEG\" is coded to term \"Broken leg\" at search level \"Low Level Term\" " +
                     "with code \"10006391\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 215
+#line 228
    testRunner.And("task \"CHEST PAIN\" is coded to term \"Chest pain\" at search level \"Low Level Term\" " +
                     "with code \"10008479\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 216
+#line 229
    testRunner.And("task \"COUGHING BLOOD\" is coded to term \"Coughing blood\" at search level \"Low Leve" +
                     "l Term\" with code \"10011234\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 217
+#line 230
    testRunner.And("task \"MIGRAINE HEADACHE\" is coded to term \"Migraine headache\" at search level \"Lo" +
                     "w Level Term\" with code \"10027602\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Assigned Term"});
-            table24.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "BROKEN LEG",
                         "Broken leg"});
-            table24.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "COUGHING",
                         "Coughing"});
-            table24.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "COUGHING BLOOD",
                         "Coughing blood"});
-#line 218
-   testRunner.Then("the following coding decisions require approval", ((string)(null)), table24, "Then ");
+#line 231
+   testRunner.Then("the following coding decisions require approval", ((string)(null)), table25, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim"});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "BROKEN LEG"});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "CHEST PAIN"});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "COUGHING BLOOD"});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "MIGRAINE HEADACHE"});
-#line 223
-   testRunner.And("the following synonym terms require approval", ((string)(null)), table25, "And ");
+#line 236
+   testRunner.And("the following synonym terms require approval", ((string)(null)), table26, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -761,73 +836,73 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197255_008",
                         "Release2015.3.0"});
-#line 233
+#line 246
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table26.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "MedDRA_DDM",
                         "MedDRA",
                         "16.0",
                         "ENG"});
-#line 235
+#line 248
    testRunner.Given("a \"No Enforced Primary Path\" Coder setup with no tasks and no synonyms and dictio" +
-                    "naries", ((string)(null)), table26, "Given ");
-#line 238
+                    "naries", ((string)(null)), table27, "Given ");
+#line 251
    testRunner.When("I configure the Synonym Creation Policy Flag to \"Never Active\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 239
+#line 252
    testRunner.And("I configure dictionary \"MedDRA\" with \"Auto Approve\" set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 240
+#line 253
    testRunner.And("coding tasks are loaded from CSV file \"AutoApproveSynonymApprovalMedDRA.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Assigned Term"});
-            table27.AddRow(new string[] {
+            table28.AddRow(new string[] {
                         "COUGHING",
                         "Coughing"});
-#line 241
-   testRunner.Then("the following coding decisions require approval", ((string)(null)), table27, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim",
-                        "Term"});
-            table28.AddRow(new string[] {
-                        "HEADACHE",
-                        "Headache"});
-            table28.AddRow(new string[] {
-                        "COUGH",
-                        "Cough"});
-            table28.AddRow(new string[] {
-                        "BACK PAIN",
-                        "Back pain"});
-#line 244
-   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table28, "And ");
-#line 249
-   testRunner.And("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 254
+   testRunner.Then("the following coding decisions require approval", ((string)(null)), table28, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim",
+                        "Term"});
+            table29.AddRow(new string[] {
+                        "HEADACHE",
+                        "Headache"});
+            table29.AddRow(new string[] {
+                        "COUGH",
+                        "Cough"});
+            table29.AddRow(new string[] {
+                        "BACK PAIN",
+                        "Back pain"});
+#line 257
+   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table29, "And ");
+#line 262
+   testRunner.And("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "verbatim",
                         "dictionaryLocaleVersionSynonymListName",
                         "exists"});
-            table29.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "HEADACHE",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-            table29.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "COUGH",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-            table29.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "BACK PAIN",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "false"});
-#line 250
-   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table29, "And ");
+#line 263
+   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table30, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -849,104 +924,105 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_197255_009",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 260
+#line 273
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table30.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "MedDRA_DDM",
                         "MedDRA",
                         "18.0",
                         "ENG"});
-#line 262
+#line 275
    testRunner.Given("a \"Synonyms Need Approval\" Coder setup with no tasks and no synonyms and dictiona" +
-                    "ries", ((string)(null)), table30, "Given ");
-#line 265
-   testRunner.When("coding tasks are loaded from CSV file \"AutoApproveSynonymApprovalMedDRA.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim Term",
-                        "Assigned Term"});
-            table31.AddRow(new string[] {
-                        "BROKEN LEG",
-                        "Broken leg"});
-            table31.AddRow(new string[] {
-                        "COUGHING",
-                        "Coughing"});
-            table31.AddRow(new string[] {
-                        "COUGHING BLOOD",
-                        "Coughing blood"});
-            table31.AddRow(new string[] {
-                        "HEADACHE",
-                        "Headache"});
-#line 266
-   testRunner.Then("the following coding decisions require approval", ((string)(null)), table31, "Then ");
+                    "ries", ((string)(null)), table31, "Given ");
+#line 278
+   testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
+                    "provalMedDRA.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim",
-                        "Term"});
+                        "Verbatim Term",
+                        "Assigned Term"});
             table32.AddRow(new string[] {
-                        "COUGH",
-                        "Cough"});
+                        "BROKEN LEG",
+                        "Broken leg"});
             table32.AddRow(new string[] {
-                        "MIGRAINE HEADACHE",
-                        "Migraine headache"});
+                        "COUGHING",
+                        "Coughing"});
             table32.AddRow(new string[] {
-                        "BACK PAIN",
-                        "Back pain"});
+                        "COUGHING BLOOD",
+                        "Coughing blood"});
             table32.AddRow(new string[] {
-                        "CHEST PAIN",
-                        "Chest pain"});
-#line 272
-   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table32, "And ");
+                        "HEADACHE",
+                        "Headache"});
+#line 279
+   testRunner.Then("the following coding decisions require approval", ((string)(null)), table32, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim"});
+                        "Verbatim",
+                        "Term"});
             table33.AddRow(new string[] {
-                        "BACK PAIN"});
+                        "COUGH",
+                        "Cough"});
             table33.AddRow(new string[] {
-                        "BROKEN LEG"});
+                        "MIGRAINE HEADACHE",
+                        "Migraine headache"});
             table33.AddRow(new string[] {
-                        "CHEST PAIN"});
+                        "BACK PAIN",
+                        "Back pain"});
             table33.AddRow(new string[] {
-                        "COUGH"});
-            table33.AddRow(new string[] {
-                        "COUGHING"});
-            table33.AddRow(new string[] {
-                        "COUGHING BLOOD"});
-            table33.AddRow(new string[] {
-                        "HEADACHE"});
-            table33.AddRow(new string[] {
-                        "MIGRAINE HEADACHE"});
-#line 278
-   testRunner.And("the following synonym terms require approval", ((string)(null)), table33, "And ");
+                        "CHEST PAIN",
+                        "Chest pain"});
+#line 285
+   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table33, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim"});
+            table34.AddRow(new string[] {
+                        "BACK PAIN"});
+            table34.AddRow(new string[] {
+                        "BROKEN LEG"});
+            table34.AddRow(new string[] {
+                        "CHEST PAIN"});
+            table34.AddRow(new string[] {
+                        "COUGH"});
+            table34.AddRow(new string[] {
+                        "COUGHING"});
+            table34.AddRow(new string[] {
+                        "COUGHING BLOOD"});
+            table34.AddRow(new string[] {
+                        "HEADACHE"});
+            table34.AddRow(new string[] {
+                        "MIGRAINE HEADACHE"});
+#line 291
+   testRunner.And("the following synonym terms require approval", ((string)(null)), table34, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                         "verbatim",
                         "dictionaryLocaleVersionSynonymListName",
                         "exists"});
-            table34.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "COUGH",
                         "MedDRA ENG 18.0 MedDRA_DDM",
                         "true"});
-            table34.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "MIGRAINE HEADACHE",
                         "MedDRA ENG 18.0 MedDRA_DDM",
                         "true"});
-            table34.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "BACK PAIN",
                         "MedDRA ENG 18.0 MedDRA_DDM",
                         "true"});
-            table34.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "CHEST PAIN",
                         "MedDRA ENG 18.0 MedDRA_DDM",
                         "true"});
-#line 288
-   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table34, "And ");
+#line 301
+   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table35, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -968,97 +1044,97 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_197255_010",
                         "Release2015.3.0",
                         "IncreaseTimeout_240000"});
-#line 299
+#line 312
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table35.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "WhoDrugDDEB2_DDM",
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 301
+#line 314
    testRunner.Given("a \"Synonyms Need Approval\" Coder setup with no tasks and no synonyms and dictiona" +
-                    "ries", ((string)(null)), table35, "Given ");
-#line 304
+                    "ries", ((string)(null)), table36, "Given ");
+#line 317
    testRunner.When("coding tasks are loaded from CSV file \"AutoApproveSynonymApprovalWhoDrugDDEB2.csv" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim Term"});
-            table36.AddRow(new string[] {
-                        "JUNIOR ASPRIN"});
-            table36.AddRow(new string[] {
-                        "PAIN"});
-            table36.AddRow(new string[] {
-                        "VITAMIN-A"});
-            table36.AddRow(new string[] {
-                        "VITAMIN-C"});
-#line 305
-   testRunner.Then("the following coding decisions require manual coding", ((string)(null)), table36, "Then ");
-#line hidden
             TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim Term",
-                        "Assigned Term"});
+                        "Verbatim Term"});
             table37.AddRow(new string[] {
-                        "TYLENOL COUGH",
-                        "Tylenol cough"});
+                        "JUNIOR ASPRIN"});
             table37.AddRow(new string[] {
-                        "TYLENOL INFANT",
-                        "Tylenol infant"});
-#line 311
-   testRunner.And("the following coding decisions require approval", ((string)(null)), table37, "And ");
+                        "PAIN"});
+            table37.AddRow(new string[] {
+                        "VITAMIN-A"});
+            table37.AddRow(new string[] {
+                        "VITAMIN-C"});
+#line 318
+   testRunner.Then("the following coding decisions require manual coding", ((string)(null)), table37, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Assigned Term"});
+            table38.AddRow(new string[] {
+                        "TYLENOL COUGH",
+                        "Tylenol cough"});
+            table38.AddRow(new string[] {
+                        "TYLENOL INFANT",
+                        "Tylenol infant"});
+#line 324
+   testRunner.And("the following coding decisions require approval", ((string)(null)), table38, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
                         "Term"});
-            table38.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "PENICILLIN V BASIC",
                         "Penicillin v basic"});
-            table38.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "ADVIL COLD",
                         "Advil cold"});
-#line 315
-   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table38, "And ");
-#line 319
+#line 328
+   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table39, "And ");
+#line 332
    testRunner.When("all task filters are cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 320
+#line 333
    testRunner.And("task \"JUNIOR ASPRIN\" is coded to term \"JUNIOR ASPRIN\" at search level \"Trade Name" +
                     "\" with code \"000027 01 583\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim"});
-            table39.AddRow(new string[] {
-                        "ADVIL COLD"});
-            table39.AddRow(new string[] {
-                        "JUNIOR ASPRIN"});
-            table39.AddRow(new string[] {
-                        "PENICILLIN V BASIC"});
-            table39.AddRow(new string[] {
-                        "TYLENOL COUGH"});
-            table39.AddRow(new string[] {
-                        "TYLENOL INFANT"});
-#line 321
-   testRunner.Then("the following synonym terms require approval", ((string)(null)), table39, "Then ");
-#line hidden
             TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim"});
+            table40.AddRow(new string[] {
+                        "ADVIL COLD"});
+            table40.AddRow(new string[] {
+                        "JUNIOR ASPRIN"});
+            table40.AddRow(new string[] {
+                        "PENICILLIN V BASIC"});
+            table40.AddRow(new string[] {
+                        "TYLENOL COUGH"});
+            table40.AddRow(new string[] {
+                        "TYLENOL INFANT"});
+#line 334
+   testRunner.Then("the following synonym terms require approval", ((string)(null)), table40, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
                         "verbatim",
                         "dictionaryLocaleVersionSynonymListName",
                         "exists"});
-            table40.AddRow(new string[] {
+            table41.AddRow(new string[] {
                         "PENICILLIN V BASIC",
                         "WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM",
                         "true"});
-            table40.AddRow(new string[] {
+            table41.AddRow(new string[] {
                         "ADVIL COLD",
                         "WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM",
                         "true"});
-#line 328
-   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table40, "And ");
+#line 341
+   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table41, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1078,92 +1154,92 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197255_011",
                         "Release2015.3.0"});
-#line 336
+#line 349
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table41.AddRow(new string[] {
+            table42.AddRow(new string[] {
                         "MedDRA_DDM",
                         "MedDRA",
                         "16.0",
                         "ENG"});
-#line 338
-   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table41, "Given ");
-#line 341
+#line 351
+   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table42, "Given ");
+#line 354
    testRunner.When("coding tasks are loaded from CSV file \"AutoApproveSynonymApprovalMedDRA.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Assigned Term"});
-            table42.AddRow(new string[] {
+            table43.AddRow(new string[] {
                         "COUGHING",
                         "Coughing"});
-            table42.AddRow(new string[] {
+            table43.AddRow(new string[] {
                         "COUGHING BLOOD",
                         "Coughing blood"});
-#line 342
-   testRunner.Then("the following coding decisions require approval", ((string)(null)), table42, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim",
-                        "Term"});
-            table43.AddRow(new string[] {
-                        "HEADACHE",
-                        "Headache"});
-            table43.AddRow(new string[] {
-                        "BROKEN LEG",
-                        "Broken leg"});
-            table43.AddRow(new string[] {
-                        "COUGH",
-                        "Cough"});
-            table43.AddRow(new string[] {
-                        "MIGRAINE HEADACHE",
-                        "Migraine headache"});
-            table43.AddRow(new string[] {
-                        "BACK PAIN",
-                        "Back pain"});
-            table43.AddRow(new string[] {
-                        "CHEST PAIN",
-                        "Chest pain"});
-#line 346
-   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table43, "And ");
-#line 354
-   testRunner.And("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 355
+   testRunner.Then("the following coding decisions require approval", ((string)(null)), table43, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim",
+                        "Term"});
+            table44.AddRow(new string[] {
+                        "HEADACHE",
+                        "Headache"});
+            table44.AddRow(new string[] {
+                        "BROKEN LEG",
+                        "Broken leg"});
+            table44.AddRow(new string[] {
+                        "COUGH",
+                        "Cough"});
+            table44.AddRow(new string[] {
+                        "MIGRAINE HEADACHE",
+                        "Migraine headache"});
+            table44.AddRow(new string[] {
+                        "BACK PAIN",
+                        "Back pain"});
+            table44.AddRow(new string[] {
+                        "CHEST PAIN",
+                        "Chest pain"});
+#line 359
+   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table44, "And ");
+#line 367
+   testRunner.And("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
                         "verbatim",
                         "dictionaryLocaleVersionSynonymListName",
                         "exists"});
-            table44.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         "HEADACHE",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "true"});
-            table44.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         "BROKEN LEG",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "true"});
-            table44.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         "COUGH",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "true"});
-            table44.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         "MIGRAINE HEADACHE",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "true"});
-            table44.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         "BACK PAIN",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "true"});
-            table44.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         "CHEST PAIN",
                         "MedDRA ENG 16.0 MedDRA_DDM",
                         "true"});
-#line 355
-   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table44, "And ");
+#line 368
+   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table45, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1185,87 +1261,87 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_197255_012",
                         "Release2015.3.0",
                         "IncreaseTimeout_240000"});
-#line 368
+#line 381
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table45.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "WhoDrugDDEB2_DDM",
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 370
- testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table45, "Given ");
-#line 373
+#line 383
+ testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table46, "Given ");
+#line 386
    testRunner.When("coding tasks are loaded from CSV file \"AutoApproveSynonymApprovalWhoDrugDDEB2.csv" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim Term"});
-            table46.AddRow(new string[] {
-                        "JUNIOR ASPRIN"});
-            table46.AddRow(new string[] {
-                        "PAIN"});
-            table46.AddRow(new string[] {
-                        "VITAMIN-A"});
-            table46.AddRow(new string[] {
-                        "VITAMIN-C"});
-#line 374
-   testRunner.Then("the following coding decisions require manual coding", ((string)(null)), table46, "Then ");
-#line hidden
             TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim Term",
-                        "Assigned Term"});
+                        "Verbatim Term"});
             table47.AddRow(new string[] {
-                        "TYLENOL INFANT",
-                        "Tylenol infant"});
-#line 380
-   testRunner.And("the following coding decisions require approval", ((string)(null)), table47, "And ");
+                        "JUNIOR ASPRIN"});
+            table47.AddRow(new string[] {
+                        "PAIN"});
+            table47.AddRow(new string[] {
+                        "VITAMIN-A"});
+            table47.AddRow(new string[] {
+                        "VITAMIN-C"});
+#line 387
+   testRunner.Then("the following coding decisions require manual coding", ((string)(null)), table47, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim",
-                        "Term"});
+                        "Verbatim Term",
+                        "Assigned Term"});
             table48.AddRow(new string[] {
-                        "TYLENOL COUGH",
-                        "Tylenol cough"});
-            table48.AddRow(new string[] {
-                        "PENICILLIN V BASIC",
-                        "Penicillin v basic"});
-            table48.AddRow(new string[] {
-                        "ADVIL COLD",
-                        "Advil cold"});
-#line 383
-   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table48, "And ");
-#line 388
-   testRunner.When("all task filters are cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 389
-   testRunner.And("task \"JUNIOR ASPRIN\" is coded to term \"JUNIOR ASPRIN\" at search level \"Trade Name" +
-                    "\" with code \"000027 01 583\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 390
-   testRunner.Then("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        "TYLENOL INFANT",
+                        "Tylenol infant"});
+#line 393
+   testRunner.And("the following coding decisions require approval", ((string)(null)), table48, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim",
+                        "Term"});
+            table49.AddRow(new string[] {
+                        "TYLENOL COUGH",
+                        "Tylenol cough"});
+            table49.AddRow(new string[] {
+                        "PENICILLIN V BASIC",
+                        "Penicillin v basic"});
+            table49.AddRow(new string[] {
+                        "ADVIL COLD",
+                        "Advil cold"});
+#line 396
+   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table49, "And ");
+#line 401
+   testRunner.When("all task filters are cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 402
+   testRunner.And("task \"JUNIOR ASPRIN\" is coded to term \"JUNIOR ASPRIN\" at search level \"Trade Name" +
+                    "\" with code \"000027 01 583\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 403
+   testRunner.Then("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
                         "verbatim",
                         "dictionaryLocaleVersionSynonymListName",
                         "exists"});
-            table49.AddRow(new string[] {
+            table50.AddRow(new string[] {
                         "TYLENOL COUGH",
                         "WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM",
                         "true"});
-            table49.AddRow(new string[] {
+            table50.AddRow(new string[] {
                         "PENICILLIN V BASIC",
                         "WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM",
                         "true"});
-            table49.AddRow(new string[] {
+            table50.AddRow(new string[] {
                         "ADVIL COLD",
                         "WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM",
                         "true"});
-#line 391
-   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table49, "And ");
+#line 404
+   testRunner.And("synonyms for verbatim terms should be created and exist in lists", ((string)(null)), table50, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1287,64 +1363,64 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197255_013",
                         "Release2015.3.0"});
-#line 400
+#line 413
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table50.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "MedDRA_DDM",
                         "MedDRA",
                         "16.0",
                         "ENG"});
-#line 402
-   testRunner.Given("a \"Approval\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table50, "Given ");
-#line 405
+#line 415
+   testRunner.Given("a \"Approval\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table51, "Given ");
+#line 418
    testRunner.When("I configure dictionary \"MedDRA\" with \"Auto Approve\" set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 406
+#line 419
    testRunner.And("coding tasks are loaded from CSV file \"AutoApproveSynonymApprovalMedDRA.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Assigned Term"});
-            table51.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "BROKEN LEG",
                         "Broken leg"});
-            table51.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "COUGHING",
                         "Coughing"});
-            table51.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "COUGHING BLOOD",
                         "Coughing blood"});
-            table51.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "HEADACHE",
                         "Headache"});
-#line 407
-   testRunner.Then("the following coding decisions require approval", ((string)(null)), table51, "Then ");
+#line 420
+   testRunner.Then("the following coding decisions require approval", ((string)(null)), table52, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
                         "Term"});
-            table52.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "COUGH",
                         "Cough"});
-            table52.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "MIGRAINE HEADACHE",
                         "Migraine headache"});
-            table52.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "BACK PAIN",
                         "Back pain"});
-            table52.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "CHEST PAIN",
                         "Chest pain"});
-#line 413
-   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table52, "And ");
-#line 419
+#line 426
+   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table53, "And ");
+#line 432
    testRunner.And("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 420
+#line 433
    testRunner.And("the number of synonyms created for list \"MedDRA ENG 16.0 MedDRA_DDM\" is \"0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1369,74 +1445,74 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_197255_014",
                         "Release2015.3.0",
                         "IncreaseTimeout_240000"});
-#line 426
+#line 439
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
                         "SynonymListName",
                         "Dictionary",
                         "Version",
                         "Locale"});
-            table53.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "WhoDrugDDEB2_DDM",
                         "WhoDrugDDEB2",
                         "201503",
                         "ENG"});
-#line 428
-   testRunner.Given("a \"Approval\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table53, "Given ");
-#line 431
+#line 441
+   testRunner.Given("a \"Approval\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table54, "Given ");
+#line 444
    testRunner.When("I configure dictionary \"WhoDrugDDEB2\" with \"Auto Approve\" set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 432
+#line 445
    testRunner.And("coding tasks are loaded from CSV file \"AutoApproveSynonymApprovalWhoDrugDDEB2.csv" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim Term"});
-            table54.AddRow(new string[] {
-                        "JUNIOR ASPRIN"});
-            table54.AddRow(new string[] {
-                        "PAIN"});
-            table54.AddRow(new string[] {
-                        "VITAMIN-A"});
-            table54.AddRow(new string[] {
-                        "VITAMIN-C"});
-#line 433
-   testRunner.Then("the following coding decisions require manual coding", ((string)(null)), table54, "Then ");
-#line hidden
             TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Verbatim Term",
-                        "Assigned Term"});
+                        "Verbatim Term"});
             table55.AddRow(new string[] {
-                        "TYLENOL COUGH",
-                        "Tylenol cough"});
+                        "JUNIOR ASPRIN"});
             table55.AddRow(new string[] {
-                        "TYLENOL INFANT",
-                        "Tylenol infant"});
-#line 439
-   testRunner.And("the following coding decisions require approval", ((string)(null)), table55, "And ");
+                        "PAIN"});
+            table55.AddRow(new string[] {
+                        "VITAMIN-A"});
+            table55.AddRow(new string[] {
+                        "VITAMIN-C"});
+#line 446
+   testRunner.Then("the following coding decisions require manual coding", ((string)(null)), table55, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Assigned Term"});
+            table56.AddRow(new string[] {
+                        "TYLENOL COUGH",
+                        "Tylenol cough"});
+            table56.AddRow(new string[] {
+                        "TYLENOL INFANT",
+                        "Tylenol infant"});
+#line 452
+   testRunner.And("the following coding decisions require approval", ((string)(null)), table56, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
                         "Term"});
-            table56.AddRow(new string[] {
+            table57.AddRow(new string[] {
                         "PENICILLIN V BASIC",
                         "Penicillin v basic"});
-            table56.AddRow(new string[] {
+            table57.AddRow(new string[] {
                         "ADVIL COLD",
                         "Advil cold"});
-#line 443
-   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table56, "And ");
-#line 447
+#line 456
+   testRunner.And("the following terms were autocoded and approved", ((string)(null)), table57, "And ");
+#line 460
    testRunner.When("all task filters are cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 448
+#line 461
    testRunner.When("task \"JUNIOR ASPRIN\" is coded to term \"JUNIOR ASPRIN\" at search level \"Trade Name" +
                     "\" with code \"000027 01 583\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 449
+#line 462
    testRunner.Then("no synonym terms require approval", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 450
+#line 463
    testRunner.And("the number of synonyms created for list \"WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM" +
                     "\" is \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 451
+#line 464
    testRunner.And("a synonym for verbatim term \"JUNIOR ASPRIN\" should be created and exist in list \"" +
                     "WhoDrugDDEB2 ENG 201503 WhoDrugDDEB2_DDM\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

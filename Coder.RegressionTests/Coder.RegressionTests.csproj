@@ -537,6 +537,9 @@
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="StaticContent\AutoApproveSynonymApprovalMedDRA.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="StaticContent\CrammedFile_41mb.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
