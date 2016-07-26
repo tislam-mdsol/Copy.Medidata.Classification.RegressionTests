@@ -118,6 +118,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>scriptBetaPreviewSetup.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\scriptCoderSetup.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>scriptCoderSetup.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\specETE_ENG_CoderConfigQuerySettings.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

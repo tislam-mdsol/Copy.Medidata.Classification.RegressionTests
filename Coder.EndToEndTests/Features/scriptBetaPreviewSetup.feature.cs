@@ -16,10 +16,62 @@ namespace Coder.EndToEndTests.Features
     using TechTalk.SpecFlow;
     
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
+    [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("Setup Basic Beta Preview Environment for Coder,iMedidata,Rave.")]
     [NUnit.Framework.CategoryAttribute("CoderBasicScript")]
-    public partial class WhenSelectingARequiresResponseOptionForCoderConfigurationWhenACoderQueryIsOpenTheyWillRespectTheConfigurationSettings_RemoveRequiresManualCloseAndOptionForCoderConfigurationFeature
+    public partial class SetupBasicBetaPreviewEnvironmentForCoderIMedidataRave_Feature
     {
+        
+        private static TechTalk.SpecFlow.ITestRunner testRunner;
+        
+#line 1 "scriptBetaPreviewSetup.feature"
+#line hidden
+        
+        [NUnit.Framework.TestFixtureSetUpAttribute()]
+        public virtual void FeatureSetup()
+        {
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Setup Basic Beta Preview Environment for Coder,iMedidata,Rave.", @"
+Preassumptions:
+
+1] coderadmin and medidatareserved1 are setup on that environment
+2] Main Client Beta Preview Study Group was created with codersuperuser
+3] coderadmin was assigned to study group as study group owner
+4] Rave Configuration file was uploaded to the Rave URL with the different roles
+5]", ProgrammingLanguage.CSharp, new string[] {
+                        "CoderBasicScript"});
+            testRunner.OnFeatureStart(featureInfo);
+        }
+        
+        [NUnit.Framework.TestFixtureTearDownAttribute()]
+        public virtual void FeatureTearDown()
+        {
+            testRunner.OnFeatureEnd();
+            testRunner = null;
+        }
+        
+        [NUnit.Framework.SetUpAttribute()]
+        public virtual void TestInitialize()
+        {
+        }
+        
+        [NUnit.Framework.TearDownAttribute()]
+        public virtual void ScenarioTearDown()
+        {
+            testRunner.OnScenarioEnd();
+        }
+        
+        public virtual void ScenarioSetup(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
+        {
+            testRunner.OnScenarioStart(scenarioInfo);
+        }
+        
+        public virtual void ScenarioCleanup()
+        {
+            testRunner.CollectScenarioErrors();
+        }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Setting up client studies and sites")]

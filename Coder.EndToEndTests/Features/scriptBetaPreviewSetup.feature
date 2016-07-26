@@ -1,5 +1,5 @@
 ﻿@CoderBasicScript
-Feature: When selecting a requires response option for Coder configuration, when a Coder query is open they will respect the configuration settings. Remove requires manual close and option for Coder configuration
+Feature: Setup Basic Beta Preview Environment for Coder,iMedidata,Rave.
 
 Preassumptions:
 
