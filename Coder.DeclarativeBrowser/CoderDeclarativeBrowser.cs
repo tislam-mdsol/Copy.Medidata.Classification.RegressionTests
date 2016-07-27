@@ -3062,6 +3062,13 @@ namespace Coder.DeclarativeBrowser
             return reportRows;
         }
 
+        public IEnumerable<MedidataApp> GetStudyGroupAppsList()
+        {
+            var studyGroupAppList = Config.GetStudyGroupApps();
+
+            return studyGroupAppList;
+        }
+
         public MedidataUser CreateTestUserContext(SegmentSetupData newStudyGroup, string userName, bool createNewSegment = false)
         {
             if (ReferenceEquals(newStudyGroup, null)) throw new ArgumentNullException("newStudyGroup");
@@ -3117,6 +3124,21 @@ namespace Coder.DeclarativeBrowser
             Session.GetImedidataPage().OpenStudyGroupPage();
 
             Session.GetImedidataStudyGroupPage().InviteUser(studyGroup.SegmentName, Config.ApplicationName, user);
+        }
+
+        public void UpdateUserAppPermissionForStudyGroup(SegmentSetupData studyGroup, IDictionary<string, string> appsAndRoles, MedidataUser user)
+        {
+            if (ReferenceEquals(studyGroup, null)) throw new ArgumentNullException("studyGroup");
+            if (ReferenceEquals(user, null))       throw new ArgumentNullException("user");
+
+            Session.GetImedidataPage().OpenStudyGroupPage();
+            Session.GetImedidataStudyGroupPage().UpdateUserAppPermission(studyGroup.SegmentName, appsAndRoles, user);
+
+            LogoutOfiMedidata();
+            LoginToiMedidata(user.Email, Config.AdminLoginPassword);
+            LoadiMedidataCoderAppSegment(studyGroup.SegmentName);
+            LogoutOfCoder();
+            LoadiMedidataCoderAppSegment(studyGroup.SegmentName);
         }
 
         public string GetStudyGroupUUID(string segmentName)
