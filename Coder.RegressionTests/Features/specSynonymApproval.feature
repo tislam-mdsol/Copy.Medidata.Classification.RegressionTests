@@ -229,7 +229,7 @@ Scenario: The Synonym Approval page shall filter by the Study
 	| SynonymListName | Dictionary   | Version | Locale |
 	| MedDRA_List     | MedDRA       | 15.0    | ENG    |
 	| WHODrug_List    | WhoDrugDDEB2 | 201503  | ENG    |
-	And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+	When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.json"
 	And task "ALPHA" is coded to term "HEADACHE" at search level "Low Level Term" with code "10019211" at level "LLT" and a synonym is created
 	And task "TANGO" is coded to term "VITAMIN-C" at search level "Trade Name" with code "000080 01 517" at level "TN" and a synonym is created
 	Then the synonyms for approval are limited to those synonyms that meet the filter criteria when filtered by study "All Studies"
@@ -253,7 +253,7 @@ Scenario: The Synonym Approval page shall filter by the Dictionary
 	| SynonymListName | Dictionary   | Version | Locale |
 	| MedDRA_List     | MedDRA       | 15.0    | ENG    |
 	| WHODrug_List    | WhoDrugDDEB2 | 201503  | ENG    |
-	And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+	When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.json"
 	And task "ALPHA" is coded to term "HEADACHE" at search level "Low Level Term" with code "10019211" at level "LLT" and a synonym is created
 	And task "TANGO" is coded to term "VITAMIN-C" at search level "Trade Name" with code "000080 01 517" at level "TN" and a synonym is created
 	Then the synonyms for approval are limited to those synonyms that meet the filter criteria when filtered by dictionary "All Dictionary Types"
@@ -277,7 +277,7 @@ Scenario: The Synonym Approval page shall filter by the Synonym List
 	| SynonymListName | Dictionary   | Version | Locale |
 	| MedDRA_List     | MedDRA       | 15.0    | ENG    |
 	| WHODrug_List    | WhoDrugDDEB2 | 201503  | ENG    |
-	And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+	When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.json"
 	And task "ALPHA" is coded to term "HEADACHE" at search level "Low Level Term" with code "10019211" at level "LLT" and a synonym is created
 	And task "TANGO" is coded to term "VITAMIN-C" at search level "Trade Name" with code "000080 01 517" at level "TN" and a synonym is created
 	Then the synonyms for approval are limited to those synonyms that meet the filter criteria when filtered by synonym list "All Synonym Lists"
@@ -303,8 +303,8 @@ Scenario: The Synonym Approval page shall filter by the Date
 	| SynonymListName | Dictionary   | Version | Locale |
 	| MedDRA_List     | MedDRA       | 15.0    | ENG    |
 	| WHODrug_List    | WhoDrugDDEB2 | 201503  | ENG    |
-	And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
-	When a browse and code for task "ALPHA" is performed
+	When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.json"
+	And a browse and code for task "ALPHA" is performed
 	And I code next available task
          | Verbatim      | SearchText | SearchLevel    | Code          | Level | CreateSynonym |
          | ALPHA         | HEADACHE   | Low Level Term | 10019211      | LLT   | True          |
@@ -344,7 +344,7 @@ Scenario: The Synonym Approval page shall filter by the Synonym Term
 	| SynonymListName | Dictionary   | Version | Locale |
 	| MedDRA_List     | MedDRA       | 15.0    | ENG    |
 	| WHODrug_List    | WhoDrugDDEB2 | 201503  | ENG    |
-	And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+	When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.json"
 	And task "ALPHA" is coded to term "HEADACHE" at search level "Low Level Term" with code "10019211" at level "LLT" and a synonym is created
 	And task "AMBER CHARLIE" is coded to term "VITAMIN-C" at search level "Trade Name" with code "000080 01 517" at level "TN" and a synonym is created
 	And task "AMBER DELTA" is coded to term "VITAMIN-C" at search level "Trade Name" with code "000080 01 517" at level "TN" and a synonym is created
@@ -369,7 +369,7 @@ Scenario: The Synonym Details page shall filter by status
 	| SynonymListName | Dictionary   | Version | Locale |
 	| MedDRA_List     | MedDRA       | 15.0    | ENG    |
 	| WHODrug_List    | WhoDrugDDEB2 | 201503  | ENG    |
-	And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+	When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.json"
 	And task "TANGO" is coded to term "ANTIVENOM" at search level "Trade Name" with code "003416 01 006" at level "TN" and a synonym is created
 	And task "UNIFORM" is coded to term "ANTIVENOM" at search level "Trade Name" with code "003416 01 006" at level "TN" and a synonym is created
 	And task "VICTOR" is coded to term "ANTIVENOM" at search level "Trade Name" with code "003416 01 006" at level "TN" and a synonym is created
@@ -401,7 +401,7 @@ Scenario: The Synonym Details page shall filter by verbatim or term
 	| SynonymListName | Dictionary   | Version | Locale |
 	| MedDRA_List     | MedDRA       | 15.0    | ENG    |
 	| WHODrug_List    | WhoDrugDDEB2 | 201503  | ENG    |
-	And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+	When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.json"
 	And task "AMBER CHARLIE" is coded to term "VITAMIN-A" at search level "Trade Name" with code "000560 01 078" at level "TN" and a synonym is created
 	And task "AMBER DELTA" is coded to term "ANTIVENOM" at search level "Trade Name" with code "003416 01 006" at level "TN" and a synonym is created
 	And task "TANGO" is coded to term "VITAMIN-A" at search level "Trade Name" with code "000560 01 078" at level "TN" and a synonym is created

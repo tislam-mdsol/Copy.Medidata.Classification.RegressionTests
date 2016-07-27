@@ -814,7 +814,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("a \"Auto Code Synonyms Need Approval\" Coder setup with no tasks and no synonyms an" +
                     "d dictionaries", ((string)(null)), table18, "Given ");
 #line 232
- testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 233
  testRunner.And("task \"ALPHA\" is coded to term \"HEADACHE\" at search level \"Low Level Term\" with co" +
                     "de \"10019211\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -900,7 +901,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("a \"Auto Code Synonyms Need Approval\" Coder setup with no tasks and no synonyms an" +
                     "d dictionaries", ((string)(null)), table22, "Given ");
 #line 256
- testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 257
  testRunner.And("task \"ALPHA\" is coded to term \"HEADACHE\" at search level \"Low Level Term\" with co" +
                     "de \"10019211\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -979,7 +981,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("a \"Auto Code Synonyms Need Approval\" Coder setup with no tasks and no synonyms an" +
                     "d dictionaries", ((string)(null)), table26, "Given ");
 #line 280
- testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 281
  testRunner.And("task \"ALPHA\" is coded to term \"HEADACHE\" at search level \"Low Level Term\" with co" +
                     "de \"10019211\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1060,9 +1063,10 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("a \"Auto Code Synonyms Need Approval\" Coder setup with no tasks and no synonyms an" +
                     "d dictionaries", ((string)(null)), table30, "Given ");
 #line 306
- testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 307
- testRunner.When("a browse and code for task \"ALPHA\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("a browse and code for task \"ALPHA\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
@@ -1224,7 +1228,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("a \"Auto Code Synonyms Need Approval\" Coder setup with no tasks and no synonyms an" +
                     "d dictionaries", ((string)(null)), table33, "Given ");
 #line 347
- testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 348
  testRunner.And("task \"ALPHA\" is coded to term \"HEADACHE\" at search level \"Low Level Term\" with co" +
                     "de \"10019211\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1304,7 +1309,8 @@ this.ScenarioSetup(scenarioInfo);
     testRunner.Given("a \"Auto Code Synonyms Need Approval\" Coder setup with no tasks and no synonyms an" +
                     "d dictionaries", ((string)(null)), table35, "Given ");
 #line 372
- testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 373
  testRunner.And("task \"TANGO\" is coded to term \"ANTIVENOM\" at search level \"Trade Name\" with code " +
                     "\"003416 01 006\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1422,7 +1428,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("a \"Auto Code Synonyms Need Approval\" Coder setup with no tasks and no synonyms an" +
                     "d dictionaries", ((string)(null)), table37, "Given ");
 #line 404
- testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 405
  testRunner.And("task \"AMBER CHARLIE\" is coded to term \"VITAMIN-A\" at search level \"Trade Name\" wi" +
                     "th code \"000560 01 078\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

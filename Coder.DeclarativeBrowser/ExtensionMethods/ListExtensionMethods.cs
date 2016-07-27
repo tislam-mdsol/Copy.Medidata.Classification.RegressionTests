@@ -59,17 +59,21 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                 externalVerbatim.StudyID = String.Empty;
             }
 
-            switch (externalVerbatim.StudyID)
+            var inputId = externalVerbatim.StudyID.ToLower();
+
+            switch (inputId)
             {
-                case "Development":
+                case "dev":
+                case "development":
                     externalVerbatim.StudyID = stepContext.GetDevStudyUuid();
                     break;
-                case "UAT":
-                case "User Acceptance":
-                case "UserAcceptanceTesting":
+                case "uat":
+                case "user acceptance":
+                case "useracceptancetesting":
                     externalVerbatim.StudyID = stepContext.GetUatStudyUuid();
                     break;
-                case "Production":
+                case "prod":
+                case "production":
                 case "":
                     externalVerbatim.StudyID = stepContext.GetStudyUuid();
                     break;

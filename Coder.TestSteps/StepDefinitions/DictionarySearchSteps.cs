@@ -151,23 +151,6 @@ namespace Coder.TestSteps.StepDefinitions
             _SearchTime = _Browser.CodeAndNext(verbatim, searchCriteria, targetResult, false);
         }
 
-        [Given(@"task ""(.*)"" is coded to term ""(.*)"" at search level ""(.*)"" with code ""(.*)"" at level ""(.*)"" and a synonym is created")]
-        public void GivenTaskIsCodedToTermAtSearchLevelWithCodeAtLevelAndASynonymIsCreated(
-            string verbatim, string searchText, string searchLevel, string targetCode, string targetLevel)
-        {
-            if (String.IsNullOrEmpty(verbatim)) throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrEmpty(searchText)) throw new ArgumentNullException("searchText");
-            if (String.IsNullOrEmpty(searchLevel)) throw new ArgumentNullException("searchLevel");
-            if (String.IsNullOrEmpty(targetCode)) throw new ArgumentNullException("targetCode");
-            if (String.IsNullOrEmpty(targetLevel)) throw new ArgumentNullException("targetLevel");
-
-            var searchCriteria = GetSearchCriteria(searchText, searchLevel);
-            var targetResult = GetTargetResult(searchText, targetCode, targetLevel);
-
-            _Browser.CompleteBrowseAndCode(verbatim, searchCriteria, targetResult, true);
-        }
-
-
         [Given(@"a browse and code for task ""(.*)"" is performed")]
         [When(@"a browse and code for task ""(.*)"" is performed")]
         public void GivenABrowseAndCodeForTaskIsPerformed(string verbatim)
