@@ -1,7 +1,7 @@
 [
  {
    "Form"              : "TPS",
-   "Verbatim Term"     : "Heart Burn",
+   "VerbatimTerm"      : "Heart Burn",
    "Dictionary Level"  : "LLT",
    "Dictionary"        : "MedDRA",
    "Priority"          : "1",
@@ -11,11 +11,11 @@
    "Subject"           : "Subject: OK Checkup",
    "Site"              : "OK",
    "Event"             : "Checkup",
-   "Batch Identifier"  : "MedDRA Batch 1"
+   "BatchIdentifier"   : "MedDRA Batch 1"
  },
  {
    "Form"              : "TPS",
-   "Verbatim Term"     : "Reflux",
+   "VerbatimTerm"      : "Reflux",
    "Dictionary Level"  : "LLT",
    "Dictionary"        : "MedDRA",
    "Priority"          : "1",
@@ -25,11 +25,11 @@
    "Subject"           : "Subject: NY Visit",
    "Site"              : "NY",
    "Event"             : "Visit",
-   "Batch Identifier"  : "MedDRA Batch 1"
+   "BatchIdentifier"   : "MedDRA Batch 1"
  },
  {
    "Form"              : "TPS",
-   "Verbatim Term"     : "Burning",
+   "VerbatimTerm"      : "Burning",
    "Dictionary Level"  : "LLT",
    "Dictionary"        : "MedDRA",
    "Priority"          : "1",
@@ -39,11 +39,11 @@
    "Subject"           : "Subject: MD Reaction",
    "Site"              : "MD",
    "Event"             : "Reaction",
-   "Batch Identifier"  : "MedDRA Batch 1"
+   "BatchIdentifier"   : "MedDRA Batch 1"
  },
  {
    "Form"              : "TPS",
-   "Verbatim Term"     : "Nasal Drip",
+   "VerbatimTerm"      : "Nasal Drip",
    "Dictionary Level"  : "LLT",
    "Dictionary"        : "MedDRA",
    "Priority"          : "1",
@@ -53,11 +53,11 @@
    "Subject"           : "Subject: OK Checkup",
    "Site"              : "OK",
    "Event"             : "Checkup",
-   "Batch Identifier"  : "MedDRA Batch 1"
+   "BatchIdentifier"   : "MedDRA Batch 1"
  },
  {
    "Form"              : "TPS",
-   "Verbatim Term"     : "Stiff Joints",
+   "VerbatimTerm"      : "Stiff Joints",
    "Dictionary Level"  : "LLT",
    "Dictionary"        : "MedDRA",
    "Priority"          : "1",
@@ -67,6 +67,6 @@
    "Subject"           : "Subject: CT Post",
    "Site"              : "CT",
    "Event"             : "Post",
-   "Batch Identifier"  : "MedDRA Batch 1"
+   "BatchIdentifier"   : "MedDRA Batch 1"
  }
 ]

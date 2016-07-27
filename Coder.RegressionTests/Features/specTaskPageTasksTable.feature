@@ -50,8 +50,8 @@ Scenario: SORT The task table shall sort in descending order by verbatim term wh
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
-  When I sort the tasks by "Verbatim Term" "descending"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  And I sort the tasks by "Verbatim Term" "descending"
   Then the tasks will be sorted by "Verbatim Term" "descending"
 
 @VAL
@@ -63,8 +63,8 @@ Scenario: SORT The task table shall sort in ascending order by verbatim term whe
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
-  When I sort the tasks by "Verbatim Term" "ascending"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  And I sort the tasks by "Verbatim Term" "ascending"
   Then the tasks will be sorted by "Verbatim Term" "ascending"
 
 @VAL
@@ -77,8 +77,8 @@ Scenario: SORT The task table shall sort in descending order by assigned term wh
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
-  When task "ECHO" is coded to term "Echo virus infection NOS" at search level "Low Level Term" with code "10014112" at level "LLT"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  And task "ECHO" is coded to term "Echo virus infection NOS" at search level "Low Level Term" with code "10014112" at level "LLT"
   And task "GULF" is coded to term "Gulf war syndrome" at search level "Low Level Term" with code "10056557" at level "LLT"
   And task "SIERRA" is coded to term "Feeling of residual sleepiness" at search level "Low Level Term" with code "10016353" at level "LLT"
   And reclassifying task "ECHO" with a comment "Reclassify ECHO to populate Assigned Term column." and Include Autocoded Items set to "True"
@@ -98,8 +98,8 @@ Scenario: SORT The task table shall sort in ascending order by assigned term whe
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
-  When task "ECHO" is coded to term "Echo virus infection NOS" at search level "Low Level Term" with code "10014112" at level "LLT"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  And task "ECHO" is coded to term "Echo virus infection NOS" at search level "Low Level Term" with code "10014112" at level "LLT"
   And task "GULF" is coded to term "Gulf war syndrome" at search level "Low Level Term" with code "10056557" at level "LLT"
   And task "SIERRA" is coded to term "Feeling of residual sleepiness" at search level "Low Level Term" with code "10016353" at level "LLT"
   And reclassifying task "ECHO" with a comment "Reclassify ECHO to populate Assigned Term column." and Include Autocoded Items set to "True"
@@ -118,8 +118,8 @@ Scenario: FILTER The task table shall show all actionable tasks when Task View i
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
-  When I limit the displayed tasks by
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  And I limit the displayed tasks by
        | Filter Name            | Filter Criteria        |
        | Trackables             | Task View (actionable) |
   Then Only tasks with "Status" of "Waiting Manual Code" will be displayed
@@ -134,8 +134,8 @@ Scenario: FILTER The task table shall show no actionable tasks when In Workflow 
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
-  When I limit the displayed tasks by
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  And I limit the displayed tasks by
        | Filter Name            | Filter Criteria              |
        | Trackables             | In Workflow (non-actionable) |
   Then The task count is "0"
@@ -149,8 +149,8 @@ Scenario: FILTER The task table shall show only the tasks associated with the De
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
-  When I limit the displayed tasks by
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  And I limit the displayed tasks by
        | Filter Name | Filter Criteria |
        | Studies     | Dev             |
   Then the tasks will be filtered by 
@@ -167,8 +167,8 @@ Scenario: FILTER The task table shall show only the tasks in Study Migration whe
   
   Given a "Basic" Coder setup with registered synonym list "MedDRA ENG 14.0 Empty_List" containing entry ""
   And an activated synonym list "MedDRA ENG 15.0 New_Primary_List"
-  And coding tasks from CSV file "Tasks_1000_MedDRA_Match_Upload.csv" and auto-coding in progress
-  When  I limit the displayed tasks by
+  When the following externally managed verbatim requests are made "Tasks_1000_MedDRA_Match_Upload.csv" and auto-coding in progress
+  And  I limit the displayed tasks by
        | Filter Name            | Filter Criteria                        |
        | Trackables             | In Study Migration (non-actionable)    |	
   Then The task count is "0"
@@ -182,8 +182,8 @@ Scenario: FILTER The task table shall show only the tasks in Study Migration whe
 Scenario: FILTER The task table shall show only the tasks in the Workflow when selected as the filter criteria
 
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "WhoDrugDDEB2 ENG 201503"
-  And coding tasks from CSV file "Tasks_1500_SingleStudy_NoSup_SingleDict.csv" and auto-coding in progress
-  When The system "In Workflow (non-actionable)" count is at least "1" percent of all tasks
+  When the following externally managed verbatim requests are made "Tasks_1500_SingleStudy_NoSup_SingleDict.csv" and auto-coding in progress
+  And The system "In Workflow (non-actionable)" count is at least "1" percent of all tasks
   And I limit the displayed tasks by
        | Filter Name            | Filter Criteria                     |
        | Trackables             | In Workflow (non-actionable)        |	
@@ -197,8 +197,8 @@ Scenario: FILTER The task table shall show only the tasks in the Workflow when s
 Scenario: FILTER The task table shall show only the tasks not in the Workflow when selected as the filter criteria
 
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "WhoDrugDDEB2 ENG 201503"
-  And coding tasks from CSV file "Tasks_1500_SingleStudy_NoSup_SingleDict.csv" and auto-coding in progress
-  When The system "Not In Workflow (non-actionable)" count is at least "1" percent of all tasks
+  When the following externally managed verbatim requests are made "Tasks_1500_SingleStudy_NoSup_SingleDict.csv" and auto-coding in progress
+  And The system "Not In Workflow (non-actionable)" count is at least "1" percent of all tasks
   And I limit the displayed tasks by
        | Filter Name            | Filter Criteria                     |
        | Trackables             | Not In Workflow (non-actionable)    |	
@@ -214,8 +214,8 @@ Scenario: FILTER HEADER The task table shall filter by priority
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
-  When I filter for tasks with "Priority" of "2"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  And I filter for tasks with "Priority" of "2"
   Then Only tasks with "Priority" of "2" will be displayed
   
 @VAL
@@ -228,7 +228,7 @@ Scenario: FILTER HEADER The task table shall filter by status
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
   When task "ECHO" is coded to term "Echo virus infection NOS" at search level "Low Level Term" with code "10014112" at level "LLT"
   And task "GULF" is coded to term "Gulf war syndrome" at search level "Low Level Term" with code "10056557" at level "LLT"
   And task "SIERRA" is coded to term "Feeling of residual sleepiness" at search level "Low Level Term" with code "10016353" at level "LLT"
@@ -248,7 +248,7 @@ Scenario: FILTER HEADER The task table shall filter by Dictionary MedDRA
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
   When I filter for tasks with "Dictionary" of "MedDRA - 15.0 - Primary List"
   Then Only tasks with "Dictionary" of "MedDRA - 15.0 - Primary List" will be displayed
   
@@ -262,7 +262,7 @@ Scenario: FILTER HEADER The task table shall filter by Dictionary WhoDrugDDEB2
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
   When I filter for tasks with "Dictionary" of "WhoDrugDDEB2 - 201503 - Primary List"
   Then Only tasks with "Dictionary" of "WhoDrugDDEB2 - 201503 - Primary List" will be displayed
 
@@ -278,7 +278,7 @@ Scenario: FILTER HEADER The task table shall filter by Queries
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
   When I open a query for task "CHARLIE" with comment "Query Sort Test Alpha"
   And I open a query for task "HOTEL" with comment "Query Sort Test Alpha"
   And I open a query for task "YANKEE" with comment "Query Sort Test Alpha"
@@ -334,7 +334,7 @@ Scenario: FILTER HEADER The task table shall filter by Time Elapsed
 Scenario: FILTER HEADER The Group shall display the filtered count when grouped verbatims are filtered by priority
 
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding tasks from CSV file "Tasks_21_GroupedVerbatimsOfVaryingPriority.csv"
+  When the following externally managed verbatim requests are made "Tasks_21_GroupedVerbatimsOfVaryingPriority.csv"
   When I filter for tasks with "Priority" of "1"
   Then the coding task table has the following ordered information
        | Verbatim Term | Group  | Priority |
@@ -354,7 +354,7 @@ Scenario: The task table shall filter when sorted
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
   When I sort the tasks by "Verbatim Term" "descending"
   And I filter the tasks by 
        | Column Name            | Filter Criteria              |
@@ -379,7 +379,7 @@ Scenario: The task table shall sort when a filter is applied
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
   When I filter the tasks by 
        | Column Name            | Filter Criteria              |
        | Priority               | 2                            |
@@ -404,7 +404,7 @@ Scenario: PAGINATION The First page link shall go to the first page
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
   When I go to page "Next"
   Then The current page is "2"
   When I go to page "First"
@@ -419,7 +419,7 @@ Scenario: PAGINATION The Previous page link shall go to the Previous page
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
   When I go to page "Last"
   Then The current page is "3"
   When I go to page "Previous"
@@ -434,7 +434,7 @@ Scenario: PAGINATION The Next page link shall go to the next page
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
   When I go to page "Next"
   Then The current page is "2"
 
@@ -447,7 +447,7 @@ Scenario: PAGINATION The Last page link shall go to the last page
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
   When I go to page "Last"
   Then The current page is "3"
       
@@ -460,7 +460,7 @@ Scenario: PAGINATION The numeric page links shall go to the corresponding pages
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
   When I go to page "2"
   Then The current page is "2"
   When I go to page "3"
@@ -478,7 +478,7 @@ Scenario: PAGINATION The numeric page links shall go to the corresponding pages 
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_520_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_520_MultiStudy_MultiSup_MultiDict.csv"
   When I go to page "7"
   Then The current page is "7"
   When I go to page "9	"
@@ -498,7 +498,7 @@ Scenario: COUNT The number of tasks shall be available to the client when I load
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_520_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_520_MultiStudy_MultiSup_MultiDict.csv"
   Then The task count is "520"
 
 @VAL
@@ -510,7 +510,7 @@ Scenario: COUNT The number of tasks shall be available to the client when I load
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
   When entering value "50" for Configuration "Coding Task Page Size" and save
   Then The task count is "30"
 
@@ -525,12 +525,12 @@ Scenario: The ODBFileBuilder will be backwards compatible with existing CSV file
 	| SynonymListName        | Dictionary            | Version                   | Locale |
 	| Primary List           | MedDRA                | 15.0                      | ENG    |
 	| Primary List           | WhoDrugDDEB2          | 201503                    | ENG    |
-  And coding tasks from CSV file "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
-  And coding tasks from CSV file "Tasks_520_MultiStudy_MultiSup_MultiDict.csv"
-  And coding tasks from CSV file "Tasks_1000_MedDRA_Match_Upload.csv"
-  And coding tasks from CSV file "Tasks_1500_SingleStudy_NoSup_SingleDict.csv"
-  And coding tasks from CSV file "AutoApproveSynonymApprovalMedDRA.csv"
-  And coding tasks from CSV file "AutoApproveSynonymApprovalWhoDrugDDEB2.csv"
+  When the following externally managed verbatim requests are made "Tasks_30_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_520_MultiStudy_MultiSup_MultiDict.csv"
+  When the following externally managed verbatim requests are made "Tasks_1000_MedDRA_Match_Upload.csv"
+  When the following externally managed verbatim requests are made "Tasks_1500_SingleStudy_NoSup_SingleDict.csv"
+  When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalMedDRA.csv"
+  When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalWhoDrugDDEB2.csv"
   Then The task count is not "0"
 
 @VAL
@@ -541,7 +541,7 @@ Scenario: New tasks shall not be accepted while the target study is being migrat
   
   Given a "Basic" Coder setup with registered synonym list "MedDRA ENG 14.0 Empty_List" containing entry ""
   And an activated synonym list "MedDRA ENG 15.0 New_Primary_List"
-  And coding tasks from CSV file "Tasks_1000_MedDRA_Match_Upload.csv" and auto-coding in progress
+  When the following externally managed verbatim requests are made "Tasks_1000_MedDRA_Match_Upload.csv" and auto-coding in progress
   When performing study migration without waiting
   Then new coding task "AARDWOLF" is not be accepted until the study migration completes
 

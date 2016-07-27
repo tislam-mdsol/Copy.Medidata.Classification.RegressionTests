@@ -178,7 +178,8 @@ this.ScenarioSetup(scenarioInfo);
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 38
- testRunner.And("coding tasks from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("the following externally managed verbatim requests are made \"Tasks_6_CodeAndNext." +
+                    "csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 39
  testRunner.And("a browse and code for task \"Burning\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -352,7 +353,8 @@ this.ScenarioSetup(scenarioInfo);
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 80
- testRunner.And("coding tasks from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("the following externally managed verbatim requests are made \"Tasks_6_CodeAndNext." +
+                    "csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 81
  testRunner.And("a browse and code for task \"Burning\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

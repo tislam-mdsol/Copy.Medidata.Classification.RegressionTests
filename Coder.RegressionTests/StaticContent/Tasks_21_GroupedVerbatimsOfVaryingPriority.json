@@ -1,128 +1,128 @@
 [
  {
-   "Study ID"     : "PROD",
+   "StudyID"      : "PROD",
    "Form"         : "TPS",
-   "Verbatim Term": "ALPHA",
+   "VerbatimTerm" : "ALPHA",
    "Priority"     : "8"
  },
  {
-   "Study ID"     : "PROD",
+   "StudyID"      : "PROD",
    "Form"         : "TPS",
-   "Verbatim Term": "ALPHA",
+   "VerbatimTerm" : "ALPHA",
    "Priority"     : "8"
  },
  {
-   "Study ID"     : "PROD",
+   "StudyID"      : "PROD",
    "Form"         : "TPS",
-   "Verbatim Term": "ALPHA",
+   "VerbatimTerm" : "ALPHA",
    "Priority"     : "8"
  },
  {
-   "Study ID"     : "PROD",
+   "StudyID"      : "PROD",
    "Form"         : "TPS",
-   "Verbatim Term": "ALPHA",
+   "VerbatimTerm" : "ALPHA",
    "Priority"     : "8"
  },
  {
-   "Study ID"     : "PROD",
+   "StudyID"      : "PROD",
    "Form"         : "TPS",
-   "Verbatim Term": "BRAVO",
+   "VerbatimTerm" : "BRAVO",
    "Priority"     : "8"
  },
  {
-   "Study ID"     : "PROD",
+   "StudyID"      : "PROD",
    "Form"         : "TPS",
-   "Verbatim Term": "BRAVO",
+   "VerbatimTerm" : "BRAVO",
    "Priority"     : "8"
  },
  {
-   "Study ID"     : "PROD",
+   "StudyID"      : "PROD",
    "Form"         : "TPS",
-   "Verbatim Term": "BRAVO",
+   "VerbatimTerm" : "BRAVO",
    "Priority"     : "8"
  },
  {
-   "Study ID"     : "PROD",
+   "StudyID"      : "PROD",
    "Form"         : "TPS",
-   "Verbatim Term": "CHARLIE",
+   "VerbatimTerm" : "CHARLIE",
    "Priority"     : "8"
  },
  {
-   "Study ID"     : "PROD",
+   "StudyID"      : "PROD",
    "Form"         : "TPS",
-   "Verbatim Term": "CHARLIE",
+   "VerbatimTerm" : "CHARLIE",
    "Priority"     : "8"
  },
  {
-   "Study ID"     : "PROD",
+   "StudyID"      : "PROD",
    "Form"         : "TPS",
-   "Verbatim Term": "DELTA",
+   "VerbatimTerm" : "DELTA",
    "Priority"     : "8"
  },
  {
-   "Study ID"     : "PROD",
+   "StudyID"      : "PROD",
    "Form"         : "TPS",
-   "Verbatim Term": "DELTA",
+   "VerbatimTerm" : "DELTA",
    "Priority"     : "8"
  },
  {
-   "Study ID"     : "PROD",
+   "StudyID"      : "PROD",
    "Form"         : "TPS",
-   "Verbatim Term": "ECHO",
+   "VerbatimTerm" : "ECHO",
    "Priority"     : "8"
  },
  {
-   "Study ID"     : "PROD",
+   "StudyID"      : "PROD",
    "Form"         : "TPS",
-   "Verbatim Term": "ECHO",
+   "VerbatimTerm" : "ECHO",
    "Priority"     : "8"
  },
  {
-   "Study ID"     : "DEV",
+   "StudyID"      : "DEV",
    "Form"         : "TPS",
-   "Verbatim Term": "ALPHA",
+   "VerbatimTerm" : "ALPHA",
    "Priority"     : "1"
  },
  {
-   "Study ID"     : "DEV",
+   "StudyID"      : "DEV",
    "Form"         : "TPS",
-   "Verbatim Term": "ALPHA",
+   "VerbatimTerm" : "ALPHA",
    "Priority"     : "1"
  },
  {
-   "Study ID"     : "DEV",
+   "StudyID"      : "DEV",
    "Form"         : "TPS",
-   "Verbatim Term": "BRAVO",
+   "VerbatimTerm" : "BRAVO",
    "Priority"     : "1"
  },
  {
-   "Study ID"     : "DEV",
+   "StudyID"      : "DEV",
    "Form"         : "TPS",
-   "Verbatim Term": "BRAVO",
+   "VerbatimTerm" : "BRAVO",
    "Priority"     : "1"
  },
  {
-   "Study ID"     : "DEV",
+   "StudyID"      : "DEV",
    "Form"         : "TPS",
-   "Verbatim Term": "CHARLIE",
+   "VerbatimTerm" : "CHARLIE",
    "Priority"     : "1"
  },
  {
-   "Study ID"     : "DEV",
+   "StudyID"      : "DEV",
    "Form"         : "TPS",
-   "Verbatim Term": "CHARLIE",
+   "VerbatimTerm" : "CHARLIE",
    "Priority"     : "1"
  },
  {
-   "Study ID"     : "DEV",
+   "StudyID"      : "DEV",
    "Form"         : "TPS",
-   "Verbatim Term": "DELTA",
+   "VerbatimTerm" : "DELTA",
    "Priority"     : "1"
  },
  {
-   "Study ID"     : "DEV",
+   "StudyID"      : "DEV",
    "Form"         : "TPS",
-   "Verbatim Term": "FOXTROT",
+   "VerbatimTerm" : "FOXTROT",
    "Priority"     : "1"
  }
 ]

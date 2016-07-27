@@ -89,7 +89,7 @@ Scenario: A Coder user shall not be able to reclassify a task while the task's s
   
     Given a "Basic" Coder setup with registered synonym list "MedDRA ENG 14.0 Empty_List" containing entry ""
     And an activated synonym list "MedDRA ENG 15.0 New_Primary_List"
-    And coding tasks from CSV file "Tasks_1000_MedDRA_Match_Upload.csv"
+    When the following externally managed verbatim requests are made "Tasks_1000_MedDRA_Match_Upload.csv"
     When performing study migration without waiting
     Then reclassification of coding task "ABRASIONS" cannot occur while the study migration is in progress
     And study migration is complete for the latest version

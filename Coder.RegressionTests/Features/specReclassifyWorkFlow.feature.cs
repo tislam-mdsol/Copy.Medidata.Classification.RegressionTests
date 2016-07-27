@@ -294,7 +294,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 91
     testRunner.And("an activated synonym list \"MedDRA ENG 15.0 New_Primary_List\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 92
-    testRunner.And("coding tasks from CSV file \"Tasks_1000_MedDRA_Match_Upload.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.When("the following externally managed verbatim requests are made \"Tasks_1000_MedDRA_Ma" +
+                    "tch_Upload.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 93
     testRunner.When("performing study migration without waiting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 94

@@ -1,6 +1,6 @@
 [
  {
-   "Study ID"          : "PROD",
+   "StudyID"          : "PROD",
    "Form"              : "AutoApprovalRequired",
    "Verbatim Term"     : "TYLENOL COUGH",
    "Dictionary Level"  : "PRODUCTSYNONYM",
@@ -10,7 +10,7 @@
    "IsAutoApproval"    : "TRUE"
  },
  {
-   "Study ID"          : "PROD",
+   "StudyID"          : "PROD",
    "Form"              : "AutoApprovalRequired",
    "Verbatim Term"     : "PAIN",
    "Dictionary Level"  : "PRODUCTSYNONYM",
@@ -20,7 +20,7 @@
    "IsAutoApproval"    : "TRUE"
  },
  {
-   "Study ID"          : "PROD",
+   "StudyID"          : "PROD",
    "Form"              : "ApprovalRequired",
    "Verbatim Term"     : "TYLENOL INFANT",
    "Dictionary Level"  : "PRODUCTSYNONYM",
@@ -30,7 +30,7 @@
    "IsAutoApproval"    : "FALSE"
  },
  {
-   "Study ID"          : "PROD",
+   "StudyID"          : "PROD",
    "Form"              : "ApprovalRequired",
    "Verbatim Term"     : "Junior asprin",
    "Dictionary Level"  : "PRODUCTSYNONYM",
@@ -40,7 +40,7 @@
    "IsAutoApproval"    : "FALSE"
  },
  {
-   "Study ID"          : "PROD",
+   "StudyID"          : "PROD",
    "Form"              : "AutoApprovalNotRequired",
    "Verbatim Term"     : "PENICILLIN V BASIC",
    "Dictionary Level"  : "PRODUCTSYNONYM",
@@ -50,7 +50,7 @@
    "IsAutoApproval"    : "TRUE"
  },
  {
-   "Study ID"          : "PROD",
+   "StudyID"          : "PROD",
    "Form"              : "AutoApprovalNotRequired",
    "Verbatim Term"     : "VITAMIN-A",
    "Dictionary Level"  : "PRODUCTSYNONYM",
@@ -60,7 +60,7 @@
    "IsAutoApproval"    : "TRUE"
  },
  {
-   "Study ID"          : "PROD",
+   "StudyID"          : "PROD",
    "Form"              : "ApprovalNotRequired",
    "Verbatim Term"     : "ADVIL COLD",
    "Dictionary Level"  : "PRODUCTSYNONYM",
@@ -70,7 +70,7 @@
    "IsAutoApproval"    : "FALSE"
  },
  {
-   "Study ID"          : "PROD",
+   "StudyID"          : "PROD",
    "Form"              : "ApprovalNotRequired",
    "Verbatim Term"     : "VITAMIN-C",
    "Dictionary Level"  : "PRODUCTSYNONYM",

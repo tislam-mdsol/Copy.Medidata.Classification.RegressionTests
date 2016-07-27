@@ -35,7 +35,7 @@ Scenario: A browse and code using JDrug should allow expansion of search result 
 @IncreaseTimeout
 Scenario:  A user can continuously code to the next available task within a group until all the items of that group are coded
     Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
-	And coding tasks from CSV file "Tasks_6_CodeAndNext.csv"
+	When the following externally managed verbatim requests are made "Tasks_6_CodeAndNext.csv"
 	And a browse and code for task "Burning" is performed
 	When I code next available task
 	| Verbatim     | SearchText                | SearchLevel    | Code     | Level | CreateSynonym |
@@ -77,7 +77,7 @@ Scenario:  A user can code to the next available task that is waiting to be code
 @IncreaseTimeout
 Scenario:  A user can continuously code and create synonym for the next available task within a group until all the items of that group are coded and the empty tasks list is provided
     Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
-	And coding tasks from CSV file "Tasks_6_CodeAndNext.csv"
+	When the following externally managed verbatim requests are made "Tasks_6_CodeAndNext.csv"
 	And a browse and code for task "Burning" is performed
 	When I code next available task
 	| Verbatim     | SearchText                | SearchLevel    | Code     | Level | CreateSynonym |

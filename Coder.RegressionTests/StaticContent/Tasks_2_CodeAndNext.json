@@ -1,9 +1,9 @@
 [
  {
-   "Study ID"          : "PROD",
+   "StudyID"           : "PROD",
    "Form"              : "TPS",
-   "Verbatim Term"     : "Heart Burn",
-   "Dictionary Level"  : "LLT",
+   "VerbatimTerm"      : "Heart Burn",
+   "DictionaryLevel"   : "LLT",
    "Dictionary"        : "MedDRA",
    "Priority"          : "1",
    "Locale"            : "eng",
@@ -12,13 +12,13 @@
    "Subject"           : "Subject: OK Checkup",
    "Site"              : "OK",
    "Event"             : "Checkup",
-   "Batch Identifier"  : "MedDRA Batch 1"
+   "BatchIdentifier"   : "MedDRA Batch 1"
  },
  {
-   "Study ID"          : "PROD",
+   "StudyID"           : "PROD",
    "Form"              : "TPS",
-   "Verbatim Term"     : "Reflux",
-   "Dictionary Level"  : "LLT",
+   "VerbatimTerm"      : "Reflux",
+   "DictionaryLevel"   : "LLT",
    "Dictionary"        : "MedDRA",
    "Priority"          : "1",
    "Locale"            : "eng",
@@ -27,6 +27,6 @@
    "Subject"           : "Subject: NY Visit",
    "Site"              : "NY",
    "Event"             : "Visit",
-   "Batch Identifier"  : "MedDRA Batch 1"
+   "BatchIdentifier"   : "MedDRA Batch 1"
  }
 ]

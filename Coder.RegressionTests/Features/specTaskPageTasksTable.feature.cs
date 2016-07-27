@@ -138,9 +138,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 49
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table1, "Given ");
 #line 53
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 54
-  testRunner.When("I sort the tasks by \"Verbatim Term\" \"descending\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("I sort the tasks by \"Verbatim Term\" \"descending\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 55
   testRunner.Then("the tasks will be sorted by \"Verbatim Term\" \"descending\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -181,9 +182,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 62
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table2, "Given ");
 #line 66
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 67
-  testRunner.When("I sort the tasks by \"Verbatim Term\" \"ascending\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("I sort the tasks by \"Verbatim Term\" \"ascending\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 68
   testRunner.Then("the tasks will be sorted by \"Verbatim Term\" \"ascending\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -226,10 +228,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 76
   testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table3, "Given ");
 #line 80
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 81
-  testRunner.When("task \"ECHO\" is coded to term \"Echo virus infection NOS\" at search level \"Low Leve" +
-                    "l Term\" with code \"10014112\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("task \"ECHO\" is coded to term \"Echo virus infection NOS\" at search level \"Low Leve" +
+                    "l Term\" with code \"10014112\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 82
   testRunner.And("task \"GULF\" is coded to term \"Gulf war syndrome\" at search level \"Low Level Term\"" +
                     " with code \"10056557\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -291,10 +294,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 97
   testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table4, "Given ");
 #line 101
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 102
-  testRunner.When("task \"ECHO\" is coded to term \"Echo virus infection NOS\" at search level \"Low Leve" +
-                    "l Term\" with code \"10014112\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("task \"ECHO\" is coded to term \"Echo virus infection NOS\" at search level \"Low Leve" +
+                    "l Term\" with code \"10014112\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 103
   testRunner.And("task \"GULF\" is coded to term \"Gulf war syndrome\" at search level \"Low Level Term\"" +
                     " with code \"10056557\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -354,7 +358,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 117
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table5, "Given ");
 #line 121
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Filter Name",
@@ -363,7 +368,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Trackables",
                         "Task View (actionable)"});
 #line 122
-  testRunner.When("I limit the displayed tasks by", ((string)(null)), table6, "When ");
+  testRunner.And("I limit the displayed tasks by", ((string)(null)), table6, "And ");
 #line 125
   testRunner.Then("Only tasks with \"Status\" of \"Waiting Manual Code\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 126
@@ -406,7 +411,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 133
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table7, "Given ");
 #line 137
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Filter Name",
@@ -415,7 +421,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Trackables",
                         "In Workflow (non-actionable)"});
 #line 138
-  testRunner.When("I limit the displayed tasks by", ((string)(null)), table8, "When ");
+  testRunner.And("I limit the displayed tasks by", ((string)(null)), table8, "And ");
 #line 141
   testRunner.Then("The task count is \"0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -456,7 +462,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 148
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table9, "Given ");
 #line 152
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Filter Name",
@@ -465,7 +472,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Studies",
                         "Dev"});
 #line 153
-  testRunner.When("I limit the displayed tasks by", ((string)(null)), table10, "When ");
+  testRunner.And("I limit the displayed tasks by", ((string)(null)), table10, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Column Name",
@@ -507,8 +514,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 169
   testRunner.And("an activated synonym list \"MedDRA ENG 15.0 New_Primary_List\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 170
-  testRunner.And("coding tasks from CSV file \"Tasks_1000_MedDRA_Match_Upload.csv\" and auto-coding i" +
-                    "n progress", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_1000_MedDRA_Ma" +
+                    "tch_Upload.csv\" and auto-coding in progress", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Filter Name",
@@ -517,7 +524,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Trackables",
                         "In Study Migration (non-actionable)"});
 #line 171
-  testRunner.When("I limit the displayed tasks by", ((string)(null)), table12, "When ");
+  testRunner.And("I limit the displayed tasks by", ((string)(null)), table12, "And ");
 #line 174
   testRunner.Then("The task count is \"0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 175
@@ -549,11 +556,11 @@ this.ScenarioSetup(scenarioInfo);
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"WhoDrugDDEB2 " +
                     "ENG 201503\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 185
-  testRunner.And("coding tasks from CSV file \"Tasks_1500_SingleStudy_NoSup_SingleDict.csv\" and auto" +
-                    "-coding in progress", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_1500_SingleStu" +
+                    "dy_NoSup_SingleDict.csv\" and auto-coding in progress", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 186
-  testRunner.When("The system \"In Workflow (non-actionable)\" count is at least \"1\" percent of all ta" +
-                    "sks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("The system \"In Workflow (non-actionable)\" count is at least \"1\" percent of all ta" +
+                    "sks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Filter Name",
@@ -592,11 +599,11 @@ this.ScenarioSetup(scenarioInfo);
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"WhoDrugDDEB2 " +
                     "ENG 201503\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 200
-  testRunner.And("coding tasks from CSV file \"Tasks_1500_SingleStudy_NoSup_SingleDict.csv\" and auto" +
-                    "-coding in progress", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_1500_SingleStu" +
+                    "dy_NoSup_SingleDict.csv\" and auto-coding in progress", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 201
-  testRunner.When("The system \"Not In Workflow (non-actionable)\" count is at least \"1\" percent of al" +
-                    "l tasks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("The system \"Not In Workflow (non-actionable)\" count is at least \"1\" percent of al" +
+                    "l tasks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Filter Name",
@@ -646,9 +653,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 213
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table15, "Given ");
 #line 217
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 218
-  testRunner.When("I filter for tasks with \"Priority\" of \"2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("I filter for tasks with \"Priority\" of \"2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 219
   testRunner.Then("Only tasks with \"Priority\" of \"2\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -689,7 +697,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 227
   testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table16, "Given ");
 #line 231
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 232
   testRunner.When("task \"ECHO\" is coded to term \"Echo virus infection NOS\" at search level \"Low Leve" +
                     "l Term\" with code \"10014112\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -750,7 +759,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 247
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table17, "Given ");
 #line 251
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 252
   testRunner.When("I filter for tasks with \"Dictionary\" of \"MedDRA - 15.0 - Primary List\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 253
@@ -791,7 +801,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 261
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table18, "Given ");
 #line 265
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 266
   testRunner.When("I filter for tasks with \"Dictionary\" of \"WhoDrugDDEB2 - 201503 - Primary List\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 267
@@ -837,7 +848,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 277
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table19, "Given ");
 #line 281
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 282
   testRunner.When("I open a query for task \"CHARLIE\" with comment \"Query Sort Test Alpha\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 283
@@ -979,7 +991,8 @@ this.ScenarioSetup(scenarioInfo);
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 337
-  testRunner.And("coding tasks from CSV file \"Tasks_21_GroupedVerbatimsOfVaryingPriority.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_21_GroupedVerb" +
+                    "atimsOfVaryingPriority.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 338
   testRunner.When("I filter for tasks with \"Priority\" of \"1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -1048,7 +1061,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 353
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table23, "Given ");
 #line 357
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 358
   testRunner.When("I sort the tasks by \"Verbatim Term\" \"descending\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -1125,7 +1139,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 378
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table26, "Given ");
 #line 382
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "Column Name",
@@ -1202,7 +1217,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 403
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table29, "Given ");
 #line 407
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 408
   testRunner.When("I go to page \"Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 409
@@ -1247,7 +1263,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 418
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table30, "Given ");
 #line 422
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 423
   testRunner.When("I go to page \"Last\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 424
@@ -1292,7 +1309,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 433
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table31, "Given ");
 #line 437
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 438
   testRunner.When("I go to page \"Next\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 439
@@ -1333,7 +1351,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 446
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table32, "Given ");
 #line 450
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 451
   testRunner.When("I go to page \"Last\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 452
@@ -1374,7 +1393,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 459
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table33, "Given ");
 #line 463
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 464
   testRunner.When("I go to page \"2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 465
@@ -1427,7 +1447,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 477
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table34, "Given ");
 #line 481
-  testRunner.And("coding tasks from CSV file \"Tasks_520_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_520_MultiStudy" +
+                    "_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 482
   testRunner.When("I go to page \"7\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 483
@@ -1484,7 +1505,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 497
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table35, "Given ");
 #line 501
-  testRunner.And("coding tasks from CSV file \"Tasks_520_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_520_MultiStudy" +
+                    "_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 502
   testRunner.Then("The task count is \"520\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1525,7 +1547,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 509
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table36, "Given ");
 #line 513
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 514
   testRunner.When("entering value \"50\" for Configuration \"Coding Task Page Size\" and save", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 515
@@ -1570,17 +1593,23 @@ this.ScenarioSetup(scenarioInfo);
 #line 524
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table37, "Given ");
 #line 528
-  testRunner.And("coding tasks from CSV file \"Tasks_30_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_30_MultiStudy_" +
+                    "MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 529
-  testRunner.And("coding tasks from CSV file \"Tasks_520_MultiStudy_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_520_MultiStudy" +
+                    "_MultiSup_MultiDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 530
-  testRunner.And("coding tasks from CSV file \"Tasks_1000_MedDRA_Match_Upload.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_1000_MedDRA_Ma" +
+                    "tch_Upload.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 531
-  testRunner.And("coding tasks from CSV file \"Tasks_1500_SingleStudy_NoSup_SingleDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_1500_SingleStu" +
+                    "dy_NoSup_SingleDict.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 532
-  testRunner.And("coding tasks from CSV file \"AutoApproveSynonymApprovalMedDRA.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
+                    "provalMedDRA.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 533
-  testRunner.And("coding tasks from CSV file \"AutoApproveSynonymApprovalWhoDrugDDEB2.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
+                    "provalWhoDrugDDEB2.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 534
   testRunner.Then("The task count is not \"0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -1608,8 +1637,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 543
   testRunner.And("an activated synonym list \"MedDRA ENG 15.0 New_Primary_List\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 544
-  testRunner.And("coding tasks from CSV file \"Tasks_1000_MedDRA_Match_Upload.csv\" and auto-coding i" +
-                    "n progress", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("the following externally managed verbatim requests are made \"Tasks_1000_MedDRA_Ma" +
+                    "tch_Upload.csv\" and auto-coding in progress", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 545
   testRunner.When("performing study migration without waiting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 546

@@ -1,8 +1,8 @@
 [
  {
    "Form"              : "TPS",
-   "Verbatim Term"     : "Heart Burn",
-   "Dictionary Level"  : "LLT",
+   "VerbatimTerm"      : "Heart Burn",
+   "DictionaryLevel"   : "LLT",
    "Dictionary"        : "MedDRA",
    "Priority"          : "1",
    "Locale"            : "eng",
@@ -11,12 +11,12 @@
    "Subject"           : "Subject: OK Checkup",
    "Site"              : "OK",
    "Event"             : "Checkup",
-   "Batch Identifier"  : "MedDRA Batch 1"
+   "BatchIdentifier"   : "MedDRA Batch 1"
  },
  {
    "Form"              : "TPS",
-   "Verbatim Term"     : "Reflux",
-   "Dictionary Level"  : "LLT",
+   "VerbatimTerm"      : "Reflux",
+   "DictionaryLevel"   : "LLT",
    "Dictionary"        : "MedDRA",
    "Priority"          : "1",
    "Locale"            : "eng",
@@ -25,12 +25,12 @@
    "Subject"           : "Subject: NY Visit",
    "Site"              : "NY",
    "Event"             : "Visit",
-   "Batch Identifier"  : "MedDRA Batch 1"
+   "BatchIdentifier"   : "MedDRA Batch 1"
  },
  {
    "Form"              : "TPS",
-   "Verbatim Term"     : "Burning",
-   "Dictionary Level"  : "LLT",
+   "VerbatimTerm"      : "Burning",
+   "DictionaryLevel"   : "LLT",
    "Dictionary"        : "MedDRA",
    "Priority"          : "1",
    "Locale"            : "eng",
@@ -39,12 +39,12 @@
    "Subject"           : "Subject: MD Reaction",
    "Site"              : "MD",
    "Event"             : "Reaction",
-   "Batch Identifier"  : "MedDRA Batch 1"
+   "BatchIdentifier"   : "MedDRA Batch 1"
  },
  {
    "Form"              : "TPS",
-   "Verbatim Term"     : "Nasal Drip",
-   "Dictionary Level"  : "LLT",
+   "VerbatimTerm"      : "Nasal Drip",
+   "DictionaryLevel"   : "LLT",
    "Dictionary"        : "MedDRA",
    "Priority"          : "1",
    "Locale"            : "eng",
@@ -53,12 +53,12 @@
    "Subject"           : "Subject: OK Checkup",
    "Site"              : "OK",
    "Event"             : "Checkup",
-   "Batch Identifier"  : "MedDRA Batch 1"
+   "BatchIdentifier"   : "MedDRA Batch 1"
  },
  {
    "Form"              : "TPS",
-   "Verbatim Term"     : "Stiff Joints",
-   "Dictionary Level"  : "LLT",
+   "VerbatimTerm"      : "Stiff Joints",
+   "DictionaryLevel"   : "LLT",
    "Dictionary"        : "MedDRA",
    "Priority"          : "1",
    "Locale"            : "eng",
@@ -67,12 +67,12 @@
    "Subject"           : "Subject: CT Post",
    "Site"              : "CT",
    "Event"             : "Post",
-   "Batch Identifier"  : "MedDRA Batch 1"
+   "BatchIdentifier"   : "MedDRA Batch 1"
  },
  {
    "Form"              : "TPS",
-   "Verbatim Term"     : "Congestion",
-   "Dictionary Level"  : "LLT",
+   "VerbatimTerm"      : "Congestion",
+   "DictionaryLevel"   : "LLT",
    "Dictionary"        : "MedDRA",
    "Priority"          : "1",
    "Locale"            : "FALSE",
@@ -81,6 +81,6 @@
    "Subject"           : "Subject: NY Pre",
    "Site"              : "NY",
    "Event"             : "Pre",
-   "Batch Identifier"  : "MedDRA Batch 1"
+   "BatchIdentifier"   : "MedDRA Batch 1"
  }
 ]
