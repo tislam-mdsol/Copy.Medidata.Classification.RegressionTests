@@ -57,7 +57,7 @@ Scenario: The following information will be available to the client as Source Te
   Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
   When the following externally managed verbatim requests are made
       | Verbatim Term         | Dictionary Level |
-      | Toxic effect of venom | LLT              | 
+      | Toxic effect of venom | LLT              |
   Then the task "Toxic effect of venom" should have a status of "Waiting Approval"
   And I verify the following Source Term information is displayed
        | Source System  | Study              | Dictionary    | Locale | Term                  | Level          | Priority |

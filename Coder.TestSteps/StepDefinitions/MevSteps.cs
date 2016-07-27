@@ -85,7 +85,6 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser.UploadMevFileAndWaitForCompletion(filePath);
         }
 
-
         [When(@"uploading ""(.*)"" WhoDrug tasks")]
         public void WhenUploadingWhoDrugTasks(int numberOfTermsToUpload)
         {

@@ -35,6 +35,12 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                 if (String.IsNullOrWhiteSpace(externalVerbatim.Dictionary))         throw new NullReferenceException("Dictionary");
                 if (String.IsNullOrWhiteSpace(externalVerbatim.IsApprovalRequired)) throw new NullReferenceException("IsApprovalRequired");
                 if (String.IsNullOrWhiteSpace(externalVerbatim.IsAutoApproval))     throw new NullReferenceException("IsAutoApproval");
+
+                externalVerbatim.SupplementalField1 = externalVerbatim.SupplementalField1.NullSafeRemoveAllWhiteSpace();
+                externalVerbatim.SupplementalField2 = externalVerbatim.SupplementalField2.NullSafeRemoveAllWhiteSpace();
+                externalVerbatim.SupplementalField3 = externalVerbatim.SupplementalField3.NullSafeRemoveAllWhiteSpace();
+                externalVerbatim.SupplementalField4 = externalVerbatim.SupplementalField4.NullSafeRemoveAllWhiteSpace();
+                externalVerbatim.SupplementalField5 = externalVerbatim.SupplementalField5.NullSafeRemoveAllWhiteSpace();
             }
         }
 

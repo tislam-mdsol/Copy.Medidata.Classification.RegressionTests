@@ -54,44 +54,6 @@ namespace Coder.TestSteps.StepDefinitions
 
             GivenACoderSetupWithNoTasksAndNoSynonymsAndDictionary(setupType, dictionaryLocaleVersion);
         }
-       
-        [When(@"coding tasks are loaded from CSV file ""(.*)""")]
-        [Given(@"coding tasks from CSV file ""(.*)""")]
-        public void GivenCodingTasksFromCSVFile(string csvFilename)
-        {
-            if (ReferenceEquals(csvFilename, null)) throw new ArgumentNullException("csvFilename");
-
-            throw new NotImplementedException();
-        }
-
-        [When(@"coding tasks are loaded from CSV file ""(.*)"" and auto-coding in progress")]
-        [Given(@"coding tasks from CSV file ""(.*)"" and auto-coding in progress")]
-        public void GivenCodingTasksFromCSVFileAndAutoCodingInProgress(string csvFilename)
-        {
-            if (ReferenceEquals(csvFilename, null)) throw new ArgumentNullException("csvFilename");
-
-            throw new NotImplementedException();
-        }
-
-
-        [Given(@"a ""(.*)"" coding task ""(.*)"" dictionary level ""(.*)""")]
-        public void GivenACodingTaskDictionaryLevel(string formName, string verbatim, string dictionaryLevel)
-        {
-            if (String.IsNullOrEmpty(verbatim))        throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrEmpty(dictionaryLevel)) throw new ArgumentNullException("dictionaryLevel");
-            if (String.IsNullOrEmpty(formName)) throw new ArgumentNullException("formName");
-
-            throw new NotImplementedException();
-        }
-
-        [Given(@"""(.*)"" coding tasks of ""(.*)"" for dictionary level ""(.*)""")]
-        public void GivenCodingTasksOfForDictionaryLevel(int numberOfTasks, string verbatim, string dictionaryLevel)
-        {
-            if (String.IsNullOrWhiteSpace(verbatim)) throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrWhiteSpace(dictionaryLevel)) throw new ArgumentNullException("dictionaryLevel");
-
-            _Browser.SetupCodingTaskGroup(_StepContext, verbatim, dictionaryLevel, numberOfTasks);
-        }
 
         [When(@"I view task ""(.*)""")]
         public void WhenISelectTask(string verbatim)
