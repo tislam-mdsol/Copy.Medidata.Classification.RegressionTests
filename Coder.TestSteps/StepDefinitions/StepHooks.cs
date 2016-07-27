@@ -85,16 +85,16 @@ namespace Coder.TestSteps.StepDefinitions
             };
             _StepContext.CoderAdminUser   = adminUser;
 
-            var newStudyGroup             = CreateSegmentSetupData("95e2d4e01891");
+            var newStudyGroup             = CreateSegmentSetupData("862f5efd7018");
             _StepContext.SegmentUnderTest = newStudyGroup;
 
             SetSegmentContext(newStudyGroup);
             MedidataUser newUser = new MedidataUser
             {
-                Username = "medidatacoder+MDF95e2d4e01891@gmail.com",
+                Username = "medidatacoder+MDF862f5efd7018@gmail.com",
                 Password = "Password1",
-                Email = "medidatacoder+MDF95e2d4e01891@gmail.com",
-                MedidataId = "95e2d4e01891",
+                Email = "medidatacoder+MDF862f5efd7018@gmail.com",
+                MedidataId = "862f5efd7018",
                 FirstName = "Coder"
             };
             _StepContext.CoderTestUser = newUser;
