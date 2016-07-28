@@ -218,22 +218,6 @@ namespace Coder.TestSteps.StepDefinitions
             }
         }
 
-        [When(@"new task ""(.*)"" is coded to term ""(.*)"" at search level ""(.*)"" with code ""(.*)"" at level ""(.*)"" and a synonym is created and the coding decision is manually approved")]
-        public void WhenNewTaskIsCodedToTermAtSearchLevelWithCodeAtLevelAndASynonymIsCreatedAndTheCodingDecisionIsManuallyApproved(
-            string verbatim, string searchText, string searchLevel, string targetCode, string targetLevel)
-        {
-            if (String.IsNullOrEmpty(verbatim))    throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrEmpty(searchText))  throw new ArgumentNullException("searchText");
-            if (String.IsNullOrEmpty(searchLevel)) throw new ArgumentNullException("searchLevel");
-            if (String.IsNullOrEmpty(targetCode))  throw new ArgumentNullException("targetCode");
-            if (String.IsNullOrEmpty(targetLevel)) throw new ArgumentNullException("targetLevel");
-
-            throw new NotImplementedException();
-
-            WhenTaskIsCodedToTermAtSearchLevelWithCodeAtLevelAndASynonymIsCreatedAndTheCodingDecisionIsManuallyApproved(verbatim, searchText, searchLevel,
-                targetCode, targetLevel);
-        }
-
         [When(@"task ""(.*)"" is coded to term ""(.*)"" at search level ""(.*)"" with code ""(.*)"" at level ""(.*)"" and a synonym is created and the coding decision is manually approved")]
         public void WhenTaskIsCodedToTermAtSearchLevelWithCodeAtLevelAndASynonymIsCreatedAndTheCodingDecisionIsManuallyApproved(
             string verbatim, string searchText, string searchLevel, string targetCode, string targetLevel)
@@ -266,7 +250,7 @@ namespace Coder.TestSteps.StepDefinitions
             _SearchTime = _Browser.CompleteBrowseAndCode(verbatim, searchCriteria, targetResult, true);
         }
 
-        [When(@"new task ""(.*)"" is coded to term ""(.*)"" at search level ""(.*)"" with code ""(.*)"" at level ""(.*)"" and the coding decision is manually approved")]
+        [When(@"new task ""(.*)"" is coded to term ""(.*)"" at search level ""(.*)"" with code ""(.*)"" at level ""(.*)"" and the coding decision is mnually approved")]
         public void WhenNewTaskIsCodedToTermAtSearchLevelWithCodeAtLevelAndTheCodingDecisionIsManuallyApproved(
             string verbatim, string searchText, string searchLevel, string targetCode, string targetLevel)
         {

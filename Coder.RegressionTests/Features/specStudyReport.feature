@@ -60,7 +60,7 @@ Scenario:  Study Report returns data for task with a task state of "completed"
 
 Scenario:  Study Report returns data for tasks with a task state of "completed" as wells as "NotCoded"
     Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
-	When the following externally managed verbatim requests are made "Tasks_6_CodeAndNext.csv"
+	When the following externally managed verbatim requests are made "Tasks_6_CodeAndNext.json"
 	When task "Congestion" is coded to term "Congestion nasal" at search level "Low Level Term" with code "10010676" at level "LLT" and a synonym is created
 	Then the study report task status count information should have the following   
 	| Status                    | Count |
@@ -123,7 +123,7 @@ Scenario:  Study Report returns data for tasks with a task state of "With Open Q
 
 Scenario:  Study Report returns data for task with a task state of "completed" with a coding path
     Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
-	When the following externally managed verbatim requests are made "Tasks_2_CodeAndNext.csv"
+	When the following externally managed verbatim requests are made "Tasks_2_CodeAndNext.json"
 	And a browse and code for task "Heart Burn" is performed
 	| Verbatim     | SearchText                  | SearchLevel    | Code     | Level | CreateSynonym |
 	| Heart Burn   | Reflux gastritis            | Low Level Term | 10057969 | LLT   | False         |

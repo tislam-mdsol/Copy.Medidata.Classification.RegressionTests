@@ -254,7 +254,7 @@ this.ScenarioSetup(scenarioInfo);
                     "es", ((string)(null)), table5, "Given ");
 #line 77
    testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
-                    "provalWhoDrugDDEB2.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "provalWhoDrugDDEB2.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
@@ -339,7 +339,7 @@ this.ScenarioSetup(scenarioInfo);
                     "es", ((string)(null)), table9, "Given ");
 #line 102
    testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
-                    "provalWhoDrugDDEB2.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "provalWhoDrugDDEB2.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 103
    testRunner.And("task \"JUNIOR ASPRIN\" is coded to term \"JUNIOR ASPRIN\" at search level \"Trade Name" +
                     "\" with code \"000027 01 583\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -422,7 +422,7 @@ this.ScenarioSetup(scenarioInfo);
    testRunner.When("I configure the Synonym Creation Policy Flag to \"Never Active\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 127
    testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
-                    "provalMedDRA.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "provalMedDRA.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
@@ -531,7 +531,7 @@ this.ScenarioSetup(scenarioInfo);
    testRunner.When("I configure the Synonym Creation Policy Flag to \"Never Active\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 159
    testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
-                    "provalWhoDrugDDEB2.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "provalWhoDrugDDEB2.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
@@ -618,7 +618,7 @@ this.ScenarioSetup(scenarioInfo);
    testRunner.When("I configure the Synonym Creation Policy Flag to \"Never Active\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 185
    testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
-                    "provalWhoDrugDDEB2.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "provalWhoDrugDDEB2.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 186
    testRunner.And("task \"JUNIOR ASPRIN\" is coded to term \"JUNIOR ASPRIN\" at search level \"Trade Name" +
                     "\" with code \"000027 01 583\" at level \"TN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -704,7 +704,7 @@ this.ScenarioSetup(scenarioInfo);
    testRunner.And("I configure dictionary \"MedDRA\" with \"Auto Approve\" set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 213
    testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
-                    "provalMedDRA.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "provalMedDRA.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 214
    testRunner.And("task \"BROKEN LEG\" is coded to term \"Broken leg\" at search level \"Low Level Term\" " +
                     "with code \"10006391\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -786,7 +786,7 @@ this.ScenarioSetup(scenarioInfo);
    testRunner.And("I configure dictionary \"MedDRA\" with \"Auto Approve\" set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 240
    testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
-                    "provalMedDRA.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "provalMedDRA.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
@@ -991,7 +991,7 @@ this.ScenarioSetup(scenarioInfo);
                     "ries", ((string)(null)), table35, "Given ");
 #line 304
    testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
-                    "provalWhoDrugDDEB2.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "provalWhoDrugDDEB2.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term"});
@@ -1100,7 +1100,7 @@ this.ScenarioSetup(scenarioInfo);
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table41, "Given ");
 #line 341
    testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
-                    "provalMedDRA.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "provalMedDRA.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
@@ -1208,7 +1208,7 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionaries", ((string)(null)), table45, "Given ");
 #line 373
    testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
-                    "provalWhoDrugDDEB2.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "provalWhoDrugDDEB2.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term"});
@@ -1312,7 +1312,7 @@ this.ScenarioSetup(scenarioInfo);
    testRunner.When("I configure dictionary \"MedDRA\" with \"Auto Approve\" set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 406
    testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
-                    "provalMedDRA.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "provalMedDRA.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
@@ -1395,7 +1395,7 @@ this.ScenarioSetup(scenarioInfo);
    testRunner.When("I configure dictionary \"WhoDrugDDEB2\" with \"Auto Approve\" set to \"true\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 432
    testRunner.When("the following externally managed verbatim requests are made \"AutoApproveSynonymAp" +
-                    "provalWhoDrugDDEB2.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                    "provalWhoDrugDDEB2.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term"});
