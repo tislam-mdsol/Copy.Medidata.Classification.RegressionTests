@@ -15,7 +15,7 @@ Scenario: A coding decision remains on the verbatim when a query is opened again
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE2"
  	| Field                    | Value           | ControlType    | Control Value |
- 	| Coding Field             | Drug Verbatim 1  | LongText       |               |
+ 	| Coding Field             | Drug Verbatim 1 | LongText       |               |
  	| Log Supplemental Field B | Twenty          | SmallTextInput | Other         |
 	And Coder App Segment is loaded
 	When task "Drug Verbatim 1" is coded to term "BAYER CHILDREN'S COLD" at search level "Preferred Name" with code "005581 01 001" at level "PN" and a synonym is created
@@ -84,9 +84,9 @@ Scenario: A coding decision remains on the verbatim when a sticky is opened agai
 	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE2"
- 	| Field          | Value           | ControlType | Control Value |
- 	| Coding Field A | Drug Verbatim 1 | LongText    |               |
- 	| SUP1AGE        | Twenty          | SelectList  | Other         |
+ 	| Field          | Value           | ControlType    | Control Value |
+ 	| Coding Field A | Drug Verbatim 1 | LongText       |               |
+ 	| SUP1AGE        | Twenty          | SmallTextInput | Other         |
 	And Coder App Segment is loaded
 	When task "Drug Verbatim 1" is coded to term "BAYER CHILDREN'S COLD" at search level "Preferred Name" with code "005581 01 001" at level "PN" and a synonym is created
     And Rave Modules App Segment is loaded
@@ -117,9 +117,9 @@ Scenario: A coding decision remains on the verbatim when a sticky is opened agai
 	When a Rave Draft is published and pushed using draft "<Draft>" for Project "<StudyName>" to environment "Prod"
 	And adding a new subject "TST"
 	And adding a new verbatim term to form "ETE2"
- 	| Field          | Value           | ControlType | Control Value |
- 	| Coding Field A | Drug Verbatim 1 |             |               |
- 	| SUP1AGE        | Twenty          | SelectList  | Other         |
+ 	| Field          | Value           | ControlType    | Control Value |
+ 	| Coding Field A | Drug Verbatim 1 |                |               |
+ 	| SUP1AGE        | Twenty          | SmallTextInput | Other         |
 	And Coder App Segment is loaded
 	When task "Drug Verbatim 1" is coded to term "BAYER CHILDREN'S COLD" at search level "Preferred Name" with code "005581 01 001" at level "PN" and a synonym is created
     And Rave Modules App Segment is loaded
