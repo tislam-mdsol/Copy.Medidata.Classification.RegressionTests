@@ -14,7 +14,7 @@ Scenario: Test that Rave is able to send coding terms to Coder even when more th
   	 | Form  | Field           | Dictionary   | Locale | CodingLevel    | Priority | IsApprovalRequired | IsAutoApproval | SupplementalTerms   |
   	 | ETE19 | LL Coding Field | <Dictionary> |        | PRODUCTSYNONYM | 1        | false               | true           | DSearchlist Std Sup |
 	When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
-	And adding new subject "TST" for Project environment "Prod"
+	And adding a new subject "TST" for Project environment "Prod"
 	And adding a new verbatim term to form "ETE19"
  	| Field                                    | Value                    | ControlType       |
  	| Log Coding Field                         | child advil cold extreme |                   |
@@ -34,7 +34,7 @@ Scenario: Test that Rave is able to send coding terms to Coder even when more th
       | PRODUCT        | 010502 01 001 | CO-ADVIL                                          |
       | PRODUCTSYNONYM | 010502 01 015 | CHILDRENS ADVIL COLD                              |
 	When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "UAT"
-	And adding new subject "TST" for Project environment "UAT"
+	And adding a new subject "TST" for Project environment "UAT"
 	And adding a new verbatim term to form "ETE19"
  	| Field                                    | Value                    | ControlType       |
  	| Log Coding Field                         | child advil cold extreme |                   |

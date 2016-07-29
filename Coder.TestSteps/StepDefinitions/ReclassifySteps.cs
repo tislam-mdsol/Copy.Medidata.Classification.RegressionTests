@@ -48,6 +48,9 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrWhiteSpace(comment))               throw new ArgumentNullException("comment"); 
             if (String.IsNullOrWhiteSpace(includeAutoCodedItems)) throw new ArgumentNullException("includeAutoCodedItems");
 
+            _Browser.ReAssignCoderRoles(_StepContext);
+            _Browser.WaitUntilAdminLinkExists("Reclassification");
+
             _Browser.ReclassifyTask(
                 verbatim             : verbatim, 
                 comment              : comment,
@@ -59,7 +62,10 @@ namespace Coder.TestSteps.StepDefinitions
         public void WhenReclassifyingTaskWithIncludeAutocodedItemsSetTo(string verbatim, string includeAutoCodedItems)
         {
             if (String.IsNullOrWhiteSpace(verbatim))              throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrWhiteSpace(includeAutoCodedItems)) throw new ArgumentNullException("includeAutoCodedItems"); 
+            if (String.IsNullOrWhiteSpace(includeAutoCodedItems)) throw new ArgumentNullException("includeAutoCodedItems");
+
+            _Browser.ReAssignCoderRoles(_StepContext);
+            _Browser.WaitUntilAdminLinkExists("Reclassification");
 
             _Browser.ReclassifyTask(
                 verbatim             : verbatim, 
@@ -90,6 +96,9 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrWhiteSpace(verbatim))              throw new ArgumentNullException("verbatim");
             if (String.IsNullOrWhiteSpace(includeAutoCodedItems)) throw new ArgumentNullException("includeAutoCodedItems");
 
+            _Browser.ReAssignCoderRoles(_StepContext);
+            _Browser.WaitUntilAdminLinkExists("Reclassification");
+
             _Browser.ReclassifyTask(
                  verbatim             : verbatim,
                  comment              : Config.DefaultReclassficationComment,
@@ -102,6 +111,9 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (String.IsNullOrWhiteSpace(verbatim))              throw new ArgumentNullException("verbatim");
             if (String.IsNullOrWhiteSpace(includeAutoCodedItems)) throw new ArgumentNullException("includeAutoCodedItems");
+
+            _Browser.ReAssignCoderRoles(_StepContext);
+            _Browser.WaitUntilAdminLinkExists("Reclassification");
 
             _Browser.ReclassifyTask(
                  verbatim             : verbatim,

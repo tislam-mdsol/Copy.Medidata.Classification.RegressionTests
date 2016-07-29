@@ -56,7 +56,7 @@ namespace Coder.TestSteps.StepDefinitions
             
             LoginAsAdministrator();
 
-            var newStudyGroup = CreateSegmentSetupData(generatedSuffix);
+            var newStudyGroup = CreateSegmentSetupData(generatedSuffix); 
             
             SetSegmentContext(newStudyGroup);
 
@@ -196,7 +196,7 @@ namespace Coder.TestSteps.StepDefinitions
             var userName = String.Concat(Config.StudyNamePrefix, nameSuffix);
 
             var newUser = _StepContext.Browser.CreateTestUserContext(newStudyGroup, userName, createNewSegment);
-
+       
             _StepContext.CoderTestUser = newUser;
         }
 
@@ -444,6 +444,21 @@ namespace Coder.TestSteps.StepDefinitions
             CommonAfterScenario();
 
             AssertTestWasConclusive(_StepContext);
+        }
+
+        [AfterScenario("EditGlobalRaveConfiguration")]
+        public void AfterEditGlobalRaveConfigurationScenario()
+        {
+            var browser = _StepContext.Browser;
+            var configurationSetting = new RaveCoderGlobalConfiguration
+            {
+                ReviewMarkingGroup = Config.DefaultReviewMarkingGroupValue,
+                IsRequiresResponse = Config.DefaultRequiresResponseValue
+            };
+
+            browser.EditGlobalRaveConfiguration(configurationSetting);
+
+            CommonAfterScenario();
         }
 
         [AfterScenario("EndToEndDynamicSegment")]

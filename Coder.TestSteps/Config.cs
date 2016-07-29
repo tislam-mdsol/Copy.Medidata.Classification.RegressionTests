@@ -160,6 +160,18 @@ namespace Coder.TestSteps
             }
         }
 
+        internal static string CoderRole
+        {
+            get
+            {
+                var coderRole = ConfigurationManager.AppSettings["CoderRole"];
+
+                if (String.IsNullOrEmpty(coderRole)) throw new ConfigurationErrorsException("CoderRole");
+
+                return coderRole;
+            }
+        }
+
         internal static string ApplicationCsvFolder
         {
             get
@@ -179,6 +191,26 @@ namespace Coder.TestSteps
                 if (String.IsNullOrWhiteSpace(synonymListName)) throw new ConfigurationErrorsException("DefaultSynonymListName");
 
                 return synonymListName;
+            }
+        }
+
+        internal static string DefaultReviewMarkingGroupValue
+        {
+            get
+            {
+                var defaultReviewMarkingGroupValue = ConfigurationManager.AppSettings["DefaultReviewMarkingGroupValue"];
+
+                if (String.IsNullOrWhiteSpace(defaultReviewMarkingGroupValue)) throw new ConfigurationErrorsException("DefaultReviewMarkingGroupValue");
+
+                return defaultReviewMarkingGroupValue;
+            }
+        }
+
+        internal static bool DefaultRequiresResponseValue
+        {
+            get
+            {               
+                return true;
             }
         }
 
@@ -342,6 +374,78 @@ namespace Coder.TestSteps
                 if (String.IsNullOrEmpty(raveDictionaryCoderPrefix)) throw new ConfigurationErrorsException("RaveDictionaryCoderPrefix");
 
                 return raveDictionaryCoderPrefix;
+            }
+        }
+
+        internal static string RaveEDC
+        {
+            get
+            {
+                var raveEDC = ConfigurationManager.AppSettings["RaveEDC"];
+
+                if (String.IsNullOrEmpty(raveEDC)) throw new ConfigurationErrorsException("RaveEDC");
+
+                return raveEDC;
+            }
+        }
+
+        internal static string RaveEDCAppRole
+        {
+            get
+            {
+                var raveEDCAppRole = ConfigurationManager.AppSettings["EDCAppRole"];
+
+                if (String.IsNullOrEmpty(raveEDCAppRole)) throw new ConfigurationErrorsException("EdcAppRole");
+
+                return raveEDCAppRole;
+            }
+        }
+
+        internal static string RaveModules
+        {
+            get
+            {
+                var raveModules = ConfigurationManager.AppSettings["RaveModules"];
+
+                if (String.IsNullOrEmpty(raveModules)) throw new ConfigurationErrorsException("RaveModules");
+
+                return raveModules;
+            }
+        }
+
+        internal static string RaveModulesAppRole
+        {
+            get
+            {
+                var raveModulesAppRole = ConfigurationManager.AppSettings["EdcModulesAppRole"];
+
+                if (String.IsNullOrEmpty(raveModulesAppRole)) throw new ConfigurationErrorsException("EdcModulesAppRole");
+
+                return raveModulesAppRole;
+            }
+        }
+
+        internal static string RaveArchitectRoles
+        {
+            get
+            {
+                var raveArchitectRole = ConfigurationManager.AppSettings["RaveArchitectRolesApp"];
+
+                if (String.IsNullOrEmpty(raveArchitectRole)) throw new ConfigurationErrorsException("RaveArchitectRolesApp");
+
+                return raveArchitectRole;
+            }
+        }
+
+        internal static string RaveArchitectRoleAppRole
+        {
+            get
+            {
+                var raveArchitectRoleAppRole = ConfigurationManager.AppSettings["ArchitectRolesAppRole"];
+
+                if (String.IsNullOrEmpty(raveArchitectRoleAppRole)) throw new ConfigurationErrorsException("RaveArchitectRoleAppRole");
+
+                return raveArchitectRoleAppRole;
             }
         }
     }

@@ -180,7 +180,22 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }
 
+        [Then(@"the coder query to the Rave form ""(.*)"" field ""(.*)"" with verbatim term ""(.*)"" can not be responded to")]
+        public void ThenTheCoderQueryToTheRaveFormFieldWithVerbatimTermCanNotBeRespondedTo(string formName, string fieldName, string verbatimTerm)
+        {
+            if (String.IsNullOrWhiteSpace(formName))     throw new ArgumentNullException("formName");
+            if (String.IsNullOrWhiteSpace(fieldName))    throw new ArgumentNullException("fieldName");
+            if (String.IsNullOrWhiteSpace(verbatimTerm)) throw new ArgumentNullException("verbatimTerm");
+
+            var target = _StepContext.GetRaveNavigationTarget();
+            target.FormName = formName;
+
+            _Browser.IsQueryResponsePossibleInRave(target, fieldName, verbatimTerm).Should().BeFalse();
+            _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
+        }
+
         [When(@"the coder query to the Rave form ""(.*)"" field ""(.*)"" with verbatim term ""(.*)"" is responded to with ""(.*)""")]
+        [Then(@"the coder query to the Rave form ""(.*)"" field ""(.*)"" with verbatim term ""(.*)"" is responded to with ""(.*)""")]
         public void WhenTheCoderQueryToTheRaveFormFieldWithVerbatimTermIsRespondedToWith(string formName, string fieldName, string verbatimTerm, string queryResponse)
         {
             if (String.IsNullOrWhiteSpace(formName))      throw new ArgumentNullException("formName");
@@ -192,7 +207,9 @@ namespace Coder.TestSteps.StepDefinitions
             target.FormName = formName;
 
             _Browser.RespondToQueryCommentInRave(target, fieldName, verbatimTerm, queryResponse);
+            _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }
+
 
         [When(@"the coder query to the Rave form ""(.*)"" field ""(.*)"" with verbatim term ""(.*)"" is canceled")]
         public void WhenTheCoderQueryToTheRaveFormFieldWithVerbatimTermIsCanceled(string formName, string fieldName, string verbatimTerm)

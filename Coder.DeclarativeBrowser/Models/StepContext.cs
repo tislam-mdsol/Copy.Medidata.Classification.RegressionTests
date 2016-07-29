@@ -37,6 +37,7 @@ namespace Coder.DeclarativeBrowser.Models
         public string DraftName                     { get; set; }
         public string SourceDraftVersionName        { get; set; }
         public string TargetDraftVersionName        { get; set; }
+        public string SecondStudyName               { get; set; }
         public bool UseRaveX                        { get; set; }
         public SegmentSetupData SegmentUnderTest    { get; set; }
         public StudyType ActiveStudyType            { get; set; }
