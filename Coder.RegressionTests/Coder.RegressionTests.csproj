@@ -50,10 +50,6 @@
       <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Coypu">
-      <HintPath>..\packages\Coypu.2.9.1\lib\net40\Coypu.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Gherkin, Version=2.6.5.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\Gherkin.dll</HintPath>
       <Private>True</Private>
