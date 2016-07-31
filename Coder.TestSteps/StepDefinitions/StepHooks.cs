@@ -33,8 +33,6 @@ namespace Coder.TestSteps.StepDefinitions
         [BeforeScenario("CoderCore")]
         public void BeforeCoreScenario()
         {
-            MessagingSystem.Start();
-
             var generatedUser = CoderUserGenerator.GenerateUser(Config.StudyNamePrefix);
 
             _StepContext.CoderTestUser    = generatedUser.User;
