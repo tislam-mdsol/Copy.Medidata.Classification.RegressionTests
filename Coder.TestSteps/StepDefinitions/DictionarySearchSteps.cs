@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using Coder.DeclarativeBrowser;
 using Coder.DeclarativeBrowser.ExtensionMethods;
+using Coder.DeclarativeBrowser.FileHelpers;
 using Coder.DeclarativeBrowser.Models;
 using Coder.DeclarativeBrowser.Models.GridModels;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
@@ -26,6 +28,8 @@ namespace Coder.TestSteps.StepDefinitions
         private IList<DictionarySearchCriteria>   _SearchCriteriaList;
         private IList<DictionarySearchResult>     _SearchResultList; 
         private TimeSpan                          _SearchTime;
+        private string                            _UploadedMevFile;
+        private const string                      _DefaultFileName = "MevFile";
 
         public DictionarySearchSteps(StepContext stepContext)
         {
@@ -250,22 +254,6 @@ namespace Coder.TestSteps.StepDefinitions
             _SearchTime = _Browser.CompleteBrowseAndCode(verbatim, searchCriteria, targetResult, true);
         }
 
-        [When(@"new task ""(.*)"" is coded to term ""(.*)"" at search level ""(.*)"" with code ""(.*)"" at level ""(.*)"" and the coding decision is mnually approved")]
-        public void WhenNewTaskIsCodedToTermAtSearchLevelWithCodeAtLevelAndTheCodingDecisionIsManuallyApproved(
-            string verbatim, string searchText, string searchLevel, string targetCode, string targetLevel)
-        {
-            if (String.IsNullOrEmpty(verbatim))    throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrEmpty(searchText))  throw new ArgumentNullException("searchText");
-            if (String.IsNullOrEmpty(searchLevel)) throw new ArgumentNullException("searchLevel");
-            if (String.IsNullOrEmpty(targetCode))  throw new ArgumentNullException("targetCode");
-            if (String.IsNullOrEmpty(targetLevel)) throw new ArgumentNullException("targetLevel");
-
-            throw new NotImplementedException();
-
-            WhenTaskIsCodedToTermAtSearchLevelWithCodeAtLevelAndTheCodingDecisionIsManuallyApproved(verbatim, searchText, searchLevel,
-                targetCode, targetLevel);
-        }
-
         [When(@"task ""(.*)"" is coded to term ""(.*)"" at search level ""(.*)"" with code ""(.*)"" at level ""(.*)"" and the coding decision is manually approved")]
         public void WhenTaskIsCodedToTermAtSearchLevelWithCodeAtLevelAndTheCodingDecisionIsManuallyApproved(
             string verbatim, string searchText, string searchLevel, string targetCode, string targetLevel)
@@ -394,8 +382,8 @@ namespace Coder.TestSteps.StepDefinitions
 
             string dictionaryLevel     = BrowserUtility.GetDefaultDictionaryLevel(_StepContext.Dictionary);
             string fullDictionaryLevel = dictionaryLevel.ConvertToFullDictionaryLevelName();
-
-            _Browser.SetupCodingTaskGroup(_StepContext, verbatim, dictionaryLevel, numberOfTasks);
+            
+            CreateCodingRequests(verbatim, dictionaryLevel, numberOfTasks);
             
             WhenTaskIsCodedToTermAtSearchLevelWithCodeAtLevelAndASynonymIsCreatedAndTheCodingDecisionIsManuallyApproved(
                 verbatim:    verbatim, 
@@ -415,7 +403,7 @@ namespace Coder.TestSteps.StepDefinitions
             string dictionaryLevel = BrowserUtility.GetDefaultDictionaryLevel(_StepContext.Dictionary);
             string fullDictionaryLevel = dictionaryLevel.ConvertToFullDictionaryLevelName();
 
-            _Browser.SetupCodingTaskGroup(_StepContext, verbatim, dictionaryLevel, numberOfTasks);
+            CreateCodingRequests(verbatim, dictionaryLevel, numberOfTasks);
 
             WhenTaskIsCodedToTermAtSearchLevelWithCodeAtLevelAndTheCodingDecisionIsManuallyApproved(
                 verbatim: verbatim,
@@ -435,7 +423,7 @@ namespace Coder.TestSteps.StepDefinitions
             string dictionaryLevel = BrowserUtility.GetDefaultDictionaryLevel(_StepContext.Dictionary);
             string fullDictionaryLevel = dictionaryLevel.ConvertToFullDictionaryLevelName();
 
-            _Browser.SetupCodingTaskGroup(_StepContext, verbatim, dictionaryLevel, numberOfTasks);
+            CreateCodingRequests(verbatim, dictionaryLevel, numberOfTasks);
 
             WhenTaskIsCodedToTermAtSearchLevelWithCodeAtLevelAndASynonymIsCreated(
                 verbatim: verbatim,
@@ -455,7 +443,7 @@ namespace Coder.TestSteps.StepDefinitions
             string dictionaryLevel     = BrowserUtility.GetDefaultDictionaryLevel(_StepContext.Dictionary);
             string fullDictionaryLevel = dictionaryLevel.ConvertToFullDictionaryLevelName();
 
-            _Browser.SetupCodingTaskGroup(_StepContext, verbatim, dictionaryLevel, numberOfTasks);
+            CreateCodingRequests(verbatim, dictionaryLevel, numberOfTasks);
 
             WhenTaskIsCodedToTermAtSearchLevelWithCodeAtLevel(
                 verbatim:    verbatim,
@@ -788,6 +776,34 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrWhiteSpace(searchCriteria.SearchText))     throw new InvalidOperationException("Search Text has not been provided");
             if (!searchCriteria.Levels.Any())                             throw new InvalidOperationException("Search criteria must contain at least one level");
             if (String.IsNullOrWhiteSpace(searchCriteria.Levels[0]))      throw new InvalidOperationException("Search criteria must contain at least one level");
+        }
+
+        private void CreateCodingRequests(string verbatim, string dictionaryLevel, int numberOfTasks)
+        {
+            if (String.IsNullOrWhiteSpace(verbatim))        throw new ArgumentNullException(nameof(verbatim));
+            if (String.IsNullOrWhiteSpace(dictionaryLevel)) throw new ArgumentNullException(nameof(dictionaryLevel));
+            if (numberOfTasks <= 0)                         throw new ArgumentOutOfRangeException(nameof(numberOfTasks));
+
+            var externalVerbatims = new List<ExternalVerbatim>();
+
+            for (int i = 0; i < numberOfTasks; i++)
+            {
+                var externalVerbatim = new ExternalVerbatim
+                {
+                    VerbatimTerm    = verbatim,
+                    DictionaryLevel = dictionaryLevel
+                };
+
+                externalVerbatims.Add(externalVerbatim);
+            }
+
+            externalVerbatims.SetNonRequiredMevColumnsToDefaultValues(_StepContext);
+
+            _UploadedMevFile = Path.Combine(_StepContext.DumpDirectory, _DefaultFileName.AppendRandomString() + ".csv");
+            
+            GenericCsvHelper.WriteDelimitedFile(externalVerbatims, _UploadedMevFile, true);
+
+            _Browser.UploadMevFileAndWaitForCompletion(_UploadedMevFile);
         }
     }
 }

@@ -215,7 +215,8 @@ Scenario: CODING When a manually coded decision for a verbatim with a Query stat
 
    Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
    When the query for new task "HEADACHES" with comment "Severity?" is "Open" with response "Acute"
-   And task "HEADACHES" is coded to term "Acute migraine" at search level "Low Level Term" with code "10066635" at level "LLT" and the coding decision is manually approved
+   And task "HEADACHES" is coded to term "Acute migraine" at search level "Low Level Term" with code "10066635" at level "LLT"
+   And approving task "HEADACHES"
    And reclassifying task "HEADACHES" with comment "Reconfirm"
    And exporting the Coding History Report for term "HEADACHES" with export columns "ALL"
    Then the Coding History Report should contain the following
@@ -310,7 +311,8 @@ Scenario: CODING When a manually coded decision for a verbatim with a Query stat
 
    Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
    When the query for new task "HEADACHES" with comment "Severity?" is "Answered" with response "Acute"
-   And task "HEADACHES" is coded to term "Acute migraine" at search level "Low Level Term" with code "10066635" at level "LLT" and the coding decision is manually approved
+   And task "HEADACHES" is coded to term "Acute migraine" at search level "Low Level Term" with code "10066635" at level "LLT"
+   And approving task "HEADACHES"
    And reclassifying task "HEADACHES" with comment "Reconfirm"
    And exporting the Coding History Report for term "HEADACHES" with export columns "ALL"
    Then the Coding History Report should contain the following
@@ -405,7 +407,8 @@ Scenario: CODING When a manually coded decision for a verbatim with a Query stat
 
    Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "JDrug JPN 2013H1"
    When the query for new task "HEADACHES" with comment "Severity?" is "Open" with response "Acute"
-   And task "HEADACHES" is coded to term "コカイン塩酸塩" at search level "DrugName" with code "8121700" at level "薬" and the coding decision is manually approved
+   And task "HEADACHES" is coded to term "コカイン塩酸塩" at search level "DrugName" with code "8121700" at level "薬"
+   And approving task "HEADACHES"
    And reclassifying task "HEADACHES" with comment "Reconfirm"
    And exporting the Coding History Report for term "HEADACHES" with export columns "ALL"
    Then the Coding History Report should contain the following

@@ -828,11 +828,12 @@ this.ScenarioSetup(scenarioInfo);
                     "se \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 218
    testRunner.And("task \"HEADACHES\" is coded to term \"Acute migraine\" at search level \"Low Level Ter" +
-                    "m\" with code \"10066635\" at level \"LLT\" and the coding decision is manually appro" +
-                    "ved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                    "m\" with code \"10066635\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 219
-   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 220
+   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 221
    testRunner.And("exporting the Coding History Report for term \"HEADACHES\" with export columns \"ALL" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -908,7 +909,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 221
+#line 222
    testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table10, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -947,7 +948,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 230
+#line 231
    testRunner.And("the query history contains the following information", ((string)(null)), table11, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -978,9 +979,9 @@ this.ScenarioSetup(scenarioInfo);
                         "HEADACHES",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 235
+#line 236
    testRunner.And("the Coding History contains following information", ((string)(null)), table12, "And ");
-#line 240
+#line 241
    testRunner.And("the query status for task \"HEADACHES\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1001,19 +1002,19 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_163356_016",
                         "Release2015.3.0"});
-#line 245
+#line 246
 this.ScenarioSetup(scenarioInfo);
-#line 247
+#line 248
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 248
+#line 249
    testRunner.When("the query for new task \"HEADACHE\" with comment \"Severity?\" is \"Open\" with respons" +
                     "e \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 249
-   testRunner.And("approving task \"HEADACHE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 250
-   testRunner.And("reclassifying task \"HEADACHE\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+   testRunner.And("approving task \"HEADACHE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 251
+   testRunner.And("reclassifying task \"HEADACHE\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 252
    testRunner.And("exporting the Coding History Report for term \"HEADACHE\" with export columns \"ALL\"" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1089,7 +1090,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 252
+#line 253
    testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table13, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1128,7 +1129,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 261
+#line 262
    testRunner.And("the query history contains the following information", ((string)(null)), table14, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1159,9 +1160,9 @@ this.ScenarioSetup(scenarioInfo);
                         "HEADACHE",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 266
+#line 267
    testRunner.And("the Coding History contains following information", ((string)(null)), table15, "And ");
-#line 271
+#line 272
    testRunner.And("the query status for task \"HEADACHE\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1184,20 +1185,20 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_017",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 277
+#line 278
 this.ScenarioSetup(scenarioInfo);
-#line 279
+#line 280
    testRunner.Given("a \"Waiting Approval\" Coder setup with registered synonym list \"MedDRA ENG 15.0 In" +
                     "itial_List\" containing entry \"HEADACHES|10066635|LLT|LLT:10066635;PT:10027599;HL" +
                     "T:10027603;HLGT:10019231;SOC:10029205|True||Approved|Acute migraine\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 280
+#line 281
    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with respon" +
                     "se \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 281
-   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 282
-   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 283
+   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 284
    testRunner.And("exporting the Coding History Report for term \"HEADACHES\" with export columns \"ALL" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1273,7 +1274,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 284
+#line 285
    testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table16, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1312,7 +1313,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 293
+#line 294
    testRunner.And("the query history contains the following information", ((string)(null)), table17, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1343,9 +1344,9 @@ this.ScenarioSetup(scenarioInfo);
                         "HEADACHES",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 298
+#line 299
    testRunner.And("the Coding History contains following information", ((string)(null)), table18, "And ");
-#line 303
+#line 304
    testRunner.And("the query status for task \"HEADACHES\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1368,21 +1369,22 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_018",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 309
+#line 310
 this.ScenarioSetup(scenarioInfo);
-#line 311
+#line 312
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 312
+#line 313
    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Answered\" with re" +
                     "sponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 313
-   testRunner.And("task \"HEADACHES\" is coded to term \"Acute migraine\" at search level \"Low Level Ter" +
-                    "m\" with code \"10066635\" at level \"LLT\" and the coding decision is manually appro" +
-                    "ved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 314
-   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+   testRunner.And("task \"HEADACHES\" is coded to term \"Acute migraine\" at search level \"Low Level Ter" +
+                    "m\" with code \"10066635\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 315
+   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 316
+   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 317
    testRunner.And("exporting the Coding History Report for term \"HEADACHES\" with export columns \"ALL" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1458,7 +1460,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 316
+#line 318
    testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table19, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1497,7 +1499,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 325
+#line 327
    testRunner.And("the query history contains the following information", ((string)(null)), table20, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1528,9 +1530,9 @@ this.ScenarioSetup(scenarioInfo);
                         "HEADACHES",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 330
+#line 332
    testRunner.And("the Coding History contains following information", ((string)(null)), table21, "And ");
-#line 335
+#line 337
    testRunner.And("the query status for task \"HEADACHES\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1551,19 +1553,19 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_163356_019",
                         "Release2015.3.0"});
-#line 340
-this.ScenarioSetup(scenarioInfo);
 #line 342
+this.ScenarioSetup(scenarioInfo);
+#line 344
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 343
+#line 345
    testRunner.When("the query for new task \"HEADACHE\" with comment \"Severity?\" is \"Answered\" with res" +
                     "ponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 344
-   testRunner.And("approving task \"HEADACHE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 345
-   testRunner.And("reclassifying task \"HEADACHE\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 346
+   testRunner.And("approving task \"HEADACHE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 347
+   testRunner.And("reclassifying task \"HEADACHE\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 348
    testRunner.And("exporting the Coding History Report for term \"HEADACHE\" with export columns \"ALL\"" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1639,7 +1641,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 347
+#line 349
    testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table22, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1678,7 +1680,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 356
+#line 358
    testRunner.And("the query history contains the following information", ((string)(null)), table23, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1709,9 +1711,9 @@ this.ScenarioSetup(scenarioInfo);
                         "HEADACHE",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 361
+#line 363
    testRunner.And("the Coding History contains following information", ((string)(null)), table24, "And ");
-#line 366
+#line 368
    testRunner.And("the query status for task \"HEADACHE\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1734,20 +1736,20 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_020",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 372
-this.ScenarioSetup(scenarioInfo);
 #line 374
+this.ScenarioSetup(scenarioInfo);
+#line 376
    testRunner.Given("a \"Waiting Approval\" Coder setup with registered synonym list \"MedDRA ENG 15.0 In" +
                     "itial_List\" containing entry \"HEADACHES|10066635|LLT|LLT:10066635;PT:10027599;HL" +
                     "T:10027603;HLGT:10019231;SOC:10029205|True||Approved|Acute migraine\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 375
+#line 377
    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Answered\" with re" +
                     "sponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 376
-   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 377
-   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 378
+   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 379
+   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 380
    testRunner.And("exporting the Coding History Report for term \"HEADACHES\" with export columns \"ALL" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -1823,7 +1825,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 379
+#line 381
    testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table25, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1862,7 +1864,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 388
+#line 390
    testRunner.And("the query history contains the following information", ((string)(null)), table26, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1893,9 +1895,9 @@ this.ScenarioSetup(scenarioInfo);
                         "HEADACHES",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 393
+#line 395
    testRunner.And("the Coding History contains following information", ((string)(null)), table27, "And ");
-#line 398
+#line 400
    testRunner.And("the query status for task \"HEADACHES\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1918,20 +1920,22 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_021",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 404
-this.ScenarioSetup(scenarioInfo);
 #line 406
+this.ScenarioSetup(scenarioInfo);
+#line 408
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"JD" +
                     "rug JPN 2013H1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 407
+#line 409
    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with respon" +
                     "se \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 408
-   testRunner.And("task \"HEADACHES\" is coded to term \"コカイン塩酸塩\" at search level \"DrugName\" with code " +
-                    "\"8121700\" at level \"薬\" and the coding decision is manually approved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 409
-   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 410
+   testRunner.And("task \"HEADACHES\" is coded to term \"コカイン塩酸塩\" at search level \"DrugName\" with code " +
+                    "\"8121700\" at level \"薬\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 411
+   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 412
+   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 413
    testRunner.And("exporting the Coding History Report for term \"HEADACHES\" with export columns \"ALL" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -2007,7 +2011,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 411
+#line 414
    testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table28, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2046,7 +2050,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 420
+#line 423
    testRunner.And("the query history contains the following information", ((string)(null)), table29, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2077,9 +2081,9 @@ this.ScenarioSetup(scenarioInfo);
                         "HEADACHES",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 425
+#line 428
    testRunner.And("the Coding History contains following information", ((string)(null)), table30, "And ");
-#line 430
+#line 433
    testRunner.And("the query status for task \"HEADACHES\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -2100,19 +2104,19 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_163356_022",
                         "Release2015.3.0"});
-#line 435
+#line 438
 this.ScenarioSetup(scenarioInfo);
-#line 437
+#line 440
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"JD" +
                     "rug JPN 2013H1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 438
+#line 441
    testRunner.When("the query for new task \"コカイン塩酸塩\" with comment \"Severity?\" is \"Answered\" with resp" +
                     "onse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 439
+#line 442
    testRunner.And("approving task \"コカイン塩酸塩\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 440
+#line 443
    testRunner.And("reclassifying task \"コカイン塩酸塩\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 441
+#line 444
    testRunner.And("exporting the Coding History Report for term \"コカイン塩酸塩\" with export columns \"ALL\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2187,7 +2191,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 442
+#line 445
    testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table31, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2226,7 +2230,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 451
+#line 454
    testRunner.And("the query history contains the following information", ((string)(null)), table32, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2257,9 +2261,9 @@ this.ScenarioSetup(scenarioInfo);
                         "コカイン塩酸塩",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 456
+#line 459
    testRunner.And("the Coding History contains following information", ((string)(null)), table33, "And ");
-#line 461
+#line 464
    testRunner.And("the query status for task \"コカイン塩酸塩\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -2280,30 +2284,30 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_023",
                         "Release2015.3.0",
                         "IncreaseTimeout_600000"});
-#line 467
+#line 470
 this.ScenarioSetup(scenarioInfo);
-#line 469
+#line 472
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 470
+#line 473
    testRunner.And("coding task \"EMPTY\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 471
+#line 474
    testRunner.When("I open a query for new task \"FLUS\" with comment \"Epidemic?\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 472
+#line 475
    testRunner.And("the query for new task \"OPEN WOUNDED\" with comment \"Size?\" is \"Open\" with respons" +
                     "e \"Small\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 473
+#line 476
    testRunner.And("the query for new task \"PAINS\" with comment \"Many?\" is \"Answered\" with response \"" +
                     "A lot\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 474
+#line 477
    testRunner.And("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Cancelled\" with r" +
                     "esponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 475
+#line 478
    testRunner.And("the query for new task \"CLOTHES\" with comment \"Is this a typo?\" is \"Closed\" with " +
                     "response \"Yes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 476
+#line 479
    testRunner.And("exporting the Coding History Report with export columns \"None\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 477
+#line 480
    testRunner.Then("the Coding History Report includes no query history information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -2324,28 +2328,28 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_024",
                         "Release2015.3.0",
                         "IncreaseTimeout_600000"});
-#line 483
+#line 486
 this.ScenarioSetup(scenarioInfo);
-#line 485
+#line 488
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 486
+#line 489
    testRunner.And("coding task \"EMPTY\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 487
+#line 490
    testRunner.When("I open a query for new task \"FLUS\" with comment \"Epidemic?\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 488
+#line 491
    testRunner.And("the query for new task \"OPEN WOUNDED\" with comment \"Size?\" is \"Open\" with respons" +
                     "e \"Small\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 489
+#line 492
    testRunner.And("the query for new task \"PAINS\" with comment \"Many?\" is \"Answered\" with response \"" +
                     "A lot\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 490
+#line 493
    testRunner.And("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Cancelled\" with r" +
                     "esponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 491
+#line 494
    testRunner.And("the query for new task \"CLOTHES\" with comment \"Is this a typo?\" is \"Closed\" with " +
                     "response \"Yes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 492
+#line 495
    testRunner.And("exporting the Coding History Report with export columns \"ALL\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2591,7 +2595,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Is this a typo?",
                         "Yes",
                         ""});
-#line 493
+#line 496
    testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table34, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -2612,9 +2616,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.0",
                         "IncreaseTimeout_300000",
                         "ignore"});
-#line 528
+#line 531
 this.ScenarioSetup(scenarioInfo);
-#line 530
+#line 533
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
@@ -2624,45 +2628,45 @@ this.ScenarioSetup(scenarioInfo);
             table35.AddRow(new string[] {
                         "EMPTY",
                         "LLT"});
-#line 531
-   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table35, "When ");
 #line 534
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table35, "When ");
+#line 537
    testRunner.And("I open a query for new task \"FLUS\" with comment \"Epidemic?\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 535
+#line 538
    testRunner.And("the query for new task \"OPEN WOUNDED\" with comment \"Size?\" is \"Open\" with respons" +
                     "e \"Small\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 536
+#line 539
    testRunner.And("the query for new task \"PAINS\" with comment \"Many?\" is \"Answered\" with response \"" +
                     "A lot\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 537
+#line 540
    testRunner.And("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Cancelled\" with r" +
                     "esponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 538
+#line 541
    testRunner.And("the query for new task \"CLOTHES\" with comment \"Is this a typo?\" is \"Closed\" with " +
                     "response \"Yes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 539
-   testRunner.And("all task filters are cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 540
-   testRunner.And("I filter for tasks with \"Queries\" of \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 541
-   testRunner.Then("Only tasks with \"Queries\" of \"Queued\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 542
-   testRunner.When("I filter for tasks with \"Queries\" of \"Open\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+   testRunner.And("all task filters are cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 543
-   testRunner.Then("Only tasks with \"Queries\" of \"Open\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+   testRunner.And("I filter for tasks with \"Queries\" of \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 544
-   testRunner.When("I filter for tasks with \"Queries\" of \"Answered\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+   testRunner.Then("Only tasks with \"Queries\" of \"Queued\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 545
-   testRunner.Then("Only tasks with \"Queries\" of \"Answered\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+   testRunner.When("I filter for tasks with \"Queries\" of \"Open\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 546
-   testRunner.When("I filter for tasks with \"Queries\" of \"Cancelled\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+   testRunner.Then("Only tasks with \"Queries\" of \"Open\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 547
-   testRunner.Then("Only tasks with \"Queries\" of \"Cancelled\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+   testRunner.When("I filter for tasks with \"Queries\" of \"Answered\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 548
-   testRunner.When("I filter for tasks with \"Queries\" of \"Closed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+   testRunner.Then("Only tasks with \"Queries\" of \"Answered\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 549
-   testRunner.Then("Only tasks with \"Queries\" of \"Closed\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+   testRunner.When("I filter for tasks with \"Queries\" of \"Cancelled\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 550
+   testRunner.Then("Only tasks with \"Queries\" of \"Cancelled\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 551
+   testRunner.When("I filter for tasks with \"Queries\" of \"Closed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 552
+   testRunner.Then("Only tasks with \"Queries\" of \"Closed\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 553
    testRunner.When("I filter for tasks with \"Queries\" of \"All\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2686,7 +2690,7 @@ this.ScenarioSetup(scenarioInfo);
             table36.AddRow(new string[] {
                         "CLOTHES",
                         "Closed"});
-#line 551
+#line 554
    testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table36, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -2705,9 +2709,9 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_026",
                         "Release2015.3.0",
                         "IncreaseTimeout_420000"});
-#line 564
+#line 567
 this.ScenarioSetup(scenarioInfo);
-#line 566
+#line 569
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
@@ -2741,15 +2745,15 @@ this.ScenarioSetup(scenarioInfo);
             table37.AddRow(new string[] {
                         "CLOTHES",
                         "LLT"});
-#line 567
+#line 570
    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table37, "When ");
-#line 578
+#line 581
    testRunner.And("the query for task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with response \"" +
                     "Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 579
+#line 582
    testRunner.And("the query for task \"PAINS\" with comment \"Many?\" is \"Answered\" with response \"A lo" +
                     "t\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 580
+#line 583
    testRunner.And("the query for task \"CLOTHES\" with comment \"Is this a typo?\" is \"Closed\" with resp" +
                     "onse \"Yes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -2781,12 +2785,12 @@ this.ScenarioSetup(scenarioInfo);
                         "PAINS",
                         "1",
                         "Answered"});
-#line 581
+#line 584
    testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table38, "Then ");
-#line 589
+#line 592
    testRunner.When("the first task \"CLOTHES\" in group \"3\" is coded to term \"Acute migraine\" at search" +
                     " level \"Low Level Term\" with code \"10066635\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 590
+#line 593
    testRunner.When("all task filters are cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2829,7 +2833,7 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "Waiting Manual Code",
                         "Answered"});
-#line 591
+#line 594
    testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table39, "Then ");
 #line hidden
             this.ScenarioCleanup();
