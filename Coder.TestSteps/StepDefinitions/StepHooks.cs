@@ -33,6 +33,8 @@ namespace Coder.TestSteps.StepDefinitions
         [BeforeScenario("CoderCore")]
         public void BeforeCoreScenario()
         {
+            MessagingSystem.Start();
+
             var generatedUser = CoderUserGenerator.GenerateUser(Config.StudyNamePrefix);
 
             _StepContext.CoderTestUser    = generatedUser.User;
@@ -52,7 +54,7 @@ namespace Coder.TestSteps.StepDefinitions
             
             LoginAsAdministrator();
 
-            var newStudyGroup = CreateSegmentSetupData(generatedSuffix);
+            var newStudyGroup = CreateSegmentSetupData(generatedSuffix); 
             
             SetSegmentContext(newStudyGroup);
 
@@ -192,7 +194,7 @@ namespace Coder.TestSteps.StepDefinitions
             var userName = String.Concat(Config.StudyNamePrefix, nameSuffix);
 
             var newUser = _StepContext.Browser.CreateTestUserContext(newStudyGroup, userName, createNewSegment);
-
+       
             _StepContext.CoderTestUser = newUser;
         }
 

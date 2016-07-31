@@ -69,26 +69,24 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify coping a form that contains Coder settings within a Project that the Coder" +
             " settings get copied to the new form.")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC42706_10")]
         [NUnit.Framework.CategoryAttribute("ETE_RaveCoderCore")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
         public virtual void VerifyCopingAFormThatContainsCoderSettingsWithinAProjectThatTheCoderSettingsGetCopiedToTheNewForm_()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify coping a form that contains Coder settings within a Project that the Coder" +
                     " settings get copied to the new form.", new string[] {
-                        "DFT",
+                        "VAL",
                         "PBMCC42706_10",
                         "ETE_RaveCoderCore",
-                        "Release2016.1.0"});
-#line 7
-this.ScenarioSetup(scenarioInfo);
+                        "Release2016.1.0",
+                        "EndToEndDynamicSegment"});
 #line 9
- testRunner.Given("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 10
- testRunner.And("a project registration with dictionary \"WhoDrugB2 200703 ENG\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 11
- testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
  testRunner.And("a Rave CRF copy source is added for the project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -100,34 +98,74 @@ this.ScenarioSetup(scenarioInfo);
                         "Coding Level",
                         "Priority",
                         "IsApprovalRequired",
-                        "IsAutoApproval"});
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
             table1.AddRow(new string[] {
                         "ETE2",
-                        "CodingField10",
+                        "Coding Field",
                         "<Dictionary>",
                         "<Locale>",
-                        "PRODUCTSYNONYM",
+                        "LLT",
                         "1",
                         "true",
-                        "true"});
+                        "true",
+                        "LogSuppField2"});
 #line 13
  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
+#line 16
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"\tin Rave app", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+ testRunner.And("a new Draft \"NewCopiedDraft\" is created through copy wizard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Form",
                         "Field",
-                        "Supplemental"});
+                        "Dictionary",
+                        "Locale",
+                        "Coding Level",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
             table2.AddRow(new string[] {
                         "ETE2",
-                        "CodingField10",
-                        "SUPPDD"});
-#line 16
- testRunner.And("the following supplementals fields for following forms", ((string)(null)), table2, "And ");
-#line 19
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
-                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
- testRunner.And("a new Draft \"NewCopiedDraft\" is created through copy wizard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "LLT",
+                        "1",
+                        "true",
+                        "true",
+                        "LogSuppField2"});
+#line 18
+ testRunner.Then("the Rave Coder setup for draft \"NewCopiedDraft\" has the following options configu" +
+                    "red", ((string)(null)), table2, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify Coder settings get copied from a form that contains Coder settings to a fo" +
+            "rm from another Project that has Coder registered")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
+        [NUnit.Framework.CategoryAttribute("PBMCC42706_20")]
+        [NUnit.Framework.CategoryAttribute("ETE_RaveCoderCore")]
+        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
+        public virtual void VerifyCoderSettingsGetCopiedFromAFormThatContainsCoderSettingsToAFormFromAnotherProjectThatHasCoderRegistered()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Coder settings get copied from a form that contains Coder settings to a fo" +
+                    "rm from another Project that has Coder registered", new string[] {
+                        "VAL",
+                        "PBMCC42706_20",
+                        "ETE_RaveCoderCore",
+                        "Release2016.1.0",
+                        "EndToEndDynamicSegment"});
+#line 29
+this.ScenarioSetup(scenarioInfo);
+#line 31
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Form",
@@ -137,64 +175,47 @@ this.ScenarioSetup(scenarioInfo);
                         "Coding Level",
                         "Priority",
                         "IsApprovalRequired",
-                        "IsAutoApproval"});
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
             table3.AddRow(new string[] {
                         "ETE2",
-                        "CodingField10",
+                        "Coding Field",
                         "<Dictionary>",
                         "<Locale>",
-                        "PRODUCTSYNONYM",
+                        "LLT",
                         "1",
                         "true",
-                        "true"});
-#line 21
- testRunner.Then("verify the CRF has the following options for draft \"NewCopiedDraft\"", ((string)(null)), table3, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Form",
-                        "Field",
-                        "Supplemental"});
-            table4.AddRow(new string[] {
-                        "ETE2",
-                        "CodingField10",
-                        "SUPPDD"});
-#line 24
- testRunner.And("verify the following supplemental fields for following forms", ((string)(null)), table4, "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify Coder settings get copied from a form that contains Coder settings to a fo" +
-            "rm from another Project that has Coder registered")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
-        [NUnit.Framework.CategoryAttribute("PBMCC42706_20")]
-        [NUnit.Framework.CategoryAttribute("ETE_RaveCoderCore")]
-        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
-        public virtual void VerifyCoderSettingsGetCopiedFromAFormThatContainsCoderSettingsToAFormFromAnotherProjectThatHasCoderRegistered()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Coder settings get copied from a form that contains Coder settings to a fo" +
-                    "rm from another Project that has Coder registered", new string[] {
-                        "DFT",
-                        "PBMCC42706_20",
-                        "ETE_RaveCoderCore",
-                        "Release2016.1.0"});
-#line 80
-this.ScenarioSetup(scenarioInfo);
-#line 82
- testRunner.Given("iMedidata App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 83
+                        "true",
+                        "LOGCOMPFIELD1"});
+#line 32
+ testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table3, "And ");
+#line 35
  testRunner.And("a coder study is created named \"SecondRaveCoderStudy\" for environment \"Prod\" with" +
                     " site \"Active Site 2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
- testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
- testRunner.And("a project registration with dictionary \"WhoDrugB2 200703 ENG\" for Project \"Second" +
-                    "RaveCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
- testRunner.And("a project registration with dictionary \"WhoDrugB2 200703 ENG\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
- testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
+                        "Dictionary",
+                        "Version",
+                        "Locale",
+                        "RegistrationName"});
+            table4.AddRow(new string[] {
+                        "SecondRaveCoderStudy",
+                        "MedDRA",
+                        "18.0",
+                        "eng",
+                        "MedDRA"});
+#line 36
+ testRunner.And("a second project with the following options is registered", ((string)(null)), table4, "And ");
+#line 39
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"\tin Rave app", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 40
+ testRunner.And("a Rave CRF copy source from project \"<StudyName>\" draft \"<DraftName>\" is added fo" +
+                    "r project \"SecondRaveCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 41
+ testRunner.And("a new Draft \"NewCopiedDraft\" is created through copy wizard for project \"SecondRa" +
+                    "veCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Form",
@@ -204,71 +225,21 @@ this.ScenarioSetup(scenarioInfo);
                         "Coding Level",
                         "Priority",
                         "IsApprovalRequired",
-                        "IsAutoApproval"});
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
             table5.AddRow(new string[] {
                         "ETE2",
-                        "CodingField10",
+                        "Coding Field",
                         "<Dictionary>",
                         "<Locale>",
-                        "PRODUCTSYNONYM",
+                        "LLT",
                         "1",
-                        "true",
-                        "true"});
-#line 88
- testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table5, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Form",
-                        "Field",
-                        "Supplemental"});
-            table6.AddRow(new string[] {
-                        "ETE2",
-                        "CodingField10",
-                        "SUPPDD"});
-#line 91
- testRunner.And("the following supplementals fields for following forms", ((string)(null)), table6, "And ");
-#line 94
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
-                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 95
- testRunner.And("a Rave CRF copy source is added for copy target project \"SecondRaveCoderStudy\" us" +
-                    "ing copy source project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
- testRunner.And("a new Draft \"NewCopiedDraft\" is created through copy wizard for project \"SecondRa" +
-                    "veCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Form",
-                        "Field",
-                        "Dictionary",
-                        "Locale",
-                        "Coding Level",
-                        "Priority",
-                        "IsApprovalRequired",
-                        "IsAutoApproval"});
-            table7.AddRow(new string[] {
-                        "ETE2",
-                        "CodingField10",
-                        "<Dictionary>",
-                        "<Locale>",
-                        "PRODUCTSYNONYM",
-                        "1",
-                        "true",
-                        "true"});
-#line 97
- testRunner.Then("verify the CRF has the following options for draft \"NewCopiedDraft\" for Project \"" +
-                    "SecondRaveCoderStudy\"", ((string)(null)), table7, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Form",
-                        "Field",
-                        "Supplemental"});
-            table8.AddRow(new string[] {
-                        "ETE2",
-                        "CodingField10",
-                        "SUPPDD"});
-#line 100
- testRunner.And("verify the following supplemental fields for following forms", ((string)(null)), table8, "And ");
+                        "True",
+                        "True",
+                        "LOGCOMPFIELD 1"});
+#line 42
+ testRunner.Then("the Rave Coder setup for draft \"NewCopiedDraft\" has the following options configu" +
+                    "red", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -276,105 +247,54 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify Coder settings are not copied from a form that contains Coder settings to " +
             "a from from another Project that does not have Coder registered")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
-        [NUnit.Framework.CategoryAttribute("PBMCC42706_30")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
+        [NUnit.Framework.CategoryAttribute("PBMCC42706_20")]
         [NUnit.Framework.CategoryAttribute("ETE_RaveCoderCore")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
         public virtual void VerifyCoderSettingsAreNotCopiedFromAFormThatContainsCoderSettingsToAFromFromAnotherProjectThatDoesNotHaveCoderRegistered()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Coder settings are not copied from a form that contains Coder settings to " +
                     "a from from another Project that does not have Coder registered", new string[] {
-                        "DFT",
-                        "PBMCC42706_30",
+                        "VAL",
+                        "PBMCC42706_20",
                         "ETE_RaveCoderCore",
-                        "Release2016.1.0"});
-#line 110
+                        "Release2016.1.0",
+                        "EndToEndDynamicSegment"});
+#line 53
 this.ScenarioSetup(scenarioInfo);
-#line 113
- testRunner.Given("iMedidata App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 114
+#line 55
+ testRunner.Given("a Rave project registration with dictionary \"MedDRA ENG 18.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 56
  testRunner.And("a coder study is created named \"SecondRaveCoderStudy\" for environment \"Prod\" with" +
                     " site \"Active Site 2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
- testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
- testRunner.And("a project registration with dictionary \"WhoDrugB2 200703 ENG\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
- testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Form",
-                        "Field",
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Project",
                         "Dictionary",
+                        "Version",
                         "Locale",
-                        "Coding Level",
-                        "Priority",
-                        "IsApprovalRequired",
-                        "IsAutoApproval"});
-            table9.AddRow(new string[] {
-                        "ETE2",
-                        "CodingField10",
-                        "<Dictionary>",
-                        "<Locale>",
-                        "PRODUCTSYNONYM",
-                        "1",
-                        "true",
-                        "true"});
-#line 118
- testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table9, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Form",
-                        "Field",
-                        "Supplemental"});
-            table10.AddRow(new string[] {
-                        "ETE2",
-                        "CodingField10",
-                        "SUPPDD"});
-#line 121
- testRunner.And("the following supplementals fields for following forms", ((string)(null)), table10, "And ");
-#line 124
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
-                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 125
- testRunner.And("a Rave CRF copy source is added for copy target project \"SecondRaveCoderStudy\" us" +
-                    "ing copy source project \"<StudyName>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 126
+                        "RegistrationName"});
+            table6.AddRow(new string[] {
+                        "SecondRaveCoderStudy",
+                        "MedDRA",
+                        "18.0",
+                        "eng",
+                        "MedDRA"});
+#line 57
+ testRunner.And("a second project with the following options is registered", ((string)(null)), table6, "And ");
+#line 60
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"\tin Rave app", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 61
+ testRunner.And("a Rave CRF copy source from project \"<StudyName>\" draft \"<DraftName>\" is added fo" +
+                    "r project \"SecondRaveCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
  testRunner.And("a new Draft \"NewCopiedDraft\" is created through copy wizard for project \"SecondRa" +
                     "veCoderStudy\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Form",
-                        "Field",
-                        "Dictionary",
-                        "Locale",
-                        "Coding Level",
-                        "Priority",
-                        "IsApprovalRequired",
-                        "IsAutoApproval"});
-            table11.AddRow(new string[] {
-                        "ETE2",
-                        "CodingField10",
-                        "<Dictionary>",
-                        "<Locale>",
-                        "PRODUCTSYNONYM",
-                        "1",
-                        "true",
-                        "true"});
-#line 127
- testRunner.Then("verify the Rave Coder setup does not have the following options for draft \"NewCop" +
-                    "iedDraft\" for Project \"SecondRaveCoderStudy\"", ((string)(null)), table11, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Form",
-                        "Field",
-                        "Supplemental"});
-            table12.AddRow(new string[] {
-                        "ETE2",
-                        "CodingField10",
-                        "SUPPDD"});
-#line 130
- testRunner.And("verify the following supplemental fields for following forms are not present", ((string)(null)), table12, "And ");
+#line 63
+ testRunner.Then("the project \"SecondRaveCoderStudy\" draft \"NewCopiedDraft\" form \"ETE2\" field \"Codi" +
+                    "ng Field\" has no Rave Coder setup options configured", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

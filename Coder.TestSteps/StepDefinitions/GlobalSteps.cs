@@ -30,6 +30,13 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser       = _StepContext.Browser;
         }
 
+        [Given(@"iMedidata App Segment is loaded")]
+        [When(@"iMedidata App Segment is loaded")]
+        public void GivenIMedidataAppSegmentIsLoaded()
+        {
+            _Browser.GoToiMedidataHome();
+        }
+
         [Given(@"a ""(.*)"" Coder setup with no tasks and no synonyms and dictionary ""(.*)""")]
         public void GivenACoderSetupWithNoTasksAndNoSynonymsAndDictionary(string setupType, string dictionaryLocaleVersion)
         {
@@ -150,7 +157,7 @@ namespace Coder.TestSteps.StepDefinitions
         {
             _Browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
         }
-        
+
         [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicSegment")]
         [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicStudy")]
         public void GivenARaveProjectRegistrationWithDictionaryParallelExecution(string dictionaryLocaleVersion)
@@ -163,7 +170,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             LoadCoderAsTestUser(clearTasks: false);
 
-            RegisterProjects();
+            RegisterProjects(); 
 
             _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
 

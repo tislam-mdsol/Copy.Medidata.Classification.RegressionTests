@@ -118,6 +118,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>specETE_ENG_LandscapeView.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\ETE_ENG_DuplicateSubjectNameSupport.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ETE_ENG_DuplicateSubjectNameSupport.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\ETE_ENG_CoderConfigQuerySettings.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,6 +132,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>specETE_ENG_FrozenLockedDP.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ETE_ENG_Update_Sup.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ETE_ENG_Update_Sup.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\specCoderSetup.feature.cs">
       <DependentUpon>specCoderSetup.feature</DependentUpon>
@@ -269,6 +279,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>specETE_ENG_LandscapeView.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\ETE_ENG_DuplicateSubjectNameSupport.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ETE_ENG_DuplicateSubjectNameSupport.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\ETE_ENG_CoderConfigQuerySettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ETE_ENG_CoderConfigQuerySettings.feature.cs</LastGenOutput>
@@ -276,6 +290,10 @@
     <None Include="Features\specETE_ENG_FrozenLockedDP.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>specETE_ENG_FrozenLockedDP.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\ETE_ENG_Update_Sup.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ETE_ENG_Update_Sup.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\specCoderSetup.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -385,10 +403,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ConfigData\mauth_private_key.txt.dice" />
     <Content Include="ConfigData\mauth_private_key.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="ConfigData\mauth_private_key.txt.dice" />
     <Content Include="Medidata.Specrun.Reporting.Readme.txt" />
     <Content Include="StaticContent\RaveDraft_Template.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

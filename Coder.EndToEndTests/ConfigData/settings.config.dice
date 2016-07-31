@@ -69,4 +69,8 @@
   <add key="ArchonPollingTimeInterval"                value="<%= configured.polling_time_interval           || '5000'                                               %>"/>
   <add key="RaveDictionaryCoderPrefix"                value="<%= configured.rave_dictionary_coder_prefix    || 'CODER'                                              %>"/>
   <add key="DefaultReviewMarkingGroupValue"           value="site from system"/>
+  <add key="CoderRole"                                value="<%= configured.coderRole                       || 'None'                                               %>"/>
+  <add key="RaveEDC"                                  value="<%= configured.raveEDC                         || 'Rave EDC'                                           %>"/>
+  <add key="RaveModules"                              value="<%= configured.raveModules                     || 'Rave Modules'                                       %>"/>
+  <add key="RaveArchitectRolesApp"                    value="<%= configured.raveArchitectRolesApp           || 'Rave Architect Roles'                               %>"/>
   </appSettings>
