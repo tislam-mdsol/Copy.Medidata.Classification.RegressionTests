@@ -319,15 +319,6 @@ namespace Coder.TestSteps.StepDefinitions
 
             throw new NotImplementedException();
         }
-        
-        [When(@"the field workflow settings for task ""(.*)"" are set to ""(.*)""")]
-        public void WhenTheFieldWorkflowSettingsForTaskAreSetTo(string verbatim, string setupType)
-        {
-            if (String.IsNullOrEmpty(verbatim))  throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrEmpty(setupType)) throw new ArgumentNullException("setupType");
-
-            throw new NotImplementedException();
-        }
 
         [When(@"The system ""(.*)"" count is at least ""(.*)"" percent of all tasks")]
         public void WhenTheSystemCountIsAtLeastPercentOfAllTasks(string taskableState, int percentThreshold)
