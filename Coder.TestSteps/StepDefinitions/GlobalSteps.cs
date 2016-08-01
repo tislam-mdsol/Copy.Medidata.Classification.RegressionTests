@@ -18,8 +18,6 @@ namespace Coder.TestSteps.StepDefinitions
     [Binding]
     public class GlobalSteps
     {
-        private const int MaximumODMTasks = 1500; 
-
         private readonly CoderDeclarativeBrowser _Browser;
         private readonly StepContext             _StepContext;
 
@@ -30,6 +28,13 @@ namespace Coder.TestSteps.StepDefinitions
 
             _StepContext   = stepContext;
             _Browser       = _StepContext.Browser;
+        }
+
+        [Given(@"iMedidata App Segment is loaded")]
+        [When(@"iMedidata App Segment is loaded")]
+        public void GivenIMedidataAppSegmentIsLoaded()
+        {
+            _Browser.GoToiMedidataHome();
         }
 
         [Given(@"a ""(.*)"" Coder setup with no tasks and no synonyms and dictionary ""(.*)""")]
@@ -55,101 +60,6 @@ namespace Coder.TestSteps.StepDefinitions
             _StepContext.ActiveStudyType = StudyType.Dev;
 
             GivenACoderSetupWithNoTasksAndNoSynonymsAndDictionary(setupType, dictionaryLocaleVersion);
-        }
-
-        [When(@"coding task ""(.*)"" for dictionary level ""(.*)""")]
-        [Given(@"coding task ""(.*)"" for dictionary level ""(.*)""")]
-        public void GivenCodingTaskForDictionaryLevel(string verbatim, string dictionaryLevel)
-        {
-            if (String.IsNullOrEmpty(verbatim))          throw new ArgumentNullException("verbatim");          
-            if (String.IsNullOrEmpty(dictionaryLevel))   throw new ArgumentNullException("dictionaryLevel");
-
-            //BrowserUtility.CreateNewTask(_StepContext, verbatim, dictionaryLevel);
-            _Browser.BroadcastCodingRequest(_StepContext, verbatim, dictionaryLevel);
-        }
-
-        [When(@"coding tasks ""(.*)""")]
-        [Given(@"coding tasks ""(.*)""")]
-        public void GivenCodingTasks(string combinedVerbatims)
-        {
-            if (String.IsNullOrEmpty(combinedVerbatims)) throw new ArgumentNullException("combinedVerbatims");
-
-            var verbatims = combinedVerbatims.Split(',');
-
-            foreach (var verbatim in verbatims)
-            {
-                BrowserUtility.CreateNewTask(_StepContext, verbatim.Trim(), waitForAutoCodingComplete:false);
-            }
-
-            _Browser.WaitForAutoCodingToComplete();
-        }
-
-        [Given(@"new coding task ""(.*)"" with isAutoApproval ""(.*)"" and isApprovalRequired ""(.*)""")]
-        public void GivenNewCodingTaskWithIsAutoApprovalAndIsApprovalRequired(string verbatim, string isAutoApproval, string isApprovalRequired)
-        {
-            _StepContext.SetOdmTermApprovalContext(isAutoApproval,isApprovalRequired);
-            BrowserUtility.CreateNewTask(_StepContext, verbatim);
-        }
-
-       
-        [When(@"coding tasks are loaded from CSV file ""(.*)""")]
-        [Given(@"coding tasks from CSV file ""(.*)""")]
-        public void GivenCodingTasksFromCSVFile(string csvFilename)
-        {
-            if (ReferenceEquals(csvFilename, null)) throw new ArgumentNullException("csvFilename");
-
-            CreateCodingTasksFromCSVFile(csvFilename, waitForAutoCodingComplete: true);
-        }
-
-        [When(@"coding tasks are loaded from CSV file ""(.*)"" and auto-coding in progress")]
-        [Given(@"coding tasks from CSV file ""(.*)"" and auto-coding in progress")]
-        public void GivenCodingTasksFromCSVFileAndAutoCodingInProgress(string csvFilename)
-        {
-            if (ReferenceEquals(csvFilename, null)) throw new ArgumentNullException("csvFilename");
-
-            CreateCodingTasksFromCSVFile(csvFilename, waitForAutoCodingComplete:false);
-        }
-
-        private void CreateCodingTasksFromCSVFile(string csvFilename, bool waitForAutoCodingComplete)
-        {
-            if (ReferenceEquals(csvFilename, null)) throw new ArgumentNullException("csvFilename");
-
-            string csvFilePath                     = BrowserUtility.GetDynamicCsvFilePath(csvFilename, Config.ApplicationCsvFolder);
-            
-            Tuple<string, int> odmPathAndTaskCount = BrowserUtility.BuildOdmFile(csvFilePath, _StepContext);
-            string odmFilePath                     = odmPathAndTaskCount.Item1;
-            int expectedTaskCount                  = odmPathAndTaskCount.Item2;
-
-            expectedTaskCount.Should().BeLessOrEqualTo(MaximumODMTasks, "There are too many tasks in the ODM to load. Split your CSV file into multiple files.");
-            
-            _Browser.GoToAdminPage("CodingCleanup");
-
-            _Browser.UploadOdm(odmFilePath);
-            
-            if (waitForAutoCodingComplete)
-            {
-                _Browser.WaitForAutoCodingToComplete();
-            }
-        }
-
-
-        [Given(@"a ""(.*)"" coding task ""(.*)"" dictionary level ""(.*)""")]
-        public void GivenACodingTaskDictionaryLevel(string formName, string verbatim, string dictionaryLevel)
-        {
-            if (String.IsNullOrEmpty(verbatim))        throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrEmpty(dictionaryLevel)) throw new ArgumentNullException("dictionaryLevel");
-            if (String.IsNullOrEmpty(formName)) throw new ArgumentNullException("formName");
-
-            BrowserUtility.CreateNewTask(_StepContext, verbatim, dictionaryLevel, formName);
-        }
-
-        [Given(@"""(.*)"" coding tasks of ""(.*)"" for dictionary level ""(.*)""")]
-        public void GivenCodingTasksOfForDictionaryLevel(int numberOfTasks, string verbatim, string dictionaryLevel)
-        {
-            if (String.IsNullOrWhiteSpace(verbatim)) throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrWhiteSpace(dictionaryLevel)) throw new ArgumentNullException("dictionaryLevel");
-
-            _Browser.SetupCodingTaskGroup(_StepContext, verbatim, dictionaryLevel, numberOfTasks);
         }
 
         [When(@"I view task ""(.*)""")]
@@ -247,7 +157,7 @@ namespace Coder.TestSteps.StepDefinitions
         {
             _Browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
         }
-        
+
         [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicSegment")]
         [Given(@"a Rave project registration with dictionary ""(.*)"""), Scope(Tag = "EndToEndDynamicStudy")]
         public void GivenARaveProjectRegistrationWithDictionaryParallelExecution(string dictionaryLocaleVersion)
@@ -260,7 +170,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             LoadCoderAsTestUser(clearTasks: false);
 
-            RegisterProjects();
+            RegisterProjects(); 
 
             _Browser.LoadiMedidataRaveModulesAppSegment(_StepContext.GetSegment());
 

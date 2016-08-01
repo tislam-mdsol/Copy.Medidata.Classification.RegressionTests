@@ -608,7 +608,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal SessionElementScope GetFilterButton()
         {
-            var filterButton = _Session.FindSessionElementByXPath("//*[@id=\"MainContent\"]/div[3]/table[1]/tbody/tr/td[1]/a[1]");
+            var filterButton = _Session.FindSessionElementByXPath("//a[.//u[text()[normalize-space() = 'Filter']]]");
 
             return filterButton;
         }

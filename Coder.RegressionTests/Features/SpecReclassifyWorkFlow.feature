@@ -64,8 +64,11 @@ Scenario: User has the option to reject the coding decision of reclassified term
 @IncreaseTimeout_300000
 Scenario: A Coder user can Reclassify a group and place it in the "Reconsider" state
 	Given a "Reconsider" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And "2" coding tasks of "Heart Burn" for dictionary level "LLT"
-	When task "Heart Burn" is coded to term "Reflux gastritis" at search level "Low Level Term" with code "10057969" at level "LLT" 
+	When the following externally managed verbatim requests are made
+		| Verbatim Term | Dictionary Level |
+		| Heart Burn    | LLT              |
+		| Heart Burn    | LLT              |
+	And task "Heart Burn" is coded to term "Reflux gastritis" at search level "Low Level Term" with code "10057969" at level "LLT" 
 	And approving task "HEART BURN"
 	And reclassifying group for the task "HEART BURN" with Include Autocoded Items set to "True"
 	Then the task "Heart Burn" should have a status of "Reconsider"
@@ -76,8 +79,11 @@ Scenario: A Coder user can Reclassify a group and place it in the "Reconsider" s
 @IncreaseTimeout_300000
 Scenario: A Coder user can Reclassify group and retire the mapped synonym
 	Given a "Basic" Coder setup with registered synonym list "MedDRA ENG 15.0 Clear_Match" containing entry "HEADACHE|10019211|LLT|LLT:10019211;PT:10019211;HLT:10019233;HLGT:10019231;SOC:10029205|True|AE.AECAT:OTHER|Approved|Headache"
-	And "2" coding tasks of "Heart Burn" for dictionary level "LLT"
-	When task "Heart Burn" is coded to term "Reflux gastritis" at search level "Low Level Term" with code "10057969" at level "LLT" and a synonym is created
+	When the following externally managed verbatim requests are made
+		| Verbatim Term | Dictionary Level |
+		| Heart Burn    | LLT              |
+		| Heart Burn    | LLT              |
+	And task "Heart Burn" is coded to term "Reflux gastritis" at search level "Low Level Term" with code "10057969" at level "LLT" and a synonym is created
 	And reclassifying and retiring group for the task "HEART BURN" with Include Autocoded Items set to "True"
 	Then the synonym for verbatim "HEART BURN" and code "10057969" should not exist
 	
@@ -89,7 +95,7 @@ Scenario: A Coder user shall not be able to reclassify a task while the task's s
   
     Given a "Basic" Coder setup with registered synonym list "MedDRA ENG 14.0 Empty_List" containing entry ""
     And an activated synonym list "MedDRA ENG 15.0 New_Primary_List"
-    And coding tasks from CSV file "Tasks_1000_MedDRA_Match_Upload.csv"
+    When the following externally managed verbatim requests are made "Tasks_1000_MedDRA_Match_Upload.json"
     When performing study migration without waiting
     Then reclassification of coding task "ABRASIONS" cannot occur while the study migration is in progress
     And study migration is complete for the latest version

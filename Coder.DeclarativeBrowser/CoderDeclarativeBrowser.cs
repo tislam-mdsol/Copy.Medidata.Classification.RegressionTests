@@ -15,18 +15,12 @@ using Coypu.Drivers;
 using FluentAssertions;
 using NUnit.Framework;
 using System.Reflection;
-using Castle.Core.Internal;
 using Coder.DeclarativeBrowser.ExtensionMethods.Assertions;
 using Coder.DeclarativeBrowser.FileHelpers;
 using Coder.DeclarativeBrowser.Helpers;
 using Coder.DeclarativeBrowser.IMedidataApi;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.PageObjects;
-using DocumentFormat.OpenXml.Drawing;
-using DocumentFormat.OpenXml.Drawing.Diagrams;
-using Medidata;
-using Medidata.Classification;
-using Path = System.IO.Path;
 
 namespace Coder.DeclarativeBrowser
 {
@@ -51,15 +45,6 @@ namespace Coder.DeclarativeBrowser
 
             Session = session;
             _DownloadDirectory = downloadDirectory;
-        }
-
-        public static void go()
-        {
-
-            CommunicationHub.Get<AutomatedCodingRequestSection>().Event += (snd, arg) =>
-            {
-
-            };
         }
 
         public static CoderDeclarativeBrowser StartBrowsing(string downloadDirectory)
@@ -132,81 +117,8 @@ namespace Coder.DeclarativeBrowser
         {
             if (ReferenceEquals(stepContext, null)) throw new ArgumentNullException("stepContext");
             if (String.IsNullOrEmpty(verbatim)) throw new ArgumentNullException("verbatim");
-
-            var codingRequestMessage = new AutomatedCodingRequestSection
-            {
-                Request = new StartAutomatedCodingRequest
-                {
-                    StudyUuid = stepContext.GetStudyUuid(),
-                    UserId = stepContext.CoderTestUser.MedidataId
-                },
-
-                Items = new[]
-                {
-                    new CodingRequest
-                    {
-                        AppUuid                   = stepContext.GetStudyUuid(),
-                        BatchOid                  = stepContext.FileOid,
-                        CodingContextUri          = stepContext.ConnectionUri,
-                        CreationDateTime          = stepContext.AutoCodeDate,
-                        VerbatimTerm              = verbatim,
-                        MedicalDictionaryLevelKey = dictionaryLevel,
-                        SourceForm                = formName,
-                        MarkingGroup              = markingGroup
-                    }
-                }
-            };
-
-            var client = new ClassificationClient.ClassificationClient();
-            client.BroadcastingAutomatedCodingRequestSection(codingRequestMessage);
             
             return true;
-        }
-
-        public bool BuildAndUploadOdm(OdmParameters odmParameters, string dumpDirectory, bool haltOnFailure = true)
-        {
-            //TODO::Move to BrowserUtility and remove page objects once Use of Web Service to upload ODMs is complete (MCC-191945)
-            if (ReferenceEquals(odmParameters, null)) throw new ArgumentNullException("odmParameters");
-            if (string.IsNullOrWhiteSpace(dumpDirectory)) throw new ArgumentNullException("dumpDirectory");
-
-            var filePath = BrowserUtility.BuildOdmFile(odmParameters, dumpDirectory);
-
-            bool uploadCompletedSuccesfully = UploadOdm(filePath, haltOnFailure);
-
-            var codingTaskPage = Session.GetCodingTaskPage();
-
-            codingTaskPage.ClearFilters();
-
-            return uploadCompletedSuccesfully;
-        }
-        
-        public bool UploadOdm(string filePath, bool haltOnFailure = true)
-        {
-            //TODO::Move to BrowserUtility and remove page objects once Use of Web Service to upload ODMs is complete (MCC-191945)
-            if (string.IsNullOrEmpty(filePath)) throw new ArgumentNullException("filePath");
-
-            Session.GoToAdminPage("CodingCleanup");
-
-            var codingCleanupPage = Session.GetCodingCleanupPage();
-
-            codingCleanupPage.GetUploadField().FillInWith(filePath);
-            codingCleanupPage.GetUploadButton().ClickWhenAvailable();
-            codingCleanupPage.WaitUntilUploadCompletes();
-            
-            var uploadCompletedSuccesfully = codingCleanupPage.GetUploadSuccessIndicator().Exists(Config.ExistsOptions);
-            
-            if (!haltOnFailure)
-            {
-                this.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
-            }
-
-            if (!uploadCompletedSuccesfully && haltOnFailure)
-            {
-                Console.WriteLine("\n\nError uploading ODM file.\n");
-                throw new InvalidOperationException("Error uploading ODM file.");
-            }
-
-            return uploadCompletedSuccesfully;
         }
         
         //TODO: DJ Usage of this, along with a lot of pre-execution setup steps, needs to be better encapsulated
@@ -3062,6 +2974,13 @@ namespace Coder.DeclarativeBrowser
             return reportRows;
         }
 
+        public IEnumerable<MedidataApp> GetStudyGroupAppsList()
+        {
+            var studyGroupAppList = Config.GetStudyGroupApps();
+
+            return studyGroupAppList;
+        }
+
         public MedidataUser CreateTestUserContext(SegmentSetupData newStudyGroup, string userName, bool createNewSegment = false)
         {
             if (ReferenceEquals(newStudyGroup, null)) throw new ArgumentNullException("newStudyGroup");
@@ -3117,6 +3036,21 @@ namespace Coder.DeclarativeBrowser
             Session.GetImedidataPage().OpenStudyGroupPage();
 
             Session.GetImedidataStudyGroupPage().InviteUser(studyGroup.SegmentName, Config.ApplicationName, user);
+        }
+
+        public void UpdateUserAppPermissionForStudyGroup(SegmentSetupData studyGroup, IDictionary<string, string> appsAndRoles, MedidataUser user)
+        {
+            if (ReferenceEquals(studyGroup, null)) throw new ArgumentNullException("studyGroup");
+            if (ReferenceEquals(user, null))       throw new ArgumentNullException("user");
+
+            Session.GetImedidataPage().OpenStudyGroupPage();
+            Session.GetImedidataStudyGroupPage().UpdateUserAppPermission(studyGroup.SegmentName, appsAndRoles, user);
+
+            LogoutOfiMedidata();
+            LoginToiMedidata(user.Email, Config.AdminLoginPassword);
+            LoadiMedidataCoderAppSegment(studyGroup.SegmentName);
+            LogoutOfCoder();
+            LoadiMedidataCoderAppSegment(studyGroup.SegmentName);
         }
 
         public string GetStudyGroupUUID(string segmentName)

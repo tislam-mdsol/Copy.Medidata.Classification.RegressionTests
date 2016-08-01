@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Threading;
-using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coypu;
 using HtmlAgilityPack;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-using Polly;
 
 namespace Coder.DeclarativeBrowser
 {

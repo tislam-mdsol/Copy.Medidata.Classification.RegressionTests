@@ -2,8 +2,6 @@
 using System.Linq;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
-using Coder.DeclarativeBrowser.OdmBuilder;
-using Coder.DeclarativeBrowser.ExtensionMethods;
 
 namespace Coder.DeclarativeBrowser.Models
 {
@@ -37,6 +35,7 @@ namespace Coder.DeclarativeBrowser.Models
         public string DraftName                     { get; set; }
         public string SourceDraftVersionName        { get; set; }
         public string TargetDraftVersionName        { get; set; }
+        public string SecondStudyName               { get; set; }
         public bool UseRaveX                        { get; set; }
         public SegmentSetupData SegmentUnderTest    { get; set; }
         public StudyType ActiveStudyType            { get; set; }
@@ -45,7 +44,6 @@ namespace Coder.DeclarativeBrowser.Models
         public string DownloadDirectory             { get; set; }
         public string DumpDirectory                 { get; set; }
         public CoderDeclarativeBrowser Browser      { get; set; }
-        public OdmManager OdmManager                { get; set; }
         
         // Users
         public MedidataUser RaveAdminUser           { get; set; }

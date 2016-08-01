@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Threading.Tasks;
 using System.Linq;
 using Coder.DeclarativeBrowser;
 using Coder.DeclarativeBrowser.ExtensionMethods;
@@ -8,7 +7,6 @@ using Coder.DeclarativeBrowser.Helpers;
 using Coder.DeclarativeBrowser.Models;
 using Coder.DeclarativeBrowser.Models.ETEModels;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
-using Coder.DeclarativeBrowser.OdmBuilder;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
@@ -29,7 +27,6 @@ namespace Coder.TestSteps.StepDefinitions
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            MessagingSystem.Start();
             CreateScreenshotDirectory();
         }
 
@@ -61,7 +58,7 @@ namespace Coder.TestSteps.StepDefinitions
             
             LoginAsAdministrator();
 
-            var newStudyGroup = CreateSegmentSetupData(generatedSuffix);
+            var newStudyGroup = CreateSegmentSetupData(generatedSuffix); 
             
             SetSegmentContext(newStudyGroup);
 
@@ -201,7 +198,7 @@ namespace Coder.TestSteps.StepDefinitions
             var userName = String.Concat(Config.StudyNamePrefix, nameSuffix);
 
             var newUser = _StepContext.Browser.CreateTestUserContext(newStudyGroup, userName, createNewSegment);
-
+       
             _StepContext.CoderTestUser = newUser;
         }
 
@@ -336,8 +333,6 @@ namespace Coder.TestSteps.StepDefinitions
             stepContext.DownloadDirectory = CreateUserDirectory(Config.ParentDownloadDirectory, user);
             stepContext.DumpDirectory     = CreateUserDirectory(Config.ParentDumpDirectory, user);
 
-            stepContext.OdmManager        = new OdmManager();
-
             stepContext.Browser           = CoderDeclarativeBrowser.StartBrowsing(_StepContext.DownloadDirectory);
         }
 
@@ -425,7 +420,7 @@ namespace Coder.TestSteps.StepDefinitions
                 {
                     try
                     {
-                        TaskAttempt.TryAction(_StepContext.Browser.CleanUpCodingTasks, TimeSpan.FromSeconds(10));
+                        TaskAttempt.TryAction(_StepContext.Browser.CleanUpCodingTasks, TimeSpan.FromSeconds(30));
                 }
                     catch(Exception ex)
                     {
@@ -440,7 +435,6 @@ namespace Coder.TestSteps.StepDefinitions
                     CoderUserGenerator.DeleteGeneratedUser(_StepContext.CoderTestUser, _StepContext.SegmentUnderTest);
                 }
             }
-
         }
 
         [AfterScenario("ApplicationMonitoring")]

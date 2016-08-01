@@ -34,32 +34,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AWSSDK.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.Core.3.2.0.0-beta\lib\net45\AWSSDK.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="AWSSDK.SimpleNotificationService, Version=3.1.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.SimpleNotificationService.3.1.0.8\lib\net45\AWSSDK.SimpleNotificationService.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="AWSSDK.SQS, Version=3.1.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.SQS.3.1.0.11\lib\net45\AWSSDK.SQS.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.7.4137.9688, Culture=neutral, PublicKeyToken=a4292a325f69b123, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.1.7.0\lib\Net40-Client\BouncyCastle.Crypto.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CompoundFileStorage, Version=1.3.1.0, Culture=neutral, PublicKeyToken=3f3b3e125b6598d5, processorArchitecture=MSIL">
       <HintPath>..\packages\CompoundFileStorage.1.3.1\lib\CompoundFileStorage.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Coypu">
-      <HintPath>..\packages\Coypu.2.9.1\lib\net40\Coypu.dll</HintPath>
+    <Reference Include="Coypu, Version=2.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Coypu.2.10.0\lib\net40\Coypu.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
@@ -97,56 +81,12 @@
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Medidata.Classification.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Classification.Contracts.1.5.0-pre000070-01\lib\net40\Medidata.Classification.Contracts.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.Classification.Contracts.Legacy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Classification.Contracts.1.5.0-pre000070-01\lib\net40\Medidata.Classification.Contracts.Legacy.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Medidata.Dapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Medidata.Dapper.0.0.8\lib\net45\Medidata.Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Medidata.Hosting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Hosting.AWS.1.0.0-pre000025-01\lib\net40\Medidata.Hosting.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.Hosting.AWS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Hosting.AWS.1.0.0-pre000025-01\lib\net40\Medidata.Hosting.AWS.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.Hosting.Console, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Hosting.AWS.1.0.0-pre000025-01\lib\net40\Medidata.Hosting.Console.exe</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.IFX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.3-pre000070-01\lib\net40\Medidata.IFX.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.IFX.CommunicationHub, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.3-pre000070-01\lib\net40\Medidata.IFX.CommunicationHub.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.IFX.IOC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.3-pre000070-01\lib\net40\Medidata.IFX.IOC.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.IFX.UnitTestHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.3-pre000070-01\lib\net40\Medidata.IFX.UnitTestHelper.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Medidata.MAuth, Version=2.10.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Medidata.MAuth.2.10.1\lib\net452\Medidata.MAuth.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.Messaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Messaging.AWS.1.1.2-pre000083-01\lib\net40\Medidata.Messaging.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.Messaging.AWS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Messaging.AWS.1.1.2-pre000083-01\lib\net40\Medidata.Messaging.AWS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
@@ -168,10 +108,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Polly.2.2.3\lib\net45\Polly.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceModelEx, Version=3.0.0.0, Culture=neutral, PublicKeyToken=d0f8277329bba7a0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.3-pre000070-01\lib\net40\ServiceModelEx.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -185,21 +121,16 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Topshelf, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
-      <HintPath>..\packages\Topshelf.4.0.1\lib\net452\Topshelf.dll</HintPath>
+    <Reference Include="WebDriver, Version=2.53.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.2.53.1\lib\net40\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebDriver, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.WebDriver.2.48.0\lib\net40\WebDriver.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="WebDriver.Support, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.Support.2.48.0\lib\net40\WebDriver.Support.dll</HintPath>
+    <Reference Include="WebDriver.Support, Version=2.53.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.2.53.1\lib\net40\WebDriver.Support.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassificationClient\ClassificationClient.cs" />
     <Compile Include="CoderUserGenerator.cs" />
     <Compile Include="ExtensionMethods\Assertions\FluentAssertionsExtensionMethods.cs" />
     <Compile Include="FileHelpers\CsvColumnNameAttribute.cs" />
@@ -239,7 +170,6 @@
     <Compile Include="IMedidataApi\Models\IMedidataAPIStudySite.cs" />
     <Compile Include="IMedidataApi\Models\IMedidataAPIUser.cs" />
     <Compile Include="Helpers\TaskAttempt.cs" />
-    <Compile Include="MessagingSystem.cs" />
     <Compile Include="Models\AssignedGeneralRole.cs" />
     <Compile Include="Models\AssignedWorkflowRole.cs" />
     <Compile Include="Models\ETEModels\RaveArchitectCRFCoderFieldWorkSheet.cs" />
@@ -250,7 +180,6 @@
     <Compile Include="Models\CodingDecisionsReportCriteria.cs" />
     <Compile Include="Models\CodingHistoryReportRow.cs" />
     <Compile Include="Models\CodingHistoryReportCriteria.cs" />
-    <Compile Include="Models\DirectDictionaryMatch.cs" />
     <Compile Include="Models\ETEModels\RaveArchitectCRFCoderWorkSheets.cs" />
     <Compile Include="Models\ETEModels\RaveCoderGlobalConfiguration.cs" />
     <Compile Include="Models\ETEModels\ReportDataModel.cs" />
@@ -286,7 +215,6 @@
     <Compile Include="Models\UIDataModels\MainReportTableModel.cs" />
     <Compile Include="Models\UIDataModels\SiteSetupData.cs" />
     <Compile Include="Models\UIDataModels\SubjectSetupData.cs" />
-    <Compile Include="OdmBuilder\OdmManager.cs" />
     <Compile Include="Models\UIDataModels\StudySetupData.cs" />
     <Compile Include="Models\WorkflowRole.cs" />
     <Compile Include="PageObjects\AdminMedidataAdminConsolePage.cs" />
@@ -324,7 +252,6 @@
     <Compile Include="ExtensionMethods\SessionElementScopeExtensionMethods.cs" />
     <Compile Include="ExtensionMethods\StepContextExtensionMethods.cs" />
     <Compile Include="ExtensionMethods\StringExtensions.cs" />
-    <Compile Include="ExtensionMethods\XmlExtensions.cs" />
     <Compile Include="Helpers\BrowserUtility.cs" />
     <Compile Include="Models\AdminConfigurationManagement.cs" />
     <Compile Include="Models\AdminSynonymList.cs" />
@@ -356,8 +283,6 @@
     <Compile Include="Models\UIDataModels\SpecDictionary.cs" />
     <Compile Include="Models\UIDataModels\SynonymSearch.cs" />
     <Compile Include="Models\SynonymList.cs" />
-    <Compile Include="OdmBuilder\OdmElementCreator.cs" />
-    <Compile Include="OdmBuilder\OdmFileBuilder.cs" />
     <Compile Include="Models\OdmParameters.cs" />
     <Compile Include="PageObjects\AdminConfigurationManagementPage.cs" />
     <Compile Include="PageObjects\AssignGeneralRolesPage.cs" />
@@ -513,10 +438,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>_Schema.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\AWSSDK.SimpleNotificationService.3.1.0.8\analyzers\dotnet\cs\AWSSDK.SimpleNotificationService.CodeAnalysis.dll" />
-    <Analyzer Include="..\packages\AWSSDK.SQS.3.1.0.11\analyzers\dotnet\cs\AWSSDK.SQS.CodeAnalysis.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

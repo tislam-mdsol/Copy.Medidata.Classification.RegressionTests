@@ -181,6 +181,18 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             return result;
         }
 
+        public static string NullSafeRemoveAllWhiteSpace(this string text)
+        {
+            if (ReferenceEquals(text, null))
+            {
+                return text;
+            }
+
+            var result = text.Replace(" ", String.Empty);
+
+            return result;
+        }
+
         public static string ReplaceWith(this String source, string value)
         {
             if (String.IsNullOrWhiteSpace(source)) throw new ArgumentNullException("source");

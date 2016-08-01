@@ -34,26 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AWSSDK.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.Core.3.2.0.0-beta\lib\net45\AWSSDK.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="AWSSDK.SimpleNotificationService, Version=3.1.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.SimpleNotificationService.3.1.0.8\lib\net45\AWSSDK.SimpleNotificationService.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="AWSSDK.SQS, Version=3.1.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.SQS.3.1.0.11\lib\net45\AWSSDK.SQS.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Coypu">
-      <HintPath>..\packages\Coypu.2.9.1\lib\net40\Coypu.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Gherkin, Version=2.6.5.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\Gherkin.dll</HintPath>
       <Private>True</Private>
@@ -82,42 +62,6 @@
       <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\IKVM.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Medidata.Hosting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Hosting.AWS.1.0.0-pre000025-01\lib\net40\Medidata.Hosting.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.Hosting.AWS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Hosting.AWS.1.0.0-pre000025-01\lib\net40\Medidata.Hosting.AWS.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.Hosting.Console, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Hosting.AWS.1.0.0-pre000025-01\lib\net40\Medidata.Hosting.Console.exe</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.IFX, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.3-pre000071-01\lib\net40\Medidata.IFX.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.IFX.CommunicationHub, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.3-pre000071-01\lib\net40\Medidata.IFX.CommunicationHub.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.IFX.IOC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.3-pre000071-01\lib\net40\Medidata.IFX.IOC.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.IFX.UnitTestHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.3-pre000071-01\lib\net40\Medidata.IFX.UnitTestHelper.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.Messaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Messaging.AWS.1.1.2-pre000084-01\lib\net40\Medidata.Messaging.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Medidata.Messaging.AWS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.Messaging.AWS.1.1.2-pre000084-01\lib\net40\Medidata.Messaging.AWS.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.0.0.4\lib\net45\Medidata.SpecFlow.UnitTestGenerator.SpecFlowPlugin.dll</HintPath>
       <Private>True</Private>
@@ -139,10 +83,6 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="ServiceModelEx, Version=3.0.0.0, Culture=neutral, PublicKeyToken=d0f8277329bba7a0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.IFX.1.5.3-pre000071-01\lib\net40\ServiceModelEx.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SpecFlow.Assist.Dynamic, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
@@ -173,18 +113,6 @@
     </Reference>
     <Reference Include="TechTalk.SpecRun, Version=1.2.0.15, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecRun.NUnit.1.2.0\lib\net40\TechTalk.SpecRun.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Topshelf, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
-      <HintPath>..\packages\Topshelf.4.0.1\lib\net452\Topshelf.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="WebDriver, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.WebDriver.2.48.0\lib\net40\WebDriver.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="WebDriver.Support, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.Support.2.48.0\lib\net40\WebDriver.Support.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -399,34 +327,13 @@
     <None Include="ConfigData\SmokeTests.srprofile">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="DynamicCSVReports\AutoApproveSynonymApprovalMedDRA.csv">
+    <None Include="StaticContent\Tasks_6_CodeAndNext.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="DynamicCSVReports\AutoApproveSynonymApprovalWhoDrugDDEB2.csv">
+    <None Include="StaticContent\Tasks_520_MultiStudy_MultiSup_MultiDict.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="DynamicCSVReports\Tasks_21_GroupedVerbatimsOfVaryingPriority.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DynamicCSVReports\Tasks_2_CodeAndNext.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DynamicCSVReports\Tasks_6_CodeAndNext.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DynamicCSVReports\Tasks_1000_MedDRA_Match_Upload.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DynamicCSVReports\Tasks_1500_SingleStudy_NoSup_SingleDict.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DynamicCSVReports\Tasks_30_MultiStudy_MultiSup_MultiDict.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DynamicCSVReports\Tasks_520_MultiStudy_MultiSup_MultiDict.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="DynamicCSVReports\Tasks_5_CodeAndNext.csv">
+    <None Include="StaticContent\Tasks_5_CodeAndNext.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="App.config">
@@ -597,6 +504,12 @@
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="StaticContent\AutoApproveSynonymApprovalMedDRA.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StaticContent\AutoApproveSynonymApprovalWhoDrugDDEB2.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="StaticContent\CrammedFile_41mb.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -610,6 +523,21 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="StaticContent\Mev_Download_Failures.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StaticContent\Tasks_1000_MedDRA_Match_Upload.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StaticContent\Tasks_1500_SingleStudy_NoSup_SingleDict.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StaticContent\Tasks_21_GroupedVerbatimsOfVaryingPriority.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StaticContent\Tasks_2_CodeAndNext.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="StaticContent\Tasks_30_MultiStudy_MultiSup_MultiDict.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="StaticContent\WhoDrug_Terms.json">
@@ -668,10 +596,6 @@
       <Project>{f78bda11-98eb-45bc-ad23-120e600a6a19}</Project>
       <Name>Coder.TestSteps</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\AWSSDK.SimpleNotificationService.3.1.0.8\analyzers\dotnet\cs\AWSSDK.SimpleNotificationService.CodeAnalysis.dll" />
-    <Analyzer Include="..\packages\AWSSDK.SQS.3.1.0.11\analyzers\dotnet\cs\AWSSDK.SQS.CodeAnalysis.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

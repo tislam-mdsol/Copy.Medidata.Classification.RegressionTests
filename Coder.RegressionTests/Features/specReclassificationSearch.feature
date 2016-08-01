@@ -30,8 +30,10 @@ Scenario Outline: A Coder User is able to search via the following criteria: Sub
 Scenario Outline: A user can review a coding decision's EDC Form. Enables an easy way to differentiate Adverse Event vs Medical History related terms by their form names.
 
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
-	And a "<FormValue>" coding task "Headache" dictionary level "LLT" 
-	When setting reclassification search value "<Value>" for "<Field>"
+	When the following externally managed verbatim requests are made
+		| Verbatim Term | Dictionary Level | Form        |
+		| Headache      | LLT              | <FormValue> |
+	And setting reclassification search value "<Value>" for "<Field>"
 	And setting reclassification search value "True" for "IncludeAutocodedItems"
 	And performing reclassification search
 	Then the reclassification search should contain

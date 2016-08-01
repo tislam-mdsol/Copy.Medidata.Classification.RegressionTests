@@ -142,35 +142,9 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
                 dictionary           : stepContext.Dictionary,
                 version              : stepContext.Version);
 
-            stepContext.SetOdmTermApprovalContext(
+            stepContext.SetCodingRequestApprovalContext(
                 isAutoApproval    : coderConfiguration.IsTermAutoApproval,
                 isApprovalRequired: coderConfiguration.IsTermApprovalRequired);
-        }
-
-        public static void SetupCodingTaskGroup(
-            this CoderDeclarativeBrowser browser, 
-            StepContext stepContext,
-            string verbatim, 
-            string dictionaryLevel, 
-            int numberOfTasks)
-        {
-            if (ReferenceEquals(browser, null))             throw new ArgumentNullException("browser");
-            if (ReferenceEquals(stepContext, null))         throw new ArgumentNullException("stepContext");
-            if (String.IsNullOrWhiteSpace(verbatim))        throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrWhiteSpace(dictionaryLevel)) throw new ArgumentNullException("dictionaryLevel");
-            if (numberOfTasks <= 0)                         throw new ArgumentOutOfRangeException("numberOfTasks");
-
-            var study = stepContext.SegmentUnderTest.ProdStudy;
-
-            for (var i = 0; i < numberOfTasks; i++)
-            {
-                BrowserUtility.CreateNewTask(stepContext, verbatim, dictionaryLevel);
-            }
-
-            var taskPage = browser.Session.GetCodingTaskPage();
-
-            taskPage.GoTo();
-            taskPage.WaitFormTaskGroupToFinishLoading(verbatim, numberOfTasks);
         }
 
         private static string CreateSynonymListUploadFile(string delimitedSynonym, string downloadDirectory)

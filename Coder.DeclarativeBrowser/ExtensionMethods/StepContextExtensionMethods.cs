@@ -3,6 +3,7 @@ using System.Linq;
 using Coder.DeclarativeBrowser.Models;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coypu;
+using System.Collections.Generic;
 
 namespace Coder.DeclarativeBrowser.ExtensionMethods
 {
@@ -103,7 +104,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             stepContext.AutoCodeDate = codingElementData.AutoCodeDate;
         }
 
-        public static void SetOdmTermApprovalContext(this StepContext stepContext, string isAutoApproval, string isApprovalRequired)
+        public static void SetCodingRequestApprovalContext(this StepContext stepContext, string isAutoApproval, string isApprovalRequired)
         {
             if (ReferenceEquals(stepContext, null))          throw new ArgumentNullException("stepContext");             
             if (String.IsNullOrEmpty(isAutoApproval))        throw new ArgumentNullException("isAutoApproval");          
@@ -183,7 +184,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             string isAutoApprovalValue     = GetWorkflowVariableValue("IsAutoApproval"    , workflowVariablesComment);
             string isApprovalRequiredValue = GetWorkflowVariableValue("IsApprovalRequired", workflowVariablesComment);
             
-            stepContext.SetOdmTermApprovalContext(isAutoApprovalValue, isApprovalRequiredValue);
+            stepContext.SetCodingRequestApprovalContext(isAutoApprovalValue, isApprovalRequiredValue);
         }
 
         public static string GetWorkflowVariableValue(string workflowVariable, string workflowVariablesComment)
@@ -223,41 +224,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             segmentSetupData.Customer = Config.TestSegmentCustomer;
             segmentSetupData.UseRaveX = stepContext.UseRaveX;
 
-            segmentSetupData.StudyGroupApps = new []
-            {
-                new MedidataApp
-                {
-                    Name = Config.ApplicationName
-                },
-
-                new MedidataApp
-                {
-                    Name = Config.EdcAppName,
-                    Roles = new string[] { Config.EdcAppRole }
-                },
-
-                new MedidataApp
-                {
-                    Name = Config.EdcModulesAppName,
-                    Roles = new string[] { Config.EdcModulesAppRole }
-                },
-
-                new MedidataApp
-                {
-                    Name = Config.ArchitectRolesAppName,
-                    Roles = new string[] { Config.ArchitectRolesAppRole }
-                },
-
-                new MedidataApp
-                {
-                    Name = Config.SafetyGatewayManagementAppName
-                },
-
-                new MedidataApp
-            {
-                    Name = Config.SafetyGatewayMappingAppName
-                },
-            };
+            segmentSetupData.StudyGroupApps = Config.GetStudyGroupApps();           
         }
     }
 }
