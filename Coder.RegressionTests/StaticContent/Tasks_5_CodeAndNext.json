@@ -1,0 +1,72 @@
+[
+ {
+   "Form"              : "TPS",
+   "VerbatimTerm"      : "Heart Burn",
+   "Dictionary Level"  : "LLT",
+   "Dictionary"        : "MedDRA",
+   "Priority"          : "1",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "TRUE",
+   "IsAutoApproval"    : "FALSE",
+   "Subject"           : "Subject: OK Checkup",
+   "Site"              : "OK",
+   "Event"             : "Checkup",
+   "BatchIdentifier"   : "MedDRA Batch 1"
+ },
+ {
+   "Form"              : "TPS",
+   "VerbatimTerm"      : "Reflux",
+   "Dictionary Level"  : "LLT",
+   "Dictionary"        : "MedDRA",
+   "Priority"          : "1",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "TRUE",
+   "IsAutoApproval"    : "FALSE",
+   "Subject"           : "Subject: NY Visit",
+   "Site"              : "NY",
+   "Event"             : "Visit",
+   "BatchIdentifier"   : "MedDRA Batch 1"
+ },
+ {
+   "Form"              : "TPS",
+   "VerbatimTerm"      : "Burning",
+   "Dictionary Level"  : "LLT",
+   "Dictionary"        : "MedDRA",
+   "Priority"          : "1",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "TRUE",
+   "IsAutoApproval"    : "FALSE",
+   "Subject"           : "Subject: MD Reaction",
+   "Site"              : "MD",
+   "Event"             : "Reaction",
+   "BatchIdentifier"   : "MedDRA Batch 1"
+ },
+ {
+   "Form"              : "TPS",
+   "VerbatimTerm"      : "Nasal Drip",
+   "Dictionary Level"  : "LLT",
+   "Dictionary"        : "MedDRA",
+   "Priority"          : "1",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "TRUE",
+   "IsAutoApproval"    : "FALSE",
+   "Subject"           : "Subject: OK Checkup",
+   "Site"              : "OK",
+   "Event"             : "Checkup",
+   "BatchIdentifier"   : "MedDRA Batch 1"
+ },
+ {
+   "Form"              : "TPS",
+   "VerbatimTerm"      : "Stiff Joints",
+   "Dictionary Level"  : "LLT",
+   "Dictionary"        : "MedDRA",
+   "Priority"          : "1",
+   "Locale"            : "eng",
+   "IsApprovalRequired": "TRUE",
+   "IsAutoApproval"    : "FALSE",
+   "Subject"           : "Subject: CT Post",
+   "Site"              : "CT",
+   "Event"             : "Post",
+   "BatchIdentifier"   : "MedDRA Batch 1"
+ }
+]

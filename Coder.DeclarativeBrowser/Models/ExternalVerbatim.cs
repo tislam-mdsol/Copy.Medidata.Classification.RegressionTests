@@ -13,7 +13,7 @@ namespace Coder.DeclarativeBrowser.Models
         public char Delimiter { get { return _Delimiter; } }
         public char QuoteChar { get { return _QuoteChar; } }
         
-        [CsvColumnName(Name="Study ID",               Order = 1)]
+        [CsvColumnName(Name = "Study ID",               Order = 1)]
         public string StudyID            { get; set; }
 
         [CsvColumnName(Name = "Subject",              Order = 2)]

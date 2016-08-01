@@ -283,12 +283,14 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (String.IsNullOrEmpty(verbatim)) throw new ArgumentNullException("verbatim");
 
-            bool uploadCompletedSuccesfully = BrowserUtility.CreateNewTask(_StepContext, verbatim, haltOnFailure: false);
+            bool uploadCompletedSuccesfully;
+            throw new NotImplementedException();
             uploadCompletedSuccesfully.Should().BeFalse();
 
             ThenStudyMigrationIsCompleteForTheLatestVersion();
 
-            uploadCompletedSuccesfully = BrowserUtility.CreateNewTask(_StepContext, verbatim, haltOnFailure: true);
+            throw new NotImplementedException();
+            uploadCompletedSuccesfully = true;
             uploadCompletedSuccesfully.Should().BeTrue();
 
             _Browser.AssertTaskLoaded(verbatim);

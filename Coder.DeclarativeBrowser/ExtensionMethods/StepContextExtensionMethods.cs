@@ -104,7 +104,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             stepContext.AutoCodeDate = codingElementData.AutoCodeDate;
         }
 
-        public static void SetOdmTermApprovalContext(this StepContext stepContext, string isAutoApproval, string isApprovalRequired)
+        public static void SetCodingRequestApprovalContext(this StepContext stepContext, string isAutoApproval, string isApprovalRequired)
         {
             if (ReferenceEquals(stepContext, null))          throw new ArgumentNullException("stepContext");             
             if (String.IsNullOrEmpty(isAutoApproval))        throw new ArgumentNullException("isAutoApproval");          
@@ -184,7 +184,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             string isAutoApprovalValue     = GetWorkflowVariableValue("IsAutoApproval"    , workflowVariablesComment);
             string isApprovalRequiredValue = GetWorkflowVariableValue("IsApprovalRequired", workflowVariablesComment);
             
-            stepContext.SetOdmTermApprovalContext(isAutoApprovalValue, isApprovalRequiredValue);
+            stepContext.SetCodingRequestApprovalContext(isAutoApprovalValue, isApprovalRequiredValue);
         }
 
         public static string GetWorkflowVariableValue(string workflowVariable, string workflowVariablesComment)

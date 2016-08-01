@@ -1,0 +1,89 @@
+[
+    {
+        "Form"                   : "AutoApprovalRequired",
+        "VerbatimTerm"           : "Headache",
+        "DictionaryLevel"        : "LLT",
+        "IsApprovalRequired"     : "TRUE",
+        "IsAutoApproval"         : "TRUE"
+    },
+
+    {
+        "Form"                   : "AutoApprovalRequired",
+        "VerbatimTerm"           : "Broken leg",
+        "DictionaryLevel"        : "LLT",
+        "IsApprovalRequired"     : "TRUE",
+        "IsAutoApproval"         : "TRUE"
+    },
+
+    {
+        "Form"                   : "AutoApprovalRequired",
+        "VerbatimTerm"           : "lower body numb",
+        "DictionaryLevel"        : "LLT",
+        "IsApprovalRequired"     : "TRUE",
+        "IsAutoApproval"         : "TRUE"
+    },
+
+    {
+        "Form"                   : "AutoApprovalRequired",
+        "VerbatimTerm"           : "left foot swollen",
+        "DictionaryLevel"        : "LLT",
+        "IsApprovalRequired"     : "TRUE",
+        "IsAutoApproval"         : "TRUE"
+    },
+
+    {
+        "Form"                   : "AutoApprovalRequired",
+        "VerbatimTerm"           : "trouble breathing",
+        "DictionaryLevel"        : "LLT",
+        "IsApprovalRequired"     : "TRUE",
+        "IsAutoApproval"         : "TRUE"
+    },
+
+    {
+        "Form"                   : "AutoApprovalRequired",
+        "VerbatimTerm"           : "coughing blood",
+        "DictionaryLevel"        : "LLT",
+        "IsApprovalRequired"     : "TRUE",
+        "IsAutoApproval"         : "FALSE"
+    },
+
+    {
+        "Form"                   : "AutoApprovalRequired",
+        "VerbatimTerm"           : "coughing",
+        "DictionaryLevel"        : "LLT",
+        "IsApprovalRequired"     : "TRUE",
+        "IsAutoApproval"         : "FALSE"
+    },
+
+    {
+        "Form"                   : "AutoApprovalRequired",
+        "VerbatimTerm"           : "cough",
+        "DictionaryLevel"        : "LLT",
+        "IsApprovalRequired"     : "FALSE",
+        "IsAutoApproval"         : "TRUE"
+    },
+
+    {
+        "Form"                   : "AutoApprovalRequired",
+        "VerbatimTerm"           : "migraine headache",
+        "DictionaryLevel"        : "LLT",
+        "IsApprovalRequired"     : "FALSE",
+        "IsAutoApproval"         : "TRUE"
+    },
+
+    {
+        "Form"                   : "AutoApprovalRequired",
+        "VerbatimTerm"           : "Back pain",
+        "DictionaryLevel"        : "LLT",
+        "IsApprovalRequired"     : "FALSE",
+        "IsAutoApproval"         : "FALSE"
+    },
+
+    {
+        "Form"                   : "AutoApprovalRequired",
+        "VerbatimTerm"           : "chest pain",
+        "DictionaryLevel"        : "LLT",
+        "IsApprovalRequired"     : "FALSE",
+        "IsAutoApproval"         : "FALSE"
+    }
+]

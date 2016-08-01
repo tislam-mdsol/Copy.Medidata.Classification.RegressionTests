@@ -106,7 +106,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FALSE",
                         "TRUE"});
 #line 11
- testRunner.When("uploading MEV content", ((string)(null)), table1, "When ");
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term"});
@@ -152,7 +152,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FALSE",
                         "TRUE"});
 #line 24
- testRunner.When("uploading MEV content", ((string)(null)), table3, "When ");
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table3, "When ");
 #line 27
  testRunner.Then("the user should be notified with the following message \"Csv file <MevFileName> fo" +
                     "rmat validated. Starting task import.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -205,7 +205,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FALSE",
                         "TRUE"});
 #line 38
- testRunner.When("uploading MEV content", ((string)(null)), table5, "When ");
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table5, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
@@ -600,7 +600,7 @@ this.ScenarioSetup(scenarioInfo);
                         "TRUE",
                         "FALSE"});
 #line 73
- testRunner.When("uploading MEV content", ((string)(null)), table9, "When ");
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table9, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term",
@@ -1133,7 +1133,7 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 11" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 176
- testRunner.When("uploading MEV content \"CrammedFile_41mb.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("uploading the external verbatim CSV file named \"CrammedFile_41mb.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 177
  testRunner.Then("the user should be notified with the following message \"CSV file CrammedFile_41mb" +
                     ".csv is too large to upload. The accepted file limit is 40MB.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

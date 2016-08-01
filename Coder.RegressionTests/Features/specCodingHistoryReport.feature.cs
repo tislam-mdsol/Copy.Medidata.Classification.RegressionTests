@@ -428,7 +428,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FALSE",
                         "eng"});
 #line 89
- testRunner.When("uploading MEV content", ((string)(null)), table6, "When ");
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table6, "When ");
 #line 93
  testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 94
