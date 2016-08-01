@@ -1429,7 +1429,7 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             }
 
             session.TryUntil(
-                () => session.Refresh(),
+                () => getElement(),
                 () => !getElement().Exists(),
                 options.RetryInterval,
                 options);
