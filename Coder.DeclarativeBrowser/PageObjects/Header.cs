@@ -216,7 +216,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
             RetryPolicy.RefreshAndFindHtml.Execute(
                 () =>
                 {
-                    _Browser.Refresh();
                     var attempt = FindAdminLink(adminPage);
 
                     if (attempt.Outcome == OutcomeType.Failure)
@@ -236,7 +235,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
             var attempt = RetryPolicy.FindElementShort.ExecuteAndCapture(
                 () =>
                 {
-                    _Browser.Refresh();
                     var administrationMenu = GetAdminMenuHeader();
                     administrationMenu.Hover();
                     administrationMenu.Click();

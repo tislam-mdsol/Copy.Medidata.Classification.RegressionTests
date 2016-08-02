@@ -36,7 +36,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             int hoursToAge = (days*24) + hours;
 
-            BrowserUtility.AgeTask(_StepContext, verbatim, hoursToAge);
+            throw new NotImplementedException();
         }
 
         [When(@"I sort the tasks by ""(.*)"" ""(.*)""")]
@@ -149,7 +149,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (string.IsNullOrEmpty(verbatim)) throw new ArgumentNullException("verbatim");
             if (string.IsNullOrEmpty(comment))  throw new ArgumentNullException("comment");
 
-            BrowserUtility.CreateNewTask(_StepContext, verbatim);
+            throw new NotImplementedException();
 
             WhenIOpenAQueryForTaskWithComment(verbatim, comment);
         }
@@ -201,7 +201,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             IsQueryStatusValid(status);
 
-            BrowserUtility.CreateNewTask(_StepContext, verbatim, markingGroup:markingGroup);
+            throw new NotImplementedException();
 
             WhenTheQueryForTaskWithCommentIsWithResponse(verbatim, comment, status, response);
         }
@@ -216,7 +216,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             IsQueryStatusValid(status);
 
-            BrowserUtility.CreateNewTask(_StepContext, verbatim);
+            throw new NotImplementedException();
 
             WhenTheQueryForTaskWithCommentIsWithResponse(verbatim, comment, status, response);
         }
@@ -235,12 +235,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             WhenACodingTaskReturnsToQueryStatus(verbatim, "Queued");
 
-            BrowserUtility.SendTaskQueryResponse(
-                stepContext: _StepContext,
-                verbatim:    verbatim,
-                status:      status,
-                response:    response,
-                comment:     comment);
+            throw new NotImplementedException();
         }
 
         [When(@"the latest query for task ""(.*)"" is ""(.*)"" with response ""(.*)""")]
@@ -252,11 +247,7 @@ namespace Coder.TestSteps.StepDefinitions
 
             IsQueryStatusValid(status);
 
-            BrowserUtility.SendTaskQueryResponse(
-                stepContext: _StepContext,
-                verbatim:    verbatim,
-                status:      status,
-                response:    response);
+            throw new NotImplementedException();
         }
 
         private void IsQueryStatusValid(string status)
@@ -286,7 +277,7 @@ namespace Coder.TestSteps.StepDefinitions
             if (string.IsNullOrEmpty(initalVerbatim))   throw new ArgumentNullException("initalVerbatim");
             if (string.IsNullOrEmpty(modifiedVerbatim)) throw new ArgumentNullException("modifiedVerbatim");
 
-            BrowserUtility.CreateNewTask(_StepContext, initalVerbatim);
+            throw new NotImplementedException();
 
             WhenTheVerbatimTermForTaskIsChangedTo(initalVerbatim, modifiedVerbatim);
         }
@@ -315,7 +306,7 @@ namespace Coder.TestSteps.StepDefinitions
             supplementalValues = supplementalValues.Remove(supplementalValues.Length - 1, 1);
             componenetValues   = componenetValues.Remove(componenetValues.Length - 1, 1);
 
-            BrowserUtility.CreateNewTask(_StepContext, initalVerbatim, supplements:supplementalValues, components:componenetValues);
+            throw new NotImplementedException();
 
             WhenTheVerbatimTermForTaskIsChangedTo(initalVerbatim, modifiedVerbatim);
         }
@@ -325,17 +316,8 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (string.IsNullOrEmpty(initalVerbatim))   throw new ArgumentNullException("initalVerbatim");
             if (string.IsNullOrEmpty(modifiedVerbatim)) throw new ArgumentNullException("modifiedVerbatim");
-            
-            BrowserUtility.ChangeTaskVerbatim(_StepContext, initalVerbatim, modifiedVerbatim);
-        }
-        
-        [When(@"the field workflow settings for task ""(.*)"" are set to ""(.*)""")]
-        public void WhenTheFieldWorkflowSettingsForTaskAreSetTo(string verbatim, string setupType)
-        {
-            if (String.IsNullOrEmpty(verbatim))  throw new ArgumentNullException("verbatim");
-            if (String.IsNullOrEmpty(setupType)) throw new ArgumentNullException("setupType");
 
-            BrowserUtility.ChangeTaskFieldWorkflowSettings(_StepContext, verbatim, setupType);
+            throw new NotImplementedException();
         }
 
         [When(@"The system ""(.*)"" count is at least ""(.*)"" percent of all tasks")]

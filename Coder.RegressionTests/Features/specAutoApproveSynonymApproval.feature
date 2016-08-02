@@ -43,7 +43,7 @@ Scenario: When Auto Approve option is "On", Synonym Creation Flag is "Always Act
    Given a "Completed Reconsider" Coder setup with no tasks and no synonyms and dictionaries
 	  | SynonymListName            | Dictionary                  | Version                   | Locale |
 	  | MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
-   When coding tasks are loaded from CSV file "AutoApproveSynonymApprovalMedDRA.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalMedDRA.json"
    Then the following coding decisions require approval 
       | Verbatim Term	       | Assigned Term      |
       | COUGHING               | Coughing           | 
@@ -74,7 +74,7 @@ Scenario: When Auto Approve option is "On" Synonym Creation Flag is "Always Acti
    Given a "Completed Reconsider" Coder setup with no tasks and no synonyms and dictionaries
 	  | SynonymListName            | Dictionary                  | Version                   | Locale |
 	  | WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201503                    | ENG    |
-   When coding tasks are loaded from CSV file "AutoApproveSynonymApprovalWhoDrugDDEB2.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalWhoDrugDDEB2.json"
    Then the following coding decisions require approval 
       | Verbatim Term  | Assigned Term  |
       | TYLENOL INFANT | Tylenol infant |
@@ -99,7 +99,7 @@ Scenario: When Auto Approve option is "On" and Synonym Creation Flag is "Always 
    Given a "Completed Reconsider" Coder setup with no tasks and no synonyms and dictionaries
 	  | SynonymListName            | Dictionary                  | Version                   | Locale |
 	  | WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201503                    | ENG    |
-   When coding tasks are loaded from CSV file "AutoApproveSynonymApprovalWhoDrugDDEB2.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalWhoDrugDDEB2.json"
    And task "JUNIOR ASPRIN" is coded to term "JUNIOR ASPRIN" at search level "Trade Name" with code "000027 01 583" at level "TN" and a synonym is created
    And task "PAIN" is coded to term "PAIN" at search level "Trade Name" with code "000277 04 191" at level "TN" and a synonym is created
    And task "VITAMIN-A" is coded to term "VITAMIN-A" at search level "Trade Name" with code "000560 01 078" at level "TN" and a synonym is created
@@ -124,7 +124,7 @@ Scenario: When Auto Approve option is "On", Synonym Creation Flag is "Never Acti
 	  | SynonymListName            | Dictionary                  | Version                   | Locale |
 	  | MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
    When I configure the Synonym Creation Policy Flag to "Never Active"
-   And coding tasks are loaded from CSV file "AutoApproveSynonymApprovalMedDRA.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalMedDRA.json"
    Then the following coding decisions require approval 
       | Verbatim Term	       | Assigned Term      |
       | COUGHING               | Coughing           | 
@@ -156,7 +156,7 @@ Scenario: When Auto Approve option is "On", Synonym Creation Flag is "Never Acti
 	  | SynonymListName            | Dictionary                  | Version                   | Locale |
 	  | WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201503                    | ENG    |
    When I configure the Synonym Creation Policy Flag to "Never Active"
-   And coding tasks are loaded from CSV file "AutoApproveSynonymApprovalWhoDrugDDEB2.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalWhoDrugDDEB2.json"
    Then the following coding decisions require approval 
       | Verbatim Term  | Assigned Term  |
       | TYLENOL INFANT | Tylenol infant |
@@ -182,7 +182,7 @@ Scenario: When Auto Approve option is "On", Synonym Creation Flag is "Never Acti
 	  | SynonymListName            | Dictionary                  | Version                   | Locale |
 	  | WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201503                    | ENG    |
    When I configure the Synonym Creation Policy Flag to "Never Active"
-   And coding tasks are loaded from CSV file "AutoApproveSynonymApprovalWhoDrugDDEB2.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalWhoDrugDDEB2.json"
    And task "JUNIOR ASPRIN" is coded to term "JUNIOR ASPRIN" at search level "Trade Name" with code "000027 01 583" at level "TN" and a synonym is created
    And task "PAIN" is coded to term "PAIN" at search level "Trade Name" with code "000277 04 191" at level "TN" and a synonym is created
    And task "VITAMIN-A" is coded to term "VITAMIN-A" at search level "Trade Name" with code "000560 01 078" at level "TN" and a synonym is created
@@ -210,7 +210,7 @@ Scenario: When Auto Approve option is "On", Synonym Creation Flag is "Never Acti
       | MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
    When I configure the Synonym Creation Policy Flag to "Never Active"
    And I configure dictionary "MedDRA" with "Auto Approve" set to "true"
-   And coding tasks are loaded from CSV file "AutoApproveSynonymApprovalMedDRA.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalMedDRA.json"
    And task "BROKEN LEG" is coded to term "Broken leg" at search level "Low Level Term" with code "10006391" at level "LLT" and a synonym is created
    And task "CHEST PAIN" is coded to term "Chest pain" at search level "Low Level Term" with code "10008479" at level "LLT" and a synonym is created
    And task "COUGHING BLOOD" is coded to term "Coughing blood" at search level "Low Level Term" with code "10011234" at level "LLT" and a synonym is created
@@ -237,7 +237,7 @@ Scenario: When Auto Approve option is "On", Synonym Creation Flag is "Never Acti
 	  | MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
    When I configure the Synonym Creation Policy Flag to "Never Active"
    And I configure dictionary "MedDRA" with "Auto Approve" set to "true"
-   And coding tasks are loaded from CSV file "AutoApproveSynonymApprovalMedDRA.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalMedDRA.json"
    Then the following coding decisions require approval 
       | Verbatim Term	       | Assigned Term      |
       | COUGHING               | Coughing           | 
@@ -262,7 +262,7 @@ Scenario: When Auto Approve option is "OFF", Synonym Creation Flag is "Never Act
    Given a "Synonyms Need Approval" Coder setup with no tasks and no synonyms and dictionaries
 	  | SynonymListName          | Dictionary                   | Version                   | Locale |
 	  | MedDRA_DDM               | MedDRA                       | 18.0                      | ENG    |
-   When coding tasks are loaded from CSV file "AutoApproveSynonymApprovalMedDRA.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalMedDRA.json"
    Then the following coding decisions require approval 
       | Verbatim Term	       | Assigned Term      |
       | BROKEN LEG             | Broken leg         | 
@@ -301,7 +301,7 @@ Scenario: When Auto Approve option is "OFF", Synonym Creation Flag is "Never Act
    Given a "Synonyms Need Approval" Coder setup with no tasks and no synonyms and dictionaries
 	  | SynonymListName            | Dictionary                  | Version                   | Locale |
 	  | WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201503                    | ENG    |
-   When coding tasks are loaded from CSV file "AutoApproveSynonymApprovalWhoDrugDDEB2.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalWhoDrugDDEB2.json"
    Then the following coding decisions require manual coding 
       | Verbatim Term |
       | JUNIOR ASPRIN |
@@ -338,7 +338,7 @@ Scenario: When Auto Approve option is "OFF", Synonym Creation Flag is "Always Ac
    Given a "Basic" Coder setup with no tasks and no synonyms and dictionaries
 	  | SynonymListName            | Dictionary                  | Version                   | Locale |
 	  | MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
-   When coding tasks are loaded from CSV file "AutoApproveSynonymApprovalMedDRA.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalMedDRA.json"
    Then the following coding decisions require approval 
       | Verbatim Term  | Assigned Term  |
       | COUGHING       | Coughing       |
@@ -370,7 +370,7 @@ Scenario: When Auto Approve option is "OFF", Synonym Creation Flag is "Always Ac
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionaries
 	  | SynonymListName            | Dictionary                  | Version                   | Locale |
 	  | WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201503                    | ENG    |
-   When coding tasks are loaded from CSV file "AutoApproveSynonymApprovalWhoDrugDDEB2.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalWhoDrugDDEB2.json"
    Then the following coding decisions require manual coding 
       | Verbatim Term |
       | JUNIOR ASPRIN |
@@ -403,7 +403,7 @@ Scenario: When Auto Approve option is "On", Synonym Creation Flag is "Always Act
 	  | SynonymListName            | Dictionary                  | Version                   | Locale |
 	  | MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
    When I configure dictionary "MedDRA" with "Auto Approve" set to "true"
-   And coding tasks are loaded from CSV file "AutoApproveSynonymApprovalMedDRA.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalMedDRA.json"
    Then the following coding decisions require approval 
       | Verbatim Term  | Assigned Term  |
       | BROKEN LEG     | Broken leg     |
@@ -429,7 +429,7 @@ Scenario: When Auto Approve option is "On", Synonym Creation Flag is "Always Act
 	  | SynonymListName            | Dictionary                  | Version                   | Locale |
 	  | WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201503                    | ENG    |
    When I configure dictionary "WhoDrugDDEB2" with "Auto Approve" set to "true"
-   And coding tasks are loaded from CSV file "AutoApproveSynonymApprovalWhoDrugDDEB2.csv"
+   When the following externally managed verbatim requests are made "AutoApproveSynonymApprovalWhoDrugDDEB2.json"
    Then the following coding decisions require manual coding 
       | Verbatim Term |
       | JUNIOR ASPRIN |

@@ -215,7 +215,8 @@ Scenario: CODING When a manually coded decision for a verbatim with a Query stat
 
    Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
    When the query for new task "HEADACHES" with comment "Severity?" is "Open" with response "Acute"
-   And task "HEADACHES" is coded to term "Acute migraine" at search level "Low Level Term" with code "10066635" at level "LLT" and the coding decision is manually approved
+   And task "HEADACHES" is coded to term "Acute migraine" at search level "Low Level Term" with code "10066635" at level "LLT"
+   And approving task "HEADACHES"
    And reclassifying task "HEADACHES" with comment "Reconfirm"
    And exporting the Coding History Report for term "HEADACHES" with export columns "ALL"
    Then the Coding History Report should contain the following
@@ -310,7 +311,8 @@ Scenario: CODING When a manually coded decision for a verbatim with a Query stat
 
    Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
    When the query for new task "HEADACHES" with comment "Severity?" is "Answered" with response "Acute"
-   And task "HEADACHES" is coded to term "Acute migraine" at search level "Low Level Term" with code "10066635" at level "LLT" and the coding decision is manually approved
+   And task "HEADACHES" is coded to term "Acute migraine" at search level "Low Level Term" with code "10066635" at level "LLT"
+   And approving task "HEADACHES"
    And reclassifying task "HEADACHES" with comment "Reconfirm"
    And exporting the Coding History Report for term "HEADACHES" with export columns "ALL"
    Then the Coding History Report should contain the following
@@ -405,7 +407,8 @@ Scenario: CODING When a manually coded decision for a verbatim with a Query stat
 
    Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "JDrug JPN 2013H1"
    When the query for new task "HEADACHES" with comment "Severity?" is "Open" with response "Acute"
-   And task "HEADACHES" is coded to term "コカイン塩酸塩" at search level "DrugName" with code "8121700" at level "薬" and the coding decision is manually approved
+   And task "HEADACHES" is coded to term "コカイン塩酸塩" at search level "DrugName" with code "8121700" at level "薬"
+   And approving task "HEADACHES"
    And reclassifying task "HEADACHES" with comment "Reconfirm"
    And exporting the Coding History Report for term "HEADACHES" with export columns "ALL"
    Then the Coding History Report should contain the following
@@ -528,8 +531,10 @@ Scenario: REPORT The Query History Information shall be displayed in the report 
 Scenario: FILTER User can filter Queries by Open Answered Cancelled Closed Queued and All
 
    Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-   And coding task "EMPTY" for dictionary level "LLT"
-   When I open a query for new task "FLUS" with comment "Epidemic?"
+   When the following externally managed verbatim requests are made
+       | Verbatim Term | Dictionary Level |
+       | EMPTY         | LLT              |
+   And I open a query for new task "FLUS" with comment "Epidemic?"
    And the query for new task "OPEN WOUNDED" with comment "Size?" is "Open" with response "Small"
    And the query for new task "PAINS" with comment "Many?" is "Answered" with response "A lot"
    And the query for new task "HEADACHES" with comment "Severity?" is "Cancelled" with response "Acute"
@@ -562,8 +567,18 @@ Scenario: FILTER User can filter Queries by Open Answered Cancelled Closed Queue
 Scenario: GROUPING Verbatims shall be grouped by query and workflow status
 
    Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-   And coding tasks "HEADACHES, HEADACHES, HEADACHES, PAINS, PAINS, CLOTHES, CLOTHES, CLOTHES, CLOTHES"
-   When the query for task "HEADACHES" with comment "Severity?" is "Open" with response "Acute"
+   When the following externally managed verbatim requests are made
+         | Verbatim Term | Dictionary Level |
+         | HEADACHES     | LLT              |
+         | HEADACHES     | LLT              |
+         | HEADACHES     | LLT              |
+         | PAINS         | LLT              |
+         | PAINS         | LLT              |
+         | CLOTHES       | LLT              |
+         | CLOTHES       | LLT              |
+         | CLOTHES       | LLT              |
+         | CLOTHES       | LLT              |
+   And the query for task "HEADACHES" with comment "Severity?" is "Open" with response "Acute"
    And the query for task "PAINS" with comment "Many?" is "Answered" with response "A lot"
    And the query for task "CLOTHES" with comment "Is this a typo?" is "Closed" with response "Yes"
    Then the coding task table has the following ordered information

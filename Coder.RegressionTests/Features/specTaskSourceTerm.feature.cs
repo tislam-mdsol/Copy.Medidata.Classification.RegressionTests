@@ -128,12 +128,19 @@ this.ScenarioSetup(scenarioInfo);
 #line 57
   testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 58
-  testRunner.And("coding task \"Toxic effect of venom\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
-  testRunner.Then("the task \"Toxic effect of venom\" should have a status of \"Waiting Approval\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table1.AddRow(new string[] {
+                        "Toxic effect of venom",
+                        "LLT"});
+#line 58
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
+#line 61
+  testRunner.Then("the task \"Toxic effect of venom\" should have a status of \"Waiting Approval\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Source System",
                         "Study",
                         "Dictionary",
@@ -141,7 +148,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Term",
                         "Level",
                         "Priority"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "<SourceSystem>",
                         "<StudyDisplayName>",
                         "MedDRA - 15.0",
@@ -149,8 +156,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Toxic effect of venom",
                         "Low Level Term",
                         "1"});
-#line 60
-  testRunner.And("I verify the following Source Term information is displayed", ((string)(null)), table1, "And ");
+#line 62
+  testRunner.And("I verify the following Source Term information is displayed", ((string)(null)), table2, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -168,17 +175,17 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_152100_001",
                         "Release2015.3.0"});
-#line 68
+#line 70
 this.ScenarioSetup(scenarioInfo);
-#line 69
+#line 71
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 70
+#line 72
   testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
+#line 73
   testRunner.When("I view task \"Adverse Event Term 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Source System",
                         "Study",
                         "Dictionary",
@@ -186,7 +193,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Term",
                         "Level",
                         "Priority"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "<SourceSystem>",
                         "<StudyDisplayName>",
                         "MedDRA - 15.0",
@@ -194,8 +201,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Adverse Event Term 1",
                         "Low Level Term",
                         "1"});
-#line 72
-  testRunner.Then("I verify the following Source Term information is displayed", ((string)(null)), table2, "Then ");
+#line 74
+  testRunner.Then("I verify the following Source Term information is displayed", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -213,32 +220,32 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_152100_003",
                         "Release2015.3.0"});
-#line 80
-this.ScenarioSetup(scenarioInfo);
 #line 82
+this.ScenarioSetup(scenarioInfo);
+#line 84
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 83
+#line 85
   testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 84
+#line 86
   testRunner.When("I view task \"Adverse Event Term 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Line",
                         "Form",
                         "Event",
                         "Subject",
                         "Site"});
-            table3.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "Field 1",
                         "1",
                         "Form 1",
                         "Event 1",
                         "Subject 1",
                         "Site 1"});
-#line 85
-  testRunner.Then("I verify the following EDC information is displayed", ((string)(null)), table3, "Then ");
+#line 87
+  testRunner.Then("I verify the following EDC information is displayed", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -256,25 +263,25 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_152100_004",
                         "Release2015.3.0"});
-#line 93
-this.ScenarioSetup(scenarioInfo);
 #line 95
+this.ScenarioSetup(scenarioInfo);
+#line 97
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 96
+#line 98
   testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\" with a component va" +
                     "lue of \"USA\" defined", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 97
+#line 99
   testRunner.When("I view task \"Adverse Event Term 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Supplemental Term",
                         "Supplemental Value"});
-            table4.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Form 1.LOGCOMPFIELD1",
                         "USA"});
-#line 98
-  testRunner.Then("I verify the following Component information is displayed", ((string)(null)), table4, "Then ");
+#line 100
+  testRunner.Then("I verify the following Component information is displayed", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -292,25 +299,31 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_152100_005",
                         "Release2015.3.0"});
-#line 106
-this.ScenarioSetup(scenarioInfo);
 #line 108
+this.ScenarioSetup(scenarioInfo);
+#line 110
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 109
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level",
+                        "Supplemental Field 1",
+                        "Supplemental Value 1"});
+#line 111
   testRunner.And("coding task \"Adverse Event Term\" for dictionary level \"LLT\" with a supplemental v" +
-                    "alue of \"Oral\" defined", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 110
+                    "alue of \"Oral\" defined", ((string)(null)), table6, "And ");
+#line 113
   testRunner.When("I view task \"Adverse Event Term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Supplemental Term",
                         "Supplemental Value"});
-            table5.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Form 1.LOGSUPPFIELD1",
                         "Oral"});
-#line 111
-  testRunner.Then("I verify the following Supplemental information is displayed", ((string)(null)), table5, "Then ");
+#line 114
+  testRunner.Then("I verify the following Supplemental information is displayed", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -326,17 +339,17 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_152100_006",
                         "Release2015.3.0"});
-#line 119
+#line 122
 this.ScenarioSetup(scenarioInfo);
-#line 120
+#line 123
   testRunner.Given("a \"Basic\" Coder setup for a non-production study with no tasks and no synonyms an" +
                     "d dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 121
+#line 124
   testRunner.And("coding task \"Adverse Event Term 2\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 122
+#line 125
   testRunner.When("I view task \"Adverse Event Term 2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Source System",
                         "Study",
                         "Dictionary",
@@ -344,7 +357,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Term",
                         "Level",
                         "Priority"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "<SourceSystem>",
                         "<StudyDisplayName>",
                         "MedDRA - 15.0",
@@ -352,8 +365,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Adverse Event Term 2",
                         "Low Level Term",
                         "1"});
-#line 123
-  testRunner.Then("I verify the following Source Term information is displayed", ((string)(null)), table6, "Then ");
+#line 126
+  testRunner.Then("I verify the following Source Term information is displayed", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -369,28 +382,28 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_152100_007",
                         "Release2015.3.0"});
-#line 131
+#line 134
 this.ScenarioSetup(scenarioInfo);
-#line 133
+#line 136
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 134
+#line 137
   testRunner.And("coding task \"Adverse Event Term 2\" for dictionary level \"LLT\" with a component va" +
                     "lue of \",Medidata\" defined", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 135
+#line 138
   testRunner.When("I view task \"Adverse Event Term 2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Supplemental Term",
                         "Supplemental Value"});
-            table7.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "Form 1.LOGCOMPFIELD1",
                         ""});
-            table7.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "Form 1.LOGCOMPFIELD2",
                         "Medidata"});
-#line 136
-  testRunner.Then("I verify the following Component information is displayed", ((string)(null)), table7, "Then ");
+#line 139
+  testRunner.Then("I verify the following Component information is displayed", ((string)(null)), table9, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -406,28 +419,28 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_152100_008",
                         "Release2015.3.0"});
-#line 145
+#line 148
 this.ScenarioSetup(scenarioInfo);
-#line 147
+#line 150
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 148
+#line 151
   testRunner.And("coding task \"Adverse Event Term 3\" for dictionary level \"LLT\" with a supplemental" +
                     " value of \",INDICATION ONE\" defined", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 149
+#line 152
   testRunner.When("I view task \"Adverse Event Term 3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Supplemental Term",
                         "Supplemental Value"});
-            table8.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Form 1.LOGSUPPFIELD1",
                         ""});
-            table8.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Form 1.LOGSUPPFIELD2",
                         "INDICATION ONE"});
-#line 150
-  testRunner.Then("I verify the following Supplemental information is displayed", ((string)(null)), table8, "Then ");
+#line 153
+  testRunner.Then("I verify the following Supplemental information is displayed", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -445,16 +458,16 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_152100_009",
                         "Release2015.3.0"});
-#line 159
+#line 162
 this.ScenarioSetup(scenarioInfo);
-#line 161
+#line 164
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 162
+#line 165
   testRunner.And("coding task \"Adverse Event Term 4\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 163
+#line 166
   testRunner.When("I view task \"Adverse Event Term 4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 164
+#line 167
   testRunner.Then("I verify when no component or supplemental data is present and Coder displays \"No" +
                     " data\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -472,16 +485,16 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_133578_001",
                         "Release2015.3.0"});
-#line 170
+#line 173
 this.ScenarioSetup(scenarioInfo);
-#line 172
+#line 175
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 173
+#line 176
   testRunner.And("coding task \"Adverse Event Term\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 174
+#line 177
   testRunner.When("I view task \"Adverse Event Term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 175
+#line 178
   testRunner.Then("I verify that the default view contains Source Term information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

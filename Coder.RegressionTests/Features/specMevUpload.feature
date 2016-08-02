@@ -8,7 +8,7 @@ Feature: This feature file verifies the functionality for Manage External Verbat
 Scenario: Verbatim Term information will be uploaded successfully in the system with a CSV file format and the corresponding task upload history will be displayed
 
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0"
-	When uploading MEV content
+	When the following externally managed verbatim requests are made
 		| Verbatim Term              | Supplemental Field 1 | Supplemental Value 1 | Dictionary | Dictionary Level | Is Approval Required | Is Auto Approval |
 		| Major Big Painful Headache | SupFieldA            | Sup1                 | MedDRA     | LLT              | FALSE                | TRUE             | 
 	Then the coding task has the following information
@@ -21,7 +21,7 @@ Scenario: Verbatim Term information will be uploaded successfully in the system 
 Scenario: Verify success message with file name is displayed on the Coder Success Alert
 	
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0"
-	When uploading MEV content
+	When the following externally managed verbatim requests are made
 		| Verbatim Term              | Supplemental Field 1 | Supplemental Value 1 | Dictionary | Dictionary Level | Is Approval Required | Is Auto Approval |
 		| Major Big Painful Headache | SupFieldA            | Sup1                 | MedDRA     | LLT              | FALSE                | TRUE             |
 	Then the user should be notified with the following message "Csv file <MevFileName> format validated. Starting task import."
@@ -35,7 +35,7 @@ Scenario: Verify multiple csv files can be uploaded
 		| SynonymListName | Dictionary | Version | Locale |
 		| Primary     | MedDRA         | 11.0    | ENG    |
 		| Primary     | WhoDrugDDEB2   | 201506  | ENG    |
-	When uploading MEV content
+	When the following externally managed verbatim requests are made
 		| Verbatim Term              | Dictionary | Dictionary Level | Is Approval Required | Is Auto Approval |
 		| Major Big Painful Headache | MedDRA     | LLT              | FALSE                | TRUE             |
 	And uploading MEV content
@@ -67,10 +67,10 @@ Scenario: Verify multiple csv files can be uploaded
 Scenario: Verbatim Term supplemental information will be captured from the uploaded file
 	
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionaries
-	| SynonymListName | Dictionary   | Version | Locale |
-	| Primary         | MedDRA       | 11.0    | ENG    |
-	| Primary         | WhoDrugDDEB2 | 201506  | ENG    |
-	When uploading MEV content
+		| SynonymListName | Dictionary   | Version | Locale |
+		| Primary         | MedDRA       | 11.0    | ENG    |
+		| Primary         | WhoDrugDDEB2 | 201506  | ENG    |
+	When the following externally managed verbatim requests are made
 		| Verbatim Term                                                                   | Supplemental Field 1 | Supplemental Value 1  | Supplemental Field 2 | Supplemental Value 2 | Supplemental Field 3 | Supplemental Value 3 | Supplemental Field 4 | Supplemental Value 4 | Supplemental Field 5 | Supplemental Value 5 | Dictionary | Dictionary Level | Is Approval Required | Is Auto Approval |
 		| Headache                                                                        |                      |                       |                      |                      |                      |                      |                      |                      |                      |                      | MedDRA     | LLT              | TRUE                 | FALSE            |
 		| Allergy to Venom                                                                | SupTermFieldA        | Sup Term Value 1      |                      |                      |                      |                      |                      |                      |                      |                      | MedDRA     | LLT              | TRUE                 | FALSE            |
@@ -173,7 +173,7 @@ Scenario: An uploaded csv file can not surpass 5001 rows
 Scenario: An uploaded csv file can not be larger than a file size of 40mb
 	
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0"
-	When uploading MEV content "CrammedFile_41mb.csv"
+	When uploading the external verbatim CSV file named "CrammedFile_41mb.csv"
 	Then the user should be notified with the following message "CSV file CrammedFile_41mb.csv is too large to upload. The accepted file limit is 40MB."	
 	
 @VALLongRunningTask
