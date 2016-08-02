@@ -28,8 +28,8 @@ namespace Coder.TestSteps.StepDefinitions
         private readonly string                  _CoderMevDownloadFilePath;
         private readonly Dictionary<int, string> _MevFileCollection;
         private string                           _UploadedMevFile;
-        private const string                     DefaultFileName = "MevFile";
-        private readonly SegmentSetupData       _SegmentSetupData;
+        private const string                     _DefaultFileName = "MevFile";
+        private readonly SegmentSetupData        _SegmentSetupData;
 
 
         public MevSteps(StepContext stepContext)
@@ -54,38 +54,33 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser.WaitForAutoCodingToComplete();
         }
 
-        [When(@"uploading MEV content")]
+        [When(@"the following externally managed verbatim requests are made")]
         public void WhenUploadingMevContent(Table table)
         {
-            if (ReferenceEquals(table, null)) throw new ArgumentNullException("table");
+            if (ReferenceEquals(table, null)) throw new ArgumentNullException(nameof(table));
 
-            var externalVerbatimRows = table
-                .TransformFeatureTableStrings(_StepContext)
-                .CreateSet<ExternalVerbatim>()
-                .ToArray()
-                .ValidateMevRequiredColumns()
-                .SetStudyIdColumn(_StepContext)
-                .SetNonRequiredMevColumnsToDefaultValues(
-                    defaultStudyOid: _StepContext.GetStudyUuid(),
-                    defaultLocale  : _StepContext.Locale);
+            var externalVerbatims = table.TransformFeatureTableStrings(_StepContext).CreateSet<ExternalVerbatim>().ToArray();
 
-            _UploadedMevFile = Path.Combine(_StepContext.DumpDirectory, DefaultFileName.AppendRandomString() + ".csv");
-
-            GenericCsvHelper.WriteDelimitedFile(externalVerbatimRows, _UploadedMevFile, true);
-
-            RegisterMevFile(_UploadedMevFile);
-
-            _Browser.UploadMevFileAndWaitForCompletion(_UploadedMevFile);
+            UploadExternalVerbatims(externalVerbatims);
         }
 
-        [When(@"uploading MEV content ""(.*)""")]
-        public void WhenUploadingMevContent(string file)
+        [When(@"the following externally managed verbatim requests are made ""(.*)""")]
+        public void WhenUploadingMevContent(string fileName)
         {
-            if (ReferenceEquals(file, null)) throw new ArgumentNullException("file");
+            if (ReferenceEquals(fileName, null)) throw new ArgumentNullException(nameof(fileName));
 
-            _UploadedMevFile  = file;
+            var externalVerbatims = GetExternalVerbatimsByFileName(fileName);
+            
+            UploadExternalVerbatims(externalVerbatims);
+        }
 
-            var filePath = Config.StaticContentFolder.AppendFileNameToDirectoryPath(_UploadedMevFile);
+        [When(@"uploading the external verbatim CSV file named ""(.*)""")]
+        public void WhenUploadingTheExternalVerbatimCSVFileNamed(string fileName)
+        {
+            if (ReferenceEquals(fileName, null)) throw new ArgumentNullException("fileName");
+
+            _UploadedMevFile = fileName;
+            var filePath     = Config.StaticContentFolder.AppendFileNameToDirectoryPath(_UploadedMevFile);
 
             _Browser.UploadMevFileAndWaitForCompletion(filePath);
         }
@@ -113,11 +108,9 @@ namespace Coder.TestSteps.StepDefinitions
         [When(@"uploading incorrect MEV content")]
         public void WhenUploadingIncorrectMEVContent()
         {
-            var mevContent = GetMevContentByFileName(Config.MevDownloadFailuresFileName);
+            var externalVerbatims = GetExternalVerbatimsByFileName(Config.MevDownloadFailuresFileName);
 
-            var externalVerbatims = mevContent
-                .ToArray()
-                .SetStudyIdColumn(_StepContext);
+            externalVerbatims.SetContextStudyId(_StepContext);
 
             _UploadedMevFile = Path.Combine(_StepContext.DumpDirectory, "IncorrectMEVContent.csv");
 
@@ -310,60 +303,20 @@ namespace Coder.TestSteps.StepDefinitions
         [Then(@"the MEV upload capability is available")]
         public void ThenTheMEVUploadCapabilityIsAvailable()
         {
-            _Browser.IsMevUploadCapabilityAvailable().Should().BeTrue();
+            var mevUploadCapability = _Browser.IsMevUploadCapabilityAvailable();
+
+            mevUploadCapability.Should().BeTrue();
 
             _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }
 
-        private static IList<DirectDictionaryMatch> GetDirectDictionaryMatchTermsByFileName(string fileName)
-        {
-            if (String.IsNullOrWhiteSpace(fileName)) throw new ArgumentNullException("fileName");
-
-            var filePath     = Config.StaticContentFolder.AppendFileNameToDirectoryPath(fileName);
-            var fileContents = File.ReadAllText(filePath);
-            var terms        = JsonConvert.DeserializeObject<List<DirectDictionaryMatch>>(fileContents);
-
-            return terms;
-        }
-
-        private static IList<ExternalVerbatim> GetMevContentByFileName(string fileName)
+        private static IEnumerable<ExternalVerbatim> GetExternalVerbatimsByFileName(string fileName)
         {
             if (String.IsNullOrWhiteSpace(fileName)) throw new ArgumentNullException("fileName");
 
             var filePath          = Config.StaticContentFolder.AppendFileNameToDirectoryPath(fileName);
             var fileContents      = File.ReadAllText(filePath);
-            var externalVerbatims = JsonConvert.DeserializeObject<List<ExternalVerbatim>>(fileContents);
-
-            return externalVerbatims;
-        }
-
-        private ExternalVerbatim[] BuildExternalVerbatimsFromTerms(int numberOfTermsToUpload, IList<DirectDictionaryMatch> terms)
-        {
-            if (numberOfTermsToUpload <= 0)   throw new ArgumentOutOfRangeException("numberOfTermsToUpload");
-            if (ReferenceEquals(terms, null)) throw new ArgumentNullException("terms");
-
-            var externalVerbatimList   = new List<ExternalVerbatim>();
-
-            for (var i = 0; i < numberOfTermsToUpload; i++)
-            {
-                var mev                = new ExternalVerbatim
-                {
-                    VerbatimTerm       = terms[i].Term,
-                    Dictionary         = _StepContext.Dictionary,
-                    DictionaryLevel    = terms[i].Level,
-                    IsApprovalRequired = _StepContext.IsApprovalRequired,
-                    IsAutoApproval     = _StepContext.IsAutoApproval
-                };
-
-                externalVerbatimList.Add(mev);
-            }
-
-            var externalVerbatims = externalVerbatimList
-                .ToArray()
-                .ValidateMevRequiredColumns()
-                .SetNonRequiredMevColumnsToDefaultValues(
-                    defaultStudyOid: _StepContext.GetStudyUuid(),
-                    defaultLocale  : _StepContext.Locale);
+            var externalVerbatims = JsonConvert.DeserializeObject<ExternalVerbatim[]>(fileContents);
 
             return externalVerbatims;
         }
@@ -373,10 +326,10 @@ namespace Coder.TestSteps.StepDefinitions
             if (numberOfTermsToUpload <= 0)          throw new ArgumentOutOfRangeException("numberOfTermsToUpload");
             if (String.IsNullOrWhiteSpace(fileName)) throw new ArgumentNullException("fileName"); 
 
-            var terms             = GetDirectDictionaryMatchTermsByFileName(fileName);
-            var externalVerbatims = BuildExternalVerbatimsFromTerms(numberOfTermsToUpload, terms);
+            var externalVerbatims = GetExternalVerbatimsByFileName(fileName).Take(numberOfTermsToUpload).ToArray();
+            externalVerbatims.SetNonRequiredMevColumnsToDefaultValues(_StepContext);
 
-            _UploadedMevFile = DefaultFileName.AppendRandomString().AppendFileType("csv");
+            _UploadedMevFile = _DefaultFileName.AppendRandomString().AppendFileType("csv");
 
             var filePath = Path.Combine(_StepContext.DumpDirectory, _UploadedMevFile);
 
@@ -394,6 +347,21 @@ namespace Coder.TestSteps.StepDefinitions
             var fileKey = _MevFileCollection.Count + 1;
 
             _MevFileCollection.Add(fileKey, filePath);
+        }
+
+        private void UploadExternalVerbatims(IEnumerable<ExternalVerbatim> externalVerbatims)
+        {
+            if (ReferenceEquals(externalVerbatims, null)) throw new ArgumentNullException(nameof(externalVerbatims));
+
+            externalVerbatims.SetNonRequiredMevColumnsToDefaultValues(_StepContext);
+
+            _UploadedMevFile = Path.Combine(_StepContext.DumpDirectory, _DefaultFileName.AppendRandomString() + ".csv");
+
+            RegisterMevFile(_UploadedMevFile);
+
+            GenericCsvHelper.WriteDelimitedFile(externalVerbatims, _UploadedMevFile, true);
+
+            _Browser.UploadMevFileAndWaitForCompletion(_UploadedMevFile);
         }
     }
 }

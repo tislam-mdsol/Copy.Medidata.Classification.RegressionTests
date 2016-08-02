@@ -9,7 +9,7 @@ Feature: A user is able to download coding and query information from within the
 Scenario: Coder will provide the user with the ability to extract imported data
 
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0"	
-	When uploading MEV content
+	When the following externally managed verbatim requests are made
 		| Verbatim Term | Supplemental Field 1 | Supplemental Value 1 | Supplemental Field 2 | Supplemental Value 2 | Supplemental Field 3 | Supplemental Value 3 | Supplemental Field 4 | Supplemental Value 4 | Supplemental Field 5 | Supplemental Value 5 | Dictionary | Dictionary Level | Is Approval Required | Is Auto Approval |
 		| Headache      | SupTermFieldA        | Sup Term Value 1     | SupTermFieldB        | Sup Term Value 2     | SupTermFieldC        | Sup Term Value 3     | SupTermFieldD        | Sup Term Value 4     | SupTermFieldE        | Sup Term Value 5     | MedDRA     | LLT              | FALSE                | TRUE             |
 	Then task "HEADACHE" is available within reclassification
@@ -28,7 +28,7 @@ Scenario: Verify a coding task that goes to a seventh level where it is displaye
         | ListName | Dictionary | Version | Locale |
         | Primary  | MedDRA     | 16.0    | JPN    |
         | Primary  | JDrug      | 2013H1  | JPN    |
-	When uploading MEV content
+	When the following externally managed verbatim requests are made
 		| Verbatim Term		     | Dictionary | Dictionary Level | Is Approval Required | Is Auto Approval | Locale |
 		| アセチルコリン塩化物    | JDrug      | DrugName         | FALSE                | TRUE             | jpn    |
 	Then task "アセチルコリン塩化物" is available within reclassification for dictionary "J-Drug" version "2013H1" locale "JPN"
@@ -45,7 +45,7 @@ Scenario: Verify a coding task that goes to a seventh level where it is displaye
 Scenario: A CSV task with an open query will be removed from the UI and upon downloading the report, it will contain a status of Open
 
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0"
-	When uploading MEV content
+	When the following externally managed verbatim requests are made
 		| Verbatim Term              | Supplemental Field 1 | Supplemental Value 1 | Dictionary | Dictionary Level | Is Approval Required | Is Auto Approval | 
 		| Major Big Painful Headache | SupFieldA            | Sup1                 | MedDRA     | LLT              | FALSE                | TRUE             | 
 	And opening a query for task "MAJOR BIG PAINFUL HEADACHE" with comment "Opening query, removing the invalid task." and not waiting for the task query status to update
@@ -65,7 +65,7 @@ Scenario: Verify download filter MEV Study affects export file correctly
         | ListName | Dictionary		   | Version | Locale |
         | Primary  | MedDRA   		   | 11.0    | ENG    |
         | Primary  | WhoDrugDDEB2      | 201203  | ENG    |
-	When uploading MEV content
+	When the following externally managed verbatim requests are made
 		| Study Id    | Verbatim Term                               | Dictionary   | Dictionary Level | Is Approval Required | Is Auto Approval |
 		| Development | PAIN AID PLUS                               | WhoDrugDDEB2 | PRODUCTSYNONYM   | FALSE                | TRUE             |
 		| Production  | NEOLAMIN MULTI YAM                          | WhoDrugDDEB2 | PRODUCTSYNONYM   | FALSE                | TRUE             |

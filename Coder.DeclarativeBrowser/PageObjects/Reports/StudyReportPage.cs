@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using System.Linq;
-using Castle.Core.Internal;
 using Coder.DeclarativeBrowser.ExtensionMethods;
 using Coder.DeclarativeBrowser.Models;
 using Coypu;
-using NUnit.Framework;
 
 namespace Coder.DeclarativeBrowser.PageObjects.Reports
 {

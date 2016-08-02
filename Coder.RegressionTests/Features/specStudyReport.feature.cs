@@ -87,7 +87,8 @@ this.ScenarioSetup(scenarioInfo);
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
- testRunner.When("coding tasks are loaded from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the following externally managed verbatim requests are made \"Tasks_6_CodeAndNext." +
+                    "json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
  testRunner.Then("Study Report data should have \"6\" tasks", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -113,7 +114,8 @@ this.ScenarioSetup(scenarioInfo);
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 22
- testRunner.When("coding tasks are loaded from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the following externally managed verbatim requests are made \"Tasks_6_CodeAndNext." +
+                    "json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Status",
@@ -155,7 +157,8 @@ this.ScenarioSetup(scenarioInfo);
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 38
- testRunner.When("coding tasks are loaded from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the following externally managed verbatim requests are made \"Tasks_6_CodeAndNext." +
+                    "json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 39
  testRunner.And("a browse and code for task \"Burning\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -253,7 +256,8 @@ this.ScenarioSetup(scenarioInfo);
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 63
- testRunner.And("coding tasks from CSV file \"Tasks_6_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("the following externally managed verbatim requests are made \"Tasks_6_CodeAndNext." +
+                    "json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 64
  testRunner.When("task \"Congestion\" is coded to term \"Congestion nasal\" at search level \"Low Level " +
                     "Term\" with code \"10010676\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -444,7 +448,8 @@ this.ScenarioSetup(scenarioInfo);
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 126
- testRunner.When("coding tasks are loaded from CSV file \"Tasks_2_CodeAndNext.csv\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the following externally managed verbatim requests are made \"Tasks_2_CodeAndNext." +
+                    "json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",

@@ -438,7 +438,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FALSE",
                         "eng"});
 #line 91
- testRunner.When("uploading MEV content", ((string)(null)), table10, "When ");
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table10, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Operator",
