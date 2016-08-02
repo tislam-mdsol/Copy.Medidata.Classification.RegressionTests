@@ -1,10 +1,9 @@
 Feature: Verify coded decisions are affected properly with markings and other EDC functionality for Coder supplemental and component values. Only a change in supplement, component or the coding term will cause the coding decision to break.
 
 @DFT
-@PBMCC62552_001b
+@PBMCC62552_001a
 @ReleaseRave2013.1.0.1
 @EndToEndDynamicSegment
-
 Scenario: A coding decision remains on the verbatim when a query is opened against a verbatim field.
 	Given a Rave project registration with dictionary "WhoDrug-DDE-B2 ENG 200703"
 	And Rave Modules App Segment is loaded
@@ -41,7 +40,6 @@ Scenario: A coding decision remains on the verbatim when a query is opened again
 @PBMCC62552_001b
 @ReleaseRave2013.1.0.1
 @EndToEndDynamicSegment
-
 Scenario: A coding decision remains on the verbatim when a query is opened against a supplmental field.
 	Given a Rave project registration with dictionary "WhoDrug-DDE-B2 ENG 200703"
 	And Rave Modules App Segment is loaded
@@ -72,7 +70,7 @@ Scenario: A coding decision remains on the verbatim when a query is opened again
 		| PRODUCT | 005581 01 001 | BAYER CHILDREN'S COLD             | 
 
 @DFT
-@PBMCC62552_001b
+@PBMCC62552_001c
 @ReleaseRave2013.1.0.1
 @EndToEndDynamicSegment
 Scenario: A coding decision remains on the verbatim when a sticky is opened against a verbatim field.
@@ -105,7 +103,7 @@ Scenario: A coding decision remains on the verbatim when a sticky is opened agai
 		| PRODUCT | 005581 01 001 | BAYER CHILDREN'S COLD             | 	
 
 @DFT
-@PBMCC62552_001b
+@PBMCC62552_001d
 @ReleaseRave2013.1.0.1
 @EndToEndDynamicSegment
 Scenario: A coding decision remains on the verbatim when a sticky is opened against a supplemental field.
