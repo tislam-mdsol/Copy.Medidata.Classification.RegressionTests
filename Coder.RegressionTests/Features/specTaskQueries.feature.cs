@@ -249,11 +249,18 @@ this.ScenarioSetup(scenarioInfo);
 #line 87
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table1.AddRow(new string[] {
+                        "HEADACHES",
+                        "LLT"});
 #line 88
-   testRunner.And("coding task \"HEADACHES\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
+#line 91
    testRunner.Then("the query for task \"HEADACHES\" can only be opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 90
+#line 92
    testRunner.And("the query status for task \"HEADACHES\" is \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -272,17 +279,17 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_163356_007",
                         "Release2015.3.0"});
-#line 95
-this.ScenarioSetup(scenarioInfo);
 #line 97
+this.ScenarioSetup(scenarioInfo);
+#line 99
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 98
+#line 100
    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with respon" +
                     "se \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 99
+#line 101
    testRunner.And("I cancel the query for task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
+#line 102
    testRunner.Then("the query status for task \"HEADACHES\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -301,22 +308,22 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_163356_008",
                         "Release2015.3.0"});
-#line 105
-this.ScenarioSetup(scenarioInfo);
 #line 107
+this.ScenarioSetup(scenarioInfo);
+#line 109
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 108
+#line 110
    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with respon" +
                     "se \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 109
-   testRunner.And("I cancel the query for task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 110
-   testRunner.And("the latest query for task \"HEADACHES\" is \"Cancelled\" with response \"Ok\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 111
+   testRunner.And("I cancel the query for task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 112
+   testRunner.And("the latest query for task \"HEADACHES\" is \"Cancelled\" with response \"Ok\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
    testRunner.Then("the query status for task \"HEADACHES\" is \"Cancelled\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -325,7 +332,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHES",
                         "Cancelled",
@@ -334,7 +341,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -343,7 +350,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         "<TimeStamp>"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHES",
                         "Open",
@@ -352,7 +359,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -361,8 +368,8 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 112
-   testRunner.And("the query history contains the following information", ((string)(null)), table1, "And ");
+#line 114
+   testRunner.And("the query history contains the following information", ((string)(null)), table2, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -380,16 +387,16 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_163356_009",
                         "Release2015.3.0"});
-#line 122
-this.ScenarioSetup(scenarioInfo);
 #line 124
+this.ScenarioSetup(scenarioInfo);
+#line 126
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 125
+#line 127
    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Answered\" with re" +
                     "sponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -398,7 +405,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHES",
                         "Answered",
@@ -407,7 +414,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -416,8 +423,8 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 126
-   testRunner.Then("the query history contains the following information", ((string)(null)), table2, "Then ");
+#line 128
+   testRunner.Then("the query history contains the following information", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -435,18 +442,18 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_163356_010",
                         "Release2015.3.0"});
-#line 134
-this.ScenarioSetup(scenarioInfo);
 #line 136
+this.ScenarioSetup(scenarioInfo);
+#line 138
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 137
+#line 139
    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with respon" +
                     "se \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 138
+#line 140
    testRunner.And("the latest query for task \"HEADACHES\" is \"Closed\" with response \"Closing\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -455,7 +462,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table3.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHES",
                         "Closed",
@@ -464,7 +471,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table3.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHES",
                         "Open",
@@ -473,7 +480,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table3.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -482,8 +489,8 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 139
-   testRunner.Then("the query history contains the following information", ((string)(null)), table3, "Then ");
+#line 141
+   testRunner.Then("the query history contains the following information", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -501,18 +508,18 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_163356_011",
                         "Release2015.3.0"});
-#line 148
-this.ScenarioSetup(scenarioInfo);
 #line 150
+this.ScenarioSetup(scenarioInfo);
+#line 152
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 151
+#line 153
    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with respon" +
                     "se \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 152
+#line 154
    testRunner.And("the latest query for task \"HEADACHES\" is \"Cancelled\" with response \"Cancelling\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -521,7 +528,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table4.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHES",
                         "Cancelled",
@@ -530,7 +537,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table4.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHES",
                         "Open",
@@ -539,7 +546,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table4.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -548,8 +555,8 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 153
-   testRunner.Then("the query history contains the following information", ((string)(null)), table4, "Then ");
+#line 155
+   testRunner.Then("the query history contains the following information", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -567,16 +574,16 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_163356_012",
                         "Release2015.3.0"});
-#line 162
-this.ScenarioSetup(scenarioInfo);
 #line 164
+this.ScenarioSetup(scenarioInfo);
+#line 166
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 165
+#line 167
    testRunner.When("the query sent to marking group \"Quality\" for new task \"HEADACHES\" with comment \"" +
                     "Severity?\" is \"Open\" with response \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -585,7 +592,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHES",
                         "Open",
@@ -594,7 +601,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Quality",
                         "",
                         "<TimeStamp>"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -603,8 +610,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Quality",
                         "",
                         "<TimeStamp>"});
-#line 166
-   testRunner.Then("the query history contains the following information", ((string)(null)), table5, "Then ");
+#line 168
+   testRunner.Then("the query history contains the following information", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -622,18 +629,18 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_163356_013",
                         "Release2015.3.0"});
-#line 174
-this.ScenarioSetup(scenarioInfo);
 #line 176
+this.ScenarioSetup(scenarioInfo);
+#line 178
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 177
+#line 179
    testRunner.When("the verbatim term for new task \"HEADACHED\" is changed to \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 178
+#line 180
    testRunner.And("the query for task \"HEADACHES\" with comment \"Severity?\" is \"Cancelled\" with respo" +
                     "nse \"Cancelling\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -642,7 +649,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table6.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHES",
                         "Cancelled",
@@ -651,7 +658,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table6.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -660,8 +667,8 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 179
-   testRunner.Then("the query history contains the following information", ((string)(null)), table6, "Then ");
+#line 181
+   testRunner.Then("the query history contains the following information", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -681,29 +688,29 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_014",
                         "Release2015.3.0",
                         "IncreaseTimeout_600000"});
-#line 188
-this.ScenarioSetup(scenarioInfo);
 #line 190
+this.ScenarioSetup(scenarioInfo);
+#line 192
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "SupplementalValues",
                         "ComponenetValues"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "Head",
                         "Person"});
-#line 191
+#line 193
    testRunner.When("the verbatim term for new task \"Blood Term\"  with additional information is chang" +
-                    "ed to \"Blood Clotted\"", ((string)(null)), table7, "When ");
-#line 194
+                    "ed to \"Blood Clotted\"", ((string)(null)), table8, "When ");
+#line 196
    testRunner.And("the query for task \"Blood Clotted\" with comment \"Where is the blood clot?\" is \"Op" +
                     "en\" with response \"Investigating\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 195
+#line 197
    testRunner.And("the latest query for task \"Blood Clotted\" is \"Answered\" with response \"The blood " +
                     "was clotted right under the brain, a place between the neck and the brain.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -712,7 +719,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table8.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "<SystemUser>",
                         "BLOOD CLOTTED(S) LOGSUPPFIELD1 : HEAD(S) TestDLCOID1 : PERSON",
                         "Answered",
@@ -722,7 +729,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table8.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "<SystemUser>",
                         "BLOOD CLOTTED(S) LOGSUPPFIELD1 : HEAD(S) TestDLCOID1 : PERSON",
                         "Open",
@@ -731,7 +738,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table8.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "<User>",
                         "BLOOD CLOTTED(S) LOGSUPPFIELD1 : HEAD(S) TestDLCOID1 : PERSON",
                         "Queued",
@@ -740,31 +747,31 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 196
-   testRunner.Then("the query history contains the following information", ((string)(null)), table8, "Then ");
+#line 198
+   testRunner.Then("the query history contains the following information", ((string)(null)), table9, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "<User>",
                         "Open Query",
                         "Waiting Manual Code",
                         "BLOOD CLOTTED(S) LOGSUPPFIELD1 : HEAD(S) TestDLCOID1 : PERSON",
                         "",
                         "<TimeStamp>"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "<SystemUser>",
                         "Start Auto Code",
                         "Waiting Manual Code",
                         "BLOOD CLOTTED(S) LOGSUPPFIELD1 : HEAD(S) TestDLCOID1 : PERSON",
                         "",
                         "<TimeStamp>"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "<SystemUser>",
                         "",
                         "Start",
@@ -772,7 +779,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=True,IsAuto" +
                             "Approval=True,IsBypassTransmit=True]",
                         "<TimeStamp>"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "<SystemUser>",
                         "",
                         "Start",
@@ -780,14 +787,14 @@ this.ScenarioSetup(scenarioInfo);
                         "Field \'Verbatim\' with old text of \'Blood Term\' has now changed to text of \'Blood " +
                             "Clotted\'",
                         "<TimeStamp>"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "<SystemUser>",
                         "Start Auto Code",
                         "Waiting Manual Code",
                         "BLOOD TERM(S) LOGSUPPFIELD1 : HEAD(S) TestDLCOID1 : PERSON",
                         "",
                         "<TimeStamp>"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "<SystemUser>",
                         "",
                         "Start",
@@ -795,8 +802,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=True,IsAuto" +
                             "Approval=True,IsBypassTransmit=True]",
                         "<TimeStamp>"});
-#line 201
-   testRunner.And("the Coding History contains following information", ((string)(null)), table9, "And ");
+#line 203
+   testRunner.And("the Coding History contains following information", ((string)(null)), table10, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -818,26 +825,26 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_015",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 214
-this.ScenarioSetup(scenarioInfo);
 #line 216
+this.ScenarioSetup(scenarioInfo);
+#line 218
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 217
+#line 219
    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with respon" +
                     "se \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 218
+#line 220
    testRunner.And("task \"HEADACHES\" is coded to term \"Acute migraine\" at search level \"Low Level Ter" +
                     "m\" with code \"10066635\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 219
-   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 220
-   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 221
+   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 222
+   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 223
    testRunner.And("exporting the Coding History Report for term \"HEADACHES\" with export columns \"ALL" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Action",
@@ -846,7 +853,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Query Text",
                         "Query Response",
                         "Query Notes"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "",
@@ -855,7 +862,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "Start Auto Code",
@@ -864,7 +871,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "Open Query",
@@ -873,7 +880,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "",
@@ -882,7 +889,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "",
                         ""});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "",
@@ -891,7 +898,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "Acute",
                         ""});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "",
@@ -900,7 +907,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "Browse and Code",
@@ -909,10 +916,10 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 222
-   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table10, "Then ");
+#line 224
+   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table11, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -921,7 +928,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table11.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -930,7 +937,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         "<TimeStamp>"});
-            table11.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHES",
                         "Open",
@@ -939,7 +946,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table11.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -948,40 +955,40 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 231
-   testRunner.And("the query history contains the following information", ((string)(null)), table11, "And ");
+#line 233
+   testRunner.And("the query history contains the following information", ((string)(null)), table12, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "<User>",
                         "Reclassify",
                         "Reconsider",
                         "HEADACHES",
                         "Reconfirm",
                         "<TimeStamp>"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Completed",
                         "HEADACHES",
                         "Transmission Queue Number:",
                         "<TimeStamp>"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Waiting Transmission",
                         "HEADACHES",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 236
-   testRunner.And("the Coding History contains following information", ((string)(null)), table12, "And ");
-#line 241
+#line 238
+   testRunner.And("the Coding History contains following information", ((string)(null)), table13, "And ");
+#line 243
    testRunner.And("the query status for task \"HEADACHES\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1002,23 +1009,23 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_163356_016",
                         "Release2015.3.0"});
-#line 246
-this.ScenarioSetup(scenarioInfo);
 #line 248
+this.ScenarioSetup(scenarioInfo);
+#line 250
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 249
+#line 251
    testRunner.When("the query for new task \"HEADACHE\" with comment \"Severity?\" is \"Open\" with respons" +
                     "e \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 250
-   testRunner.And("approving task \"HEADACHE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 251
-   testRunner.And("reclassifying task \"HEADACHE\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 252
+   testRunner.And("approving task \"HEADACHE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 253
+   testRunner.And("reclassifying task \"HEADACHE\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 254
    testRunner.And("exporting the Coding History Report for term \"HEADACHE\" with export columns \"ALL\"" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Action",
@@ -1027,7 +1034,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Query Text",
                         "Query Response",
                         "Query Notes"});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "HEADACHE",
                         "System User",
                         "",
@@ -1036,7 +1043,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "HEADACHE",
                         "System User",
                         "Start Auto Code",
@@ -1045,7 +1052,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "HEADACHE",
                         "<User>",
                         "Open Query",
@@ -1054,7 +1061,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "HEADACHE",
                         "<User>",
                         "",
@@ -1063,7 +1070,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "",
                         ""});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "HEADACHE",
                         "System User",
                         "",
@@ -1072,7 +1079,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "Acute",
                         ""});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "HEADACHE",
                         "<User>",
                         "",
@@ -1081,7 +1088,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table13.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "HEADACHE",
                         "<User>",
                         "Approve",
@@ -1090,10 +1097,10 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 253
-   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table13, "Then ");
+#line 255
+   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table14, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -1102,7 +1109,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table14.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "<User>",
                         "HEADACHE",
                         "Queued",
@@ -1111,7 +1118,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         "<TimeStamp>"});
-            table14.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHE",
                         "Open",
@@ -1120,7 +1127,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table14.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "<User>",
                         "HEADACHE",
                         "Queued",
@@ -1129,40 +1136,40 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 262
-   testRunner.And("the query history contains the following information", ((string)(null)), table14, "And ");
+#line 264
+   testRunner.And("the query history contains the following information", ((string)(null)), table15, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "<User>",
                         "Reclassify",
                         "Reconsider",
                         "HEADACHE",
                         "Reconfirm",
                         "<TimeStamp>"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Completed",
                         "HEADACHE",
                         "Transmission Queue Number:",
                         "<TimeStamp>"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Waiting Transmission",
                         "HEADACHE",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 267
-   testRunner.And("the Coding History contains following information", ((string)(null)), table15, "And ");
-#line 272
+#line 269
+   testRunner.And("the Coding History contains following information", ((string)(null)), table16, "And ");
+#line 274
    testRunner.And("the query status for task \"HEADACHE\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1185,24 +1192,24 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_017",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 278
-this.ScenarioSetup(scenarioInfo);
 #line 280
+this.ScenarioSetup(scenarioInfo);
+#line 282
    testRunner.Given("a \"Waiting Approval\" Coder setup with registered synonym list \"MedDRA ENG 15.0 In" +
                     "itial_List\" containing entry \"HEADACHES|10066635|LLT|LLT:10066635;PT:10027599;HL" +
                     "T:10027603;HLGT:10019231;SOC:10029205|True||Approved|Acute migraine\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 281
+#line 283
    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with respon" +
                     "se \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 282
-   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 283
-   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 284
+   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 285
+   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 286
    testRunner.And("exporting the Coding History Report for term \"HEADACHES\" with export columns \"ALL" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Action",
@@ -1211,7 +1218,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Query Text",
                         "Query Response",
                         "Query Notes"});
-            table16.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "",
@@ -1220,7 +1227,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table16.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "Start Auto Code",
@@ -1229,7 +1236,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table16.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "Open Query",
@@ -1238,7 +1245,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table16.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "",
@@ -1247,7 +1254,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "",
                         ""});
-            table16.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "",
@@ -1256,7 +1263,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "Acute",
                         ""});
-            table16.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "",
@@ -1265,7 +1272,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table16.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "Approve",
@@ -1274,10 +1281,10 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 285
-   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table16, "Then ");
+#line 287
+   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table17, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -1286,7 +1293,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table17.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -1295,7 +1302,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         "<TimeStamp>"});
-            table17.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHES",
                         "Open",
@@ -1304,7 +1311,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table17.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -1313,40 +1320,40 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 294
-   testRunner.And("the query history contains the following information", ((string)(null)), table17, "And ");
+#line 296
+   testRunner.And("the query history contains the following information", ((string)(null)), table18, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table18.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "<User>",
                         "Reclassify",
                         "Reconsider",
                         "HEADACHES",
                         "Reconfirm",
                         "<TimeStamp>"});
-            table18.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Completed",
                         "HEADACHES",
                         "Transmission Queue Number:",
                         "<TimeStamp>"});
-            table18.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Waiting Transmission",
                         "HEADACHES",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 299
-   testRunner.And("the Coding History contains following information", ((string)(null)), table18, "And ");
-#line 304
+#line 301
+   testRunner.And("the Coding History contains following information", ((string)(null)), table19, "And ");
+#line 306
    testRunner.And("the query status for task \"HEADACHES\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1369,26 +1376,26 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_018",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 310
-this.ScenarioSetup(scenarioInfo);
 #line 312
+this.ScenarioSetup(scenarioInfo);
+#line 314
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 313
+#line 315
    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Answered\" with re" +
                     "sponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 314
+#line 316
    testRunner.And("task \"HEADACHES\" is coded to term \"Acute migraine\" at search level \"Low Level Ter" +
                     "m\" with code \"10066635\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 315
-   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 316
-   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 317
+   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 318
+   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 319
    testRunner.And("exporting the Coding History Report for term \"HEADACHES\" with export columns \"ALL" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Action",
@@ -1397,7 +1404,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Query Text",
                         "Query Response",
                         "Query Notes"});
-            table19.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "",
@@ -1406,7 +1413,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table19.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "Start Auto Code",
@@ -1415,7 +1422,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table19.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "Open Query",
@@ -1424,7 +1431,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table19.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "",
@@ -1433,7 +1440,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "",
                         ""});
-            table19.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "",
@@ -1442,7 +1449,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "Acute",
                         ""});
-            table19.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "",
@@ -1451,7 +1458,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table19.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "Browse and Code",
@@ -1460,10 +1467,10 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 318
-   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table19, "Then ");
+#line 320
+   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table20, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -1472,7 +1479,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table20.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -1481,7 +1488,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         "<TimeStamp>"});
-            table20.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHES",
                         "Answered",
@@ -1490,7 +1497,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table20.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -1499,40 +1506,40 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 327
-   testRunner.And("the query history contains the following information", ((string)(null)), table20, "And ");
+#line 329
+   testRunner.And("the query history contains the following information", ((string)(null)), table21, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table21.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "<User>",
                         "Reclassify",
                         "Reconsider",
                         "HEADACHES",
                         "Reconfirm",
                         "<TimeStamp>"});
-            table21.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Completed",
                         "HEADACHES",
                         "Transmission Queue Number:",
                         "<TimeStamp>"});
-            table21.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Waiting Transmission",
                         "HEADACHES",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 332
-   testRunner.And("the Coding History contains following information", ((string)(null)), table21, "And ");
-#line 337
+#line 334
+   testRunner.And("the Coding History contains following information", ((string)(null)), table22, "And ");
+#line 339
    testRunner.And("the query status for task \"HEADACHES\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1553,23 +1560,23 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_163356_019",
                         "Release2015.3.0"});
-#line 342
-this.ScenarioSetup(scenarioInfo);
 #line 344
+this.ScenarioSetup(scenarioInfo);
+#line 346
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 345
+#line 347
    testRunner.When("the query for new task \"HEADACHE\" with comment \"Severity?\" is \"Answered\" with res" +
                     "ponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 346
-   testRunner.And("approving task \"HEADACHE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 347
-   testRunner.And("reclassifying task \"HEADACHE\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 348
+   testRunner.And("approving task \"HEADACHE\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 349
+   testRunner.And("reclassifying task \"HEADACHE\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 350
    testRunner.And("exporting the Coding History Report for term \"HEADACHE\" with export columns \"ALL\"" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Action",
@@ -1578,7 +1585,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Query Text",
                         "Query Response",
                         "Query Notes"});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "HEADACHE",
                         "System User",
                         "",
@@ -1587,7 +1594,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "HEADACHE",
                         "System User",
                         "Start Auto Code",
@@ -1596,7 +1603,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "HEADACHE",
                         "<User>",
                         "Open Query",
@@ -1605,7 +1612,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "HEADACHE",
                         "<User>",
                         "",
@@ -1614,7 +1621,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "",
                         ""});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "HEADACHE",
                         "System User",
                         "",
@@ -1623,7 +1630,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "Acute",
                         ""});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "HEADACHE",
                         "<User>",
                         "",
@@ -1632,7 +1639,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "HEADACHE",
                         "<User>",
                         "Approve",
@@ -1641,10 +1648,10 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 349
-   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table22, "Then ");
+#line 351
+   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table23, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -1653,7 +1660,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table23.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "<User>",
                         "HEADACHE",
                         "Queued",
@@ -1662,7 +1669,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         "<TimeStamp>"});
-            table23.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHE",
                         "Answered",
@@ -1671,7 +1678,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table23.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "<User>",
                         "HEADACHE",
                         "Queued",
@@ -1680,40 +1687,40 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 358
-   testRunner.And("the query history contains the following information", ((string)(null)), table23, "And ");
+#line 360
+   testRunner.And("the query history contains the following information", ((string)(null)), table24, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table24.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "<User>",
                         "Reclassify",
                         "Reconsider",
                         "HEADACHE",
                         "Reconfirm",
                         "<TimeStamp>"});
-            table24.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Completed",
                         "HEADACHE",
                         "Transmission Queue Number:",
                         "<TimeStamp>"});
-            table24.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Waiting Transmission",
                         "HEADACHE",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 363
-   testRunner.And("the Coding History contains following information", ((string)(null)), table24, "And ");
-#line 368
+#line 365
+   testRunner.And("the Coding History contains following information", ((string)(null)), table25, "And ");
+#line 370
    testRunner.And("the query status for task \"HEADACHE\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1736,24 +1743,24 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_020",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 374
-this.ScenarioSetup(scenarioInfo);
 #line 376
+this.ScenarioSetup(scenarioInfo);
+#line 378
    testRunner.Given("a \"Waiting Approval\" Coder setup with registered synonym list \"MedDRA ENG 15.0 In" +
                     "itial_List\" containing entry \"HEADACHES|10066635|LLT|LLT:10066635;PT:10027599;HL" +
                     "T:10027603;HLGT:10019231;SOC:10029205|True||Approved|Acute migraine\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 377
+#line 379
    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Answered\" with re" +
                     "sponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 378
-   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 379
-   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 380
+   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 381
+   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 382
    testRunner.And("exporting the Coding History Report for term \"HEADACHES\" with export columns \"ALL" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Action",
@@ -1762,7 +1769,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Query Text",
                         "Query Response",
                         "Query Notes"});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "",
@@ -1771,7 +1778,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "Start Auto Code",
@@ -1780,7 +1787,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "Open Query",
@@ -1789,7 +1796,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "",
@@ -1798,7 +1805,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "",
                         ""});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "",
@@ -1807,7 +1814,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "Acute",
                         ""});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "",
@@ -1816,7 +1823,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "Approve",
@@ -1825,10 +1832,10 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 381
-   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table25, "Then ");
+#line 383
+   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table26, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -1837,7 +1844,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table26.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -1846,7 +1853,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         "<TimeStamp>"});
-            table26.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHES",
                         "Answered",
@@ -1855,7 +1862,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table26.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -1864,40 +1871,40 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 390
-   testRunner.And("the query history contains the following information", ((string)(null)), table26, "And ");
+#line 392
+   testRunner.And("the query history contains the following information", ((string)(null)), table27, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table27.AddRow(new string[] {
+            table28.AddRow(new string[] {
                         "<User>",
                         "Reclassify",
                         "Reconsider",
                         "HEADACHES",
                         "Reconfirm",
                         "<TimeStamp>"});
-            table27.AddRow(new string[] {
+            table28.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Completed",
                         "HEADACHES",
                         "Transmission Queue Number:",
                         "<TimeStamp>"});
-            table27.AddRow(new string[] {
+            table28.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Waiting Transmission",
                         "HEADACHES",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 395
-   testRunner.And("the Coding History contains following information", ((string)(null)), table27, "And ");
-#line 400
+#line 397
+   testRunner.And("the Coding History contains following information", ((string)(null)), table28, "And ");
+#line 402
    testRunner.And("the query status for task \"HEADACHES\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -1920,26 +1927,26 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_021",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 406
-this.ScenarioSetup(scenarioInfo);
 #line 408
+this.ScenarioSetup(scenarioInfo);
+#line 410
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"JD" +
                     "rug JPN 2013H1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 409
+#line 411
    testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with respon" +
                     "se \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 410
+#line 412
    testRunner.And("task \"HEADACHES\" is coded to term \"コカイン塩酸塩\" at search level \"DrugName\" with code " +
                     "\"8121700\" at level \"薬\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 411
-   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 412
-   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 413
+   testRunner.And("approving task \"HEADACHES\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 414
+   testRunner.And("reclassifying task \"HEADACHES\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 415
    testRunner.And("exporting the Coding History Report for term \"HEADACHES\" with export columns \"ALL" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Action",
@@ -1948,7 +1955,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Query Text",
                         "Query Response",
                         "Query Notes"});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "",
@@ -1957,7 +1964,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "Start Auto Code",
@@ -1966,7 +1973,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "Open Query",
@@ -1975,7 +1982,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "",
@@ -1984,7 +1991,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "",
                         ""});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "",
@@ -1993,7 +2000,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "Acute",
                         ""});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "",
@@ -2002,7 +2009,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "Browse and Code",
@@ -2011,10 +2018,10 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 414
-   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table28, "Then ");
+#line 416
+   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table29, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -2023,7 +2030,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table29.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -2032,7 +2039,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         "<TimeStamp>"});
-            table29.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "<SystemUser>",
                         "HEADACHES",
                         "Open",
@@ -2041,7 +2048,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table29.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "<User>",
                         "HEADACHES",
                         "Queued",
@@ -2050,40 +2057,40 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 423
-   testRunner.And("the query history contains the following information", ((string)(null)), table29, "And ");
+#line 425
+   testRunner.And("the query history contains the following information", ((string)(null)), table30, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table30.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "<User>",
                         "Reclassify",
                         "Reconsider",
                         "HEADACHES",
                         "Reconfirm",
                         "<TimeStamp>"});
-            table30.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Completed",
                         "HEADACHES",
                         "Transmission Queue Number:",
                         "<TimeStamp>"});
-            table30.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Waiting Transmission",
                         "HEADACHES",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 428
-   testRunner.And("the Coding History contains following information", ((string)(null)), table30, "And ");
-#line 433
+#line 430
+   testRunner.And("the Coding History contains following information", ((string)(null)), table31, "And ");
+#line 435
    testRunner.And("the query status for task \"HEADACHES\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -2104,22 +2111,22 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_163356_022",
                         "Release2015.3.0"});
-#line 438
-this.ScenarioSetup(scenarioInfo);
 #line 440
+this.ScenarioSetup(scenarioInfo);
+#line 442
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"JD" +
                     "rug JPN 2013H1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 441
+#line 443
    testRunner.When("the query for new task \"コカイン塩酸塩\" with comment \"Severity?\" is \"Answered\" with resp" +
                     "onse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 442
-   testRunner.And("approving task \"コカイン塩酸塩\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 443
-   testRunner.And("reclassifying task \"コカイン塩酸塩\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 444
+   testRunner.And("approving task \"コカイン塩酸塩\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 445
+   testRunner.And("reclassifying task \"コカイン塩酸塩\" with comment \"Reconfirm\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 446
    testRunner.And("exporting the Coding History Report for term \"コカイン塩酸塩\" with export columns \"ALL\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Action",
@@ -2128,7 +2135,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Query Text",
                         "Query Response",
                         "Query Notes"});
-            table31.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "コカイン塩酸塩",
                         "System User",
                         "",
@@ -2137,7 +2144,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table31.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "コカイン塩酸塩",
                         "System User",
                         "Start Auto Code",
@@ -2146,7 +2153,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table31.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "コカイン塩酸塩",
                         "<User>",
                         "Open Query",
@@ -2155,7 +2162,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table31.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "コカイン塩酸塩",
                         "<User>",
                         "",
@@ -2164,7 +2171,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "",
                         ""});
-            table31.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "コカイン塩酸塩",
                         "System User",
                         "",
@@ -2173,7 +2180,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "Acute",
                         ""});
-            table31.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "コカイン塩酸塩",
                         "<User>",
                         "",
@@ -2182,7 +2189,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table31.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "コカイン塩酸塩",
                         "<User>",
                         "Approve",
@@ -2191,10 +2198,10 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-#line 445
-   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table31, "Then ");
+#line 447
+   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table32, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Verbatim Term",
                         "Query Status",
@@ -2203,7 +2210,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Open To",
                         "Query Notes",
                         "Time Stamp"});
-            table32.AddRow(new string[] {
+            table33.AddRow(new string[] {
                         "<User>",
                         "コカイン塩酸塩",
                         "Queued",
@@ -2212,7 +2219,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         "<TimeStamp>"});
-            table32.AddRow(new string[] {
+            table33.AddRow(new string[] {
                         "<SystemUser>",
                         "コカイン塩酸塩",
                         "Answered",
@@ -2221,7 +2228,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-            table32.AddRow(new string[] {
+            table33.AddRow(new string[] {
                         "<User>",
                         "コカイン塩酸塩",
                         "Queued",
@@ -2230,40 +2237,40 @@ this.ScenarioSetup(scenarioInfo);
                         "SystemMarkingGroup",
                         "",
                         "<TimeStamp>"});
-#line 454
-   testRunner.And("the query history contains the following information", ((string)(null)), table32, "And ");
+#line 456
+   testRunner.And("the query history contains the following information", ((string)(null)), table33, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table33.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "<User>",
                         "Reclassify",
                         "Reconsider",
                         "コカイン塩酸塩",
                         "Reconfirm",
                         "<TimeStamp>"});
-            table33.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Completed",
                         "コカイン塩酸塩",
                         "Transmission Queue Number:",
                         "<TimeStamp>"});
-            table33.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Waiting Transmission",
                         "コカイン塩酸塩",
                         "Cancel Query On Transmit:",
                         "<TimeStamp>"});
-#line 459
-   testRunner.And("the Coding History contains following information", ((string)(null)), table33, "And ");
-#line 464
+#line 461
+   testRunner.And("the Coding History contains following information", ((string)(null)), table34, "And ");
+#line 466
    testRunner.And("the query status for task \"コカイン塩酸塩\" is \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -2284,30 +2291,37 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_023",
                         "Release2015.3.0",
                         "IncreaseTimeout_600000"});
-#line 470
-this.ScenarioSetup(scenarioInfo);
 #line 472
+this.ScenarioSetup(scenarioInfo);
+#line 474
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 473
-   testRunner.And("coding task \"EMPTY\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 474
-   testRunner.When("I open a query for new task \"FLUS\" with comment \"Epidemic?\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table35.AddRow(new string[] {
+                        "EMPTY",
+                        "LLT"});
 #line 475
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table35, "When ");
+#line 478
+   testRunner.When("I open a query for new task \"FLUS\" with comment \"Epidemic?\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 479
    testRunner.And("the query for new task \"OPEN WOUNDED\" with comment \"Size?\" is \"Open\" with respons" +
                     "e \"Small\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 476
+#line 480
    testRunner.And("the query for new task \"PAINS\" with comment \"Many?\" is \"Answered\" with response \"" +
                     "A lot\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 477
+#line 481
    testRunner.And("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Cancelled\" with r" +
                     "esponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 478
+#line 482
    testRunner.And("the query for new task \"CLOTHES\" with comment \"Is this a typo?\" is \"Closed\" with " +
                     "response \"Yes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 479
+#line 483
    testRunner.And("exporting the Coding History Report with export columns \"None\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 480
+#line 484
    testRunner.Then("the Coding History Report includes no query history information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -2328,31 +2342,38 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_024",
                         "Release2015.3.0",
                         "IncreaseTimeout_600000"});
-#line 486
+#line 490
 this.ScenarioSetup(scenarioInfo);
-#line 488
+#line 492
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 489
-   testRunner.And("coding task \"EMPTY\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 490
+#line hidden
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table36.AddRow(new string[] {
+                        "EMPTY",
+                        "LLT"});
+#line 493
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table36, "When ");
+#line 496
    testRunner.When("I open a query for new task \"FLUS\" with comment \"Epidemic?\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 491
+#line 497
    testRunner.And("the query for new task \"OPEN WOUNDED\" with comment \"Size?\" is \"Open\" with respons" +
                     "e \"Small\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 492
+#line 498
    testRunner.And("the query for new task \"PAINS\" with comment \"Many?\" is \"Answered\" with response \"" +
                     "A lot\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 493
+#line 499
    testRunner.And("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Cancelled\" with r" +
                     "esponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 494
+#line 500
    testRunner.And("the query for new task \"CLOTHES\" with comment \"Is this a typo?\" is \"Closed\" with " +
                     "response \"Yes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 495
+#line 501
    testRunner.And("exporting the Coding History Report with export columns \"ALL\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Action",
@@ -2361,7 +2382,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Query Text",
                         "Query Response",
                         "Query Notes"});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "EMPTY",
                         "System User",
                         "",
@@ -2370,7 +2391,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "EMPTY",
                         "System User",
                         "Start Auto Code",
@@ -2379,7 +2400,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "FLUS",
                         "System User",
                         "",
@@ -2388,7 +2409,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "FLUS",
                         "System User",
                         "Start Auto Code",
@@ -2397,7 +2418,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "FLUS",
                         "<User>",
                         "Open Query",
@@ -2406,7 +2427,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "FLUS",
                         "<User>",
                         "",
@@ -2415,7 +2436,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Epidemic?",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "OPEN WOUNDED",
                         "System User",
                         "",
@@ -2424,7 +2445,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "OPEN WOUNDED",
                         "System User",
                         "Start Auto Code",
@@ -2433,7 +2454,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "OPEN WOUNDED",
                         "<User>",
                         "Open Query",
@@ -2442,7 +2463,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "OPEN WOUNDED",
                         "<User>",
                         "",
@@ -2451,7 +2472,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Size?",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "OPEN WOUNDED",
                         "System User",
                         "",
@@ -2460,7 +2481,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Size?",
                         "Small",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "PAINS",
                         "System User",
                         "",
@@ -2469,7 +2490,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "PAINS",
                         "System User",
                         "Start Auto Code",
@@ -2478,7 +2499,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "PAINS",
                         "<User>",
                         "Open Query",
@@ -2487,7 +2508,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "PAINS",
                         "<User>",
                         "",
@@ -2496,7 +2517,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Many?",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "PAINS",
                         "System User",
                         "",
@@ -2505,7 +2526,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Many?",
                         "A lot",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "",
@@ -2514,7 +2535,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "Start Auto Code",
@@ -2523,7 +2544,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "Open Query",
@@ -2532,7 +2553,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "HEADACHES",
                         "<User>",
                         "",
@@ -2541,7 +2562,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "HEADACHES",
                         "System User",
                         "",
@@ -2550,7 +2571,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Severity?",
                         "Acute",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "CLOTHES",
                         "System User",
                         "",
@@ -2559,7 +2580,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "CLOTHES",
                         "System User",
                         "Start Auto Code",
@@ -2568,7 +2589,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "CLOTHES",
                         "<User>",
                         "Open Query",
@@ -2577,7 +2598,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "CLOTHES",
                         "<User>",
                         "",
@@ -2586,7 +2607,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Is this a typo?",
                         "",
                         ""});
-            table34.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "CLOTHES",
                         "System User",
                         "",
@@ -2595,8 +2616,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Is this a typo?",
                         "Yes",
                         ""});
-#line 496
-   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table34, "Then ");
+#line 502
+   testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table37, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -2616,82 +2637,82 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.0",
                         "IncreaseTimeout_300000",
                         "ignore"});
-#line 531
+#line 537
 this.ScenarioSetup(scenarioInfo);
-#line 533
+#line 539
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Dictionary Level"});
-            table35.AddRow(new string[] {
+            table38.AddRow(new string[] {
                         "EMPTY",
                         "LLT"});
-#line 534
-   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table35, "When ");
-#line 537
+#line 540
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table38, "When ");
+#line 543
    testRunner.And("I open a query for new task \"FLUS\" with comment \"Epidemic?\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 538
+#line 544
    testRunner.And("the query for new task \"OPEN WOUNDED\" with comment \"Size?\" is \"Open\" with respons" +
                     "e \"Small\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 539
+#line 545
    testRunner.And("the query for new task \"PAINS\" with comment \"Many?\" is \"Answered\" with response \"" +
                     "A lot\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 540
+#line 546
    testRunner.And("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Cancelled\" with r" +
                     "esponse \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 541
+#line 547
    testRunner.And("the query for new task \"CLOTHES\" with comment \"Is this a typo?\" is \"Closed\" with " +
                     "response \"Yes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 542
-   testRunner.And("all task filters are cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 543
-   testRunner.And("I filter for tasks with \"Queries\" of \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 544
-   testRunner.Then("Only tasks with \"Queries\" of \"Queued\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 545
-   testRunner.When("I filter for tasks with \"Queries\" of \"Open\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 546
-   testRunner.Then("Only tasks with \"Queries\" of \"Open\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 547
-   testRunner.When("I filter for tasks with \"Queries\" of \"Answered\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 548
-   testRunner.Then("Only tasks with \"Queries\" of \"Answered\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+   testRunner.And("all task filters are cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 549
-   testRunner.When("I filter for tasks with \"Queries\" of \"Cancelled\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+   testRunner.And("I filter for tasks with \"Queries\" of \"Queued\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 550
-   testRunner.Then("Only tasks with \"Queries\" of \"Cancelled\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+   testRunner.Then("Only tasks with \"Queries\" of \"Queued\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 551
-   testRunner.When("I filter for tasks with \"Queries\" of \"Closed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+   testRunner.When("I filter for tasks with \"Queries\" of \"Open\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 552
-   testRunner.Then("Only tasks with \"Queries\" of \"Closed\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+   testRunner.Then("Only tasks with \"Queries\" of \"Open\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 553
+   testRunner.When("I filter for tasks with \"Queries\" of \"Answered\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 554
+   testRunner.Then("Only tasks with \"Queries\" of \"Answered\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 555
+   testRunner.When("I filter for tasks with \"Queries\" of \"Cancelled\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 556
+   testRunner.Then("Only tasks with \"Queries\" of \"Cancelled\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 557
+   testRunner.When("I filter for tasks with \"Queries\" of \"Closed\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 558
+   testRunner.Then("Only tasks with \"Queries\" of \"Closed\" will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 559
    testRunner.When("I filter for tasks with \"Queries\" of \"All\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Queries"});
-            table36.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "EMPTY",
                         ""});
-            table36.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "FLUS",
                         "Queued"});
-            table36.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "OPEN WOUNDED",
                         "Open"});
-            table36.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "PAINS",
                         "Answered"});
-            table36.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "HEADACHES",
                         "Cancelled"});
-            table36.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "CLOTHES",
                         "Closed"});
-#line 554
-   testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table36, "Then ");
+#line 560
+   testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table39, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -2709,132 +2730,132 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_163356_026",
                         "Release2015.3.0",
                         "IncreaseTimeout_420000"});
-#line 567
+#line 573
 this.ScenarioSetup(scenarioInfo);
-#line 569
+#line 575
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Dictionary Level"});
-            table37.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "HEADACHES",
                         "LLT"});
-            table37.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "HEADACHES",
                         "LLT"});
-            table37.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "HEADACHES",
                         "LLT"});
-            table37.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "PAINS",
                         "LLT"});
-            table37.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "PAINS",
                         "LLT"});
-            table37.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "CLOTHES",
                         "LLT"});
-            table37.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "CLOTHES",
                         "LLT"});
-            table37.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "CLOTHES",
                         "LLT"});
-            table37.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "CLOTHES",
                         "LLT"});
-#line 570
-   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table37, "When ");
-#line 581
+#line 576
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table40, "When ");
+#line 587
    testRunner.And("the query for task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with response \"" +
                     "Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 582
+#line 588
    testRunner.And("the query for task \"PAINS\" with comment \"Many?\" is \"Answered\" with response \"A lo" +
                     "t\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 583
+#line 589
    testRunner.And("the query for task \"CLOTHES\" with comment \"Is this a typo?\" is \"Closed\" with resp" +
                     "onse \"Yes\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Group",
                         "Queries"});
-            table38.AddRow(new string[] {
+            table41.AddRow(new string[] {
                         "CLOTHES",
                         "3",
                         "Queued"});
-            table38.AddRow(new string[] {
+            table41.AddRow(new string[] {
                         "CLOTHES",
                         "1",
                         "Closed"});
-            table38.AddRow(new string[] {
+            table41.AddRow(new string[] {
                         "HEADACHES",
                         "2",
                         "Queued"});
-            table38.AddRow(new string[] {
+            table41.AddRow(new string[] {
                         "HEADACHES",
                         "1",
                         "Open"});
-            table38.AddRow(new string[] {
+            table41.AddRow(new string[] {
                         "PAINS",
                         "1",
                         "Queued"});
-            table38.AddRow(new string[] {
+            table41.AddRow(new string[] {
                         "PAINS",
                         "1",
                         "Answered"});
-#line 584
-   testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table38, "Then ");
-#line 592
+#line 590
+   testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table41, "Then ");
+#line 598
    testRunner.When("the first task \"CLOTHES\" in group \"3\" is coded to term \"Acute migraine\" at search" +
                     " level \"Low Level Term\" with code \"10066635\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 593
+#line 599
    testRunner.When("all task filters are cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Group",
                         "Status",
                         "Queries"});
-            table39.AddRow(new string[] {
+            table42.AddRow(new string[] {
                         "CLOTHES",
                         "2",
                         "Waiting Manual Code",
                         "Queued"});
-            table39.AddRow(new string[] {
+            table42.AddRow(new string[] {
                         "CLOTHES",
                         "1",
                         "Waiting Manual Code",
                         "Closed"});
-            table39.AddRow(new string[] {
+            table42.AddRow(new string[] {
                         "CLOTHES",
                         "1",
                         "Waiting Approval",
                         "Queued"});
-            table39.AddRow(new string[] {
+            table42.AddRow(new string[] {
                         "HEADACHES",
                         "2",
                         "Waiting Manual Code",
                         "Queued"});
-            table39.AddRow(new string[] {
+            table42.AddRow(new string[] {
                         "HEADACHES",
                         "1",
                         "Waiting Manual Code",
                         "Open"});
-            table39.AddRow(new string[] {
+            table42.AddRow(new string[] {
                         "PAINS",
                         "1",
                         "Waiting Manual Code",
                         "Queued"});
-            table39.AddRow(new string[] {
+            table42.AddRow(new string[] {
                         "PAINS",
                         "1",
                         "Waiting Manual Code",
                         "Answered"});
-#line 594
-   testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table39, "Then ");
+#line 600
+   testRunner.Then("the coding task table has the following ordered information", ((string)(null)), table42, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

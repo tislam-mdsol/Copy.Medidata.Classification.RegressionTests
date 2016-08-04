@@ -36,7 +36,9 @@ Scenario: When the Auto Approve option is "On" and autocoding Single path MedDRA
 	Given a "Completed Reconsider" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
-    And coding task "HEADACHE" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | HEADACHE      | LLT              |
 	Then the number of synonyms for list "MedDRA ENG 16.0 MedDRA_DDM" is "0"
 	And the synonym list "MedDRA ENG 16.0 MedDRA_DDM" cannot be downloaded
     Then a synonym for verbatim term "HEADACHE" should be created and not exist in list "MedDRA ENG 16.0 MedDRA_DDM"
@@ -49,8 +51,10 @@ Scenario: When the Auto Approve option is "On" and autocoding Single path WhoDru
  	Given a "Completed Reconsider" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201306                    | ENG    |
-    And coding task "PAIN FREE" for dictionary level "PRODUCT"
-    And coding task "METHANOL" for dictionary level "PRODUCT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | PAIN FREE     | PRODUCT          |
+      | METHANOL      | PRODUCT          |
 	Then the number of synonyms for list "WhoDrugDDEB2 ENG 201306 WhoDrugDDEB2_DDM" is "0"
 	And the synonym list "WhoDrugDDEB2 ENG 201306 WhoDrugDDEB2_DDM" cannot be downloaded
     And synonyms for verbatim terms should be created and exist in lists
@@ -66,7 +70,9 @@ Scenario: When the Auto Approve option is "On" and autocoding Single path JDrug 
  	Given a "Completed Reconsider" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| JDrug_DDM                  | JDrug                       | 2013H1                    | JPN    |
-    And coding task "イマジニール３００" for dictionary level "DrugName"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term		  | Dictionary Level |
+      | イマジニール３００     | DrugName         |
 	Then the number of synonyms for list "J-Drug JPN 2013H1 JDrug_DDM" is "0"
 	And the synonym list "J-Drug JPN 2013H1 JDrug_DDM" cannot be downloaded
     And a synonym for verbatim term "イマジニール３００" should be created and not exist in list "J-Drug JPN 2013H1 JDrug_DDM"
@@ -79,7 +85,9 @@ Scenario: When the Auto Approve option is "Off" and autocoding Single path MedDR
  	Given a "Basic" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
-    And coding task "HEADACHE" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | HEADACHE      | LLT              |
 	Then the number of synonyms for list "MedDRA ENG 16.0 MedDRA_DDM" is "1"
 	And the synonym list "MedDRA ENG 16.0 MedDRA_DDM" can be downloaded
 
@@ -91,8 +99,10 @@ Scenario: When the Auto Approve option is "Off" and autocoding Single path WhoDr
  	Given a "Basic" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201306                    | ENG    |
-    And coding task "PAIN FREE" for dictionary level "PRODUCT"
-	And coding task "METHANOL" for dictionary level "PRODUCT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | PAIN FREE     | PRODUCT          |
+      | METHANOL      | PRODUCT          |
 	Then the number of synonyms for list "WhoDrugDDEB2 ENG 201306 WhoDrugDDEB2_DDM" is "2"
 	And the synonym list "WhoDrugDDEB2 ENG 201306 WhoDrugDDEB2_DDM" can be downloaded
 
@@ -104,7 +114,9 @@ Scenario: When the Auto Approve option is "Off" and autocoding Single path JDrug
  	Given a "Basic" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| JDrug_DDM                  | JDrug                       | 2013H1                    | JPN    |
-    And coding task "イマジニール３００" for dictionary level "DrugName"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term		  | Dictionary Level |
+      | イマジニール３００     | DrugName         |
 	Then the number of synonyms for list "J-Drug JPN 2013H1 JDrug_DDM" is "1"
 	And the synonym list "J-Drug JPN 2013H1 JDrug_DDM" can be downloaded
 
@@ -116,9 +128,11 @@ Scenario: When the Auto Approve option is "On" and autocoding Multiple path MedD
   	Given a "Completed Reconsider" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
-    And coding task "BROKEN LEG" for dictionary level "LLT"
-    And coding task "SWELLING ARM" for dictionary level "LLT"
-    And coding task "PROFOUND VISION IMPAIRMENT, BOTH EYES" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term                         | Dictionary Level |
+      | BROKEN LEG                            | LLT              |
+      | SWELLING ARM                          | LLT              |
+      | PROFOUND VISION IMPAIRMENT, BOTH EYES | LLT              |
 	Then the number of synonyms for list "MedDRA ENG 16.0 MedDRA_DDM" is "0"
 	And the synonym list "MedDRA ENG 16.0 MedDRA_DDM" cannot be downloaded
     And synonyms for verbatim terms should be created and exist in lists
@@ -136,10 +150,12 @@ Scenario: When the Auto Approve option is "On" and manual coding Multiple path W
  	Given a "Completed Reconsider" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201306                    | ENG    |
-    And coding task "PAIN" for dictionary level "PRODUCT"
-    And coding task "ADVIL COLD AND SINUS PLUS" for dictionary level "PRODUCT"
-    And coding task "KANA" for dictionary level "PRODUCT"
-    And coding task "STRONG PAIN" for dictionary level "PRODUCT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term             | Dictionary Level |
+      | PAIN                      | PRODUCT          |
+      | ADVIL COLD AND SINUS PLUS | PRODUCT          |
+      | KANA                      | PRODUCT          |
+      | STRONG PAIN               | PRODUCT          |
     When task "PAIN" is coded to term "PAIN" at search level "Trade Name" with code "000277 04 191" at level "TN" and a synonym is created
     And task "ADVIL COLD AND SINUS PLUS" is coded to term "ADVIL COLD AND SINUS PLUS" at search level "Trade Name" with code "017171 01 003" at level "TN" and a synonym is created
     And task "KANA" is coded to term "KANA" at search level "Trade Name" with code "003910 02 227" at level "TN" and a synonym is created
@@ -155,9 +171,11 @@ Scenario: When the Auto Approve option is "Off" and autocoding Multiple path Med
  	Given a "Basic" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
-    And coding task "BROKEN LEG" for dictionary level "LLT"
-    And coding task "SWELLING ARM" for dictionary level "LLT"
-    And coding task "PROFOUND VISION IMPAIRMENT, BOTH EYES" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term                         | Dictionary Level |
+      | BROKEN LEG                            | LLT              |
+      | SWELLING ARM                          | LLT              |
+      | PROFOUND VISION IMPAIRMENT, BOTH EYES | LLT              |
 	Then the number of synonyms for list "MedDRA ENG 16.0 MedDRA_DDM" is "3"
 	And the synonym list "MedDRA ENG 16.0 MedDRA_DDM" can be downloaded
 
@@ -169,10 +187,12 @@ Scenario: When the Auto Approve option is "Off" and manual coding Multiple path 
  	Given a "Basic" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201306                    | ENG    |
-    And coding task "PAIN" for dictionary level "PRODUCT"
-    And coding task "ADVIL COLD AND SINUS PLUS" for dictionary level "PRODUCT"
-    And coding task "KANA" for dictionary level "PRODUCT"
-    And coding task "STRONG PAIN" for dictionary level "PRODUCT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term             | Dictionary Level |
+      | PAIN                      | PRODUCT          |
+      | ADVIL COLD AND SINUS PLUS | PRODUCT          |
+      | KANA                      | PRODUCT          |
+      | STRONG PAIN               | PRODUCT          |
     When task "PAIN" is coded to term "PAIN" at search level "Trade Name" with code "000277 04 191" at level "TN" and a synonym is created
     And task "ADVIL COLD AND SINUS PLUS" is coded to term "ADVIL COLD AND SINUS PLUS" at search level "Trade Name" with code "017171 01 003" at level "TN" and a synonym is created
     And task "KANA" is coded to term "KANA" at search level "Trade Name" with code "003910 02 227" at level "TN" and a synonym is created
@@ -190,8 +210,10 @@ Scenario: When the Auto Approve option is "On" and autocoding Single path MedDRA
  	Given a "Completed Reconsider" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
-    And coding task "HEADACHE" for dictionary level "LLT"
-    And coding task "FAKE TERM" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | HEADACHE      | LLT              |
+      | FAKE TERM     | LLT              |
     When task "FAKE TERM" is coded to term "Short-term memory loss" at search level "Low Level Term" with code "10040602" at level "LLT" and a synonym is created
 	Then The task count is "0"
     And synonyms for verbatim terms should be created and exist in lists
@@ -208,9 +230,11 @@ Scenario: When the Auto Approve option is "On" and autocoding Single path WhoDru
  	Given a "Completed Reconsider" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201306                    | ENG    |
-    And coding task "PAIN FREE" for dictionary level "PRODUCT"
-    And coding task "METHANOL" for dictionary level "PRODUCT"
-    And coding task "FAKE TERM" for dictionary level "PRODUCT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | PAIN FREE     | PRODUCT          |
+      | METHANOL      | PRODUCT          |
+      | FAKE TERM     | PRODUCT          |
     When task "FAKE TERM" is coded to term "PLACEBO" at search level "Preferred Name" with code "900468 01 001" at level "PN" and a synonym is created
 	Then The task count is "0"
     And synonyms for verbatim terms should be created and exist in lists
@@ -227,8 +251,10 @@ Scenario: When the Auto Approve option is "On" and autocoding Single path JDrug 
  	Given a "Completed Reconsider" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| JDrug_DDM                  | JDrug                       | 2013H1                    | JPN    |
-    And coding task "イマジニール３００" for dictionary level "DrugName"
-    And coding task "FAKE TERM" for dictionary level "DrugName"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term		  | Dictionary Level |
+      | イマジニール３００     | DrugName         |
+      | FAKE TERM			  | DrugName         |
     When task "FAKE TERM" is coded to term "イマジニール３５０" at search level "DrugName" with code "721941902" at level "薬" and a synonym is created
 	Then The task count is "0"
     And synonyms for verbatim terms should be created and exist in lists
@@ -244,7 +270,9 @@ Scenario: When the Auto Approve option is "Off" and autocoding Single path MedDR
  	Given a "Basic" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
-    And coding task "HEADACHE" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | HEADACHE      | LLT              |
     Then a synonym for verbatim term "HEADACHE" should be created and exist in list "MedDRA ENG 16.0 MedDRA_DDM"
 
 @VAL
@@ -255,8 +283,10 @@ Scenario: When the Auto Approve option is "Off" and autocoding Single path WhoDr
  	Given a "Basic" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201306                    | ENG    |
-    And coding task "PAIN FREE" for dictionary level "PRODUCT"
-	And coding task "METHANOL" for dictionary level "PRODUCT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | PAIN FREE     | PRODUCT          |
+      | METHANOL      | PRODUCT          |
     Then synonyms for verbatim terms should be created and exist in lists
 	| verbatim  | dictionaryLocaleVersionSynonymListName   | exists |
 	| PAIN FREE | WhoDrugDDEB2 ENG 201306 WhoDrugDDEB2_DDM | true   |
@@ -270,7 +300,9 @@ Scenario: When the Auto Approve option is "Off" and autocoding Single path JDrug
  	Given a "Basic" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| JDrug_DDM                  | JDrug                       | 2013H1                    | JPN    |
-    And coding task "イマジニール３００" for dictionary level "DrugName"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term		  | Dictionary Level |
+      | イマジニール３００     | DrugName         |
     Then a synonym for verbatim term "イマジニール３００" should be created and exist in list "J-Drug JPN 2013H1 JDrug_DDM"
 
 @VAL
@@ -282,10 +314,12 @@ Scenario: When the Auto Approve option is "On" and autocoding Multiple path MedD
   	Given a "Completed Reconsider" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
-    And coding task "BROKEN LEG" for dictionary level "LLT"
-    And coding task "SWELLING ARM" for dictionary level "LLT"
-    And coding task "PROFOUND VISION IMPAIRMENT, BOTH EYES" for dictionary level "LLT"
-    And coding task "FAKE TERM" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term                         | Dictionary Level |
+      | BROKEN LEG                            | LLT              |
+      | SWELLING ARM                          | LLT              |
+      | PROFOUND VISION IMPAIRMENT, BOTH EYES | LLT              |
+      | FAKE TERM                             | LLT              |
     When task "FAKE TERM" is coded to term "Short-term memory loss" at search level "Low Level Term" with code "10040602" at level "LLT" and a synonym is created
 	Then The task count is "0"
     And synonyms for verbatim terms should be created and exist in lists
@@ -304,10 +338,12 @@ Scenario: When the Auto Approve option is "On" and manual coding Multiple path W
  	Given a "Completed Reconsider" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201306                    | ENG    |
-    And coding task "PAIN" for dictionary level "PRODUCT"
-    And coding task "ADVIL COLD AND SINUS PLUS" for dictionary level "PRODUCT"
-    And coding task "KANA" for dictionary level "PRODUCT"
-    And coding task "STRONG PAIN" for dictionary level "PRODUCT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term             | Dictionary Level |
+      | PAIN                      | PRODUCT          |
+      | ADVIL COLD AND SINUS PLUS | PRODUCT          |
+      | KANA                      | PRODUCT          |
+      | STRONG PAIN               | PRODUCT          |
     When task "PAIN" is coded to term "PAIN" at search level "Trade Name" with code "000277 04 191" at level "TN" and a synonym is created
     And task "ADVIL COLD AND SINUS PLUS" is coded to term "ADVIL COLD AND SINUS PLUS" at search level "Trade Name" with code "017171 01 003" at level "TN" and a synonym is created
     And task "KANA" is coded to term "KANA" at search level "Trade Name" with code "003910 02 227" at level "TN" and a synonym is created
@@ -327,9 +363,11 @@ Scenario: When the Auto Approve option is "Off" and autocoding Multiple path Med
  	Given a "Basic" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| MedDRA_DDM                 | MedDRA                      | 16.0                      | ENG    |
-    And coding task "BROKEN LEG" for dictionary level "LLT"
-    And coding task "SWELLING ARM" for dictionary level "LLT"
-    And coding task "PROFOUND VISION IMPAIRMENT, BOTH EYES" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term                         | Dictionary Level |
+      | BROKEN LEG                            | LLT              |
+      | SWELLING ARM                          | LLT              |
+      | PROFOUND VISION IMPAIRMENT, BOTH EYES | LLT              |
     Then synonyms for verbatim terms should be created and exist in lists
 	| verbatim                              | dictionaryLocaleVersionSynonymListName | exists |
 	| BROKEN LEG                            | MedDRA ENG 16.0 MedDRA_DDM             | true   |
@@ -345,10 +383,12 @@ Scenario: When the Auto Approve option is "Off" and manual coding Multiple path 
  	Given a "Basic" Coder setup with no tasks and no synonyms and dictionaries
 	| SynonymListName            | Dictionary                  | Version                   | Locale |
 	| WhoDrugDDEB2_DDM           | WhoDrugDDEB2                | 201306                    | ENG    |
-    And coding task "PAIN" for dictionary level "PRODUCT"
-    And coding task "ADVIL COLD AND SINUS PLUS" for dictionary level "PRODUCT"
-    And coding task "KANA" for dictionary level "PRODUCT"
-    And coding task "STRONG PAIN" for dictionary level "PRODUCT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term             | Dictionary Level |
+      | PAIN                      | PRODUCT          |
+      | ADVIL COLD AND SINUS PLUS | PRODUCT          |
+      | KANA                      | PRODUCT          |
+      | STRONG PAIN               | PRODUCT          |
     When task "PAIN" is coded to term "PAIN" at search level "Trade Name" with code "000277 04 191" at level "TN" and a synonym is created
     And task "ADVIL COLD AND SINUS PLUS" is coded to term "ADVIL COLD AND SINUS PLUS" at search level "Trade Name" with code "017171 01 003" at level "TN" and a synonym is created
     And task "KANA" is coded to term "KANA" at search level "Trade Name" with code "003910 02 227" at level "TN" and a synonym is created

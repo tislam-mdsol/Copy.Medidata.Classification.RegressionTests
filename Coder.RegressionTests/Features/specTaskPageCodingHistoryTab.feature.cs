@@ -116,32 +116,39 @@ this.ScenarioSetup(scenarioInfo);
 #line 25
   testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 26
-  testRunner.And("coding task \"BURN\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 27
-  testRunner.When("I view task \"BURN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table1.AddRow(new string[] {
+                        "Burn",
+                        "LLT"});
+#line 26
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
+#line 29
+  testRunner.When("I view task \"BURN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "<SystemUser>",
                         "Start Auto Code",
                         "Waiting Approval",
                         "BURN",
                         "Auto coded by direct dictionary match"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "<SystemUser>",
                         "",
                         "Start",
                         "BURN",
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=true,IsAuto" +
                             "Approval=false,IsBypassTransmit=True]"});
-#line 28
-  testRunner.Then("I verify the following Coding History information is displayed", ((string)(null)), table1, "Then ");
+#line 30
+  testRunner.Then("I verify the following Coding History information is displayed", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -159,43 +166,50 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_163324_002"});
-#line 36
-this.ScenarioSetup(scenarioInfo);
 #line 38
+this.ScenarioSetup(scenarioInfo);
+#line 40
   testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 39
-  testRunner.And("coding task \"BURN\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table3.AddRow(new string[] {
+                        "Burn",
+                        "LLT"});
+#line 41
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table3, "When ");
+#line 44
   testRunner.When("I view task \"BURN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level",
                         "Term Path",
                         "Code"});
-            table2.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "SOC",
                         "Injury, poisoning and procedural complications: 10022117",
                         "10022117"});
-            table2.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "HLGT",
                         "Injuries by physical agents: 10022119",
                         "10022119"});
-            table2.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "HLT",
                         "Thermal burns: 10043418",
                         "10043418"});
-            table2.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "PT",
                         "Thermal burn: 10053615",
                         "10053615"});
-            table2.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "LLT",
                         "Burn: 10006634",
                         "10006634"});
-#line 41
+#line 45
   testRunner.Then("I verify the following Coding history term full path information is displayed in " +
-                    "row \"1\"", ((string)(null)), table2, "Then ");
+                    "row \"1\"", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -213,27 +227,34 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_163324_003"});
-#line 52
+#line 56
 this.ScenarioSetup(scenarioInfo);
-#line 54
+#line 58
   testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 55
-  testRunner.And("coding task \"BURN\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table5.AddRow(new string[] {
+                        "Burn",
+                        "LLT"});
+#line 59
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table5, "When ");
+#line 62
   testRunner.When("I view task \"BURN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level",
                         "Term Path",
                         "Code"});
-            table3.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "LLT",
                         "Burn: 10006634",
                         "10006634"});
-#line 57
+#line 63
   testRunner.Then("I verify the following Coding history selected term path information is displayed" +
-                    " in row \"1\"", ((string)(null)), table3, "Then ");
+                    " in row \"1\"", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -249,57 +270,64 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_163324_004"});
-#line 64
+#line 70
 this.ScenarioSetup(scenarioInfo);
-#line 66
+#line 72
   testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 67
-  testRunner.And("coding task \"BURN\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table7.AddRow(new string[] {
+                        "Burn",
+                        "LLT"});
+#line 73
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table7, "When ");
+#line 76
   testRunner.When("approving task \"BURN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 69
+#line 77
   testRunner.And("reclassifying task \"BURN\" with a comment \"Test Automation Comment\" and Include Au" +
                     "tocoded Items set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
+#line 78
   testRunner.And("I view task \"BURN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table4.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "<User>",
                         "Reclassify",
                         "Reconsider",
                         "BURN",
                         "Test Automation Comment",
                         "<TimeStamp>"});
-            table4.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Completed",
                         "BURN",
                         "Transmission Queue Number:",
                         "<TimeStamp>"});
-            table4.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "<User>",
                         "Approve",
                         "Waiting Transmission",
                         "BURN",
                         "",
                         "<TimeStamp>"});
-            table4.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "<SystemUser>",
                         "Start Auto Code",
                         "Waiting Approval",
                         "BURN",
                         "Auto coded by direct dictionary match",
                         "<TimeStamp>"});
-            table4.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "<SystemUser>",
                         "",
                         "Start",
@@ -307,8 +335,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=true,IsAuto" +
                             "Approval=false,IsBypassTransmit=True]",
                         "<TimeStamp>"});
-#line 71
-  testRunner.Then("I verify the following Coding History information is displayed", ((string)(null)), table4, "Then ");
+#line 79
+  testRunner.Then("I verify the following Coding History information is displayed", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -324,40 +352,47 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_163324_005"});
-#line 82
+#line 90
 this.ScenarioSetup(scenarioInfo);
-#line 83
+#line 91
   testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 84
-  testRunner.And("coding task \"BURN\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table9.AddRow(new string[] {
+                        "Burn",
+                        "LLT"});
+#line 92
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table9, "When ");
+#line 95
   testRunner.When("I recode task \"BURN\" with comment \"Recode comment.\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
+#line 96
   testRunner.And("I view task \"BURN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table5.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "<User>",
                         "ReCode",
                         "Waiting Manual Code",
                         "BURN",
                         "Recode comment.",
                         "<TimeStamp>"});
-            table5.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "<SystemUser>",
                         "Start Auto Code",
                         "Waiting Approval",
                         "BURN",
                         "Auto coded by direct dictionary match",
                         "<TimeStamp>"});
-            table5.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "<SystemUser>",
                         "",
                         "Start",
@@ -365,8 +400,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=true,IsAuto" +
                             "Approval=false,IsBypassTransmit=True]",
                         "<TimeStamp>"});
-#line 87
-  testRunner.Then("I verify the following Coding History information is displayed", ((string)(null)), table5, "Then ");
+#line 97
+  testRunner.Then("I verify the following Coding History information is displayed", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -384,55 +419,62 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_163324_006"});
-#line 97
+#line 107
 this.ScenarioSetup(scenarioInfo);
-#line 98
+#line 108
   testRunner.Given("a \"Reconsider\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA E" +
                     "NG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 99
-  testRunner.And("coding task \"ANGIO-EDEMA\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table11.AddRow(new string[] {
+                        "ANGIO-EDEMA",
+                        "LLT"});
+#line 109
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table11, "When ");
+#line 112
   testRunner.When("reclassifying task \"ANGIO-EDEMA\" with a comment \"Test Automation Comment\" and Inc" +
                     "lude Autocoded Items set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 101
+#line 113
   testRunner.And("I view task \"ANGIO-EDEMA\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table6.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "<User>",
                         "Reclassify",
                         "Reconsider",
                         "ANGIO-EDEMA",
                         "Test Automation Comment",
                         "<TimeStamp>"});
-            table6.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "<SystemUser>",
                         "Complete Without Transmission",
                         "Completed",
                         "ANGIO-EDEMA",
                         "Transmission Queue Number:",
                         "<TimeStamp>"});
-            table6.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "<SystemUser>",
                         "Auto Approve Internal",
                         "Waiting Transmission",
                         "ANGIO-EDEMA",
                         "Auto coded by direct dictionary match",
                         "<TimeStamp>"});
-            table6.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "<SystemUser>",
                         "Start Auto Code",
                         "Waiting Approval",
                         "ANGIO-EDEMA",
                         "Auto coded by direct dictionary match",
                         "<TimeStamp>"});
-            table6.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "<SystemUser>",
                         "",
                         "Start",
@@ -440,8 +482,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=true,IsAuto" +
                             "Approval=true,IsBypassTransmit=True]",
                         "<TimeStamp>"});
-#line 102
-  testRunner.Then("I verify the following Coding History information is displayed", ((string)(null)), table6, "Then ");
+#line 114
+  testRunner.Then("I verify the following Coding History information is displayed", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -457,41 +499,48 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_163324_007"});
-#line 114
+#line 126
 this.ScenarioSetup(scenarioInfo);
-#line 115
+#line 127
   testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Wh" +
                     "oDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 116
-  testRunner.And("coding task \"ASPORIZ3\" for dictionary level \"PRODUCT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table13.AddRow(new string[] {
+                        "ASPORIZ3",
+                        "PRODUCT"});
+#line 128
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table13, "When ");
+#line 131
   testRunner.When("task \"ASPORIZ3\" is coded to term \"ASPIRIN PLUS C\" at search level \"Preferred Name" +
                     "\" with code \"003467 01 001\" at level \"PN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 118
+#line 132
   testRunner.And("I view task \"ASPORIZ3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table7.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "<User>",
                         "Browse And Code",
                         "Waiting Approval",
                         "ASPORIZ3",
                         "",
                         "<TimeStamp>"});
-            table7.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "<SystemUser>",
                         "Start Auto Code",
                         "Waiting Manual Code",
                         "ASPORIZ3",
                         "",
                         "<TimeStamp>"});
-            table7.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "<SystemUser>",
                         "",
                         "Start",
@@ -499,8 +548,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=true,IsAuto" +
                             "Approval=false,IsBypassTransmit=True]",
                         "<TimeStamp>"});
-#line 119
-  testRunner.Then("I verify the following Coding History information is displayed", ((string)(null)), table7, "Then ");
+#line 133
+  testRunner.Then("I verify the following Coding History information is displayed", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -516,55 +565,62 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_163324_008"});
-#line 129
+#line 143
 this.ScenarioSetup(scenarioInfo);
-#line 130
+#line 144
   testRunner.Given("a \"Completed Reconsider\" Coder setup with no tasks and no synonyms and dictionary" +
                     " \"MedDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 131
-  testRunner.And("coding task \"ANGIONEUROTIC OEDEMA AGGRAVATED\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 132
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table15.AddRow(new string[] {
+                        "ANGIONEUROTIC OEDEMA AGGRAVATED",
+                        "LLT"});
+#line 145
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table15, "When ");
+#line 148
   testRunner.When("reclassifying task \"ANGIONEUROTIC OEDEMA AGGRAVATED\" with a comment \"Test Automat" +
                     "ion Comment\" and Include Autocoded Items set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 133
+#line 149
   testRunner.And("I view task \"ANGIONEUROTIC OEDEMA AGGRAVATED\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table8.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "<User>",
                         "Reclassify",
                         "Waiting Manual Code",
                         "ANGIONEUROTIC OEDEMA AGGRAVATED",
                         "Test Automation Comment",
                         "<TimeStamp>"});
-            table8.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "<SystemUser>",
                         "Complete Without Transmission",
                         "Completed",
                         "ANGIONEUROTIC OEDEMA AGGRAVATED",
                         "Transmission Queue Number:",
                         "<TimeStamp>"});
-            table8.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "<SystemUser>",
                         "Auto Approve Internal",
                         "Waiting Transmission",
                         "ANGIONEUROTIC OEDEMA AGGRAVATED",
                         "Auto coded by direct dictionary match",
                         "<TimeStamp>"});
-            table8.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "<SystemUser>",
                         "Start Auto Code",
                         "Waiting Approval",
                         "ANGIONEUROTIC OEDEMA AGGRAVATED",
                         "Auto coded by direct dictionary match",
                         "<TimeStamp>"});
-            table8.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "<SystemUser>",
                         "",
                         "Start",
@@ -572,8 +628,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=true,IsAuto" +
                             "Approval=true,IsBypassTransmit=True]",
                         "<TimeStamp>"});
-#line 134
-  testRunner.Then("I verify the following Coding History information is displayed", ((string)(null)), table8, "Then ");
+#line 150
+  testRunner.Then("I verify the following Coding History information is displayed", ((string)(null)), table16, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -591,58 +647,65 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_163324_009"});
-#line 145
+#line 161
 this.ScenarioSetup(scenarioInfo);
-#line 146
+#line 162
   testRunner.Given("a \"No Approval\" Coder setup with no tasks and no synonyms and dictionary \"WhoDrug" +
                     "DDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 147
-  testRunner.And("coding task \"amethadone\" for dictionary level \"PRODUCT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 148
+#line hidden
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table17.AddRow(new string[] {
+                        "amethadone",
+                        "PRODUCT"});
+#line 163
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table17, "When ");
+#line 166
   testRunner.When("task \"amethadone\" is coded to term \"methadone\" at search level \"Preferred Name\" w" +
                     "ith code \"000689 01 001\" at level \"PN\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 149
+#line 167
   testRunner.And("reclassifying task \"amethadone\" with a comment \"Test Automation Comment\" and Incl" +
                     "ude Autocoded Items set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 150
+#line 168
   testRunner.And("I view task \"amethadone\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table9.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "<User>",
                         "Reclassify",
                         "Waiting Manual Code",
                         "AMETHADONE",
                         "Test Automation Comment",
                         "<TimeStamp>"});
-            table9.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "<User>",
                         "Complete Without Transmission",
                         "Completed",
                         "AMETHADONE",
                         "Transmission Queue Number:",
                         "<TimeStamp>"});
-            table9.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "<User>",
                         "Browse And Code",
                         "Waiting Transmission",
                         "AMETHADONE",
                         "",
                         "<TimeStamp>"});
-            table9.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "<SystemUser>",
                         "Start Auto Code",
                         "Waiting Manual Code",
                         "AMETHADONE",
                         "",
                         "<TimeStamp>"});
-            table9.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "<SystemUser>",
                         "",
                         "Start",
@@ -650,8 +713,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=false,IsAut" +
                             "oApproval=true,IsBypassTransmit=True]",
                         "<TimeStamp>"});
-#line 151
-  testRunner.Then("I verify the following Coding History information is displayed", ((string)(null)), table9, "Then ");
+#line 169
+  testRunner.Then("I verify the following Coding History information is displayed", ((string)(null)), table18, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -669,32 +732,39 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_163324_010"});
-#line 163
+#line 181
 this.ScenarioSetup(scenarioInfo);
-#line 164
+#line 182
   testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Wh" +
                     "oDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 165
-  testRunner.And("coding task \"ARMILLARISIN A\" for dictionary level \"PRODUCT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 166
+#line hidden
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table19.AddRow(new string[] {
+                        "ARMILLARISIN A",
+                        "PRODUCT"});
+#line 183
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table19, "When ");
+#line 186
   testRunner.When("a user adds a comment \"Adding a comment!\" for task \"ARMILLARISIN A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table10.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "<User>",
                         "Add Comment",
                         "Waiting Approval",
                         "ARMILLARISIN A",
                         "Adding a comment!",
                         "<TimeStamp>"});
-#line 167
-  testRunner.Then("the Coding History contains following information", ((string)(null)), table10, "Then ");
+#line 187
+  testRunner.Then("the Coding History contains following information", ((string)(null)), table20, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -712,32 +782,39 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_163324_011"});
-#line 174
+#line 194
 this.ScenarioSetup(scenarioInfo);
-#line 175
+#line 195
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"WhoDrugDDEB2 " +
                     "ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 176
-  testRunner.And("coding task \"METH-\" for dictionary level \"PRODUCT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 177
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table21.AddRow(new string[] {
+                        "METH-",
+                        "PRODUCT"});
+#line 196
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table21, "When ");
+#line 199
   testRunner.When("a user adds a comment \"Adding a comment!\" for task \"METH-\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table11.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "<User>",
                         "Add Comment",
                         "Waiting Manual Code",
                         "METH-",
                         "Adding a comment!",
                         "<TimeStamp>"});
-#line 178
-  testRunner.Then("the Coding History contains following information", ((string)(null)), table11, "Then ");
+#line 200
+  testRunner.Then("the Coding History contains following information", ((string)(null)), table22, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -755,35 +832,42 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "Release2015.3.0",
                         "PBMCC_163324_012"});
-#line 185
+#line 207
 this.ScenarioSetup(scenarioInfo);
-#line 186
+#line 208
   testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Wh" +
                     "oDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 187
-  testRunner.And("coding task \"ARMILLARISIN A\" for dictionary level \"PRODUCT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 188
+#line hidden
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table23.AddRow(new string[] {
+                        "ARMILLARISIN A",
+                        "PRODUCT"});
+#line 209
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table23, "When ");
+#line 212
   testRunner.And("approve and reclassify task \"ARMILLARISIN A\" with Include Autocoded Items set to " +
                     "\"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 189
+#line 213
   testRunner.When("a user adds a comment \"Adding a comment!\" for task \"ARMILLARISIN A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "User",
                         "Action",
                         "Status",
                         "Verbatim Term",
                         "Comment",
                         "Time Stamp"});
-            table12.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "<User>",
                         "Add Comment",
                         "Reconsider",
                         "ARMILLARISIN A",
                         "Adding a comment!",
                         "<TimeStamp>"});
-#line 190
-  testRunner.Then("the Coding History contains following information", ((string)(null)), table12, "Then ");
+#line 214
+  testRunner.Then("the Coding History contains following information", ((string)(null)), table24, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

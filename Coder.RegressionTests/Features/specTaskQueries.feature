@@ -85,7 +85,9 @@ Scenario: CANCEL The Cancel Query option is not available when the Query status 
 Scenario: CANCEL The Cancel Query option is not available when the task has no query status
   
    Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-   And coding task "HEADACHES" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | HEADACHES     | LLT              |
    Then the query for task "HEADACHES" can only be opened
    And the query status for task "HEADACHES" is ""
 
@@ -470,7 +472,9 @@ Scenario: CODING When an auto-coded direct dictionary matching decision for a ve
 Scenario: REPORT The Query History Information shall not be displayed in the report if Include Query Fields is not selected as an Export Column
 
    Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-   And coding task "EMPTY" for dictionary level "LLT"
+   When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | EMPTY         | LLT              |
    When I open a query for new task "FLUS" with comment "Epidemic?"
    And the query for new task "OPEN WOUNDED" with comment "Size?" is "Open" with response "Small"
    And the query for new task "PAINS" with comment "Many?" is "Answered" with response "A lot"
@@ -486,7 +490,9 @@ Scenario: REPORT The Query History Information shall not be displayed in the rep
 Scenario: REPORT The Query History Information shall be displayed in the report if Include Query Fields is selected as an Export Column
 
    Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-   And coding task "EMPTY" for dictionary level "LLT"
+   When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | EMPTY         | LLT              |
    When I open a query for new task "FLUS" with comment "Epidemic?"
    And the query for new task "OPEN WOUNDED" with comment "Size?" is "Open" with response "Small"
    And the query for new task "PAINS" with comment "Many?" is "Answered" with response "A lot"

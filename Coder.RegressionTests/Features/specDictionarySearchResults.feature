@@ -210,7 +210,9 @@ Scenario: An open dictionary search with multiple synonyms should positively ide
 @Release2015.3.1
 Scenario: A browse and code for a term that is associated to a previously created synonym should be positively identified in MedDRA
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event 4" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term   | Dictionary Level |
+      | Adverse Event 4 | LLT              |
   And a synonym list file named "MedDRA_150_ENG_20.txt" is uploaded
   When a browse and code for task "Adverse Event 4" is performed
   And the browse and code search is done for "10009589" against "Code" at Level "Low Level Term"
@@ -224,7 +226,9 @@ Scenario: A browse and code for a term that is associated to a previously create
 @Release2015.3.1
 Scenario: A browse and code for a term that is associated to a previously created synonym should be positively identified in WHODrugDDEB2
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "WHODrugDDEB2 ENG 201206"
-    And coding task "Adverse Event 4" for dictionary level "PRODUCTSYNONYM"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term   | Dictionary Level |
+      | Adverse Event 4 | PRODUCTSYNONYM   |
   And a synonym list file named "WHODrug_201206_ENG_2.txt" is uploaded
   When a browse and code for task "Adverse Event 4" is performed
   And the browse and code search is done for "000039 02 063" against "Code" at Level "Trade Name"
@@ -239,7 +243,9 @@ Scenario: A browse and code for a term that is associated to a previously create
 @Release2015.3.1
 Scenario: A browse and code for a term that is associated to a previously created synonym should be positively identified in JDrug
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "JDrug ENG 2015H1"
-  And coding task "Adverse Event 4" for dictionary level "DrugName"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term   | Dictionary Level |
+      | Adverse Event 4 | DrugName         |
   And a synonym list file named "JDrug_2015H1_ENG_2.txt" is uploaded
   When a browse and code for task "Adverse Event 4" is performed
   And the browse and code search is done for "CHONDRON" against "Text" at Level "Drug Name"
@@ -254,7 +260,9 @@ Scenario: A browse and code for a term that is associated to a previously create
 @Release2015.3.1
 Scenario: A browse and code for a term that is associated to a previously created synonym should be positively identified in AZDD
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "AZDD ENG 15.1"
-  And coding task "Adverse Event 4" for dictionary level "PRODUCT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term   | Dictionary Level |
+      | Adverse Event 4 | PRODUCT          |
   And a synonym list file named "AZDD_151_ENG_2.txt" is uploaded
   When a browse and code for task "Adverse Event 4" is performed
   And the browse and code search is done for "Typhoid" against "Text" at Level "Preferred Name"
@@ -285,7 +293,9 @@ Scenario: An open dictionary search with no synonyoms should not contain any res
 @Release2015.3.1
 Scenario: A browse and code for a term that is not associated to a synonym should not be positively identified as associated to a synonym
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event 4" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term   | Dictionary Level |
+      | Adverse Event 4 | LLT              |
   When a browse and code for task "Adverse Event 4" is performed
   And the browse and code search is done for "10009589" against "Code" at Level "Low Level Term"
   Then I verify the following information is contained in the browser search results

@@ -5,7 +5,9 @@ Feature: Verify Context Help Links
 
 Background: Basic setup
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-    And coding task "Heart Burn" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | Heart Burn    | LLT              |
 	When I view task "Heart Burn"
 
 @VAL
