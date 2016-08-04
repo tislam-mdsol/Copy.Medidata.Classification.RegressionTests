@@ -9,7 +9,9 @@ Feature: Verify the reclassification search section display and functionality
 Scenario Outline: A Coder User is able to search via the following criteria: Subject, Verbatim Term, Term, Code
 
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
-	And coding task "Headache" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | HEADACHE      | LLT              |
 	When setting reclassification search value "<Value>" for "<Field>"
 	And setting reclassification search value "True" for "IncludeAutocodedItems"
 	And performing reclassification search
@@ -51,7 +53,9 @@ Scenario Outline: A user can review a coding decision's EDC Form. Enables an eas
 Scenario Outline: A Coder User is able to do a partial term search using the following criteria: Verbatim, Subject
 
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
-	And coding task "Headache" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | HEADACHE      | LLT              |
 	When setting reclassification search value "<Value>" for "<Field>"
 	And setting reclassification search value "True" for "IncludeAutocodedItems"
 	And performing reclassification search
@@ -70,7 +74,9 @@ Scenario Outline: A Coder User is able to do a partial term search using the fol
 Scenario Outline: A Coder User is able to conduct a search using the following Prior Action: Browse And Code, Approve
 
 	Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
-	And coding task "Heart Burn" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | Heart Burn    | LLT              |
 	When task "Heart Burn" is coded to term "Reflux gastritis" at search level "Low Level Term" with code "10057969" at level "LLT" and a synonym is created
 	And approving task "HEART BURN"
 	And setting reclassification search value "<Value>" for "<Field>"
@@ -90,7 +96,9 @@ Scenario Outline: A Coder User is able to conduct a search using the following P
 Scenario Outline: A Coder User is able to conduct a search using the following Prior Action: Complete Without Transmission, Auto Approve Internal
 
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
-	And coding task "Headache" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | HEADACHE      | LLT              |
 	When setting reclassification search value "<Value>" for "<Field>"
 	And setting reclassification search value "True" for "IncludeAutocodedItems"
 	And performing reclassification search
@@ -109,7 +117,9 @@ Scenario Outline: A Coder User is able to conduct a search using the following P
 Scenario Outline: A Coder User is able to conduct a search using the following Prior Status: Completed, Start
 
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
-	And coding task "Headache" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | HEADACHE      | LLT              |
 	When setting reclassification search value "<Value>" for "<Field>"
 	And setting reclassification search value "True" for "IncludeAutocodedItems"
 	And performing reclassification search
@@ -128,7 +138,9 @@ Scenario Outline: A Coder User is able to conduct a search using the following P
 Scenario Outline: A Coder User is able to conduct a search using the following Prior Status: Waiting Approval, Waiting Manual Code
 
 	Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
-	And coding task "Heart Burn" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | Heart Burn    | LLT              |
 	When task "Heart Burn" is coded to term "Reflux gastritis" at search level "Low Level Term" with code "10057969" at level "LLT" and a synonym is created
 	And approving task "HEART BURN"
 	And setting reclassification search value "<Value>" for "<Field>"

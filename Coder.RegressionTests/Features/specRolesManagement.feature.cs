@@ -174,11 +174,18 @@ this.ScenarioSetup(scenarioInfo);
 #line 51
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table1.AddRow(new string[] {
+                        "Adverse Event 1",
+                        "LLT"});
 #line 52
-   testRunner.And("coding task \"Adverse Event 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 53
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
+#line 55
    testRunner.When("deactivating Workflow Role \"WorkflowRole\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 54
+#line 56
    testRunner.Then("The task count is \"0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -199,35 +206,42 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC168582_05",
                         "Release2015.3.0",
                         "IncreaseTimeout"});
-#line 61
+#line 63
 this.ScenarioSetup(scenarioInfo);
-#line 62
+#line 64
    testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 63
-   testRunner.And("coding task \"Headache\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Actions"});
-            table1.AddRow(new string[] {
-                        "Approve"});
-            table1.AddRow(new string[] {
-                        "ReCode"});
-            table1.AddRow(new string[] {
-                        "Open Query"});
-#line 64
-   testRunner.When("removing the assigned Actions from workflow role \"WorkflowRole\"", ((string)(null)), table1, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table2.AddRow(new string[] {
+                        "HEADACHE",
+                        "LLT"});
+#line 65
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table2, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Actions"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Approve"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "ReCode"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Open Query"});
-#line 69
-   testRunner.Then("the user is unable to perform the following Task Actions for the task \"Headache\"", ((string)(null)), table2, "Then ");
+#line 68
+   testRunner.When("removing the assigned Actions from workflow role \"WorkflowRole\"", ((string)(null)), table3, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Actions"});
+            table4.AddRow(new string[] {
+                        "Approve"});
+            table4.AddRow(new string[] {
+                        "ReCode"});
+            table4.AddRow(new string[] {
+                        "Open Query"});
+#line 73
+   testRunner.Then("the user is unable to perform the following Task Actions for the task \"Headache\"", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -245,32 +259,39 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC168582_06",
                         "Release2015.3.0"});
-#line 79
+#line 83
 this.ScenarioSetup(scenarioInfo);
-#line 80
+#line 84
    testRunner.Given("a \"Approval\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG" +
                     " 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 81
-   testRunner.And("coding task \"Heart Burn\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table5.AddRow(new string[] {
+                        "Heart Burn",
+                        "LLT"});
+#line 85
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table5, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Actions"});
-            table3.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Add Comment"});
-            table3.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Browse And Code"});
-#line 82
-   testRunner.When("removing the assigned Actions from workflow role \"WorkflowRole\"", ((string)(null)), table3, "When ");
+#line 88
+   testRunner.When("removing the assigned Actions from workflow role \"WorkflowRole\"", ((string)(null)), table6, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Actions"});
-            table4.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Add Comment"});
-            table4.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Code"});
-#line 86
+#line 92
    testRunner.Then("the user is unable to perform the following Task Actions for the task \"Heart Burn" +
-                    "\"", ((string)(null)), table4, "Then ");
+                    "\"", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -290,33 +311,40 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC168582_07",
                         "Release2015.3.0",
                         "IncreaseTimeout"});
-#line 96
+#line 102
 this.ScenarioSetup(scenarioInfo);
-#line 97
+#line 103
    testRunner.Given("a \"Approval\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG" +
                     " 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 98
-   testRunner.And("coding task \"Headache\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table8.AddRow(new string[] {
+                        "HEADACHE",
+                        "LLT"});
+#line 104
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table8, "When ");
+#line 107
    testRunner.When("reclassifying task \"Headache\" with Include Autocoded Items set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Actions"});
-            table5.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "Leave As Is"});
-            table5.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "Reject Coding Decision"});
-#line 100
-   testRunner.And("removing the assigned Actions from workflow role \"WorkflowRole\"", ((string)(null)), table5, "And ");
+#line 108
+   testRunner.And("removing the assigned Actions from workflow role \"WorkflowRole\"", ((string)(null)), table9, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Actions"});
-            table6.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Leave As Is"});
-            table6.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Reject Coding Decision"});
-#line 104
-   testRunner.Then("the user is unable to perform the following Task Actions for the task \"Headache\"", ((string)(null)), table6, "Then ");
+#line 112
+   testRunner.Then("the user is unable to perform the following Task Actions for the task \"Headache\"", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -332,16 +360,23 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC168582_08",
                         "Release2015.3.0"});
-#line 112
+#line 120
    this.ScenarioSetup(scenarioInfo);
-#line 113
+#line 121
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 114
-   testRunner.And("coding task \"Adverse Event 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table11.AddRow(new string[] {
+                        "Adverse Event 1",
+                        "LLT"});
+#line 122
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table11, "When ");
+#line 125
    testRunner.When("denying access to Workflow Role \"WorkflowRole\" for \"All\" study", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 116
+#line 126
    testRunner.Then("The task count is \"0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -358,16 +393,23 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC168582_09",
                         "Release2015.3.0"});
-#line 122
+#line 132
    this.ScenarioSetup(scenarioInfo);
-#line 123
+#line 133
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 124
-   testRunner.And("coding task \"Adverse Event 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table12.AddRow(new string[] {
+                        "Adverse Event 1",
+                        "LLT"});
+#line 134
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table12, "When ");
+#line 137
    testRunner.When("removing Workflow Role \"WorkflowRole\" for \"All\" study", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 126
+#line 138
    testRunner.Then("The task count is \"0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -384,13 +426,13 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC168593_01",
                         "Release2015.3.0"});
-#line 132
+#line 144
 this.ScenarioSetup(scenarioInfo);
-#line 133
+#line 145
    testRunner.Given("an admin user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 134
+#line 146
    testRunner.When("creating and activating a \"Page Study Security\" role called \"GeneralRole\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 135
+#line 147
    testRunner.Then("the \"Page Study Security\" role \"StudyAdmin\" is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -407,13 +449,13 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC168593_02",
                         "Release2015.3.0"});
-#line 141
+#line 153
 this.ScenarioSetup(scenarioInfo);
-#line 142
+#line 154
    testRunner.Given("an admin user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 143
+#line 155
    testRunner.When("creating and activating a \"Page Dictionary Security\" role called \"GeneralRole\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 144
+#line 156
    testRunner.Then("the \"Page Dictionary Security\" role \"DictionaryAdmin\" is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -430,15 +472,15 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC168593_03",
                         "Release2015.3.0"});
-#line 150
+#line 162
 this.ScenarioSetup(scenarioInfo);
-#line 151
+#line 163
    testRunner.Given("an admin user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 152
+#line 164
    testRunner.When("creating and activating a \"Page Study Security\" role called \"GeneralRole\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 153
+#line 165
    testRunner.And("assigning \"Page Study Security\" General Role \"GeneralRole\" for \"All\" type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 154
+#line 166
    testRunner.Then("the \"Page Study Security\" General Role \"GeneralRole\" for type \"All\" is assigned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -455,15 +497,15 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC168593_04",
                         "Release2015.3.0"});
-#line 160
+#line 172
 this.ScenarioSetup(scenarioInfo);
-#line 161
+#line 173
    testRunner.Given("an admin user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 162
+#line 174
    testRunner.When("creating and activating a \"Page Dictionary Security\" role called \"GeneralRole\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 163
+#line 175
    testRunner.And("assigning \"Page Dictionary Security\" General Role \"GeneralRole\" for \"All\" type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 164
+#line 176
    testRunner.Then("the \"Page Dictionary Security\" General Role \"GeneralRole\" for type \"All\" is assig" +
                     "ned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -483,30 +525,30 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC168593_05",
                         "Release2015.3.0"});
-#line 170
+#line 182
 this.ScenarioSetup(scenarioInfo);
-#line 171
+#line 183
    testRunner.Given("an admin user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Actions"});
-            table7.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "Coding History Report"});
-            table7.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "Study Report"});
-#line 172
-   testRunner.When("removing the assigned Actions from \"Page Study Security\" Role \"StudyAdmin\"", ((string)(null)), table7, "When ");
+#line 184
+   testRunner.When("removing the assigned Actions from \"Page Study Security\" Role \"StudyAdmin\"", ((string)(null)), table13, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Reports"});
-            table8.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Coding History Report"});
-            table8.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Ingredient Report"});
-            table8.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Study Report"});
-#line 176
-   testRunner.Then("the user will not have access to the following reports", ((string)(null)), table8, "Then ");
+#line 188
+   testRunner.Then("the user will not have access to the following reports", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -524,29 +566,29 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC168593_06",
                         "Release2015.3.0"});
-#line 186
+#line 198
 this.ScenarioSetup(scenarioInfo);
-#line 187
+#line 199
    testRunner.Given("an admin user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Actions"});
-            table9.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "Reclassification"});
-            table9.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "View Impact Analysis"});
-#line 188
+#line 200
    testRunner.When("removing the assigned Actions from \"Page Dictionary Security\" Role \"DictionaryAdm" +
-                    "in\"", ((string)(null)), table9, "When ");
+                    "in\"", ((string)(null)), table15, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "Functions"});
-            table10.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "Reclassification"});
-            table10.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "Study Impact Analysis"});
-#line 192
-   testRunner.Then("the user will not have access to the following functions", ((string)(null)), table10, "Then ");
+#line 204
+   testRunner.Then("the user will not have access to the following functions", ((string)(null)), table16, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -564,34 +606,34 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC168593_08",
                         "Release2015.3.0",
                         "ignore"});
-#line 202
+#line 214
 this.ScenarioSetup(scenarioInfo);
-#line 203
+#line 215
    testRunner.Given("an admin user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 204
+#line 216
    testRunner.When("assigning \"Segment Security\" General Role \"SegmentAdmin\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 205
+#line 217
    testRunner.When("I deny \"Segment Security\" access to \"All\" segments for general role \"SegmentAdmin" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Function"});
-            table11.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Assign General Role"});
-            table11.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Assign Workflow Role"});
-            table11.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Configuration"});
-            table11.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Create Workflow Role"});
-            table11.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Create General Role"});
-            table11.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Project Registration"});
-            table11.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Do Not Auto Code"});
-#line 206
-   testRunner.Then("the user will not have access to the following functions", ((string)(null)), table11, "Then ");
+#line 218
+   testRunner.Then("the user will not have access to the following functions", ((string)(null)), table17, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -609,37 +651,44 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_195032_001",
                         "Release2015.3.0"});
-#line 220
+#line 232
 this.ScenarioSetup(scenarioInfo);
-#line 221
+#line 233
  testRunner.Given("a \"Waiting Approval\" Coder setup with registered synonym list \"MedDRA ENG 11.0 Ro" +
                     "les_Managment\" containing entry \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 222
- testRunner.And("coding task \"Great toe fracture\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 223
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table18.AddRow(new string[] {
+                        "Great toe fracture",
+                        "LLT"});
+#line 234
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table18, "When ");
+#line 237
  testRunner.And("an activated synonym list \"MedDRA ENG 12.0 Primary_List\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Actions"});
-            table12.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Edit StudyIncludeKeep"});
-#line 224
- testRunner.When("removing the assigned Actions from \"Page Study Security\" Role \"StudyAdmin\"", ((string)(null)), table12, "When ");
-#line 227
+#line 238
+ testRunner.When("removing the assigned Actions from \"Page Study Security\" Role \"StudyAdmin\"", ((string)(null)), table19, "When ");
+#line 241
     testRunner.And("performing Study Impact Analysis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Generate Report",
                         "Migrate Study",
                         "Edit Study Analysis",
                         "Export Report"});
-            table13.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "True",
                         "True",
                         "False",
                         "True"});
-#line 228
- testRunner.Then("the following study impact analyis actions will be available", ((string)(null)), table13, "Then ");
+#line 242
+ testRunner.Then("the following study impact analyis actions will be available", ((string)(null)), table20, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -657,37 +706,44 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_195032_002",
                         "Release2015.3.0"});
-#line 236
+#line 250
 this.ScenarioSetup(scenarioInfo);
-#line 237
+#line 251
  testRunner.Given("a \"Waiting Approval\" Coder setup with registered synonym list \"MedDRA ENG 11.0 Ro" +
                     "les_Managment\" containing entry \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 238
- testRunner.And("coding task \"Great toe fracture\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 239
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table21.AddRow(new string[] {
+                        "Great toe fracture",
+                        "LLT"});
+#line 252
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table21, "When ");
+#line 255
  testRunner.And("an activated synonym list \"MedDRA ENG 12.0 Primary_List\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Actions"});
-            table14.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "Migrate Study"});
-#line 240
- testRunner.When("removing the assigned Actions from \"Page Study Security\" Role \"StudyAdmin\"", ((string)(null)), table14, "When ");
-#line 243
+#line 256
+ testRunner.When("removing the assigned Actions from \"Page Study Security\" Role \"StudyAdmin\"", ((string)(null)), table22, "When ");
+#line 259
     testRunner.And("performing Study Impact Analysis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "Generate Report",
                         "Migrate Study",
                         "Edit Study Analysis",
                         "Export Report"});
-            table15.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "True",
                         "False",
                         "True",
                         "True"});
-#line 244
- testRunner.Then("the following study impact analyis actions will be available", ((string)(null)), table15, "Then ");
+#line 260
+ testRunner.Then("the following study impact analyis actions will be available", ((string)(null)), table23, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -705,39 +761,46 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_195032_003",
                         "Release2015.3.0"});
-#line 252
+#line 268
 this.ScenarioSetup(scenarioInfo);
-#line 253
+#line 269
  testRunner.Given("a \"Waiting Approval\" Coder setup with registered synonym list \"MedDRA ENG 11.0 Ro" +
                     "les_Managment\" containing entry \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 254
- testRunner.And("coding task \"Great toe fracture\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 255
+#line hidden
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table24.AddRow(new string[] {
+                        "Great toe fracture",
+                        "LLT"});
+#line 270
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table24, "When ");
+#line 273
  testRunner.And("an activated synonym list \"MedDRA ENG 12.0 Primary_List\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "Actions"});
-            table16.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "Edit StudyIncludeKeep"});
-            table16.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "Migrate Study"});
-#line 256
- testRunner.When("removing the assigned Actions from \"Page Study Security\" Role \"StudyAdmin\"", ((string)(null)), table16, "When ");
-#line 260
+#line 274
+ testRunner.When("removing the assigned Actions from \"Page Study Security\" Role \"StudyAdmin\"", ((string)(null)), table25, "When ");
+#line 278
     testRunner.And("performing Study Impact Analysis", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Generate Report",
                         "Migrate Study",
                         "Edit Study Analysis",
                         "Export Report"});
-            table17.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "True",
                         "False",
                         "False",
                         "True"});
-#line 261
- testRunner.Then("the following study impact analyis actions will be available", ((string)(null)), table17, "Then ");
+#line 279
+ testRunner.Then("the following study impact analyis actions will be available", ((string)(null)), table26, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

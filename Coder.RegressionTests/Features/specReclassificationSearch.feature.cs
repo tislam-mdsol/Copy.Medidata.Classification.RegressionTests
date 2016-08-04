@@ -95,16 +95,23 @@ this.ScenarioSetup(scenarioInfo);
 #line 11
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 12
- testRunner.And("coding task \"Headache\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
- testRunner.When(string.Format("setting reclassification search value \"{0}\" for \"{1}\"", value, field), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 14
- testRunner.And("setting reclassification search value \"True\" for \"IncludeAutocodedItems\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
- testRunner.And("performing reclassification search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table1.AddRow(new string[] {
+                        "HEADACHE",
+                        "LLT"});
+#line 12
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
+#line 15
+ testRunner.When(string.Format("setting reclassification search value \"{0}\" for \"{1}\"", value, field), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 16
+ testRunner.And("setting reclassification search value \"True\" for \"IncludeAutocodedItems\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And("performing reclassification search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Study",
                         "Subject",
                         "Verbatim",
@@ -112,7 +119,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Code",
                         "Priority",
                         "Form"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "<StudyName>",
                         "Subject 1",
                         "HEADACHE",
@@ -120,8 +127,8 @@ this.ScenarioSetup(scenarioInfo);
                         "10019211",
                         "1",
                         "Form 1"});
-#line 16
- testRunner.Then("the reclassification search should contain", ((string)(null)), table1, "Then ");
+#line 18
+ testRunner.Then("the reclassification search should contain", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -146,30 +153,30 @@ this.ScenarioSetup(scenarioInfo);
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A user can review a coding decision\'s EDC Form. Enables an easy way to differenti" +
                     "ate Adverse Event vs Medical History related terms by their form names.", @__tags);
-#line 30
-this.ScenarioSetup(scenarioInfo);
 #line 32
+this.ScenarioSetup(scenarioInfo);
+#line 34
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Dictionary Level",
                         "Form"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Headache",
                         "LLT",
                         string.Format("{0}", formValue)});
-#line 33
- testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table2, "When ");
-#line 36
- testRunner.And(string.Format("setting reclassification search value \"{0}\" for \"{1}\"", value, field), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 37
- testRunner.And("setting reclassification search value \"True\" for \"IncludeAutocodedItems\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table3, "When ");
 #line 38
+ testRunner.And(string.Format("setting reclassification search value \"{0}\" for \"{1}\"", value, field), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+ testRunner.And("setting reclassification search value \"True\" for \"IncludeAutocodedItems\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
  testRunner.And("performing reclassification search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Study",
                         "Subject",
                         "Verbatim",
@@ -177,7 +184,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Code",
                         "Priority",
                         "Form"});
-            table3.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "<StudyName>",
                         "Subject 1",
                         "HEADACHE",
@@ -185,8 +192,8 @@ this.ScenarioSetup(scenarioInfo);
                         "10019211",
                         "1",
                         string.Format("{0}", formValue)});
-#line 39
- testRunner.Then("the reclassification search should contain", ((string)(null)), table3, "Then ");
+#line 41
+ testRunner.Then("the reclassification search should contain", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -211,21 +218,28 @@ this.ScenarioSetup(scenarioInfo);
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A Coder User is able to do a partial term search using the following criteria: Ve" +
                     "rbatim, Subject", @__tags);
-#line 51
-this.ScenarioSetup(scenarioInfo);
 #line 53
+this.ScenarioSetup(scenarioInfo);
+#line 55
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 54
- testRunner.And("coding task \"Headache\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
- testRunner.When(string.Format("setting reclassification search value \"{0}\" for \"{1}\"", value, field), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table5.AddRow(new string[] {
+                        "HEADACHE",
+                        "LLT"});
 #line 56
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table5, "When ");
+#line 59
+ testRunner.When(string.Format("setting reclassification search value \"{0}\" for \"{1}\"", value, field), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 60
  testRunner.And("setting reclassification search value \"True\" for \"IncludeAutocodedItems\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
+#line 61
  testRunner.And("performing reclassification search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Study",
                         "Subject",
                         "Verbatim",
@@ -233,7 +247,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Code",
                         "Priority",
                         "Form"});
-            table4.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "<StudyName>",
                         "Subject 1",
                         "HEADACHE",
@@ -241,8 +255,8 @@ this.ScenarioSetup(scenarioInfo);
                         "10019211",
                         "1",
                         "Form 1"});
-#line 58
- testRunner.Then("the reclassification search should contain", ((string)(null)), table4, "Then ");
+#line 62
+ testRunner.Then("the reclassification search should contain", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -267,24 +281,31 @@ this.ScenarioSetup(scenarioInfo);
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A Coder User is able to conduct a search using the following Prior Action: Browse" +
                     " And Code, Approve", @__tags);
-#line 70
+#line 74
 this.ScenarioSetup(scenarioInfo);
-#line 72
+#line 76
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 73
- testRunner.And("coding task \"Heart Burn\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table7.AddRow(new string[] {
+                        "Heart Burn",
+                        "LLT"});
+#line 77
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table7, "When ");
+#line 80
  testRunner.When("task \"Heart Burn\" is coded to term \"Reflux gastritis\" at search level \"Low Level " +
                     "Term\" with code \"10057969\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 75
+#line 81
  testRunner.And("approving task \"HEART BURN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
+#line 82
  testRunner.And(string.Format("setting reclassification search value \"{0}\" for \"{1}\"", value, field), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
+#line 83
  testRunner.And("performing reclassification search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Study",
                         "Subject",
                         "Verbatim",
@@ -292,7 +313,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Code",
                         "Priority",
                         "Form"});
-            table5.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "<StudyName>",
                         "Subject 1",
                         "HEART BURN",
@@ -300,8 +321,8 @@ this.ScenarioSetup(scenarioInfo);
                         "10057969",
                         "1",
                         "Form 1"});
-#line 78
- testRunner.Then("the reclassification search should contain", ((string)(null)), table5, "Then ");
+#line 84
+ testRunner.Then("the reclassification search should contain", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -326,21 +347,28 @@ this.ScenarioSetup(scenarioInfo);
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A Coder User is able to conduct a search using the following Prior Action: Comple" +
                     "te Without Transmission, Auto Approve Internal", @__tags);
-#line 90
+#line 96
 this.ScenarioSetup(scenarioInfo);
-#line 92
+#line 98
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 93
- testRunner.And("coding task \"Headache\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table9.AddRow(new string[] {
+                        "HEADACHE",
+                        "LLT"});
+#line 99
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table9, "When ");
+#line 102
  testRunner.When(string.Format("setting reclassification search value \"{0}\" for \"{1}\"", value, field), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 95
+#line 103
  testRunner.And("setting reclassification search value \"True\" for \"IncludeAutocodedItems\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
+#line 104
  testRunner.And("performing reclassification search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Study",
                         "Subject",
                         "Verbatim",
@@ -348,7 +376,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Code",
                         "Priority",
                         "Form"});
-            table6.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "<StudyName>",
                         "Subject 1",
                         "HEADACHE",
@@ -356,8 +384,8 @@ this.ScenarioSetup(scenarioInfo);
                         "10019211",
                         "1",
                         "Form 1"});
-#line 97
- testRunner.Then("the reclassification search should contain", ((string)(null)), table6, "Then ");
+#line 105
+ testRunner.Then("the reclassification search should contain", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -382,21 +410,28 @@ this.ScenarioSetup(scenarioInfo);
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A Coder User is able to conduct a search using the following Prior Status: Comple" +
                     "ted, Start", @__tags);
-#line 109
+#line 117
 this.ScenarioSetup(scenarioInfo);
-#line 111
+#line 119
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 112
- testRunner.And("coding task \"Headache\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 113
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table11.AddRow(new string[] {
+                        "HEADACHE",
+                        "LLT"});
+#line 120
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table11, "When ");
+#line 123
  testRunner.When(string.Format("setting reclassification search value \"{0}\" for \"{1}\"", value, field), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 114
+#line 124
  testRunner.And("setting reclassification search value \"True\" for \"IncludeAutocodedItems\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
+#line 125
  testRunner.And("performing reclassification search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Study",
                         "Subject",
                         "Verbatim",
@@ -404,7 +439,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Code",
                         "Priority",
                         "Form"});
-            table7.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "<StudyName>",
                         "Subject 1",
                         "HEADACHE",
@@ -412,8 +447,8 @@ this.ScenarioSetup(scenarioInfo);
                         "10019211",
                         "1",
                         "Form 1"});
-#line 116
- testRunner.Then("the reclassification search should contain", ((string)(null)), table7, "Then ");
+#line 126
+ testRunner.Then("the reclassification search should contain", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -438,24 +473,31 @@ this.ScenarioSetup(scenarioInfo);
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A Coder User is able to conduct a search using the following Prior Status: Waitin" +
                     "g Approval, Waiting Manual Code", @__tags);
-#line 128
+#line 138
 this.ScenarioSetup(scenarioInfo);
-#line 130
+#line 140
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 131
- testRunner.And("coding task \"Heart Burn\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 132
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table13.AddRow(new string[] {
+                        "Heart Burn",
+                        "LLT"});
+#line 141
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table13, "When ");
+#line 144
  testRunner.When("task \"Heart Burn\" is coded to term \"Reflux gastritis\" at search level \"Low Level " +
                     "Term\" with code \"10057969\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 133
+#line 145
  testRunner.And("approving task \"HEART BURN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 134
+#line 146
  testRunner.And(string.Format("setting reclassification search value \"{0}\" for \"{1}\"", value, field), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 135
+#line 147
  testRunner.And("performing reclassification search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Study",
                         "Subject",
                         "Verbatim",
@@ -463,7 +505,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Code",
                         "Priority",
                         "Form"});
-            table8.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "<StudyName>",
                         "Subject 1",
                         "HEART BURN",
@@ -471,8 +513,8 @@ this.ScenarioSetup(scenarioInfo);
                         "10057969",
                         "1",
                         "Form 1"});
-#line 136
- testRunner.Then("the reclassification search should contain", ((string)(null)), table8, "Then ");
+#line 148
+ testRunner.Then("the reclassification search should contain", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

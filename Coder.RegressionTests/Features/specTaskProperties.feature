@@ -54,7 +54,9 @@ _ The following environment configuration settings were enabled:
 Scenario: The following information will be available to the client as a term's Dictionary Property information:   Medical Dictionary, Segment, Priority, Locale, UUID
 
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event Term 1" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 1 | LLT              |
   When I view task "Adverse Event Term 1"
   Then I verify the following Medical Dictionary Property information is displayed
        | Medical Dictionary | Segment   | Dictionary Level | Verbatim Term        | Priority | Locale   | UUID             |
@@ -67,7 +69,9 @@ Scenario: The following information will be available to the client as a term's 
 Scenario: The following information will be available to the client as a term's Dictionary Property information:   Locale, Study Name, Connection URI, File OID, Protocol Number, Protocol Name
 
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event Term 1" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 1 | LLT              |
   When I view task "Adverse Event Term 1"
   Then I verify the following Source System Property information is displayed
        | Source System  | Locale   | Study Name  | Connection URI  | File OID  | Protocol Number  | Protocol Name |
@@ -80,7 +84,9 @@ Scenario: The following information will be available to the client as a term's 
 Scenario:  Dictionary Property information will display the following options for a coding status:   Coding Status, Workflow, Creation Date, Auto Code Date
 
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event Term 1" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 1 | LLT              |
   When I view task "Adverse Event Term 1"
   Then I verify the following Coding Status Property information is displayed
        | Coding Status       | Workflow | Creation Date  | Auto Code Date |
@@ -93,7 +99,9 @@ Scenario:  Dictionary Property information will display the following options fo
 Scenario: The following information will be available to the client as a term's Dictionary Property information for a status of Waiting Approval
 
   Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Toxic effect of venom" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term         | Dictionary Level |
+      | Toxic effect of venom | LLT              |
   When I view task "Toxic effect of venom"
   Then I verify the following Coding Status Property information is displayed
        | Coding Status    | Workflow | Creation Date  | Auto Code Date |
@@ -106,7 +114,9 @@ Scenario: The following information will be available to the client as a term's 
 Scenario: The following information will be available to the client as a term's Dictionary Property information for a status of Reconsider
 
   Given a "Reconsider" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Allergy to venom" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term    | Dictionary Level |
+      | Allergy to venom | LLT              |
   When reclassifying task "Allergy to venom" with a comment "Regression testing" and Include Autocoded Items set to "True"
   And I view task "Allergy to venom"
   Then I verify the following Coding Status Property information is displayed

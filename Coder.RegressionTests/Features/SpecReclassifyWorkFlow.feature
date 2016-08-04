@@ -15,7 +15,9 @@ Feature: Illustrate the work flow when Reclassifying a term
 @IncreaseTimeout_300000
 Scenario: Coder users are able to Reclassify a coded term without removing the synonym for that term
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
-	And coding task "Heart Burn" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | Heart Burn    | LLT              |
 	When task "Heart Burn" is coded to term "Reflux gastritis" at search level "Low Level Term" with code "10057969" at level "LLT" and a synonym is created
 	And reclassifying task "Heart Burn" with Include Autocoded Items set to "True"
 	Then the synonym for verbatim "HEART BURN" and code "10057969" should be active
@@ -27,7 +29,9 @@ Scenario: Coder users are able to Reclassify a coded term without removing the s
 @IncreaseTimeout_300000
 Scenario: Coder users are able to Reclassify a term and retire the mapped synonym 
     Given a "Basic" Coder setup with registered synonym list "MedDRA ENG 15.0 Clear_Match" containing entry "HEADACHE|10019211|LLT|LLT:10019211;PT:10019211;HLT:10019233;HLGT:10019231;SOC:10029205|True|AE.AECAT:OTHER|Approved|Headache"
-	And coding task "Heart Burn" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | Heart Burn    | LLT              |
 	When task "Heart Burn" is coded to term "Reflux gastritis" at search level "Low Level Term" with code "10057969" at level "LLT" and a synonym is created
 	And reclassifying and retiring synonym task "Heart Burn" with Include Autocoded Items set to "True"
 	Then the synonym for verbatim "HEART BURN" and code "10057969" should not exist
@@ -38,7 +42,9 @@ Scenario: Coder users are able to Reclassify a term and retire the mapped synony
 @IncreaseTimeout_300000
 Scenario: A Coder user can reject a coding decision of a reclassified term
 	Given a "Reconsider" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And coding task "Heart Burn" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | Heart Burn    | LLT              |
 	When task "Heart Burn" is coded to term "Reflux gastritis" at search level "Low Level Term" with code "10057969" at level "LLT" and a synonym is created
 	And reclassifying task "Heart Burn" with Include Autocoded Items set to "True"
 	And rejecting coding decision for the task "Heart Burn"
@@ -51,7 +57,9 @@ Scenario: A Coder user can reject a coding decision of a reclassified term
 @IncreaseTimeout_300000
 Scenario: User has the option to reject the coding decision of reclassified term
 	Given a "Reconsider" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And coding task "Heart Burn" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | Heart Burn    | LLT              |
 	When task "Heart Burn" is coded to term "Reflux gastritis" at search level "Low Level Term" with code "10057969" at level "LLT" and a synonym is created
 	And reclassifying task "Heart Burn" with Include Autocoded Items set to "True"
 	And rejecting coding decision for the task "Heart Burn"
