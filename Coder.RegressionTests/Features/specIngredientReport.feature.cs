@@ -90,9 +90,16 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"WhoDrugDDEB2 " +
                     "ENG 201503\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table1.AddRow(new string[] {
+                        "blood",
+                        "PRODUCTSYNONYM"});
 #line 10
- testRunner.When("coding task \"blood\" for dictionary level \"PRODUCTSYNONYM\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
+#line 13
  testRunner.Then("the appropriate ingredient report is generated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

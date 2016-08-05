@@ -7,7 +7,9 @@ Feature: Verify Coding History Report
 @Release2015.3.0
 Scenario: Verify the user is able to export using verbatim
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And coding task "Adverse Event Term 1" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 1 | LLT              |
 	When searching for the verbatim "Adverse Event Term 1" in Coding History Report
 	And searching for auto coded items in Coding History Report
 	And exporting all columns in the Coding History Report
@@ -22,7 +24,9 @@ Scenario: Verify the user is able to export using verbatim
 @Release2015.3.0
 Scenario: Verify the user is able to export using code
 	Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "WhoDrugDDEB2 ENG 200703" 
-	And coding task "ASPIRIN PLUS C" for dictionary level "PRODUCT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term  | Dictionary Level |
+      | ASPIRIN PLUS C | PRODUCT          |
 	When searching for the term "ASPIRIN PLUS C" in Coding History Report
 	And searching for the code "003467 01 001" in Coding History Report
 	And searching for auto coded items in Coding History Report
@@ -38,7 +42,9 @@ Scenario: Verify the user is able to export using code
 @Release2015.3.0
 Scenario: Verify the user is able to export using term
 	Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "WhoDrugDDEB2 ENG 200703" 
-	And coding task "ASPIRIN PLUS C" for dictionary level "PRODUCT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term  | Dictionary Level |
+      | ASPIRIN PLUS C | PRODUCT          |
 	When searching for the term "ASPIRIN PLUS C" in Coding History Report
 	And searching for auto coded items in Coding History Report
 	And exporting all columns in the Coding History Report
@@ -53,7 +59,9 @@ Scenario: Verify the user is able to export using term
 @Release2015.3.0
 Scenario: Verify the user is able to select statuses in current status
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And coding task "Adverse Event Term 1" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 1 | LLT              |
 	When searching for the verbatim "Adverse Event Term 1" in Coding History Report
 	And searching for the status "Waiting Manual Code"
 	And searching for auto coded items in Coding History Report
@@ -69,7 +77,9 @@ Scenario: Verify the user is able to select statuses in current status
 @Release2015.3.0
 Scenario: Verify the user is able to enter a start and end date
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And coding task "Adverse Event Term 1" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 1 | LLT              |
 	When searching for the verbatim "Adverse Event Term 1" in Coding History Report
 	And searching for start date of "01 Jan 2015" and end date of "01 Jan 2050" in Coding History Report
 	And searching for auto coded items in Coding History Report
@@ -103,7 +113,9 @@ Scenario: Verify the user is able to export multiple terms
 @Release2015.3.0
 Scenario: Verify the user is able to export using verbatim on a non production study
   Given a "Basic" Coder setup for a non-production study with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event Term 2" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 2 | LLT              |  
   When searching for the verbatim "Adverse Event Term 2" in Coding History Report
   And searching for auto coded items in Coding History Report
   And exporting all columns in the Coding History Report

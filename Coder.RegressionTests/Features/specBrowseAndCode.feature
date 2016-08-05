@@ -7,7 +7,9 @@ Feature: These scenarios will validate the behavior of the coding system during 
 @PBMCC_185768_008
 Scenario: The initial dictionary search for a browse and code should be using the synonym list of the task
 	Given a "Synonyms Need Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0"
-	And coding task "A-FIB" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | A-FIB         | LLT              |
 	When a browse and code for task "A-FIB" is performed
 	Then the current dictionary search criteria should be using a synonym list
 
@@ -17,7 +19,9 @@ Scenario: The initial dictionary search for a browse and code should be using th
 @IncreaseTimeout_360000
 Scenario: A browse and code using JDrug should allow expansion of search result levels and coding to any selected term
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "JDrug JPN 2014H2"
-	And coding task "アデノシン三リン酸二ナトリウム水和物" for dictionary level "DrugName"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term					   | Dictionary Level |
+      | アデノシン三リン酸二ナトリウム水和物 | DrugName         |
 	And I want only exact match results
 	When a browse and code for task "アデノシン三リン酸二ナトリウム水和物" is performed
 	And the browse and code search is done for "アデノシン三リン酸二ナトリウム水和物" against "Text" at Level "Drug Name"
@@ -96,7 +100,9 @@ Scenario:  A user can continuously code and create synonym for the next availabl
 @IncreaseTimeout_360000
 Scenario: Terms on all pages of browse and code dictionary search results should be able to be coded to a task
 	Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And coding task "A-FIB" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | A-FIB         | LLT              |
 	When a browse and code for task "A-FIB" is performed
 	And the browse and code search is done for "atrial fibrillation" against "Text" at Level "Low Level Term"
 	Then the task should be able to be coded to the following terms
@@ -110,7 +116,9 @@ Scenario: Terms on all pages of browse and code dictionary search results should
 @Release2015.3.2
 Scenario: MedDRA Browse and Code Search Results should contain only terms for current paths
 	Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA JPN 18.0"
-	And coding task "Adverse Event 17" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term    | Dictionary Level |
+      | Adverse Event 17 | LLT              |
 	And I want only exact match results
 	And I want only primary path results
 	When a browse and code for task "Adverse Event 17" is performed
@@ -125,7 +133,9 @@ Scenario: MedDRA Browse and Code Search Results should contain only terms for cu
 @IncreaseTimeout_360000
 Scenario Outline: Cross level browse and code is performed on MedDRA, JDrug, WhoDrugDDEB2 and AZDD
   Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "<Context Dictionary>"
-  And coding task "<Task>" for dictionary level "<Dictionary Level>"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level   |
+      | <Task>        | <Dictionary Level> |
   When a browse and code for task "<Task>" is performed
   And I want only exact match results
   And the browse and code search is done for "<Term>" against "Text" at Level "<Search Level>"
