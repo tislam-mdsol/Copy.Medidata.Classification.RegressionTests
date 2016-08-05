@@ -183,9 +183,9 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             RetryPolicy.RaveCoderTransmission.Execute(() =>
             {
-                var latestChildAuditRecord    = GetChildAuditRecords(child).FirstOrDefault();
+                var latestChildAuditRecord    = GetChildAuditRecords(child).Where(record => record.AuditText.Contains(targetAuditText, StringComparison.OrdinalIgnoreCase));
 
-                if (ReferenceEquals(latestChildAuditRecord, null) || !latestChildAuditRecord.AuditText.Contains(targetAuditText, StringComparison.OrdinalIgnoreCase))
+                if (ReferenceEquals(latestChildAuditRecord, null)) 
                 {
                     DisplayParentsAuditRecords();
                     throw new MissingHtmlException(String.Format("No audit record for '{0}' in child '{1}'.", targetAuditText, child));
@@ -203,14 +203,12 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             RetryPolicy.RaveCoderTransmission.Execute(() =>
             {
-                var latestMatchingChildAuditRecord = GetChildAuditRecordsContaining(fieldName, _CodedPathAuditTextPrefix).FirstOrDefault();
+                var latestMatchingChildAuditRecord = GetChildAuditRecordsContaining(fieldName, _CodedPathAuditTextPrefix).Where(record => record.AuditText.Contains(_TermCodedAuditTextPrefix, StringComparison.OrdinalIgnoreCase));
 
-                if (ReferenceEquals(latestMatchingChildAuditRecord, null) 
-                || latestMatchingChildAuditRecord.AuditText.Contains(_TermCodedAuditTextPrefix, StringComparison.OrdinalIgnoreCase))
+                if (ReferenceEquals(latestMatchingChildAuditRecord, null))
                 {
                     DisplayParentsAuditRecords();
-                    throw new MissingHtmlException(
-                        String.Format("No coded path audit record for '{0}' in child '{1}'.", _CodedPathAuditTextPrefix, fieldName));
+                    throw new MissingHtmlException(String.Format("No coded path audit record for '{0}' in child '{1}'.", _CodedPathAuditTextPrefix, fieldName));
                 }
             });
         }

@@ -547,13 +547,13 @@ namespace Coder.DeclarativeBrowser
             var raveHeader = Session.GetRaveHeader();
             var imedidataPage = Session.GetImedidataPage();
 
-            bool coderActive = coderHeader.IMedidataLinkExists();
-            bool raveActive = raveHeader.IMedidataLinkExists();
-            bool imedidataActive = imedidataPage.IMedidataLinkExists();
-
             var attempt = RetryPolicy.ValidateOperation.ExecuteAndCapture(
               () =>
               {
+                  var coderActive = coderHeader.IMedidataLinkExists();
+                  var raveActive = raveHeader.IMedidataLinkExists();
+                  var imedidataActive = imedidataPage.IMedidataLinkExists();
+
                   if (!coderActive && !raveActive && !imedidataActive)
                   {
                       throw new InvalidOperationException("IMedidata Link could not be found.");
