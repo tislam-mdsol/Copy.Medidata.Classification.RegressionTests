@@ -227,7 +227,6 @@
     <Compile Include="PageObjects\Rave\RaveArchitectCRFDraftPage.cs" />
     <Compile Include="PageObjects\Rave\RaveArchitectExecuteAmendmentMigrationPlanPage.cs" />
     <Compile Include="PageObjects\Rave\DataListingReportPage.cs" />
-    <Compile Include="PageObjects\Rave\RaveArchitectFormPage_max.cs" />
     <Compile Include="PageObjects\Rave\RaveConfigurationOtherSettingsCoderPage.cs" />
     <Compile Include="PageObjects\Rave\RaveClinicalViewsPage.cs" />
     <Compile Include="PageObjects\Rave\RaveClinicalViewSettingsPage.cs" />
