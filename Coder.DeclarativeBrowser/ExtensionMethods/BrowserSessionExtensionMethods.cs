@@ -10,8 +10,6 @@ using Coder.DeclarativeBrowser.PageObjects.Reports;
 using Coypu;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coder.DeclarativeBrowser.PageObjects.Rave;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Internal;
 
 
 namespace Coder.DeclarativeBrowser.ExtensionMethods
@@ -1585,13 +1583,5 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
             return mainReportCoderPage;
         }
-
-        internal static void ScrollToTopOfPage(this BrowserSession session)
-        {
-            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
-
-            session.ExecuteScript("window.scrollBy(0, -250)");
-        }
-
     }
 }

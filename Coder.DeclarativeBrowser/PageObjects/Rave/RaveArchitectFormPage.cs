@@ -30,7 +30,6 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
 
         private SessionElementScope GetSaveButton()
         {
-            _Session.ScrollToTopOfPage();
             var saveButton = _Session.FindSessionElementById("_ctl0_Content_LnkBtnSave");
 
             return saveButton;
