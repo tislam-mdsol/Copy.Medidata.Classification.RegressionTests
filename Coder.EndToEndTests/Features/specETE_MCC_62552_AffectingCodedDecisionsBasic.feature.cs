@@ -349,7 +349,7 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A coding decision remains on the verbatim when a sticky is opened against a verba" +
             "tim field.")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC62552_001c")]
         [NUnit.Framework.CategoryAttribute("ReleaseRave2013.1.0.1")]
         [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
@@ -357,7 +357,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision remains on the verbatim when a sticky is opened against a verba" +
                     "tim field.", new string[] {
-                        "DFT",
+                        "VAL",
                         "PBMCC62552_001c",
                         "ReleaseRave2013.1.0.1",
                         "EndToEndDynamicSegment"});
@@ -486,7 +486,7 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("A coding decision remains on the verbatim when a sticky is opened against a suppl" +
             "emental field.")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC62552_001d")]
         [NUnit.Framework.CategoryAttribute("ReleaseRave2013.1.0.1")]
         [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
@@ -494,7 +494,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision remains on the verbatim when a sticky is opened against a suppl" +
                     "emental field.", new string[] {
-                        "DFT",
+                        "VAL",
                         "PBMCC62552_001d",
                         "ReleaseRave2013.1.0.1",
                         "EndToEndDynamicSegment"});

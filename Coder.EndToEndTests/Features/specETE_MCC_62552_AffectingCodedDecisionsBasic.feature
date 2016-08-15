@@ -72,7 +72,7 @@ Scenario: A coding decision remains on the verbatim when a query is opened again
 		  | ATC     | N02BA         | SALICYLIC ACID AND DERIVATIVES    |
 		  | PRODUCT | 005581 01 001 | BAYER CHILDREN'S COLD             |
 
-@DFT
+@VAL
 @PBMCC62552_001c
 @ReleaseRave2013.1.0.1
 @EndToEndDynamicSegment
@@ -107,7 +107,7 @@ Scenario: A coding decision remains on the verbatim when a sticky is opened agai
 		  | ATC     | N02BA         | SALICYLIC ACID AND DERIVATIVES    |
 		  | PRODUCT | 005581 01 001 | BAYER CHILDREN'S COLD             |	
 
-@DFT
+@VAL
 @PBMCC62552_001d
 @ReleaseRave2013.1.0.1
 @EndToEndDynamicSegment
