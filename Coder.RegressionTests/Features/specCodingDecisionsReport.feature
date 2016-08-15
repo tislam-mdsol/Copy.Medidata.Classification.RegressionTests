@@ -7,7 +7,9 @@ Feature: This feature will demonstrate Coder's functionality on generating Codin
 @Release2015.3.0
 Scenario: Coder will allow a user to be able to export a Coding Decision Report, which contains information on coded and approved coding decisions via verbatim text
     Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0" 
-	And coding task "Headache" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | HEADACHE      | LLT              |
 	When searching for the verbatim "Headache" in Coding Decisions Report
 	And searching for auto coded items in Coding Decisions Report
 	And exporting all columns in the Coding Decisions Report
@@ -20,7 +22,9 @@ Scenario: Coder will allow a user to be able to export a Coding Decision Report,
 @Release2015.3.2
 Scenario: Verify the user is able to export using verbatim for Coding Decisions Report
 	Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And coding task "Adverse Event Term 1" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 1 | LLT              |
     When task "Adverse Event Term 1" is coded to term "Dizzy on standing" at search level "Low Level Term" with code "10013581" at level "LLT" and higher level terms
 	     | Operator | Attribute          | Text               |
 	     | Has      | System Organ Class | Vascular disorders |
@@ -36,7 +40,9 @@ Scenario: Verify the user is able to export using verbatim for Coding Decisions 
 @Release2015.3.2
 Scenario: Verify the user is able to export using verbatim for Coding Decisions Report with Auto Coded unchecked
 	Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And coding task "PAIN IN UPPER CHEST" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term       | Dictionary Level |
+      | PAIN IN UPPER CHEST | LLT              |
     When task "PAIN IN UPPER CHEST" is coded to term "Acute chest pain" at search level "Low Level Term" with code "10066987" at level "LLT" and higher level terms
 	     | Operator | Attribute          | Text               |
 	     | Has      | System Organ Class | General disorders and administration site conditions |
@@ -51,7 +57,9 @@ Scenario: Verify the user is able to export using verbatim for Coding Decisions 
 @Release2015.3.2
 Scenario: Verify the user is able to select statuses in current status for Coding Decisions Report
 	Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And coding task "Adverse Event Term 1" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 1 | LLT              |
     When task "Adverse Event Term 1" is coded to term "Dizzy on standing" at search level "Low Level Term" with code "10013581" at level "LLT" and higher level terms
 	     | Operator | Attribute          | Text               |
 	     | Has      | System Organ Class | Vascular disorders |
@@ -69,7 +77,9 @@ Scenario: Verify the user is able to select statuses in current status for Codin
 @Release2015.3.2
 Scenario: Verify the user is able to enter a start and end date for Coding Decisions Report
 	Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And coding task "Adverse Event Term 1" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 1 | LLT              |
 	When task "Adverse Event Term 1" is coded to term "Dizzy on standing" at search level "Low Level Term" with code "10013581" at level "LLT" and higher level terms
 	    | Operator | Attribute          | Text               |
 	    | Has      | System Organ Class | Vascular disorders |
@@ -109,7 +119,9 @@ Scenario: Verify the user is able to export multiple terms for Coding Decisions 
 @Release2015.3.2
 Scenario: Verify the user is able to export using verbatim on a non production study for Coding Decisions Report
 	Given a "Waiting Approval" Coder setup for a non-production study with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-	And coding task "Adverse Event Term 2" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 2 | LLT              |
 	When task "Adverse Event Term 2" is coded to term "Dizzy on standing" at search level "Low Level Term" with code "10013581" at level "LLT" and higher level terms
 	    | Operator | Attribute          | Text               |
 	    | Has      | System Organ Class | Vascular disorders |

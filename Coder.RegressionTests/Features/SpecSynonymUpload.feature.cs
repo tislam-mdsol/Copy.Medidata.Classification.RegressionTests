@@ -159,20 +159,27 @@ this.ScenarioSetup(scenarioInfo);
                         string.Format("{0}", status)});
 #line 25
  testRunner.And("a synonym list upload with the following synonyms", ((string)(null)), table2, "And ");
-#line 28
- testRunner.And(string.Format("coding task \"{0}\" for dictionary level \"{1}\"", verbatim, taskLevel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table3.AddRow(new string[] {
+                        string.Format("{0}", verbatim),
+                        "<Task Level>"});
+#line 28
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table3, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level",
                         "Term Path",
                         "Code"});
-            table3.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         string.Format("{0}", termLevel),
                         string.Format("{0}", termDesc),
                         string.Format("{0}", code)});
-#line 29
+#line 31
  testRunner.Then(string.Format("task \"{0}\" should have the following Coding history selected term path informatio" +
-                        "n is displayed in row \"1\"", verbatim), ((string)(null)), table3, "Then ");
+                        "n is displayed in row \"1\"", verbatim), ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

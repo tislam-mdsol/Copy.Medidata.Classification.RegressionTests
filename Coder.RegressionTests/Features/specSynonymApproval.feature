@@ -7,7 +7,9 @@ Feature: The Coder system will provide a mechanism by which synonyms created by 
 @PBMCC_164725_001
 Scenario Outline: When adding a synonym that requires approval the coding system should successfully activate it upon approval
 	Given a "Synonyms Need Approval" Coder setup with no tasks and no synonyms and dictionary "<Dictionary>"
-	And coding task "<Verbatim>" for dictionary level "<Dictionary Level>"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level   |
+      | <Verbatim>    | <Dictionary Level> |
 	When task "<Verbatim>" is coded to term "<Search Text>" at search level "<Search Level>" with code "<Synonym Code>" at level "<Dictionary Level>" and a synonym is created
 	And the synonym for verbatim "<Verbatim>" and code "<Synonym Code>" is approved
 	Then the synonym for verbatim "<Verbatim>" and code "<Synonym Code>" should be active
@@ -44,7 +46,9 @@ Scenario: The coding system should allow a synonym to be retired
 	Given a "Synonyms Need Approval" Coder setup with no tasks and no synonyms and dictionaries
 	  | SynonymListName | Dictionary | Version | Locale |
 	  | Retired_List    | MedDRA     | 15.0    | ENG    |
-	And coding task "Adverse Event 1" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term   | Dictionary Level |
+      | Adverse Event 1 | LLT              |
 	When task "Adverse Event 1" is coded to term "Reflux gastritis" at search level "Low Level Term" with code "10057969" at level "LLT" and a synonym is created
 	Then the following synonym terms require approval
       | Verbatim        |

@@ -88,11 +88,18 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.Given("a \"Synonyms Need Approval\" Coder setup with no tasks and no synonyms and dictiona" +
                     "ry \"MedDRA ENG 11.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table1.AddRow(new string[] {
+                        "A-FIB",
+                        "LLT"});
 #line 10
- testRunner.And("coding task \"A-FIB\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
+#line 13
  testRunner.When("a browse and code for task \"A-FIB\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
+#line 14
  testRunner.Then("the current dictionary search criteria should be using a synonym list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -113,46 +120,53 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.1",
                         "PBMCC_193843_001",
                         "IncreaseTimeout_360000"});
-#line 18
+#line 20
 this.ScenarioSetup(scenarioInfo);
-#line 19
+#line 21
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"JDrug JPN 201" +
                     "4H2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 20
- testRunner.And("coding task \"アデノシン三リン酸二ナトリウム水和物\" for dictionary level \"DrugName\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 21
- testRunner.And("I want only exact match results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table2.AddRow(new string[] {
+                        "アデノシン三リン酸二ナトリウム水和物",
+                        "DrugName"});
 #line 22
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table2, "When ");
+#line 25
+ testRunner.And("I want only exact match results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
  testRunner.When("a browse and code for task \"アデノシン三リン酸二ナトリウム水和物\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
+#line 27
  testRunner.And("the browse and code search is done for \"アデノシン三リン酸二ナトリウム水和物\" against \"Text\" at Lev" +
                     "el \"Drug Name\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level"});
-            table1.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "アデノシン三リン酸二ナトリウム水和物",
                         "3992001",
                         "薬"});
-#line 24
- testRunner.And("I expand the following search result terms", ((string)(null)), table1, "And ");
+#line 28
+ testRunner.And("I expand the following search result terms", ((string)(null)), table3, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level"});
-            table2.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "アデノシン三リン酸二ナトリウム水和物",
                         "3992001",
                         "薬"});
-            table2.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "アデノシン製剤",
                         "3992",
                         "細"});
-#line 27
- testRunner.Then("the task should be able to be coded to the following terms", ((string)(null)), table2, "Then ");
+#line 31
+ testRunner.Then("the task should be able to be coded to the following terms", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -172,69 +186,69 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.0",
                         "PBMCC_197227_001",
                         "IncreaseTimeout"});
-#line 36
+#line 40
 this.ScenarioSetup(scenarioInfo);
-#line 37
+#line 41
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 38
+#line 42
  testRunner.When("the following externally managed verbatim requests are made \"Tasks_6_CodeAndNext." +
                     "json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 39
+#line 43
  testRunner.And("a browse and code for task \"Burning\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
                         "SearchText",
                         "SearchLevel",
                         "Code",
                         "Level",
                         "CreateSynonym"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Burning",
                         "Gastroesophageal burning",
                         "Low Level Term",
                         "10066998",
                         "LLT",
                         "False"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Congestion",
                         "Congestion nasal",
                         "Low Level Term",
                         "10010676",
                         "LLT",
                         "False"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Heart Burn",
                         "Reflux gastritis",
                         "Low Level Term",
                         "10057969",
                         "LLT",
                         "False"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Nasal Drip",
                         "Postnasal drip",
                         "Low Level Term",
                         "10036402",
                         "LLT",
                         "False"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Reflux",
                         "Gastritis alkaline reflux",
                         "Low Level Term",
                         "10017858",
                         "LLT",
                         "False"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Stiff Joints",
                         "Stiff joint",
                         "Low Level Term",
                         "10042041",
                         "LLT",
                         "False"});
-#line 40
- testRunner.When("I code next available task", ((string)(null)), table3, "When ");
-#line 48
+#line 44
+ testRunner.When("I code next available task", ((string)(null)), table5, "When ");
+#line 52
  testRunner.Then("The task count is \"0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -257,74 +271,74 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_197227_02",
                         "IncreaseTimeout",
                         "ignore"});
-#line 55
+#line 59
 this.ScenarioSetup(scenarioInfo);
-#line 56
+#line 60
     testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 57
+#line 61
  testRunner.And("a browse and code for task \"Burning\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
                         "SearchText",
                         "SearchLevel",
                         "Code",
                         "Level",
                         "CreateSynonym"});
-            table4.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Burning",
                         "Gastroesophageal burning",
                         "Low Level Term",
                         "10066998",
                         "LLT",
                         "False"});
-            table4.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Congestion",
                         "Congestion nasal",
                         "Low Level Term",
                         "10010676",
                         "LLT",
                         "False"});
-            table4.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Heart Burn",
                         "Reflux gastritis",
                         "Low Level Term",
                         "10057969",
                         "LLT",
                         "False"});
-            table4.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Nasal Drip",
                         "Postnasal drip",
                         "Low Level Term",
                         "10036402",
                         "LLT",
                         "False"});
-            table4.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Reflux",
                         "Gastritis alkaline reflux",
                         "Low Level Term",
                         "10017858",
                         "LLT",
                         "False"});
-#line 58
- testRunner.When("I code next available task", ((string)(null)), table4, "When ");
+#line 62
+ testRunner.When("I code next available task", ((string)(null)), table6, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim"});
-            table5.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Burning"});
-            table5.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Congestion"});
-            table5.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Heart Burn"});
-            table5.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Nasal Drip"});
-            table5.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Reflux"});
-#line 65
- testRunner.And("I reclassify tasks \"<Verbatim>\" with Include Autocoded Items set to \"True\"", ((string)(null)), table5, "And ");
-#line 72
+#line 69
+ testRunner.And("I reclassify tasks \"<Verbatim>\" with Include Autocoded Items set to \"True\"", ((string)(null)), table7, "And ");
+#line 76
  testRunner.Then("The task count is \"0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -347,69 +361,69 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.0",
                         "PBMCC_197227_003",
                         "IncreaseTimeout"});
-#line 78
+#line 82
 this.ScenarioSetup(scenarioInfo);
-#line 79
+#line 83
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 80
+#line 84
  testRunner.When("the following externally managed verbatim requests are made \"Tasks_6_CodeAndNext." +
                     "json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 81
+#line 85
  testRunner.And("a browse and code for task \"Burning\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
                         "SearchText",
                         "SearchLevel",
                         "Code",
                         "Level",
                         "CreateSynonym"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "Burning",
                         "Gastroesophageal burning",
                         "Low Level Term",
                         "10066998",
                         "LLT",
                         "True"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "Congestion",
                         "Congestion nasal",
                         "Low Level Term",
                         "10010676",
                         "LLT",
                         "True"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "Heart Burn",
                         "Reflux gastritis",
                         "Low Level Term",
                         "10057969",
                         "LLT",
                         "True"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "Nasal Drip",
                         "Postnasal drip",
                         "Low Level Term",
                         "10036402",
                         "LLT",
                         "True"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "Reflux",
                         "Gastritis alkaline reflux",
                         "Low Level Term",
                         "10017858",
                         "LLT",
                         "True"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "Stiff Joints",
                         "Stiff joint",
                         "Low Level Term",
                         "10042041",
                         "LLT",
                         "True"});
-#line 82
- testRunner.When("I code next available task", ((string)(null)), table6, "When ");
-#line 90
+#line 86
+ testRunner.When("I code next available task", ((string)(null)), table8, "When ");
+#line 94
  testRunner.Then("The task count is \"0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -430,37 +444,44 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.2",
                         "PBMCC_204358_003",
                         "IncreaseTimeout_360000"});
-#line 97
+#line 101
 this.ScenarioSetup(scenarioInfo);
-#line 98
+#line 102
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 99
- testRunner.And("coding task \"A-FIB\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table9.AddRow(new string[] {
+                        "A-FIB",
+                        "LLT"});
+#line 103
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table9, "When ");
+#line 106
  testRunner.When("a browse and code for task \"A-FIB\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 101
+#line 107
  testRunner.And("the browse and code search is done for \"atrial fibrillation\" against \"Text\" at Le" +
                     "vel \"Low Level Term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level"});
-            table7.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Atrial fibrillation",
                         "10003658",
                         "LLT"});
-            table7.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Paroxysmal atrial flutter",
                         "10050376",
                         "LLT"});
-            table7.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Ostium secundum type atrial septal defect",
                         "10031303",
                         "LLT"});
-#line 102
- testRunner.Then("the task should be able to be coded to the following terms", ((string)(null)), table7, "Then ");
+#line 108
+ testRunner.Then("the task should be able to be coded to the following terms", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -478,33 +499,40 @@ this.ScenarioSetup(scenarioInfo);
                         "Rerun",
                         "PBMCC_204440_002",
                         "Release2015.3.2"});
-#line 111
+#line 117
 this.ScenarioSetup(scenarioInfo);
-#line 112
+#line 118
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA JPN 18" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 113
- testRunner.And("coding task \"Adverse Event 17\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 114
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table11.AddRow(new string[] {
+                        "Adverse Event 17",
+                        "LLT"});
+#line 119
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table11, "When ");
+#line 122
  testRunner.And("I want only exact match results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
+#line 123
  testRunner.And("I want only primary path results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
+#line 124
  testRunner.When("a browse and code for task \"Adverse Event 17\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 117
+#line 125
  testRunner.And("the browse and code search is done for \"高脂血症\" against \"Text\" at Level \"Low Level " +
                     "Term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level"});
-            table8.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "高脂血症",
                         "10062060",
                         "LLT"});
-#line 118
- testRunner.Then("the dictionary search results should contain only the following terms", ((string)(null)), table8, "Then ");
+#line 126
+ testRunner.Then("the dictionary search results should contain only the following terms", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -537,36 +565,43 @@ this.ScenarioSetup(scenarioInfo);
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cross level browse and code is performed on MedDRA, JDrug, WhoDrugDDEB2 and AZDD", @__tags);
-#line 126
+#line 134
 this.ScenarioSetup(scenarioInfo);
-#line 127
+#line 135
   testRunner.Given(string.Format("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"{0" +
                         "}\"", contextDictionary), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 128
-  testRunner.And(string.Format("coding task \"{0}\" for dictionary level \"{1}\"", task, dictionaryLevel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 129
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table13.AddRow(new string[] {
+                        string.Format("{0}", task),
+                        string.Format("{0}", dictionaryLevel)});
+#line 136
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table13, "When ");
+#line 139
   testRunner.When(string.Format("a browse and code for task \"{0}\" is performed", task), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 130
+#line 140
   testRunner.And("I want only exact match results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 131
+#line 141
   testRunner.And(string.Format("the browse and code search is done for \"{0}\" against \"Text\" at Level \"{1}\"", term, searchLevel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 132
+#line 142
   testRunner.And(string.Format("the task is coded to term \"{0}\" at level \"{1}\" with code \"{2}\" and a synonym is c" +
                         "reated", term, codeLevel, code), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 133
+#line 143
   testRunner.And(string.Format("I view task \"{0}\"", task), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level",
                         "Term Path",
                         "Code"});
-            table9.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         string.Format("{0}", codeLevel),
                         string.Format("{0}", termPath),
                         string.Format("{0}", code)});
-#line 134
+#line 144
   testRunner.Then("I verify the following Coding history selected term path information is displayed" +
-                    " in row \"1\"", ((string)(null)), table9, "Then ");
+                    " in row \"1\"", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

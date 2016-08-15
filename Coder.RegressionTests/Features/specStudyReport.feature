@@ -77,7 +77,9 @@ Scenario:  Study Report returns data for tasks with a task state of "completed" 
 
 Scenario:  Study Report returns data for tasks with a task state of "Coded But Not Completed" 
     Given a "Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0" 
-	And coding task "Congestion" for dictionary level "LLT"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | Congestion    | LLT              |
 	When task "Congestion" is coded to term "Congestion nasal" at search level "Low Level Term" with code "10010676" at level "LLT" and a synonym is created
 	Then the study report task status count information should have the following   
 	| Status                    | Count |

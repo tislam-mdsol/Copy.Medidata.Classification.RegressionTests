@@ -90,16 +90,23 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 11" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 10
- testRunner.And("coding task \"Headache\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
- testRunner.When("searching for the verbatim \"Headache\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
- testRunner.And("searching for auto coded items in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
- testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table1.AddRow(new string[] {
+                        "HEADACHE",
+                        "LLT"});
+#line 10
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
+#line 13
+ testRunner.When("searching for the verbatim \"Headache\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.And("searching for auto coded items in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Dictionary Level",
                         "Coded By",
@@ -110,7 +117,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Logline",
                         "Path"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Headache",
                         "Low Level Term",
                         "System User",
@@ -122,8 +129,8 @@ this.ScenarioSetup(scenarioInfo);
                         "1",
                         "SOC: Nervous system disorders: 10029205; HLGT: Headaches: 10019231; HLT: Headache" +
                             "s NEC: 10019233; PT: Headache: 10019211; LLT: Headache: 10019211"});
-#line 14
- testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table1, "Then ");
+#line 16
+ testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -139,33 +146,40 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197264_001",
                         "Release2015.3.2"});
-#line 21
+#line 23
 this.ScenarioSetup(scenarioInfo);
-#line 22
+#line 24
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 23
- testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table3.AddRow(new string[] {
+                        "Adverse Event Term 1",
+                        "LLT"});
+#line 25
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table3, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Operator",
                         "Attribute",
                         "Text"});
-            table2.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "Has",
                         "System Organ Class",
                         "Vascular disorders"});
-#line 24
-    testRunner.When("task \"Adverse Event Term 1\" is coded to term \"Dizzy on standing\" at search level " +
-                    "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table2, "When ");
-#line 27
- testRunner.And("searching for the verbatim \"Adverse Event Term 1\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
+    testRunner.When("task \"Adverse Event Term 1\" is coded to term \"Dizzy on standing\" at search level " +
+                    "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table4, "When ");
+#line 31
+ testRunner.And("searching for the verbatim \"Adverse Event Term 1\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
  testRunner.And("searching for auto coded items in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
+#line 33
  testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Dictionary Level",
                         "Current Workflow State",
@@ -175,7 +189,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Logline",
                         "Path"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "Low Level Term",
                         "Waiting Approval",
@@ -187,8 +201,8 @@ this.ScenarioSetup(scenarioInfo);
                         "SOC: Vascular disorders: 10047065; HLGT: Decreased and nonspecific blood pressure" +
                             " disorders and shock: 10011954; HLT: Circulatory collapse and shock: 10009193; P" +
                             "T: Dizziness postural: 10013578; LLT: Dizzy on standing: 10013581"});
-#line 30
- testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table3, "Then ");
+#line 34
+ testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -206,31 +220,38 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197264_002",
                         "Release2015.3.2"});
-#line 37
+#line 41
 this.ScenarioSetup(scenarioInfo);
-#line 38
+#line 42
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 39
- testRunner.And("coding task \"PAIN IN UPPER CHEST\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table6.AddRow(new string[] {
+                        "PAIN IN UPPER CHEST",
+                        "LLT"});
+#line 43
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table6, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Operator",
                         "Attribute",
                         "Text"});
-            table4.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Has",
                         "System Organ Class",
                         "General disorders and administration site conditions"});
-#line 40
+#line 46
     testRunner.When("task \"PAIN IN UPPER CHEST\" is coded to term \"Acute chest pain\" at search level \"L" +
-                    "ow Level Term\" with code \"10066987\" at level \"LLT\" and higher level terms", ((string)(null)), table4, "When ");
-#line 43
+                    "ow Level Term\" with code \"10066987\" at level \"LLT\" and higher level terms", ((string)(null)), table7, "When ");
+#line 49
  testRunner.And("searching for the verbatim \"PAIN IN UPPER CHEST\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
+#line 50
  testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Dictionary Level",
                         "Current Workflow State",
@@ -240,7 +261,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Logline",
                         "Path"});
-            table5.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "PAIN IN UPPER CHEST",
                         "Low Level Term",
                         "Waiting Approval",
@@ -252,8 +273,8 @@ this.ScenarioSetup(scenarioInfo);
                         "SOC: General disorders and administration site conditions: 10018065; HLGT: Genera" +
                             "l system disorders NEC: 10018073; HLT: Pain and discomfort NEC: 10033372; PT: Ch" +
                             "est pain: 10008479; LLT: Acute chest pain: 10066987"});
-#line 45
- testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table5, "Then ");
+#line 51
+ testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -271,35 +292,42 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197264_003",
                         "Release2015.3.2"});
-#line 52
+#line 58
 this.ScenarioSetup(scenarioInfo);
-#line 53
+#line 59
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 54
- testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table9.AddRow(new string[] {
+                        "Adverse Event Term 1",
+                        "LLT"});
+#line 60
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table9, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Operator",
                         "Attribute",
                         "Text"});
-            table6.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Has",
                         "System Organ Class",
                         "Vascular disorders"});
-#line 55
+#line 63
     testRunner.When("task \"Adverse Event Term 1\" is coded to term \"Dizzy on standing\" at search level " +
-                    "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table6, "When ");
-#line 58
+                    "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table10, "When ");
+#line 66
  testRunner.And("searching for the verbatim \"Adverse Event Term 1\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
+#line 67
  testRunner.And("searching for the status \"Waiting Approval\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
+#line 68
  testRunner.And("searching for auto coded items in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 61
+#line 69
  testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Dictionary Level",
                         "Current Workflow State",
@@ -309,7 +337,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Logline",
                         "Path"});
-            table7.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "Low Level Term",
                         "Waiting Approval",
@@ -321,8 +349,8 @@ this.ScenarioSetup(scenarioInfo);
                         "SOC: Vascular disorders: 10047065; HLGT: Decreased and nonspecific blood pressure" +
                             " disorders and shock: 10011954; HLT: Circulatory collapse and shock: 10009193; P" +
                             "T: Dizziness postural: 10013578; LLT: Dizzy on standing: 10013581"});
-#line 62
- testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table7, "Then ");
+#line 70
+ testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -340,36 +368,43 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197264_004",
                         "Release2015.3.2"});
-#line 70
+#line 78
 this.ScenarioSetup(scenarioInfo);
-#line 71
+#line 79
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 72
- testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table12.AddRow(new string[] {
+                        "Adverse Event Term 1",
+                        "LLT"});
+#line 80
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table12, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Operator",
                         "Attribute",
                         "Text"});
-            table8.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "Has",
                         "System Organ Class",
                         "Vascular disorders"});
-#line 73
+#line 83
  testRunner.When("task \"Adverse Event Term 1\" is coded to term \"Dizzy on standing\" at search level " +
-                    "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table8, "When ");
-#line 76
+                    "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table13, "When ");
+#line 86
  testRunner.And("searching for the verbatim \"Adverse Event Term 1\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
+#line 87
  testRunner.And("searching for start date of \"01 Jan 2015\" and end date of \"01 Jan 2050\" in Coding" +
                     " Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
+#line 88
  testRunner.And("searching for auto coded items in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 89
  testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Dictionary Level",
                         "Current Workflow State",
@@ -379,7 +414,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Logline",
                         "Path"});
-            table9.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "Low Level Term",
                         "Waiting Approval",
@@ -391,8 +426,8 @@ this.ScenarioSetup(scenarioInfo);
                         "SOC: Vascular disorders: 10047065; HLGT: Decreased and nonspecific blood pressure" +
                             " disorders and shock: 10011954; HLT: Circulatory collapse and shock: 10009193; P" +
                             "T: Dizziness postural: 10013578; LLT: Dizzy on standing: 10013581"});
-#line 80
- testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table9, "Then ");
+#line 90
+ testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -410,55 +445,55 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_197264_005",
                         "Release2015.3.2",
                         "IncreaseTimeout_3000000"});
-#line 89
+#line 99
 this.ScenarioSetup(scenarioInfo);
-#line 90
+#line 100
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Me" +
                     "dDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Dictionary",
                         "Dictionary Level",
                         "Is Approval Required",
                         "Is Auto Approval",
                         "Locale"});
-            table10.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "MedDRA",
                         "LLT",
                         "TRUE",
                         "FALSE",
                         "eng"});
-            table10.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "MedDRA",
                         "LLT",
                         "TRUE",
                         "FALSE",
                         "eng"});
-#line 91
- testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table10, "When ");
+#line 101
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table15, "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "Operator",
                         "Attribute",
                         "Text"});
-            table11.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "Has",
                         "System Organ Class",
                         "Vascular disorders"});
-#line 95
+#line 105
  testRunner.And("task \"Adverse Event Term 1\" is coded to term \"Dizzy on standing\" at search level " +
-                    "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table11, "And ");
-#line 98
+                    "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table16, "And ");
+#line 108
  testRunner.And("searching for the verbatim \"Adverse Event Term 1\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
+#line 109
  testRunner.And("searching for auto coded items in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
+#line 110
  testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Dictionary Level",
                         "Current Workflow State",
@@ -468,7 +503,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Logline",
                         "Path"});
-            table12.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "Low Level Term",
                         "Waiting Approval",
@@ -480,7 +515,7 @@ this.ScenarioSetup(scenarioInfo);
                         "SOC: Vascular disorders: 10047065; HLGT: Decreased and nonspecific blood pressure" +
                             " disorders and shock: 10011954; HLT: Circulatory collapse and shock: 10009193; P" +
                             "T: Dizziness postural: 10013578; LLT: Dizzy on standing: 10013581"});
-            table12.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "Low Level Term",
                         "Waiting Approval",
@@ -492,8 +527,8 @@ this.ScenarioSetup(scenarioInfo);
                         "SOC: Vascular disorders: 10047065; HLGT: Decreased and nonspecific blood pressure" +
                             " disorders and shock: 10011954; HLT: Circulatory collapse and shock: 10009193; P" +
                             "T: Dizziness postural: 10013578; LLT: Dizzy on standing: 10013581"});
-#line 101
- testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table12, "Then ");
+#line 111
+ testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table17, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -511,33 +546,40 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_197264_006",
                         "Release2015.3.2"});
-#line 110
+#line 120
 this.ScenarioSetup(scenarioInfo);
-#line 111
+#line 121
  testRunner.Given("a \"Waiting Approval\" Coder setup for a non-production study with no tasks and no " +
                     "synonyms and dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 112
- testRunner.And("coding task \"Adverse Event Term 2\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table18.AddRow(new string[] {
+                        "Adverse Event Term 2",
+                        "LLT"});
+#line 122
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table18, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Operator",
                         "Attribute",
                         "Text"});
-            table13.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Has",
                         "System Organ Class",
                         "Vascular disorders"});
-#line 113
+#line 125
  testRunner.When("task \"Adverse Event Term 2\" is coded to term \"Dizzy on standing\" at search level " +
-                    "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table13, "When ");
-#line 116
+                    "\"Low Level Term\" with code \"10013581\" at level \"LLT\" and higher level terms", ((string)(null)), table19, "When ");
+#line 128
  testRunner.And("searching for the verbatim \"Adverse Event Term 2\" in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
+#line 129
  testRunner.And("searching for auto coded items in Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
+#line 130
  testRunner.And("exporting all columns in the Coding Decisions Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Study Name",
                         "Verbatim Term",
                         "Dictionary Level",
@@ -548,7 +590,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Priority",
                         "Logline",
                         "Path"});
-            table14.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "<DevStudyName>",
                         "Adverse Event Term 2",
                         "Low Level Term",
@@ -561,8 +603,8 @@ this.ScenarioSetup(scenarioInfo);
                         "SOC: Vascular disorders: 10047065; HLGT: Decreased and nonspecific blood pressure" +
                             " disorders and shock: 10011954; HLT: Circulatory collapse and shock: 10009193; P" +
                             "T: Dizziness postural: 10013578; LLT: Dizzy on standing: 10013581"});
-#line 119
- testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table14, "Then ");
+#line 131
+ testRunner.Then("the Coding Decisions Report should contain the following", ((string)(null)), table20, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

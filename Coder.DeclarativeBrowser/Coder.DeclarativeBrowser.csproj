@@ -128,6 +128,9 @@
 	  <Reference Include="WebDriver.Support, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
        <HintPath>..\packages\Selenium.Support.2.48.0\lib\net40\WebDriver.Support.dll</HintPath>
        <Private>True</Private>
+    <Reference Include="WebDriver.Support, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.2.48.0\lib\net40\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -227,6 +230,7 @@
     <Compile Include="PageObjects\Rave\RaveArchitectCRFDraftPage.cs" />
     <Compile Include="PageObjects\Rave\RaveArchitectExecuteAmendmentMigrationPlanPage.cs" />
     <Compile Include="PageObjects\Rave\DataListingReportPage.cs" />
+	<Compile Include="PageObjects\Rave\RaveArchitectFormPage.cs" />
     <Compile Include="PageObjects\Rave\RaveConfigurationOtherSettingsCoderPage.cs" />
     <Compile Include="PageObjects\Rave\RaveClinicalViewsPage.cs" />
     <Compile Include="PageObjects\Rave\RaveClinicalViewSettingsPage.cs" />
@@ -311,7 +315,6 @@
     <Compile Include="PageObjects\Rave\RaveArchitectUploadDraftPage.cs" />
     <Compile Include="PageObjects\Rave\RaveAuditsPage.cs" />
     <Compile Include="PageObjects\Rave\RaveCoderConfigurationPage.cs" />
-    <Compile Include="PageObjects\Rave\RaveArchitectFormPage.cs" />
     <Compile Include="PageObjects\Rave\RaveArchitectFormsPage.cs" />
     <Compile Include="PageObjects\Rave\RaveHeader.cs" />
     <Compile Include="PageObjects\Rave\RaveHomePage.cs" />

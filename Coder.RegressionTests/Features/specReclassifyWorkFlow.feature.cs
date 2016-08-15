@@ -92,14 +92,21 @@ this.ScenarioSetup(scenarioInfo);
 #line 17
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table1.AddRow(new string[] {
+                        "Heart Burn",
+                        "LLT"});
 #line 18
- testRunner.And("coding task \"Heart Burn\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
+#line 21
  testRunner.When("task \"Heart Burn\" is coded to term \"Reflux gastritis\" at search level \"Low Level " +
                     "Term\" with code \"10057969\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
+#line 22
  testRunner.And("reclassifying task \"Heart Burn\" with Include Autocoded Items set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 21
+#line 23
  testRunner.Then("the synonym for verbatim \"HEART BURN\" and code \"10057969\" should be active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -118,21 +125,28 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_168609_02",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 28
+#line 30
 this.ScenarioSetup(scenarioInfo);
-#line 29
+#line 31
     testRunner.Given("a \"Basic\" Coder setup with registered synonym list \"MedDRA ENG 15.0 Clear_Match\" " +
                     "containing entry \"HEADACHE|10019211|LLT|LLT:10019211;PT:10019211;HLT:10019233;HL" +
                     "GT:10019231;SOC:10029205|True|AE.AECAT:OTHER|Approved|Headache\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 30
- testRunner.And("coding task \"Heart Burn\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table2.AddRow(new string[] {
+                        "Heart Burn",
+                        "LLT"});
+#line 32
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table2, "When ");
+#line 35
  testRunner.When("task \"Heart Burn\" is coded to term \"Reflux gastritis\" at search level \"Low Level " +
                     "Term\" with code \"10057969\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 32
+#line 36
  testRunner.And("reclassifying and retiring synonym task \"Heart Burn\" with Include Autocoded Items" +
                     " set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
+#line 37
  testRunner.Then("the synonym for verbatim \"HEART BURN\" and code \"10057969\" should not exist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -151,21 +165,28 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_168609_03",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 39
+#line 43
 this.ScenarioSetup(scenarioInfo);
-#line 40
+#line 44
  testRunner.Given("a \"Reconsider\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA E" +
                     "NG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 41
- testRunner.And("coding task \"Heart Burn\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 42
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table3.AddRow(new string[] {
+                        "Heart Burn",
+                        "LLT"});
+#line 45
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table3, "When ");
+#line 48
  testRunner.When("task \"Heart Burn\" is coded to term \"Reflux gastritis\" at search level \"Low Level " +
                     "Term\" with code \"10057969\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 43
+#line 49
  testRunner.And("reclassifying task \"Heart Burn\" with Include Autocoded Items set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
+#line 50
  testRunner.And("rejecting coding decision for the task \"Heart Burn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 45
+#line 51
  testRunner.Then("the task \"Heart Burn\" should have a status of \"Waiting Manual Code\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -184,21 +205,28 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_168609_04",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 52
+#line 58
 this.ScenarioSetup(scenarioInfo);
-#line 53
+#line 59
  testRunner.Given("a \"Reconsider\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA E" +
                     "NG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 54
- testRunner.And("coding task \"Heart Burn\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table4.AddRow(new string[] {
+                        "Heart Burn",
+                        "LLT"});
+#line 60
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table4, "When ");
+#line 63
  testRunner.When("task \"Heart Burn\" is coded to term \"Reflux gastritis\" at search level \"Low Level " +
                     "Term\" with code \"10057969\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 56
+#line 64
  testRunner.And("reclassifying task \"Heart Burn\" with Include Autocoded Items set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
+#line 65
  testRunner.And("rejecting coding decision for the task \"Heart Burn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
+#line 66
  testRunner.Then("the task \"Heart Burn\" should have a status of \"Waiting Manual Code\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -217,32 +245,32 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_168609_05",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 65
+#line 73
 this.ScenarioSetup(scenarioInfo);
-#line 66
+#line 74
  testRunner.Given("a \"Reconsider\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA E" +
                     "NG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Dictionary Level"});
-            table1.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Heart Burn",
                         "LLT"});
-            table1.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Heart Burn",
                         "LLT"});
-#line 67
- testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
-#line 71
+#line 75
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table5, "When ");
+#line 79
  testRunner.And("task \"Heart Burn\" is coded to term \"Reflux gastritis\" at search level \"Low Level " +
                     "Term\" with code \"10057969\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
+#line 80
  testRunner.And("approving task \"HEART BURN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
+#line 81
  testRunner.And("reclassifying group for the task \"HEART BURN\" with Include Autocoded Items set to" +
                     " \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
+#line 82
  testRunner.Then("the task \"Heart Burn\" should have a status of \"Reconsider\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -261,31 +289,31 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_168609_06",
                         "Release2015.3.0",
                         "IncreaseTimeout_300000"});
-#line 80
+#line 88
 this.ScenarioSetup(scenarioInfo);
-#line 81
+#line 89
  testRunner.Given("a \"Basic\" Coder setup with registered synonym list \"MedDRA ENG 15.0 Clear_Match\" " +
                     "containing entry \"HEADACHE|10019211|LLT|LLT:10019211;PT:10019211;HLT:10019233;HL" +
                     "GT:10019231;SOC:10029205|True|AE.AECAT:OTHER|Approved|Headache\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Dictionary Level"});
-            table2.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Heart Burn",
                         "LLT"});
-            table2.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Heart Burn",
                         "LLT"});
-#line 82
- testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table2, "When ");
-#line 86
+#line 90
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table6, "When ");
+#line 94
  testRunner.And("task \"Heart Burn\" is coded to term \"Reflux gastritis\" at search level \"Low Level " +
                     "Term\" with code \"10057969\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
+#line 95
  testRunner.And("reclassifying and retiring group for the task \"HEART BURN\" with Include Autocoded" +
                     " Items set to \"True\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
+#line 96
  testRunner.Then("the synonym for verbatim \"HEART BURN\" and code \"10057969\" should not exist", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -306,28 +334,28 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_193388_002",
                         "Release2015.3.0",
                         "IncreaseTimeout_600000"});
-#line 94
+#line 102
 this.ScenarioSetup(scenarioInfo);
-#line 96
+#line 104
     testRunner.Given("a \"Basic\" Coder setup with registered synonym list \"MedDRA ENG 14.0 Empty_List\" c" +
                     "ontaining entry \"\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 97
+#line 105
     testRunner.And("an activated synonym list \"MedDRA ENG 15.0 New_Primary_List\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
+#line 106
     testRunner.When("the following externally managed verbatim requests are made \"Tasks_1000_MedDRA_Ma" +
                     "tch_Upload.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 99
+#line 107
     testRunner.When("performing study migration without waiting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 100
+#line 108
     testRunner.Then("reclassification of coding task \"ABRASIONS\" cannot occur while the study migratio" +
                     "n is in progress", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 101
+#line 109
     testRunner.And("study migration is complete for the latest version", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
+#line 110
     testRunner.When("reclassifying task \"ABRASIONS\" with comment \"Reclassified After Study Migration\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 103
+#line 111
     testRunner.And("I view task \"ABRASIONS\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
+#line 112
     testRunner.Then("the task \"ABRASIONS\" should have a status of \"Waiting Manual Code\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

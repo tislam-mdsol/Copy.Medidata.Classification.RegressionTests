@@ -25,7 +25,9 @@ Scenario Outline: Autocoding will adhere to cross level synonyms created through
 	And a synonym list upload with the following synonyms
 		| Verbatim   | Code   | Level       | Path   | Primary Flag  | Supplemental Info | Status   |
 		| <Verbatim> | <Code> | <TaskLevel> | <Path> | <PrimaryFlag> | <SuppInfo>        | <Status> |
-	And coding task "<Verbatim>" for dictionary level "<TaskLevel>"
+    When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | <Verbatim>    | <Task Level>     |
 	Then task "<Verbatim>" should have the following Coding history selected term path information is displayed in row "1"
 		| Level       | Term Path  | Code   |
 		| <TermLevel> | <TermDesc> | <Code> |

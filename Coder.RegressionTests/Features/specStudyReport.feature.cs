@@ -303,69 +303,76 @@ this.ScenarioSetup(scenarioInfo);
 #line 79
     testRunner.Given("a \"Approval\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG" +
                     " 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table5.AddRow(new string[] {
+                        "Congestion",
+                        "LLT"});
 #line 80
- testRunner.And("coding task \"Congestion\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table5, "When ");
+#line 83
  testRunner.When("task \"Congestion\" is coded to term \"Congestion nasal\" at search level \"Low Level " +
                     "Term\" with code \"10010676\" at level \"LLT\" and a synonym is created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Status",
                         "Count"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Completed Count",
                         "0"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Not Coded Count",
                         "0"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Coded Not Completed Count",
                         "1"});
-            table5.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "With Open Query Count",
                         "0"});
-#line 82
- testRunner.Then("the study report task status count information should have the following", ((string)(null)), table5, "Then ");
+#line 84
+ testRunner.Then("the study report task status count information should have the following", ((string)(null)), table6, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
                         "Status",
                         "Batch"});
-            table6.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Congestion",
                         "Coded But Not Completed",
                         "MedDRA Batch 1"});
-#line 88
+#line 90
  testRunner.And("the study report task detail information for a study with task category Coded Not" +
-                    " Completed should have the following", ((string)(null)), table6, "And ");
+                    " Completed should have the following", ((string)(null)), table7, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level",
                         "Code",
                         "TermPath"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "LLT",
                         "10010676",
                         "Congestion nasal"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "PT",
                         "10028735",
                         "Nasal congestion"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "HLT",
                         "10028736",
                         "Nasal congestion and inflammations"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "HLGT",
                         "10046304",
                         "Upper respiratory tract disorders (excl infections)"});
-            table7.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "SOC",
                         "10038738",
                         "Respiratory, thoracic and mediastinal disorders"});
-#line 91
+#line 93
  testRunner.And("the study coding path for a task within category Coded Not Completed should have " +
-                    "the following", ((string)(null)), table7, "And ");
+                    "the following", ((string)(null)), table8, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -383,45 +390,45 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.0",
                         "PBMCC_185572_006",
                         "IncreaseTimeout"});
-#line 104
+#line 106
 this.ScenarioSetup(scenarioInfo);
-#line 105
+#line 107
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 106
+#line 108
     testRunner.When("the query for new task \"HEADACHES\" with comment \"Severity?\" is \"Open\" with respon" +
                     "se \"Acute\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Status",
                         "Count"});
-            table8.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "Completed Count",
                         "0"});
-            table8.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "Not Coded Count",
                         "1"});
-            table8.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "Coded Not Completed Count",
                         "0"});
-            table8.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "With Open Query Count",
                         "1"});
-#line 107
- testRunner.Then("the study report task status count information should have the following", ((string)(null)), table8, "Then ");
+#line 109
+ testRunner.Then("the study report task status count information should have the following", ((string)(null)), table9, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
                         "Status",
                         "Batch"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "HEADACHES",
                         "With Open Query",
                         "MedDRA Batch 1"});
-#line 113
+#line 115
  testRunner.And("the study report task detail information for a study with task category With Open" +
-                    " Query should have the following", ((string)(null)), table9, "And ");
-#line 116
+                    " Query should have the following", ((string)(null)), table10, "And ");
+#line 118
  testRunner.And("the study coding path for a task within category With Open Query should be empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -442,71 +449,71 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.0",
                         "PBMCC_185572_007",
                         "IncreaseTimeout"});
-#line 124
+#line 126
 this.ScenarioSetup(scenarioInfo);
-#line 125
+#line 127
     testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 126
+#line 128
  testRunner.When("the following externally managed verbatim requests are made \"Tasks_2_CodeAndNext." +
                     "json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
                         "SearchText",
                         "SearchLevel",
                         "Code",
                         "Level",
                         "CreateSynonym"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Heart Burn",
                         "Reflux gastritis",
                         "Low Level Term",
                         "10057969",
                         "LLT",
                         "False"});
-#line 127
- testRunner.And("a browse and code for task \"Heart Burn\" is performed", ((string)(null)), table10, "And ");
+#line 129
+ testRunner.And("a browse and code for task \"Heart Burn\" is performed", ((string)(null)), table11, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",
                         "Status",
                         "Batch"});
-            table11.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "Heart Burn",
                         "Completed",
                         "MedDRA Batch 1"});
-#line 130
+#line 132
  testRunner.Then("the study report task detail information for a study with task category Completed" +
-                    " should have the following", ((string)(null)), table11, "Then ");
+                    " should have the following", ((string)(null)), table12, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level",
                         "Code",
                         "TermPath"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "LLT",
                         "10057969",
                         "Reflux gastritis"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "PT",
                         "10057969",
                         "Reflux gastritis"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "HLT",
                         "10017854",
                         "Gastritis (excl infective)"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "HLGT",
                         "1017969",
                         "Gastrointestinal inflammatory conditions"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "SOC",
                         "10017947",
                         "Gastrointestinal disorders"});
-#line 133
+#line 135
  testRunner.And("the study coding path for a task within category Completed should have the follow" +
-                    "ing", ((string)(null)), table12, "And ");
+                    "ing", ((string)(null)), table13, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
