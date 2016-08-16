@@ -8,6 +8,8 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 {
     public static class StringExtensions
     {
+        private static Random _Random;
+
         public static string WrapStringWithQuotes(this string value)
         {
             if (String.IsNullOrEmpty(value)) throw new ArgumentNullException("value"); 
@@ -373,13 +375,22 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
         public static string GetFirstSectionAppendedWithRandomNumbers(this Guid guid)
         {
-            Random rnd = new Random();
-            var randomSuffix = rnd.Next(1000, 10000).ToString();
+            if (String.IsNullOrWhiteSpace(guid.ToString()))
+            {
+                throw new ArgumentException("Guid extension called with empty value");
+            }
 
-            var guidString = guid.ToString();
-            var suffix = guidString.Substring(0, guidString.IndexOf('-')) + randomSuffix;
+            if (ReferenceEquals(_Random, null))
+            {
+                _Random = new Random();
+            }
 
-            return suffix;
+            var randomSuffix          = _Random.Next(1000, 10000).ToString();
+            var paddedSuffix          = randomSuffix.PadLeft(5, '0');
+            var firstGuidSection      = guid.ToString();
+            var guidSectionWithRandom = String.Concat(firstGuidSection.Substring(0, firstGuidSection.IndexOf('-')), paddedSuffix);
+
+            return guidSectionWithRandom;
         }
 
         public static string GetRaveSearchText(this string raveObjectName)

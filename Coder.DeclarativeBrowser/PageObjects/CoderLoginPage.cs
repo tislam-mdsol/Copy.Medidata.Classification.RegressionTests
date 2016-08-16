@@ -19,27 +19,19 @@ namespace Coder.DeclarativeBrowser.PageObjects
             _Browser = session;
         }
 
-        private IEnumerable<SessionElementScope> GetUserNameList()
-        {
-            var logins = _Browser.FindAllSessionElementsByXPath("//div[@class='master-content']/input[@type='radio']");
-
-            return logins.Reverse();
-        }
-
         private SessionElementScope GetUserNameInput(string userName)
         {
             if (String.IsNullOrWhiteSpace(userName)) throw new ArgumentNullException("userName");
 
-            var logins = GetUserNameList();
-            var login = logins.FirstOrDefault(x => x.GetAttribute("value").Equals(userName));
+            var loginInput = _Browser.FindSessionElementByXPath($"//input[@type='radio' and @value='{userName}']");
 
-            if (ReferenceEquals(login, null))
+            if (!loginInput.Exists())
             {
                 _Browser.Refresh();
                 throw new MissingHtmlException(String.Format("No login option found for {0}", userName));
             }
 
-            return login;
+            return loginInput;
         }
 
         private SessionElementScope GetLoginButton()
@@ -53,13 +45,11 @@ namespace Coder.DeclarativeBrowser.PageObjects
         {
             if (String.IsNullOrWhiteSpace(userName)) throw new ArgumentNullException("userName");
 
+            var loginSelect = RetryPolicy.FindElementShort.Execute(() => GetUserNameInput(userName));
 
-            var loginSelect = RetryPolicy.FindElementShort.Execute(
-                () => GetUserNameInput(userName));
             loginSelect.Click();
 
-            var loginButton = GetLoginButton();
-            loginButton.Click();
+            GetLoginButton().Click();
         }
     }
 }

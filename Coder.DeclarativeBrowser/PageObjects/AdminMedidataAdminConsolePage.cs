@@ -48,13 +48,13 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             GoTo();
 
-            GetDictionaryDDL().SelectOptionAlphanumericOnly(dictionary);
-            GetSegmentsDDL().SelectOptionAlphanumericOnly(segment);
+            GetDictionaryDDL()                 .SelectOptionAlphanumericOnly(dictionary);
+            GetSegmentsDDL()                   .SelectOptionAlphanumericOnly(segment);
             GetNewDictionaryLicensePlusButton().Click();
-            GetLicenseCodeTextBox().FillInWith(Guid.NewGuid().GetFirstSectionAppendedWithRandomNumbers());
-            GetLicenseStartDDL().FillInWith(DateTime.Today.Date.AddYears(-10).ToShortDateString());
-            GetLicenseEndDDL().FillInWith(DateTime.Today.Date.AddYears(10).ToShortDateString());
-            GetEdittingRowCheckMarkButton().Click();
+            GetLicenseCodeTextBox()            .FillInWith(Guid.NewGuid().GetFirstSectionAppendedWithRandomNumbers());
+            GetLicenseStartDDL()               .FillInWith(DateTime.Today.Date.AddYears(-10).ToShortDateString());
+            GetLicenseEndDDL()                 .FillInWith(DateTime.Today.Date.AddYears(10).ToShortDateString());
+            GetEdittingRowCheckMarkButton()    .Click();
         }
 
         private SessionElementScope GetSegmentsDDL()
