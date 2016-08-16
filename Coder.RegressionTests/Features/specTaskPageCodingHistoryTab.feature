@@ -23,7 +23,9 @@ _ The following environment configuration settings were enabled:
 Scenario: The following will show Coding history of a Waiting Approval task with information on User, Action, Status, Verbatim Term, Comment, and TimeStamp
 
   Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0"
-  And coding task "BURN" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | Burn          | LLT              |
   When I view task "BURN"  
   Then I verify the following Coding History information is displayed
 		| User         | Action          | Status           | Verbatim Term | Comment                                                                                                                |
@@ -36,7 +38,9 @@ Scenario: The following will show Coding history of a Waiting Approval task with
 Scenario: The following will show Term Path Coding history of a task with a coding decision that is shown expanded
 
   Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0"
-  And coding task "BURN" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | Burn          | LLT              |
   When I view task "BURN"
   Then I verify the following Coding history term full path information is displayed in row "1"
 		| Level | Term Path                                                | Code     |
@@ -52,7 +56,9 @@ Scenario: The following will show Term Path Coding history of a task with a codi
 Scenario: The following will show Term Path Coding history of a task with a coding decision that is contracted
 
   Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0"
-  And coding task "BURN" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | Burn          | LLT              |
   When I view task "BURN"
   Then I verify the following Coding history selected term path information is displayed in row "1"
 		| Level | Term Path      | Code     |
@@ -64,7 +70,9 @@ Scenario: The following will show Term Path Coding history of a task with a codi
 Scenario: The following will show Coding history of an Approved and Reconsidered task.
 
   Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0"
-  And coding task "BURN" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | Burn          | LLT              |
   When approving task "BURN"
   And reclassifying task "BURN" with a comment "Test Automation Comment" and Include Autocoded Items set to "True"
   And I view task "BURN"
@@ -81,7 +89,9 @@ Scenario: The following will show Coding history of an Approved and Reconsidered
 @PBMCC_163324_005
 Scenario: The following will show Coding history of ReCoded task.
   Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0"
-  And coding task "BURN" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | Burn          | LLT              |
   When I recode task "BURN" with comment "Recode comment."
   And I view task "BURN"
   Then I verify the following Coding History information is displayed
@@ -96,7 +106,9 @@ Scenario: The following will show Coding history of ReCoded task.
 @PBMCC_163324_006
 Scenario: The following will show Coding history of a term that was completed without transmission, this applies to Manage External Verbatims
   Given a "Reconsider" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0"
-  And coding task "ANGIO-EDEMA" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | ANGIO-EDEMA   | LLT              |
   When reclassifying task "ANGIO-EDEMA" with a comment "Test Automation Comment" and Include Autocoded Items set to "True"
   And I view task "ANGIO-EDEMA"
   Then I verify the following Coding History information is displayed
@@ -113,7 +125,9 @@ Scenario: The following will show Coding history of a term that was completed wi
 @PBMCC_163324_007
 Scenario: The following will show Coding history of a term that has been manually coded
   Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "WhoDrugDDEB2 ENG 200703"
-  And coding task "ASPORIZ3" for dictionary level "PRODUCT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | ASPORIZ3      | PRODUCT          |
   When task "ASPORIZ3" is coded to term "ASPIRIN PLUS C" at search level "Preferred Name" with code "003467 01 001" at level "PN" and a synonym is created
   And I view task "ASPORIZ3"
   Then I verify the following Coding History information is displayed
@@ -128,7 +142,9 @@ Scenario: The following will show Coding history of a term that has been manuall
 @PBMCC_163324_008
 Scenario: The following will show Coding history of a term that has been transmitted
   Given a "Completed Reconsider" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0"
-  And coding task "ANGIONEUROTIC OEDEMA AGGRAVATED" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term                   | Dictionary Level |
+      | ANGIONEUROTIC OEDEMA AGGRAVATED | LLT              |
   When reclassifying task "ANGIONEUROTIC OEDEMA AGGRAVATED" with a comment "Test Automation Comment" and Include Autocoded Items set to "True"
   And I view task "ANGIONEUROTIC OEDEMA AGGRAVATED"
   Then I verify the following Coding History information is displayed
@@ -144,7 +160,9 @@ Scenario: The following will show Coding history of a term that has been transmi
 @PBMCC_163324_009
 Scenario: The following will show Coding history of a term that has been Auto Approved and reclassified with Bypass Reconsider Upon Reclassify turned on
   Given a "No Approval" Coder setup with no tasks and no synonyms and dictionary "WhoDrugDDEB2 ENG 200703"
-  And coding task "amethadone" for dictionary level "PRODUCT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | amethadone    | PRODUCT          |
   When task "amethadone" is coded to term "methadone" at search level "Preferred Name" with code "000689 01 001" at level "PN" and a synonym is created
   And reclassifying task "amethadone" with a comment "Test Automation Comment" and Include Autocoded Items set to "True"
   And I view task "amethadone"
@@ -162,7 +180,9 @@ Scenario: The following will show Coding history of a term that has been Auto Ap
 @PBMCC_163324_010
 Scenario: The following will show Coding history of a term that has a status of waiting approval where an option of adding a comment is allowed
   Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "WhoDrugDDEB2 ENG 200703"
-  And coding task "ARMILLARISIN A" for dictionary level "PRODUCT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term  | Dictionary Level |
+      | ARMILLARISIN A | PRODUCT          |
   When a user adds a comment "Adding a comment!" for task "ARMILLARISIN A"
   Then the Coding History contains following information
 		| User   | Action      | Status           | Verbatim Term  | Comment           | Time Stamp  |
@@ -173,7 +193,9 @@ Scenario: The following will show Coding history of a term that has a status of 
 @PBMCC_163324_011
 Scenario: The following will show Coding history of a term that has a status of waiting manual code where an option of adding a comment is allowed
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "WhoDrugDDEB2 ENG 200703"
-  And coding task "METH-" for dictionary level "PRODUCT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | METH-         | PRODUCT          |
   When a user adds a comment "Adding a comment!" for task "METH-"
   Then the Coding History contains following information
 		| User   | Action      | Status              | Verbatim Term | Comment           | Time Stamp  |
@@ -184,7 +206,9 @@ Scenario: The following will show Coding history of a term that has a status of 
 @PBMCC_163324_012
 Scenario: The following will show Coding history of a term that has a status of reconsider where an option of adding a comment is allowed
   Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "WhoDrugDDEB2 ENG 200703"
-  And coding task "ARMILLARISIN A" for dictionary level "PRODUCT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term  | Dictionary Level |
+      | ARMILLARISIN A | PRODUCT          |
   And approve and reclassify task "ARMILLARISIN A" with Include Autocoded Items set to "True"
   When a user adds a comment "Adding a comment!" for task "ARMILLARISIN A"
   Then the Coding History contains following information

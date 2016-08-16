@@ -217,29 +217,36 @@ this.ScenarioSetup(scenarioInfo);
 #line 60
    testRunner.Given("a \"No Enforced Primary Path\" Coder setup with no tasks and no synonyms and dictio" +
                     "nary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table2.AddRow(new string[] {
+                        "Adverse Event 1",
+                        "LLT"});
 #line 61
-   testRunner.And("coding task \"Adverse Event 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 62
-   testRunner.When("a browse and code for task \"Adverse Event 1\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 63
-   testRunner.And("including non primary paths in the dictionary search criteria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table2, "When ");
 #line 64
+   testRunner.When("a browse and code for task \"Adverse Event 1\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 65
+   testRunner.And("including non primary paths in the dictionary search criteria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
    testRunner.And("the browse and code search is done for \"Heart attack\" against \"Text\" at Level \"Lo" +
                     "w Level Term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
+#line 67
    testRunner.And("selecting the primary path \"false\" dictionary result for term \"Heart attack\" code" +
                     " \"10019250\" level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Heart attack",
                         "10019250",
                         "LLT"});
-#line 66
-   testRunner.Then("the task should be able to be coded to the following terms", ((string)(null)), table2, "Then ");
+#line 68
+   testRunner.Then("the task should be able to be coded to the following terms", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -259,32 +266,39 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC166013_09",
                         "Release2015.3.0",
                         "IncreaseTimeout_360000"});
-#line 75
+#line 77
 this.ScenarioSetup(scenarioInfo);
-#line 76
+#line 78
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 77
-   testRunner.And("coding task \"Adverse Event 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
-   testRunner.When("a browse and code for task \"Adverse Event 1\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table4.AddRow(new string[] {
+                        "Adverse Event 1",
+                        "LLT"});
 #line 79
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table4, "When ");
+#line 82
+   testRunner.When("a browse and code for task \"Adverse Event 1\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 83
    testRunner.And("the browse and code search is done for \"Heart attack\" against \"Text\" at Level \"Lo" +
                     "w Level Term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
+#line 84
    testRunner.And("selecting the primary path \"false\" dictionary result for term \"Heart attack\" code" +
                     " \"10019250\" level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level"});
-            table3.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Heart attack",
                         "10019250",
                         "LLT"});
-#line 81
-   testRunner.Then("the task should not be able to be coded to the following terms", ((string)(null)), table3, "Then ");
+#line 85
+   testRunner.Then("the task should not be able to be coded to the following terms", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -304,34 +318,41 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC166013_10",
                         "Release2015.3.0",
                         "IncreaseTimeout_360000"});
-#line 89
+#line 93
 this.ScenarioSetup(scenarioInfo);
-#line 90
+#line 94
    testRunner.Given("a \"No Enforced Primary Path\" Coder setup with no tasks and no synonyms and dictio" +
                     "nary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 91
-   testRunner.And("coding task \"Adverse Event 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table6.AddRow(new string[] {
+                        "Adverse Event 1",
+                        "LLT"});
+#line 95
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table6, "When ");
+#line 98
    testRunner.When("a browse and code for task \"Adverse Event 1\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 93
+#line 99
    testRunner.And("including non primary paths in the dictionary search criteria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
+#line 100
    testRunner.And("the browse and code search is done for \"Heart attack\" against \"Text\" at Level \"Lo" +
                     "w Level Term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 95
+#line 101
    testRunner.And("selecting the primary path \"true\" dictionary result for term \"Heart attack\" code " +
                     "\"10019250\" level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level"});
-            table4.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Heart attack",
                         "10019250",
                         "LLT"});
-#line 96
-   testRunner.Then("the task should be able to be coded to the following terms", ((string)(null)), table4, "Then ");
+#line 102
+   testRunner.Then("the task should be able to be coded to the following terms", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -351,32 +372,39 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC166013_11",
                         "Release2015.3.0",
                         "IncreaseTimeout_360000"});
-#line 105
+#line 111
 this.ScenarioSetup(scenarioInfo);
-#line 106
+#line 112
    testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 107
-   testRunner.And("coding task \"Adverse Event 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 108
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table8.AddRow(new string[] {
+                        "Adverse Event 1",
+                        "LLT"});
+#line 113
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table8, "When ");
+#line 116
    testRunner.When("a browse and code for task \"Adverse Event 1\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 109
+#line 117
    testRunner.And("the browse and code search is done for \"Heart attack\" against \"Text\" at Level \"Lo" +
                     "w Level Term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 110
+#line 118
    testRunner.And("selecting the primary path \"true\" dictionary result for term \"Heart attack\" code " +
                     "\"10019250\" level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level"});
-            table5.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "Heart attack",
                         "10019250",
                         "LLT"});
-#line 111
-   testRunner.Then("the task should be able to be coded to the following terms", ((string)(null)), table5, "Then ");
+#line 119
+   testRunner.Then("the task should be able to be coded to the following terms", ((string)(null)), table9, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -394,14 +422,21 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC166013_12",
                         "Release2015.3.0"});
-#line 118
+#line 126
 this.ScenarioSetup(scenarioInfo);
-#line 119
+#line 127
    testRunner.Given("a \"No Enforced Primary Path\" Coder setup with no tasks and no synonyms and dictio" +
                     "nary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 120
-   testRunner.And("coding task \"Heart Attack\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 121
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table10.AddRow(new string[] {
+                        "Heart Attack",
+                        "LLT"});
+#line 128
+   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table10, "When ");
+#line 131
    testRunner.Then("the task \"Heart Attack\" should have a status of \"Waiting Manual Code\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

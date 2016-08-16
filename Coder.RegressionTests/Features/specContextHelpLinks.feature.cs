@@ -74,9 +74,16 @@ namespace Coder.RegressionTests.Features
 #line 7
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table1.AddRow(new string[] {
+                        "Heart Burn",
+                        "LLT"});
 #line 8
-    testRunner.And("coding task \"Heart Burn\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
+#line 11
  testRunner.When("I view task \"Heart Burn\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
         }
@@ -92,13 +99,13 @@ namespace Coder.RegressionTests.Features
                         "VAL",
                         "PBMCC177489_01",
                         "Release2015.3.0"});
-#line 14
+#line 16
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 15
+#line 17
  testRunner.When("accessing \"Source Terms\" help information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 16
+#line 18
     testRunner.Then("the context help header should be \"Viewing Coder Transaction Details on the Tasks" +
                     " Page\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -116,13 +123,13 @@ this.FeatureBackground();
                         "VAL",
                         "PBMCC177489_02",
                         "Release2015.3.0"});
-#line 21
+#line 23
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 22
+#line 24
  testRunner.When("accessing \"Properties\" help information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
+#line 25
     testRunner.Then("the context help header should be \"Viewing Coder Transaction Details on the Tasks" +
                     " Page\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -140,13 +147,13 @@ this.FeatureBackground();
                         "VAL",
                         "PBMCC177489_03",
                         "Release2015.3.0"});
-#line 28
+#line 30
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 29
+#line 31
  testRunner.When("accessing \"Assignments\" help information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 30
+#line 32
     testRunner.Then("the context help header should be \"Viewing Coder Transaction Details on the Tasks" +
                     " Page\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -164,13 +171,13 @@ this.FeatureBackground();
                         "VAL",
                         "PBMCC177489_04",
                         "Release2015.3.0"});
-#line 35
+#line 37
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 36
+#line 38
  testRunner.When("accessing \"Coding History\" help information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 37
+#line 39
     testRunner.Then("the context help header should be \"Viewing Coder Transaction Details on the Tasks" +
                     " Page\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -188,13 +195,13 @@ this.FeatureBackground();
                         "VAL",
                         "PBMCC177489_05",
                         "Release2015.3.0"});
-#line 42
+#line 44
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 43
+#line 45
  testRunner.When("accessing \"Query History\" help information", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 44
+#line 46
     testRunner.Then("the context help header should be \"Viewing Coder Transaction Details on the Tasks" +
                     " Page\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

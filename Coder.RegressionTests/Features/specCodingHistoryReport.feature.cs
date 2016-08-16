@@ -84,16 +84,23 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 10
- testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
- testRunner.When("searching for the verbatim \"Adverse Event Term 1\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 12
- testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 13
- testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table1.AddRow(new string[] {
+                        "Adverse Event Term 1",
+                        "LLT"});
+#line 10
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table1, "When ");
+#line 13
+ testRunner.When("searching for the verbatim \"Adverse Event Term 1\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Term",
@@ -103,7 +110,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Action",
                         "System Action",
                         "Comment"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "System User",
                         "",
@@ -114,7 +121,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=true,IsAuto" +
                             "Approval=true,IsBypassTransmit=True]"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "System User",
                         "",
@@ -124,8 +131,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Start Auto Code",
                         "",
                         ""});
-#line 14
- testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table1, "Then ");
+#line 16
+ testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -141,23 +148,30 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_37359_MCC_178485_002",
                         "Release2015.3.0"});
-#line 23
+#line 25
 this.ScenarioSetup(scenarioInfo);
-#line 24
+#line 26
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Wh" +
                     "oDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 25
- testRunner.And("coding task \"ASPIRIN PLUS C\" for dictionary level \"PRODUCT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 26
- testRunner.When("searching for the term \"ASPIRIN PLUS C\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table3.AddRow(new string[] {
+                        "ASPIRIN PLUS C",
+                        "PRODUCT"});
 #line 27
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table3, "When ");
+#line 30
+ testRunner.When("searching for the term \"ASPIRIN PLUS C\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 31
  testRunner.And("searching for the code \"003467 01 001\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
+#line 32
  testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
+#line 33
  testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Term",
@@ -167,7 +181,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Action",
                         "System Action",
                         "Comment"});
-            table2.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "ASPIRIN PLUS C",
                         "System User",
                         "",
@@ -178,7 +192,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=true,IsAuto" +
                             "Approval=false,IsBypassTransmit=True]"});
-            table2.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "ASPIRIN PLUS C",
                         "System User",
                         "ASPIRIN PLUS C",
@@ -190,8 +204,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Start Auto Code",
                         "Auto Coding",
                         "Auto coded by direct dictionary match"});
-#line 30
- testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table2, "Then ");
+#line 34
+ testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -207,21 +221,28 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_37359_MCC_178485_003",
                         "Release2015.3.0"});
-#line 39
+#line 43
 this.ScenarioSetup(scenarioInfo);
-#line 40
+#line 44
  testRunner.Given("a \"Waiting Approval\" Coder setup with no tasks and no synonyms and dictionary \"Wh" +
                     "oDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 41
- testRunner.And("coding task \"ASPIRIN PLUS C\" for dictionary level \"PRODUCT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 42
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table5.AddRow(new string[] {
+                        "ASPIRIN PLUS C",
+                        "PRODUCT"});
+#line 45
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table5, "When ");
+#line 48
  testRunner.When("searching for the term \"ASPIRIN PLUS C\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 43
+#line 49
  testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 44
+#line 50
  testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Term",
@@ -231,7 +252,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Action",
                         "System Action",
                         "Comment"});
-            table3.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "ASPIRIN PLUS C",
                         "System User",
                         "",
@@ -242,7 +263,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=true,IsAuto" +
                             "Approval=false,IsBypassTransmit=True]"});
-            table3.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "ASPIRIN PLUS C",
                         "System User",
                         "ASPIRIN PLUS C",
@@ -254,8 +275,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Start Auto Code",
                         "Auto Coding",
                         "Auto coded by direct dictionary match"});
-#line 45
- testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table3, "Then ");
+#line 51
+ testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -271,23 +292,30 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_37359_MCC_178485_004",
                         "Release2015.3.0"});
-#line 54
+#line 60
 this.ScenarioSetup(scenarioInfo);
-#line 55
+#line 61
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 56
- testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table7.AddRow(new string[] {
+                        "Adverse Event Term 1",
+                        "LLT"});
+#line 62
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table7, "When ");
+#line 65
  testRunner.When("searching for the verbatim \"Adverse Event Term 1\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 58
+#line 66
  testRunner.And("searching for the status \"Waiting Manual Code\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
+#line 67
  testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
+#line 68
  testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Term",
@@ -297,7 +325,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Action",
                         "System Action",
                         "Comment"});
-            table4.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "System User",
                         "",
@@ -308,7 +336,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=true,IsAuto" +
                             "Approval=true,IsBypassTransmit=True]"});
-            table4.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "System User",
                         "",
@@ -318,8 +346,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Start Auto Code",
                         "",
                         ""});
-#line 61
- testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table4, "Then ");
+#line 69
+ testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -335,24 +363,31 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_37359_MCC_178485_005",
                         "Release2015.3.0"});
-#line 70
+#line 78
 this.ScenarioSetup(scenarioInfo);
-#line 71
+#line 79
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 72
- testRunner.And("coding task \"Adverse Event Term 1\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table9.AddRow(new string[] {
+                        "Adverse Event Term 1",
+                        "LLT"});
+#line 80
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table9, "When ");
+#line 83
  testRunner.When("searching for the verbatim \"Adverse Event Term 1\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 74
+#line 84
  testRunner.And("searching for start date of \"01 Jan 2015\" and end date of \"01 Jan 2050\" in Coding" +
                     " History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
+#line 85
  testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
+#line 86
  testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Term",
@@ -362,7 +397,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Action",
                         "System Action",
                         "Comment"});
-            table5.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "System User",
                         "",
@@ -373,7 +408,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=true,IsAuto" +
                             "Approval=true,IsBypassTransmit=True]"});
-            table5.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "System User",
                         "",
@@ -383,8 +418,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Start Auto Code",
                         "",
                         ""});
-#line 77
- testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table5, "Then ");
+#line 87
+ testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -400,41 +435,41 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_37359_MCC_178485_006",
                         "Release2015.3.0"});
-#line 87
+#line 97
 this.ScenarioSetup(scenarioInfo);
-#line 88
+#line 98
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "Dictionary",
                         "Dictionary Level",
                         "Is Approval Required",
                         "Is Auto Approval",
                         "Locale"});
-            table6.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "MedDRA",
                         "LLT",
                         "TRUE",
                         "FALSE",
                         "eng"});
-            table6.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "MedDRA",
                         "LLT",
                         "TRUE",
                         "FALSE",
                         "eng"});
-#line 89
- testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table6, "When ");
-#line 93
+#line 99
+ testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table11, "When ");
+#line 103
  testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
+#line 104
  testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim Term",
                         "User",
                         "Term",
@@ -444,7 +479,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Action",
                         "System Action",
                         "Comment"});
-            table7.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "System User",
                         "",
@@ -455,7 +490,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "Workflow=DEFAULT,WorkflowVariables[IsApprovalRequired=TRUE,IsAutoApproval=FALSE,I" +
                             "sBypassTransmit=True,IsAutoCode=True]"});
-            table7.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "Adverse Event Term 1",
                         "System User",
                         "",
@@ -465,8 +500,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Start Auto Code",
                         "",
                         ""});
-#line 95
- testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table7, "Then ");
+#line 105
+ testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -482,21 +517,28 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_37359_MCC_178485_007",
                         "Release2015.3.0"});
-#line 104
+#line 114
 this.ScenarioSetup(scenarioInfo);
-#line 105
+#line 115
   testRunner.Given("a \"Basic\" Coder setup for a non-production study with no tasks and no synonyms an" +
                     "d dictionary \"MedDRA ENG 15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 106
-  testRunner.And("coding task \"Adverse Event Term 2\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 107
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table13.AddRow(new string[] {
+                        "Adverse Event Term 2",
+                        "LLT"});
+#line 116
+    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table13, "When ");
+#line 119
   testRunner.When("searching for the verbatim \"Adverse Event Term 2\" in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 108
+#line 120
   testRunner.And("searching for auto coded items in Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 109
+#line 121
   testRunner.And("exporting all columns in the Coding History Report", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Study",
                         "Verbatim Term",
                         "User",
@@ -507,7 +549,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Action",
                         "System Action",
                         "Comment"});
-            table8.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "<DevStudyName>",
                         "Adverse Event Term 2",
                         "System User",
@@ -519,7 +561,7 @@ this.ScenarioSetup(scenarioInfo);
                         "",
                         "Workflow=DEFAULT,WorkflowVariables[IsAutoCode=True,IsApprovalRequired=true,IsAuto" +
                             "Approval=true,IsBypassTransmit=True]"});
-            table8.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "<DevStudyName>",
                         "Adverse Event Term 2",
                         "System User",
@@ -530,8 +572,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Start Auto Code",
                         "",
                         ""});
-#line 110
-  testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table8, "Then ");
+#line 122
+  testRunner.Then("the Coding History Report should contain the following", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

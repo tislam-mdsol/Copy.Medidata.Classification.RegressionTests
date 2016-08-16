@@ -58,7 +58,9 @@ Scenario: Coder configuration "Coding Task Page Size Text field" allows user to 
 @IncreaseTimeout_360000
 Scenario: Coder allows users to code non-primary paths when "Force Primary Path Selection" is set to "False"
    Given a "No Enforced Primary Path" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-   And coding task "Adverse Event 1" for dictionary level "LLT"
+   When the following externally managed verbatim requests are made
+      | Verbatim Term   | Dictionary Level |
+      | Adverse Event 1 | LLT              |
    When a browse and code for task "Adverse Event 1" is performed
    And including non primary paths in the dictionary search criteria
    And the browse and code search is done for "Heart attack" against "Text" at Level "Low Level Term"
@@ -74,7 +76,9 @@ Scenario: Coder allows users to code non-primary paths when "Force Primary Path 
 #Bug: MCC-205296
 Scenario: Coder does not allow users to code non-primary paths when "Force Primary Path Selection" is set to "True" 
    Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-   And coding task "Adverse Event 1" for dictionary level "LLT"
+   When the following externally managed verbatim requests are made
+      | Verbatim Term   | Dictionary Level |
+      | Adverse Event 1 | LLT              |
    When a browse and code for task "Adverse Event 1" is performed
    And the browse and code search is done for "Heart attack" against "Text" at Level "Low Level Term"
    And selecting the primary path "false" dictionary result for term "Heart attack" code "10019250" level "LLT"
@@ -88,7 +92,9 @@ Scenario: Coder does not allow users to code non-primary paths when "Force Prima
 @IncreaseTimeout_360000
 Scenario: Coder allows users to code primary paths when "Force Primary Path Selection" is set to "False"
    Given a "No Enforced Primary Path" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-   And coding task "Adverse Event 1" for dictionary level "LLT"
+   When the following externally managed verbatim requests are made
+      | Verbatim Term   | Dictionary Level |
+      | Adverse Event 1 | LLT              |
    When a browse and code for task "Adverse Event 1" is performed
    And including non primary paths in the dictionary search criteria
    And the browse and code search is done for "Heart attack" against "Text" at Level "Low Level Term"
@@ -104,7 +110,9 @@ Scenario: Coder allows users to code primary paths when "Force Primary Path Sele
 @IncreaseTimeout_360000
 Scenario: Coder allows users to code primary paths when "Force Primary Path Selection" is set to "True"
    Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-   And coding task "Adverse Event 1" for dictionary level "LLT"
+   When the following externally managed verbatim requests are made
+      | Verbatim Term   | Dictionary Level |
+      | Adverse Event 1 | LLT              |
    When a browse and code for task "Adverse Event 1" is performed
    And the browse and code search is done for "Heart attack" against "Text" at Level "Low Level Term"
    And selecting the primary path "true" dictionary result for term "Heart attack" code "10019250" level "LLT"
@@ -117,6 +125,8 @@ Scenario: Coder allows users to code primary paths when "Force Primary Path Sele
 @Release2015.3.0
 Scenario: Coder does not allow auto-coding when "Force Primary Path Selection" is set to "False" 
    Given a "No Enforced Primary Path" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-   And coding task "Heart Attack" for dictionary level "LLT"
+   When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | Heart Attack  | LLT              |
    Then the task "Heart Attack" should have a status of "Waiting Manual Code"
    

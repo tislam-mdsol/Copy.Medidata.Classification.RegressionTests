@@ -23,7 +23,9 @@ Feature: This feature file will verify the display history of all coding assignm
 Scenario: The following will appear for Assignments Properties information for a status of Waiting Manual
 
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0"
-  And coding task "Adverse Event 4" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term   | Dictionary Level |
+      | Adverse Event 4 | LLT              |
   When I view task "Adverse Event 4"
   Then I verify Assignment Detail information displayed is No data
   And I verify Coding Assignments Path information displayed is No data
@@ -34,7 +36,9 @@ Scenario: The following will appear for Assignments Properties information for a
 Scenario: The following will appear for Assignments Properties information for a term that has been auto coded and waiting approval which will now have an active coding decision
 
   Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "WhoDrugDDEB2 ENG 200703"  
-  And coding task "ASPIRIN PLUS C" for dictionary level "PRODUCT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term  | Dictionary Level |
+      | ASPIRIN PLUS C | PRODUCT          |
   When I view task "ASPIRIN PLUS C"
   Then I verify the following Assignment Detail information is displayed
 		| Dictionary            | User         | Term                          | Is Auto Coded | Is Active |
@@ -53,7 +57,9 @@ Scenario: The following will appear for Assignments Properties information for a
 Scenario: The following will appear for Assignments Properties information for a term waiting for coding through browser tree
 
   Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "WhoDrugDDEB2 ENG 200703"  
-  And coding task "Adverse Event 4" for dictionary level "PRODUCT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term   | Dictionary Level |
+      | Adverse Event 4 | PRODUCT          |
   When task "Adverse Event 4" is coded to term "ASPIRIN PLUS C" at search level "Preferred Name" with code "003467 01 001" at level "PN" and a synonym is created
   And I view task "Adverse Event 4"
   Then I verify the following Assignment Detail information is displayed
@@ -66,7 +72,9 @@ Scenario: The following will appear for Assignments Properties information for a
 Scenario: The following will appear for Assignments Properties information for a term that was auto coded and was inactivated after selecting to recode the coding decision
 
   Given a "Waiting Approval" Coder setup with no tasks and no synonyms and dictionary "WhoDrugDDEB2 ENG 200703"  
-  And coding task "SALICYLAMIDE" for dictionary level "PRODUCT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term | Dictionary Level |
+      | SALICYLAMIDE  | PRODUCT          |
   When I recode task "SALICYLAMIDE" with comment "Recoding."
   Then I verify the following Assignment Detail information is displayed
 		| Dictionary            | User         | Term                        | Is Auto Coded | Is Active |
@@ -79,7 +87,9 @@ Scenario: The following will appear for Assignments Properties information for a
 Scenario: The following information will be available to the client as an Assignment Property information for a status of Reconsider with Bypass Reconsider Upon Reclassify turned off
 
   Given a "Reconsider Bypass Off" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0" 
-  And coding task "Dizziness postural" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term      | Dictionary Level |
+      | Dizziness postural | LLT              |
   When reclassifying task "Dizziness postural" with comment "Regression testing" in a "Reconsider Bypass Off" coder setup
   And task "Dizziness postural" is coded to term "Dizzy on standing" at search level "Low Level Term" with code "10013581" at level "LLT"
   And I view task "Dizziness postural"
@@ -95,7 +105,9 @@ Scenario: The following information will be available to the client as an Assign
 Scenario: The following information will be available to the client as an Assignment Property information for a status of Reconsider with Bypass Reconsider Upon Reclassify turned on
 
   Given a "Reconsider Bypass On" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 11.0" 
-  And coding task "Dizziness postural" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term      | Dictionary Level |
+      | Dizziness postural | LLT              |
   When reclassifying task "Dizziness postural" with comment "Regression testing" in a "Reconsider Bypass On" coder setup
   And I view task "Dizziness postural"
   Then I verify the following Assignment Detail information is displayed

@@ -751,28 +751,35 @@ this.ScenarioSetup(scenarioInfo);
 #line 212
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table19.AddRow(new string[] {
+                        "Adverse Event 4",
+                        "LLT"});
 #line 213
-  testRunner.And("coding task \"Adverse Event 4\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 214
-  testRunner.And("a synonym list file named \"MedDRA_150_ENG_20.txt\" is uploaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 215
-  testRunner.When("a browse and code for task \"Adverse Event 4\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table19, "When ");
 #line 216
+  testRunner.And("a synonym list file named \"MedDRA_150_ENG_20.txt\" is uploaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 217
+  testRunner.When("a browse and code for task \"Adverse Event 4\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 218
   testRunner.And("the browse and code search is done for \"10009589\" against \"Code\" at Level \"Low Le" +
                     "vel Term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level",
                         "Has Synonym"});
-            table19.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Closed fracture of second cervical vertebra",
                         "10009589",
                         "LLT",
                         "True"});
-#line 217
-  testRunner.Then("I verify the following information is contained in the browser search results", ((string)(null)), table19, "Then ");
+#line 219
+  testRunner.Then("I verify the following information is contained in the browser search results", ((string)(null)), table20, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -790,33 +797,40 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_199327_003b",
                         "Release2015.3.1"});
-#line 225
+#line 227
 this.ScenarioSetup(scenarioInfo);
-#line 226
+#line 228
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"WHODrugDDEB2 " +
                     "ENG 201206\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 227
-    testRunner.And("coding task \"Adverse Event 4\" for dictionary level \"PRODUCTSYNONYM\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 228
-  testRunner.And("a synonym list file named \"WHODrug_201206_ENG_2.txt\" is uploaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table21.AddRow(new string[] {
+                        "Adverse Event 4",
+                        "PRODUCTSYNONYM"});
 #line 229
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table21, "When ");
+#line 232
+  testRunner.And("a synonym list file named \"WHODrug_201206_ENG_2.txt\" is uploaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 233
   testRunner.When("a browse and code for task \"Adverse Event 4\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 230
+#line 234
   testRunner.And("the browse and code search is done for \"000039 02 063\" against \"Code\" at Level \"T" +
                     "rade Name\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level",
                         "Has Synonym"});
-            table20.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "ADRENALIN HYDROCHLORIDE",
                         "000039 02 063",
                         "TN",
                         "True"});
-#line 231
-  testRunner.Then("I verify the following information is contained in the browser search results", ((string)(null)), table20, "Then ");
+#line 235
+  testRunner.Then("I verify the following information is contained in the browser search results", ((string)(null)), table22, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -834,38 +848,45 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_199327_003c",
                         "Release2015.3.1"});
-#line 240
+#line 244
 this.ScenarioSetup(scenarioInfo);
-#line 241
+#line 245
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"JDrug ENG 201" +
                     "5H1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 242
-  testRunner.And("coding task \"Adverse Event 4\" for dictionary level \"DrugName\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 243
+#line hidden
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table23.AddRow(new string[] {
+                        "Adverse Event 4",
+                        "DrugName"});
+#line 246
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table23, "When ");
+#line 249
   testRunner.And("a synonym list file named \"JDrug_2015H1_ENG_2.txt\" is uploaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 244
+#line 250
   testRunner.When("a browse and code for task \"Adverse Event 4\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 245
+#line 251
   testRunner.And("the browse and code search is done for \"CHONDRON\" against \"Text\" at Level \"Drug N" +
                     "ame\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level",
                         "Has Synonym"});
-            table21.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "CHONDRON",
                         "399100102",
                         "薬",
                         "True"});
-            table21.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "CHONDRON",
                         "131970902",
                         "薬",
                         "True"});
-#line 246
-  testRunner.Then("I verify the following information is contained in the browser search results", ((string)(null)), table21, "Then ");
+#line 252
+  testRunner.Then("I verify the following information is contained in the browser search results", ((string)(null)), table24, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -883,38 +904,45 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_199327_003d",
                         "Release2015.3.1"});
-#line 255
+#line 261
 this.ScenarioSetup(scenarioInfo);
-#line 256
+#line 262
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"AZDD ENG 15.1" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 257
-  testRunner.And("coding task \"Adverse Event 4\" for dictionary level \"PRODUCT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 258
+#line hidden
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table25.AddRow(new string[] {
+                        "Adverse Event 4",
+                        "PRODUCT"});
+#line 263
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table25, "When ");
+#line 266
   testRunner.And("a synonym list file named \"AZDD_151_ENG_2.txt\" is uploaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 259
+#line 267
   testRunner.When("a browse and code for task \"Adverse Event 4\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 260
+#line 268
   testRunner.And("the browse and code search is done for \"Typhoid\" against \"Text\" at Level \"Preferr" +
                     "ed Name\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level",
                         "Has Synonym"});
-            table22.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "TYPHOID VACCINE",
                         "001670 01 001",
                         "PN",
                         "True"});
-            table22.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "CHOLERA VACCINE+TYPHOID VACCINE",
                         "003886 01 001",
                         "PN",
                         "True"});
-#line 261
-  testRunner.Then("I verify the following information is contained in the browser search results", ((string)(null)), table22, "Then ");
+#line 269
+  testRunner.Then("I verify the following information is contained in the browser search results", ((string)(null)), table26, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -932,39 +960,39 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_199327_004",
                         "Release2015.3.1"});
-#line 270
+#line 278
 this.ScenarioSetup(scenarioInfo);
-#line 271
+#line 279
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 272
+#line 280
   testRunner.And("I begin a search in dictionary \"MedDRA 15.0 English\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 273
+#line 281
   testRunner.And("I select Synonym List \"Primary List\" and Template \"Low to High\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 274
+#line 282
   testRunner.And("I enter \"10058730\" as a \"Code\" search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level"});
-            table23.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "Low Level Term"});
-#line 275
-  testRunner.And("I select the following levels for the search", ((string)(null)), table23, "And ");
-#line 278
+#line 283
+  testRunner.And("I select the following levels for the search", ((string)(null)), table27, "And ");
+#line 286
   testRunner.When("I execute the above specified search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level",
                         "Has Synonym"});
-            table24.AddRow(new string[] {
+            table28.AddRow(new string[] {
                         "Application site photosensitivity reaction",
                         "10058730",
                         "LLT",
                         "False"});
-#line 279
-  testRunner.Then("I verify the following information is contained in the browser search results", ((string)(null)), table24, "Then ");
+#line 287
+  testRunner.Then("I verify the following information is contained in the browser search results", ((string)(null)), table28, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -982,31 +1010,38 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_199327_005",
                         "Release2015.3.1"});
-#line 286
+#line 294
 this.ScenarioSetup(scenarioInfo);
-#line 287
+#line 295
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 288
-  testRunner.And("coding task \"Adverse Event 4\" for dictionary level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 289
+#line hidden
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Verbatim Term",
+                        "Dictionary Level"});
+            table29.AddRow(new string[] {
+                        "Adverse Event 4",
+                        "LLT"});
+#line 296
+  testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table29, "When ");
+#line 299
   testRunner.When("a browse and code for task \"Adverse Event 4\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 290
+#line 300
   testRunner.And("the browse and code search is done for \"10009589\" against \"Code\" at Level \"Low Le" +
                     "vel Term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level",
                         "Has Synonym"});
-            table25.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "Closed fracture of second cervical vertebra",
                         "10009589",
                         "LLT",
                         "False"});
-#line 291
-  testRunner.Then("I verify the following information is contained in the browser search results", ((string)(null)), table25, "Then ");
+#line 301
+  testRunner.Then("I verify the following information is contained in the browser search results", ((string)(null)), table30, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1026,45 +1061,45 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_204358_001",
                         "Release2015.3.2",
                         "UITest"});
-#line 299
+#line 309
 this.ScenarioSetup(scenarioInfo);
-#line 300
+#line 310
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA ENG 15" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 301
+#line 311
   testRunner.And("I begin a search in dictionary \"MedDRA 15.0 English\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 302
+#line 312
   testRunner.And("I enter \"pain\" as a \"Text\" search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level"});
-            table26.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "Preferred Term"});
-#line 303
-  testRunner.And("I select the following levels for the search", ((string)(null)), table26, "And ");
-#line 306
+#line 313
+  testRunner.And("I select the following levels for the search", ((string)(null)), table31, "And ");
+#line 316
   testRunner.And("I do not want primary path results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 307
+#line 317
   testRunner.When("I execute the above specified search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level"});
-            table27.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "Loin pain haematuria syndrome",
                         "10071137",
                         "PT"});
-            table27.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "Musculoskeletal chest pain",
                         "10050819",
                         "PT"});
-            table27.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "Paradoxical pain",
                         "10067055",
                         "PT"});
-#line 308
-  testRunner.Then("I verify the following information is contained in the browser search results", ((string)(null)), table27, "Then ");
+#line 318
+  testRunner.Then("I verify the following information is contained in the browser search results", ((string)(null)), table32, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1086,80 +1121,80 @@ this.ScenarioSetup(scenarioInfo);
                         "Release2015.3.2",
                         "UITest",
                         "IncreaseTimeout_360000"});
-#line 319
+#line 329
 this.ScenarioSetup(scenarioInfo);
-#line 320
+#line 330
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"WHODrugDDEB2 " +
                     "ENG 201503\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 321
+#line 331
   testRunner.And("I begin a search in dictionary \"WHODrugDDEB2 201503 English\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 322
+#line 332
   testRunner.And("I enter \"betacarotene\" as a \"Text\" search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level"});
-            table28.AddRow(new string[] {
+            table33.AddRow(new string[] {
                         "Preferred Name"});
-#line 323
-  testRunner.And("I select the following levels for the search", ((string)(null)), table28, "And ");
-#line 326
+#line 333
+  testRunner.And("I select the following levels for the search", ((string)(null)), table33, "And ");
+#line 336
   testRunner.When("I execute the above specified search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                         "Property",
                         "Value"});
-            table29.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "DRUGRECORDNUMBER",
                         "076980"});
-            table29.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "NUMBEROFINGREDIENTS",
                         "15"});
-#line 327
+#line 337
   testRunner.Then("I verify the following Selected Search Result Properties are displayed for term \"" +
                     "BETACAROTENE W/HISTIDINE/IRON/ISOLEUCINE/LEUC\" with code \"076980 01 001\" at leve" +
-                    "l \"PN\"", ((string)(null)), table29, "Then ");
+                    "l \"PN\"", ((string)(null)), table34, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                         "Property",
                         "Value"});
-            table30.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "DRUGRECORDNUMBER",
                         "074427"});
-            table30.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "NUMBEROFINGREDIENTS",
                         "23"});
-#line 331
+#line 341
   testRunner.Then("I verify the following Selected Search Result Properties are displayed for term \"" +
                     "BETACAROTENE W/BIOFLAVONOIDS/CALCIU/07442701/\" with code \"074427 01 001\" at leve" +
-                    "l \"PN\"", ((string)(null)), table30, "Then ");
+                    "l \"PN\"", ((string)(null)), table35, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                         "Property",
                         "Value"});
-            table31.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "DRUGRECORDNUMBER",
                         "082925"});
-            table31.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "NUMBEROFINGREDIENTS",
                         "28"});
-#line 335
+#line 345
   testRunner.Then("I verify the following Selected Search Result Properties are displayed for term \"" +
                     "ASCORBIC ACID W/BETACAROTENE/BIOTIN/08292501/\" with code \"082925 01 001\" at leve" +
-                    "l \"PN\"", ((string)(null)), table31, "Then ");
+                    "l \"PN\"", ((string)(null)), table36, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
                         "Property",
                         "Value"});
-            table32.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "DRUGRECORDNUMBER",
                         "081113"});
-            table32.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "NUMBEROFINGREDIENTS",
                         "3"});
-#line 339
+#line 349
   testRunner.Then("I verify the following Selected Search Result Properties are displayed for term \"" +
                     "ASCORBIC ACID W/BETACAROTENE/VITAMIN E NOS\" with code \"081113 01 001\" at level \"" +
-                    "PN\"", ((string)(null)), table32, "Then ");
+                    "PN\"", ((string)(null)), table37, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1175,41 +1210,41 @@ this.ScenarioSetup(scenarioInfo);
                         "VAL",
                         "PBMCC_204440_001",
                         "Release2015.3.2"});
-#line 348
+#line 358
 this.ScenarioSetup(scenarioInfo);
-#line 349
+#line 359
  testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms and dictionary \"MedDRA JPN 18" +
                     ".0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 350
+#line 360
  testRunner.And("I begin a search in dictionary \"MedDRA 18.0 Japanese\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 351
+#line 361
  testRunner.And("I select Synonym List \"Without Synonyms\" and Template \"Low to High\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 352
+#line 362
  testRunner.And("I enter \"高脂血症\" as a \"Text\" search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                         "Level"});
-            table33.AddRow(new string[] {
+            table38.AddRow(new string[] {
                         "Low Level Term"});
-#line 353
- testRunner.And("I select the following levels for the search", ((string)(null)), table33, "And ");
-#line 356
+#line 363
+ testRunner.And("I select the following levels for the search", ((string)(null)), table38, "And ");
+#line 366
  testRunner.And("I want only exact match results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 357
+#line 367
  testRunner.And("I want only primary path results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 358
+#line 368
  testRunner.When("I execute the above specified search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                         "Term Path",
                         "Code",
                         "Level"});
-            table34.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "高脂血症",
                         "10062060",
                         "LLT"});
-#line 359
- testRunner.Then("the dictionary search results should contain only the following terms", ((string)(null)), table34, "Then ");
+#line 369
+ testRunner.Then("the dictionary search results should contain only the following terms", ((string)(null)), table39, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1231,45 +1266,45 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_154852_003",
                         "Release2015.2.0",
                         "ignore"});
-#line 367
+#line 377
 this.ScenarioSetup(scenarioInfo);
-#line 369
+#line 379
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 370
+#line 380
   testRunner.When("I set dictionary term search for dictionary \"WhoDrugDDEB2\" locale \"ENG\" version \"" +
                     "201409\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                         "Image Icon Level",
                         "Term",
                         "Code"});
-            table35.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "ATC",
                         "NERVOUS SYSTEM",
                         "N"});
-            table35.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "ATC",
                         "ANESTHETICS",
                         "N01"});
-            table35.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "ATC",
                         "ANESTHETICS, LOCAL",
                         "N01B"});
-            table35.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "ATC",
                         "AMIDES",
                         "N01BB"});
-            table35.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "PT",
                         "MEPIVACAINE",
                         "000103 01 001 3"});
-            table35.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "TN",
                         "MEPIVACAINUM",
                         "000103 01 007 0"});
-#line 371
+#line 381
   testRunner.Then("I verify a browse for \"MEPIVACAINUM\" where the following dictionary information i" +
-                    "s traversable and displayed,", ((string)(null)), table35, "Then ");
+                    "s traversable and displayed,", ((string)(null)), table40, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1291,33 +1326,33 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_154852_004",
                         "Release2015.2.0",
                         "ignore"});
-#line 385
+#line 395
 this.ScenarioSetup(scenarioInfo);
-#line 387
+#line 397
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 388
+#line 398
   testRunner.When("I set dictionary term search for dictionary \"WhoDrugDDEB2\" locale \"ENG\" version \"" +
                     "201409\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
                         "Image Icon Level",
                         "Term",
                         "Code"});
-            table36.AddRow(new string[] {
+            table41.AddRow(new string[] {
                         "ATC",
                         "NERVOUS SYSTEM",
                         "N"});
-            table36.AddRow(new string[] {
+            table41.AddRow(new string[] {
                         "PT",
                         "ZATOSETRON",
                         "015179 01 001 0"});
-            table36.AddRow(new string[] {
+            table41.AddRow(new string[] {
                         "ING",
                         "ZATOSETRON",
                         "015179 01 001 0 0123482224"});
-#line 389
+#line 399
   testRunner.Then("I verify a browse for \"ZATOSETRON\" where the following dictionary information is " +
-                    "traversable and displayed,", ((string)(null)), table36, "Then ");
+                    "traversable and displayed,", ((string)(null)), table41, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1339,33 +1374,33 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_154852_005",
                         "Release2015.2.0",
                         "ignore"});
-#line 400
+#line 410
 this.ScenarioSetup(scenarioInfo);
-#line 402
+#line 412
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 403
+#line 413
   testRunner.When("I set dictionary term search for dictionary \"WHODrug_DDE_C\" locale \"ENG\" version " +
                     "\"201409\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                         "Image Icon Level",
                         "Term",
                         "Code"});
-            table37.AddRow(new string[] {
+            table42.AddRow(new string[] {
                         "ATC",
                         "NERVOUS SYSTEM",
                         "N"});
-            table37.AddRow(new string[] {
+            table42.AddRow(new string[] {
                         "MP",
                         "ZATOSETRON",
                         "49650"});
-            table37.AddRow(new string[] {
+            table42.AddRow(new string[] {
                         "ING",
                         "ZATOSETRON",
                         "81707"});
-#line 404
+#line 414
   testRunner.Then("I verify a browse for \"ZATOSETRON\" where the following dictionary information is " +
-                    "traversable and displayed,", ((string)(null)), table37, "Then ");
+                    "traversable and displayed,", ((string)(null)), table42, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1387,33 +1422,33 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_154852_006",
                         "Release2015.2.0",
                         "ignore"});
-#line 415
+#line 425
 this.ScenarioSetup(scenarioInfo);
-#line 417
+#line 427
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 418
+#line 428
   testRunner.When("I set dictionary term search for dictionary \"WHODrug_DDE_C\" locale \"ENG\" version " +
                     "\"201409\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                         "Image Icon Level",
                         "Term",
                         "Code"});
-            table38.AddRow(new string[] {
+            table43.AddRow(new string[] {
                         "ATC",
                         "ANTIPARASITIC PRODUCTS,INSECTICIDES AND REPELLENTS",
                         "P"});
-            table38.AddRow(new string[] {
+            table43.AddRow(new string[] {
                         "ATC",
                         "ANTIPROTOZOALS",
                         "P01"});
-            table38.AddRow(new string[] {
+            table43.AddRow(new string[] {
                         "MP",
                         "Antiprotozoals",
                         "50067"});
-#line 419
+#line 429
   testRunner.Then("I verify a browse for \"Antiprotozoals\" where the following dictionary information" +
-                    " is traversable and displayed,", ((string)(null)), table38, "Then ");
+                    " is traversable and displayed,", ((string)(null)), table43, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1431,53 +1466,53 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_154852_007",
                         "Release2015.2.0",
                         "ignore"});
-#line 430
+#line 440
 this.ScenarioSetup(scenarioInfo);
-#line 432
+#line 442
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 433
+#line 443
   testRunner.When("I set dictionary term search for dictionary \"J-Drug\" locale \"ENG\" version \"201409" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
                         "Image Icon Level",
                         "Term",
                         "Code"});
-            table39.AddRow(new string[] {
+            table44.AddRow(new string[] {
                         "大",
                         "NARCOTICS",
                         "8"});
-            table39.AddRow(new string[] {
+            table44.AddRow(new string[] {
                         "中",
                         "ALKALOIDAL NARCOTICS(NATURAL NARCOTICS)",
                         "81"});
-            table39.AddRow(new string[] {
+            table44.AddRow(new string[] {
                         "小",
                         "COCA ALKALOIDS PREPARATIONS",
                         "812"});
-            table39.AddRow(new string[] {
+            table44.AddRow(new string[] {
                         "細",
                         "COCAINE, DERIVATIVES AND PREPARATIONS",
                         "8121"});
-            table39.AddRow(new string[] {
+            table44.AddRow(new string[] {
                         "般",
                         "COCAINE HYDROCHLORIDE",
                         "8121700"});
-            table39.AddRow(new string[] {
+            table44.AddRow(new string[] {
                         "区",
                         "EXTERNAL MEDICATION",
                         "6"});
-            table39.AddRow(new string[] {
+            table44.AddRow(new string[] {
                         "薬",
                         "COCAINE HYDROCHLORIDE",
                         "8121700"});
-            table39.AddRow(new string[] {
+            table44.AddRow(new string[] {
                         "英",
                         "COCAINE HYDROCHLORIDE",
                         "8121700"});
-#line 434
+#line 444
   testRunner.Then("I verify a browse for \"COCAINE HYDROCHLORIDE\" where the following dictionary info" +
-                    "rmation is traversable and displayed,", ((string)(null)), table39, "Then ");
+                    "rmation is traversable and displayed,", ((string)(null)), table44, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1499,40 +1534,40 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_57406_010",
                         "Release2015.2.0",
                         "ignore"});
-#line 453
+#line 463
 this.ScenarioSetup(scenarioInfo);
-#line 455
+#line 465
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 456
+#line 466
   testRunner.When("I set dictionary term search for dictionary \"MedDRA\" locale \"ENG\" version \"15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
                         "Image Icon Level",
                         "Term",
                         "Code"});
-            table40.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         "Primary SOC",
                         "Nervous system disorders",
                         "10029205"});
-            table40.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         "Primary HLGT",
                         "Headaches",
                         "10019231"});
-            table40.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         "Primary HLT",
                         "Headaches NEC",
                         "10019233"});
-            table40.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         "Primary PT",
                         "Headache",
                         "10019211"});
-            table40.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         "Primary LLT",
                         "Chronic headaches",
                         "10053850"});
-#line 457
+#line 467
   testRunner.Then("I verify a browse for \"Chronic headaches\" where the following dictionary informat" +
-                    "ion is traversable and displayed,", ((string)(null)), table40, "Then ");
+                    "ion is traversable and displayed,", ((string)(null)), table45, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1554,40 +1589,40 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_57406_011",
                         "Release2015.2.0",
                         "ignore"});
-#line 470
+#line 480
 this.ScenarioSetup(scenarioInfo);
-#line 472
+#line 482
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 473
+#line 483
   testRunner.When("I set dictionary term search for dictionary \"MedDRA\" locale \"JPN\" version \"15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
                         "Image Icon Level",
                         "Term",
                         "Code"});
-            table41.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Primary SOC",
                         "神経系障害",
                         "10029205"});
-            table41.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Primary HLGT",
                         "頭痛",
                         "10019231"});
-            table41.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Primary HLT",
                         "頭痛ＮＥＣ",
                         "10019233"});
-            table41.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Primary PT",
                         "頭痛",
                         "10019211"});
-            table41.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Primary LLT",
                         "慢性頭痛",
                         "10053850"});
-#line 474
+#line 484
   testRunner.Then("I verify a browse for \"Chronic headaches\" where the following dictionary informat" +
-                    "ion is traversable and displayed,", ((string)(null)), table41, "Then ");
+                    "ion is traversable and displayed,", ((string)(null)), table46, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1609,32 +1644,32 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_154852_012",
                         "Release2015.2.0",
                         "ignore"});
-#line 487
+#line 497
 this.ScenarioSetup(scenarioInfo);
-#line 489
+#line 499
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 490
+#line 500
   testRunner.When("I set dictionary term search for dictionary \"MedDRA\" locale \"ENG\" version \"15.0\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 491
+#line 501
   testRunner.And("I search for and select the term \"Blood alcohol excessive\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
                         "Property",
                         "Property Value"});
-            table42.AddRow(new string[] {
+            table47.AddRow(new string[] {
                         "Code",
                         "10005290"});
-            table42.AddRow(new string[] {
+            table47.AddRow(new string[] {
                         "Term",
                         "Blood alcohol excessive"});
-            table42.AddRow(new string[] {
+            table47.AddRow(new string[] {
                         "Dictionary Level",
                         "Low Level Term"});
-            table42.AddRow(new string[] {
+            table47.AddRow(new string[] {
                         "Term Status",
                         "Active"});
-#line 492
-  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table42, "Then ");
+#line 502
+  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table47, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1652,69 +1687,69 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_154852_013",
                         "Release2015.2.0",
                         "ignore"});
-#line 504
+#line 514
 this.ScenarioSetup(scenarioInfo);
-#line 506
+#line 516
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 507
+#line 517
   testRunner.When("I set dictionary term search for dictionary \"WhoDrugDDEB2\" locale \"ENG\" version \"" +
                     "201409\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 508
+#line 518
   testRunner.And("I search on level \"Trade Name\" and select the term \"BLOOD BUILDER\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
                         "Property",
                         "Property Value"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Code",
                         "014934 01 006 8"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Term",
                         "BLOOD BUILDER"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Dictionary Level",
                         "Trade Name"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Drug Record Number",
                         "014934"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Sequence Number 1",
                         "01"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Sequence Number 2",
                         "006"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Check Digit",
                         "8"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Source Year",
                         "05"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Source",
                         "237, IMS Health"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Source Country",
                         "N/A, Not Applicable"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Designation",
                         "M"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Company",
                         "UNS, NOT SPECIFIED"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Company Country",
                         "UNS, Unspecified"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Number of Ingredients",
                         "03"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Year Quarter",
                         "061"});
-            table43.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "Ingredients (3)",
                         "CYANOCOBALAMIN, FOLIC ACID, IRON"});
-#line 509
-  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table43, "Then ");
+#line 519
+  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table48, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1732,63 +1767,63 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_154852_014",
                         "Release2015.2.0",
                         "ignore"});
-#line 533
+#line 543
 this.ScenarioSetup(scenarioInfo);
-#line 535
+#line 545
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 536
+#line 546
   testRunner.When("I set dictionary term search for dictionary \"WhoDrugDDEB2\" locale \"ENG\" version \"" +
                     "201409\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 537
+#line 547
   testRunner.And("I search on level \"Preferred Name\" and select the term \"FERRANIN COMPLEX\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
                         "Property",
                         "Property Value"});
-            table44.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "Code",
                         "014934 01 001 9"});
-            table44.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "Term",
                         "FERRANIN COMPLEX"});
-            table44.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "Dictionary Level",
                         "Preferred Name"});
-            table44.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "Drug Record Number",
                         "014934"});
-            table44.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "Sequence Number 1",
                         "01"});
-            table44.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "Sequence Number 2",
                         "001"});
-            table44.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "Check Digit",
                         "9"});
-            table44.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "Source Year",
                         "00"});
-            table44.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "Source",
                         "139, Manual Farmaceutico"});
-            table44.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "Source Country",
                         "ARG, Argentina"});
-            table44.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "Designation",
                         "M"});
-            table44.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "Number of Ingredients",
                         "03"});
-            table44.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "Year Quarter",
                         "044"});
-            table44.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "Ingredients (3)",
                         "CYANOCOBALAMIN, FOLIC ACID, IRON"});
-#line 538
-  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table44, "Then ");
+#line 548
+  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table49, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1810,30 +1845,30 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_154852_015",
                         "Release2015.2.0",
                         "ignore"});
-#line 560
+#line 570
 this.ScenarioSetup(scenarioInfo);
-#line 562
+#line 572
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 563
+#line 573
   testRunner.When("I set dictionary term search for dictionary \"WhoDrugDDEB2\" locale \"ENG\" version \"" +
                     "201409\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 564
+#line 574
   testRunner.And("I search on level \"ATC\" and select the term \"IRON IN OTHER COMBINATIONS\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
                         "Property",
                         "Property Value"});
-            table45.AddRow(new string[] {
+            table50.AddRow(new string[] {
                         "Code",
                         "B03AE"});
-            table45.AddRow(new string[] {
+            table50.AddRow(new string[] {
                         "Term",
                         "IRON IN OTHER COMBINATIONS"});
-            table45.AddRow(new string[] {
+            table50.AddRow(new string[] {
                         "Dictionary Level",
                         "ATC"});
-#line 565
-  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table45, "Then ");
+#line 575
+  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table50, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1851,84 +1886,84 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_154852_016",
                         "Release2015.2.0",
                         "ignore"});
-#line 576
+#line 586
 this.ScenarioSetup(scenarioInfo);
-#line 578
+#line 588
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 579
+#line 589
   testRunner.When("I set dictionary term search for dictionary \"WHODrug_DDE_C\" locale \"ENG\" version " +
                     "\"201409\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 580
+#line 590
   testRunner.And("I search on level \"Medicinal Product\" and select the term \"Scorpion venom\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
                         "Property",
                         "Property Value"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Code",
                         "129431"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Term",
                         "Scorpion venom"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Dictionary Level",
                         "Medicinal Product"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Drug Record Number",
                         "018707"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Sequence Number 1",
                         "01"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Sequence Number 2",
                         "001"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Sequence Number 3",
                         "0000000001, Unspecified"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Sequence Number 4",
                         "0000000001, Unspecified"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Generic",
                         "Y"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Country",
                         "N/A, Not Applicable"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Company",
                         "0"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Marketing authorization holder",
                         "0"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Source Year",
                         "05"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Source",
                         "CHE, NC Switzerland"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Source Country",
                         "CHE, Switzerland"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Product type",
                         "001, Medicinal product"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Product group",
                         "0, None"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Product group",
                         "20020701"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Create date",
                         "20050331"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Date changed",
                         "20050331"});
-            table46.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Ingredients (1)",
                         "Scorpion venom"});
-#line 581
-  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table46, "Then ");
+#line 591
+  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table51, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1946,63 +1981,63 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_154852_017",
                         "Release2015.2.0",
                         "ignore"});
-#line 610
+#line 620
 this.ScenarioSetup(scenarioInfo);
-#line 612
+#line 622
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 613
+#line 623
   testRunner.When("I set dictionary term search for dictionary \"WHODrug_DDE_C\" locale \"ENG\" version " +
                     "\"201409\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 614
+#line 624
   testRunner.And("I search on level \"Ingredient\" and select the term \"Scorpion venom\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
                         "Property",
                         "Property Value"});
-            table47.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "Code",
                         "212382"});
-            table47.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "Term",
                         "Scorpion venom"});
-            table47.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "Dictionary Level",
                         "Ingredient"});
-            table47.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "Source Year",
                         "05"});
-            table47.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "Source",
                         "CHE, NC Switzerland"});
-            table47.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "Source Country",
                         "CHE, Switzerland"});
-            table47.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "Ingredient create date",
                         "20050331"});
-            table47.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "Unit",
                         "38, unspec"});
-            table47.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "Pharmaceutical form",
                         "1, Unspecified"});
-            table47.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "Number of Ingredients",
                         "01"});
-            table47.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "Pharmaceutical form create date",
                         "20050331"});
-            table47.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "Substance",
                         "14116, Scorpion venom"});
-            table47.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "CAS Number",
                         "8000060368"});
-            table47.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "Language Code",
                         "En"});
-#line 615
-  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table47, "Then ");
+#line 625
+  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table52, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -2020,60 +2055,60 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_154852_018",
                         "Release2015.2.0",
                         "ignore"});
-#line 637
+#line 647
 this.ScenarioSetup(scenarioInfo);
-#line 639
+#line 649
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 640
+#line 650
   testRunner.When("I set dictionary term search for dictionary \"J-Drug\" locale \"JPN\" version \"2014H1" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 641
+#line 651
   testRunner.And("I search on level \"Drug Name\" and select the term \"パーキン糖衣錠\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
                         "Property",
                         "Property Value"});
-            table48.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "Code",
                         "116300101"});
-            table48.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "Term",
                         "パーキン糖衣錠"});
-            table48.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "Dictionary Level",
                         "Drug Name"});
-            table48.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "Usage Classification",
                         "1, 内"});
-            table48.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "Drug Name Kana",
                         "ﾊﾟ-ｷﾝﾄｳｲｼﾞﾖｳ"});
-            table48.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "Preferred Name Kana",
                         "ﾌﾟﾛﾌｴﾅﾐﾝｴﾝｻﾝｴﾝ"});
-            table48.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "Manufacturer",
                         "393, 田辺三菱"});
-            table48.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "Dosage Form",
                         "21000000000000000000"});
-            table48.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "Drug Code Class 1",
                         "0"});
-            table48.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "Maintain Flag Jpn",
                         "B"});
-            table48.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "Maintain Date Jpn",
                         "1008"});
-            table48.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "Drug Code Class 2",
                         "4"});
-            table48.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "English Name",
                         "116300101, PARKIN"});
-#line 642
-  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table48, "Then ");
+#line 652
+  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table53, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -2091,66 +2126,66 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_154852_019",
                         "Release2015.2.0",
                         "ignore"});
-#line 663
+#line 673
 this.ScenarioSetup(scenarioInfo);
-#line 665
+#line 675
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 666
+#line 676
   testRunner.When("I set dictionary term search for dictionary \"J-Drug\" locale \"JPN\" version \"2014H1" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 667
+#line 677
   testRunner.And("I search on level \"Preferred Name\" and select the term \"プロフェナミン塩酸塩\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
                         "Property",
                         "Property Value"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "Code",
                         "1163001"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "Term",
                         "プロフェナミン塩酸塩"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "Dictionary Level",
                         "Preferred Name"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "Usage Classification",
                         "1, 内"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "Drug Name Kana",
                         "ﾌﾟﾛﾌｴﾅﾐﾝｴﾝｻﾝｴﾝ"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "Preferred Name Kana",
                         "ﾌﾟﾛﾌｴﾅﾐﾝｴﾝｻﾝｴﾝ"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "Dosage Form",
                         "21000000000000000000"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "Drug Code Class 1",
                         "0"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "Maintain Flag Jpn",
                         "B"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "Maintain Date Jpn",
                         "1008"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "Drug Code Class 2",
                         "3"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "JAN Flag",
                         "1"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "Maintain Date Eng",
                         "9806"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "Maintain Flag Eng",
                         "B"});
-            table49.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "English Name",
                         "1163001, PROFENAMINE HYDROCHLORIDE"});
-#line 668
-  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table49, "Then ");
+#line 678
+  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table54, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -2168,51 +2203,51 @@ this.ScenarioSetup(scenarioInfo);
                         "PBMCC_154852_020",
                         "Release2015.2.0",
                         "ignore"});
-#line 691
+#line 701
 this.ScenarioSetup(scenarioInfo);
-#line 693
+#line 703
   testRunner.Given("a \"Basic\" Coder setup with no tasks and no synonyms", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 694
+#line 704
   testRunner.When("I set dictionary term search for dictionary \"J-Drug\" locale \"JPN\" version \"2014H1" +
                     "\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 695
+#line 705
   testRunner.And("I search on level \"Detailed Classification\" and select the term \"プロフェナミン製剤\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
                         "Property",
                         "Property Value"});
-            table50.AddRow(new string[] {
+            table55.AddRow(new string[] {
                         "Code",
                         "1163"});
-            table50.AddRow(new string[] {
+            table55.AddRow(new string[] {
                         "Term",
                         "プロフェナミン製剤"});
-            table50.AddRow(new string[] {
+            table55.AddRow(new string[] {
                         "Dictionary Level",
                         "Detailed Classification"});
-            table50.AddRow(new string[] {
+            table55.AddRow(new string[] {
                         "Drug Name Kana",
                         "ﾌﾟﾛﾌｴﾅﾐﾝｾｲｻﾞｲ"});
-            table50.AddRow(new string[] {
+            table55.AddRow(new string[] {
                         "Dosage Form",
                         "00000000000000000000"});
-            table50.AddRow(new string[] {
+            table55.AddRow(new string[] {
                         "Drug Code Class 1",
                         "0"});
-            table50.AddRow(new string[] {
+            table55.AddRow(new string[] {
                         "Maintain Flag Jpn",
                         "B"});
-            table50.AddRow(new string[] {
+            table55.AddRow(new string[] {
                         "Maintain Date Jpn",
                         "9108"});
-            table50.AddRow(new string[] {
+            table55.AddRow(new string[] {
                         "Drug Code Class 2",
                         "2"});
-            table50.AddRow(new string[] {
+            table55.AddRow(new string[] {
                         "English Name",
                         "1163, PROFENAMINE AND PREPARATIONS"});
-#line 696
-  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table50, "Then ");
+#line 706
+  testRunner.Then("I verify the following selected term properties:", ((string)(null)), table55, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

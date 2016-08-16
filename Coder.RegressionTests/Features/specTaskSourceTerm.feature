@@ -69,7 +69,9 @@ Scenario: The following information will be available to the client as Source Te
 @Release2015.3.0
 Scenario: The following information will be available to the client as a term's source information:   Source System, Study, Dictionary, Locale, Term, Level, Priority
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event Term 1" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 1 | LLT              |
   When I view task "Adverse Event Term 1"
   Then I verify the following Source Term information is displayed
        | Source System  | Study              | Dictionary    | Locale | Term                 | Level          | Priority |
@@ -82,25 +84,13 @@ Scenario: The following information will be available to the client as a term's 
 Scenario: The following information will be available to the client as a term's term EDC data information:   Field, Line, Form, Event, Subject, Site
 
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event Term 1" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 1 | LLT              |
   When I view task "Adverse Event Term 1"
   Then I verify the following EDC information is displayed
        |Field        |Line   |Form           |Event     |Subject       |Site          |
        |Field 1      |1      |Form 1         |Event 1   |Subject 1     |Site 1        |
-
-
-@VAL
-@PBMCC_152100_004
-@Release2015.3.0
-Scenario: The following information will be available to the client as a term's component data information:   Component Name, Component Value
-
-  Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event Term 1" for dictionary level "LLT" with a component value of "USA" defined
-  When I view task "Adverse Event Term 1"
-  Then I verify the following Component information is displayed
-       | Supplemental Term   | Supplemental Value  |
-       | Form 1.LOGCOMPFIELD1 | USA                |
-
 
 @VAL
 @PBMCC_152100_005
@@ -108,11 +98,13 @@ Scenario: The following information will be available to the client as a term's 
 Scenario: The following information will be available to the client as a term's supplemental data information:   Supplemental Term, Supplemental Value
 
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event Term" for dictionary level "LLT" with a supplemental value of "Oral" defined
+  When the following externally managed verbatim requests are made
+      | Verbatim Term      | Dictionary Level | Supplemental Field 1 | Supplemental Value 1 |
+      | Adverse Event Term | LLT              | Field1               | Oral                 |
   When I view task "Adverse Event Term"
   Then I verify the following Supplemental information is displayed
-       | Supplemental Term   | Supplemental Value  |
-       | Form 1.LOGSUPPFIELD1 | Oral               |
+       | Supplemental Term | Supplemental Value |
+       | Field1            | Oral               |
 
 
 @VAL
@@ -120,26 +112,13 @@ Scenario: The following information will be available to the client as a term's 
 @Release2015.3.0
 Scenario: Non-production studies are displayed in the source term information
   Given a "Basic" Coder setup for a non-production study with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event Term 2" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 2 | LLT              |
   When I view task "Adverse Event Term 2"
   Then I verify the following Source Term information is displayed
        | Source System  | Study              | Dictionary    | Locale | Term                 | Level          | Priority |
        | <SourceSystem> | <StudyDisplayName> | MedDRA - 15.0 | ENG    | Adverse Event Term 2 | Low Level Term | 1        |
-
-
-@VAL
-@PBMCC_152100_007
-@Release2015.3.0
-Scenario: A term will have multiple and blank Component information displayed
-
-  Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event Term 2" for dictionary level "LLT" with a component value of ",Medidata" defined
-  When I view task "Adverse Event Term 2"
-  Then I verify the following Component information is displayed
-       | Supplemental Term   | Supplemental Value  |
-       | Form 1.LOGCOMPFIELD1 |                    |
-       | Form 1.LOGCOMPFIELD2 | Medidata           |
-
 
 @VAL
 @PBMCC_152100_008
@@ -147,12 +126,14 @@ Scenario: A term will have multiple and blank Component information displayed
 Scenario: A term will have multiple and blank supplemental information displayed
 
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event Term 3" for dictionary level "LLT" with a supplemental value of ",INDICATION ONE" defined
+  When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level | Supplemental Field 1 | Supplemental Value 1 | Supplemental Field 2 | Supplemental Value 2 |
+      | Adverse Event Term 3 | LLT              | Field1               |                      | Field2               | INDICATION ONE      |
   When I view task "Adverse Event Term 3"
   Then I verify the following Supplemental information is displayed
-       | Supplemental Term   | Supplemental Value  |
-       | Form 1.LOGSUPPFIELD1 |                    |
-       | Form 1.LOGSUPPFIELD2 | INDICATION ONE     |
+       | Supplemental Term | Supplemental Value |
+       | Field1            |                    |
+       | Field2            | INDICATION ONE     |
 
 
 @VAL
@@ -161,7 +142,9 @@ Scenario: A term will have multiple and blank supplemental information displayed
 Scenario: When there is no component or supplemental information, No data will be displayed
 
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event Term 4" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term 4 | LLT              |
   When I view task "Adverse Event Term 4"
   Then I verify when no component or supplemental data is present and Coder displays "No data"
 
@@ -172,6 +155,8 @@ Scenario: When there is no component or supplemental information, No data will b
 Scenario: When selecting a term the default view will display Source Term Information
 
   Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA ENG 15.0"
-  And coding task "Adverse Event Term" for dictionary level "LLT"
+  When the following externally managed verbatim requests are made
+      | Verbatim Term        | Dictionary Level |
+      | Adverse Event Term   | LLT              |
   When I view task "Adverse Event Term"
   Then I verify that the default view contains Source Term information
