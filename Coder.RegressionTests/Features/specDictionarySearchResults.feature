@@ -213,8 +213,8 @@ Scenario: A browse and code for a term that is associated to a previously create
   When the following externally managed verbatim requests are made
       | Verbatim Term   | Dictionary Level |
       | Adverse Event 4 | LLT              |
-  And a synonym list file named "MedDRA_150_ENG_20.txt" is uploaded
-  When a browse and code for task "Adverse Event 4" is performed
+  And uploading a synonym list file named "MedDRA_150_ENG_20.txt" 
+  And a browse and code for task "Adverse Event 4" is performed
   And the browse and code search is done for "10009589" against "Code" at Level "Low Level Term"
   Then I verify the following information is contained in the browser search results
 	    | Term Path                                   | Code     | Level | Has Synonym |
@@ -229,8 +229,8 @@ Scenario: A browse and code for a term that is associated to a previously create
   When the following externally managed verbatim requests are made
       | Verbatim Term   | Dictionary Level |
       | Adverse Event 4 | PRODUCTSYNONYM   |
-  And a synonym list file named "WHODrug_201206_ENG_2.txt" is uploaded
-  When a browse and code for task "Adverse Event 4" is performed
+  And uploading a synonym list file named "WHODrug_201206_ENG_2.txt" 
+  And a browse and code for task "Adverse Event 4" is performed
   And the browse and code search is done for "000039 02 063" against "Code" at Level "Trade Name"
   Then I verify the following information is contained in the browser search results
 	    | Term Path               | Code          | Level | Has Synonym |
@@ -246,8 +246,8 @@ Scenario: A browse and code for a term that is associated to a previously create
   When the following externally managed verbatim requests are made
       | Verbatim Term   | Dictionary Level |
       | Adverse Event 4 | DrugName         |
-  And a synonym list file named "JDrug_2015H1_ENG_2.txt" is uploaded
-  When a browse and code for task "Adverse Event 4" is performed
+  And uploading a synonym list file named "JDrug_2015H1_ENG_2.txt" 
+  And a browse and code for task "Adverse Event 4" is performed
   And the browse and code search is done for "CHONDRON" against "Text" at Level "Drug Name"
   Then I verify the following information is contained in the browser search results
 	    | Term Path | Code      | Level | Has Synonym |
@@ -263,8 +263,8 @@ Scenario: A browse and code for a term that is associated to a previously create
   When the following externally managed verbatim requests are made
       | Verbatim Term   | Dictionary Level |
       | Adverse Event 4 | PRODUCT          |
-  And a synonym list file named "AZDD_151_ENG_2.txt" is uploaded
-  When a browse and code for task "Adverse Event 4" is performed
+  And uploading a synonym list file named "AZDD_151_ENG_2.txt" 
+  And a browse and code for task "Adverse Event 4" is performed
   And the browse and code search is done for "Typhoid" against "Text" at Level "Preferred Name"
   Then I verify the following information is contained in the browser search results
 	    | Term Path                       | Code          | Level | Has Synonym |

@@ -761,9 +761,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 213
   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table19, "When ");
 #line 216
-  testRunner.And("a synonym list file named \"MedDRA_150_ENG_20.txt\" is uploaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("uploading a synonym list file named \"MedDRA_150_ENG_20.txt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 217
-  testRunner.When("a browse and code for task \"Adverse Event 4\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("a browse and code for task \"Adverse Event 4\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 218
   testRunner.And("the browse and code search is done for \"10009589\" against \"Code\" at Level \"Low Le" +
                     "vel Term\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -812,9 +812,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 229
   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table21, "When ");
 #line 232
-  testRunner.And("a synonym list file named \"WHODrug_201206_ENG_2.txt\" is uploaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("uploading a synonym list file named \"WHODrug_201206_ENG_2.txt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 233
-  testRunner.When("a browse and code for task \"Adverse Event 4\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("a browse and code for task \"Adverse Event 4\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 234
   testRunner.And("the browse and code search is done for \"000039 02 063\" against \"Code\" at Level \"T" +
                     "rade Name\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -863,9 +863,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 246
   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table23, "When ");
 #line 249
-  testRunner.And("a synonym list file named \"JDrug_2015H1_ENG_2.txt\" is uploaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("uploading a synonym list file named \"JDrug_2015H1_ENG_2.txt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 250
-  testRunner.When("a browse and code for task \"Adverse Event 4\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("a browse and code for task \"Adverse Event 4\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 251
   testRunner.And("the browse and code search is done for \"CHONDRON\" against \"Text\" at Level \"Drug N" +
                     "ame\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -919,9 +919,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 263
   testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table25, "When ");
 #line 266
-  testRunner.And("a synonym list file named \"AZDD_151_ENG_2.txt\" is uploaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("uploading a synonym list file named \"AZDD_151_ENG_2.txt\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 267
-  testRunner.When("a browse and code for task \"Adverse Event 4\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("a browse and code for task \"Adverse Event 4\" is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 268
   testRunner.And("the browse and code search is done for \"Typhoid\" against \"Text\" at Level \"Preferr" +
                     "ed Name\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
