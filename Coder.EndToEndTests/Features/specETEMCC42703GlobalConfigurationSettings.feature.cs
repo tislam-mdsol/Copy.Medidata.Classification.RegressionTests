@@ -70,7 +70,7 @@ namespace Coder.EndToEndTests.Features
         [NUnit.Framework.DescriptionAttribute("When downloading an configuration spreadsheet for a URL that has Coder active, th" +
             "e Coder settings will be included.")]
         [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC42703_10")]
         [NUnit.Framework.CategoryAttribute("ETE_STANDALONE")]
         [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
@@ -79,7 +79,7 @@ namespace Coder.EndToEndTests.Features
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When downloading an configuration spreadsheet for a URL that has Coder active, th" +
                     "e Coder settings will be included.", new string[] {
                         "EndToEndDynamicSegment",
-                        "DFT",
+                        "VAL",
                         "PBMCC42703_10",
                         "ETE_STANDALONE",
                         "Release2016.1.0"});

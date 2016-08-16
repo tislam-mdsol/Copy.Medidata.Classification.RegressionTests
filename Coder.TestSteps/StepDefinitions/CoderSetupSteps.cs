@@ -44,7 +44,6 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser.LoadiMedidataCoderAppSegment(_StepContext.GetSegment());
         }
 
-
         [Given(@"a coder study is created named ""(.*)"" for environment ""(.*)"" with site ""(.*)""")]
         public void GivenACoderStudyIsCreatedNamedForEnvironmentWithSite(string studyName, string environmentName, string siteName)
         {

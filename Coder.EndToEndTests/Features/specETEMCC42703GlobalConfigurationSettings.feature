@@ -5,7 +5,7 @@ Feature: Configuration download will contain Global Coder settings and Configura
 #@EndToEndStaticSegment
 #@DebugEndToEndDynamicSegment
 	
-@DFT
+@VAL
 @PBMCC42703_10
 @ETE_STANDALONE
 @Release2016.1.0

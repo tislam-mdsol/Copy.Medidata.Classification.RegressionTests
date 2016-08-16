@@ -27,7 +27,7 @@ namespace Coder.EndToEndTests.Features
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "specCoderSetup.feature"
+#line 1 "scriptCoderSetup.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]

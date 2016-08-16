@@ -80,7 +80,7 @@ Scenario: A synonym migration with a No Clear Match synonym will require manual 
 
 @VAL
 @Release2015.3.0
-@PBMCC_168577_004
+@PBMCC_168577_004b
 @IncreaseTimeout
 Scenario: A synonym migration with a Path Does Not Exist synonym will require manual reconciliation, given the code path of a term has changed.
 
@@ -296,7 +296,7 @@ Scenario: During synonym reconciliation, containing a category with multiple syn
   
 @VAL
 @Release2015.3.0
-@PBMCC_168577_021
+@PBMCC_168577_021b
 @IncreaseTimeout_900000
 Scenario: During synonym reconciliation, containing a category with multiple synonyms with the configuration option, a user can select Accept All Suggestions to accept only single path suggestions
 
