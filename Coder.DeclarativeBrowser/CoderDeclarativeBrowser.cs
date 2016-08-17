@@ -2393,7 +2393,10 @@ namespace Coder.DeclarativeBrowser
             if (string.IsNullOrEmpty(helpLinkName)) throw new ArgumentNullException("helpLinkName");
 
             Session.GoToAdminPage(pageName);
-            Session.GoToHelpPage(helpLinkName);
+            if (pageName == "Study Impact Analysis")
+                Session.GoToHelpPageWithNewLinks(helpLinkName);
+            else
+                Session.GoToHelpPage(helpLinkName);
         }
 
         public void AccessReportHelpContent(string pageName, string helpLinkName)
@@ -2402,7 +2405,7 @@ namespace Coder.DeclarativeBrowser
             if (string.IsNullOrEmpty(helpLinkName)) throw new ArgumentNullException("helpLinkName");
 
             Session.GoToReportPage(pageName);
-            Session.GoToHelpPage(helpLinkName);
+            Session.GoToHelpPageWithNewLinks(helpLinkName);
         }
 
         public void AccessTasksHelpContent(string helpLinkName)

@@ -53,6 +53,13 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return helpMenu;
         }
 
+        internal SessionElementScope GetNewHelpLink()
+        {
+            var helpMenu = _Browser.FindSessionElementById("help");
+
+            return helpMenu;
+        }
+
         private SessionElementScope GetAdminMenuHeader()
         {
             var adminMenuHeader = _Browser.FindSessionElementByXPath("//*[starts-with(normalize-space(text()),'Administration')]");
@@ -76,6 +83,14 @@ namespace Coder.DeclarativeBrowser.PageObjects
             return helpMenu;
         }
 
+        internal SessionElementScope GetNewHelpMenu()
+        {
+            var helpMenu =
+                _Browser.FindSessionElementById("help");
+
+            return helpMenu;
+        }
+
         internal SessionElementScope GetReportsMenuItemByName(string menuItemName)
         {
             if (String.IsNullOrEmpty(menuItemName)) throw new ArgumentNullException("menuItemName");
@@ -92,6 +107,16 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             var helpMenu        = GetHelpMenu();
             var helpMenuItem    = GetMenuItemByXPath(helpMenu, menuItemName);
+
+            return helpMenuItem;
+        }
+
+        internal SessionElementScope GetNewHelpMenuItemByName(string menuItemName)
+        {
+            if (String.IsNullOrEmpty(menuItemName)) throw new ArgumentNullException("menuItemName");
+
+            var helpMenu = GetNewHelpMenu();
+            var helpMenuItem = GetMenuItemByXPath(helpMenu, menuItemName);
 
             return helpMenuItem;
         }
