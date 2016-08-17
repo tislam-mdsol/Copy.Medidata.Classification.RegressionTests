@@ -168,16 +168,14 @@ this.ScenarioSetup(scenarioInfo);
                         "Dictionary Level",
                         "Verbatim Term",
                         "Priority",
-                        "Locale",
-                        "UUID"});
+                        "Locale"});
             table2.AddRow(new string[] {
                         "MedDRA - 15.0",
                         "<Segment>",
                         "Low Level Term",
                         "Adverse Event Term 1",
                         "1",
-                        "<Locale>",
-                        "<CodingTermUuid>"});
+                        "<Locale>"});
 #line 61
   testRunner.Then("I verify the following Medical Dictionary Property information is displayed", ((string)(null)), table2, "Then ");
 #line hidden
