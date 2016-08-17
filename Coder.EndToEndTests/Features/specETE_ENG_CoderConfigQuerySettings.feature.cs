@@ -29,7 +29,7 @@ namespace Coder.EndToEndTests.Features
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "ETE_ENG_CoderConfigQuerySettings.feature"
+#line 1 "specETE_ENG_CoderConfigQuerySettings.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]

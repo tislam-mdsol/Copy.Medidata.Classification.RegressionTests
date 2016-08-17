@@ -30,6 +30,12 @@ namespace Coder.TestSteps.StepDefinitions
             CreateScreenshotDirectory();
         }
 
+        [BeforeScenario("CoderBasicScript")]
+        public void BeforeCoderBasicScriptScenario()
+        {
+            _StepContext.Browser.CoderCoreLogin(_StepContext.CoderAdminUser.Username);
+        }
+
         [BeforeScenario("CoderCore")]
         public void BeforeCoreScenario()
         {

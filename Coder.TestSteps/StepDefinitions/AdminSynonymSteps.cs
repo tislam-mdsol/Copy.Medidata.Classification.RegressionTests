@@ -115,6 +115,7 @@ namespace Coder.TestSteps.StepDefinitions
 
 
         [Given(@"a synonym list file named ""(.*)"" is uploaded")]
+        [When(@"uploading a synonym list file named ""(.*)""")]
         public void GivenASynonymListFileNamedIsUploaded(string fileName)
         {
             if (String.IsNullOrWhiteSpace(fileName)) throw new ArgumentNullException("fileName");

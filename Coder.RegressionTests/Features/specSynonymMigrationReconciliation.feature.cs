@@ -232,7 +232,7 @@ this.ScenarioSetup(scenarioInfo);
             "iliation, given the code path of a term has changed.")]
         [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
-        [NUnit.Framework.CategoryAttribute("PBMCC_168577_004")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_168577_004b")]
         [NUnit.Framework.Timeout(600000)]
         public virtual void ASynonymMigrationWithAPathDoesNotExistSynonymWillRequireManualReconciliationGivenTheCodePathOfATermHasChanged_()
         {
@@ -240,7 +240,7 @@ this.ScenarioSetup(scenarioInfo);
                     "iliation, given the code path of a term has changed.", new string[] {
                         "VAL",
                         "Release2015.3.0",
-                        "PBMCC_168577_004",
+                        "PBMCC_168577_004b",
                         "IncreaseTimeout"});
 #line 85
 this.ScenarioSetup(scenarioInfo);
@@ -803,7 +803,7 @@ this.ScenarioSetup(scenarioInfo);
             "y single path suggestions")]
         [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
-        [NUnit.Framework.CategoryAttribute("PBMCC_168577_021")]
+        [NUnit.Framework.CategoryAttribute("PBMCC_168577_021b")]
         [NUnit.Framework.Timeout(900000)]
         public virtual void DuringSynonymReconciliationContainingACategoryWithMultipleSynonymsWithTheConfigurationOptionAUserCanSelectAcceptAllSuggestionsToAcceptOnlySinglePathSuggestions()
         {
@@ -812,7 +812,7 @@ this.ScenarioSetup(scenarioInfo);
                     "y single path suggestions", new string[] {
                         "VAL",
                         "Release2015.3.0",
-                        "PBMCC_168577_021",
+                        "PBMCC_168577_021b",
                         "IncreaseTimeout_900000"});
 #line 301
 this.ScenarioSetup(scenarioInfo);

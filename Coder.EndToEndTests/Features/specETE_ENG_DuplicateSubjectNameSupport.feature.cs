@@ -25,7 +25,7 @@ namespace Coder.EndToEndTests.Features
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "ETE_ENG_DuplicateSubjectNameSupport.feature"
+#line 1 "specETE_ENG_DuplicateSubjectNameSupport.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]
