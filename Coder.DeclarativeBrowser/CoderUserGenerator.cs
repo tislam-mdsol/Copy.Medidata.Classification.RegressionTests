@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Coder.DeclarativeBrowser.Models;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coder.DeclarativeBrowser.Db;
 using Coder.DeclarativeBrowser.ExtensionMethods;
@@ -28,13 +24,13 @@ namespace Coder.DeclarativeBrowser
         private const int    _SegmentConfigCloneId = 1;
         private const int    _MaxSearchResults     = 70;
 
-        private static readonly IEnumerable<int> _WorkflowActionIds     = Enumerable.Range(1, 15);
-        private static readonly DateTime         _LicenseStart          = new DateTime(2000, 1, 1);
-        private static readonly DateTime         _LicenseEnd            = new DateTime(2055, 1, 1);
-        private static readonly string[,]        _CoderDictionaries     = Config.CoderDictionaries;
-        private static readonly string[]         _StudySuffixes         = { "", " (UAT)", " (Dev)" };
+        private static readonly IEnumerable<int> _WorkflowActionIds = Enumerable.Range(1, 15);
+        private static readonly DateTime         _LicenseStart      = new DateTime(2000, 1, 1);
+        private static readonly DateTime         _LicenseEnd        = new DateTime(2055, 1, 1);
+        private static readonly string[,]        _CoderDictionaries = Config.CoderDictionaries;
+        private static readonly string[]         _StudySuffixes     = { "", " (UAT)", " (Dev)" };
 
-        private static readonly Tuple<int, string, int[]>[] _GeneralRoles      = Config.CoderGeneralRoles;
+        private static readonly Tuple<int, string, int[]>[] _GeneralRoles = Config.CoderGeneralRoles;
 
         private static ICoderDbConnectionFactory _CoderDbFactory;
         private static ICoderDbConnectionFactory CoderDbFactory
