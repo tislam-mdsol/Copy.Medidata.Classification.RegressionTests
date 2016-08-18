@@ -45,8 +45,22 @@ namespace Coder.TestSteps.StepDefinitions
             _StepContext.SegmentUnderTest = generatedUser.Segment;
 
             CommonBeforeScenario(_StepContext);
-            
-            _StepContext.Browser.CoderCoreLogin(_StepContext.GetUser());
+
+            try
+            {
+                _StepContext.Browser.CoderCoreLogin(_StepContext.GetUser());
+            }
+            catch (Exception ex)
+            {
+                var user    = _StepContext.CoderTestUser;
+                var segment = _StepContext.SegmentUnderTest;
+
+                Console.WriteLine($"Exception thrown with message: {ex.Message}");
+                Console.WriteLine($"Error while trying to log into Coder with user: ID: {user.Id}; username: {user.Username}");
+                Console.WriteLine($"Segment Info: ID {segment.SegmentId}; Name: {segment.SegmentName}; UUID: {segment.SegmentUuid}");
+
+                throw;
+            }
         }
 
         [BeforeScenario("EndToEndDynamicSegment")]

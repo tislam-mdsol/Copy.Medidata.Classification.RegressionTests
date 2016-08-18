@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Coder.DeclarativeBrowser.Models;
 using Coder.DeclarativeBrowser.Models.UIDataModels;
 using Coder.DeclarativeBrowser.Db;
 using Coder.DeclarativeBrowser.ExtensionMethods;
@@ -28,13 +24,13 @@ namespace Coder.DeclarativeBrowser
         private const int    _SegmentConfigCloneId = 1;
         private const int    _MaxSearchResults     = 70;
 
-        private static readonly IEnumerable<int> _WorkflowActionIds     = Enumerable.Range(1, 15);
-        private static readonly DateTime         _LicenseStart          = new DateTime(2000, 1, 1);
-        private static readonly DateTime         _LicenseEnd            = new DateTime(2055, 1, 1);
-        private static readonly string[,]        _CoderDictionaries     = Config.CoderDictionaries;
-        private static readonly string[]         _StudySuffixes         = { "", " (UAT)", " (Dev)" };
+        private static readonly IEnumerable<int> _WorkflowActionIds = Enumerable.Range(1, 15);
+        private static readonly DateTime         _LicenseStart      = new DateTime(2000, 1, 1);
+        private static readonly DateTime         _LicenseEnd        = new DateTime(2055, 1, 1);
+        private static readonly string[,]        _CoderDictionaries = Config.CoderDictionaries;
+        private static readonly string[]         _StudySuffixes     = { "", " (UAT)", " (Dev)" };
 
-        private static readonly Tuple<int, string, int[]>[] _GeneralRoles      = Config.CoderGeneralRoles;
+        private static readonly Tuple<int, string, int[]>[] _GeneralRoles = Config.CoderGeneralRoles;
 
         private static ICoderDbConnectionFactory _CoderDbFactory;
         private static ICoderDbConnectionFactory CoderDbFactory
@@ -73,19 +69,21 @@ namespace Coder.DeclarativeBrowser
             RetryPolicy.DatabaseRetry.Execute(
                 () =>
                 {
-                    Guid iMedidataSegmentGuid = Guid.NewGuid();
+                    var iMedidataSegmentGuid = Guid.NewGuid();
 
                     using (var db = CoderDbFactory.Build())
                     {
-                        var newSegment     = CreateNewSegment(db, iMedidataSegmentGuid, segmentNamePrefix);
+                        var scenarioSufix = iMedidataSegmentGuid.GetFirstSectionAppendedWithRandomNumbers();
+
+                        var newSegment     = CreateNewSegment(db, iMedidataSegmentGuid, scenarioSufix, segmentNamePrefix);
                         int segmentId      = newSegment.Item1;
                         string segmentName = newSegment.Item2;
                         string lockKey     = String.Concat(_LockKeyPrefix, segmentId);
 
                         db.Execute.spRuntimeLockInsert(lockKey, _LockDuration, true);
 
-                        Guid iMedidataUserGuid = Guid.NewGuid();
-                        var user               = InsertUser(db, iMedidataSegmentGuid, iMedidataUserGuid);
+                        var iMedidataUserGuid  = Guid.NewGuid();
+                        var user               = InsertUser(db, scenarioSufix, iMedidataUserGuid);
                         int userId             = user.Item1;
                         string userName        = user.Item2;
 
@@ -146,14 +144,13 @@ namespace Coder.DeclarativeBrowser
             CreateAndAssignWorkflowRole(db, _WorkflowRoleName, segmentId, userId, _WorkflowActionIds);
         }
 
-        private static Tuple<int,string> CreateNewSegment(ICoderDbConnection db, Guid iMedidataIdGuid, string segmentNamePrefix)
+        private static Tuple<int,string> CreateNewSegment(ICoderDbConnection db, Guid iMedidataIdGuid, string scenarioSuffix, string segmentNamePrefix)
         {
             if (ReferenceEquals(db, null))                    throw new ArgumentNullException("db");
             if (String.IsNullOrWhiteSpace(segmentNamePrefix)) throw new ArgumentNullException("segmentNamePrefix");
 
             var iMedidataString = iMedidataIdGuid.ToString();
-            var segmentSuffix   = iMedidataIdGuid.GetFirstSectionAppendedWithRandomNumbers();
-            var segmentName     = String.Concat(segmentNamePrefix, segmentSuffix);
+            var segmentName     = String.Concat(segmentNamePrefix, scenarioSuffix);
             int segmentId       = 0;
 
             var currentDate = DateTime.Now;
@@ -218,23 +215,21 @@ namespace Coder.DeclarativeBrowser
             }
         }
 
-        private static Tuple<int,string> InsertUser(ICoderDbConnection db, Guid iMedidataSegmentGuid, Guid iMedidataUserGuid)
+        private static Tuple<int,string> InsertUser(ICoderDbConnection db, string scenarioSuffix, Guid iMedidataUserGuid)
         {
             if (ReferenceEquals(db, null)) throw new ArgumentNullException("db");
-
-            var segmentSuffix   = iMedidataSegmentGuid.GetFirstSectionAppendedWithRandomNumbers();
+            
             var imedidataUserId = iMedidataUserGuid.ToString();
-            var lastName        = segmentSuffix;
-            var login           = String.Concat(_FirstName, lastName);
+            var login           = String.Concat(_FirstName, scenarioSuffix);
             var email           = String.Format(_UserEmailTemplate, login);
             int userId          = 0;
 
-            var insertedUser = db.Execute.spUserInsert(_FirstName, lastName, email, login, _TimeZone, imedidataUserId, _UserLocale, true, userId);
+            var insertedUser = db.Execute.spUserInsert(_FirstName, scenarioSuffix, email, login, _TimeZone, imedidataUserId, _UserLocale, true, userId);
             userId = insertedUser.UserID.GetValueOrDefault();
 
             if (userId == 0)
             {
-                throw new InvalidOperationException(String.Format("Insert failed for iMedidataUserId {0} on segmentSuffix {1}", imedidataUserId, segmentSuffix));
+                throw new InvalidOperationException(String.Format("Insert failed for iMedidataUserId {0} on segmentSuffix {1}", imedidataUserId, scenarioSuffix));
             }
             
             var newUser = Tuple.Create(userId, login);
