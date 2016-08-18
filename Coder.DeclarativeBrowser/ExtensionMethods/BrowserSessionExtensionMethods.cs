@@ -1288,20 +1288,6 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             header.GetHelpMenuItemByName(linkName).Click();
         }
 
-        internal static void GoToHelpPageWithNewLinks(
-            this BrowserSession session,
-            string linkName)
-        {
-            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
-            if (ReferenceEquals(linkName, null)) throw new ArgumentNullException("linkName");
-
-            var header = session.GetPageHeader();
-
-            header.GetNewHelpLink().Hover();
-            header.GetNewHelpLink().Click();
-            header.GetNewHelpMenuItemByName(linkName).Click();
-        }
-
         internal static void GoToAdminPage(
             this BrowserSession session,
             string adminLink)
@@ -1328,18 +1314,18 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
             var reportsPage = session.GetMainReportCoderPage();
 
-            switch (reportLink)
+            switch (reportLink.ToLower())
             {
-                case "Coding Decisions Report":
+                case "coding decisions report":
                     reportsPage.SelectCodingDecisionReportOption();
                     break;
-                case "Study Report":
+                case "study report":
                     reportsPage.SelectStudyReportOption();
                     break;
-                case "Coding History Report":
+                case "coding history report":
                     reportsPage.SelectCodingHistoryReportOption();
                     break;
-                case "Ingredient Report":
+                case "ingredient report":
                     reportsPage.SelectIngredientReportOption();
                     break;
                 default:

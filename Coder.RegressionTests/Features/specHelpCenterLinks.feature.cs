@@ -105,6 +105,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC177584_02")]
         [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
+        [NUnit.Framework.Timeout(300000)]
         [NUnit.Framework.TestCaseAttribute("Reclassification", null)]
         [NUnit.Framework.TestCaseAttribute("Synonym", null)]
         [NUnit.Framework.TestCaseAttribute("Synonym List", null)]
@@ -121,19 +122,20 @@ this.FeatureBackground();
             string[] @__tags = new string[] {
                     "VAL",
                     "PBMCC177584_02",
-                    "Release2015.3.0"};
+                    "Release2015.3.0",
+                    "IncreaseTimeout_300000"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Help Center Content is viewable from Coder Administration Pages", @__tags);
-#line 19
+#line 20
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 20
-    testRunner.When(string.Format("accessing help center content \"Help Center\" for \"{0}\"", adminPage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
+    testRunner.When(string.Format("accessing help center content \"Help Center\" for \"{0}\"", adminPage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
     testRunner.Then("the help center header should be \"Submit A Request\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -144,6 +146,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("VAL")]
         [NUnit.Framework.CategoryAttribute("PBMCC177584_03")]
         [NUnit.Framework.CategoryAttribute("Release2015.3.0")]
+        [NUnit.Framework.Timeout(300000)]
         [NUnit.Framework.TestCaseAttribute("Coding Decisions Report", null)]
         [NUnit.Framework.TestCaseAttribute("Study Report", null)]
         [NUnit.Framework.TestCaseAttribute("Coding History Report", null)]
@@ -153,19 +156,20 @@ this.FeatureBackground();
             string[] @__tags = new string[] {
                     "VAL",
                     "PBMCC177584_03",
-                    "Release2015.3.0"};
+                    "Release2015.3.0",
+                    "IncreaseTimeout_300000"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify Help Center Content is viewable from Coder Report Pages", @__tags);
-#line 41
+#line 43
 this.ScenarioSetup(scenarioInfo);
 #line 6
 this.FeatureBackground();
-#line 42
+#line 44
     testRunner.When(string.Format("accessing help center content \"Help Center\" for \"{0}\" report", reportPage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 43
+#line 45
     testRunner.Then("the help center header should be \"Submit A Request\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -50,12 +50,8 @@ namespace Coder.DeclarativeBrowser.PageObjects
         {
             var helpMenu = _Browser.FindSessionElementById("ctl00_PgHeader_HlpControl_HelpLink");
 
-            return helpMenu;
-        }
-
-        internal SessionElementScope GetNewHelpLink()
-        {
-            var helpMenu = _Browser.FindSessionElementById("help");
+            if (helpMenu.Missing())
+                helpMenu = _Browser.FindSessionElementById("help");
 
             return helpMenu;
         }
@@ -77,16 +73,10 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal SessionElementScope GetHelpMenu()
         {
-            var helpMenu =
-                _Browser.FindSessionElementById("ctl00_PgHeader_HlpControl_floatingHelpMenu");
+            var helpMenu = _Browser.FindSessionElementById("ctl00_PgHeader_HlpControl_floatingHelpMenu");
 
-            return helpMenu;
-        }
-
-        internal SessionElementScope GetNewHelpMenu()
-        {
-            var helpMenu =
-                _Browser.FindSessionElementById("help");
+            if (helpMenu.Missing())
+                helpMenu = _Browser.FindSessionElementById("help");
 
             return helpMenu;
         }
@@ -107,16 +97,6 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
             var helpMenu        = GetHelpMenu();
             var helpMenuItem    = GetMenuItemByXPath(helpMenu, menuItemName);
-
-            return helpMenuItem;
-        }
-
-        internal SessionElementScope GetNewHelpMenuItemByName(string menuItemName)
-        {
-            if (String.IsNullOrEmpty(menuItemName)) throw new ArgumentNullException("menuItemName");
-
-            var helpMenu = GetNewHelpMenu();
-            var helpMenuItem = GetMenuItemByXPath(helpMenu, menuItemName);
 
             return helpMenuItem;
         }
