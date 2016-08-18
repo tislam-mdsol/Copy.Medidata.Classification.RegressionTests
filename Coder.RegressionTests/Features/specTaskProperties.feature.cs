@@ -219,17 +219,13 @@ this.ScenarioSetup(scenarioInfo);
                         "Locale",
                         "Study Name",
                         "Connection URI",
-                        "File OID",
-                        "Protocol Number",
-                        "Protocol Name"});
+                        "Protocol Number"});
             table4.AddRow(new string[] {
                         "<SourceSystem>",
                         "<Locale>",
                         "<StudyName>",
                         "<ConnectionUri>",
-                        "<FileOid>",
-                        "<ProtocolNumber>",
-                        ""});
+                        "<ProtocolNumber>"});
 #line 76
   testRunner.Then("I verify the following Source System Property information is displayed", ((string)(null)), table4, "Then ");
 #line hidden

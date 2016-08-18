@@ -74,8 +74,8 @@ Scenario: The following information will be available to the client as a term's 
       | Adverse Event Term 1 | LLT              |
   When I view task "Adverse Event Term 1"
   Then I verify the following Source System Property information is displayed
-       | Source System  | Locale   | Study Name  | Connection URI  | File OID  | Protocol Number  | Protocol Name |
-       | <SourceSystem> | <Locale> | <StudyName> | <ConnectionUri> | <FileOid> | <ProtocolNumber> |               |
+       | Source System  | Locale   | Study Name  | Connection URI  | Protocol Number  |
+       | <SourceSystem> | <Locale> | <StudyName> | <ConnectionUri> | <ProtocolNumber> |
 
 
 @VAL
