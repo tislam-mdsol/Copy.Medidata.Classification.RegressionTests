@@ -1309,10 +1309,29 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             if (String.IsNullOrEmpty(reportLink)) throw new ArgumentNullException("reportLink");
 
             var header = session.GetPageHeader();
-
             header.GetReportsTab().Hover();
             header.GetReportsTab().Click();
-            header.GetReportsMenuItemByName(reportLink).Click();
+
+            var reportsPage = session.GetMainReportCoderPage();
+
+            switch (reportLink.ToLower())
+            {
+                case "coding decisions report":
+                    reportsPage.SelectCodingDecisionReportOption();
+                    break;
+                case "study report":
+                    reportsPage.SelectStudyReportOption();
+                    break;
+                case "coding history report":
+                    reportsPage.SelectCodingHistoryReportOption();
+                    break;
+                case "ingredient report":
+                    reportsPage.SelectIngredientReportOption();
+                    break;
+                default:
+                    throw new ArgumentException("Invalid reportLink argument");
+            }
+            reportsPage.SelectCreateNewButton();
         }
 
         internal static BrowserWindow SwitchToBrowserWindowByName(

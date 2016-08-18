@@ -130,7 +130,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
 
         internal void SelectStudyReportOption()
         {
-            var selectedRadioOption = _Browser.FindSessionElementById("studyFilter");
+            var selectedRadioOption = _Browser.FindSessionElementById("studyReportFilter");
 
             selectedRadioOption.Click();
         }
