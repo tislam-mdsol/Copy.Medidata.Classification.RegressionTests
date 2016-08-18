@@ -9,7 +9,6 @@ Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA
 @VAL
 @PBMCC177584_01
 @Release2015.3.0
-@IncreaseTimeout_360000
 Scenario: Verify Help Center Content is viewable from Coder Tasks Page
     When accessing help center content "Help Center" for Tasks
     Then the help center header should be "Submit A Request"
@@ -17,7 +16,6 @@ Scenario: Verify Help Center Content is viewable from Coder Tasks Page
 @VAL
 @PBMCC177584_02
 @Release2015.3.0
-@IncreaseTimeout_360000
 Scenario Outline: Verify Help Center Content is viewable from Coder Administration Pages
     When accessing help center content "Help Center" for "<AdminPage>"
     Then the help center header should be "Submit A Request"
@@ -40,7 +38,6 @@ Scenario Outline: Verify Help Center Content is viewable from Coder Administrati
 @VAL
 @PBMCC177584_03
 @Release2015.3.0
-@IncreaseTimeout_360000
 Scenario Outline: Verify Help Center Content is viewable from Coder Report Pages
     When accessing help center content "Help Center" for "<ReportPage>" report
     Then the help center header should be "Submit A Request"

@@ -91,8 +91,19 @@ namespace Coder.DeclarativeBrowser
         internal bool Missing()
         {
             var isMissing = _ElementScope.Missing();
-
             return isMissing;
+        }
+
+        internal bool Missing(Options options)
+        {
+            bool result;
+
+            if (ReferenceEquals(options, null))
+                result = _ElementScope.Missing(Config.ExistsOptions);
+            else
+                result = _ElementScope.Missing(options);
+
+            return result;
         }
 
         internal SessionElementScope FindSessionElementById(string id)

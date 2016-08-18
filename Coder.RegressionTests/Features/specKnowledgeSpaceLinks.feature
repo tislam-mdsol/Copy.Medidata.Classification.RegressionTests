@@ -9,7 +9,6 @@ Given a "Basic" Coder setup with no tasks and no synonyms and dictionary "MedDRA
 @VAL
 @PBMCC1177593_01
 @Release2015.3.0
-@IncreaseTimeout_360000
 Scenario: Verify Knowledge Space Content is viewable from Coder Tasks Page
     When acessing help content "Knowledge Space Home" for Tasks
     Then the help header should be "Medidata Coder Home"
@@ -17,7 +16,6 @@ Scenario: Verify Knowledge Space Content is viewable from Coder Tasks Page
 @VAL
 @PBMCC177593_02
 @Release2015.3.0
-@IncreaseTimeout_420000
 Scenario Outline: Verify Knowledge Space Content is viewable from Coder Administration Pages
     When accessing help content "Knowledge Space Home" for "<AdminPage>"
     Then the help header should be "Medidata Coder Home"
@@ -40,7 +38,6 @@ Scenario Outline: Verify Knowledge Space Content is viewable from Coder Administ
 @VAL
 @PBMCC177593_03
 @Release2015.3.0
-@IncreaseTimeout_360000
 Scenario Outline: Verify Knowledge Space Content is viewable from Coder Reports Pages
     When accessing help content "Knowledge Space Home" for "<ReportPage>" report
     Then the help header should be "Medidata Coder Home"
