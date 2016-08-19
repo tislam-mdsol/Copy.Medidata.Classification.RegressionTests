@@ -50,7 +50,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
         {
             var helpMenu = _Browser.FindSessionElementById("ctl00_PgHeader_HlpControl_HelpLink");
 
-            if (helpMenu.Missing())
+            if (helpMenu.Missing(Config.ExistsOptions))
                 helpMenu = _Browser.FindSessionElementById("help");
 
             return helpMenu;
@@ -75,7 +75,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
         {
             var helpMenu = _Browser.FindSessionElementById("ctl00_PgHeader_HlpControl_floatingHelpMenu");
 
-            if (helpMenu.Missing())
+            if (helpMenu.Missing(Config.ExistsOptions))
                 helpMenu = _Browser.FindSessionElementById("help");
 
             return helpMenu;

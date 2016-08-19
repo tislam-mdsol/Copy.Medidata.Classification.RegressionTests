@@ -16,7 +16,6 @@ Scenario: Verify Help Center Content is viewable from Coder Tasks Page
 @VAL
 @PBMCC177584_02
 @Release2015.3.0
-@IncreaseTimeout_300000
 Scenario Outline: Verify Help Center Content is viewable from Coder Administration Pages
     When accessing help center content "Help Center" for "<AdminPage>"
     Then the help center header should be "Submit A Request"
@@ -39,7 +38,6 @@ Scenario Outline: Verify Help Center Content is viewable from Coder Administrati
 @VAL
 @PBMCC177584_03
 @Release2015.3.0
-@IncreaseTimeout_300000
 Scenario Outline: Verify Help Center Content is viewable from Coder Report Pages
     When accessing help center content "Help Center" for "<ReportPage>" report
     Then the help center header should be "Submit A Request"
