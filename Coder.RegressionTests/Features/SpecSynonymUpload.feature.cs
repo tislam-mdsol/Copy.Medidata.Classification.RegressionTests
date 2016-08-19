@@ -165,7 +165,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Dictionary Level"});
             table3.AddRow(new string[] {
                         string.Format("{0}", verbatim),
-                        "<Task Level>"});
+                        string.Format("{0}", taskLevel)});
 #line 28
     testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table3, "When ");
 #line hidden
