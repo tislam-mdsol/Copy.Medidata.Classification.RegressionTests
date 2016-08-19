@@ -69,23 +69,25 @@ namespace Coder.EndToEndTests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("A coding decision remains on the verbatim when a query is opened against a supple" +
-            "mental  field.")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
-        [NUnit.Framework.CategoryAttribute("PBMCC62552-001")]
+        [NUnit.Framework.DescriptionAttribute("A coding decision remains on the verbatim when a query is opened against a verbat" +
+            "im field.")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
+        [NUnit.Framework.CategoryAttribute("PBMCC62552_001a")]
         [NUnit.Framework.CategoryAttribute("ReleaseRave2013.1.0.1")]
-        public virtual void ACodingDecisionRemainsOnTheVerbatimWhenAQueryIsOpenedAgainstASupplementalField_()
+        [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
+        public virtual void ACodingDecisionRemainsOnTheVerbatimWhenAQueryIsOpenedAgainstAVerbatimField_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision remains on the verbatim when a query is opened against a supple" +
-                    "mental  field.", new string[] {
-                        "DFT",
-                        "PBMCC62552-001",
-                        "ReleaseRave2013.1.0.1"});
-#line 6
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision remains on the verbatim when a query is opened against a verbat" +
+                    "im field.", new string[] {
+                        "VAL",
+                        "PBMCC62552_001a",
+                        "ReleaseRave2013.1.0.1",
+                        "EndToEndDynamicSegment"});
 #line 7
- testRunner.Given("a Rave project registration with dictionary \"WhoDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 8
+ testRunner.Given("a Rave project registration with dictionary \"WhoDrug-DDE-B2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 9
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -99,21 +101,21 @@ this.ScenarioSetup(scenarioInfo);
                         "IsAutoApproval",
                         "SupplementalTerms"});
             table1.AddRow(new string[] {
-                        "ETEMCC62552",
-                        "AETerm",
+                        "ETE2",
+                        "Coding Field",
                         "<Dictionary>",
                         "<Locale>",
                         "PRODUCTSYNONYM",
                         "1",
-                        "true",
-                        "true",
-                        "SUP1AGE"});
-#line 9
+                        "false",
+                        "false",
+                        "LogSuppField2"});
+#line 10
   testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
-#line 12
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
-                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -122,23 +124,31 @@ this.ScenarioSetup(scenarioInfo);
                         "ControlType",
                         "Control Value"});
             table2.AddRow(new string[] {
-                        "Coding Field A",
+                        "Coding Field",
                         "Drug Verbatim 1",
-                        "",
+                        "LongText",
                         ""});
             table2.AddRow(new string[] {
-                        "SUP1AGE",
+                        "Log Supplemental Field B",
                         "Twenty",
-                        "SelectList",
+                        "SmallTextInput",
                         "Other"});
-#line 14
- testRunner.And("adding a new verbatim term to form \"ETEMCC62552\"", ((string)(null)), table2, "And ");
-#line 18
+#line 15
+ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table2, "And ");
+#line 19
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
  testRunner.When("task \"Drug Verbatim 1\" is coded to term \"BAYER CHILDREN\'S COLD\" at search level \"" +
                     "Preferred Name\" with code \"005581 01 001\" at level \"PN\" and a synonym is created" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Level",
+                        "Code",
+                        "Term Path"});
+            table3.AddRow(new string[] {
                         "ATC",
                         "N",
                         "NERVOUS SYSTEM"});
@@ -158,43 +168,65 @@ this.ScenarioSetup(scenarioInfo);
                         "PRODUCT",
                         "005581 01 001",
                         "BAYER CHILDREN\'S COLD"});
-#line 19
- testRunner.Then("Rave form \"ETEMCC62552\" should display", ((string)(null)), table3, "Then ");
-#line 25
- testRunner.When("value \"Open Query\" is set to \"Manual Marking Group Log Dropdown\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 26
- testRunner.And("value \"Testing Marking\" is set to \"Manual Marking Group Log Text Field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 27
-    testRunner.And("EDC form is saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.Then("the coding decision for verbatim \"Drug Verbatim 1\" on form \"ETE2\" for field \"Codi" +
+                    "ng Field\" contains the following data", ((string)(null)), table3, "Then ");
+#line 29
+ testRunner.When("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
+ testRunner.And("row on form \"ETE2\" containing \"Drug Verbatim 1\" is marked with a query", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "BAYER CHILDREN\'S COLD"});
+                        "Level",
+                        "Code",
+                        "Term Path"});
             table4.AddRow(new string[] {
-                        "005581 01 001 3"});
-#line 28
- testRunner.Then("Rave form \"ETEMCC62552\" link \"Drug Verbatim 1\" should contain the following", ((string)(null)), table4, "Then ");
+                        "ATC",
+                        "N",
+                        "NERVOUS SYSTEM"});
+            table4.AddRow(new string[] {
+                        "ATC",
+                        "N02",
+                        "ANALGESICS"});
+            table4.AddRow(new string[] {
+                        "ATC",
+                        "N02B",
+                        "OTHER ANALGESICS AND ANTIPYRETICS"});
+            table4.AddRow(new string[] {
+                        "ATC",
+                        "N02BA",
+                        "SALICYLIC ACID AND DERIVATIVES"});
+            table4.AddRow(new string[] {
+                        "PRODUCT",
+                        "005581 01 001",
+                        "BAYER CHILDREN\'S COLD"});
+#line 31
+ testRunner.Then("the coding decision for verbatim \"Drug Verbatim 1\" on form \"ETE2\" for field \"Codi" +
+                    "ng Field\" contains the following data", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("A coding decision remains on the verbatim when a sticky is opened against a suppl" +
-            "emental field.")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
-        [NUnit.Framework.CategoryAttribute("PBMCC62552-001b")]
+        [NUnit.Framework.DescriptionAttribute("A coding decision remains on the verbatim when a query is opened against a supplm" +
+            "ental field.")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
+        [NUnit.Framework.CategoryAttribute("PBMCC62552_001b")]
         [NUnit.Framework.CategoryAttribute("ReleaseRave2013.1.0.1")]
-        public virtual void ACodingDecisionRemainsOnTheVerbatimWhenAStickyIsOpenedAgainstASupplementalField_()
+        [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
+        public virtual void ACodingDecisionRemainsOnTheVerbatimWhenAQueryIsOpenedAgainstASupplmentalField_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision remains on the verbatim when a sticky is opened against a suppl" +
-                    "emental field.", new string[] {
-                        "DFT",
-                        "PBMCC62552-001b",
-                        "ReleaseRave2013.1.0.1"});
-#line 35
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision remains on the verbatim when a query is opened against a supplm" +
+                    "ental field.", new string[] {
+                        "VAL",
+                        "PBMCC62552_001b",
+                        "ReleaseRave2013.1.0.1",
+                        "EndToEndDynamicSegment"});
+#line 43
 this.ScenarioSetup(scenarioInfo);
-#line 36
- testRunner.Given("a Rave project registration with dictionary \"WhoDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 37
+#line 44
+ testRunner.Given("a Rave project registration with dictionary \"WhoDrug-DDE-B2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 45
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -208,21 +240,21 @@ this.ScenarioSetup(scenarioInfo);
                         "IsAutoApproval",
                         "SupplementalTerms"});
             table5.AddRow(new string[] {
-                        "ETEMCC62552",
-                        "AETerm",
+                        "ETE2",
+                        "Coding Field",
                         "<Dictionary>",
                         "<Locale>",
                         "PRODUCTSYNONYM",
                         "1",
-                        "true",
-                        "true",
-                        "SUP1AGE"});
-#line 38
+                        "false",
+                        "false",
+                        "LogSuppField2"});
+#line 46
   testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table5, "And ");
-#line 41
- testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
-                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 42
+#line 49
+ testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 50
  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -231,23 +263,31 @@ this.ScenarioSetup(scenarioInfo);
                         "ControlType",
                         "Control Value"});
             table6.AddRow(new string[] {
-                        "Coding Field A",
+                        "Coding Field",
                         "Drug Verbatim 1",
-                        "",
+                        "LongText",
                         ""});
             table6.AddRow(new string[] {
-                        "SUP1AGE",
+                        "Log Supplemental Field B",
                         "Twenty",
-                        "SelectList",
+                        "SmallTextInput",
                         "Other"});
-#line 43
- testRunner.And("adding a new verbatim term to form \"ETEMCC62552\"", ((string)(null)), table6, "And ");
-#line 47
- testRunner.When("task \"Drug Verbatim 1\" is coded to term \"BAYER CHILDREN\'S COLD\" at search level \"" +
-                    "Preferred Name\" with code \"005581 01 001\" at level \"PN\" and a synonym is created" +
-                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 51
+ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table6, "And ");
+#line 55
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.When("task \"Drug Verbatim 23\" is coded to term \"BAYER CHILDREN\'S COLD\" at search level " +
+                    "\"Preferred Name\" with code \"005581 01 001\" at level \"PN\" and a synonym is create" +
+                    "d", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 57
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Level",
+                        "Code",
+                        "Term Path"});
+            table7.AddRow(new string[] {
                         "ATC",
                         "N",
                         "NERVOUS SYSTEM"});
@@ -267,45 +307,65 @@ this.ScenarioSetup(scenarioInfo);
                         "PRODUCT",
                         "005581 01 001",
                         "BAYER CHILDREN\'S COLD"});
-#line 48
- testRunner.Then("Rave form \"ETEMCC62552\" should display", ((string)(null)), table7, "Then ");
-#line 54
- testRunner.When("value \"Place Sticky\" is set to \"Manual Marking Group Log Dropdown\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 55
- testRunner.And("value \"Testing Marking\" is set to \"Manual Marking Group Log Text Field\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
-    testRunner.And("EDC form is saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
-    testRunner.And("I select Link \"Drug Verbatim 1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+ testRunner.Then("the coding decision for verbatim \"Drug Verbatim 1\" on form \"ETE2\" for field \"Codi" +
+                    "ng Field\" contains the following data", ((string)(null)), table7, "Then ");
+#line 65
+ testRunner.When("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 66
+ testRunner.And("row on form \"ETE2\" containing \"Twenty\" is marked with a query", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "BAYER CHILDREN\'S COLD"});
+                        "Level",
+                        "Code",
+                        "Term Path"});
             table8.AddRow(new string[] {
-                        "005581 01 001 3"});
-#line 58
- testRunner.Then("Rave form \"ETEMCC62552\" link \"Drug Verbatim 1\" should contain the following", ((string)(null)), table8, "Then ");
+                        "ATC",
+                        "N",
+                        "NERVOUS SYSTEM"});
+            table8.AddRow(new string[] {
+                        "ATC",
+                        "N02",
+                        "ANALGESICS"});
+            table8.AddRow(new string[] {
+                        "ATC",
+                        "N02B",
+                        "OTHER ANALGESICS AND ANTIPYRETICS"});
+            table8.AddRow(new string[] {
+                        "ATC",
+                        "N02BA",
+                        "SALICYLIC ACID AND DERIVATIVES"});
+            table8.AddRow(new string[] {
+                        "PRODUCT",
+                        "005581 01 001",
+                        "BAYER CHILDREN\'S COLD"});
+#line 67
+ testRunner.Then("the coding decision for verbatim \"Drug Verbatim 1\" on form \"ETE2\" for field \"Codi" +
+                    "ng Field\" contains the following data", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("A coding decision remains on the verbatim when a comment is opened against a supp" +
-            "lemental field.")]
-        [NUnit.Framework.CategoryAttribute("DFT")]
-        [NUnit.Framework.CategoryAttribute("PBMCC62552-001d")]
+        [NUnit.Framework.DescriptionAttribute("A coding decision remains on the verbatim when a sticky is opened against a verba" +
+            "tim field.")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
+        [NUnit.Framework.CategoryAttribute("PBMCC62552_001c")]
         [NUnit.Framework.CategoryAttribute("ReleaseRave2013.1.0.1")]
-        public virtual void ACodingDecisionRemainsOnTheVerbatimWhenACommentIsOpenedAgainstASupplementalField_()
+        [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
+        public virtual void ACodingDecisionRemainsOnTheVerbatimWhenAStickyIsOpenedAgainstAVerbatimField_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision remains on the verbatim when a comment is opened against a supp" +
-                    "lemental field.", new string[] {
-                        "DFT",
-                        "PBMCC62552-001d",
-                        "ReleaseRave2013.1.0.1"});
-#line 65
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision remains on the verbatim when a sticky is opened against a verba" +
+                    "tim field.", new string[] {
+                        "VAL",
+                        "PBMCC62552_001c",
+                        "ReleaseRave2013.1.0.1",
+                        "EndToEndDynamicSegment"});
+#line 79
 this.ScenarioSetup(scenarioInfo);
-#line 66
+#line 80
  testRunner.Given("a Rave project registration with dictionary \"WhoDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 67
+#line 81
  testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -319,21 +379,21 @@ this.ScenarioSetup(scenarioInfo);
                         "IsAutoApproval",
                         "SupplementalTerms"});
             table9.AddRow(new string[] {
-                        "ETEMCC62552",
-                        "AETerm",
+                        "ETE2",
+                        "Coding Field",
                         "<Dictionary>",
                         "<Locale>",
                         "PRODUCTSYNONYM",
                         "1",
-                        "true",
-                        "true",
-                        "SUP1AGE"});
-#line 68
+                        "false",
+                        "false",
+                        "LogSuppField2"});
+#line 82
   testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table9, "And ");
-#line 71
+#line 85
  testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
                     "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 72
+#line 86
  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -342,19 +402,31 @@ this.ScenarioSetup(scenarioInfo);
                         "ControlType",
                         "Control Value"});
             table10.AddRow(new string[] {
-                        "Coding Field A",
+                        "Coding Field",
                         "Drug Verbatim 1",
-                        "",
+                        "LongText",
                         ""});
             table10.AddRow(new string[] {
                         "SUP1AGE",
                         "Twenty",
-                        "SelectList",
+                        "SmallTextInput",
                         "Other"});
-#line 73
- testRunner.And("adding a new verbatim term to form \"ETEMCC62552\"", ((string)(null)), table10, "And ");
+#line 87
+ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table10, "And ");
+#line 91
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 92
+ testRunner.When("task \"Drug Verbatim 1\" is coded to term \"BAYER CHILDREN\'S COLD\" at search level \"" +
+                    "Preferred Name\" with code \"005581 01 001\" at level \"PN\" and a synonym is created" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 93
+    testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Level",
+                        "Code",
+                        "Term Path"});
+            table11.AddRow(new string[] {
                         "ATC",
                         "N",
                         "NERVOUS SYSTEM"});
@@ -374,22 +446,176 @@ this.ScenarioSetup(scenarioInfo);
                         "PRODUCT",
                         "005581 01 001",
                         "BAYER CHILDREN\'S COLD"});
-#line 77
- testRunner.Then("Rave form \"ETEMCC62552\" should display", ((string)(null)), table11, "Then ");
-#line 83
-    testRunner.When("I select Button \"Rave Check Icon\" for Index \"4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
-    testRunner.And("an Audit Comment Field comment \"Testing Comment\" is submitted for \"Drug Verbatim " +
-                    "1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 94
+    testRunner.Then("the coding decision for verbatim \"Drug Verbatim 1\" on form \"ETE2\" for field \"Codi" +
+                    "ng Field\" contains the following data", ((string)(null)), table11, "Then ");
+#line 101
+ testRunner.When("row on form \"ETE2\" containing \"Drug Verbatim 1\" is marked with a sticky", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Level",
+                        "Code",
+                        "Term Path"});
+            table12.AddRow(new string[] {
+                        "ATC",
+                        "N",
+                        "NERVOUS SYSTEM"});
+            table12.AddRow(new string[] {
+                        "ATC",
+                        "N02",
+                        "ANALGESICS"});
+            table12.AddRow(new string[] {
+                        "ATC",
+                        "N02B",
+                        "OTHER ANALGESICS AND ANTIPYRETICS"});
+            table12.AddRow(new string[] {
+                        "ATC",
+                        "N02BA",
+                        "SALICYLIC ACID AND DERIVATIVES"});
+            table12.AddRow(new string[] {
+                        "PRODUCT",
+                        "005581 01 001",
                         "BAYER CHILDREN\'S COLD"});
-            table12.AddRow(new string[] {
-                        "005581 01 001 3"});
-            table12.AddRow(new string[] {
-                        "005581 01 001 3"});
-#line 85
- testRunner.Then("Rave form \"ETEMCC62552\" link \"Drug Verbatim 1\" should contain the following", ((string)(null)), table12, "Then ");
+#line 102
+    testRunner.Then("the coding decision for verbatim \"Drug Verbatim 1\" on form \"ETE2\" for field \"Codi" +
+                    "ng Field\" contains the following data", ((string)(null)), table12, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("A coding decision remains on the verbatim when a sticky is opened against a suppl" +
+            "emental field.")]
+        [NUnit.Framework.CategoryAttribute("VAL")]
+        [NUnit.Framework.CategoryAttribute("PBMCC62552_001d")]
+        [NUnit.Framework.CategoryAttribute("ReleaseRave2013.1.0.1")]
+        [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
+        public virtual void ACodingDecisionRemainsOnTheVerbatimWhenAStickyIsOpenedAgainstASupplementalField_()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A coding decision remains on the verbatim when a sticky is opened against a suppl" +
+                    "emental field.", new string[] {
+                        "VAL",
+                        "PBMCC62552_001d",
+                        "ReleaseRave2013.1.0.1",
+                        "EndToEndDynamicSegment"});
+#line 114
+this.ScenarioSetup(scenarioInfo);
+#line 115
+ testRunner.Given("a Rave project registration with dictionary \"WhoDrugDDEB2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 116
+ testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Form",
+                        "Field",
+                        "Dictionary",
+                        "Locale",
+                        "Coding Level",
+                        "Priority",
+                        "IsApprovalRequired",
+                        "IsAutoApproval",
+                        "SupplementalTerms"});
+            table13.AddRow(new string[] {
+                        "ETE2",
+                        "Coding Field",
+                        "<Dictionary>",
+                        "<Locale>",
+                        "PRODUCTSYNONYM",
+                        "1",
+                        "false",
+                        "false",
+                        "LogSuppField2"});
+#line 117
+  testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table13, "And ");
+#line 120
+ testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<StudyNam" +
+                    "e>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 121
+ testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field",
+                        "Value",
+                        "ControlType",
+                        "Control Value"});
+            table14.AddRow(new string[] {
+                        "Coding Field",
+                        "Drug Verbatim 1",
+                        "",
+                        ""});
+            table14.AddRow(new string[] {
+                        "SUP1AGE",
+                        "Twenty",
+                        "SmallTextInput",
+                        "Other"});
+#line 122
+ testRunner.And("adding a new verbatim term to form \"ETE2\"", ((string)(null)), table14, "And ");
+#line 126
+ testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 127
+ testRunner.When("task \"Drug Verbatim 1\" is coded to term \"BAYER CHILDREN\'S COLD\" at search level \"" +
+                    "Preferred Name\" with code \"005581 01 001\" at level \"PN\" and a synonym is created" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 128
+    testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Level",
+                        "Code",
+                        "Term Path"});
+            table15.AddRow(new string[] {
+                        "ATC",
+                        "N",
+                        "NERVOUS SYSTEM"});
+            table15.AddRow(new string[] {
+                        "ATC",
+                        "N02",
+                        "ANALGESICS"});
+            table15.AddRow(new string[] {
+                        "ATC",
+                        "N02B",
+                        "OTHER ANALGESICS AND ANTIPYRETICS"});
+            table15.AddRow(new string[] {
+                        "ATC",
+                        "N02BA",
+                        "SALICYLIC ACID AND DERIVATIVES"});
+            table15.AddRow(new string[] {
+                        "PRODUCT",
+                        "005581 01 001",
+                        "BAYER CHILDREN\'S COLD"});
+#line 129
+    testRunner.Then("the coding decision for verbatim \"Drug Verbatim 1\" on form \"ETE2\" for field \"Codi" +
+                    "ng Field\" contains the following data", ((string)(null)), table15, "Then ");
+#line 136
+ testRunner.When("row on form \"ETE2\" containing \"Twenty\" is marked with a sticky", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Level",
+                        "Code",
+                        "Term Path"});
+            table16.AddRow(new string[] {
+                        "ATC",
+                        "N",
+                        "NERVOUS SYSTEM"});
+            table16.AddRow(new string[] {
+                        "ATC",
+                        "N02",
+                        "ANALGESICS"});
+            table16.AddRow(new string[] {
+                        "ATC",
+                        "N02B",
+                        "OTHER ANALGESICS AND ANTIPYRETICS"});
+            table16.AddRow(new string[] {
+                        "ATC",
+                        "N02BA",
+                        "SALICYLIC ACID AND DERIVATIVES"});
+            table16.AddRow(new string[] {
+                        "PRODUCT",
+                        "005581 01 001",
+                        "BAYER CHILDREN\'S COLD"});
+#line 137
+    testRunner.Then("the coding decision for verbatim \"Drug Verbatim 1\" on form \"ETE2\" for field \"Codi" +
+                    "ng Field\" contains the following data", ((string)(null)), table16, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

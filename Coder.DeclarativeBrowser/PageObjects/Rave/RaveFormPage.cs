@@ -663,6 +663,12 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
                             passwordTextBox.FillInWith(field.Value);
                             break;
                         }
+                    case "SMALLTEXTINPUT":
+                        {
+                            var smallTextBox = GetTextBoxByLabel(field.Field);
+                            smallTextBox.FillInWith(field.Value);
+                            break;
+                        }
                     case "SEARCHLIST":
                     case "DYNAMICSEARCHLIST":
                         {

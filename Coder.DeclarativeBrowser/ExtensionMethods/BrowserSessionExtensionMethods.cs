@@ -1602,6 +1602,5 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
             return mainReportCoderPage;
         }
-
     }
 }
