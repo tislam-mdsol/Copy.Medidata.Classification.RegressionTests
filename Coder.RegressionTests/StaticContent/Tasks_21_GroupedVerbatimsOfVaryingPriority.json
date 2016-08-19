@@ -1,128 +1,149 @@
 [
  {
-   "StudyID"      : "PROD",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "ALPHA",
-   "Priority"     : "8"
+   "StudyID"         : "PROD",
+   "DictionaryLevel" : "LLT", 
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "ALPHA",
+   "Priority"        : "8"
  },
  {
-   "StudyID"      : "PROD",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "ALPHA",
-   "Priority"     : "8"
+   "StudyID"         : "PROD",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "ALPHA",
+   "Priority"        : "8"
  },
  {
-   "StudyID"      : "PROD",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "ALPHA",
-   "Priority"     : "8"
+   "StudyID"         : "PROD",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "ALPHA",
+   "Priority"        : "8"
  },
  {
-   "StudyID"      : "PROD",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "ALPHA",
-   "Priority"     : "8"
+   "StudyID"         : "PROD",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "ALPHA",
+   "Priority"        : "8"
  },
  {
-   "StudyID"      : "PROD",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "BRAVO",
-   "Priority"     : "8"
+   "StudyID"         : "PROD",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "BRAVO",
+   "Priority"        : "8"
  },
  {
-   "StudyID"      : "PROD",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "BRAVO",
-   "Priority"     : "8"
+   "StudyID"         : "PROD",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "BRAVO",
+   "Priority"        : "8"
  },
  {
-   "StudyID"      : "PROD",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "BRAVO",
-   "Priority"     : "8"
+   "StudyID"         : "PROD",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "BRAVO",
+   "Priority"        : "8"
  },
  {
-   "StudyID"      : "PROD",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "CHARLIE",
-   "Priority"     : "8"
+   "StudyID"         : "PROD",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "CHARLIE",
+   "Priority"        : "8"
  },
  {
-   "StudyID"      : "PROD",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "CHARLIE",
-   "Priority"     : "8"
+   "StudyID"         : "PROD",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "CHARLIE",
+   "Priority"        : "8"
  },
  {
-   "StudyID"      : "PROD",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "DELTA",
-   "Priority"     : "8"
+   "StudyID"         : "PROD",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "DELTA",
+   "Priority"        : "8"
  },
  {
-   "StudyID"      : "PROD",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "DELTA",
-   "Priority"     : "8"
+   "StudyID"         : "PROD",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "DELTA",
+   "Priority"        : "8"
  },
  {
-   "StudyID"      : "PROD",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "ECHO",
-   "Priority"     : "8"
+   "StudyID"         : "PROD",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "ECHO",
+   "Priority"        : "8"
  },
  {
-   "StudyID"      : "PROD",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "ECHO",
-   "Priority"     : "8"
+   "StudyID"         : "PROD",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "ECHO",
+   "Priority"        : "8"
  },
  {
-   "StudyID"      : "DEV",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "ALPHA",
-   "Priority"     : "1"
+   "StudyID"         : "DEV",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "ALPHA",
+   "Priority"        : "1"
  },
  {
-   "StudyID"      : "DEV",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "ALPHA",
-   "Priority"     : "1"
+   "StudyID"         : "DEV",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "ALPHA",
+   "Priority"        : "1"
  },
  {
-   "StudyID"      : "DEV",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "BRAVO",
-   "Priority"     : "1"
+   "StudyID"         : "DEV",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "BRAVO",
+   "Priority"        : "1"
  },
  {
-   "StudyID"      : "DEV",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "BRAVO",
-   "Priority"     : "1"
+   "StudyID"         : "DEV",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "BRAVO",
+   "Priority"        : "1"
  },
  {
-   "StudyID"      : "DEV",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "CHARLIE",
-   "Priority"     : "1"
+   "StudyID"         : "DEV",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "CHARLIE",
+   "Priority"        : "1"
  },
  {
-   "StudyID"      : "DEV",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "CHARLIE",
-   "Priority"     : "1"
+   "StudyID"         : "DEV",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "CHARLIE",
+   "Priority"        : "1"
  },
  {
-   "StudyID"      : "DEV",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "DELTA",
-   "Priority"     : "1"
+   "StudyID"         : "DEV",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "DELTA",
+   "Priority"        : "1"
  },
  {
-   "StudyID"      : "DEV",
-   "Form"         : "TPS",
-   "VerbatimTerm" : "FOXTROT",
-   "Priority"     : "1"
+   "StudyID"         : "DEV",
+   "DictionaryLevel" : "LLT",
+   "Form"            : "TPS",
+   "VerbatimTerm"    : "FOXTROT",
+   "Priority"        : "1"
  }
 ]
