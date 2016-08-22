@@ -22,16 +22,15 @@ namespace Coder.DeclarativeBrowser.Models.GridModels
                          && DictionaryLevel.Equals(other.DictionaryLevel)
                          && VerbatimTerm.Equals   (other.VerbatimTerm)
                          && Priority.Equals       (other.Priority)
-                         && Locale.Equals         (other.Locale)
-                         && Uuid.Equals           (other.Uuid);
+                         && Locale.Equals         (other.Locale);
 
             return result;
         }
 
         public string ToString()
         {
-            var response = String.Format("Dictionary: {0}, Segment: {1}, Level: {2}, Verbatim: {3}, Priority: {4}, Locale: {5}, Uuid {6}",
-                MedicalDictionary, Segment, DictionaryLevel, VerbatimTerm, Priority, Locale, Uuid);
+            var response = String.Format("Dictionary: {0}, Segment: {1}, Level: {2}, Verbatim: {3}, Priority: {4}, Locale: {5}",
+                MedicalDictionary, Segment, DictionaryLevel, VerbatimTerm, Priority, Locale);
 
             return response;
         }

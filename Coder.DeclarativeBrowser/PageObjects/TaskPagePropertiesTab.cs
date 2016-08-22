@@ -190,8 +190,7 @@ namespace Coder.DeclarativeBrowser.PageObjects
                 DictionaryLevel   = GetMedicalDictionaryDetailGridRows()[1].FindAllSessionElementsByXPath("td").Last().InnerHTML,
                 VerbatimTerm      = GetMedicalDictionaryDetailGridRows()[2].FindAllSessionElementsByXPath("td").Last().InnerHTML,
                 Priority          = GetMedicalDictionaryDetailGridRows()[3].FindAllSessionElementsByXPath("td").Last().InnerHTML,
-                Locale            = GetMedicalDictionaryDetailGridRows()[4].FindAllSessionElementsByXPath("td").Last().InnerHTML,
-                Uuid              = GetMedicalDictionaryDetailGridRows()[5].FindAllSessionElementsByXPath("td").Last().InnerHTML
+                Locale            = GetMedicalDictionaryDetailGridRows()[4].FindAllSessionElementsByXPath("td").Last().InnerHTML
             };
 
             return propertyMedicalDictionary;
