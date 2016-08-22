@@ -62,9 +62,7 @@ namespace Coder.TestSteps.StepDefinitions
             actualResult.StudyName.Should()     .BeEquivalentTo(expectedResult.StudyName);
             actualResult.ConnectionUri.Should() .BeEquivalentTo(expectedResult.ConnectionUri);
             actualResult.ProtocolNumber.Should().BeEquivalentTo(expectedResult.ProtocolNumber);
-            //FileOid is not expected. actualResult.FileOid.Should()       .BeEquivalentTo(expectedResult.FileOid);
-            //Protocol Name is not expected actualResult.ProtocolName.Should()  .BeEquivalentTo(expectedResult.ProtocolName);
-
+        
             _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }
 
