@@ -89,8 +89,8 @@ Scenario: The following information will be available to the client as a term's 
       | Adverse Event Term 1 | LLT              |
   When I view task "Adverse Event Term 1"
   Then I verify the following EDC information is displayed
-       |Field        |Line   |Form           |Event     |Subject       |Site          |
-       |Field 1      |1      |Form 1         |Event 1   |Subject 1     |Site 1        |
+       |Field        |Line        |Form           |Event     |Subject       |Site          |
+       |Field 1      |Line 1      |Form 1         |Event 1   |Subject 1     |Site 1        |
 
 @VAL
 @PBMCC_152100_005

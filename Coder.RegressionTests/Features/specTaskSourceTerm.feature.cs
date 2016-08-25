@@ -253,7 +253,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Site"});
             table6.AddRow(new string[] {
                         "Field 1",
-                        "1",
+                        "Line 1",
                         "Form 1",
                         "Event 1",
                         "Subject 1",

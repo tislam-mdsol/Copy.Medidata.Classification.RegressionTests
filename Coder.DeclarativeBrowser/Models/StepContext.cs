@@ -149,9 +149,9 @@ namespace Coder.DeclarativeBrowser.Models
         public string GetStudyDisplayName()
         {
             var studyName      = GetStudyName();
-            var protocolNumber = GetProtocolNumber();
+            var externalOid    = GetExternalOid();
 
-            var sourceSystemStudyDisplayName = String.Format("{0} - {1}", studyName, protocolNumber);
+            var sourceSystemStudyDisplayName = String.Format("{0} - {1}", studyName, externalOid);
 
             return sourceSystemStudyDisplayName;
         }
@@ -232,6 +232,15 @@ namespace Coder.DeclarativeBrowser.Models
             var study = GetActiveStudy();
 
             return study.ProtocolNumber;
+        }
+
+        public string GetExternalOid()
+        {
+            if (ReferenceEquals(SegmentUnderTest, null)) throw new InvalidOperationException("SegmentUnderTest property not set");
+
+            var study = GetActiveStudy();
+
+            return study.ExternalOid;
         }
 
         public DateTime GetTimeStamp()
