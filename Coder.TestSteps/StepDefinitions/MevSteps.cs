@@ -54,6 +54,7 @@ namespace Coder.TestSteps.StepDefinitions
             _Browser.WaitForAutoCodingToComplete();
         }
 
+        [Given(@"the following externally managed verbatim requests are made")]
         [When(@"the following externally managed verbatim requests are made")]
         public void WhenUploadingMevContent(Table table)
         {
@@ -64,6 +65,7 @@ namespace Coder.TestSteps.StepDefinitions
             UploadExternalVerbatims(externalVerbatims);
         }
 
+        [Given(@"the following externally managed verbatim requests are made ""(.*)""")]
         [When(@"the following externally managed verbatim requests are made ""(.*)""")]
         public void WhenUploadingMevContent(string fileName)
         {

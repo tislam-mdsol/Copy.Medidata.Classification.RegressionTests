@@ -127,6 +127,7 @@ namespace Coder.TestSteps.StepDefinitions
             _SearchCriteria.ExactMatchOnly = true;
         }
 
+        [When(@"I want only primary path results")]
         [Given(@"I want only primary path results")]
         public void GivenIWantOnlyPrimaryPathResults()
         {
