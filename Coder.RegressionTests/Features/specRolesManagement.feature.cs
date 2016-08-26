@@ -664,7 +664,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Great toe fracture",
                         "LLT"});
 #line 234
-    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table18, "When ");
+    testRunner.And("the following externally managed verbatim requests are made", ((string)(null)), table18, "And ");
 #line 237
  testRunner.And("an activated synonym list \"MedDRA ENG 12.0 Primary_List\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -719,7 +719,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Great toe fracture",
                         "LLT"});
 #line 252
-    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table21, "When ");
+    testRunner.And("the following externally managed verbatim requests are made", ((string)(null)), table21, "And ");
 #line 255
  testRunner.And("an activated synonym list \"MedDRA ENG 12.0 Primary_List\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -774,7 +774,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Great toe fracture",
                         "LLT"});
 #line 270
-    testRunner.When("the following externally managed verbatim requests are made", ((string)(null)), table24, "When ");
+    testRunner.And("the following externally managed verbatim requests are made", ((string)(null)), table24, "And ");
 #line 273
  testRunner.And("an activated synonym list \"MedDRA ENG 12.0 Primary_List\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
