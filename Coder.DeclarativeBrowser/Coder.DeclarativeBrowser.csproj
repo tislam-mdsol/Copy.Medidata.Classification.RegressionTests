@@ -125,9 +125,9 @@
       <HintPath>..\packages\Selenium.WebDriver.2.48.0\lib\net40\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
-	  <Reference Include="WebDriver.Support, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
-       <HintPath>..\packages\Selenium.Support.2.48.0\lib\net40\WebDriver.Support.dll</HintPath>
-       <Private>True</Private>
+    <Reference Include="WebDriver.Support, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.2.48.0\lib\net40\WebDriver.Support.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WebDriver.Support, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.Support.2.48.0\lib\net40\WebDriver.Support.dll</HintPath>
@@ -224,6 +224,7 @@
     <Compile Include="PageObjects\AdminMedidataAdminConsolePage.cs" />
     <Compile Include="PageObjects\AdminSegmentManagementPage.cs" />
     <Compile Include="PageObjects\MainReportCreationPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveActiveSubjectAdministrationPage.cs" />
     <Compile Include="PageObjects\Rave\RaveArchitectAmendmentManagerPage.cs" />
     <Compile Include="PageObjects\Rave\RaveArchitectCopyDraftWizardPage.cs" />
     <Compile Include="PageObjects\Rave\RaveArchitectCopySourcesPage.cs" />
@@ -231,7 +232,7 @@
     <Compile Include="PageObjects\Rave\RaveArchitectCRFDraftPage.cs" />
     <Compile Include="PageObjects\Rave\RaveArchitectExecuteAmendmentMigrationPlanPage.cs" />
     <Compile Include="PageObjects\Rave\DataListingReportPage.cs" />
-	<Compile Include="PageObjects\Rave\RaveArchitectFormPage.cs" />
+    <Compile Include="PageObjects\Rave\RaveArchitectFormPage.cs" />
     <Compile Include="PageObjects\Rave\RaveConfigurationOtherSettingsCoderPage.cs" />
     <Compile Include="PageObjects\Rave\RaveClinicalViewsPage.cs" />
     <Compile Include="PageObjects\Rave\RaveClinicalViewSettingsPage.cs" />
@@ -243,6 +244,7 @@
     <Compile Include="PageObjects\Rave\RaveFormPage.cs" />
     <Compile Include="PageObjects\Rave\RaveReportsPage.cs" />
     <Compile Include="PageObjects\Rave\RaveReportTypePage.cs" />
+    <Compile Include="PageObjects\Rave\RaveSiteAdministrationPage.cs" />
     <Compile Include="PageObjects\Rave\RaveUserAdministrationPage.cs" />
     <Compile Include="PageObjects\Rave\RaveLoginPage.cs" />
     <Compile Include="PageObjects\CoderLoginPage.cs" />

@@ -53,5 +53,20 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             projectLink.Click();
         }
 
+        internal void OpenSiteAdministrationPage()
+        {
+            OpenRaveHomePage();
+            var leftNavInstalledModuleLinks = _Session.FindAllSessionElementsByXPath("//table[@class='module-list text']//td/a");
+
+            var siteAdministrationLink = leftNavInstalledModuleLinks.FirstOrDefault(x => x.InnerHTML.Contains("Site Administration"));//This sucks not reusable
+            siteAdministrationLink.Click();
+        }
+
+        internal void OpenRaveHomePage()
+        {
+            var raveHomePageLink = _Session.FindSessionElementById("_ctl0_PgHeader_TabTextHyperlink0");
+            raveHomePageLink.Click();
+        }
+
     }
 }

@@ -69,20 +69,22 @@ namespace Coder.EndToEndTests.Features
             "e coding decisions")]
         [NUnit.Framework.CategoryAttribute("DFT")]
         [NUnit.Framework.CategoryAttribute("ETE_ENG_dup_namesupport")]
-        [NUnit.Framework.CategoryAttribute("PB3.6.6-001")]
-        [NUnit.Framework.CategoryAttribute("Release2016.1.0")]
+        [NUnit.Framework.CategoryAttribute("PB3.6.6_001")]
+        [NUnit.Framework.CategoryAttribute("Release2016_1_0")]
+        [NUnit.Framework.CategoryAttribute("EndToEndDynamicSegment")]
         public virtual void SubjectWithDuplicateNamesWhenOneIsInactivatedWillStillBeAbleToReceiveCodingDecisions()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Subject with duplicate names when one is inactivated will still be able to receiv" +
                     "e coding decisions", new string[] {
                         "DFT",
                         "ETE_ENG_dup_namesupport",
-                        "PB3.6.6-001",
-                        "Release2016.1.0"});
+                        "PB3.6.6_001",
+                        "Release2016_1_0",
+                        "EndToEndDynamicSegment"});
 #line 9
 this.ScenarioSetup(scenarioInfo);
 #line 11
-  testRunner.Given("a Rave project registration with dictionary \"MedDRA 11.0 ENG\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("a Rave project registration with dictionary \"WhoDrug-DDE-B2 ENG 200703\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
   testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -96,40 +98,40 @@ this.ScenarioSetup(scenarioInfo);
                         "IsApprovalRequired",
                         "IsAutoApproval"});
             table1.AddRow(new string[] {
-                        "ETE1",
-                        "Adverese Event 1",
+                        "ETE2",
+                        "Coding Field",
                         "<Dictionary>",
                         "<Locale>",
-                        "LLT",
+                        "PRODUCTSYNONYM",
                         "1",
                         "true",
                         "true"});
 #line 13
   testRunner.And("a Rave Coder setup with the following options", ((string)(null)), table1, "And ");
 #line 16
-  testRunner.When("a Rave Draft is published and pushed using draft \"<Draft>\" for Project \"<SourceSy" +
-                    "stemStudyName>\" to environment \"Production\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.When("a Rave Draft is published and pushed using draft \"<DraftName>\" for Project \"<Stud" +
+                    "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
-  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 18
-  testRunner.And("adding a new subject \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("adding a set of duplicate subject with initial \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+  testRunner.And("deactivating a duplicate subject", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field",
                         "Value",
                         "ControlType"});
             table2.AddRow(new string[] {
-                        "Adverese Event 1",
+                        "Coding Field",
                         "HeadBang",
                         "LongText"});
-#line 19
+#line 30
   testRunner.And("adding a new verbatim term to form \"ETE1\"", ((string)(null)), table2, "And ");
-#line 22
+#line 33
   testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 23
+#line 34
   testRunner.And("task \"HeadBang\" is coded to term \"ACHES-N-PAIN\" at search level \"Low Level Term\" " +
                     "with code \"??????????????\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 24
+#line 35
   testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -156,9 +158,9 @@ this.ScenarioSetup(scenarioInfo);
                         "LLT",
                         "10003658",
                         "Atrial fibrillation"});
-#line 25
-  testRunner.Then("the coding decision for verbatim \"HeadBang\" on form \"ETE1\" for field \"Adverese Ev" +
-                    "ent 1\" contains the following data", ((string)(null)), table3, "Then ");
+#line 36
+  testRunner.Then("the coding decision for verbatim \"HeadBang\" on form \"ETE1\" for field \"Coding Fiel" +
+                    "d\" contains the following data", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

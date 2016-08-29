@@ -3245,5 +3245,15 @@ namespace Coder.DeclarativeBrowser
             return actualErrorMessage;
         }
 
+        public void DeactivateRaveSubject(string subjectName, string siteName)
+        {
+            var raveArchitectPage      = Session.GetRaveArchitectPage();
+
+            raveArchitectPage.OpenSiteAdministrationPage();
+
+            var raveSiteAdministrationPage = Session.GetRaveSiteAdministrationPage();
+            
+            raveSiteAdministrationPage.OpenSubjectAdministrationForSite(subjectName, siteName);
+        }
     }
 }

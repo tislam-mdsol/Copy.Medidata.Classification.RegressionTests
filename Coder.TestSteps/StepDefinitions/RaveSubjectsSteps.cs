@@ -14,7 +14,7 @@ namespace Coder.TestSteps.StepDefinitions
         private readonly StepContext _StepContext;
 
         private readonly GlobalSteps _GlobalSteps;
-
+        private string _SubjectId;
         public RaveSubjectsSteps(StepContext stepContext)
         {
             if (ReferenceEquals(stepContext, null)) throw new ArgumentNullException("stepContext");
@@ -31,7 +31,7 @@ namespace Coder.TestSteps.StepDefinitions
         {
             if (String.IsNullOrWhiteSpace(subjectInitials)) throw new ArgumentNullException("subjectInitials");
 
-            var subjectId = subjectInitials.CreateUniqueRaveSubjectId();
+            _SubjectId = subjectInitials.CreateUniqueRaveSubjectId();
 
             _GlobalSteps.RaveModulesAppSegmentIsLoaded();
 
@@ -40,11 +40,11 @@ namespace Coder.TestSteps.StepDefinitions
             if (String.IsNullOrWhiteSpace(projectEnvironment) || projectEnvironment.Equals("PROD", StringComparison.OrdinalIgnoreCase))
             {
                 _StepContext.ActiveStudyType = StudyType.Prod;
-                target                       = new RaveNavigationTarget
+                target = new RaveNavigationTarget
                 {
                     StudyName = _StepContext.GetStudyName(),
-                    SiteName  = _StepContext.GetSite(),
-                    SubjectId = subjectId
+                    SiteName = _StepContext.GetSite(),
+                    SubjectId = _SubjectId
                 };
             }
             else if (projectEnvironment.Equals("UAT",StringComparison.OrdinalIgnoreCase))
@@ -55,8 +55,8 @@ namespace Coder.TestSteps.StepDefinitions
                 {
                     StudyName = _StepContext.GetUatStudyName(),
                     SiteName  = _StepContext.GetSite(),
-                    SubjectId = subjectId
-                };
+                    SubjectId = _SubjectId
+    };
             }
            else if (projectEnvironment.Equals("DEV", StringComparison.OrdinalIgnoreCase))
             {
@@ -66,7 +66,7 @@ namespace Coder.TestSteps.StepDefinitions
                 {
                     StudyName = _StepContext.GetDevStudyName(),
                     SiteName  = _StepContext.GetSite(),
-                    SubjectId = subjectId
+                    SubjectId = _SubjectId
                 };
             }
             else 
@@ -74,31 +74,83 @@ namespace Coder.TestSteps.StepDefinitions
                 throw new InvalidOperationException(String.Format("Invalid Project environment = {0}", projectEnvironment));
             }
 
-            _Browser.AddSubjectToRaveStudy(target, subjectInitials, subjectId);
+            _Browser.AddSubjectToRaveStudy(target, subjectInitials, _SubjectId);
 
             var site = _StepContext.GetFirstSite();
 
-            site.AddSubject(initials: subjectInitials, id: subjectId);
+            site.AddSubject(initials: subjectInitials, id: _SubjectId);
         }
 
-        [When(@"adding a new manual ID subject ""(.*)""")]
-        public void WhenAddingANewSubjectWithManualId(string subjectInitials)
+
+        [When(@"adding a set of duplicate subject with initial ""(.*)""(?: for Project environment ""(.*)""\s)?")]
+              //@"adding a new subject                           ""(.*)""(?: for Project environment ""(.*)""\s)?"
+        public void WhenAddingASetOfDuplicateSubjectWithInitial(string subjectInitials, string projectEnvironment)
         {
             if (String.IsNullOrWhiteSpace(subjectInitials)) throw new ArgumentNullException("subjectInitials");
 
+            var _SubjectId = subjectInitials.CreateUniqueRaveSubjectId();
+
             _GlobalSteps.RaveModulesAppSegmentIsLoaded();
 
-            var target = new RaveNavigationTarget
-            {
-                StudyName = _StepContext.GetStudyName(),
-                SiteName  = _StepContext.GetSite()
-            };
+            var target = new RaveNavigationTarget();
 
-            var subjectId = _Browser.AddSubjectToRaveStudyWithManualId(target, subjectInitials);
-            
+            if (String.IsNullOrWhiteSpace(projectEnvironment) || projectEnvironment.Equals("PROD", StringComparison.OrdinalIgnoreCase))
+            {
+                _StepContext.ActiveStudyType = StudyType.Prod;
+                target = new RaveNavigationTarget
+                {
+                    StudyName = _StepContext.GetStudyName(),
+                    SiteName = _StepContext.GetSite(),
+                    SubjectId = _SubjectId
+                };
+            }
+            else if (projectEnvironment.Equals("UAT", StringComparison.OrdinalIgnoreCase))
+            {
+                _StepContext.ActiveStudyType = StudyType.UAT;
+
+                target = new RaveNavigationTarget
+                {
+                    StudyName = _StepContext.GetUatStudyName(),
+                    SiteName = _StepContext.GetSite(),
+                    SubjectId = _SubjectId
+                };
+            }
+            else if (projectEnvironment.Equals("DEV", StringComparison.OrdinalIgnoreCase))
+            {
+                _StepContext.ActiveStudyType = StudyType.Dev;
+
+                target = new RaveNavigationTarget
+                {
+                    StudyName = _StepContext.GetDevStudyName(),
+                    SiteName = _StepContext.GetSite(),
+                    SubjectId = _SubjectId
+                };
+            }
+            else
+            {
+                throw new InvalidOperationException(String.Format("Invalid Project environment = {0}", projectEnvironment));
+            }
+
+            _Browser.AddSubjectToRaveStudy(target, subjectInitials, _SubjectId);
+            _Browser.AddSubjectToRaveStudy(target, subjectInitials, _SubjectId);
+
             var site = _StepContext.GetFirstSite();
 
-            site.AddSubject(initials: subjectInitials, id: subjectId);
+            site.AddSubject(initials: subjectInitials, id: _SubjectId);
+        }
+
+        [When(@"deactivating a duplicate subject")]
+        public void WhenDeactivatingADuplicateSubject()
+        {
+            _Browser.DeactivateRaveSubject(_StepContext.GetActiveStudy().StudyName,_SubjectId);
+            //# go to rave home
+            //# go to site administration
+            //# search for your study
+            //# select your study
+            //# go into your study
+            //# click on subjects
+            //# click on edit associated with your subject
+            //# uncheck active
         }
     }
 }

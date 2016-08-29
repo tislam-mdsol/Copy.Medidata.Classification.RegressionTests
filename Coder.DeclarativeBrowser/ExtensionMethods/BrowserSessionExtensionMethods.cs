@@ -645,7 +645,16 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
 
             return raveCoderConfigurationPage;
         }
-        
+
+        internal static RaveSiteAdministrationPage GetRaveSiteAdministrationPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveSiteAdministrationPage = new RaveSiteAdministrationPage(session);
+
+            return raveSiteAdministrationPage;
+        }
+
         internal static void OpenRaveStudy(this BrowserSession session, RaveNavigationTarget target)
         {
             if (ReferenceEquals(session, null))              throw new ArgumentNullException("session");
