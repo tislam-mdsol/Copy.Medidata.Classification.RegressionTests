@@ -15,7 +15,7 @@ Scenario: Verify that when direct dictionary terms are set to do not auto code t
 		| <StudyName> | MedDRA     | 15.0    | eng    | History_List    | MedDRAMedHistory |
 	And do not auto code "Back arched backwards" for dictionary "MedDRA-15_0-English" level "LLT"
 	And do not auto code "Death sudden" for dictionary "MedDRAMedHistory-15_0-English" level "LLT"
-	And uploading MEV content
+	And the following externally managed verbatim requests are made
 		| Verbatim Term         | Dictionary       | Dictionary Level | Is Approval Required | Is Auto Approval |
 		| Back arched backwards | MedDRA           | LLT              | TRUE                 | FALSE            |
 		| Death sudden          | MedDRA           | LLT              | TRUE                 | FALSE            |

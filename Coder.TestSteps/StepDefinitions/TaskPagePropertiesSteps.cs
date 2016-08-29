@@ -47,26 +47,22 @@ namespace Coder.TestSteps.StepDefinitions
         }
 
         [Then(@"I verify the following Source System Property information is displayed")]
-        public void ThenIVerifyTheFollowingSourceSystemPropertyInformationIsDisplayed(List<dynamic> featureData)
+        public void ThenIVerifyTheFollowingSourceSystemPropertyInformationIsDisplayed(Table featureData)
         {
-            if (ReferenceEquals(featureData, null)) throw new ArgumentNullException("featureData"); 
+            if (ReferenceEquals(featureData, null)) throw new ArgumentNullException("featureData");
+
+            var expectedResult = featureData.TransformFeatureTableStrings(_StepContext).CreateInstance<PropertySourceSystem>();
 
             _Browser.SelectPropertiesTab();
 
             var actualResult = _Browser.GetPropertySourceSystemTableValues();
 
-            featureData.Count.ShouldBeEquivalentTo(1);
-
-            var featureDataProperty = featureData[0];
-
-            actualResult.SourceSystem.Should()  .BeEquivalentTo(featureDataProperty.SourceSystem);
-            actualResult.Locale.Should()        .BeEquivalentTo(featureDataProperty.Locale);
-            actualResult.StudyName.Should()     .BeEquivalentTo(featureDataProperty.StudyName);
-            actualResult.ConnectionUri.Should() .BeEquivalentTo(featureDataProperty.ConnectionUri);
-            actualResult.FileOid.Should()       .BeEquivalentTo(featureDataProperty.FileOid);
-            actualResult.ProtocolNumber.Should().BeEquivalentTo(featureDataProperty.ProtocolNumber);
-            actualResult.ProtocolName.Should()  .BeEquivalentTo(featureDataProperty.ProtocolName);
-
+            actualResult.SourceSystem.Should()  .BeEquivalentTo(expectedResult.SourceSystem);
+            actualResult.Locale.Should()        .BeEquivalentTo(expectedResult.Locale);
+            actualResult.StudyName.Should()     .BeEquivalentTo(expectedResult.StudyName);
+            actualResult.ConnectionUri.Should() .BeEquivalentTo(expectedResult.ConnectionUri);
+            actualResult.ProtocolNumber.Should().BeEquivalentTo(expectedResult.ProtocolNumber);
+        
             _Browser.SaveScreenshot(MethodBase.GetCurrentMethod().Name);
         }
 

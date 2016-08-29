@@ -152,7 +152,7 @@ this.ScenarioSetup(scenarioInfo);
                         "TRUE",
                         "FALSE"});
 #line 18
- testRunner.And("uploading MEV content", ((string)(null)), table2, "And ");
+ testRunner.And("the following externally managed verbatim requests are made", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Verbatim",

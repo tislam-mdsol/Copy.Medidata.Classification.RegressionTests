@@ -28,23 +28,28 @@ namespace Coder.DeclarativeBrowser.Drivers
             var ffProfile = new FirefoxProfile();
             ffProfile.SetProxyPreferences(proxy);
 
-            ffProfile.SetPreference("browser.cache.check_doc_frequency"                                     , 1);
-            ffProfile.SetPreference("browser.download.dir"                                                  , downloadDirectory);
-            ffProfile.SetPreference("browser.download.folderList"                                           , 2);
-            ffProfile.SetPreference("browser.download.manager.closeWhenDone"                                , true);
-            ffProfile.SetPreference("browser.download.manager.flashCount"                                   , 0);
-            ffProfile.SetPreference("browser.download.manager.focusWhenStarting"                            , false);
-            ffProfile.SetPreference("browser.download.manager.showAlertOnComplete"                          , false);
-            ffProfile.SetPreference("browser.download.manager.useWindow"                                    , false);
-            ffProfile.SetPreference("browser.download.useDownloadDir"                                       , true);
-            ffProfile.SetPreference("browser.helperApps.alwaysAsk.force"                                    , false);
-            ffProfile.SetPreference("browser.helperApps.neverAsk.saveToDisk"                                , Config.BrowserAutoSaveFileTypes);
-            ffProfile.SetPreference("services.sync.prefs.sync.browser.download.manager.showWhenStarting"    , false);
-
+            ffProfile.SetPreference("browser.cache.check_doc_frequency"                                  , 1);
+            ffProfile.SetPreference("browser.download.dir"                                               , downloadDirectory);
+            ffProfile.SetPreference("browser.download.folderList"                                        , 2);
+            ffProfile.SetPreference("browser.download.manager.closeWhenDone"                             , true);
+            ffProfile.SetPreference("browser.download.manager.flashCount"                                , 0);
+            ffProfile.SetPreference("browser.download.manager.focusWhenStarting"                         , false);
+            ffProfile.SetPreference("browser.download.manager.showAlertOnComplete"                       , false);
+            ffProfile.SetPreference("browser.download.manager.useWindow"                                 , false);
+            ffProfile.SetPreference("browser.download.useDownloadDir"                                    , true);
+            ffProfile.SetPreference("browser.helperApps.alwaysAsk.force"                                 , false);
+            ffProfile.SetPreference("browser.helperApps.neverAsk.saveToDisk"                             , Config.BrowserAutoSaveFileTypes);
+            ffProfile.SetPreference("services.sync.prefs.sync.browser.download.manager.showWhenStarting" , false);
+            ffProfile.SetPreference("webdriver.log.profiler.level"                                       , "OFF");
+            ffProfile.SetPreference("webdriver.log.driver.level"                                         , "OFF");
+            ffProfile.SetPreference("webdriver.log.browser.level"                                        , "OFF");
+            ffProfile.SetPreference("webdriver.log.server.level"                                         , "OFF");
+            ffProfile.SetPreference("webdriver.log.client.level"                                         , "OFF");
+            
             var timeout = TimeSpan.FromMinutes(3);
 
             RemoteWebDriver driver;
-
+            
             if (Config.IsGridConfigured)
             {
                 var capabilities = DesiredCapabilities.Firefox();
