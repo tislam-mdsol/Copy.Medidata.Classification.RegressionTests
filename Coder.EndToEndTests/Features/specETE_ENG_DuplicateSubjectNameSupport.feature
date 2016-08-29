@@ -15,18 +15,7 @@ Scenario: Subject with duplicate names when one is inactivated will still be abl
     | ETE2 | Coding Field | <Dictionary> | <Locale> | PRODUCTSYNONYM | 1        | true               | true           |
   When a Rave Draft is published and pushed using draft "<DraftName>" for Project "<StudyName>" to environment "Prod"
   And adding a set of duplicate subject with initial "TST"
-  #click on studyname tab again
-  #click add subject 
-  #click add subject with the same name
   And deactivating a duplicate subject 
-  #go to rave home
-  #go to site administration
-  #search for your study
-  #select your study
-  #go into your study
-  #click on subjects
-  #click on edit associated with your subject
-  #uncheck active
   And adding a new verbatim term to form "ETE1"
     | Field        | Value    | ControlType |
     | Coding Field | HeadBang | LongText    |

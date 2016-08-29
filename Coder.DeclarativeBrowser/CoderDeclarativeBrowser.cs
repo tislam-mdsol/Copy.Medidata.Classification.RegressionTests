@@ -3254,6 +3254,9 @@ namespace Coder.DeclarativeBrowser
             var raveSiteAdministrationPage = Session.GetRaveSiteAdministrationPage();
             
             raveSiteAdministrationPage.OpenSubjectAdministrationForSite(subjectName, siteName);
+
+            var raveActiveSubjectAdministrationPage = Session.GetRaveActiveSubjectAdministrationPage();
+            raveActiveSubjectAdministrationPage.DeactivateSubjectByName(subjectName);
         }
     }
 }

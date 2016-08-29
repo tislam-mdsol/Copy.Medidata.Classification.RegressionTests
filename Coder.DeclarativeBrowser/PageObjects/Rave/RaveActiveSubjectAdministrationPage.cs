@@ -13,6 +13,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
         private const string _SubjectNameHeaderText = "Subject Name";
         private const string _SubjectEditLinkHeaderText = "Edit";
         private const string _SubjectActiveCheckboxHeaderText = "Active";
+        private const string _SubjectUpdateLinkText = "Update";
 
         internal RaveActiveSubjectAdministrationPage(BrowserSession session)
         {
@@ -29,7 +30,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
             GetSearchButton().Click();
         }
 
-        private void DeactivateSubjectByName(string subjectName)
+        internal void DeactivateSubjectByName(string subjectName)
         {
             SearchSubjectByName(subjectName);
             GetSubjectLink(subjectName).Click();
@@ -38,7 +39,7 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
 
         }
 
-        private object GetUpdateLink(string subjectName)
+        private SessionElementScope GetUpdateLink(string subjectName)
         {
             if (String.IsNullOrWhiteSpace(subjectName)) throw new ArgumentNullException("subjectName");
 
@@ -46,11 +47,13 @@ namespace Coder.DeclarativeBrowser.PageObjects.Rave
 
             var updateLinkCell = subjectsGrid.FindTableCell(_SubjectNameHeaderText, subjectName, _SubjectActiveCheckboxHeaderText);
 
-            var updateLinks = updateLinkCell.FindAllSessionElementsByXPath(".//a").ToArray();
+            var updateLinks = updateLinkCell.FindAllSessionElementsByXPath(".//a");
 
-            return activeLink;
+            var updateLink = updateLinks.Select(x => x).Where(x => x.Value.Contains(_SubjectUpdateLinkText, StringComparison.OrdinalIgnoreCase));
+
+            return updateLink.FirstOrDefault();
         }
-        ccsdsds
+
         private SessionElementScope GetActiveCheckBox(string subjectName)
         {
             if (String.IsNullOrWhiteSpace(subjectName)) throw new ArgumentNullException("subjectName");

@@ -538,6 +538,15 @@ namespace Coder.DeclarativeBrowser.ExtensionMethods
             return raveArchitectPage;
         }
 
+        internal static RaveActiveSubjectAdministrationPage GetRaveActiveSubjectAdministrationPage(this BrowserSession session)
+        {
+            if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");
+
+            var raveActiveSubjectAdministrationPageectPage = new RaveActiveSubjectAdministrationPage(session);
+
+            return raveActiveSubjectAdministrationPageectPage;
+        }
+
         internal static RaveArchitectProjectPage GetRaveArchitectProjectPage(this BrowserSession session)
         {
             if (ReferenceEquals(session, null)) throw new ArgumentNullException("session");

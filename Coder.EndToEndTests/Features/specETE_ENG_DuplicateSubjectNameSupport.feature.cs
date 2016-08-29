@@ -113,7 +113,7 @@ this.ScenarioSetup(scenarioInfo);
                     "yName>\" to environment \"Prod\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
   testRunner.And("adding a set of duplicate subject with initial \"TST\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 21
+#line 18
   testRunner.And("deactivating a duplicate subject", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -124,14 +124,14 @@ this.ScenarioSetup(scenarioInfo);
                         "Coding Field",
                         "HeadBang",
                         "LongText"});
-#line 30
+#line 19
   testRunner.And("adding a new verbatim term to form \"ETE1\"", ((string)(null)), table2, "And ");
-#line 33
+#line 22
   testRunner.And("Coder App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
+#line 23
   testRunner.And("task \"HeadBang\" is coded to term \"ACHES-N-PAIN\" at search level \"Low Level Term\" " +
                     "with code \"??????????????\" at level \"LLT\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
+#line 24
   testRunner.And("Rave Modules App Segment is loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -158,7 +158,7 @@ this.ScenarioSetup(scenarioInfo);
                         "LLT",
                         "10003658",
                         "Atrial fibrillation"});
-#line 36
+#line 25
   testRunner.Then("the coding decision for verbatim \"HeadBang\" on form \"ETE1\" for field \"Coding Fiel" +
                     "d\" contains the following data", ((string)(null)), table3, "Then ");
 #line hidden
